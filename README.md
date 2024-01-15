@@ -14,6 +14,7 @@ Here is a collection of articles authored by [Rajesh Gheware] on various technic
 8. [Kubernetes for IoT: Bridging Cloud and Edge Computing](https://www.linkedin.com/pulse/kubernetes-iot-bridging-cloud-edge-computing-brains-upgrade-sbsfc)
 9. [Docker Compose: Unraveling the Complexity of Multi-Container Applications](https://www.linkedin.com/pulse/docker-compose-unraveling-complexity-multi-container-applications-avuyc)
 10. [Navigating the Future: Mastering Kubernetes and DevOps for a Dynamic Career](https://www.linkedin.com/pulse/navigating-future-mastering-kubernetes-devops-dynamic-career-itxgc)
+[More articles](https://brainupgrade.in/category/devops/)
 
 ## Kubernetes-related Articles
 
@@ -27,11 +28,12 @@ Here is a collection of articles authored by [Rajesh Gheware] on various technic
 18. ["Streamlining E-commerce Microservices Deployment: A DevOps Guide to Jenkins, Docker, and Kubernetes"](https://rajeshgheware.medium.com/streamlining-ecommerce-microservices-deployment-a-devops-guide-to-jenkins-docker-and-kubernetes-44c5818b5f77)
 19. [Kubernetes vs. Docker: Comparing Containerization Platforms](https://www.linkedin.com/pulse/kubernetes-vs-docker-comparing-containerization-platforms-c2p3c)
 20. [Unveiling the Future of CI/CD: Embracing Pipeline as Code with Jenkins](https://www.linkedin.com/pulse/unveiling-future-cicd-embracing-pipeline-code-jenkins-ilj0c)
+[More articles](https://brainupgrade.in/category/devops/)
 
 ## Terraform Article
 
 21. [Mastering Terraform: Your Ultimate Guide to Efficient Cloud Infrastructure Management](https://www.linkedin.com/pulse/mastering-terraform-your-ultimate-guide-efficient-cloud-qfhac/)
-
+[More articles](https://brainupgrade.in/category/devops/)
 ...
 
 *Note: This collection includes articles covering various technical topics, reflecting the diverse expertise and insights in the field of technology.*
