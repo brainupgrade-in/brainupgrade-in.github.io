@@ -34,6 +34,7 @@ Here is a collection of articles authored by [Rajesh Gheware] on various technic
 
 21. [Mastering Terraform: Your Ultimate Guide to Efficient Cloud Infrastructure Management](https://www.linkedin.com/pulse/mastering-terraform-your-ultimate-guide-efficient-cloud-qfhac/)
 [More articles](https://brainupgrade.in/category/devops/)
-...
+
+## Tune in later for more updates on latest tech
 
 *Note: This collection includes articles covering various technical topics, reflecting the diverse expertise and insights in the field of technology.*
