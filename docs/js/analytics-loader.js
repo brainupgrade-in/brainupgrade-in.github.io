@@ -6,8 +6,8 @@
 (function() {
     'use strict';
 
-    // GA4 Measurement ID - Replace with your actual ID
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    // GA4 Measurement ID
+    const GA_MEASUREMENT_ID = 'G-9904BXNJ3H';
 
     // Only load in production
     if (window.location.hostname === 'brainupgrade-in.github.io' ||

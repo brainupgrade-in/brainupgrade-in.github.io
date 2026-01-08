@@ -1013,6 +1013,59 @@ body {
     background: rgba(255, 255, 255, 0.02);
 }
 
+/* Blog Preview Section */
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.blog-preview-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all var(--duration-300) var(--ease-out);
+    border: 1px solid var(--gray-100);
+}
+
+.blog-preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.blog-preview-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.blog-preview-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: var(--space-3);
+}
+
+.blog-preview-card p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.blog-cta {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .blog-preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

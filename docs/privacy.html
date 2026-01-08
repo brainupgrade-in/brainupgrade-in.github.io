@@ -9,10 +9,14 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <script src="js/analytics-loader.js"></script>
     <link rel="stylesheet" href="css/premium.css">
+
+    <!-- Template Loader -->
+    <script src="js/template-loader.js" defer></script>
+
     <style>
         .legal-page {
             background: var(--gray-50);
-            min-height: 100vh;
+            min-height: 60vh;
             padding: var(--space-8) 0;
         }
         .legal-container {
@@ -77,20 +81,6 @@
             color: var(--dark);
             font-weight: 600;
         }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: var(--space-6);
-            transition: all var(--duration-150) var(--ease-out);
-        }
-        .back-link:hover {
-            color: var(--primary-dark);
-            transform: translateX(-4px);
-        }
         .highlight-box {
             background: var(--gray-100);
             border-left: 4px solid var(--primary);
@@ -101,13 +91,11 @@
     </style>
 </head>
 <body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
     <main class="legal-page">
         <div class="legal-container">
-            <a href="/" class="back-link">
-                <span>←</span>
-                <span>Back to Home</span>
-            </a>
-
             <div class="legal-header">
                 <h1 class="legal-title">Privacy Policy</h1>
                 <p class="legal-meta">Last updated: January 2026</p>
@@ -169,5 +157,8 @@
             </div>
         </div>
     </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 </body>
 </html>

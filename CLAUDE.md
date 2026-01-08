@@ -13,13 +13,11 @@
 ### Development
 ```bash
 ./start-dev.sh              # Simple HTTP server (port 8889)
-./start-dev-docker.sh       # Docker with live reload (port 8889)
 ```
 
 ### Deployment
 ```bash
-./deploy.sh                           # Local KIND cluster
-# Production: GitHub Actions workflow (manual trigger)
+git add . && git commit -m "Update site" && git push origin main
 ```
 
 ---
@@ -43,13 +41,14 @@
 
 **Tech Stack:**
 - Frontend: Static HTML5 + CSS3 (premium.css) + vanilla JavaScript
-- Server: nginx:alpine-slim Docker container
+- Hosting: GitHub Pages (static site)
 - Fonts: System font stack (no external dependencies)
 - SEO: Sitemap.xml, robots.txt, Schema.org structured data
 
 **Key Features:**
 - Green/teal DevOps-themed design system
 - Mobile-first responsive design
+- Reusable header/footer templates
 - Blog infrastructure (skeleton ready)
 - Legal pages (Privacy, Terms)
 
@@ -69,24 +68,21 @@ devops.gheware.com/
 │   ├── css/
 │   │   └── premium.css         # Design system (green/teal theme)
 │   ├── js/
-│   │   └── analytics-loader.js # Google Analytics loader
-│   ├── images/                 # Static images (empty)
+│   │   ├── analytics-loader.js # Google Analytics loader
+│   │   └── template-loader.js  # Header/footer template loader
+│   ├── templates/
+│   │   ├── header.html         # Shared header template
+│   │   └── footer.html         # Shared footer template
+│   ├── images/                 # Static images
 │   └── blog/
 │       ├── index.html          # Blog homepage
 │       ├── css/blog.css        # Blog-specific styles
 │       ├── posts/
 │       │   └── _template.html  # Blog post template
-│       └── assets/images/      # Blog hero images (empty)
-├── kubernetes/
-│   └── gheware-devops-ai-manifest.yaml  # K8s deployment manifests (optional)
+│       └── assets/images/      # Blog hero images
 ├── .github/workflows/          # GitHub Actions (empty, to be configured)
-├── .claude/agents/             # Claude agent configs (empty)
-├── Dockerfile                  # Container image definition (for Docker/K8s)
-├── .dockerignore               # Docker build exclusions
 ├── .gitignore                  # Git exclusions
-├── deploy.sh                   # Local KIND deployment script
 ├── start-dev.sh                # Local development server
-├── start-dev-docker.sh         # Docker-based dev server
 └── CLAUDE.md                   # This file
 ```
 
@@ -133,21 +129,9 @@ background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #10b981 100%);
 ```bash
 # Development server (port 8889)
 ./start-dev.sh                    # Python/PHP/npx auto-detect
-./start-dev-docker.sh             # Docker with live reload
 
 # Deploy to GitHub Pages
 git add . && git commit -m "Update site" && git push origin main
-```
-
-### Docker/Kubernetes (Alternative)
-```bash
-# Local KIND deployment
-./deploy.sh                       # Deploys to 'finance' cluster
-
-# Kubernetes commands
-kubectl get pods -n devops-gheware
-kubectl logs -f deployment/devops-gheware -n devops-gheware
-kubectl port-forward svc/devops-gheware-service 8080:80 -n devops-gheware
 ```
 
 ---
@@ -175,18 +159,19 @@ kubectl port-forward svc/devops-gheware-service 8080:80 -n devops-gheware
 - Schema.org EducationalOrganization structured data
 - Open Graph + Twitter Card meta tags
 
+**Configured:**
+- Google Analytics GA4: G-9904BXNJ3H (production only)
+
 **To Add:**
-- Google Analytics (update GA_MEASUREMENT_ID in analytics-loader.js)
 - Google Search Console verification
-- Blog posts as they are created
 
 ---
 
 ## Social Media
 
 **Company Accounts:**
+- **YouTube:** Gheware DevOps AI (https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A)
 - **Twitter/X:** @gheware_tech
-- **YouTube:** @gheware_tech
 - **LinkedIn:** linkedin.com/company/gheware-technologies
 
 ---
@@ -214,21 +199,6 @@ kubectl port-forward svc/devops-gheware-service 8080:80 -n devops-gheware
 
 ---
 
-## GitHub Pages Deployment
-
-**Automatic:** GitHub Pages auto-deploys when pushing to main branch.
-
-**Manual Steps:**
-```bash
-git add .
-git commit -m "Your commit message"
-git push origin main
-```
-
-Site will be live at https://brainupgrade-in.github.io within 1-2 minutes.
-
----
-
 ## Related Projects
 
 - **www-gheware:** Main Gheware portfolio site (gheware.com)
@@ -245,7 +215,7 @@ Site will be live at https://brainupgrade-in.github.io within 1-2 minutes.
 
 ---
 
-**Last Updated:** 2025-01-08
+**Last Updated:** 2026-01-08
 **Repository:** https://github.com/brainupgrade-in/brainupgrade-in.github.io
 **Local Path:** /home/rajesh/devops.gheware.com
 **Primary Goal:** Drive signups to https://brainupgrade.in Kubernetes Labs
