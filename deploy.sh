@@ -10,11 +10,11 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-IMAGE_NAME="brainupgrade/devops-gheware"
+IMAGE_NAME="brainupgrade/gheware-devops-ai"
 IMAGE_TAG="latest"
 KIND_CLUSTER="finance"
-NAMESPACE="devops-gheware"
-MANIFEST_FILE="kubernetes/devops-gheware-manifest.yaml"
+NAMESPACE="gheware-devops-ai"
+MANIFEST_FILE="kubernetes/gheware-devops-ai-manifest.yaml"
 
 echo -e "${BLUE}🚀 Deploying DevOps Gheware Application${NC}"
 echo "=========================================="
@@ -68,24 +68,24 @@ print_status "Namespace ${NAMESPACE} is ready"
 
 # Force deployment rollout to ensure latest image is used
 echo -e "${BLUE}Forcing deployment rollout to use latest image...${NC}"
-kubectl rollout restart deployment/devops-gheware -n ${NAMESPACE} || print_error "Failed to restart deployment"
+kubectl rollout restart deployment/gheware-devops-ai -n ${NAMESPACE} || print_error "Failed to restart deployment"
 print_status "Deployment rollout initiated"
 
 # Wait for deployment rollout to complete
 echo -e "${BLUE}Waiting for deployment rollout to complete...${NC}"
-kubectl rollout status deployment/devops-gheware -n ${NAMESPACE} --timeout=300s || print_error "Deployment rollout failed"
+kubectl rollout status deployment/gheware-devops-ai -n ${NAMESPACE} --timeout=300s || print_error "Deployment rollout failed"
 print_status "Deployment rollout completed successfully"
 
 # Wait for deployment to be ready
 echo -e "${BLUE}Waiting for deployment to be ready...${NC}"
-kubectl wait --for=condition=available --timeout=300s deployment/devops-gheware -n ${NAMESPACE} || print_error "Deployment failed to become ready"
+kubectl wait --for=condition=available --timeout=300s deployment/gheware-devops-ai -n ${NAMESPACE} || print_error "Deployment failed to become ready"
 print_status "Deployment is ready"
 
 # Get deployment status
 echo -e "${BLUE}Checking application status...${NC}"
 echo ""
 echo -e "${YELLOW}Pods:${NC}"
-kubectl get pods -n ${NAMESPACE} -l app=devops-gheware -o wide
+kubectl get pods -n ${NAMESPACE} -l app=gheware-devops-ai -o wide
 
 echo ""
 echo -e "${YELLOW}Service:${NC}"
@@ -110,10 +110,10 @@ echo "  kubectl get pods -n ${NAMESPACE}"
 echo "  kubectl get svc,ingress -n ${NAMESPACE}"
 echo ""
 echo -e "${YELLOW}View application logs:${NC}"
-echo "  kubectl logs -f deployment/devops-gheware -n ${NAMESPACE}"
+echo "  kubectl logs -f deployment/gheware-devops-ai -n ${NAMESPACE}"
 echo ""
 echo -e "${YELLOW}Port-forward to test locally:${NC}"
-echo "  kubectl port-forward svc/devops-gheware-service 8080:80 -n ${NAMESPACE}"
+echo "  kubectl port-forward svc/gheware-devops-ai-service 8080:80 -n ${NAMESPACE}"
 echo "  Then visit: http://localhost:8080"
 echo ""
 echo -e "${YELLOW}Update deployment (after code changes):${NC}"

@@ -11,7 +11,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-CONTAINER_NAME="devops-gheware-dev"
+CONTAINER_NAME="gheware-devops-ai-dev"
 DEFAULT_PORT=8889
 
 echo -e "${BLUE}╔════════════════════════════════════════════════════════════╗${NC}"

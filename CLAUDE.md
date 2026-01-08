@@ -1,7 +1,7 @@
-# DevOps Gheware Website - Quick Reference
+# Gheware DevOps AI Website - Quick Reference
 
 ## Project Identity
-**Purpose:** Marketing site for DevOps Gheware - Kubernetes Virtual Lab Platform
+**Purpose:** Marketing site for Gheware DevOps AI - Kubernetes Virtual Lab Platform
 - **Main Platform:** https://brainupgrade.in (existing Kubernetes lab platform)
 - **Marketing Site:** https://brainupgrade-in.github.io (GitHub Pages)
 - **Remote Repo:** https://github.com/brainupgrade-in/brainupgrade-in.github.io.git
@@ -26,7 +26,7 @@
 
 ## Product Focus
 
-### DevOps Gheware - Kubernetes Virtual Lab
+### Gheware DevOps AI - Kubernetes Virtual Lab
 - **URL:** https://brainupgrade.in
 - **Target Audience:** Developers, DevOps engineers, certification candidates
 - **Key Features:**
@@ -78,7 +78,7 @@ devops.gheware.com/
 │       │   └── _template.html  # Blog post template
 │       └── assets/images/      # Blog hero images (empty)
 ├── kubernetes/
-│   └── devops-gheware-manifest.yaml  # K8s deployment manifests (optional)
+│   └── gheware-devops-ai-manifest.yaml  # K8s deployment manifests (optional)
 ├── .github/workflows/          # GitHub Actions (empty, to be configured)
 ├── .claude/agents/             # Claude agent configs (empty)
 ├── Dockerfile                  # Container image definition (for Docker/K8s)
