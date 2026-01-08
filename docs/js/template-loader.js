@@ -8,7 +8,8 @@
 
     const TEMPLATES = {
         header: '/templates/header.html',
-        footer: '/templates/footer.html'
+        footer: '/templates/footer.html',
+        'author-bio': '/templates/author-bio.html'
     };
 
     /**
@@ -39,11 +40,18 @@
      * Initialize templates when DOM is ready
      */
     function init() {
-        // Load header and footer templates
-        Promise.all([
+        // Build array of template loading promises
+        const templatePromises = [
             loadTemplate(TEMPLATES.header, 'header-placeholder'),
             loadTemplate(TEMPLATES.footer, 'footer-placeholder')
-        ]).then(() => {
+        ];
+
+        // Load author-bio template if placeholder exists (blog posts)
+        if (document.getElementById('author-bio-placeholder')) {
+            templatePromises.push(loadTemplate(TEMPLATES['author-bio'], 'author-bio-placeholder'));
+        }
+
+        Promise.all(templatePromises).then(() => {
             // Mark active nav link based on current page
             markActiveNavLink();
             // Dispatch event for other scripts that depend on templates
