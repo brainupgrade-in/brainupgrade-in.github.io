@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevOps Gheware - Kubernetes Virtual Lab Platform. Learn Kubernetes, Docker, CI/CD with hands-on labs. Enterprise-grade DevOps training for developers and teams.">
+    <meta name="keywords" content="kubernetes training, docker training, devops lab, k8s learning, CI/CD pipeline, cloud native, container orchestration, devops certification, CKA, CKAD, CKS">
+    <meta name="author" content="Gheware Technologies">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="DevOps Gheware - Kubernetes Virtual Lab Platform">
+    <meta property="og:description" content="Master Kubernetes and DevOps with hands-on virtual labs. Enterprise-grade training platform for developers and teams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brainupgrade-in.github.io">
+    <meta property="og:image" content="https://brainupgrade-in.github.io/images/og-image.png">
+
+    <title>DevOps Gheware - Kubernetes Virtual Lab Platform</title>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "DevOps Gheware",
+      "url": "https://brainupgrade-in.github.io",
+      "description": "Enterprise-grade Kubernetes and DevOps training platform with hands-on virtual labs",
+      "sameAs": [
+        "https://twitter.com/gheware_tech",
+        "https://linkedin.com/company/gheware-technologies"
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics (GA4) - Reusable Loader -->
+    <script src="js/analytics-loader.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/premium.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-premium">
+        <div class="container">
+            <nav class="nav-wrapper">
+                <a href="/" class="logo-container">
+                    <div class="logo-icon">
+                        <!-- DevOps Logo SVG -->
+                        <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">DevOps Gheware</span>
+                        <span class="brand-tagline" id="header-tagline">Kubernetes Virtual Lab</span>
+                    </div>
+                </a>
+                <div class="nav-menu">
+                    <ul class="nav-links-premium">
+                        <li><a href="#features" class="nav-link">Features</a></li>
+                        <li><a href="#labs" class="nav-link">Labs</a></li>
+                        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                        <li><a href="/blog" class="nav-link">Blog</a></li>
+                    </ul>
+                    <a href="https://brainupgrade.in" class="btn-header-primary">
+                        <span class="btn-icon">🚀</span>
+                        <span>Start Lab</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-premium devops-hero">
+        <div class="hero-background">
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content-premium">
+                <div class="hero-main">
+                    <div class="hero-badge-container">
+                        <span class="hero-badge">
+                            <span>☸️</span>
+                            Kubernetes Virtual Lab Platform
+                            <span class="badge-pulse"></span>
+                        </span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        <span class="title-main">Master Kubernetes</span>
+                        <span class="title-highlight">With Hands-On Labs</span>
+                        <span class="title-sub">Enterprise-Grade DevOps Training</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Real Kubernetes clusters. Real-world scenarios. Zero infrastructure setup.<br>
+                        Learn Docker, Kubernetes, CI/CD, and cloud-native technologies with interactive labs.
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Labs</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">CKA/CKAD</span>
+                            <span class="stat-label">Prep</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Access</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="https://brainupgrade.in" class="btn-hero-primary">
+                            <span class="btn-content">
+                                <span class="btn-text">Start Free Lab</span>
+                                <span class="btn-subtext">No credit card required</span>
+                            </span>
+                            <span class="btn-icon-arrow">→</span>
+                        </a>
+                        <a href="#features" class="btn-hero-secondary">
+                            <span class="play-icon">📖</span>
+                            <span>View Curriculum</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-icons">
+                            <span class="trust-item">✅ Real K8s clusters</span>
+                            <span class="trust-item">✅ Browser-based access</span>
+                            <span class="trust-item">✅ Instant provisioning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-premium">
+        <div class="container">
+            <div class="section-header-premium">
+                <div class="section-badge">
+                    <span class="badge-text">☸️ Platform Features</span>
+                </div>
+                <h2 class="section-title-premium">
+                    Everything You Need to<br>Master Kubernetes
+                </h2>
+                <p class="section-description-premium">
+                    Production-grade learning environment with real clusters and hands-on scenarios
+                </p>
+            </div>
+
+            <div class="features-grid-premium">
+                <!-- Feature 1 -->
+                <div class="feature-card-premium">
+                    <span class="feature-icon">☸️</span>
+                    <h3 class="feature-title-premium">Real Kubernetes Clusters</h3>
+                    <p class="feature-description">
+                        Practice on actual multi-node K8s clusters, not simulations. Deploy pods, services, and ingress controllers.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card-premium">
+                    <span class="feature-icon">🐳</span>
+                    <h3 class="feature-title-premium">Docker & Containers</h3>
+                    <p class="feature-description">
+                        Build, push, and deploy container images. Learn Dockerfile best practices and multi-stage builds.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card-premium">
+                    <span class="feature-icon">🔄</span>
+                    <h3 class="feature-title-premium">CI/CD Pipelines</h3>
+                    <p class="feature-description">
+                        Implement GitOps workflows with Jenkins, GitHub Actions, and ArgoCD. Automate your deployments.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card-premium">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title-premium">Observability Stack</h3>
+                    <p class="feature-description">
+                        Monitor with Prometheus and Grafana. Learn logging, metrics, and distributed tracing.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card-premium">
+                    <span class="feature-icon">🔐</span>
+                    <h3 class="feature-title-premium">Security Best Practices</h3>
+                    <p class="feature-description">
+                        Implement RBAC, Network Policies, Pod Security. Prepare for CKS certification.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card-premium">
+                    <span class="feature-icon">☁️</span>
+                    <h3 class="feature-title-premium">Cloud Provider Labs</h3>
+                    <p class="feature-description">
+                        Practice on EKS, GKE, and AKS environments. Learn cloud-native integrations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Labs Section -->
+    <section id="labs" class="products-premium">
+        <div class="container">
+            <div class="section-header-premium">
+                <div class="section-badge">
+                    <span class="badge-text">🎓 Learning Paths</span>
+                </div>
+                <h2 class="section-title-premium">
+                    Structured Learning Paths
+                </h2>
+                <p class="section-description-premium">
+                    From beginner to certified Kubernetes administrator
+                </p>
+            </div>
+
+            <div class="products-grid-premium">
+                <!-- CKA Path -->
+                <div class="product-card-premium featured-card">
+                    <div class="card-header">
+                        <div class="product-icon-premium devops-icon">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="featured-badge">POPULAR</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-title">CKA Preparation</h3>
+                        <p class="product-description">
+                            Certified Kubernetes Administrator exam preparation with hands-on labs covering all exam objectives.
+                        </p>
+                        <ul class="features-list-premium">
+                            <li>✅ Cluster architecture & installation</li>
+                            <li>✅ Workloads & scheduling</li>
+                            <li>✅ Services & networking</li>
+                            <li>✅ Storage & troubleshooting</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://brainupgrade.in" class="btn-product-primary">
+                            <span>Start CKA Labs</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CKAD Path -->
+                <div class="product-card-premium">
+                    <div class="card-header">
+                        <div class="product-icon-premium devops-icon">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            </svg>
+                        </div>
+                        <span class="new-badge">NEW</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-title">CKAD Preparation</h3>
+                        <p class="product-description">
+                            Certified Kubernetes Application Developer labs focused on building and deploying applications.
+                        </p>
+                        <ul class="features-list-premium">
+                            <li>✅ Pod design patterns</li>
+                            <li>✅ ConfigMaps & Secrets</li>
+                            <li>✅ Multi-container pods</li>
+                            <li>✅ Observability & debugging</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://brainupgrade.in" class="btn-product-secondary">
+                            <span>Start CKAD Labs</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="features-premium" style="background: white;">
+        <div class="container">
+            <div class="section-header-premium">
+                <div class="section-badge">
+                    <span class="badge-text">💰 Pricing</span>
+                </div>
+                <h2 class="section-title-premium">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="section-description-premium">
+                    Start free, upgrade when you need more
+                </p>
+            </div>
+
+            <!-- Pricing cards will go here -->
+            <div class="products-grid-premium">
+                <!-- Free Tier -->
+                <div class="product-card-premium">
+                    <div class="card-content">
+                        <h3 class="product-title">Free Tier</h3>
+                        <div class="pricing-info">
+                            <span class="price-tag">Free</span>
+                            <span class="price-note">forever</span>
+                        </div>
+                        <ul class="features-list-premium">
+                            <li>✅ 5 basic labs</li>
+                            <li>✅ 1 hour session limit</li>
+                            <li>✅ Community support</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://brainupgrade.in" class="btn-product-secondary">
+                            <span>Get Started</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pro Tier -->
+                <div class="product-card-premium featured-card">
+                    <div class="card-header">
+                        <span class="featured-badge">BEST VALUE</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="product-title">Pro</h3>
+                        <div class="pricing-info">
+                            <span class="price-tag">Contact Us</span>
+                            <span class="price-note">for pricing</span>
+                        </div>
+                        <ul class="features-list-premium">
+                            <li>✅ All 50+ labs</li>
+                            <li>✅ Unlimited session time</li>
+                            <li>✅ Priority support</li>
+                            <li>✅ Certificate of completion</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <a href="mailto:contact@gheware.com" class="btn-product-primary">
+                            <span>Contact Sales</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-premium">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-badge">
+                    <span class="badge-text">🚀 Start Today</span>
+                </div>
+                <h2 class="cta-title">
+                    Ready to Master Kubernetes?
+                </h2>
+                <p class="cta-description">
+                    Join developers and teams who are accelerating their cloud-native journey with hands-on Kubernetes labs.
+                </p>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <span class="feature-icon">✅</span>
+                        <span>No credit card required</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="feature-icon">✅</span>
+                        <span>Instant lab access</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="feature-icon">✅</span>
+                        <span>Real Kubernetes clusters</span>
+                    </div>
+                </div>
+                <div class="cta-actions">
+                    <a href="https://brainupgrade.in" class="btn-cta-primary">
+                        <span>Start Free Lab Now</span>
+                        <span class="btn-icon-arrow">→</span>
+                    </a>
+                </div>
+                <p class="trust-text">
+                    Trusted by developers and teams worldwide
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="footer-brand-text">
+                            <span class="brand-name">DevOps Gheware</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Enterprise-grade Kubernetes and DevOps training platform with hands-on virtual labs.
+                    </p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>contact@gheware.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 class="section-title">Platform</h4>
+                        <ul class="links-list">
+                            <li><a href="#features" class="footer-link">Features</a></li>
+                            <li><a href="#labs" class="footer-link">Labs</a></li>
+                            <li><a href="#pricing" class="footer-link">Pricing</a></li>
+                            <li><a href="/blog" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="section-title">Learning Paths</h4>
+                        <ul class="links-list">
+                            <li><a href="https://brainupgrade.in" class="footer-link">CKA Prep</a></li>
+                            <li><a href="https://brainupgrade.in" class="footer-link">CKAD Prep</a></li>
+                            <li><a href="https://brainupgrade.in" class="footer-link">CKS Prep</a></li>
+                            <li><a href="https://brainupgrade.in" class="footer-link">Docker Basics</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="section-title">Company</h4>
+                        <ul class="links-list">
+                            <li><a href="https://gheware.com" class="footer-link">About Us</a></li>
+                            <li><a href="mailto:contact@gheware.com" class="footer-link">Contact</a></li>
+                            <li><a href="/privacy.html" class="footer-link">Privacy Policy</a></li>
+                            <li><a href="/terms.html" class="footer-link">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="footer-legal">
+                        <span class="copyright">&copy; 2025 Gheware Technologies. All rights reserved.</span>
+                        <div class="legal-links">
+                            <a href="/privacy.html" class="legal-link">Privacy</a>
+                            <a href="/terms.html" class="legal-link">Terms</a>
+                        </div>
+                    </div>
+                    <div class="footer-badges">
+                        <span class="badge-item">Made in India 🇮🇳</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

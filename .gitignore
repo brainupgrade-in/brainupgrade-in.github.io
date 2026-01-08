@@ -1,0 +1,38 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if using any build tools)
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Build outputs (if any)
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Credentials (never commit)
+**/credentials*.json
+**/token*.pickle
+**/*secret*

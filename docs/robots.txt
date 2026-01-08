@@ -1,0 +1,10 @@
+# Robots.txt for brainupgrade-in.github.io
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://brainupgrade-in.github.io/sitemap.xml
+
+# Crawl-delay (optional, be nice to servers)
+Crawl-delay: 1

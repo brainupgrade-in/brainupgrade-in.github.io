@@ -1,0 +1,116 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: devops-gheware
+  labels:
+    app: devops-gheware
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-gheware
+  namespace: devops-gheware
+  labels:
+    app: devops-gheware
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-gheware
+  template:
+    metadata:
+      labels:
+        app: devops-gheware
+    spec:
+      containers:
+        - name: devops-gheware
+          image: asia-south1-docker.pkg.dev/carbon-minutia-476813-m8/gheware-com-docker-repo/devops-gheware:latest  # Updated by CI/CD
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: 250m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          env:
+            - name: NGINX_ENTRYPOINT_QUIET_LOGS
+              value: "1"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-gheware-service
+  namespace: devops-gheware
+  labels:
+    app: devops-gheware
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: devops-gheware
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: devops-gheware-ingress
+  namespace: devops-gheware
+  labels:
+    app: devops-gheware
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - devops.gheware.com
+        - www.devops.gheware.com
+      secretName: devops-gheware-tls-secret
+  rules:
+    - host: devops.gheware.com
+      http:
+        paths:
+          - path: /?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: devops-gheware-service
+                port:
+                  number: 80
+    - host: www.devops.gheware.com
+      http:
+        paths:
+          - path: /?(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: devops-gheware-service
+                port:
+                  number: 80
