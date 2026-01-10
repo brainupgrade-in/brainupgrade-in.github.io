@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform in 10 Minutes | Gheware DevOps AI">
+    <meta name="description" content="Master Claude Code for DevOps workflows. Learn to generate Dockerfiles, Kubernetes manifests, Terraform configs, and CI/CD pipelines using AI - with real examples.">
+    <meta name="keywords" content="Claude Code, DevOps, Docker, Kubernetes, Terraform, AI coding, Claude AI, Infrastructure as Code, CI/CD, YAML generation, DevOps automation">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html">
+    <meta property="og:title" content="Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform in 10 Minutes">
+    <meta property="og:description" content="Master Claude Code for DevOps workflows. Learn to generate Dockerfiles, Kubernetes manifests, Terraform configs, and CI/CD pipelines using AI.">
+    <meta property="og:image" content="https://brainupgrade-in.github.io/blog/assets/images/claude-code-for-devops-engineers-2026-hero.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-01-09T10:00:00+05:30">
+    <meta property="article:modified_time" content="2026-01-10T15:00:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="DevOps & AI">
+    <meta property="article:tag" content="Claude Code">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Terraform">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform in 10 Minutes">
+    <meta name="twitter:description" content="Master Claude Code for DevOps workflows. Generate Dockerfiles, K8s manifests, and Terraform configs using AI.">
+    <meta name="twitter:image" content="https://brainupgrade-in.github.io/blog/assets/images/claude-code-for-devops-engineers-2026-hero.svg">
+
+    <title>Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html"
+        },
+        "headline": "Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform in 10 Minutes",
+        "description": "Master Claude Code for DevOps workflows. Learn to generate Dockerfiles, Kubernetes manifests, Terraform configs, and CI/CD pipelines using AI.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://brainupgrade-in.github.io/blog/assets/images/claude-code-for-devops-engineers-2026-hero.svg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-01-09T10:00:00+05:30",
+        "dateModified": "2026-01-10T15:00:00+05:30",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://brainupgrade-in.github.io",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://brainupgrade-in.github.io/favicon.svg"
+            }
+        },
+        "keywords": "Claude Code, DevOps, Docker, Kubernetes, Terraform, AI coding, Infrastructure as Code",
+        "articleSection": "DevOps & AI",
+        "wordCount": "4200",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainupgrade-in.github.io/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://brainupgrade-in.github.io/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Claude Code for DevOps Engineers", "item": "https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html"}
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Claude Code and how does it help DevOps engineers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Code is Anthropic's AI-powered CLI tool that understands your entire codebase and can generate, edit, and explain infrastructure code. For DevOps engineers, it can create Dockerfiles, Kubernetes manifests, Terraform configurations, and CI/CD pipelines by understanding your project context and following best practices automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can Claude Code generate production-ready Kubernetes manifests?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Claude Code can generate production-ready Kubernetes manifests including Deployments, Services, ConfigMaps, Secrets, Ingress, HPA, PDB, and NetworkPolicies. It understands context from your existing code and applies best practices like resource limits, health checks, and security contexts automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I install Claude Code for DevOps work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Install Claude Code globally using npm: 'npm install -g @anthropic-ai/claude-code'. Then navigate to any project directory and run 'claude' to start. Claude Code works best when you have a CLAUDE.md file in your project root that describes your infrastructure conventions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude Code free for DevOps use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Code requires an Anthropic API subscription. The Pro plan ($20/month) includes generous usage limits suitable for most DevOps workflows. The cost is typically offset by time saved - generating a complex Terraform module takes seconds instead of hours."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can Claude Code work with existing Terraform modules?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Claude Code excels at working with existing infrastructure code. It can read your current Terraform modules, understand variable patterns, and extend them consistently. It can also refactor existing configurations and generate documentation for your modules."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Claude Code for DevOps</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">DevOps & AI</span>
+                    <span class="reading-time">15 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform in 10 Minutes</h1>
+                <p class="post-subtitle" itemprop="description">Stop writing YAML by hand. Learn how Claude Code can generate production-ready Dockerfiles, Kubernetes manifests, and Terraform configurations using natural language.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-01-09T10:00:00+05:30">January 9, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html&text=Claude%20Code%20for%20DevOps%20Engineers" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/claude-code-for-devops-engineers-2026-hero.svg"
+                     alt="Claude Code for DevOps Engineers - Docker, Kubernetes, Terraform"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>Claude Code transforms DevOps workflows with AI-powered infrastructure generation</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Zero YAML writing:</strong> Claude Code generates production-ready Dockerfiles, K8s manifests, and Terraform configs from natural language</li>
+                    <li><strong>Context-aware:</strong> It reads your existing code (package.json, requirements.txt) to generate appropriate configurations</li>
+                    <li><strong>Best practices built-in:</strong> Automatic resource limits, health checks, security contexts, and multi-stage builds</li>
+                    <li><strong>10x faster:</strong> What takes hours manually takes seconds with Claude Code</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#introduction">Introduction: Why DevOps Engineers Need Claude Code</a></li>
+                    <li><a href="#setup">Setting Up Claude Code for DevOps</a></li>
+                    <li><a href="#docker">Docker Workflows with Claude Code</a></li>
+                    <li><a href="#kubernetes">Kubernetes Manifest Generation</a></li>
+                    <li><a href="#terraform">Terraform Infrastructure as Code</a></li>
+                    <li><a href="#cicd">CI/CD Pipeline Generation</a></li>
+                    <li><a href="#claude-md">The Power of CLAUDE.md for DevOps</a></li>
+                    <li><a href="#best-practices">Best Practices & Tips</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- Introduction -->
+                <section id="introduction">
+                    <h2>Introduction: Why DevOps Engineers Need Claude Code</h2>
+
+                    <p>I haven't written YAML by hand in three weeks. Let that sink in.</p>
+
+                    <p>As a DevOps engineer with 25+ years of experience, I've spent countless hours crafting Dockerfiles, debugging Kubernetes manifests, and refactoring Terraform modules. The repetitive nature of infrastructure code has always been a necessary evil—until now.</p>
+
+                    <p><strong>Claude Code</strong> is Anthropic's AI-powered command-line tool that doesn't just suggest code—it understands your entire project and generates production-ready infrastructure configurations. Unlike ChatGPT where you copy-paste code back and forth, Claude Code works directly in your terminal, reading your files and making changes with your approval.</p>
+
+                    <h3>What Makes Claude Code Different for DevOps?</h3>
+
+                    <ul>
+                        <li><strong>Context Awareness:</strong> It reads your <code>package.json</code>, <code>requirements.txt</code>, or <code>go.mod</code> to understand your application</li>
+                        <li><strong>Best Practices by Default:</strong> Multi-stage Docker builds, resource limits, security contexts—all automatic</li>
+                        <li><strong>Direct File Access:</strong> No copy-paste. Claude edits files directly with your approval</li>
+                        <li><strong>Infrastructure Knowledge:</strong> Deep understanding of Docker, Kubernetes, Terraform, and CI/CD patterns</li>
+                    </ul>
+
+                    <p>In this guide, I'll show you exactly how I use Claude Code for real DevOps workflows—with actual commands and outputs you can replicate today.</p>
+                </section>
+
+                <!-- Setup -->
+                <section id="setup">
+                    <h2>Setting Up Claude Code for DevOps</h2>
+
+                    <h3>Installation</h3>
+
+                    <p>Claude Code requires Node.js 18+ and an Anthropic API key:</p>
+
+                    <pre><code class="language-bash"># Install Claude Code globally
+npm install -g @anthropic-ai/claude-code
+
+# Verify installation
+claude --version
+
+# Start Claude Code in any project
+cd /path/to/your/project
+claude</code></pre>
+
+                    <h3>First Run</h3>
+
+                    <p>When you first run <code>claude</code>, it will:</p>
+                    <ol>
+                        <li>Ask for your Anthropic API key (one-time setup)</li>
+                        <li>Scan your project structure</li>
+                        <li>Read key files to understand context</li>
+                        <li>Present an interactive prompt</li>
+                    </ol>
+
+                    <div class="info-box">
+                        <strong>Pro Tip:</strong> Create a <code>CLAUDE.md</code> file in your project root. Claude reads this first and follows your conventions. More on this in the <a href="#claude-md">CLAUDE.md section</a>.
+                    </div>
+                </section>
+
+                <!-- Docker -->
+                <section id="docker">
+                    <h2>Docker Workflows with Claude Code</h2>
+
+                    <p>Let's start with what DevOps engineers do daily: containerizing applications.</p>
+
+                    <h3>Example 1: Generate a Production Dockerfile</h3>
+
+                    <p>Instead of writing a Dockerfile from scratch, I simply ask:</p>
+
+                    <pre><code class="language-text">&gt; Create a production-ready Dockerfile for this Node.js application with multi-stage build</code></pre>
+
+                    <p>Claude Code reads my <code>package.json</code>, understands the application structure, and generates:</p>
+
+                    <pre><code class="language-dockerfile"># Build stage
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+RUN npm run build
+
+# Production stage
+FROM node:20-alpine AS production
+WORKDIR /app
+
+# Security: Run as non-root user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+USER nodejs
+
+# Copy only production artifacts
+COPY --from=builder --chown=nodejs:nodejs /app/dist ./dist
+COPY --from=builder --chown=nodejs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nodejs:nodejs /app/package.json ./
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD node -e "require('http').get('http://localhost:3000/health', (r) =&gt; process.exit(r.statusCode === 200 ? 0 : 1))"
+
+EXPOSE 3000
+CMD ["node", "dist/index.js"]</code></pre>
+
+                    <p>Notice what Claude included automatically:</p>
+                    <ul>
+                        <li>Multi-stage build (smaller final image)</li>
+                        <li>Non-root user (security best practice)</li>
+                        <li>Health check (required for orchestrators)</li>
+                        <li>Proper COPY ordering (layer caching)</li>
+                        <li><code>npm ci</code> instead of <code>npm install</code> (deterministic builds)</li>
+                    </ul>
+
+                    <h3>Example 2: Optimize an Existing Dockerfile</h3>
+
+                    <pre><code class="language-text">&gt; Analyze my Dockerfile and suggest optimizations for smaller image size</code></pre>
+
+                    <p>Claude reads the existing Dockerfile and provides specific recommendations with exact changes.</p>
+
+                    <h3>Example 3: Docker Compose for Development</h3>
+
+                    <pre><code class="language-text">&gt; Create a docker-compose.yml for local development with PostgreSQL, Redis, and hot-reload</code></pre>
+
+                    <p>Claude generates a complete compose file with service dependencies, volume mounts, environment variables, health checks, and network configuration.</p>
+                </section>
+
+                <!-- Kubernetes -->
+                <section id="kubernetes">
+                    <h2>Kubernetes Manifest Generation</h2>
+
+                    <p>This is where Claude Code truly shines. Kubernetes YAML is verbose and error-prone. Claude handles the complexity.</p>
+
+                    <h3>Example 1: Complete Application Stack</h3>
+
+                    <pre><code class="language-text">&gt; Create Kubernetes manifests for production deployment: Deployment, Service, Ingress, HPA, and PDB</code></pre>
+
+                    <p>Claude generates a complete set of manifests:</p>
+
+                    <pre><code class="language-yaml"># deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+    version: v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+        version: v1
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - name: myapp
+        image: myapp:latest
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: http
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: http
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 80
+    targetPort: http
+    name: http
+---
+# hpa.yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: myapp
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: myapp
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+---
+# pdb.yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: myapp
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: myapp</code></pre>
+
+                    <h3>Example 2: Debug Kubernetes Issues</h3>
+
+                    <pre><code class="language-text">&gt; My pods are in CrashLoopBackOff. Here's kubectl describe output: [paste output]</code></pre>
+
+                    <p>Claude analyzes the output and provides specific fixes—not generic advice.</p>
+
+                    <h3>Example 3: Helm Chart Generation</h3>
+
+                    <pre><code class="language-text">&gt; Convert these Kubernetes manifests into a Helm chart with configurable values</code></pre>
+
+                    <p>Claude creates a complete Helm chart structure with <code>Chart.yaml</code>, <code>values.yaml</code>, and templatized manifests.</p>
+                </section>
+
+                <!-- Terraform -->
+                <section id="terraform">
+                    <h2>Terraform Infrastructure as Code</h2>
+
+                    <p>Terraform modules can be complex. Claude Code understands HCL and cloud provider APIs.</p>
+
+                    <h3>Example 1: AWS EKS Cluster</h3>
+
+                    <pre><code class="language-text">&gt; Create a Terraform module for AWS EKS with managed node groups, VPC, and IRSA support</code></pre>
+
+                    <p>Claude generates a complete, production-ready module:</p>
+
+                    <pre><code class="language-hcl"># main.tf
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "~&gt; 6.0"
+
+  name = "${var.cluster_name}-vpc"
+  cidr = var.vpc_cidr
+
+  azs             = var.availability_zones
+  private_subnets = var.private_subnet_cidrs
+  public_subnets  = var.public_subnet_cidrs
+
+  enable_nat_gateway   = true
+  single_nat_gateway   = var.environment != "production"
+  enable_dns_hostnames = true
+
+  public_subnet_tags = {
+    "kubernetes.io/role/elb" = 1
+  }
+
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb" = 1
+  }
+
+  tags = var.tags
+}
+
+module "eks" {
+  source  = "terraform-aws-modules/eks/aws"
+  version = "~&gt; 21.0"
+
+  cluster_name    = var.cluster_name
+  cluster_version = var.kubernetes_version
+
+  vpc_id     = module.vpc.vpc_id
+  subnet_ids = module.vpc.private_subnets
+
+  cluster_endpoint_public_access = true
+
+  eks_managed_node_groups = {
+    default = {
+      min_size     = var.node_min_size
+      max_size     = var.node_max_size
+      desired_size = var.node_desired_size
+
+      instance_types = var.node_instance_types
+      capacity_type  = "ON_DEMAND"
+    }
+  }
+
+  # IRSA
+  enable_irsa = true
+
+  tags = var.tags
+}</code></pre>
+
+                    <h3>Example 2: Refactor Existing Terraform</h3>
+
+                    <pre><code class="language-text">&gt; Refactor this Terraform code to use modules and follow best practices</code></pre>
+
+                    <p>Claude reads your existing <code>.tf</code> files and restructures them properly.</p>
+                </section>
+
+                <!-- CI/CD -->
+                <section id="cicd">
+                    <h2>CI/CD Pipeline Generation</h2>
+
+                    <h3>GitHub Actions</h3>
+
+                    <pre><code class="language-text">&gt; Create a GitHub Actions workflow for: lint, test, build Docker image, push to ECR, deploy to EKS</code></pre>
+
+                    <p>Claude generates a complete workflow:</p>
+
+                    <pre><code class="language-yaml">name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: myapp
+  EKS_CLUSTER: production
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+
+  build-and-push:
+    needs: lint-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - name: Build and push
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Deploy to EKS
+        run: |
+          aws eks update-kubeconfig --name $EKS_CLUSTER
+          kubectl set image deployment/myapp myapp=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          kubectl rollout status deployment/myapp</code></pre>
+                </section>
+
+                <!-- CLAUDE.md -->
+                <section id="claude-md">
+                    <h2>The Power of CLAUDE.md for DevOps</h2>
+
+                    <p>The <code>CLAUDE.md</code> file is your secret weapon. It tells Claude about your project's specific conventions.</p>
+
+                    <h3>Example CLAUDE.md for DevOps Projects</h3>
+
+                    <pre><code class="language-markdown"># CLAUDE.md - DevOps Project Guidelines
+
+## Infrastructure Conventions
+
+### Docker
+- Always use multi-stage builds
+- Base images: node:20-alpine, python:3.11-slim, golang:1.21-alpine
+- Run as non-root user (UID 1000)
+- Include HEALTHCHECK in all Dockerfiles
+
+### Kubernetes
+- Namespace: Use environment-based namespaces (dev, staging, prod)
+- Labels: Always include app, version, environment
+- Resources: Always set requests AND limits
+- Security: runAsNonRoot: true, readOnlyRootFilesystem where possible
+
+### Terraform
+- Backend: S3 with DynamoDB locking
+- Provider versions: Pin to minor version (~&gt; 5.0)
+- Naming: {project}-{environment}-{resource}
+- Tags: Always include Environment, Project, ManagedBy=Terraform
+
+### CI/CD
+- Platform: GitHub Actions
+- Docker registry: AWS ECR
+- Kubernetes: AWS EKS
+- Secrets: Use GitHub Secrets, never hardcode</code></pre>
+
+                    <p>With this file, every time you ask Claude to generate infrastructure, it follows YOUR conventions automatically.</p>
+                </section>
+
+                <!-- Best Practices -->
+                <section id="best-practices">
+                    <h2>Best Practices & Tips</h2>
+
+                    <h3>1. Be Specific in Your Requests</h3>
+                    <p>Instead of "create a Dockerfile", say "create a production Dockerfile for Node.js 20 with multi-stage build, non-root user, and health check".</p>
+
+                    <h3>2. Review Before Applying</h3>
+                    <p>Claude shows diffs before making changes. Always review, especially for infrastructure code.</p>
+
+                    <h3>3. Use CLAUDE.md</h3>
+                    <p>Invest 10 minutes creating a good <code>CLAUDE.md</code>. It pays dividends on every interaction.</p>
+
+                    <h3>4. Iterate Incrementally</h3>
+                    <p>Generate base configuration first, then ask for additions: "Now add network policies" or "Add pod anti-affinity".</p>
+
+                    <h3>5. Ask for Explanations</h3>
+                    <p>After generation, ask "explain why you chose these resource limits" to learn best practices.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What is Claude Code and how does it help DevOps engineers?</h3>
+                        <p>Claude Code is Anthropic's AI-powered CLI tool that understands your entire codebase and can generate, edit, and explain infrastructure code. For DevOps engineers, it can create Dockerfiles, Kubernetes manifests, Terraform configurations, and CI/CD pipelines by understanding your project context and following best practices automatically.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can Claude Code generate production-ready Kubernetes manifests?</h3>
+                        <p>Yes, Claude Code can generate production-ready Kubernetes manifests including Deployments, Services, ConfigMaps, Secrets, Ingress, HPA, PDB, and NetworkPolicies. It understands context from your existing code and applies best practices like resource limits, health checks, and security contexts automatically.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I install Claude Code for DevOps work?</h3>
+                        <p>Install Claude Code globally using npm: <code>npm install -g @anthropic-ai/claude-code</code>. Then navigate to any project directory and run <code>claude</code> to start. Claude Code works best when you have a CLAUDE.md file in your project root that describes your infrastructure conventions.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is Claude Code free for DevOps use?</h3>
+                        <p>Claude Code requires an Anthropic API subscription. The Pro plan ($20/month) includes generous usage limits suitable for most DevOps workflows. The cost is typically offset by time saved—generating a complex Terraform module takes seconds instead of hours.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can Claude Code work with existing Terraform modules?</h3>
+                        <p>Yes, Claude Code excels at working with existing infrastructure code. It can read your current Terraform modules, understand variable patterns, and extend them consistently. It can also refactor existing configurations and generate documentation for your modules.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+
+                    <p>Claude Code has fundamentally changed how I approach DevOps work. What used to take hours—crafting Dockerfiles, debugging Kubernetes manifests, writing Terraform modules—now takes minutes.</p>
+
+                    <p>The key is understanding that Claude Code isn't just a code generator. It's a context-aware assistant that understands your project, your conventions, and DevOps best practices.</p>
+
+                    <p><strong>Start small:</strong> Install Claude Code, create a <code>CLAUDE.md</code> with your conventions, and ask it to generate a Dockerfile for your next project. You'll never go back to writing YAML by hand.</p>
+
+                    <h3>Next Steps</h3>
+                    <ul>
+                        <li><a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank" rel="noopener">Official Claude Code Documentation</a></li>
+                        <li><a href="https://brainupgrade.in" target="_blank">Practice Kubernetes with Hands-On Labs</a></li>
+                        <li><a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A" target="_blank" rel="noopener">Watch Video Tutorials on Gheware DevOps AI</a></li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Author Bio Placeholder -->
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">AI & Machine Learning</span>
+                            <h3 class="blog-card-title">
+                                <a href="/blog/posts/langchain-complete-guide-2026.html">LangChain Complete Guide 2026</a>
+                            </h3>
+                            <p class="blog-card-excerpt">Master the LangChain framework for building AI applications.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Practice Kubernetes?</h2>
+                <p>Apply what you've learned with hands-on Kubernetes labs. Real clusters, real scenarios.</p>
+                <a href="https://brainupgrade.in" class="btn-cta-primary">
+                    <span>Start Free Lab</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>
