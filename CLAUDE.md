@@ -136,7 +136,14 @@ git add . && git commit -m "Update site" && git push origin main
 
 ---
 
-## Blog Content (Future)
+## Blog Content
+
+### Published Posts
+
+| Post | Category | Published |
+|------|----------|-----------|
+| [Claude Code for DevOps Engineers 2026](/docs/blog/posts/claude-code-for-devops-engineers-2026.html) | DevOps & AI | Jan 9, 2026 |
+| [LangChain Complete Guide 2026](/docs/blog/posts/langchain-complete-guide-2026.html) | AI & ML | Jan 8, 2026 |
 
 ### Blog Post Creation Checklist
 
@@ -144,7 +151,7 @@ git add . && git commit -m "Update site" && git push origin main
 1. **Hero Image:** 1200x630px, green gradient, DevOps-relevant icons
 2. **Metadata:** BlogPosting schema, Open Graph, Twitter Cards
 3. **Structure:** Key Takeaways → Content → Author Bio → Footer
-4. **Categories:** Kubernetes, Docker, CI/CD, Cloud Native, Certifications
+4. **Categories:** Kubernetes, Docker, CI/CD, Cloud Native, Certifications, DevOps & AI
 
 **Reference Template:**
 - `/docs/blog/posts/_template.html`
@@ -215,7 +222,7 @@ git add . && git commit -m "Update site" && git push origin main
 
 ---
 
-**Last Updated:** 2026-01-08
+**Last Updated:** 2026-01-09
 **Repository:** https://github.com/brainupgrade-in/brainupgrade-in.github.io
 **Local Path:** /home/rajesh/devops.gheware.com
 **Primary Goal:** Drive signups to https://brainupgrade.in Kubernetes Labs
