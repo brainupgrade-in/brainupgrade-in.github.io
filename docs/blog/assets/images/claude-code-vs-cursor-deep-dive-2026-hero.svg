@@ -1,173 +1,141 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <!-- Gradient Background -->
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f172a"/>
-      <stop offset="50%" style="stop-color:#1e293b"/>
-      <stop offset="100%" style="stop-color:#10b981"/>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
     </linearGradient>
 
-    <!-- Glow Effect -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+    <!-- Claude Purple Glow -->
+    <filter id="claudeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feFlood flood-color="#8b5cf6" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Claude Code Gradient (Purple/Violet) -->
-    <linearGradient id="claudeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b5cf6"/>
-      <stop offset="100%" style="stop-color:#a78bfa"/>
-    </linearGradient>
+    <!-- Cursor Blue Glow -->
+    <filter id="cursorGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feFlood flood-color="#3b82f6" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
 
-    <!-- Cursor Gradient (Blue) -->
-    <linearGradient id="cursorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6"/>
-      <stop offset="100%" style="stop-color:#60a5fa"/>
-    </linearGradient>
+    <!-- VS Fire Glow -->
+    <filter id="vsGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#ef4444" flood-opacity="0.8"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
 
-    <!-- VS Gradient -->
-    <linearGradient id="vsGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981"/>
-      <stop offset="100%" style="stop-color:#34d399"/>
-    </linearGradient>
+    <!-- Text Shadow -->
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
 
-  <!-- Grid Pattern -->
-  <g opacity="0.1">
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#10b981" stroke-width="1"/>
-    </pattern>
-    <rect width="1200" height="630" fill="url(#grid)"/>
-  </g>
+  <!-- Dramatic Light Beams -->
+  <polygon points="0,0 600,630 0,630" fill="#8b5cf6" opacity="0.08"/>
+  <polygon points="1200,0 600,630 1200,630" fill="#3b82f6" opacity="0.08"/>
 
-  <!-- Decorative Circles -->
-  <circle cx="150" cy="100" r="200" fill="#8b5cf6" opacity="0.05"/>
-  <circle cx="1050" cy="100" r="200" fill="#3b82f6" opacity="0.05"/>
-  <circle cx="600" cy="530" r="250" fill="#10b981" opacity="0.05"/>
+  <!-- Left Glow Zone (Claude) -->
+  <ellipse cx="250" cy="280" rx="280" ry="300" fill="#8b5cf6" opacity="0.15"/>
 
-  <!-- Claude Code Panel (Left) -->
-  <g transform="translate(80, 120)">
-    <!-- Terminal Window -->
-    <rect x="0" y="0" width="420" height="280" rx="12" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+  <!-- Right Glow Zone (Cursor) -->
+  <ellipse cx="950" cy="280" rx="280" ry="300" fill="#3b82f6" opacity="0.15"/>
 
-    <!-- Terminal Header -->
-    <rect x="0" y="0" width="420" height="36" rx="12" fill="#1e293b"/>
-    <rect x="0" y="24" width="420" height="12" fill="#1e293b"/>
+  <!-- CLAUDE CODE Side -->
+  <g transform="translate(100, 140)">
+    <!-- Claude Icon/Logo Box -->
+    <rect x="50" y="0" width="200" height="200" rx="24" fill="#1e1e2e" stroke="#8b5cf6" stroke-width="4" filter="url(#claudeGlow)"/>
 
-    <!-- Window Controls -->
-    <circle cx="20" cy="18" r="6" fill="#ef4444"/>
-    <circle cx="42" cy="18" r="6" fill="#f59e0b"/>
-    <circle cx="64" cy="18" r="6" fill="#10b981"/>
-
-    <!-- Terminal Title -->
-    <text x="210" y="23" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="12">Claude Code</text>
-
-    <!-- Terminal Content -->
-    <g transform="translate(16, 50)">
-      <text x="0" y="0" fill="#10b981" font-family="monospace" font-size="13">$</text>
-      <text x="16" y="0" fill="#e2e8f0" font-family="monospace" font-size="13">claude</text>
-      <text x="0" y="24" fill="#94a3b8" font-family="monospace" font-size="12">Analyzing codebase...</text>
-      <text x="0" y="48" fill="#8b5cf6" font-family="monospace" font-size="12">&gt; Reading 47 files</text>
-      <text x="0" y="72" fill="#8b5cf6" font-family="monospace" font-size="12">&gt; Planning implementation</text>
-      <text x="0" y="96" fill="#8b5cf6" font-family="monospace" font-size="12">&gt; Executing changes...</text>
-      <text x="0" y="120" fill="#10b981" font-family="monospace" font-size="12">[OK] 12 files modified</text>
-      <text x="0" y="144" fill="#10b981" font-family="monospace" font-size="12">[OK] Tests passing</text>
-      <text x="0" y="168" fill="#10b981" font-family="monospace" font-size="12">[OK] Committed: feat: add auth</text>
-    </g>
-
-    <!-- Blinking cursor -->
-    <rect x="16" y="232" width="8" height="16" fill="#8b5cf6">
-      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-    </rect>
+    <!-- Terminal Symbol -->
+    <text x="150" y="115" text-anchor="middle" fill="#8b5cf6" font-family="monospace" font-size="80" font-weight="bold">&gt;_</text>
 
     <!-- Claude Code Label -->
-    <text x="210" y="310" text-anchor="middle" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Claude Code</text>
-    <text x="210" y="335" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">Autonomous Agent</text>
+    <text x="150" y="180" text-anchor="middle" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="18" font-weight="600">CLAUDE CODE</text>
+
+    <!-- Feature Tags -->
+    <rect x="20" y="230" width="110" height="32" rx="16" fill="#8b5cf6"/>
+    <text x="75" y="252" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">AUTONOMOUS</text>
+
+    <rect x="140" y="230" width="90" height="32" rx="16" fill="#7c3aed"/>
+    <text x="185" y="252" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">80.9%</text>
+
+    <rect x="70" y="272" width="120" height="32" rx="16" fill="#6d28d9"/>
+    <text x="130" y="294" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">$100-200/mo</text>
   </g>
 
-  <!-- VS Badge (Center) -->
-  <g transform="translate(540, 220)">
-    <circle cx="60" cy="60" r="50" fill="#1e293b" stroke="url(#vsGradient)" stroke-width="3"/>
-    <text x="60" y="72" text-anchor="middle" fill="#10b981" font-family="system-ui, sans-serif" font-size="32" font-weight="800">VS</text>
+  <!-- CENTER VS BADGE -->
+  <g transform="translate(510, 180)">
+    <!-- Lightning bolts -->
+    <path d="M90 0 L70 60 L100 60 L80 120" stroke="#fbbf24" stroke-width="6" fill="none" opacity="0.8"/>
+    <path d="M90 0 L110 60 L80 60 L100 120" stroke="#f59e0b" stroke-width="4" fill="none" opacity="0.6"/>
+
+    <!-- VS Circle -->
+    <circle cx="90" cy="60" r="55" fill="#ef4444" filter="url(#vsGlow)"/>
+    <circle cx="90" cy="60" r="45" fill="#dc2626"/>
+    <text x="90" y="78" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="48" font-weight="900">VS</text>
   </g>
 
-  <!-- Cursor Panel (Right) -->
-  <g transform="translate(700, 120)">
-    <!-- IDE Window -->
-    <rect x="0" y="0" width="420" height="280" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+  <!-- CURSOR Side -->
+  <g transform="translate(800, 140)">
+    <!-- Cursor Icon/Logo Box -->
+    <rect x="50" y="0" width="200" height="200" rx="24" fill="#1e1e2e" stroke="#3b82f6" stroke-width="4" filter="url(#cursorGlow)"/>
 
-    <!-- IDE Header -->
-    <rect x="0" y="0" width="420" height="36" rx="12" fill="#1e293b"/>
-    <rect x="0" y="24" width="420" height="12" fill="#1e293b"/>
-
-    <!-- Window Controls -->
-    <circle cx="20" cy="18" r="6" fill="#ef4444"/>
-    <circle cx="42" cy="18" r="6" fill="#f59e0b"/>
-    <circle cx="64" cy="18" r="6" fill="#10b981"/>
-
-    <!-- IDE Title -->
-    <text x="210" y="23" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Cursor IDE</text>
-
-    <!-- Sidebar -->
-    <rect x="0" y="36" width="50" height="244" fill="#1e293b"/>
-    <rect x="16" y="52" width="18" height="18" rx="3" fill="#3b82f6" opacity="0.3"/>
-    <rect x="16" y="78" width="18" height="18" rx="3" fill="#3b82f6" opacity="0.3"/>
-    <rect x="16" y="104" width="18" height="18" rx="3" fill="#3b82f6" opacity="0.3"/>
-
-    <!-- Code Area -->
-    <g transform="translate(60, 50)">
-      <text x="0" y="0" fill="#c084fc" font-family="monospace" font-size="12">function</text>
-      <text x="60" y="0" fill="#60a5fa" font-family="monospace" font-size="12">handleAuth</text>
-      <text x="130" y="0" fill="#e2e8f0" font-family="monospace" font-size="12">() {</text>
-
-      <text x="16" y="24" fill="#94a3b8" font-family="monospace" font-size="12">// Tab to accept</text>
-
-      <!-- Autocomplete suggestion -->
-      <rect x="16" y="36" width="280" height="80" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
-      <text x="26" y="56" fill="#60a5fa" font-family="monospace" font-size="11">const token = await</text>
-      <text x="26" y="76" fill="#94a3b8" font-family="monospace" font-size="11">  getAuthToken(user);</text>
-      <text x="26" y="96" fill="#94a3b8" font-family="monospace" font-size="11">  validateSession(token);</text>
-      <text x="26" y="112" fill="#3b82f6" font-family="monospace" font-size="10">Tab to accept</text>
-
-      <text x="0" y="140" fill="#e2e8f0" font-family="monospace" font-size="12">}</text>
-    </g>
+    <!-- Cursor/IDE Symbol -->
+    <text x="150" y="90" text-anchor="middle" fill="#3b82f6" font-family="monospace" font-size="50" font-weight="bold">{...}</text>
+    <rect x="115" y="110" width="70" height="4" fill="#60a5fa">
+      <animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/>
+    </rect>
 
     <!-- Cursor Label -->
-    <text x="210" y="310" text-anchor="middle" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="20" font-weight="700">Cursor</text>
-    <text x="210" y="335" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">AI-Powered IDE</text>
+    <text x="150" y="180" text-anchor="middle" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="18" font-weight="600">CURSOR</text>
+
+    <!-- Feature Tags -->
+    <rect x="35" y="230" width="100" height="32" rx="16" fill="#3b82f6"/>
+    <text x="85" y="252" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">AI IDE</text>
+
+    <rect x="145" y="230" width="110" height="32" rx="16" fill="#2563eb"/>
+    <text x="200" y="252" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">FAST TAB</text>
+
+    <rect x="70" y="272" width="120" height="32" rx="16" fill="#1d4ed8"/>
+    <text x="130" y="294" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="14" font-weight="700">$20-60/mo</text>
   </g>
 
-  <!-- Main Title -->
-  <text x="600" y="480" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800">
-    Claude Code vs Cursor
+  <!-- MAIN TITLE -->
+  <text x="600" y="480" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="900" filter="url(#textShadow)">
+    WHICH IS BETTER?
   </text>
 
   <!-- Subtitle -->
-  <text x="600" y="525" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="22">
-    The Ultimate Deep Dive for Developers
+  <text x="600" y="540" text-anchor="middle" fill="#10b981" font-family="system-ui, sans-serif" font-size="32" font-weight="700">
+    The Ultimate Deep Dive 2026
   </text>
 
-  <!-- Year Badge -->
-  <g transform="translate(540, 545)">
-    <rect x="0" y="0" width="120" height="36" rx="18" fill="#10b981"/>
-    <text x="60" y="25" text-anchor="middle" fill="#0f172a" font-family="system-ui, sans-serif" font-size="18" font-weight="700">2026</text>
-  </g>
+  <!-- Bottom Bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#10b981"/>
+  <text x="600" y="618" text-anchor="middle" fill="#0a0a0a" font-family="system-ui, sans-serif" font-size="20" font-weight="800">
+    DEVELOPER PRODUCTIVITY COMPARISON
+  </text>
 
-  <!-- Branding -->
-  <g transform="translate(40, 590)">
-    <text x="0" y="0" fill="#64748b" font-family="system-ui, sans-serif" font-size="14">brainupgrade-in.github.io</text>
-  </g>
-
-  <!-- Logo Mark -->
-  <g transform="translate(1080, 565)">
-    <path d="M40 10 L10 25 L40 40 L70 25 Z" fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M10 35 L40 50 L70 35" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M10 45 L40 60 L70 45" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Corner Badge -->
+  <g transform="translate(1050, 30)">
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="#ef4444"/>
+    <text x="60" y="28" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="18" font-weight="800">2026</text>
   </g>
 </svg>
