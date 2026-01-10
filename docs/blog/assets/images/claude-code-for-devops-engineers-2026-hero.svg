@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="50%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+
+    <!-- Purple Glow -->
+    <filter id="purpleGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feFlood flood-color="#8b5cf6" flood-opacity="0.7"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Green Glow (DevOps) -->
+    <filter id="greenGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#10b981" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Text Shadow -->
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid Pattern -->
+  <g opacity="0.05">
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#8b5cf6" stroke-width="1"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#grid)"/>
+  </g>
+
+  <!-- Glow Zones -->
+  <ellipse cx="300" cy="250" rx="350" ry="300" fill="#8b5cf6" opacity="0.1"/>
+  <ellipse cx="900" cy="300" rx="300" ry="250" fill="#10b981" opacity="0.1"/>
+
+  <!-- TERMINAL WINDOW (Left) -->
+  <g transform="translate(60, 100)">
+    <!-- Terminal Frame -->
+    <rect x="0" y="0" width="380" height="320" rx="16" fill="#0f0f1a" stroke="#8b5cf6" stroke-width="3" filter="url(#purpleGlow)"/>
+
+    <!-- Terminal Header -->
+    <rect x="0" y="0" width="380" height="40" rx="16" fill="#1e1e2e"/>
+    <rect x="0" y="28" width="380" height="12" fill="#1e1e2e"/>
+
+    <!-- Window Controls -->
+    <circle cx="22" cy="20" r="7" fill="#ef4444"/>
+    <circle cx="46" cy="20" r="7" fill="#f59e0b"/>
+    <circle cx="70" cy="20" r="7" fill="#10b981"/>
+
+    <!-- Terminal Title -->
+    <text x="190" y="26" text-anchor="middle" fill="#a78bfa" font-family="monospace" font-size="14" font-weight="600">claude-code</text>
+
+    <!-- Terminal Content -->
+    <g transform="translate(20, 55)">
+      <text x="0" y="0" fill="#10b981" font-family="monospace" font-size="14">$</text>
+      <text x="18" y="0" fill="#e2e8f0" font-family="monospace" font-size="14">claude "deploy to k8s"</text>
+
+      <text x="0" y="30" fill="#8b5cf6" font-family="monospace" font-size="13">Analyzing infrastructure...</text>
+
+      <text x="0" y="60" fill="#a78bfa" font-family="monospace" font-size="12">&gt; Reading deployment.yaml</text>
+      <text x="0" y="82" fill="#a78bfa" font-family="monospace" font-size="12">&gt; Checking service configs</text>
+      <text x="0" y="104" fill="#a78bfa" font-family="monospace" font-size="12">&gt; Validating secrets</text>
+
+      <text x="0" y="134" fill="#10b981" font-family="monospace" font-size="13">[OK] Helm chart updated</text>
+      <text x="0" y="156" fill="#10b981" font-family="monospace" font-size="13">[OK] kubectl apply -f ...</text>
+      <text x="0" y="178" fill="#10b981" font-family="monospace" font-size="13">[OK] Pods running: 3/3</text>
+
+      <text x="0" y="210" fill="#f59e0b" font-family="monospace" font-size="12">Deployment complete!</text>
+    </g>
+
+    <!-- Blinking cursor -->
+    <rect x="20" y="275" width="10" height="18" fill="#8b5cf6">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- DEVOPS ICONS (Right Side) -->
+  <g transform="translate(750, 80)">
+    <!-- Kubernetes Icon -->
+    <g transform="translate(0, 0)">
+      <circle cx="70" cy="70" r="60" fill="#1e1e2e" stroke="#326ce5" stroke-width="3" filter="url(#greenGlow)"/>
+      <g transform="translate(70, 70)">
+        <!-- K8s wheel shape -->
+        <circle cx="0" cy="0" r="20" fill="none" stroke="#326ce5" stroke-width="4"/>
+        <circle cx="0" cy="-38" r="10" fill="#326ce5"/>
+        <circle cx="33" cy="19" r="10" fill="#326ce5"/>
+        <circle cx="-33" cy="19" r="10" fill="#326ce5"/>
+        <line x1="0" y1="-20" x2="0" y2="-28" stroke="#326ce5" stroke-width="4"/>
+        <line x1="17" y1="10" x2="24" y2="14" stroke="#326ce5" stroke-width="4"/>
+        <line x1="-17" y1="10" x2="-24" y2="14" stroke="#326ce5" stroke-width="4"/>
+      </g>
+      <text x="70" y="150" text-anchor="middle" fill="#326ce5" font-family="system-ui" font-size="14" font-weight="700">K8S</text>
+    </g>
+
+    <!-- Docker Icon -->
+    <g transform="translate(180, 0)">
+      <circle cx="70" cy="70" r="60" fill="#1e1e2e" stroke="#2496ed" stroke-width="3"/>
+      <g transform="translate(35, 45)">
+        <!-- Docker whale simplified -->
+        <rect x="0" y="25" width="70" height="35" rx="4" fill="#2496ed"/>
+        <rect x="5" y="10" width="12" height="12" fill="#2496ed"/>
+        <rect x="20" y="10" width="12" height="12" fill="#2496ed"/>
+        <rect x="35" y="10" width="12" height="12" fill="#2496ed"/>
+        <rect x="20" y="-5" width="12" height="12" fill="#2496ed"/>
+        <circle cx="60" cy="38" r="4" fill="#1e1e2e"/>
+      </g>
+      <text x="70" y="150" text-anchor="middle" fill="#2496ed" font-family="system-ui" font-size="14" font-weight="700">DOCKER</text>
+    </g>
+
+    <!-- Terraform Icon -->
+    <g transform="translate(90, 170)">
+      <circle cx="70" cy="70" r="60" fill="#1e1e2e" stroke="#7b42bc" stroke-width="3"/>
+      <g transform="translate(40, 35)">
+        <!-- Terraform logo simplified -->
+        <polygon points="0,20 25,5 25,35 0,50" fill="#7b42bc"/>
+        <polygon points="30,5 55,20 55,50 30,35" fill="#7b42bc"/>
+        <polygon points="30,42 55,57 55,87 30,72" fill="#7b42bc" opacity="0.7"/>
+      </g>
+      <text x="70" y="150" text-anchor="middle" fill="#7b42bc" font-family="system-ui" font-size="14" font-weight="700">TERRAFORM</text>
+    </g>
+  </g>
+
+  <!-- CLAUDE CODE BADGE -->
+  <g transform="translate(480, 120)">
+    <rect x="0" y="0" width="200" height="50" rx="25" fill="#8b5cf6" filter="url(#purpleGlow)"/>
+    <text x="100" y="33" text-anchor="middle" fill="#ffffff" font-family="system-ui" font-size="20" font-weight="800">CLAUDE CODE</text>
+  </g>
+
+  <!-- Plus Signs connecting -->
+  <text x="560" y="220" text-anchor="middle" fill="#10b981" font-family="system-ui" font-size="48" font-weight="900">+</text>
+
+  <!-- DEVOPS BADGE -->
+  <g transform="translate(480, 240)">
+    <rect x="0" y="0" width="200" height="50" rx="25" fill="#10b981"/>
+    <text x="100" y="33" text-anchor="middle" fill="#ffffff" font-family="system-ui" font-size="20" font-weight="800">DEVOPS</text>
+  </g>
+
+  <!-- MAIN TITLE -->
+  <text x="600" y="420" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" filter="url(#textShadow)">
+    AUTOMATE
+  </text>
+  <text x="600" y="490" text-anchor="middle" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" filter="url(#textShadow)">
+    EVERYTHING
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="545" text-anchor="middle" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="26" font-weight="600">
+    K8s | Terraform | Docker | CI/CD
+  </text>
+
+  <!-- Bottom Bar -->
+  <rect x="0" y="590" width="1200" height="40" fill="#8b5cf6"/>
+  <text x="600" y="618" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="20" font-weight="800">
+    THE COMPLETE GUIDE FOR DEVOPS ENGINEERS
+  </text>
+
+  <!-- Corner Badge -->
+  <g transform="translate(1050, 30)">
+    <rect x="0" y="0" width="120" height="40" rx="8" fill="#10b981"/>
+    <text x="60" y="28" text-anchor="middle" fill="#0a0a0a" font-family="system-ui, sans-serif" font-size="18" font-weight="800">2026</text>
+  </g>
+</svg>
