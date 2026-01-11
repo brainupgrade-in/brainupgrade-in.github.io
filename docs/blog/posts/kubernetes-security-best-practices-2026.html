@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Kubernetes Security Best Practices 2026: Complete Production Hardening Guide | Gheware DevOps AI">
+    <meta name="description" content="Master Kubernetes security for CKS certification. Learn Pod Security Standards, RBAC, Network Policies, Secrets Management, Falco runtime security, and supply chain security with practical YAML examples.">
+    <meta name="keywords" content="Kubernetes security best practices, Pod Security Standards, Kubernetes RBAC, Network Policies, Falco runtime security, CKS certification, Kubernetes secrets management, Kyverno admission controller, Sigstore image signing, etcd encryption, container security 2026">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html">
+    <meta property="og:title" content="Kubernetes Security Best Practices 2026: Complete Production Hardening Guide">
+    <meta property="og:description" content="Master Kubernetes security for CKS certification. Learn Pod Security Standards, RBAC, Network Policies, runtime security with Falco, and supply chain security.">
+    <meta property="og:image" content="https://brainupgrade-in.github.io/blog/assets/images/kubernetes-security-best-practices-2026-hero.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-01-11T12:00:00+05:30">
+    <meta property="article:modified_time" content="2026-01-11T12:00:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Kubernetes">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Security">
+    <meta property="article:tag" content="CKS Certification">
+    <meta property="article:tag" content="Pod Security Standards">
+    <meta property="article:tag" content="DevOps">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Kubernetes Security Best Practices 2026: Complete Production Hardening Guide">
+    <meta name="twitter:description" content="Master Kubernetes security for CKS certification. Pod Security Standards, RBAC, Network Policies, Falco, and supply chain security.">
+    <meta name="twitter:image" content="https://brainupgrade-in.github.io/blog/assets/images/kubernetes-security-best-practices-2026-hero.png">
+
+    <title>Kubernetes Security Best Practices 2026: Complete Production Hardening Guide | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html"
+        },
+        "headline": "Kubernetes Security Best Practices 2026: Complete Production Hardening Guide",
+        "description": "Master Kubernetes security for CKS certification. Learn Pod Security Standards, RBAC, Network Policies, Secrets Management, Falco runtime security, and supply chain security with practical YAML examples.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://brainupgrade-in.github.io/blog/assets/images/kubernetes-security-best-practices-2026-hero.png",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-01-11T12:00:00+05:30",
+        "dateModified": "2026-01-11T12:00:00+05:30",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://brainupgrade-in.github.io",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://brainupgrade-in.github.io/favicon.svg"
+            }
+        },
+        "keywords": "Kubernetes security best practices, Pod Security Standards, Kubernetes RBAC, Network Policies, Falco runtime security, CKS certification, Kubernetes secrets management, Kyverno, Sigstore",
+        "articleSection": "Kubernetes",
+        "wordCount": "5200",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://brainupgrade-in.github.io/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://brainupgrade-in.github.io/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Kubernetes Security Best Practices 2026", "item": "https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html"}
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the difference between Pod Security Standards and Pod Security Policies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pod Security Standards (PSS) replaced the deprecated Pod Security Policies (PSP) starting in Kubernetes 1.25. PSS defines three security profiles (Privileged, Baseline, Restricted) enforced through the built-in Pod Security Admission controller using namespace labels, eliminating the need for complex custom policies."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I encrypt Kubernetes Secrets at rest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kubernetes Secrets are only Base64 encoded by default. To encrypt at rest, configure the kube-apiserver with an EncryptionConfiguration using either a local encryption key (aescbc/aesgcm) or preferably a KMS v2 provider integration with AWS KMS, Google Cloud KMS, or Azure Key Vault for production environments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best admission controller for Kubernetes - Kyverno or OPA Gatekeeper?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kyverno is recommended for teams wanting Kubernetes-native YAML policies with a lower learning curve, while OPA Gatekeeper suits organizations needing complex compliance logic using Rego. Many production environments use Kyverno for operational policies and image verification with Sigstore integration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does Falco detect runtime threats in Kubernetes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Falco uses eBPF (extended Berkeley Packet Filter) to monitor Linux kernel system calls in real-time. It compares events against customizable rules to detect suspicious behavior like shell spawns in containers, sensitive file access, or unexpected network connections, triggering alerts without signature-based scanning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What security tools should I use for CKS exam preparation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Focus on Trivy for image vulnerability scanning (almost guaranteed on the exam), kube-bench for CIS benchmark compliance, Network Policies for microsegmentation, RBAC with kubectl auth can-i for permission verification, and Falco for runtime security alerts and audit log analysis."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the CKS exam domains and their weightage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The CKS exam covers six domains: Cluster Setup (10%), Cluster Hardening (15%), System Hardening (15%), Minimize Microservice Vulnerabilities (20%), Supply Chain Security (20%), and Monitoring, Logging, Runtime Security (20%). Supply chain security and runtime security have the highest combined weightage at 40%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I implement default-deny Network Policies in Kubernetes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Create a NetworkPolicy with empty podSelector and specify both Ingress and Egress in policyTypes without any allow rules. This blocks all traffic to and from pods in the namespace. Then create specific NetworkPolicies to allow only required traffic flows using label selectors instead of IP addresses."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Kubernetes Security Best Practices 2026</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Kubernetes</span>
+                    <span class="post-category post-category-secondary">CKS Certification</span>
+                    <span class="reading-time">26 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Kubernetes Security Best Practices 2026: Complete Production Hardening Guide</h1>
+                <p class="post-subtitle" itemprop="description">Master all 8 essential Kubernetes security domains for the CKS exam and production environments. From Pod Security Standards to supply chain security with Sigstore - practical YAML examples and implementation strategies.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-01-11T12:00:00+05:30">January 11, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html&text=Kubernetes%20Security%20Best%20Practices%202026%3A%20Complete%20Production%20Hardening%20Guide" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/kubernetes-security-best-practices-2026-hero.png"
+                     alt="Kubernetes Security Best Practices 2026 - Defense in Depth Architecture showing layered security controls"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>Kubernetes security requires defense-in-depth across all 8 security domains - from image security to runtime protection</figcaption>
+            </figure>
+
+            <!-- Quick Answer Box (AEO Optimized) -->
+            <aside class="quick-answer" style="background: linear-gradient(135deg, #326CE5 0%, #1E3A5F 100%); color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                <strong style="font-size: 1.1rem;">Quick Answer:</strong>
+                <p style="margin: 0.5rem 0 0 0;">Kubernetes security in 2026 requires a defense-in-depth approach across 8 domains: Pod Security Standards (use "Restricted" profile), Network Policies (default-deny first), RBAC (least-privilege with dedicated service accounts), Secrets Management (encrypt with KMS v2), Image Security (sign with Sigstore), Runtime Security (Falco with eBPF), Cluster Hardening (CIS Benchmarks), and Supply Chain Security (SBOM + SLSA). For CKS certification, focus on Trivy image scanning, kube-bench compliance, and Falco rules - these topics represent 60% of the exam.</p>
+            </aside>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Pod Security Standards "Restricted" profile</strong> is the production standard - enforce with namespace labels for automatic compliance</li>
+                    <li><strong>Default-deny Network Policies first</strong> - then explicitly allow only required traffic flows using labels instead of IP addresses</li>
+                    <li><strong>Dedicated service accounts per workload</strong> with automountServiceAccountToken: false - never use the default service account</li>
+                    <li><strong>External Secrets Operator or Vault</strong> for centralized secrets management with automatic rotation and short-lived credentials</li>
+                    <li><strong>Falco DaemonSet for runtime security</strong> - real-time threat detection using eBPF system call monitoring</li>
+                    <li><strong>CKS Exam Focus:</strong> Supply Chain Security (20%) + Runtime Security (20%) = 40% of the exam - prioritize Trivy, Falco, and Sigstore</li>
+                </ul>
+            </aside>
+
+            <!-- TL;DR Section (AEO Optimized) -->
+            <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #326CE5; padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                <p style="margin-bottom: 0;">Kubernetes security requires layered defense across pod security, networking, access control, secrets, images, runtime, cluster hardening, and supply chain. Use Pod Security Standards "Restricted" profile with namespace labels, implement default-deny Network Policies, create dedicated service accounts with least-privilege RBAC, encrypt secrets with KMS v2, sign images with Sigstore/Cosign, deploy Falco for runtime detection, run kube-bench for CIS compliance, and generate SBOMs for supply chain transparency. For the CKS exam (67% pass mark, 2 hours), focus on Trivy image scanning, Network Policies, and Falco rules.</p>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#pod-security">Pod Security Standards (PSS)</a></li>
+                    <li><a href="#network-security">Network Policies and Service Mesh</a></li>
+                    <li><a href="#rbac">RBAC and Access Control</a></li>
+                    <li><a href="#secrets-management">Secrets Management</a></li>
+                    <li><a href="#image-security">Image Security and Admission Controllers</a></li>
+                    <li><a href="#runtime-security">Runtime Security with Falco</a></li>
+                    <li><a href="#cluster-hardening">Cluster Hardening and CIS Benchmarks</a></li>
+                    <li><a href="#supply-chain">Supply Chain Security</a></li>
+                    <li><a href="#security-tools">Security Tools Comparison</a></li>
+                    <li><a href="#cks-preparation">CKS Certification Preparation</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- Section 1: Pod Security -->
+                <section id="pod-security">
+                    <h2>Pod Security Standards (PSS)</h2>
+
+                    <p><strong>Pod Security Standards define three security levels - Privileged, Baseline, and Restricted - replacing the deprecated Pod Security Policies since Kubernetes 1.25.</strong> These standards are enforced through the built-in Pod Security Admission controller using namespace labels.</p>
+
+                    <h3>Understanding the Three Security Profiles</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #326CE5; color: white;">
+                                <th style="padding: 12px; text-align: left;">Profile</th>
+                                <th style="padding: 12px; text-align: left;">Description</th>
+                                <th style="padding: 12px; text-align: left;">Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #fff3cd;">
+                                <td style="padding: 12px;"><strong>Privileged</strong></td>
+                                <td style="padding: 12px;">Unrestricted - allows all capabilities and privilege escalations</td>
+                                <td style="padding: 12px;">System daemons, CNI plugins, infrastructure components</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Baseline</strong></td>
+                                <td style="padding: 12px;">Minimally restrictive - prevents known privilege escalations</td>
+                                <td style="padding: 12px;">Development environments, most applications</td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td style="padding: 12px;"><strong>Restricted</strong></td>
+                                <td style="padding: 12px;">Heavily restricted - current Pod hardening best practices</td>
+                                <td style="padding: 12px;">Production workloads, security-critical applications</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Enabling Pod Security Standards</h3>
+
+                    <p>Pod Security Admission is enabled by default in Kubernetes 1.25+. Configure enforcement through namespace labels:</p>
+
+                    <pre><code class="language-yaml"># Enable PSS Restricted profile for production namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+  labels:
+    # Enforcement mode - reject violating pods
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/enforce-version: v1.34
+
+    # Audit mode - log violations but allow
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/audit-version: v1.34
+
+    # Warn mode - show warning to user
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: v1.34</code></pre>
+
+                    <div class="info-box" style="background: #e8f4fd; border-left: 4px solid #326CE5; padding: 1rem; margin: 1.5rem 0;">
+                        <strong>Best Practice:</strong> Start with warn and audit modes in existing clusters to identify violations before enabling enforce mode.
+                    </div>
+
+                    <h3>Security Context for Restricted Profile</h3>
+
+                    <p>Pods must meet these requirements to pass Restricted profile validation:</p>
+
+                    <pre><code class="language-yaml"># Complete security context for Restricted profile compliance
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secure-pod
+  namespace: production
+spec:
+  securityContext:
+    runAsNonRoot: true           # Must run as non-root user
+    runAsUser: 1000              # Non-zero UID
+    runAsGroup: 1000
+    fsGroup: 1000
+    seccompProfile:
+      type: RuntimeDefault       # Or Localhost with custom profile
+  containers:
+  - name: app
+    image: ghcr.io/myorg/myapp:v1.0.0@sha256:abc123...  # Pin by digest
+    securityContext:
+      allowPrivilegeEscalation: false  # Must be false
+      readOnlyRootFilesystem: true     # Recommended
+      capabilities:
+        drop: ["ALL"]                  # Must drop ALL capabilities
+        add: ["NET_BIND_SERVICE"]      # Only allowed addition
+    resources:
+      limits:
+        cpu: "500m"
+        memory: "256Mi"
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+    volumeMounts:
+    - name: tmp
+      mountPath: /tmp
+  volumes:
+  - name: tmp
+    emptyDir: {}  # Only allowed volume types</code></pre>
+
+                    <p><strong>Allowed Volume Types (Restricted):</strong> configMap, csi, downwardAPI, emptyDir, ephemeral, persistentVolumeClaim, projected, secret.</p>
+                </section>
+
+                <!-- Section 2: Network Security -->
+                <section id="network-security">
+                    <h2>Network Policies and Service Mesh</h2>
+
+                    <p><strong>Network Policies should start with default-deny-all and explicitly allow only required traffic flows using labels instead of IP addresses.</strong> This implements the principle of least privilege at the network layer.</p>
+
+                    <h3>Step 1: Default Deny All Traffic</h3>
+
+                    <pre><code class="language-yaml"># Apply this to every production namespace first
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: production
+spec:
+  podSelector: {}  # Applies to all pods in namespace
+  policyTypes:
+  - Ingress
+  - Egress
+  # No ingress/egress rules = deny all</code></pre>
+
+                    <h3>Step 2: Allow DNS Egress (Required)</h3>
+
+                    <pre><code class="language-yaml"># Pods need DNS resolution - always allow this
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-dns
+  namespace: production
+spec:
+  podSelector: {}  # All pods need DNS
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: kube-system
+      podSelector:
+        matchLabels:
+          k8s-app: kube-dns
+    ports:
+    - protocol: UDP
+      port: 53
+    - protocol: TCP
+      port: 53</code></pre>
+
+                    <h3>Step 3: Allow Specific Application Traffic</h3>
+
+                    <pre><code class="language-yaml"># Allow frontend to backend communication
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+  namespace: production
+spec:
+  podSelector:
+    matchLabels:
+      app: backend
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: frontend
+    ports:
+    - protocol: TCP
+      port: 8080</code></pre>
+
+                    <h3>CNI Plugin Selection</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #1E3A5F; color: white;">
+                                <th style="padding: 12px; text-align: left;">CNI Plugin</th>
+                                <th style="padding: 12px; text-align: center;">Network Policy</th>
+                                <th style="padding: 12px; text-align: left;">Advanced Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #d4edda;">
+                                <td style="padding: 12px;"><strong>Cilium</strong></td>
+                                <td style="padding: 12px; text-align: center;">Full + L7</td>
+                                <td style="padding: 12px;">eBPF-native, L7 policies, Hubble observability</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Calico</strong></td>
+                                <td style="padding: 12px; text-align: center;">Full</td>
+                                <td style="padding: 12px;">BGP, eBPF mode, GlobalNetworkPolicy</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><strong>Weave</strong></td>
+                                <td style="padding: 12px; text-align: center;">Full</td>
+                                <td style="padding: 12px;">Encryption, multicast support</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Flannel</strong></td>
+                                <td style="padding: 12px; text-align: center;">None</td>
+                                <td style="padding: 12px;">Simple overlay only - avoid for security</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>Recommendation:</strong> Use Cilium for production environments requiring L7 policies and observability. Use Calico for established enterprise deployments with BGP requirements.</p>
+
+                    <h3>Service Mesh mTLS with Istio</h3>
+
+                    <p><strong>Service mesh solutions like Linkerd provide automatic mTLS with zero configuration, while Istio offers more comprehensive but complex security controls.</strong></p>
+
+                    <pre><code class="language-yaml"># Istio PeerAuthentication for strict mTLS
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: production
+spec:
+  mtls:
+    mode: STRICT  # Require mTLS for all traffic</code></pre>
+                </section>
+
+                <!-- Section 3: RBAC -->
+                <section id="rbac">
+                    <h2>RBAC and Access Control</h2>
+
+                    <p><strong>Every Kubernetes workload should use a dedicated service account with only the minimum permissions required - never use the default service account.</strong></p>
+
+                    <h3>Core RBAC Principles</h3>
+
+                    <ol>
+                        <li><strong>Least Privilege:</strong> Grant minimum permissions required for each workload</li>
+                        <li><strong>Separation of Duties:</strong> Different service accounts for different functions</li>
+                        <li><strong>Namespace Scoping:</strong> Prefer Role over ClusterRole when possible</li>
+                        <li><strong>Regular Auditing:</strong> Review RoleBindings periodically</li>
+                    </ol>
+
+                    <h3>Create Dedicated Service Accounts</h3>
+
+                    <pre><code class="language-yaml"># Never use the default service account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: my-app-sa
+  namespace: production
+automountServiceAccountToken: false  # Disable if no API access needed
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app
+  namespace: production
+spec:
+  serviceAccountName: my-app-sa
+  automountServiceAccountToken: false  # Explicit pod-level override
+  containers:
+  - name: app
+    image: myapp:v1.0.0</code></pre>
+
+                    <h3>Least-Privilege Role Example</h3>
+
+                    <pre><code class="language-yaml"># Read-only access to pods in specific namespace
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: pod-reader
+  namespace: production
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pod-reader-binding
+  namespace: production
+subjects:
+- kind: ServiceAccount
+  name: monitoring-sa
+  namespace: production
+roleRef:
+  kind: Role
+  name: pod-reader
+  apiGroup: rbac.authorization.k8s.io</code></pre>
+
+                    <h3>Dangerous Permissions to Avoid</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #dc3545; color: white;">
+                                <th style="padding: 12px; text-align: left;">Permission</th>
+                                <th style="padding: 12px; text-align: left;">Risk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px;"><code>create</code> on <code>pods</code></td>
+                                <td style="padding: 12px;">Can create privileged pods for cluster compromise</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><code>*</code> (wildcard) verbs</td>
+                                <td style="padding: 12px;">Unrestricted access to resources</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><code>escalate</code> verb</td>
+                                <td style="padding: 12px;">Can grant permissions beyond own level</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><code>bind</code> verb</td>
+                                <td style="padding: 12px;">Can bind roles beyond own permissions</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><code>impersonate</code> verb</td>
+                                <td style="padding: 12px;">Can act as any user/group/serviceaccount</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Verify Permissions</h3>
+
+                    <pre><code class="language-bash"># Check what a service account can do
+kubectl auth can-i --list --as=system:serviceaccount:production:my-app-sa
+
+# Check specific permission
+kubectl auth can-i create pods --as=system:serviceaccount:production:my-app-sa
+
+# Verify who can perform an action
+kubectl auth can-i delete secrets --all-namespaces --list</code></pre>
+                </section>
+
+                <!-- Section 4: Secrets Management -->
+                <section id="secrets-management">
+                    <h2>Secrets Management</h2>
+
+                    <p><strong>Kubernetes Secrets are NOT encrypted by default - they are only Base64 encoded.</strong> Anyone with etcd access or API permissions can read them in plaintext.</p>
+
+                    <pre><code class="language-bash"># This is NOT secure - Secrets are just Base64 encoded
+kubectl get secret db-credentials -o jsonpath='{.data.password}' | base64 -d</code></pre>
+
+                    <h3>Enable etcd Encryption at Rest</h3>
+
+                    <p><strong>KMS v2 encryption uses envelope encryption where data encryption keys (DEKs) are protected by key encryption keys (KEKs) stored in external KMS.</strong></p>
+
+                    <pre><code class="language-yaml"># /etc/kubernetes/encryption-config.yaml
+apiVersion: apiserver.config.k8s.io/v1
+kind: EncryptionConfiguration
+resources:
+- resources:
+  - secrets
+  - configmaps
+  providers:
+  - kms:
+      apiVersion: v2
+      name: aws-kms
+      endpoint: unix:///var/run/kmsplugin/socket.sock
+      cachesize: 1000
+      timeout: 3s
+  - identity: {}  # Fallback for reading old unencrypted data</code></pre>
+
+                    <p>Add to kube-apiserver:</p>
+
+                    <pre><code class="language-bash">--encryption-provider-config=/etc/kubernetes/encryption-config.yaml</code></pre>
+
+                    <h3>External Secrets Operator (ESO)</h3>
+
+                    <p><strong>External Secrets Operator synchronizes secrets from AWS Secrets Manager, HashiCorp Vault, or Azure Key Vault into native Kubernetes Secrets automatically.</strong></p>
+
+                    <pre><code class="language-yaml"># SecretStore - Connection to AWS Secrets Manager
+apiVersion: external-secrets.io/v1beta1
+kind: SecretStore
+metadata:
+  name: aws-secrets-manager
+  namespace: production
+spec:
+  provider:
+    aws:
+      service: SecretsManager
+      region: us-west-2
+      auth:
+        jwt:
+          serviceAccountRef:
+            name: external-secrets-sa
+---
+# ExternalSecret - Syncs secrets from AWS to K8s
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: database-credentials
+  namespace: production
+spec:
+  refreshInterval: 1h  # Auto-sync every hour
+  secretStoreRef:
+    name: aws-secrets-manager
+    kind: SecretStore
+  target:
+    name: db-credentials
+    creationPolicy: Owner
+  data:
+  - secretKey: username
+    remoteRef:
+      key: production/database
+      property: username
+  - secretKey: password
+    remoteRef:
+      key: production/database
+      property: password</code></pre>
+
+                    <h3>HashiCorp Vault Integration</h3>
+
+                    <pre><code class="language-yaml"># Vault Secrets Operator (VSO) example
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultStaticSecret
+metadata:
+  name: app-secret
+  namespace: production
+spec:
+  vaultAuthRef: default
+  mount: secret
+  type: kv-v2
+  path: production/app
+  destination:
+    name: app-credentials
+    create: true
+  refreshAfter: 30s  # Short refresh for security</code></pre>
+
+                    <div class="success-box" style="background: #d4edda; border-left: 4px solid #22C55E; padding: 1rem; margin: 1.5rem 0;">
+                        <strong>Best Practice:</strong> Use dynamic secrets with short TTLs where possible. Vault can generate database credentials on-demand that automatically expire.
+                    </div>
+                </section>
+
+                <!-- Section 5: Image Security -->
+                <section id="image-security">
+                    <h2>Image Security and Admission Controllers</h2>
+
+                    <p><strong>Kyverno uses YAML for policy definitions while OPA Gatekeeper requires learning Rego - making Kyverno more accessible for Kubernetes-native teams.</strong></p>
+
+                    <h3>Kyverno: Block Latest Tag</h3>
+
+                    <pre><code class="language-yaml">apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: disallow-latest-tag
+spec:
+  validationFailureAction: Enforce
+  rules:
+  - name: require-image-tag
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "Images must use a specific tag, not 'latest'"
+      pattern:
+        spec:
+          containers:
+          - image: "!*:latest"</code></pre>
+
+                    <h3>Kyverno: Verify Image Signatures</h3>
+
+                    <pre><code class="language-yaml">apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: verify-image-signatures
+spec:
+  validationFailureAction: Enforce
+  background: false
+  rules:
+  - name: verify-signature
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    verifyImages:
+    - imageReferences:
+      - "ghcr.io/myorg/*"
+      attestors:
+      - entries:
+        - keyless:
+            subject: "https://github.com/myorg/*"
+            issuer: "https://token.actions.githubusercontent.com"
+            rekor:
+              url: https://rekor.sigstore.dev</code></pre>
+
+                    <h3>OPA Gatekeeper: Trusted Registries</h3>
+
+                    <pre><code class="language-yaml">apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata:
+  name: require-trusted-registries
+spec:
+  match:
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
+  parameters:
+    repos:
+    - "gcr.io/my-project/"
+    - "ghcr.io/myorg/"
+    - "registry.internal.company.com/"</code></pre>
+
+                    <h3>Image Scanning with Trivy</h3>
+
+                    <pre><code class="language-bash"># Scan image for vulnerabilities
+trivy image nginx:1.25
+
+# Scan with severity filter (CKS exam focus)
+trivy image --severity HIGH,CRITICAL nginx:1.25
+
+# Generate SBOM (Software Bill of Materials)
+trivy image --format spdx-json -o sbom.json nginx:1.25
+
+# Scan entire Kubernetes cluster
+trivy k8s --report summary cluster</code></pre>
+
+                    <h3>GitHub Actions Integration</h3>
+
+                    <pre><code class="language-yaml"># .github/workflows/scan.yml
+- name: Scan image with Trivy
+  uses: aquasecurity/trivy-action@master
+  with:
+    image-ref: 'myapp:${{ github.sha }}'
+    format: 'sarif'
+    output: 'trivy-results.sarif'
+    severity: 'CRITICAL,HIGH'
+    exit-code: '1'  # Fail build on vulnerabilities</code></pre>
+                </section>
+
+                <!-- Section 6: Runtime Security -->
+                <section id="runtime-security">
+                    <h2>Runtime Security with Falco</h2>
+
+                    <p><strong>Falco monitors Linux system calls using eBPF and alerts on suspicious runtime behavior like shell spawns, file access, and network connections.</strong></p>
+
+                    <h3>Deploy Falco with Helm</h3>
+
+                    <pre><code class="language-bash"># Install Falco with eBPF driver
+helm repo add falcosecurity https://falcosecurity.github.io/charts
+helm install falco falcosecurity/falco \
+  --namespace falco \
+  --create-namespace \
+  --set driver.kind=ebpf \
+  --set falcosidekick.enabled=true \
+  --set falcosidekick.config.slack.webhookurl="https://hooks.slack.com/..."</code></pre>
+
+                    <h3>Custom Falco Rules</h3>
+
+                    <pre><code class="language-yaml"># Detect shell spawned in container
+- rule: Shell Spawned in Container
+  desc: Detect shell execution in container - potential breach
+  condition: >
+    spawned_process and
+    container and
+    shell_procs
+  output: >
+    Shell spawned in container
+    (user=%user.name container=%container.name
+    shell=%proc.name parent=%proc.pname
+    cmdline=%proc.cmdline)
+  priority: WARNING
+  tags: [container, shell, mitre_execution]
+
+# Detect sensitive file access
+- rule: Read Sensitive File
+  desc: Detect read of sensitive files like /etc/shadow
+  condition: >
+    open_read and
+    container and
+    sensitive_files
+  output: >
+    Sensitive file opened for reading
+    (user=%user.name file=%fd.name container=%container.name)
+  priority: WARNING
+  tags: [filesystem, confidentiality]</code></pre>
+
+                    <h3>Kubernetes Audit Logging</h3>
+
+                    <pre><code class="language-yaml"># /etc/kubernetes/audit-policy.yaml
+apiVersion: audit.k8s.io/v1
+kind: Policy
+rules:
+# Log all requests to secrets at RequestResponse level
+- level: RequestResponse
+  resources:
+  - group: ""
+    resources: ["secrets"]
+
+# Log pod exec/attach at Metadata level
+- level: Metadata
+  resources:
+  - group: ""
+    resources: ["pods/exec", "pods/attach"]
+
+# Log changes to RBAC
+- level: RequestResponse
+  resources:
+  - group: "rbac.authorization.k8s.io"
+    resources: ["roles", "rolebindings", "clusterroles", "clusterrolebindings"]
+
+# Don't log read-only requests to configmaps (reduce noise)
+- level: None
+  resources:
+  - group: ""
+    resources: ["configmaps"]
+  verbs: ["get", "list", "watch"]
+
+# Catch-all for everything else
+- level: Metadata
+  omitStages:
+  - RequestReceived</code></pre>
+                </section>
+
+                <!-- Section 7: Cluster Hardening -->
+                <section id="cluster-hardening">
+                    <h2>Cluster Hardening and CIS Benchmarks</h2>
+
+                    <p><strong>CIS Kubernetes Benchmarks provide two security levels: L1 for essential requirements and L2 for defense-in-depth hardening.</strong></p>
+
+                    <h3>Run kube-bench</h3>
+
+                    <pre><code class="language-bash"># Run as Kubernetes Job
+kubectl apply -f https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
+
+# View results
+kubectl logs job/kube-bench
+
+# Run locally for faster feedback
+kube-bench run --targets master,node</code></pre>
+
+                    <h3>Key CIS Recommendations</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #1E3A5F; color: white;">
+                                <th style="padding: 12px; text-align: left;">Control</th>
+                                <th style="padding: 12px; text-align: left;">Recommendation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px;">1.2.1</td>
+                                <td style="padding: 12px;">Ensure anonymous-auth is disabled</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;">1.2.6</td>
+                                <td style="padding: 12px;">Ensure authorization-mode is not AlwaysAllow</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;">1.2.16</td>
+                                <td style="padding: 12px;">Ensure PodSecurity admission is enabled</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;">2.1</td>
+                                <td style="padding: 12px;">Ensure etcd data directory permissions are 700</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;">5.1.5</td>
+                                <td style="padding: 12px;">Ensure default service accounts are not used</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>API Server Hardening Flags</h3>
+
+                    <pre><code class="language-bash"># Essential kube-apiserver security flags
+--anonymous-auth=false
+--authorization-mode=Node,RBAC
+--enable-admission-plugins=NodeRestriction,PodSecurity
+--audit-log-path=/var/log/kubernetes/audit.log
+--audit-policy-file=/etc/kubernetes/audit-policy.yaml
+--encryption-provider-config=/etc/kubernetes/encryption-config.yaml
+--tls-min-version=VersionTLS12
+--tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</code></pre>
+                </section>
+
+                <!-- Section 8: Supply Chain Security -->
+                <section id="supply-chain">
+                    <h2>Supply Chain Security</h2>
+
+                    <p><strong>Sigstore provides keyless signing using OIDC identities - eliminating the complexity of traditional PKI for container image verification.</strong></p>
+
+                    <h3>Sign Images with Cosign</h3>
+
+                    <pre><code class="language-bash"># Keyless signing with OIDC (recommended)
+cosign sign --yes ghcr.io/myorg/myapp:v1.0.0
+
+# Sign with key (traditional)
+cosign sign --key cosign.key ghcr.io/myorg/myapp:v1.0.0</code></pre>
+
+                    <h3>Verify Image Signatures</h3>
+
+                    <pre><code class="language-bash"># Keyless verification
+cosign verify \
+  --certificate-identity="https://github.com/myorg/myrepo/.github/workflows/build.yml@refs/heads/main" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
+  ghcr.io/myorg/myapp:v1.0.0
+
+# Verify with key
+cosign verify --key cosign.pub ghcr.io/myorg/myapp:v1.0.0</code></pre>
+
+                    <h3>Generate and Attest SBOM</h3>
+
+                    <pre><code class="language-bash"># Generate SBOM with Syft
+syft ghcr.io/myorg/myapp:v1.0.0 -o spdx-json > sbom.spdx.json
+
+# Attach SBOM as attestation
+cosign attest --predicate sbom.spdx.json --type spdxjson ghcr.io/myorg/myapp:v1.0.0
+
+# Verify attestation
+cosign verify-attestation --type spdxjson ghcr.io/myorg/myapp:v1.0.0</code></pre>
+
+                    <h3>SLSA Framework Levels</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #22C55E; color: white;">
+                                <th style="padding: 12px; text-align: left;">Level</th>
+                                <th style="padding: 12px; text-align: left;">Requirements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px;"><strong>SLSA 1</strong></td>
+                                <td style="padding: 12px;">Documentation of build process exists</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><strong>SLSA 2</strong></td>
+                                <td style="padding: 12px;">Version control, hosted build service, authenticated provenance</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>SLSA 3</strong></td>
+                                <td style="padding: 12px;">Source verified history (18 months), isolated parameterless builds</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><strong>SLSA 4</strong></td>
+                                <td style="padding: 12px;">Two-person review, hermetic builds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>GitHub Actions SLSA Generator</h3>
+
+                    <pre><code class="language-yaml">jobs:
+  build:
+    outputs:
+      digest: ${{ steps.build.outputs.digest }}
+    steps:
+    - uses: actions/checkout@v4
+    - id: build
+      run: |
+        docker build -t myapp:${{ github.sha }} .
+        echo "digest=$(docker inspect --format='{{index .RepoDigests 0}}' myapp:${{ github.sha }})" >> $GITHUB_OUTPUT
+
+  provenance:
+    needs: build
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v1.9.0
+    with:
+      image: myapp
+      digest: ${{ needs.build.outputs.digest }}</code></pre>
+                </section>
+
+                <!-- Section 9: Security Tools -->
+                <section id="security-tools">
+                    <h2>Security Tools Comparison</h2>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #326CE5; color: white;">
+                                <th style="padding: 12px; text-align: left;">Tool</th>
+                                <th style="padding: 12px; text-align: left;">Category</th>
+                                <th style="padding: 12px; text-align: left;">Function</th>
+                                <th style="padding: 12px; text-align: center;">CKS Exam</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #d4edda;">
+                                <td style="padding: 12px;"><strong>Trivy</strong></td>
+                                <td style="padding: 12px;">Image Scanning</td>
+                                <td style="padding: 12px;">Vulnerability, SBOM, misconfiguration</td>
+                                <td style="padding: 12px; text-align: center;">Yes (critical)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>kube-bench</strong></td>
+                                <td style="padding: 12px;">Compliance</td>
+                                <td style="padding: 12px;">CIS Kubernetes Benchmark</td>
+                                <td style="padding: 12px; text-align: center;">Yes</td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td style="padding: 12px;"><strong>Falco</strong></td>
+                                <td style="padding: 12px;">Runtime Security</td>
+                                <td style="padding: 12px;">System call monitoring, threat detection</td>
+                                <td style="padding: 12px; text-align: center;">Yes (critical)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Kyverno</strong></td>
+                                <td style="padding: 12px;">Policy Engine</td>
+                                <td style="padding: 12px;">YAML-based admission control</td>
+                                <td style="padding: 12px; text-align: center;">Partially</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><strong>OPA Gatekeeper</strong></td>
+                                <td style="padding: 12px;">Policy Engine</td>
+                                <td style="padding: 12px;">Rego-based admission control</td>
+                                <td style="padding: 12px; text-align: center;">Partially</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Cilium</strong></td>
+                                <td style="padding: 12px;">CNI + Security</td>
+                                <td style="padding: 12px;">eBPF networking, L7 policies</td>
+                                <td style="padding: 12px; text-align: center;">No</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;"><strong>Cosign</strong></td>
+                                <td style="padding: 12px;">Supply Chain</td>
+                                <td style="padding: 12px;">Image signing and verification</td>
+                                <td style="padding: 12px; text-align: center;">No</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong>Kubescape</strong></td>
+                                <td style="padding: 12px;">Posture Management</td>
+                                <td style="padding: 12px;">CIS, NSA/CISA compliance, risk scoring</td>
+                                <td style="padding: 12px; text-align: center;">No</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Recommended Tool Stack</h3>
+
+                    <p><strong>For CKS Exam:</strong></p>
+                    <ul>
+                        <li>Trivy (image scanning - almost guaranteed)</li>
+                        <li>kube-bench (CIS compliance)</li>
+                        <li>Falco (runtime detection)</li>
+                        <li>Network Policies (native)</li>
+                        <li>RBAC verification with kubectl auth can-i</li>
+                    </ul>
+
+                    <p><strong>For Production:</strong></p>
+                    <ul>
+                        <li>Trivy + Kubescape (comprehensive scanning)</li>
+                        <li>Falco + observability platform (runtime + alerting)</li>
+                        <li>Kyverno (admission control, image verification)</li>
+                        <li>External Secrets Operator (secrets management)</li>
+                        <li>Cilium (advanced networking)</li>
+                        <li>Sigstore/Cosign (supply chain)</li>
+                    </ul>
+                </section>
+
+                <!-- Section 10: CKS Preparation -->
+                <section id="cks-preparation">
+                    <h2>CKS Certification Preparation</h2>
+
+                    <div class="info-box" style="background: #e8f4fd; border-left: 4px solid #326CE5; padding: 1rem; margin: 1.5rem 0;">
+                        <strong>CKS Exam Requirements:</strong> 67% to pass, 2 hours, performance-based. Prerequisite: valid CKA certification.
+                    </div>
+
+                    <h3>Exam Domain Weights (2025-2026)</h3>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #1E3A5F; color: white;">
+                                <th style="padding: 12px; text-align: left;">Domain</th>
+                                <th style="padding: 12px; text-align: center;">Weight</th>
+                                <th style="padding: 12px; text-align: left;">Key Topics</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 12px;">Cluster Setup</td>
+                                <td style="padding: 12px; text-align: center;">10%</td>
+                                <td style="padding: 12px;">Network policies, CIS benchmarks, ingress security</td>
+                            </tr>
+                            <tr style="background: #f8f9fa;">
+                                <td style="padding: 12px;">Cluster Hardening</td>
+                                <td style="padding: 12px; text-align: center;">15%</td>
+                                <td style="padding: 12px;">RBAC, service accounts, upgrade kubernetes</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;">System Hardening</td>
+                                <td style="padding: 12px; text-align: center;">15%</td>
+                                <td style="padding: 12px;">Host OS security, kernel hardening</td>
+                            </tr>
+                            <tr style="background: #fff3cd;">
+                                <td style="padding: 12px;">Minimize Microservice Vulnerabilities</td>
+                                <td style="padding: 12px; text-align: center;"><strong>20%</strong></td>
+                                <td style="padding: 12px;">PSS, SecurityContext, secrets management</td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td style="padding: 12px;">Supply Chain Security</td>
+                                <td style="padding: 12px; text-align: center;"><strong>20%</strong></td>
+                                <td style="padding: 12px;">Image scanning, signing, admission controllers</td>
+                            </tr>
+                            <tr style="background: #d4edda;">
+                                <td style="padding: 12px;">Monitoring, Logging, Runtime Security</td>
+                                <td style="padding: 12px; text-align: center;"><strong>20%</strong></td>
+                                <td style="padding: 12px;">Audit logs, Falco, container immutability</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>High-Priority Study Topics</h3>
+
+                    <ol>
+                        <li><strong>Network Policies</strong> - Default deny first, always allow DNS egress</li>
+                        <li><strong>Trivy Image Scanning</strong> - Almost guaranteed on the exam</li>
+                        <li><strong>Falco Rules</strong> - Understanding alerts and rule syntax</li>
+                        <li><strong>RBAC</strong> - Verify with kubectl auth can-i</li>
+                        <li><strong>Audit Logs</strong> - Configuration and analysis</li>
+                        <li><strong>Pod Security Standards</strong> - Restricted profile enforcement</li>
+                        <li><strong>Secrets Encryption</strong> - EncryptionConfiguration for etcd</li>
+                        <li><strong>crictl</strong> - Container runtime investigation</li>
+                    </ol>
+
+                    <h3>Practice Commands</h3>
+
+                    <pre><code class="language-bash"># Image scanning with Trivy
+trivy image --severity HIGH,CRITICAL nginx:latest
+
+# Check CIS compliance
+kube-bench run --targets master
+
+# Verify RBAC permissions
+kubectl auth can-i create pods --as=system:serviceaccount:default:mysa
+
+# Check pod security violations
+kubectl get pods -A -o json | jq '.items[] | select(.spec.securityContext.runAsNonRoot != true)'
+
+# View Falco alerts
+kubectl logs -n falco -l app.kubernetes.io/name=falco
+
+# Check secrets encryption
+ETCDCTL_API=3 etcdctl get /registry/secrets/default/mysecret | hexdump -C</code></pre>
+
+                    <h3>Official CKS Resources</h3>
+
+                    <ul>
+                        <li><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/" target="_blank" rel="noopener">CKS Exam Page - Linux Foundation</a></li>
+                        <li><a href="https://kubernetes.io/docs/concepts/security/" target="_blank" rel="noopener">Kubernetes Security Documentation</a></li>
+                        <li><a href="https://www.cncf.io/training/certification/cks/" target="_blank" rel="noopener">CNCF CKS Certification</a></li>
+                    </ul>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What is the difference between Pod Security Standards and Pod Security Policies?</h3>
+                        <p>Pod Security Standards (PSS) replaced the deprecated Pod Security Policies (PSP) starting in Kubernetes 1.25. PSS defines three security profiles (Privileged, Baseline, Restricted) enforced through the built-in Pod Security Admission controller using namespace labels, eliminating the need for complex custom policies.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I encrypt Kubernetes Secrets at rest?</h3>
+                        <p>Kubernetes Secrets are only Base64 encoded by default. To encrypt at rest, configure the kube-apiserver with an EncryptionConfiguration using either a local encryption key (aescbc/aesgcm) or preferably a KMS v2 provider integration with AWS KMS, Google Cloud KMS, or Azure Key Vault for production environments.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the best admission controller for Kubernetes - Kyverno or OPA Gatekeeper?</h3>
+                        <p>Kyverno is recommended for teams wanting Kubernetes-native YAML policies with a lower learning curve, while OPA Gatekeeper suits organizations needing complex compliance logic using Rego. Many production environments use Kyverno for operational policies and image verification with Sigstore integration.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How does Falco detect runtime threats in Kubernetes?</h3>
+                        <p>Falco uses eBPF (extended Berkeley Packet Filter) to monitor Linux kernel system calls in real-time. It compares events against customizable rules to detect suspicious behavior like shell spawns in containers, sensitive file access, or unexpected network connections, triggering alerts without signature-based scanning.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What security tools should I use for CKS exam preparation?</h3>
+                        <p>Focus on Trivy for image vulnerability scanning (almost guaranteed on the exam), kube-bench for CIS benchmark compliance, Network Policies for microsegmentation, RBAC with kubectl auth can-i for permission verification, and Falco for runtime security alerts and audit log analysis.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What are the CKS exam domains and their weightage?</h3>
+                        <p>The CKS exam covers six domains: Cluster Setup (10%), Cluster Hardening (15%), System Hardening (15%), Minimize Microservice Vulnerabilities (20%), Supply Chain Security (20%), and Monitoring, Logging, Runtime Security (20%). Supply chain security and runtime security have the highest combined weightage at 40%.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I implement default-deny Network Policies in Kubernetes?</h3>
+                        <p>Create a NetworkPolicy with empty podSelector and specify both Ingress and Egress in policyTypes without any allow rules. This blocks all traffic to and from pods in the namespace. Then create specific NetworkPolicies to allow only required traffic flows using label selectors instead of IP addresses.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+
+                    <p>Kubernetes security in 2026 requires a comprehensive defense-in-depth strategy across all eight security domains. The key principles to remember:</p>
+
+                    <ol>
+                        <li><strong>Pod Security Standards "Restricted"</strong> - Use namespace labels for automatic enforcement</li>
+                        <li><strong>Default-Deny Networking</strong> - Start with deny-all, then explicitly allow required traffic</li>
+                        <li><strong>Least-Privilege RBAC</strong> - Dedicated service accounts, verify with kubectl auth can-i</li>
+                        <li><strong>Secrets Encryption</strong> - KMS v2 for etcd, External Secrets Operator for management</li>
+                        <li><strong>Image Security</strong> - Sign with Sigstore, scan with Trivy, enforce with Kyverno</li>
+                        <li><strong>Runtime Protection</strong> - Falco with eBPF for real-time threat detection</li>
+                        <li><strong>Cluster Hardening</strong> - CIS Benchmarks with kube-bench automation</li>
+                        <li><strong>Supply Chain</strong> - SBOMs with Syft, attestations with Cosign, SLSA compliance</li>
+                    </ol>
+
+                    <p>For CKS certification, focus your preparation on Trivy image scanning, Network Policies, Falco rules, and RBAC - these topics represent the majority of exam questions.</p>
+
+                    <h3>Next Steps</h3>
+
+                    <ul>
+                        <li><a href="https://kubernetes.io/docs/concepts/security/" target="_blank" rel="noopener">Kubernetes Security Documentation</a></li>
+                        <li><a href="https://falco.org/docs/" target="_blank" rel="noopener">Falco Documentation</a></li>
+                        <li><a href="https://docs.sigstore.dev/" target="_blank" rel="noopener">Sigstore Documentation</a></li>
+                        <li><a href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/" target="_blank" rel="noopener">CKS Certification</a></li>
+                        <li><a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A" target="_blank" rel="noopener">Watch Video Tutorials on Gheware DevOps AI YouTube Channel</a></li>
+                    </ul>
+
+                    <div class="cta-box" style="background: linear-gradient(135deg, #326CE5 0%, #1E3A5F 100%); color: white; padding: 2rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+                        <h3 style="margin-top: 0; color: white;">Ready to Master Kubernetes Security for CKS?</h3>
+                        <p>Subscribe to our YouTube channel for hands-on security tutorials, CKS exam prep, and DevOps best practices.</p>
+                        <a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A" target="_blank" rel="noopener" style="display: inline-block; background: #22C55E; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 1rem;">Subscribe to Gheware DevOps AI</a>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Author Bio Placeholder -->
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">Docker</span>
+                            <h3 class="blog-card-title">
+                                <a href="/blog/posts/docker-image-layers-complete-guide-2026.html">Docker Image Layers Explained: Complete DCA Certification Guide</a>
+                            </h3>
+                            <p class="blog-card-excerpt">Master Docker image layers for the DCA exam. Learn Copy-on-Write, layer caching, and optimization strategies.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">DevOps & AI</span>
+                            <h3 class="blog-card-title">
+                                <a href="/blog/posts/claude-code-for-devops-engineers-2026.html">Claude Code for DevOps Engineers: Docker, Kubernetes & Terraform</a>
+                            </h3>
+                            <p class="blog-card-excerpt">Master AI-powered DevOps with Claude Code. Generate Dockerfiles, K8s manifests, and Terraform configs.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Practice Kubernetes Security?</h2>
+                <p>Apply what you have learned with hands-on Kubernetes security labs. Real clusters, real scenarios.</p>
+                <a href="https://brainupgrade.in" class="btn-cta-primary">
+                    <span>Start Free Lab</span>
+                    <span class="btn-arrow">-></span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>
