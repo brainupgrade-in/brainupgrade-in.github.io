@@ -1,0 +1,228 @@
+<!--
+================================================================================
+YouTube Video Cross-Reference Components - Reusable Templates
+================================================================================
+
+Use these templates to add YouTube video references to blog posts.
+Copy the appropriate component and replace the placeholder values.
+
+PLACEHOLDERS TO REPLACE:
+- {{VIDEO_ID}}     : YouTube video ID (e.g., EPZdHiw2VAI)
+- {{VIDEO_TITLE}}  : Full video title
+- {{VIDEO_URL}}    : Full YouTube URL
+- {{DURATION}}     : Video duration (e.g., 6 min, 10 min)
+- {{DESCRIPTION}}  : Short description of video content
+
+================================================================================
+-->
+
+<!-- ============================================
+     COMPONENT 1: Video Banner (Inline)
+     ============================================
+
+     USE: Place after the intro paragraph
+     BEST FOR: Quick reference, doesn't disrupt reading flow
+
+-->
+
+<div class="video-banner">
+    <span class="video-banner-icon">🎬</span>
+    <p class="video-banner-text">
+        <strong>Prefer video?</strong> Watch
+        <a href="{{VIDEO_URL}}" target="_blank" rel="noopener">{{VIDEO_TITLE}}</a>
+        on YouTube <span class="video-banner-duration">({{DURATION}})</span>
+    </p>
+</div>
+
+<!-- EXAMPLE: Docker Image Layers -->
+<!--
+<div class="video-banner">
+    <span class="video-banner-icon">🎬</span>
+    <p class="video-banner-text">
+        <strong>Prefer video?</strong> Watch
+        <a href="https://www.youtube.com/watch?v=EPZdHiw2VAI" target="_blank" rel="noopener">Docker Layers Explained - Why 90% Get This Wrong</a>
+        on YouTube <span class="video-banner-duration">(6 min)</span>
+    </p>
+</div>
+-->
+
+
+<!-- ============================================
+     COMPONENT 2: Video CTA Card (Featured)
+     ============================================
+
+     USE: Place at the end of the article, before author bio
+     BEST FOR: Maximum conversions, visually prominent
+
+-->
+
+<div class="video-cta-card">
+    <div class="video-cta-thumbnail">
+        <a href="{{VIDEO_URL}}" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/{{VIDEO_ID}}/maxresdefault.jpg"
+                 alt="{{VIDEO_TITLE}}"
+                 loading="lazy">
+            <span class="play-icon">▶</span>
+        </a>
+    </div>
+    <div class="video-cta-content">
+        <span class="video-cta-badge">📺 Watch Video</span>
+        <h4>{{VIDEO_TITLE}}</h4>
+        <p>{{DESCRIPTION}}</p>
+        <a href="{{VIDEO_URL}}" class="video-cta-button" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+            </svg>
+            Watch on YouTube
+        </a>
+    </div>
+</div>
+
+<!-- EXAMPLE: Kubernetes Security -->
+<!--
+<div class="video-cta-card">
+    <div class="video-cta-thumbnail">
+        <a href="https://www.youtube.com/watch?v=pH67LNj7Wu0" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/pH67LNj7Wu0/maxresdefault.jpg"
+                 alt="Kubernetes Security 2026 - 8 Essential Domains"
+                 loading="lazy">
+            <span class="play-icon">▶</span>
+        </a>
+    </div>
+    <div class="video-cta-content">
+        <span class="video-cta-badge">📺 Watch Video</span>
+        <h4>Kubernetes Security 2026 - 8 Essential Domains for Production</h4>
+        <p>Visual walkthrough of all 8 security domains with real examples and demos.</p>
+        <a href="https://www.youtube.com/watch?v=pH67LNj7Wu0" class="video-cta-button" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+            </svg>
+            Watch on YouTube
+        </a>
+    </div>
+</div>
+-->
+
+
+<!-- ============================================
+     COMPONENT 3: Embedded Video
+     ============================================
+
+     USE: Mid-article for complex visual concepts
+     BEST FOR: Maximum engagement, keeps viewers on page
+     NOTE: Impacts page load speed
+
+-->
+
+<figure class="video-embed">
+    <iframe
+        src="https://www.youtube.com/embed/{{VIDEO_ID}}"
+        title="{{VIDEO_TITLE}}"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</figure>
+<p class="video-embed-caption">{{VIDEO_TITLE}} - Gheware DevOps AI</p>
+
+<!-- EXAMPLE: Docker Layers -->
+<!--
+<figure class="video-embed">
+    <iframe
+        src="https://www.youtube.com/embed/EPZdHiw2VAI"
+        title="Docker Layers Explained - Why 90% Get This Wrong"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</figure>
+<p class="video-embed-caption">Docker Layers Explained - Gheware DevOps AI</p>
+-->
+
+
+<!-- ============================================
+     COMPONENT 4: Video Series Card
+     ============================================
+
+     USE: When blog is part of a video series
+     BEST FOR: Driving playlist views, showing context
+
+-->
+
+<div class="video-series-card">
+    <div class="video-series-header">
+        <h4>📺 DCA Foundation Video Series</h4>
+        <span class="video-series-badge">10 Videos</span>
+    </div>
+    <ul class="video-series-list">
+        <li>
+            <span class="video-series-number">1</span>
+            <a href="https://www.youtube.com/watch?v=dXmsetYmCfU" target="_blank">What is Docker? Containers Explained</a>
+        </li>
+        <li>
+            <span class="video-series-number">2</span>
+            <a href="https://www.youtube.com/watch?v=PNfUBkIDKfs" target="_blank">Installing Docker - Setup Guide</a>
+        </li>
+        <li>
+            <span class="video-series-number">3</span>
+            <a href="https://www.youtube.com/watch?v=YCsG8_sqpIw" target="_blank">Docker Images - Pull & Understand</a>
+        </li>
+        <li class="current">
+            <span class="video-series-number">4</span>
+            <a href="https://www.youtube.com/watch?v=EPZdHiw2VAI" target="_blank">Docker Layers Explained (You are here)</a>
+        </li>
+        <li>
+            <span class="video-series-number">5</span>
+            <a href="https://www.youtube.com/watch?v=1LCo7lLziGs" target="_blank">Docker Run - Deep Dive</a>
+        </li>
+    </ul>
+</div>
+
+
+<!-- ============================================
+     QUICK REFERENCE: Video IDs & URLs
+     ============================================
+
+     Recent videos for quick copy-paste:
+
+     DOCKER LAYERS:
+     - Video ID: EPZdHiw2VAI
+     - URL: https://www.youtube.com/watch?v=EPZdHiw2VAI
+     - Blog: /blog/posts/docker-image-layers-complete-guide-2026.html
+
+     KUBERNETES SECURITY:
+     - Video ID: pH67LNj7Wu0
+     - URL: https://www.youtube.com/watch?v=pH67LNj7Wu0
+     - Blog: /blog/posts/kubernetes-security-best-practices-2026.html
+
+     Thumbnail URL pattern:
+     - Max quality: https://img.youtube.com/vi/{{VIDEO_ID}}/maxresdefault.jpg
+     - High quality: https://img.youtube.com/vi/{{VIDEO_ID}}/hqdefault.jpg
+     - Medium: https://img.youtube.com/vi/{{VIDEO_ID}}/mqdefault.jpg
+
+-->
+
+
+<!-- ============================================
+     PLACEMENT RECOMMENDATIONS
+     ============================================
+
+     For maximum SEO & engagement, use this pattern:
+
+     1. AFTER INTRO (Line ~20-30):
+        → Video Banner (Component 1)
+        → Catches readers who prefer video early
+
+     2. MID-ARTICLE (Complex visual section):
+        → Embedded Video (Component 3) - OPTIONAL
+        → Use sparingly, impacts load time
+
+     3. END OF ARTICLE (Before author bio):
+        → Video CTA Card (Component 2)
+        → Final conversion opportunity
+
+     4. SERIES ARTICLES:
+        → Video Series Card (Component 4)
+        → Shows full playlist context
+
+-->
