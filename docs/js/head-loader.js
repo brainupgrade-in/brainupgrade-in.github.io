@@ -130,7 +130,9 @@
             addMetaTag('author', CONFIG.author);
         }
 
-        // Add Google Search Console verification
+        // Add Google Search Console verification (if not already in static HTML)
+        // NOTE: For Search Console, verification tag MUST be in static HTML, not added by JS
+        // The tag should be manually added to each page's <head> section
         if (!document.querySelector('meta[name="google-site-verification"]')) {
             addMetaTag('google-site-verification', CONFIG.googleVerification);
         }
