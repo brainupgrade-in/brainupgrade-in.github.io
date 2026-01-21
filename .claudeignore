@@ -1,0 +1,56 @@
+# .claudeignore - devops.gheware.com (GitHub Pages Blog)
+
+# ===================
+# Git
+# ===================
+.git/
+
+# ===================
+# Environment
+# ===================
+.env
+.env.local
+.env.*.local
+
+# ===================
+# IDE & Editors
+# ===================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===================
+# OS generated
+# ===================
+.DS_Store
+Thumbs.db
+
+# ===================
+# Large binary files
+# ===================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.svg
+*.mp4
+*.mp3
+*.pdf
+
+# ===================
+# Build artifacts
+# ===================
+_site/
+.jekyll-cache/
+.sass-cache/
+node_modules/
+
+# ===================
+# Logs
+# ===================
+*.log
+logs/
