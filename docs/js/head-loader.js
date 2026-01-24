@@ -16,7 +16,13 @@
         author: 'Gheware Technologies',
         favicon: '/favicon.svg',
         ogImage: '/images/og-image.png',
-        gaId: 'G-9904BXNJ3H',
+        // Domain-specific Google Analytics IDs
+        gaId: {
+            'brainupgrade-in.github.io': 'G-9904BXNJ3H',
+            'www.brainupgrade-in.github.io': 'G-9904BXNJ3H',
+            'devops.gheware.com': 'G-TRDMMEZ26F',
+            'www.devops.gheware.com': 'G-TRDMMEZ26F'
+        },
         googleVerification: 'Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE',
         social: {
             youtube: 'https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A',
@@ -55,17 +61,25 @@
      * Initialize Google Analytics GA4
      */
     function initializeGA() {
-        // Only load in production
-        if (window.location.hostname !== 'brainupgrade-in.github.io' &&
-            window.location.hostname !== 'www.brainupgrade-in.github.io') {
-            console.log('GA4 disabled (development mode)');
+        const hostname = window.location.hostname;
+        const gaId = CONFIG.gaId[hostname];
+
+        // Skip if GA is already loaded statically (check for gtag script)
+        if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+            console.log('GA4 already loaded statically, skipping JS initialization');
+            return;
+        }
+
+        // Only load in production for supported domains
+        if (!gaId) {
+            console.log('GA4 disabled (development mode or unsupported domain)');
             return;
         }
 
         // Load gtag.js
         const script = document.createElement('script');
         script.async = true;
-        script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.gaId}`;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
         document.head.appendChild(script);
 
         // Initialize gtag
@@ -76,12 +90,12 @@
         window.gtag = gtag;
 
         gtag('js', new Date());
-        gtag('config', CONFIG.gaId, {
+        gtag('config', gaId, {
             page_title: document.title,
             page_location: window.location.href
         });
 
-        console.log('GA4 initialized for DevOps Gheware');
+        console.log(`GA4 initialized for ${hostname} with ID: ${gaId}`);
     }
 
     /**
