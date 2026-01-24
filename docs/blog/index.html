@@ -857,6 +857,25 @@
     <section class="blog-section" id="defaultBlogSection">
         <div class="container">
             <div class="blog-grid" id="defaultBlogGrid">
+                <!-- Building Internal Developer Platforms 2026 -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Platform Engineering</span>
+                        <span class="blog-card-category" style="background: #22C55E; margin-left: 0.5rem;">DevOps</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/building-internal-developer-platforms-2026.html">Building Internal Developer Platforms 2026: Platform Engineering Roadmap 91% Miss</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Master platform engineering with the complete IDP implementation guide. Learn why 91% fail, how to achieve 40% faster delivery, and unlock $375K+ career potential in 2026.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Vector Databases on Kubernetes 2026 -->
                 <article class="blog-card">
                     <div class="blog-card-content">
@@ -1329,84 +1348,26 @@
         </div>
     </div>
 
-    <!-- YouTube Integration Script -->
+    <!-- YouTube Integration - handled by /js/youtube-integration.js -->
+    <!-- Inline dismiss function fallback for onclick handler -->
     <script>
-        // YouTube Sticky Bar Functions
-        function dismissYouTubeBar() {
-            const bar = document.getElementById('youtube-subscribe-bar');
-            bar.classList.remove('visible');
-            bar.classList.add('hidden');
-            localStorage.setItem('youtube-bar-dismissed', 'true');
-            localStorage.setItem('youtube-bar-dismissed-time', Date.now().toString());
-        }
-
-        function showYouTubeBarOnScroll() {
-            const bar = document.getElementById('youtube-subscribe-bar');
-            const dismissed = localStorage.getItem('youtube-bar-dismissed');
-            const dismissedTime = localStorage.getItem('youtube-bar-dismissed-time');
-
-            // Reset dismissal after 7 days
-            if (dismissed && dismissedTime) {
-                const sevenDays = 7 * 24 * 60 * 60 * 1000;
-                if (Date.now() - parseInt(dismissedTime) > sevenDays) {
-                    localStorage.removeItem('youtube-bar-dismissed');
-                    localStorage.removeItem('youtube-bar-dismissed-time');
+        // Fallback for dismissYouTubeBar if youtube-integration.js hasn't loaded
+        if (typeof window.dismissYouTubeBar === 'undefined') {
+            window.dismissYouTubeBar = function() {
+                const bar = document.getElementById('youtube-subscribe-bar');
+                if (bar) {
+                    bar.classList.remove('visible');
+                    bar.classList.add('hidden');
+                    localStorage.setItem('youtube-bar-dismissed', 'true');
+                    localStorage.setItem('youtube-bar-dismissed-time', Date.now().toString());
                 }
-            }
-
-            if (localStorage.getItem('youtube-bar-dismissed')) return;
-
-            let shown = false;
-            window.addEventListener('scroll', function() {
-                const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-
-                if (scrollPercent > 30 && !shown) {
-                    bar.classList.remove('hidden');
-                    bar.classList.add('visible');
-                    shown = true;
-
-                    // Track impression
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'youtube_bar_shown', {
-                            'event_category': 'YouTube Integration',
-                            'event_label': 'Sticky Bar Shown'
-                        });
-                    }
-                }
-            });
+            };
         }
-
-        // Track YouTube link clicks
-        function trackYouTubeClick(element, action) {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'youtube_click', {
-                    'event_category': 'YouTube Integration',
-                    'event_action': action,
-                    'event_label': element.href
-                });
-            }
-        }
-
-        // Initialize YouTube features
-        document.addEventListener('DOMContentLoaded', function() {
-            showYouTubeBarOnScroll();
-
-            // Add click tracking to all YouTube links
-            document.querySelectorAll('a[href*="youtube.com"], a[href*="youtu.be"]').forEach(link => {
-                link.addEventListener('click', function() {
-                    const action = this.closest('.youtube-channel-section') ? 'channel_section' :
-                                   this.closest('.trending-videos-section') ? 'trending_video' :
-                                   this.closest('.youtube-sticky-bar') ? 'sticky_bar' :
-                                   this.closest('.playlist-card') ? 'playlist' : 'general';
-                    trackYouTubeClick(this, action);
-                });
-            });
-        });
     </script>
 
     <!-- 404 Recovery Integration Script -->
     <script>
-        // Initialize enhanced blog search with 404 recovery support
+        // Initialize 404 recovery support after DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const searchQuery = urlParams.get('search');
@@ -1427,72 +1388,49 @@
                     });
                 }
             }
-
-            // Handle search suggestions clicks
-            const suggestions = document.querySelectorAll('.search-suggestion');
-            suggestions.forEach(suggestion => {
-                suggestion.addEventListener('click', function() {
-                    const term = this.getAttribute('data-term');
-                    const searchBox = document.getElementById('blogSearchBox');
-                    searchBox.value = term;
-
-                    // Trigger search manually since we're setting the value programmatically
-                    if (typeof window.enhancedBlogSearch !== 'undefined') {
-                        window.enhancedBlogSearch.performSearch(term);
-                    }
-                });
-            });
-
-            // Clear search functionality
-            const clearButton = document.getElementById('clearSearch');
-            clearButton.addEventListener('click', function() {
-                const searchBox = document.getElementById('blogSearchBox');
-                searchBox.value = '';
-
-                if (typeof window.enhancedBlogSearch !== 'undefined') {
-                    window.enhancedBlogSearch.clearSearch();
-                }
-
-                // Clear URL parameters
-                const url = new URL(window.location);
-                url.searchParams.delete('search');
-                url.searchParams.delete('recovery');
-                url.searchParams.delete('from');
-                window.history.replaceState({}, document.title, url.toString());
-
-                hideRecoveryInfo();
-            });
         });
 
         function showRecoveryInfo(originalUrl, searchQuery) {
             const recoveryInfo = document.getElementById('recoveryInfo');
             const recoveryMessage = document.getElementById('recoveryMessage');
 
-            if (originalUrl) {
-                recoveryMessage.textContent = `We've automatically searched for content related to "${originalUrl}" and found these results:`;
-            } else {
-                recoveryMessage.textContent = `We've automatically searched our blog based on the page you were looking for.`;
+            if (recoveryInfo && recoveryMessage) {
+                if (originalUrl) {
+                    recoveryMessage.textContent = 'We\'ve automatically searched for content related to "' + originalUrl + '" and found these results:';
+                } else {
+                    recoveryMessage.textContent = 'We\'ve automatically searched our blog based on the page you were looking for.';
+                }
+                recoveryInfo.classList.add('show');
             }
-
-            recoveryInfo.classList.add('show');
         }
 
         function hideRecoveryInfo() {
             const recoveryInfo = document.getElementById('recoveryInfo');
-            recoveryInfo.classList.remove('show');
+            if (recoveryInfo) {
+                recoveryInfo.classList.remove('show');
+            }
         }
 
         function performAutoSearch(query) {
             // Set the search box value
             const searchBox = document.getElementById('blogSearchBox');
-            searchBox.value = query;
+            if (searchBox) {
+                searchBox.value = query;
+            }
 
             // Wait for the enhanced search to initialize, then perform search
-            setTimeout(() => {
-                if (typeof window.enhancedBlogSearch !== 'undefined') {
+            var attempts = 0;
+            var maxAttempts = 10;
+            var checkInterval = setInterval(function() {
+                attempts++;
+                if (typeof window.enhancedBlogSearch !== 'undefined' && window.enhancedBlogSearch.performSearch) {
                     window.enhancedBlogSearch.performSearch(query);
+                    clearInterval(checkInterval);
+                } else if (attempts >= maxAttempts) {
+                    clearInterval(checkInterval);
+                    console.warn('EnhancedBlogSearch not available after ' + maxAttempts + ' attempts');
                 }
-            }, 500);
+            }, 200);
         }
     </script>
 </body>
