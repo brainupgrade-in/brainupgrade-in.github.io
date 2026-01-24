@@ -1,0 +1,55 @@
+/* Local Development Icon Fixes */
+/* Add this file to fix icon display issues in local development */
+
+/* Ensure SVG icons are visible */
+svg {
+    display: inline-block !important;
+    vertical-align: middle;
+}
+
+/* Fix social link icons */
+.social-link svg {
+    display: inline-block !important;
+    fill: currentColor !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/* Fix logo SVG */
+.logo-svg {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* Ensure emoji icons display */
+.contact-icon {
+    display: inline-block !important;
+    font-size: 1rem !important;
+    margin-right: 0.5rem;
+}
+
+/* Fix any hidden icons */
+.footer-social svg,
+.social-link svg,
+.logo-svg {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Fallback colors for icons */
+.social-link {
+    color: var(--gray-500, #6b7280) !important;
+}
+
+.social-link:hover {
+    color: var(--primary, #10b981) !important;
+}
+
+/* Fix for any icon container issues */
+.footer-social,
+.logo-icon,
+.contact-item {
+    display: flex !important;
+    align-items: center !important;
+}
