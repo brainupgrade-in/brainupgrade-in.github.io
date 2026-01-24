@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gheware DevOps AI Blog - Kubernetes tutorials, Docker guides, CI/CD best practices, and cloud-native insights">
     <meta name="robots" content="index, follow">
 
@@ -12,8 +14,592 @@
     <!-- Common head elements: GA, meta tags, favicon -->
     <script src="/js/head-loader.js"></script>
     <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/css/local-dev-fixes.css">
     <link rel="stylesheet" href="css/blog.css">
+
+    <!-- Enhanced Blog Search Styles -->
+    <style>
+        /* Blog Category Section */
+        .blog-category-section {
+            background: linear-gradient(135deg, #1E3A5F 0%, #22C55E 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite;
+            padding: 1.5rem 0;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-category-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .blog-category-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .search-box-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 1rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            padding: 10px 14px;
+            font-size: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #374151;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .search-box::placeholder {
+            color: #6b7280;
+        }
+
+        .search-suggestions {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            justify-content: center;
+        }
+
+        .search-suggestion {
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.95);
+            padding: 0.4rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-suggestion:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1E3A5F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-shadow: none;
+        }
+
+        /* Recovery Mode Styles */
+        .recovery-info {
+            display: none;
+            background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .recovery-info.show {
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .recovery-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .recovery-message {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Search Results */
+        .search-results {
+            display: none;
+        }
+
+        .search-results.show {
+            display: block;
+        }
+
+        .search-stats {
+            margin-bottom: 1.5rem;
+            color: #64748B;
+            font-size: 0.95rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 0;
+            color: #64748B;
+        }
+
+        .no-results h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        /* Highlighted Search Terms */
+        .highlight {
+            background: #FEF3C7;
+            color: #92400E;
+            padding: 0.1rem 0.2rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* Clear Search */
+        .clear-search {
+            display: none;
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+            font-size: 14px;
+        }
+
+        .clear-search.show {
+            display: block;
+        }
+
+        .clear-search:hover {
+            background: rgba(220, 38, 38, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-category-section {
+                padding: 1.25rem 0;
+            }
+
+            .filters-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+
+            .search-box-container {
+                flex-direction: column;
+                gap: 0.75rem;
+                margin-bottom: 0.75rem;
+                padding: 0 10px;
+            }
+
+            .search-box {
+                font-size: 14px;
+                padding: 12px 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .search-suggestions {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .search-suggestion {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .category-filters {
+                padding: 0 10px;
+                overflow-x: hidden;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .blog-category-section {
+                background: linear-gradient(135deg, #1e293b 0%, #374151 100%);
+                background-size: 200% 200%;
+            }
+
+            .filters-title {
+                color: #f1f5f9;
+            }
+
+            .search-box {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.2);
+                color: #f1f5f9;
+            }
+
+            .search-box::placeholder {
+                color: #cbd5e1;
+            }
+
+            .search-suggestion {
+                background: rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.9);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        /* Loading Animation */
+        .search-loading {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .search-loading.show {
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border: 3px solid #e3f2fd;
+            border-top: 3px solid #2196f3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 12px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Category Filters */
+        .category-filters {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .filters-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Quick Filters Section */
+        .quick-filters {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .quick-filters-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: #1E3A5F;
+            padding: 0.6rem 0.9rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            color: #22C55E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .filter-btn.active {
+            background: rgba(255, 255, 255, 1);
+            border-color: #22C55E;
+            color: #22C55E;
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .filter-btn .count {
+            background: rgba(0, 0, 0, 0.1);
+            color: inherit;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .filter-btn.active .count {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+
+        /* Pagination Styles */
+        .pagination-wrapper {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pagination {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pagination-btn {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #64748b;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            min-width: 44px;
+            text-align: center;
+        }
+
+        .pagination-btn:hover:not(.disabled) {
+            border-color: #2496ED;
+            color: #2496ED;
+            background: #f1f9ff;
+        }
+
+        .pagination-btn.active {
+            background: #2496ED;
+            border-color: #2496ED;
+            color: white;
+            font-weight: 600;
+        }
+
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f8fafc;
+        }
+
+        .pagination-ellipsis {
+            color: #94a3b8;
+            padding: 0 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Featured Badge */
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #F59E0B, #D97706);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .blog-card {
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Blog Card Categories */
+        .blog-card-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-category.secondary {
+            background: #64748B !important;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Enhanced Meta with Emojis */
+        .blog-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Counter Animation */
+        .animated-counter {
+            font-weight: 700;
+            color: #2496ED;
+        }
+
+        /* Error Message */
+        .error-message {
+            text-align: center;
+            padding: 3rem 0;
+            color: #ef4444;
+        }
+
+        .error-message h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design for New Elements */
+        @media (max-width: 768px) {
+            .filter-buttons {
+                gap: 0.5rem;
+                overflow-x: hidden;
+                padding: 0 10px;
+            }
+
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .search-suggestions {
+                flex-wrap: wrap;
+                overflow-x: hidden;
+            }
+
+            .search-suggestion {
+                flex-shrink: 0;
+            }
+
+            .pagination {
+                gap: 0.25rem;
+            }
+
+            .pagination-btn {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+                min-width: 40px;
+            }
+
+            .featured-badge {
+                top: 0.5rem;
+                right: 0.5rem;
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .quick-filters {
+                margin: 1rem 0;
+            }
+
+            .quick-filters-label {
+                display: block;
+                text-align: center;
+                margin-bottom: 0.75rem;
+            }
+
+            .search-suggestions {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
+
     <script src="/js/template-loader.js" defer></script>
+    <script src="/js/blog-search-enhanced.js" defer></script>
 </head>
 <body>
     <!-- Header Placeholder -->
@@ -29,10 +615,376 @@
         </div>
     </section>
 
-    <!-- Blog Grid -->
-    <section class="blog-section">
+    <!-- Newsletter CTA Above Fold - High Conversion Placement -->
+    <div class="newsletter-cta-above-fold">
+        <h2>Subscribe for Weekly DevOps Excellence</h2>
+        <p>Get curated tutorials, security tips, and AI automation insights delivered to your inbox</p>
+        <form id="newsletter-form-top" class="newsletter-form-top">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe (Free)</button>
+        </form>
+        <p class="small-text">Join 1,500+ DevOps engineers - No spam, unsubscribe anytime</p>
+    </div>
+
+    <!-- Featured Posts Section - Top Performing Content -->
+    <section class="featured-posts-section">
         <div class="container">
-            <div class="blog-grid">
+            <h2>Featured Posts</h2>
+            <p class="section-subtitle">Most popular tutorials this month</p>
+
+            <div class="featured-posts-grid">
+                <article class="featured-post-card">
+                    <div class="featured-badge trending">TRENDING</div>
+                    <h3><a href="/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html">AI Agent Design Patterns 2026</a></h3>
+                    <p class="excerpt">Master AI agent architectures with proven design patterns for production systems.</p>
+                    <div class="post-meta-featured">
+                        <span class="category">AI Agents</span>
+                        <span class="read-time">24 min read</span>
+                    </div>
+                    <a href="/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html" class="featured-read-btn">Read Full Guide</a>
+                </article>
+
+                <article class="featured-post-card">
+                    <div class="featured-badge popular">POPULAR</div>
+                    <h3><a href="/blog/posts/docker-image-layers-complete-guide-2026.html">Docker Image Layers Explained</a></h3>
+                    <p class="excerpt">Reduce Docker image sizes by 90% with advanced multi-stage build optimization techniques.</p>
+                    <div class="post-meta-featured">
+                        <span class="category">Docker</span>
+                        <span class="read-time">18 min read</span>
+                    </div>
+                    <a href="/blog/posts/docker-image-layers-complete-guide-2026.html" class="featured-read-btn">Read Full Guide</a>
+                </article>
+
+                <article class="featured-post-card">
+                    <div class="featured-badge new">NEW</div>
+                    <h3><a href="/blog/posts/kubernetes-security-best-practices-2026.html">Kubernetes Security Best Practices</a></h3>
+                    <p class="excerpt">Implement enterprise-grade security with production-ready RBAC and Pod Security Standards.</p>
+                    <div class="post-meta-featured">
+                        <span class="category">Kubernetes</span>
+                        <span class="read-time">26 min read</span>
+                    </div>
+                    <a href="/blog/posts/kubernetes-security-best-practices-2026.html" class="featured-read-btn">Read Full Guide</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Category Filters Section (includes search suggestions) -->
+    <section class="blog-category-section">
+        <div class="container">
+            <!-- Recovery Information (shown only when recovering from 404) -->
+            <div class="recovery-info" id="recoveryInfo">
+                <div class="recovery-title">
+                    <span>🎯</span>
+                    <span>Found Your Content!</span>
+                </div>
+                <p class="recovery-message" id="recoveryMessage">
+                    We've automatically searched our blog based on the page you were looking for.
+                </p>
+            </div>
+
+            <div class="category-filters">
+                <h2 class="filters-title">Browse DevOps Content</h2>
+
+                <!-- Search box integrated into filters -->
+                <div class="search-box-container">
+                    <input type="text"
+                           class="search-box"
+                           id="blogSearchBox"
+                           placeholder="Search for: Kubernetes, Docker, AI agents, security..."
+                           autocomplete="off">
+                    <button class="clear-search" id="clearSearch">Clear Search</button>
+                </div>
+
+                <!-- Category filter buttons (populated dynamically) -->
+                <div class="filter-buttons" id="filterButtonsContainer">
+                    <!-- Populated dynamically by JavaScript -->
+                </div>
+
+                <!-- Search suggestions integrated as quick filter buttons -->
+                <div class="quick-filters">
+                    <span class="quick-filters-label">Quick Topics:</span>
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <span class="search-suggestion" data-term="Kubernetes security">🔒 Kubernetes Security</span>
+                        <span class="search-suggestion" data-term="Docker layers">🐳 Docker Layers</span>
+                        <span class="search-suggestion" data-term="AI agents">🤖 AI Agents</span>
+                        <span class="search-suggestion" data-term="Claude Code">💻 Claude Code</span>
+                        <span class="search-suggestion" data-term="DevSecOps">⚡ DevSecOps</span>
+                        <span class="search-suggestion" data-term="CI/CD">🔄 CI/CD</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results" id="searchResults">
+        <div class="container">
+            <div class="search-stats" id="searchStats"></div>
+            <div class="search-loading" id="searchLoading">
+                <span class="spinner"></span>
+                <span>Searching blog posts...</span>
+            </div>
+            <div class="blog-grid" id="searchResultsGrid"></div>
+            <div class="no-results" id="noResults">
+                <h3>No posts found</h3>
+                <p>Try searching with different keywords or browse all our content below.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Default Blog Grid -->
+    <section class="blog-section" id="defaultBlogSection">
+        <div class="container">
+            <div class="blog-grid" id="defaultBlogGrid">
+                <!-- LLMOps Pipeline on Kubernetes 2026 -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AI Infrastructure</span>
+                        <span class="blog-card-category" style="background: #326CE5; margin-left: 0.5rem;">Kubernetes</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/llmops-pipeline-kubernetes-2026.html">LLMOps Pipeline on Kubernetes 2026: Production Secrets 83% Get Wrong</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Master LLMOps on Kubernetes with vLLM, KServe, and GPU optimization. Learn why 85% of AI projects fail and how to achieve 94% cost reduction with production-ready deployment patterns.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DevSecOps Best Practices Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">DevSecOps</span>
+                        <span class="blog-card-category" style="background: #22C55E; margin-left: 0.5rem;">Security</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/devsecops-best-practices-guide.html">DevSecOps Secrets: Why 90% Get Security Integration Wrong in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Discover the DevSecOps secrets that prevent 847+ critical vulnerabilities. Master shift-left security, SAST/DAST tools, and automation that 90% of teams miss in 2026.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Kubernetes to EKS Migration Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Kubernetes</span>
+                        <span class="blog-card-category" style="background: #F97316; margin-left: 0.5rem;">AWS Migration</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/kubernetes-to-eks-migration-guide.html">Kubernetes to EKS Migration: Secret Steps 95% Miss in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Avoid the 3 critical migration mistakes that cost companies $50K+. Master EKS migration with automated tools, data strategies, and cost optimization secrets for 2026.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AWS EKS High Availability Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AWS</span>
+                        <span class="blog-card-category" style="background: #2496ED; margin-left: 0.5rem;">High Availability</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/aws-eks-high-availability-guide.html">AWS EKS High Availability: Hidden Secrets 87% Don't Know in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Discover the EKS HA secrets that prevent 99.99% uptime failures. Master multi-AZ deployments, auto-scaling, and disaster recovery strategies that cost companies $100K when missed.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>16 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Kubernetes Storage Best Practices -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Kubernetes</span>
+                        <span class="blog-card-category" style="background: #22C55E; margin-left: 0.5rem;">Storage</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/kubernetes-storage-best-practices-guide.html">Kubernetes Storage Secrets: Why 78% Lose Critical Data in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Prevent the data loss disasters that cost companies millions. Master StatefulSets, PVs, storage classes, and backup strategies that 78% of teams get wrong.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>17 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Setup Kubernetes on Laptop -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Kubernetes</span>
+                        <span class="blog-card-category" style="background: #326CE5; margin-left: 0.5rem;">Local Setup</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/setup-kubernetes-on-laptop-guide.html">Setup Kubernetes on Laptop: Secret Tricks 92% Miss in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Skip the 3-hour setup nightmare. Master the secret techniques for lightning-fast local Kubernetes development with minikube, kind, and Docker Desktop that 92% miss.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>14 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Kubernetes AI/ML Workloads Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Kubernetes</span>
+                        <span class="blog-card-category" style="background: #F97316; margin-left: 0.5rem;">AI/ML</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html">Kubernetes AI/ML Secrets: Why 73% Waste GPU Resources in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Stop the $50K/month GPU waste! Master AI workload optimization, auto-scaling, and resource management that 73% of teams get wrong in production.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>19 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DevOps Trends 2026 Analysis -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">DevOps Trends</span>
+                        <span class="blog-card-category" style="background: #22C55E; margin-left: 0.5rem;">2026 Analysis</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/devops-trends-2026-analysis-guide.html">DevOps Trends 2026: Hidden Shifts 89% Will Miss This Year</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Discover the 5 DevOps mega-trends reshaping 2026. From AI automation to platform engineering - don't let your team fall behind the curve.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>16 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Docker Networking Complete Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Docker</span>
+                        <span class="blog-card-category" style="background: #2496ED; margin-left: 0.5rem;">Networking</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/docker-networking-complete-guide-2026.html">Docker Networking Secrets: Why 84% Get Production Wrong</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Avoid the networking disasters that crash production systems. Master bridge, overlay, and custom networks with security best practices for 2026.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Advanced Kubernetes Certifications Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Kubernetes</span>
+                        <span class="blog-card-category" style="background: #22C55E; margin-left: 0.5rem;">Certifications</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/advanced-kubernetes-certifications-guide-2026.html">Kubernetes Certification Secrets: Why 67% Pick Wrong Path</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Stop wasting $2K+ on wrong certifications! Master the strategic certification roadmap that unlocks $150K+ salaries in 2026.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>21 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- AI-First DevOps Transformation Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">AI & DevOps</span>
+                        <span class="blog-card-category" style="background: #F97316; margin-left: 0.5rem;">Transformation</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/ai-first-devops-transformation-guide-2026.html">AI-First DevOps: Hidden Strategy 91% Miss in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Transform your DevOps with AI automation that reduces incidents by 85%. Learn the implementation roadmap that 91% of organizations get wrong.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>17 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Self-Healing Kubernetes Apps Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Kubernetes</span>
+                        <span class="blog-card-category" style="background: #22C55E; margin-left: 0.5rem;">Self-Healing</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/self-healing-kubernetes-apps-guide-2026.html">Self-Healing Kubernetes: Secrets 76% Don't Know in 2026</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Stop the 3 AM production alerts! Master auto-recovery patterns, health checks, and resilience strategies that keep systems running 24/7.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GitHub Actions CI/CD Guide -->
+                <article class="blog-card">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">CI/CD</span>
+                        <span class="blog-card-category" style="background: #2496ED; margin-left: 0.5rem;">GitHub Actions</span>
+                        <h2 class="blog-card-title">
+                            <a href="/blog/posts/github-actions-cicd-guide-2026.html">GitHub Actions Secrets: Why 82% Build Broken Pipelines</a>
+                        </h2>
+                        <p class="blog-card-excerpt">
+                            Avoid the $2M deployment disaster! Master GitHub Actions with Docker, Kubernetes, and security best practices that 82% get wrong.
+                        </p>
+                        <div class="blog-card-meta">
+                            <span>Rajesh Gheware</span>
+                            <span>January 24, 2026</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- AI Agent Design Patterns Implementation Guide 2026 -->
                 <article class="blog-card">
                     <div class="blog-card-content">
@@ -217,5 +1169,97 @@
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
+
+    <!-- 404 Recovery Integration Script -->
+    <script>
+        // Initialize enhanced blog search with 404 recovery support
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchQuery = urlParams.get('search');
+            const recoveryMode = urlParams.get('recovery');
+            const originalUrl = urlParams.get('from');
+
+            // If this is a recovery from 404, show recovery info and auto-search
+            if (recoveryMode === 'true' && searchQuery) {
+                showRecoveryInfo(originalUrl, searchQuery);
+                performAutoSearch(searchQuery);
+
+                // Track recovery analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', '404_recovery_attempt', {
+                        'search_query': searchQuery,
+                        'original_url': originalUrl,
+                        'recovery_page': window.location.href
+                    });
+                }
+            }
+
+            // Handle search suggestions clicks
+            const suggestions = document.querySelectorAll('.search-suggestion');
+            suggestions.forEach(suggestion => {
+                suggestion.addEventListener('click', function() {
+                    const term = this.getAttribute('data-term');
+                    const searchBox = document.getElementById('blogSearchBox');
+                    searchBox.value = term;
+
+                    // Trigger search manually since we're setting the value programmatically
+                    if (typeof window.enhancedBlogSearch !== 'undefined') {
+                        window.enhancedBlogSearch.performSearch(term);
+                    }
+                });
+            });
+
+            // Clear search functionality
+            const clearButton = document.getElementById('clearSearch');
+            clearButton.addEventListener('click', function() {
+                const searchBox = document.getElementById('blogSearchBox');
+                searchBox.value = '';
+
+                if (typeof window.enhancedBlogSearch !== 'undefined') {
+                    window.enhancedBlogSearch.clearSearch();
+                }
+
+                // Clear URL parameters
+                const url = new URL(window.location);
+                url.searchParams.delete('search');
+                url.searchParams.delete('recovery');
+                url.searchParams.delete('from');
+                window.history.replaceState({}, document.title, url.toString());
+
+                hideRecoveryInfo();
+            });
+        });
+
+        function showRecoveryInfo(originalUrl, searchQuery) {
+            const recoveryInfo = document.getElementById('recoveryInfo');
+            const recoveryMessage = document.getElementById('recoveryMessage');
+
+            if (originalUrl) {
+                recoveryMessage.textContent = `We've automatically searched for content related to "${originalUrl}" and found these results:`;
+            } else {
+                recoveryMessage.textContent = `We've automatically searched our blog based on the page you were looking for.`;
+            }
+
+            recoveryInfo.classList.add('show');
+        }
+
+        function hideRecoveryInfo() {
+            const recoveryInfo = document.getElementById('recoveryInfo');
+            recoveryInfo.classList.remove('show');
+        }
+
+        function performAutoSearch(query) {
+            // Set the search box value
+            const searchBox = document.getElementById('blogSearchBox');
+            searchBox.value = query;
+
+            // Wait for the enhanced search to initialize, then perform search
+            setTimeout(() => {
+                if (typeof window.enhancedBlogSearch !== 'undefined') {
+                    window.enhancedBlogSearch.performSearch(query);
+                }
+            }, 500);
+        }
+    </script>
 </body>
 </html>

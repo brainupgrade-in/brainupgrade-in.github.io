@@ -32,6 +32,42 @@
 
     <!-- Blog Posts -->
     <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/llmops-pipeline-kubernetes-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/devsecops-best-practices-guide.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/kubernetes-to-eks-migration-guide.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/aws-eks-high-availability-guide.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/kubernetes-storage-best-practices-guide.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/setup-kubernetes-on-laptop-guide.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://brainupgrade-in.github.io/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</loc>
         <lastmod>2026-01-13</lastmod>
         <changefreq>monthly</changefreq>
@@ -78,5 +114,49 @@
         <lastmod>2026-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+
+    <!-- Batch 2 Migration Posts -->
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/devops-trends-2026-analysis-guide.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/docker-networking-complete-guide-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/advanced-kubernetes-certifications-guide-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/ai-first-devops-transformation-guide-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/self-healing-kubernetes-apps-guide-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://brainupgrade-in.github.io/blog/posts/github-actions-cicd-guide-2026.html</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>
