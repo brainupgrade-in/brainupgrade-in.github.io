@@ -6,12 +6,19 @@
 (function() {
     'use strict';
 
-    // GA4 Measurement ID
-    const GA_MEASUREMENT_ID = 'G-9904BXNJ3H';
+    // Domain-specific GA4 Measurement IDs
+    const GA_MEASUREMENT_IDS = {
+        'brainupgrade-in.github.io': 'G-9904BXNJ3H',
+        'www.brainupgrade-in.github.io': 'G-9904BXNJ3H',
+        'devops.gheware.com': 'G-TRDMMEZ26F',
+        'www.devops.gheware.com': 'G-TRDMMEZ26F'
+    };
 
-    // Only load in production
-    if (window.location.hostname === 'brainupgrade-in.github.io' ||
-        window.location.hostname === 'www.brainupgrade-in.github.io') {
+    const hostname = window.location.hostname;
+    const GA_MEASUREMENT_ID = GA_MEASUREMENT_IDS[hostname];
+
+    // Only load in production for supported domains
+    if (GA_MEASUREMENT_ID) {
 
         // Load gtag.js
         const script = document.createElement('script');
@@ -32,8 +39,8 @@
             page_location: window.location.href
         });
 
-        console.log('GA4 initialized for DevOps Gheware');
+        console.log(`GA4 initialized for ${hostname} with ID: ${GA_MEASUREMENT_ID}`);
     } else {
-        console.log('GA4 disabled (development mode)');
+        console.log('GA4 disabled (development mode or unsupported domain)');
     }
 })();

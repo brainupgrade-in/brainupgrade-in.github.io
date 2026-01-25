@@ -12,6 +12,13 @@ PLACEHOLDERS TO REPLACE:
 - {{VIDEO_URL}}    : Full YouTube URL
 - {{DURATION}}     : Video duration (e.g., 6 min, 10 min)
 - {{DESCRIPTION}}  : Short description of video content
+- {{VIEWS}}        : View count (e.g., 1.5k, 2.1k)
+
+CHANNEL INFO:
+- Channel ID: UCSHFanMgmtBK5mWXCyTCW7A
+- Subscribe URL: https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A?sub_confirmation=1
+- Total Videos: 82+
+- Total Subscribers: 1,700+
 
 ================================================================================
 -->
@@ -204,6 +211,101 @@ PLACEHOLDERS TO REPLACE:
 
 
 <!-- ============================================
+     COMPONENT 5: Sticky YouTube Subscribe Bar
+     ============================================
+
+     USE: Add to end of body for all blog posts
+     BEST FOR: Channel subscriptions, repeat visitors
+     NOTE: Auto-dismisses after 7 days, respects localStorage
+
+-->
+
+<div id="youtube-subscribe-bar" class="youtube-sticky-bar hidden">
+    <div class="sticky-bar-content">
+        <div class="sticky-bar-left">
+            <img src="/assets/images/rajesh-gheware-avatar.png" alt="Rajesh Gheware" class="sticky-avatar">
+            <span class="sticky-text">
+                <strong>Prefer video tutorials?</strong> Watch on YouTube
+            </span>
+        </div>
+        <div class="sticky-bar-right">
+            <a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A?sub_confirmation=1"
+               class="sticky-subscribe-btn" target="_blank" rel="noopener">
+                Subscribe &#8594;
+            </a>
+            <button class="dismiss-btn" onclick="dismissYouTubeBar()" aria-label="Dismiss">
+                &#10005;
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     COMPONENT 6: Cross-Platform Links Badge
+     ============================================
+
+     USE: Add to blog cards on index pages
+     BEST FOR: Showing content available on multiple platforms
+
+-->
+
+<div class="cross-platform-links">
+    <div class="platform-link youtube">
+        <a href="https://youtube.com/watch?v={{VIDEO_ID}}" target="_blank" rel="noopener">
+            <span class="platform-icon">&#127909;</span>
+            <span class="platform-text">Watch on YouTube</span>
+            <span class="platform-stats">{{DURATION}} &bull; {{VIEWS}}</span>
+        </a>
+    </div>
+</div>
+
+
+<!-- ============================================
+     COMPONENT 7: Video Badge for Blog Cards
+     ============================================
+
+     USE: Add to featured blog cards with videos
+     BEST FOR: Visual indication that video content is available
+
+-->
+
+<a href="https://youtube.com/watch?v={{VIDEO_ID}}" class="video-cta-badge-card" target="_blank" rel="noopener">
+    <div class="video-play-button">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
+            <path d="M8 5v14l11-7z"/>
+        </svg>
+    </div>
+    <div class="video-info">
+        <span class="video-label">Watch Video</span>
+        <div class="video-stats">
+            <span>{{VIEWS}} views</span>
+            <span>{{DURATION}}</span>
+        </div>
+    </div>
+</a>
+
+
+<!-- ============================================
+     VIDEO ID QUICK REFERENCE
+     ============================================
+
+     BLOG POST TO VIDEO MAPPING:
+
+     | Blog Post Slug                                    | Video ID      | Duration |
+     |---------------------------------------------------|---------------|----------|
+     | docker-image-layers-complete-guide-2026           | EPZdHiw2VAI   | 6:00     |
+     | kubernetes-security-best-practices-2026           | pH67LNj7Wu0   | 10:00    |
+     | langgraph-vs-crewai-vs-autogen-comparison-2026    | -awavcRtL_4   | 12:00    |
+     | claude-code-vs-cursor-deep-dive-2026              | Uui-sbJ6EgA   | 15:00    |
+     | claude-code-for-devops-engineers-2026             | 3twm3B7QkZI   | 12:00    |
+     | ai-agent-design-patterns-2026                     | ROPR-Nk3RmQ   | 10:00    |
+     | ai-agent-design-patterns-implementation-guide-2026| ROPR-Nk3RmQ   | 10:00    |
+
+-->
+
+
+<!-- ============================================
      PLACEMENT RECOMMENDATIONS
      ============================================
 
@@ -224,5 +326,13 @@ PLACEHOLDERS TO REPLACE:
      4. SERIES ARTICLES:
         → Video Series Card (Component 4)
         → Shows full playlist context
+
+     5. STICKY BAR (End of body):
+        → Sticky YouTube Subscribe Bar (Component 5)
+        → Shows after 30% scroll, dismissible
+
+     6. BLOG INDEX/LISTING PAGES:
+        → Cross-Platform Links (Component 6)
+        → Video Badges (Component 7)
 
 -->

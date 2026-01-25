@@ -178,6 +178,7 @@
     <!-- Analytics & Template Loader -->
     <script src="/js/analytics-loader.js"></script>
     <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
 </head>
 <body>
     <!-- Header Placeholder -->
@@ -301,6 +302,16 @@
 
             <!-- Main Content -->
             <div class="post-content" itemprop="articleBody">
+
+                <!-- Video Banner - Cross-Platform CTA -->
+                <div class="video-banner">
+                    <span class="video-banner-icon">&#127916;</span>
+                    <p class="video-banner-text">
+                        <strong>Prefer video?</strong> Watch
+                        <a href="https://www.youtube.com/watch?v=EPZdHiw2VAI" target="_blank" rel="noopener">Docker Layers Explained - Why 90% Get This Wrong</a>
+                        on YouTube <span class="video-banner-duration">(6 min)</span>
+                    </p>
+                </div>
 
                 <!-- Section 1: What Are Layers -->
                 <section id="what-are-layers">
@@ -1129,5 +1140,26 @@ docker import container.tar mynewimage:latest</code></pre>
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
+
+    <!-- Sticky YouTube Subscribe Bar -->
+    <div id="youtube-subscribe-bar" class="youtube-sticky-bar hidden">
+        <div class="sticky-bar-content">
+            <div class="sticky-bar-left">
+                <img src="/assets/images/rajesh-gheware-avatar.png" alt="Rajesh Gheware" class="sticky-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22%3E%3Crect fill=%22%231E3A5F%22 width=%2240%22 height=%2240%22/%3E%3Ctext x=%2220%22 y=%2228%22 fill=%22white%22 font-size=%2216%22 text-anchor=%22middle%22%3ERG%3C/text%3E%3C/svg%3E'">
+                <span class="sticky-text">
+                    <strong>Watch this tutorial on YouTube</strong> - Visual explanations with demos
+                </span>
+            </div>
+            <div class="sticky-bar-right">
+                <a href="https://www.youtube.com/watch?v=EPZdHiw2VAI"
+                   class="sticky-subscribe-btn" target="_blank" rel="noopener">
+                    Watch Video &#8594;
+                </a>
+                <button class="dismiss-btn" onclick="dismissYouTubeBar()" aria-label="Dismiss">
+                    &#10005;
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
