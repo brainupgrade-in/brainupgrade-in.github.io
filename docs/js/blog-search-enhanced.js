@@ -10,7 +10,7 @@ class EnhancedBlogSearch {
         this.allPosts = [];
         this.filteredPosts = [];
         this.currentPage = 1;
-        this.postsPerPage = 12;
+        this.postsPerPage = 9;
         this.searchTerm = '';
         this.selectedCategory = '';
         this.searchTimeout = null;
@@ -396,6 +396,12 @@ class EnhancedBlogSearch {
         this.animateCards();
 
         // Render pagination
+
+        // Add pagination info
+        const totalPosts = this.filteredPosts.length;
+        const startPost = ((this.currentPage - 1) * this.postsPerPage) + 1;
+        const endPost = Math.min(this.currentPage * this.postsPerPage, totalPosts);
+        this.addPaginationInfo(totalPosts, startPost, endPost);
         this.renderPagination();
 
         // Scroll to grid if not on first page
@@ -451,7 +457,11 @@ class EnhancedBlogSearch {
 
     renderPagination() {
         const totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
-        if (totalPages <= 1) return;
+        if (totalPages <= 1) {
+            // Remove any existing pagination when not needed
+            this.removePagination();
+            return;
+        }
 
         const paginationHTML = this.createPaginationHTML(totalPages);
 
@@ -605,3 +615,43 @@ function animateCounters() {
 
 // Run counter animation on load
 document.addEventListener('DOMContentLoaded', animateCounters);
+    removePagination() {
+        // Remove all pagination elements
+        const existingPagination = document.querySelectorAll('.pagination-wrapper');
+        existingPagination.forEach(el => el.remove());
+        
+        // Remove pagination info
+        const existingInfo = document.querySelectorAll('.pagination-info');
+        existingInfo.forEach(el => el.remove());
+    }
+
+    addPaginationInfo(totalPosts, startPost, endPost) {
+        const container = document.querySelector('#searchResults .container');
+        if (!container) return;
+
+        // Remove existing pagination info
+        const existingInfo = container.querySelector('.pagination-info');
+        if (existingInfo) {
+            existingInfo.remove();
+        }
+
+        // Create pagination info
+        const infoElement = document.createElement('div');
+        infoElement.className = 'pagination-info';
+        
+        if (totalPosts === 0) {
+            infoElement.innerHTML = 'No posts found';
+        } else if (totalPosts <= 9) {
+            infoElement.innerHTML = `Showing all <strong>${totalPosts}</strong> posts`;
+        } else {
+            infoElement.innerHTML = `Showing <strong>${startPost}-${endPost}</strong> of <strong>${totalPosts}</strong> posts`;
+        }
+
+        // Insert after the grid
+        const grid = container.querySelector('.blog-grid');
+        if (grid && grid.nextSibling) {
+            container.insertBefore(infoElement, grid.nextSibling);
+        } else if (grid) {
+            container.appendChild(infoElement);
+        }
+    }
