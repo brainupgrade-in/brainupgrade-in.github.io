@@ -16,6 +16,40 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- About Page -->
+    <url>
+        <loc>https://devops.gheware.com/about/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Training Pages -->
+    <url>
+        <loc>https://devops.gheware.com/training/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devops.gheware.com/training/corporate-training.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devops.gheware.com/training/cloud-labs.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devops.gheware.com/training/testimonials.html</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Legal Pages -->
     <url>
         <loc>https://devops.gheware.com/privacy.html</loc>
