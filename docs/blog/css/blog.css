@@ -329,7 +329,7 @@
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
 }
 
@@ -1065,6 +1065,15 @@
 
 
 /* Responsive */
+/* Tablet: 2 columns for optimal space usage */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+    }
+}
+
+/* Mobile: single column */
 @media (max-width: 768px) {
     .blog-hero-title {
         font-size: 2rem;
@@ -1072,6 +1081,7 @@
 
     .blog-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
     }
 
     .newsletter-form {
@@ -1234,4 +1244,20 @@
 .pagination-info strong {
     color: #1E3A5F;
     font-weight: 600;
+}
+
+/* ============================================
+   Search Results Section - Control Visibility
+   ============================================ */
+#searchResults {
+    display: none; /* Hidden by default, shown by JavaScript when needed */
+}
+
+#searchResults.active {
+    display: block;
+}
+
+/* Ensure smooth transitions between default and search views */
+#defaultBlogSection, #searchResults {
+    transition: opacity 0.3s ease;
 }
