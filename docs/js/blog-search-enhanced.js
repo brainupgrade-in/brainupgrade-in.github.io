@@ -31,6 +31,9 @@ class EnhancedBlogSearch {
             this.setupKeyboardShortcuts();
             this.renderCategoryFilters();
             this.renderPosts();
+
+            // Hide default blog grid and show search results
+            this.showSearchResults();
             this.setupRSSFeed();
         } catch (error) {
             console.error('Failed to initialize blog search:', error);
@@ -273,6 +276,9 @@ class EnhancedBlogSearch {
         // Render posts with animation
         setTimeout(() => {
             this.renderPosts();
+
+            // Hide default blog grid and show search results
+            this.showSearchResults();
             this.showLoading(false);
         }, 300);
     }
@@ -587,6 +593,75 @@ class EnhancedBlogSearch {
             `;
         }
     }
+
+    removePagination() {
+        // Remove all pagination elements
+        const existingPagination = document.querySelectorAll('.pagination-wrapper');
+        existingPagination.forEach(el => el.remove());
+
+        // Remove pagination info
+        const existingInfo = document.querySelectorAll('.pagination-info');
+        existingInfo.forEach(el => el.remove());
+    }
+
+    addPaginationInfo(totalPosts, startPost, endPost) {
+        const container = document.querySelector('#searchResults .container');
+        if (!container) return;
+
+        // Remove existing pagination info
+        const existingInfo = container.querySelector('.pagination-info');
+        if (existingInfo) {
+            existingInfo.remove();
+        }
+
+        // Create pagination info
+        const infoElement = document.createElement('div');
+        infoElement.className = 'pagination-info';
+
+        if (totalPosts === 0) {
+            infoElement.innerHTML = 'No posts found';
+        } else if (totalPosts <= 9) {
+            infoElement.innerHTML = `Showing all <strong>${totalPosts}</strong> posts`;
+        } else {
+            infoElement.innerHTML = `Showing <strong>${startPost}-${endPost}</strong> of <strong>${totalPosts}</strong> posts`;
+        }
+
+        // Insert after the grid
+        const grid = container.querySelector('.blog-grid');
+        if (grid && grid.nextSibling) {
+            container.insertBefore(infoElement, grid.nextSibling);
+        } else if (grid) {
+            container.appendChild(infoElement);
+        }
+    }
+
+    showSearchResults() {
+        // Hide default blog grid and show search results
+        const defaultSection = document.getElementById('defaultBlogSection');
+        const searchSection = document.getElementById('searchResults');
+
+        if (defaultSection) {
+            defaultSection.style.display = 'none';
+        }
+
+        if (searchSection) {
+            searchSection.style.display = 'block';
+        }
+    }
+
+    hideSearchResults() {
+        // Show default blog grid and hide search results
+        const defaultSection = document.getElementById('defaultBlogSection');
+        const searchSection = document.getElementById('searchResults');
+
+        if (defaultSection) {
+            defaultSection.style.display = 'block';
+        }
+
+        if (searchSection) {
+            searchSection.style.display = 'none';
+        }
+    }
 }
 
 // Initialize when DOM is ready and expose globally
@@ -615,43 +690,3 @@ function animateCounters() {
 
 // Run counter animation on load
 document.addEventListener('DOMContentLoaded', animateCounters);
-    removePagination() {
-        // Remove all pagination elements
-        const existingPagination = document.querySelectorAll('.pagination-wrapper');
-        existingPagination.forEach(el => el.remove());
-        
-        // Remove pagination info
-        const existingInfo = document.querySelectorAll('.pagination-info');
-        existingInfo.forEach(el => el.remove());
-    }
-
-    addPaginationInfo(totalPosts, startPost, endPost) {
-        const container = document.querySelector('#searchResults .container');
-        if (!container) return;
-
-        // Remove existing pagination info
-        const existingInfo = container.querySelector('.pagination-info');
-        if (existingInfo) {
-            existingInfo.remove();
-        }
-
-        // Create pagination info
-        const infoElement = document.createElement('div');
-        infoElement.className = 'pagination-info';
-        
-        if (totalPosts === 0) {
-            infoElement.innerHTML = 'No posts found';
-        } else if (totalPosts <= 9) {
-            infoElement.innerHTML = `Showing all <strong>${totalPosts}</strong> posts`;
-        } else {
-            infoElement.innerHTML = `Showing <strong>${startPost}-${endPost}</strong> of <strong>${totalPosts}</strong> posts`;
-        }
-
-        // Insert after the grid
-        const grid = container.querySelector('.blog-grid');
-        if (grid && grid.nextSibling) {
-            container.insertBefore(infoElement, grid.nextSibling);
-        } else if (grid) {
-            container.appendChild(infoElement);
-        }
-    }
