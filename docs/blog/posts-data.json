@@ -252,6 +252,83 @@
       "publishedDate": "January 24, 2026",
       "readTime": "18 min read",
       "keywords": ["github actions", "ci cd", "docker github actions", "kubernetes github actions", "kind deployment", "github workflows", "continuous integration", "devops automation", "security best practices", "production workflows"]
+    },
+    {
+      "title": "ArgoCD vs Flux vs Jenkins X: Complete 2026 GitOps Comparison",
+      "url": "/blog/posts/argocd-vs-flux-vs-jenkins-x-comparison-2026.html",
+      "excerpt": "Compare ArgoCD, Flux CD, and Jenkins X for Kubernetes GitOps in 2026. Learn market share, features, performance benchmarks, and which tool wins for your use case.",
+      "category": "GitOps",
+      "tags": ["ArgoCD", "Flux", "GitOps", "Kubernetes", "Jenkins X", "CNCF"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": ["ArgoCD vs Flux", "GitOps tools comparison 2026", "ArgoCD vs Flux vs Jenkins X", "Kubernetes continuous delivery", "GitOps", "CNCF GitOps"]
+    },
+    {
+      "title": "Building Internal Developer Platforms 2026: Platform Engineering Roadmap 91% Miss",
+      "url": "/blog/posts/building-internal-developer-platforms-2026.html",
+      "excerpt": "Master platform engineering with the complete IDP implementation guide. Learn why 91% fail, how to achieve 40% faster delivery, and unlock $375K+ career potential in 2026.",
+      "category": "Platform Engineering",
+      "tags": ["Platform Engineering", "Internal Developer Platform", "DevOps", "Backstage", "Humanitec", "Crossplane"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "22 min read",
+      "keywords": ["internal developer platform", "platform engineering", "IDP", "developer platform", "Backstage", "Humanitec", "Crossplane", "golden paths", "self-service platform"]
+    },
+    {
+      "title": "Container Supply Chain Security 2026: Why 67% Can't Detect the $80B Threat",
+      "url": "/blog/posts/container-supply-chain-security-2026.html",
+      "excerpt": "Master container supply chain security with SBOM, Sigstore, SLSA Level 3, and admission controllers. Learn why 67% fail to detect threats costing $80.6B annually.",
+      "category": "DevSecOps",
+      "tags": ["Container Security", "Supply Chain", "SBOM", "CKS Certification", "Sigstore", "SLSA"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "22 min read",
+      "keywords": ["container supply chain security", "SBOM implementation", "Sigstore cosign", "SLSA framework", "container vulnerability scanning", "Kubernetes admission controller", "DevSecOps", "CKS certification"]
+    },
+    {
+      "title": "Developer Experience Automation with AI 2026: The $30B Revolution 91% of Teams Get Wrong",
+      "url": "/blog/posts/developer-experience-automation-ai-2026.html",
+      "excerpt": "Master AI-powered developer productivity in 2026. Learn why 95% of enterprise AI pilots fail, compare GitHub Copilot vs Cursor vs Claude Code, and implement the ROI framework that saved Walmart 4M hours.",
+      "category": "DevOps & AI",
+      "tags": ["Developer Experience", "AI Coding Tools", "Enterprise DevOps", "GitHub Copilot", "Claude Code"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": ["developer experience automation AI", "AI coding tools ROI", "developer productivity AI", "GitHub Copilot enterprise", "AI DevEx tools", "DORA metrics", "SPACE framework", "agentic development 2026"]
+    },
+    {
+      "title": "Kubernetes vs Docker Swarm 2026: Why 89% Choose Wrong Orchestrator",
+      "url": "/blog/posts/kubernetes-vs-docker-swarm-2026-reality-check.html",
+      "excerpt": "Kubernetes dominates with 82% adoption but Docker Swarm uses 40-60% fewer resources. Learn when each wins with our decision framework backed by enterprise data.",
+      "category": "Container Orchestration",
+      "tags": ["Kubernetes", "Docker Swarm", "Container Orchestration", "DevOps", "CNCF"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": ["kubernetes vs docker swarm", "docker swarm vs kubernetes 2026", "container orchestration comparison", "is docker swarm dead", "kubernetes vs swarm performance"]
+    },
+    {
+      "title": "RAG Systems on Kubernetes 2026: Why 85% Fail (Architecture Secrets for 10x Performance)",
+      "url": "/blog/posts/rag-systems-kubernetes-deployment-2026.html",
+      "excerpt": "Master RAG deployment on Kubernetes with production architecture patterns. Learn semantic caching (82% hit rates), framework selection (LlamaIndex vs LangChain), and why 85% of RAG projects fail.",
+      "category": "AI Infrastructure",
+      "tags": ["RAG", "Kubernetes", "Vector Database", "LangChain", "LlamaIndex", "AI Infrastructure"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "20 min read",
+      "keywords": ["RAG Kubernetes deployment", "RAG architecture Kubernetes", "RAG production deployment", "LangChain vs LlamaIndex", "semantic caching RAG", "vector database Kubernetes", "retrieval augmented generation"]
+    },
+    {
+      "title": "Zero-Trust DevOps Implementation Guide 2026: Secrets 74% of Security Teams Miss",
+      "url": "/blog/posts/zero-trust-devops-implementation-guide-2026.html",
+      "excerpt": "Master Zero-Trust DevOps implementation with SPIFFE/SPIRE, HashiCorp Vault, and OPA. Learn the DoD 4-phase approach, achieve 340% ROI, and save $1.76M per breach. Complete CI/CD pipeline security guide.",
+      "category": "DevSecOps",
+      "tags": ["Zero Trust", "DevSecOps", "CI/CD Security", "SPIFFE", "HashiCorp Vault", "OPA"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "22 min read",
+      "keywords": ["zero trust DevOps implementation", "zero trust CI/CD security", "SPIFFE SPIRE Kubernetes", "DevOps security best practices 2026", "HashiCorp Vault DevOps", "OPA policy engine", "secrets management"]
     }
   ]
 }

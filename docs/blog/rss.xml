@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Gheware DevOps AI Blog</title>
-        <link>https://brainupgrade-in.github.io/blog/</link>
+        <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, and cloud-native insights for DevOps engineers and developers</description>
         <language>en-us</language>
         <lastBuildDate>Fri, 24 Jan 2026 00:00:00 +0000</lastBuildDate>
-        <atom:link href="https://brainupgrade-in.github.io/blog/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
-            <url>https://brainupgrade-in.github.io/favicon.svg</url>
+            <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
-            <link>https://brainupgrade-in.github.io/blog/</link>
+            <link>https://devops.gheware.com/blog/</link>
         </image>
 
         <!-- DevSecOps Best Practices Guide -->
         <item>
             <title>DevSecOps Secrets: Why 90% Get Security Integration Wrong in 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/devsecops-best-practices-guide.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/devsecops-best-practices-guide.html</guid>
+            <link>https://devops.gheware.com/blog/posts/devsecops-best-practices-guide.html</link>
+            <guid>https://devops.gheware.com/blog/posts/devsecops-best-practices-guide.html</guid>
             <description>Discover the DevSecOps secrets that prevent 847+ critical vulnerabilities. Master shift-left security, SAST/DAST tools, and automation that 90% of teams miss in 2026.</description>
             <category>DevSecOps</category>
             <author>Rajesh Gheware</author>
@@ -27,8 +27,8 @@
         <!-- Kubernetes to EKS Migration Guide -->
         <item>
             <title>Kubernetes to EKS Migration: Secret Steps 95% Miss in 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/kubernetes-to-eks-migration-guide.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/kubernetes-to-eks-migration-guide.html</guid>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-to-eks-migration-guide.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-to-eks-migration-guide.html</guid>
             <description>Avoid the 3 critical migration mistakes that cost companies $50K+. Master EKS migration with automated tools, data strategies, and cost optimization secrets for 2026.</description>
             <category>Kubernetes</category>
             <author>Rajesh Gheware</author>
@@ -38,8 +38,8 @@
         <!-- AWS EKS High Availability Guide -->
         <item>
             <title>AWS EKS High Availability: Hidden Secrets 87% Don't Know in 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/aws-eks-high-availability-guide.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/aws-eks-high-availability-guide.html</guid>
+            <link>https://devops.gheware.com/blog/posts/aws-eks-high-availability-guide.html</link>
+            <guid>https://devops.gheware.com/blog/posts/aws-eks-high-availability-guide.html</guid>
             <description>Discover the EKS HA secrets that prevent 99.99% uptime failures. Master multi-AZ deployments, auto-scaling, and disaster recovery strategies that cost companies $100K when missed.</description>
             <category>AWS</category>
             <author>Rajesh Gheware</author>
@@ -49,8 +49,8 @@
         <!-- Kubernetes Storage Best Practices -->
         <item>
             <title>Kubernetes Storage Secrets: Why 78% Lose Critical Data in 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/kubernetes-storage-best-practices-guide.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/kubernetes-storage-best-practices-guide.html</guid>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-storage-best-practices-guide.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-storage-best-practices-guide.html</guid>
             <description>Avoid the storage disasters that cost companies $2M+. Master persistent volumes, CSI drivers, and backup strategies that 78% of teams miss in Kubernetes storage management.</description>
             <category>Kubernetes</category>
             <author>Rajesh Gheware</author>
@@ -60,8 +60,8 @@
         <!-- Setup Kubernetes on Laptop -->
         <item>
             <title>Setup Kubernetes on Laptop: Secret Tricks 92% Miss in 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/setup-kubernetes-on-laptop-guide.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/setup-kubernetes-on-laptop-guide.html</guid>
+            <link>https://devops.gheware.com/blog/posts/setup-kubernetes-on-laptop-guide.html</link>
+            <guid>https://devops.gheware.com/blog/posts/setup-kubernetes-on-laptop-guide.html</guid>
             <description>Skip the painful setup mistakes that waste 40+ hours. Master local Kubernetes with Docker Desktop, Minikube, and Kind - secret configurations 92% of developers miss.</description>
             <category>Kubernetes</category>
             <author>Rajesh Gheware</author>
@@ -71,8 +71,8 @@
         <!-- AI Agent Design Patterns -->
         <item>
             <title>AI Agent Design Patterns 2026: ReAct, Reflection & Planning Implementation Guide</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</guid>
             <description>Master the 3 AI agent patterns powering Claude Code, GitHub Copilot & Perplexity. Full Python implementations with LangGraph, verified benchmarks & production deployment strategies.</description>
             <category>AI Engineering</category>
             <author>Rajesh Gheware</author>
@@ -82,8 +82,8 @@
         <!-- 5 AI Agent Design Patterns -->
         <item>
             <title>5 AI Agent Design Patterns That Power Every Modern Application</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/ai-agent-design-patterns-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/ai-agent-design-patterns-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-2026.html</guid>
             <description>Master ReAct, Chain-of-Thought, Tool Use, Multi-Agent Systems, and Reflection patterns with benchmarks, real-world examples, and production best practices for building intelligent AI applications.</description>
             <category>AI Engineering</category>
             <author>Rajesh Gheware</author>
@@ -93,8 +93,8 @@
         <!-- LangGraph vs CrewAI vs AutoGen -->
         <item>
             <title>LangGraph vs CrewAI vs AutoGen: Complete AI Agent Framework Comparison 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/langgraph-vs-crewai-vs-autogen-comparison-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/langgraph-vs-crewai-vs-autogen-comparison-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/langgraph-vs-crewai-vs-autogen-comparison-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langgraph-vs-crewai-vs-autogen-comparison-2026.html</guid>
             <description>Compare the three leading multi-agent AI frameworks. Learn architecture differences, production readiness, code examples, and which framework to choose for your 2026 projects.</description>
             <category>DevOps & AI</category>
             <author>Rajesh Gheware</author>
@@ -104,8 +104,8 @@
         <!-- Claude Skills Tutorial -->
         <item>
             <title>Claude Skills Tutorial 2026: Build Custom AI Workflows in 10 Minutes</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/claude-skills-beginners-guide-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/claude-skills-beginners-guide-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/claude-skills-beginners-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/claude-skills-beginners-guide-2026.html</guid>
             <description>Learn Claude Skills from scratch. Create custom AI workflows for DevOps, finance, and e-commerce with step-by-step examples. No coding required to get started.</description>
             <category>DevOps & AI</category>
             <author>Rajesh Gheware</author>
@@ -115,8 +115,8 @@
         <!-- Kubernetes Security Best Practices -->
         <item>
             <title>Kubernetes Security Best Practices 2026: Complete Production Hardening Guide</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/kubernetes-security-best-practices-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-security-best-practices-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-best-practices-2026.html</guid>
             <description>Master Kubernetes security for production and the CKS exam. Learn Pod Security Standards, Network Policies, RBAC, Secrets Management, Falco runtime security, and supply chain security with Sigstore.</description>
             <category>Kubernetes</category>
             <author>Rajesh Gheware</author>
@@ -126,8 +126,8 @@
         <!-- Docker Image Layers -->
         <item>
             <title>Docker Image Layers Explained: Complete DCA Certification Guide 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/docker-image-layers-complete-guide-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/docker-image-layers-complete-guide-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/docker-image-layers-complete-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/docker-image-layers-complete-guide-2026.html</guid>
             <description>Master Docker image layers for the DCA exam. Learn how layers work, Copy-on-Write mechanism, layer caching, multi-stage builds, and optimization strategies that can reduce image sizes by 90%.</description>
             <category>Docker</category>
             <author>Rajesh Gheware</author>
@@ -137,8 +137,8 @@
         <!-- Claude Code vs Cursor -->
         <item>
             <title>Claude Code vs Cursor: The Ultimate Deep Dive for Developers in 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/claude-code-vs-cursor-deep-dive-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/claude-code-vs-cursor-deep-dive-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/claude-code-vs-cursor-deep-dive-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/claude-code-vs-cursor-deep-dive-2026.html</guid>
             <description>Comprehensive comparison of Claude Code and Cursor AI coding assistants. Compare features, pricing, performance, and real-world experiences to choose the best AI tool for your development workflow.</description>
             <category>AI & DevOps</category>
             <author>Rajesh Gheware</author>
@@ -148,8 +148,8 @@
         <!-- Claude Code for DevOps Engineers -->
         <item>
             <title>Claude Code for DevOps Engineers: The Complete Guide 2026</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/claude-code-for-devops-engineers-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/claude-code-for-devops-engineers-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/claude-code-for-devops-engineers-2026.html</guid>
             <description>Master AI-powered DevOps with Claude Code. Learn Docker workflows, Kubernetes manifest generation, Terraform IaC automation, and CI/CD pipeline creation with practical examples.</description>
             <category>DevOps & AI</category>
             <author>Rajesh Gheware</author>
@@ -159,8 +159,8 @@
         <!-- LangChain Complete Guide -->
         <item>
             <title>LangChain Complete Guide 2026: Build AI Applications from Scratch</title>
-            <link>https://brainupgrade-in.github.io/blog/posts/langchain-complete-guide-2026.html</link>
-            <guid>https://brainupgrade-in.github.io/blog/posts/langchain-complete-guide-2026.html</guid>
+            <link>https://devops.gheware.com/blog/posts/langchain-complete-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langchain-complete-guide-2026.html</guid>
             <description>Master the LangChain framework with this comprehensive guide covering architecture, LCEL, chains, agents, memory, and hands-on examples to build production-ready AI applications.</description>
             <category>AI & Machine Learning</category>
             <author>Rajesh Gheware</author>
