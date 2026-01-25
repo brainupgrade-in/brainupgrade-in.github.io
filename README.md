@@ -8,7 +8,7 @@
 
 🔗 **Live Site:** [https://brainupgrade-in.github.io](https://brainupgrade-in.github.io)
 
-🎓 **Main Platform:** [https://brainupgrade.in](https://brainupgrade.in)
+🎓 **Main Platform:** [training/cloud-labs.html](training/cloud-labs.html)
 
 ---
 
@@ -245,7 +245,7 @@ This is proprietary software. Unauthorized copying, distribution, or use of this
 ## 🌐 Links
 
 - **Live Site:** [brainupgrade-in.github.io](https://brainupgrade-in.github.io)
-- **Main Platform:** [brainupgrade.in](https://brainupgrade.in)
+- **Main Platform:** [brainupgrade.in](training/cloud-labs.html)
 - **Company Website:** [gheware.com](https://gheware.com)
 - **YouTube:** [Gheware DevOps AI](https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A)
 - **Twitter:** [@gheware_tech](https://twitter.com/gheware_tech)

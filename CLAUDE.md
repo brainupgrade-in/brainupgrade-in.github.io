@@ -2,7 +2,7 @@
 
 ## Project Identity
 **Purpose:** Marketing site for Gheware DevOps AI - Kubernetes Virtual Lab Platform
-- **Main Platform:** https://brainupgrade.in (existing Kubernetes lab platform)
+- **Main Platform:** training/cloud-labs.html (existing Kubernetes lab platform)
 - **Marketing Site:** https://brainupgrade-in.github.io (GitHub Pages)
 - **Remote Repo:** https://github.com/brainupgrade-in/brainupgrade-in.github.io.git
 
@@ -25,7 +25,7 @@ git add . && git commit -m "Update site" && git push origin main
 ## Product Focus
 
 ### Gheware DevOps AI - Kubernetes Virtual Lab
-- **URL:** https://brainupgrade.in
+- **URL:** training/cloud-labs.html
 - **Target Audience:** Developers, DevOps engineers, certification candidates
 - **Key Features:**
   - Real Kubernetes clusters (not simulations)
@@ -225,4 +225,4 @@ git add . && git commit -m "Update site" && git push origin main
 **Last Updated:** 2026-01-09
 **Repository:** https://github.com/brainupgrade-in/brainupgrade-in.github.io
 **Local Path:** /home/rajesh/devops.gheware.com
-**Primary Goal:** Drive signups to https://brainupgrade.in Kubernetes Labs
+**Primary Goal:** Drive signups to training/cloud-labs.html Kubernetes Labs

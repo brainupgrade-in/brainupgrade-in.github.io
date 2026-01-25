@@ -1,46 +1,950 @@
+<!-- Premium Corporate Training Header -->
 <header class="header-premium">
-    <div class="container">
-        <nav class="nav-wrapper">
-            <a href="/" class="logo-container">
-                <div class="logo-icon">
-                    <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <span class="brand-name">Gheware DevOps AI</span>
-                    <span class="brand-tagline" id="header-tagline">Kubernetes Virtual Lab</span>
-                </div>
-            </a>
-            <div class="nav-menu">
-                <ul class="nav-links-premium">
-                    <li class="nav-item-dropdown">
-                        <a href="#" class="nav-link nav-dropdown-toggle">Training <span class="dropdown-arrow">↓</span></a>
-                        <div class="nav-dropdown">
-                            <a href="/training/corporate-training.html" class="nav-dropdown-link">
-                                <span class="dropdown-icon">👨‍🏫</span>
-                                <div class="dropdown-content">
-                                    <span class="dropdown-title">Corporate Training</span>
-                                    <span class="dropdown-desc">Workshops & courses</span>
-                                </div>
-                            </a>
-                            <a href="/training/cloud-labs.html" class="nav-dropdown-link">
-                                <span class="dropdown-icon">☁️</span>
-                                <div class="dropdown-content">
-                                    <span class="dropdown-title">Cloud Labs</span>
-                                    <span class="dropdown-desc">Browser-based practice</span>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li><a href="/blog/" class="nav-link">Blog</a></li>
-                </ul>
-                <a href="https://brainupgrade.in" class="btn-header-primary">
-                    <span class="btn-icon">🚀</span>
-                    <span>Start Lab</span>
-                    <span class="btn-arrow">→</span>
+    <!-- Main Navigation -->
+        <div class="container">
+            <nav class="nav-wrapper">
+                <!-- Logo Section -->
+                <a href="/" class="logo-container">
+                    <div class="logo-icon">
+                        <svg class="logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-name">Gheware DevOps AI</span>
+                        <span class="brand-tagline" id="header-tagline">Enterprise Training Solutions</span>
+                    </div>
                 </a>
-            </div>
-        </nav>
-    </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-menu">
+                    <ul class="nav-links-premium">
+                        <!-- Training Dropdown -->
+                        <li class="nav-item-dropdown">
+                            <a href="#" class="nav-link nav-dropdown-toggle">Training Programs <span class="dropdown-arrow">↓</span></a>
+                            <div class="nav-dropdown">
+                                <div class="dropdown-section">
+                                    <span class="dropdown-section-title">🎯 Corporate Training</span>
+                                    <a href="/training/corporate-training.html" class="nav-dropdown-link featured-link">
+                                        <span class="dropdown-icon">☸️</span>
+                                        <div class="dropdown-content">
+                                            <span class="dropdown-title">Kubernetes Mastery</span>
+                                            <span class="dropdown-desc">5-day intensive • CKA/CKAD prep</span>
+                                        </div>
+                                        <span class="popular-badge">Most Popular</span>
+                                    </a>
+                                    <a href="/training/corporate-training.html" class="nav-dropdown-link">
+                                        <span class="dropdown-icon">🐳</span>
+                                        <div class="dropdown-content">
+                                            <span class="dropdown-title">Docker & Containers</span>
+                                            <span class="dropdown-desc">3-day foundation • DCA prep</span>
+                                        </div>
+                                    </a>
+                                    <a href="/training/corporate-training.html" class="nav-dropdown-link">
+                                        <span class="dropdown-icon">🔄</span>
+                                        <div class="dropdown-content">
+                                            <span class="dropdown-title">CI/CD Pipeline Mastery</span>
+                                            <span class="dropdown-desc">Jenkins • GitHub Actions • GitOps</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-section">
+                                    <span class="dropdown-section-title">🌐 Self-Paced Learning</span>
+                                    <a href="/training/cloud-labs.html" class="nav-dropdown-link">
+                                        <span class="dropdown-icon">☁️</span>
+                                        <div class="dropdown-content">
+                                            <span class="dropdown-title">Virtual Labs</span>
+                                            <span class="dropdown-desc">Browser-based K8s practice</span>
+                                        </div>
+                                    </a>
+                                    <a href="/blog/" class="nav-dropdown-link">
+                                        <span class="dropdown-icon">📚</span>
+                                        <div class="dropdown-content">
+                                            <span class="dropdown-title">Learning Resources</span>
+                                            <span class="dropdown-desc">25+ in-depth guides</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-cta">
+                                    <a href="mailto:training@gheware.com?subject=Corporate Training Inquiry" class="dropdown-cta-button">
+                                        <span>💼 Get Custom Training Quote</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Solutions -->
+                        <li class="nav-item-dropdown">
+                            <a href="#" class="nav-link nav-dropdown-toggle">Solutions <span class="dropdown-arrow">↓</span></a>
+                            <div class="nav-dropdown">
+                                <a href="/training/corporate-training.html#kubernetes" class="nav-dropdown-link">
+                                    <span class="dropdown-icon">🏢</span>
+                                    <div class="dropdown-content">
+                                        <span class="dropdown-title">Enterprise Teams</span>
+                                        <span class="dropdown-desc">25+ professionals • Custom curriculum</span>
+                                    </div>
+                                </a>
+                                <a href="/training/corporate-training.html#docker" class="nav-dropdown-link">
+                                    <span class="dropdown-icon">👥</span>
+                                    <div class="dropdown-content">
+                                        <span class="dropdown-title">Growing Teams</span>
+                                        <span class="dropdown-desc">11-25 members • Standard programs</span>
+                                    </div>
+                                </a>
+                                <a href="/training/corporate-training.html#basics" class="nav-dropdown-link">
+                                    <span class="dropdown-icon">🚀</span>
+                                    <div class="dropdown-content">
+                                        <span class="dropdown-title">Startup Teams</span>
+                                        <span class="dropdown-desc">5-10 members • Foundation training</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Resources -->
+                        <li class="nav-item-dropdown">
+                            <a href="#" class="nav-link nav-dropdown-toggle">Resources <span class="dropdown-arrow">↓</span></a>
+                            <div class="nav-dropdown">
+                                <a href="/blog/" class="nav-dropdown-link">
+                                    <span class="dropdown-icon">📝</span>
+                                    <div class="dropdown-content">
+                                        <span class="dropdown-title">DevOps Blog</span>
+                                        <span class="dropdown-desc">Production secrets • Expert insights</span>
+                                    </div>
+                                </a>
+                                <a href="/training/testimonials.html" class="nav-dropdown-link">
+                                    <span class="dropdown-icon">💬</span>
+                                    <div class="dropdown-content">
+                                        <span class="dropdown-title">Success Stories</span>
+                                        <span class="dropdown-desc">Enterprise client testimonials</span>
+                                    </div>
+                                </a>
+                                <a href="https://calendly.com/rajeshg/devops-ai-training" target="_blank" class="nav-dropdown-link">
+                                    <span class="dropdown-icon">📅</span>
+                                    <div class="dropdown-content">
+                                        <span class="dropdown-title">Free Consultation</span>
+                                        <span class="dropdown-desc">30-min strategy session</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- About -->
+                        <li><a href="/about/" class="nav-link">About</a></li>
+                    </ul>
+
+                    <!-- Primary CTA Button -->
+                    <div class="header-cta">
+                        <a href="mailto:training@gheware.com?subject=Free DevOps Assessment Request" class="btn-header-primary">
+                            <span class="cta-icon">🚀</span>
+                            <span class="cta-text">Get FREE Assessment</span>
+                            <span class="cta-value">($2,500 Value)</span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation Overlay -->
+                <div class="mobile-nav-overlay">
+                    <div class="mobile-nav-content">
+                        <!-- Mobile Menu Header -->
+                        <div class="mobile-nav-header">
+                            <div class="mobile-logo">
+                                <span class="mobile-brand-name">Gheware DevOps AI</span>
+                                <span class="mobile-brand-tagline">Enterprise Training</span>
+                            </div>
+                            <button class="mobile-nav-close" aria-label="Close mobile menu">✕</button>
+                        </div>
+
+                        <!-- Mobile Menu Items -->
+                        <div class="mobile-nav-links">
+                            <div class="mobile-nav-section">
+                                <span class="mobile-section-title">Training Programs</span>
+                                <a href="/training/corporate-training.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">☸️</span>
+                                    <span>Kubernetes Mastery</span>
+                                    <span class="mobile-popular">Popular</span>
+                                </a>
+                                <a href="/training/corporate-training.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">🐳</span>
+                                    <span>Docker & Containers</span>
+                                </a>
+                                <a href="/training/corporate-training.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">🔄</span>
+                                    <span>CI/CD Pipeline Mastery</span>
+                                </a>
+                            </div>
+
+                            <div class="mobile-nav-section">
+                                <span class="mobile-section-title">Solutions</span>
+                                <a href="/training/corporate-training.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">🏢</span>
+                                    <span>Enterprise Teams</span>
+                                </a>
+                                <a href="/training/corporate-training.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">👥</span>
+                                    <span>Growing Teams</span>
+                                </a>
+                                <a href="/training/corporate-training.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">🚀</span>
+                                    <span>Startup Teams</span>
+                                </a>
+                            </div>
+
+                            <div class="mobile-nav-section">
+                                <span class="mobile-section-title">Resources</span>
+                                <a href="/blog/" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">📝</span>
+                                    <span>DevOps Blog</span>
+                                </a>
+                                <a href="/training/testimonials.html" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">💬</span>
+                                    <span>Success Stories</span>
+                                </a>
+                                <a href="/about/" class="mobile-nav-link">
+                                    <span class="mobile-link-icon">ℹ️</span>
+                                    <span>About Us</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Mobile CTA Section -->
+                        <div class="mobile-nav-cta">
+                            <a href="mailto:training@gheware.com?subject=Free DevOps Assessment Request" class="mobile-cta-primary">
+                                <span>🚀 Get FREE Assessment ($2,500 Value)</span>
+                            </a>
+                            <div class="mobile-contact-info">
+                                <a href="tel:+919606795215" class="mobile-contact-link">
+                                    <span class="mobile-contact-icon">📞</span>
+                                    <span>+91-9606795215</span>
+                                </a>
+                                <a href="https://wa.me/919606795215?text=Hi%2C%20I%27m%20interested%20in%20corporate%20DevOps%20training%20for%20my%20team" target="_blank" class="mobile-contact-link">
+                                    <span class="mobile-contact-icon">💬</span>
+                                    <span>WhatsApp Now</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Social Proof -->
+                        <div class="mobile-social-proof">
+                            <div class="mobile-proof-stat">
+                                <span class="proof-number">Expert</span>
+                                <span class="proof-label">Training Programs</span>
+                            </div>
+                            <div class="mobile-proof-stat">
+                                <span class="proof-number">Enterprise</span>
+                                <span class="proof-label">Clients Served</span>
+                            </div>
+                            <div class="mobile-proof-stat">
+                                <span class="proof-number">Proven</span>
+                                <span class="proof-label">Track Record</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    <!-- Enhanced Header Styles -->
+    <style>
+        /* Body spacing for fixed header */
+        body {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        /* Ensure smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Prevent content jumping */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Enhanced Header Base */
+        .header-premium {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 9999 !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: auto;
+            padding: 0.75rem 0;
+            margin: 0;
+        }
+
+        .header-premium.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.99);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Enhanced Logo */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+            text-decoration: none;
+        }
+
+        .logo-container:hover {
+            opacity: 0.8;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+            border-radius: 10px;
+            border: 2px solid #1e40af;
+        }
+
+        .logo-svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.125rem;
+        }
+
+        .brand-name {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e40af;
+            line-height: 1;
+        }
+
+        .brand-tagline {
+            font-size: 0.7rem;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links-premium {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item-dropdown {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: #1e40af;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+        }
+
+        .nav-item-dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Enhanced Dropdown */
+        .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            min-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 9998;
+            max-width: 400px;
+        }
+
+        .nav-item-dropdown:hover .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .dropdown-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .dropdown-section-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e40af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .nav-dropdown-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .nav-dropdown-link:hover {
+            background-color: #f8fafc;
+        }
+
+        .nav-dropdown-link.featured-link {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+            border: 1px solid #3b82f6;
+        }
+
+        .dropdown-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .dropdown-content {
+            flex: 1;
+        }
+
+        .dropdown-title {
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .dropdown-desc {
+            font-size: 0.8rem;
+            color: #6b7280;
+            display: block;
+        }
+
+        .popular-badge {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+        }
+
+        .dropdown-cta {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .dropdown-cta-button {
+            display: block;
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        /* Primary CTA Button */
+        .header-cta {
+            margin-left: 1rem;
+        }
+
+        .btn-header-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-header-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        .cta-text {
+            font-weight: 700;
+        }
+
+        .cta-value {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            gap: 0.25rem;
+        }
+
+        .hamburger-line {
+            width: 24px;
+            height: 3px;
+            background: #374151;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Navigation Overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 9997;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: white;
+            padding: 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-nav-overlay.active .mobile-nav-content {
+            transform: translateX(0);
+        }
+
+        /* Mobile Navigation Content */
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mobile-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .mobile-brand-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .mobile-brand-tagline {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .mobile-nav-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-section-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1e40af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            border-bottom: 1px solid #f3f4f6;
+            position: relative;
+        }
+
+        .mobile-nav-link:hover {
+            color: #1e40af;
+        }
+
+        .mobile-link-icon {
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .mobile-popular {
+            background: #dc2626;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-left: auto;
+        }
+
+        .mobile-nav-cta {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .mobile-cta-primary {
+            display: block;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .mobile-contact-info {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .mobile-contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex: 1;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .mobile-social-proof {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .mobile-proof-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .proof-number {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1e40af;
+            display: block;
+        }
+
+        .proof-label {
+            font-size: 0.7rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links-premium,
+            .header-cta {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .brand-name {
+                font-size: 1rem;
+            }
+
+            .brand-tagline {
+                font-size: 0.65rem;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+            }
+
+            .logo-svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .header-premium {
+                padding: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mobile-nav-content {
+                padding: 1.5rem;
+                width: 100%;
+                max-width: none;
+            }
+
+            .header-premium {
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* Enhanced Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus States */
+        .nav-link:focus,
+        .btn-header-primary:focus,
+        .mobile-menu-toggle:focus {
+            outline: 2px solid #1e40af;
+            outline-offset: 2px;
+        }
+    </style>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+            const mobileClose = document.querySelector('.mobile-nav-close');
+            const header = document.querySelector('.header-premium');
+
+            // Mobile menu toggle
+            mobileToggle?.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileOverlay?.classList.toggle('active');
+                document.body.style.overflow = mobileOverlay?.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close mobile menu
+            mobileClose?.addEventListener('click', function() {
+                mobileToggle?.classList.remove('active');
+                mobileOverlay?.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // Close on overlay click
+            mobileOverlay?.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    mobileToggle?.classList.remove('active');
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Header scroll effect
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll > 100) {
+                    header?.classList.add('scrolled');
+                } else {
+                    header?.classList.remove('scrolled');
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Calculate and set body spacing for fixed header
+            function setBodySpacing() {
+                if (header) {
+                    // Use getBoundingClientRect for more precise measurement
+                    const headerRect = header.getBoundingClientRect();
+                    // Reduce by 5px to create tighter spacing
+                    const headerHeight = Math.max(0, Math.ceil(headerRect.height) - 5);
+                    const spacingDiv = document.getElementById('header-spacing');
+
+                    if (spacingDiv) {
+                        // Set precise height with minimal spacing
+                        spacingDiv.style.height = headerHeight + 'px';
+                        spacingDiv.style.lineHeight = '0';
+                        spacingDiv.style.fontSize = '0';
+                    }
+                }
+            }
+
+            // Set spacing on load and resize with slight delay for accurate measurement
+            setTimeout(setBodySpacing, 100);
+            window.addEventListener('resize', function() {
+                setTimeout(setBodySpacing, 50);
+            });
+
+            // Also run when DOM is fully loaded
+            window.addEventListener('DOMContentLoaded', function() {
+                setTimeout(setBodySpacing, 200);
+            });
+
+            // Analytics tracking
+            document.querySelectorAll('a[href^="mailto:"], a[href^="tel:"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const action = this.href.startsWith('mailto:') ? 'email_click' : 'phone_click';
+                    const label = this.href.startsWith('mailto:') ? 'header_email' : 'header_phone';
+
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', action, {
+                            'event_category': 'header_interaction',
+                            'event_label': label,
+                            'value': 1
+                        });
+                    }
+                });
+            });
+
+            // CTA button tracking
+            document.querySelector('.btn-header-primary')?.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'cta_click', {
+                        'event_category': 'conversion',
+                        'event_label': 'header_free_assessment',
+                        'value': 2500
+                    });
+                }
+            });
+
+            console.log('✅ Enhanced header loaded successfully');
+        });
+    </script>
 </header>

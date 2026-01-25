@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="5000+ DevOps engineers from Fortune 500 companies transformed their careers with Gheware training. Read real success stories from Deloitte, JP Morgan teams. 95% career advancement rate.">
+    <meta name="keywords" content="devops training testimonials, kubernetes training reviews, docker certification success stories, enterprise training feedback, corporate training testimonials, fortune 500 devops training">
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE" />
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRDMMEZ26F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TRDMMEZ26F');
+    </script>
+
+    <title>Success Stories | 5000+ DevOps Engineers Transformed | Gheware Training Reviews 2026</title>
+
+    <!-- Common head elements -->
+    <script src="/js/head-loader.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/css/local-dev-fixes.css">
+
+    <!-- Template Loader -->
+    <script src="/js/template-loader.js" defer></script>
+
+    <!-- Custom Testimonials CSS -->
+    <style>
+        .testimonials-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+            padding: 120px 0 80px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"/></svg>') center/cover;
+        }
+
+        .testimonials-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .testimonials-hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #10b981;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .testimonials-section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary, #1e40af);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .testimonial-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .filter-btn.active {
+            background: var(--color-primary, #2563eb);
+            color: white;
+            border-color: var(--color-primary, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary, #2563eb), #10b981);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-primary, #2563eb), #10b981);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 600;
+            color: var(--color-primary, #1e40af);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: #f59e0b;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            color: #374151;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: #f1f5f9;
+            position: absolute;
+            left: -15px;
+            top: -20px;
+            font-family: serif;
+        }
+
+        .training-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            color: #475569;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cta-section-testimonials {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1e40af 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section-testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,170.7C1248,160,1344,128,1392,112L1440,96L1440,300L1392,300C1344,300,1248,300,1152,300C1056,300,960,300,864,300C768,300,672,300,576,300C480,300,384,300,288,300C192,300,96,300,48,300L0,300Z"/></svg>') center/cover;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-section-testimonials h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section-testimonials p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-cta-primary {
+            background: #10b981;
+            color: white;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-cta-primary:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-cta-secondary:hover {
+            background: white;
+            color: var(--color-primary, #1e40af);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            opacity: 0.8;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: #64748b;
+        }
+
+        .trust-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--color-primary, #1e40af);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #10b981 0%, #059669 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        /* Pagination Styles */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+            gap: 1rem;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagination li {
+            display: flex;
+        }
+
+        .pagination a, .pagination span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 500;
+            min-width: 44px;
+            transition: all 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background: var(--color-primary, #2563eb);
+            color: white;
+            border-color: var(--color-primary, #2563eb);
+            transform: translateY(-1px);
+        }
+
+        .pagination .active span {
+            background: var(--color-primary, #2563eb);
+            color: white;
+            border-color: var(--color-primary, #2563eb);
+        }
+
+        .pagination .disabled a {
+            color: #cbd5e1;
+            cursor: not-allowed;
+            border-color: #f1f5f9;
+        }
+
+        .pagination .disabled a:hover {
+            background: transparent;
+            color: #cbd5e1;
+            transform: none;
+        }
+
+        .pagination-info {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-cta {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .testimonial-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .filter-btn {
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .testimonials-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="testimonials-hero">
+        <div class="container">
+            <h1>Success Stories That <span class="highlight">Transform Careers</span></h1>
+            <p>5000+ Engineers from Fortune 500 Companies Achieved DevOps Excellence</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Career Advancement</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4.8</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Engineers Trained</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Fortune 500</span>
+                    <span class="stat-label">Enterprise Clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Real Engineers. Real Results. <span class="highlight">Real Success.</span></h2>
+                <p>See how professionals transformed their DevOps skills and accelerated their careers with hands-on training that delivers immediate results.</p>
+            </div>
+
+            <div class="testimonial-filters">
+                <button class="filter-btn active" data-filter="all">All Stories</button>
+                <button class="filter-btn" data-filter="kubernetes">Kubernetes & Docker</button>
+                <button class="filter-btn" data-filter="github">GitHub Advanced</button>
+                <button class="filter-btn" data-filter="observability">Monitoring & Observability</button>
+                <button class="filter-btn" data-filter="azure">Azure DevOps</button>
+            </div>
+
+            <div class="testimonials-grid" id="testimonials-grid">
+                <!-- Kubernetes & Docker Success Stories -->
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Senior Software Engineer</h4>
+                            <p>JP Morgan • Kubernetes & Docker Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        I am from non kubernetes/EKS background where I dont even know what is cluster/pod/docker but after this workshop, I am not only able to understand the concepts but now I can run the kubernetes commands. Thank you for the wonderful training.
+                    </div>
+                    <div class="training-badge">Kubernetes & Docker</div>
+                </div>
+
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>DevOps Engineer</h4>
+                            <p>JP Morgan • Kubernetes Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        The practical hands on approach was very useful. Even if some topic was doubtful, after the hands on it was easily graspable. Rajesh was a great instructor handholding us throughout the process.
+                    </div>
+                    <div class="training-badge">Kubernetes & Docker</div>
+                </div>
+
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">R</div>
+                        <div class="testimonial-info">
+                            <h4>Platform Engineer</h4>
+                            <p>JP Morgan • Kubernetes Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        I really enjoyed this training—it was super practical and easy to follow. The way the topics were explained made everything click, even the stuff I used to find confusing. I'd definitely recommend it to anyone looking to sharpen their skills.
+                    </div>
+                    <div class="training-badge">Kubernetes & Docker</div>
+                </div>
+
+                <!-- GitHub Advanced Success Stories -->
+                <div class="testimonial-card" data-category="github">
+                    <div class="testimonial-header">
+                        <div class="avatar">R</div>
+                        <div class="testimonial-info">
+                            <h4>Software Developer</h4>
+                            <p>Deloitte • GitHub Advanced Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Over the past five days, I've noticed a significant boost in my confidence levels. Initially, I felt uncertain about executing git commands and navigating GitHub features. Through consistent practice and engagement with assignments, I've gained valuable hands-on experience.
+                    </div>
+                    <div class="training-badge">GitHub Advanced</div>
+                </div>
+
+                <div class="testimonial-card" data-category="github">
+                    <div class="testimonial-header">
+                        <div class="avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Senior Developer</h4>
+                            <p>Deloitte • GitHub Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Rajesh is a great instructor with in depth knowledge of the topic. The way he very patiently tries to help each and every practitioner complete their task assignment is commendable. I would like to join many more training sessions with him.
+                    </div>
+                    <div class="training-badge">GitHub Advanced</div>
+                </div>
+
+                <div class="testimonial-card" data-category="github">
+                    <div class="testimonial-header">
+                        <div class="avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>DevOps Engineer</h4>
+                            <p>Deloitte • GitHub Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        From scratch explanation of git and GitHub related features. Deep dive into concepts with relevant hands on assignments helped understanding concepts quickly. It will definitely help us setting up projects in GitHub with ease.
+                    </div>
+                    <div class="training-badge">GitHub Advanced</div>
+                </div>
+
+                <!-- Observability Success Stories -->
+                <div class="testimonial-card" data-category="observability">
+                    <div class="testimonial-header">
+                        <div class="avatar">P</div>
+                        <div class="testimonial-info">
+                            <h4>SRE Engineer</h4>
+                            <p>JP Morgan • Prometheus & Grafana</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Rajesh has a thorough knowledge about both Prometheus and Grafana. Training is very informative, interactive and insightful. All the examples and dashboards used are really useful and very close to real time experience.
+                    </div>
+                    <div class="training-badge">Prometheus & Grafana</div>
+                </div>
+
+                <div class="testimonial-card" data-category="observability">
+                    <div class="testimonial-header">
+                        <div class="avatar">N</div>
+                        <div class="testimonial-info">
+                            <h4>Cloud Engineer</h4>
+                            <p>JP Morgan • Observability Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Training has been very insightful. Rajesh is an awesome trainer who is extremely patient with all his students and explains clearly each and every thing that is required. Overall, very helpful.
+                    </div>
+                    <div class="training-badge">Prometheus & Grafana</div>
+                </div>
+
+                <!-- Azure DevOps Success Stories -->
+                <div class="testimonial-card" data-category="azure">
+                    <div class="testimonial-header">
+                        <div class="avatar">V</div>
+                        <div class="testimonial-info">
+                            <h4>DevOps Architect</h4>
+                            <p>Deloitte • Azure DevOps Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        My experience was great. Instructor is very knowledgeable and ready to solve issues. I was having basic knowledge of git but now I feel I have better control on my git thanks to Rajesh.
+                    </div>
+                    <div class="training-badge">Azure DevOps</div>
+                </div>
+
+                <div class="testimonial-card" data-category="azure">
+                    <div class="testimonial-header">
+                        <div class="avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Senior Developer</h4>
+                            <p>Deloitte • Azure Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Learnt Git which was new for me. Learnt more integration methods with Azure DevOps than I generally use in my project. Very informative and well-structured training.
+                    </div>
+                    <div class="training-badge">Azure DevOps</div>
+                </div>
+
+                <!-- Career Transformation Stories -->
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>Senior Software Engineer</h4>
+                            <p>Deloitte • Career Transformation</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Before joining this training, I was having very little idea on Container. This 3 days training gave me very comfortable awareness about Container, Docker, Kubernetes etc. With more practice, I am very sure that I will become very confident on Docker/Kubernetes.
+                    </div>
+                    <div class="training-badge">Career Transformation</div>
+                </div>
+
+                <div class="testimonial-card" data-category="github">
+                    <div class="testimonial-header">
+                        <div class="avatar">C</div>
+                        <div class="testimonial-info">
+                            <h4>Software Developer</h4>
+                            <p>Deloitte • Skills Upgrade</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        The training was super helpful as I'm getting started with Git. From basics to advanced level I have an overall picture now. It will definitely be useful as I implement these going forward! Special thanks to the instructor for making the session interactive.
+                    </div>
+                    <div class="training-badge">Skills Upgrade</div>
+                </div>
+
+                <!-- Additional Enterprise Success Stories -->
+                <div class="testimonial-card" data-category="observability">
+                    <div class="testimonial-header">
+                        <div class="avatar">I</div>
+                        <div class="testimonial-info">
+                            <h4>Cloud Engineer</h4>
+                            <p>JP Morgan • Prometheus & Grafana</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        The training was hands-on, which helped me understand how Grafana and Prometheus work better. I have learnt more about Grafana and setting up different dashboards. This training is very useful to understand key concepts.
+                    </div>
+                    <div class="training-badge">Prometheus & Grafana</div>
+                </div>
+
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">L</div>
+                        <div class="testimonial-info">
+                            <h4>Senior DevOps Engineer</h4>
+                            <p>Deloitte • Kubernetes Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        I was new to kubernetes and was sceptical that I would not cope up or understand the concept. However, the course was so well planned and executed that I did not feel I was a fresher to the subject. This course has introduced me to Kubernetes and made me confident.
+                    </div>
+                    <div class="training-badge">Kubernetes & Docker</div>
+                </div>
+
+                <div class="testimonial-card" data-category="github">
+                    <div class="testimonial-header">
+                        <div class="avatar">B</div>
+                        <div class="testimonial-info">
+                            <h4>Software Developer</h4>
+                            <p>Deloitte • GitHub Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        The GitHub training was exceptional! It provided clear, concise instructions and hands-on experience that significantly boosted my confidence in using GitHub. The practical approach was very effective.
+                    </div>
+                    <div class="training-badge">GitHub Advanced</div>
+                </div>
+
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>Platform Engineer</h4>
+                            <p>JP Morgan • Kubernetes Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Very practical session. I started with no knowledge of kubernetes, but now I have gained good knowledge around it. Instructor is very patient and have answered all our queries and doubts. It was a really good session to have.
+                    </div>
+                    <div class="training-badge">Kubernetes & Docker</div>
+                </div>
+
+                <div class="testimonial-card" data-category="observability">
+                    <div class="testimonial-header">
+                        <div class="avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>SRE Engineer</h4>
+                            <p>JP Morgan • Observability Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Excellent engagement with hands-on. Have learnt a lot. Have gained knowledge on both Prometheus and Grafana. Hands on really helped. The examples and dashboards used are really useful and very close to real time experience.
+                    </div>
+                    <div class="training-badge">Prometheus & Grafana</div>
+                </div>
+
+                <div class="testimonial-card" data-category="azure">
+                    <div class="testimonial-header">
+                        <div class="avatar">D</div>
+                        <div class="testimonial-info">
+                            <h4>DevOps Engineer</h4>
+                            <p>Deloitte • Azure DevOps</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        Insightful Experience. Great Learning. I have learned a lot in this session regarding GitHub and AzureDevops and also about the hosting of a web server. Very helpful and practical training.
+                    </div>
+                    <div class="training-badge">Azure DevOps</div>
+                </div>
+
+                <div class="testimonial-card" data-category="kubernetes">
+                    <div class="testimonial-header">
+                        <div class="avatar">K</div>
+                        <div class="testimonial-info">
+                            <h4>Senior Software Engineer</h4>
+                            <p>JP Morgan • Kubernetes Training</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        The training was very good and provided excellent hands-on experience. The practical exercises helped me understand the concepts clearly and apply them confidently. I would definitely recommend this training to anyone looking to gain real-world skills.
+                    </div>
+                    <div class="training-badge">Kubernetes & Docker</div>
+                </div>
+
+                <div class="testimonial-card" data-category="github">
+                    <div class="testimonial-header">
+                        <div class="avatar">V</div>
+                        <div class="testimonial-info">
+                            <h4>Software Architect</h4>
+                            <p>Deloitte • GitHub Advanced</p>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <div class="testimonial-text">
+                        It was very insightful experience. Lot of learning. Practical applications and very helpful instructor. The trainings are insightful and well structured. There's lot to explore on the marketplace which has some of the best tools to integrate.
+                    </div>
+                    <div class="training-badge">GitHub Advanced</div>
+                </div>
+            </div>
+
+            <div class="pagination-container">
+                <ul class="pagination" id="pagination">
+                    <!-- Pagination will be generated by JavaScript -->
+                </ul>
+                <div class="pagination-info" id="pagination-info">
+                    <!-- Page info will be shown here -->
+                </div>
+            </div>
+
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <strong>Enterprise Trusted</strong>
+                    Fortune 500 Companies
+                </div>
+                <div class="trust-item">
+                    <strong>Certification Aligned</strong>
+                    CKA, CKAD, DCA Prep
+                </div>
+                <div class="trust-item">
+                    <strong>Hands-On Learning</strong>
+                    Real Production Scenarios
+                </div>
+                <div class="trust-item">
+                    <strong>Expert Instruction</strong>
+                    Industry Veterans
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-testimonials">
+        <div class="cta-content">
+            <h3>Ready to Transform Your DevOps Skills?</h3>
+            <p>Join 5000+ successful engineers who advanced their careers with our hands-on training programs. Get the same results they achieved.</p>
+
+            <div class="cta-buttons">
+                <a href="https://calendly.com/rajeshg/devops-ai-training" class="btn-cta btn-cta-primary" onclick="trackTestimonialClick('schedule_consultation')">
+                    📅 Schedule Free Consultation
+                </a>
+                <a href="https://wa.me/919606795215?text=Hi%2C%20I%27m%20interested%20in%20corporate%20DevOps%20training%20for%20my%20team" class="btn-cta btn-cta-secondary" onclick="trackTestimonialClick('whatsapp_inquiry')">
+                    💬 WhatsApp Inquiry
+                </a>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">
+                ✅ Immediate ROI &nbsp;|&nbsp; ✅ Certification Aligned &nbsp;|&nbsp; ✅ Fortune 500 Trusted
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Pagination and Filter System
+        class TestimonialsPagination {
+            constructor() {
+                this.itemsPerPage = 9;
+                this.currentPage = 1;
+                this.currentFilter = 'all';
+                this.allCards = Array.from(document.querySelectorAll('.testimonial-card'));
+                this.filteredCards = [...this.allCards];
+
+                this.init();
+            }
+
+            init() {
+                this.setupFilters();
+                this.setupPagination();
+                this.showPage(1);
+                this.setupAnimations();
+                this.trackEngagement();
+            }
+
+            setupFilters() {
+                const filterBtns = document.querySelectorAll('.filter-btn');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Remove active class from all buttons
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // Add active class to clicked button
+                        btn.classList.add('active');
+
+                        this.currentFilter = btn.dataset.filter;
+                        this.applyFilter();
+                        this.currentPage = 1; // Reset to first page
+                        this.updatePagination();
+                        this.showPage(1);
+
+                        // Track filter usage
+                        this.trackTestimonialClick('filter_' + this.currentFilter);
+                    });
+                });
+            }
+
+            applyFilter() {
+                if (this.currentFilter === 'all') {
+                    this.filteredCards = [...this.allCards];
+                } else {
+                    this.filteredCards = this.allCards.filter(card =>
+                        card.dataset.category === this.currentFilter
+                    );
+                }
+            }
+
+            showPage(pageNumber) {
+                this.currentPage = pageNumber;
+
+                // Hide all cards first
+                this.allCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                });
+
+                // Calculate start and end indices
+                const startIndex = (pageNumber - 1) * this.itemsPerPage;
+                const endIndex = Math.min(startIndex + this.itemsPerPage, this.filteredCards.length);
+
+                // Show cards for current page with animation
+                const cardsToShow = this.filteredCards.slice(startIndex, endIndex);
+
+                cardsToShow.forEach((card, index) => {
+                    card.style.display = 'block';
+
+                    // Staggered animation
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    }, index * 100);
+                });
+
+                // Update pagination info
+                this.updatePaginationInfo();
+
+                // Scroll to top of testimonials section
+                document.querySelector('.testimonials-section').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            updatePagination() {
+                const totalPages = Math.ceil(this.filteredCards.length / this.itemsPerPage);
+                const pagination = document.getElementById('pagination');
+                pagination.innerHTML = '';
+
+                // Previous button
+                const prevItem = document.createElement('li');
+                prevItem.className = this.currentPage === 1 ? 'disabled' : '';
+                prevItem.innerHTML = `<a href="#" data-page="${this.currentPage - 1}">‹ Previous</a>`;
+                pagination.appendChild(prevItem);
+
+                // Page numbers
+                const startPage = Math.max(1, this.currentPage - 2);
+                const endPage = Math.min(totalPages, this.currentPage + 2);
+
+                if (startPage > 1) {
+                    const firstItem = document.createElement('li');
+                    firstItem.innerHTML = `<a href="#" data-page="1">1</a>`;
+                    pagination.appendChild(firstItem);
+
+                    if (startPage > 2) {
+                        const dotsItem = document.createElement('li');
+                        dotsItem.innerHTML = `<span>...</span>`;
+                        pagination.appendChild(dotsItem);
+                    }
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageItem = document.createElement('li');
+                    pageItem.className = i === this.currentPage ? 'active' : '';
+                    pageItem.innerHTML = i === this.currentPage ?
+                        `<span>${i}</span>` :
+                        `<a href="#" data-page="${i}">${i}</a>`;
+                    pagination.appendChild(pageItem);
+                }
+
+                if (endPage < totalPages) {
+                    if (endPage < totalPages - 1) {
+                        const dotsItem = document.createElement('li');
+                        dotsItem.innerHTML = `<span>...</span>`;
+                        pagination.appendChild(dotsItem);
+                    }
+
+                    const lastItem = document.createElement('li');
+                    lastItem.innerHTML = `<a href="#" data-page="${totalPages}">${totalPages}</a>`;
+                    pagination.appendChild(lastItem);
+                }
+
+                // Next button
+                const nextItem = document.createElement('li');
+                nextItem.className = this.currentPage === totalPages ? 'disabled' : '';
+                nextItem.innerHTML = `<a href="#" data-page="${this.currentPage + 1}">Next ›</a>`;
+                pagination.appendChild(nextItem);
+            }
+
+            updatePaginationInfo() {
+                const totalItems = this.filteredCards.length;
+                const startItem = ((this.currentPage - 1) * this.itemsPerPage) + 1;
+                const endItem = Math.min(this.currentPage * this.itemsPerPage, totalItems);
+
+                const info = document.getElementById('pagination-info');
+                info.textContent = `Showing ${startItem}-${endItem} of ${totalItems} testimonials`;
+            }
+
+            setupPagination() {
+                document.getElementById('pagination').addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    if (e.target.tagName === 'A' && !e.target.closest('.disabled')) {
+                        const page = parseInt(e.target.dataset.page);
+                        if (page && page !== this.currentPage) {
+                            this.showPage(page);
+                            this.updatePagination();
+                            this.trackTestimonialClick('pagination_page_' + page);
+                        }
+                    }
+                });
+
+                this.updatePagination();
+            }
+
+            setupAnimations() {
+                // Animation observer for cards
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.target.style.display !== 'none') {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all testimonial cards
+                this.allCards.forEach(card => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+
+                // Add CSS animation keyframes
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(20px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            trackEngagement() {
+                // Track page engagement
+                this.engagement = {
+                    timeOnPage: Date.now(),
+                    scrollDepth: 0,
+                    filtersUsed: 0,
+                    pagesVisited: [1]
+                };
+
+                // Track scroll depth
+                window.addEventListener('scroll', () => {
+                    const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                    this.engagement.scrollDepth = Math.max(this.engagement.scrollDepth, scrollPercent);
+                });
+
+                // Track engagement on page unload
+                window.addEventListener('beforeunload', () => {
+                    this.engagement.timeOnPage = Date.now() - this.engagement.timeOnPage;
+
+                    gtag('event', 'testimonials_engagement', {
+                        'event_category': 'page_engagement',
+                        'time_on_page': Math.round(this.engagement.timeOnPage / 1000),
+                        'scroll_depth': this.engagement.scrollDepth,
+                        'filters_used': this.engagement.filtersUsed,
+                        'pages_visited': this.engagement.pagesVisited.length,
+                        'total_testimonials_viewed': this.engagement.pagesVisited.length * this.itemsPerPage
+                    });
+                });
+            }
+
+            trackTestimonialClick(action) {
+                // Google Analytics 4 event tracking
+                gtag('event', 'click', {
+                    'action': action,
+                    'category': 'testimonials_page',
+                    'event_category': 'engagement',
+                    'event_label': 'testimonials_interaction'
+                });
+
+                console.log('Tracked testimonials action:', action);
+
+                if (action.startsWith('filter_')) {
+                    this.engagement.filtersUsed++;
+                }
+
+                if (action.startsWith('pagination_page_')) {
+                    const page = parseInt(action.split('_').pop());
+                    if (!this.engagement.pagesVisited.includes(page)) {
+                        this.engagement.pagesVisited.push(page);
+                    }
+                }
+            }
+        }
+
+        // Click tracking function (for external use)
+        function trackTestimonialClick(action) {
+            gtag('event', 'click', {
+                'action': action,
+                'category': 'testimonials_page',
+                'event_category': 'engagement',
+                'event_label': 'testimonials_interaction'
+            });
+            console.log('Tracked testimonials action:', action);
+        }
+
+        // Initialize pagination system when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new TestimonialsPagination();
+        });
+    </script>
+</body>
+</html>

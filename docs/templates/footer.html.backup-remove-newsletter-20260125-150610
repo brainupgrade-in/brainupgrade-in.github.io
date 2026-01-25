@@ -100,19 +100,19 @@
                     🎓 Training Programs
                 </h4>
                 <ul style="list-style: none; padding: 0; margin: 0; space-y: 0.75rem;">
-                    <li style="margin-bottom: 0.625rem;"><a href="/training/corporate-training.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/training/kubernetes" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #10b981;">☸️</span> Kubernetes Training
                     </a></li>
-                    <li style="margin-bottom: 0.625rem;"><a href="/training/corporate-training.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/training/docker" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #2563eb;">🐳</span> Docker Certification
                     </a></li>
-                    <li style="margin-bottom: 0.625rem;"><a href="/training/corporate-training.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/training/jenkins" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #dc2626;">⚙️</span> Jenkins & CI/CD
                     </a></li>
-                    <li style="margin-bottom: 0.625rem;"><a href="/training/corporate-training.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/training/github" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #6b7280;">📚</span> GitHub Advanced
                     </a></li>
-                    <li style="margin-bottom: 0.625rem;"><a href="/training/corporate-training.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/training/azure-devops" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #0078d4;">☁️</span> Azure DevOps
                     </a></li>
                     <li><a href="/training/testimonials.html" style="color: #059669; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
@@ -136,10 +136,10 @@
                     <li style="margin-bottom: 0.625rem;"><a href="https://www.amazon.in/dp/B0D947RXPF" target="_blank" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #059669;">📖</span> CKA Guide Book
                     </a></li>
-                    <li style="margin-bottom: 0.625rem;"><a href="/blog/posts/kubernetes-security-best-practices-2026.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/blog/posts/kubernetes-security-2026.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #dc2626;">🔒</span> K8s Security Guide
                     </a></li>
-                    <li style="margin-bottom: 0.625rem;"><a href="/blog/posts/docker-image-layers-complete-guide-2026.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
+                    <li style="margin-bottom: 0.625rem;"><a href="/blog/posts/docker-layers-optimization.html" style="color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s ease; display: flex; align-items: center; gap: 0.5rem;" onmouseover="this.style.color='#1e40af'" onmouseout="this.style.color='#64748b'">
                         <span style="color: #2563eb;">⚡</span> Docker Optimization
                     </a></li>
                     <li><a href="/blog/" style="color: #059669; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
