@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "title": "Moltbot: Why 90% of AI Assistants Are USELESS (But This One Actually Works)",
+      "url": "/blog/posts/moltbot-viral-ai-assistant-2026.html",
+      "excerpt": "Moltbot is a self-hosted AI assistant that executes tasks autonomously. Learn why it went viral, security concerns, Mac Mini setup guide, and honest comparison with ChatGPT and Claude.",
+      "category": "AI Tools",
+      "tags": ["Moltbot", "AI assistant", "self-hosted AI", "proactive automation", "ChatGPT alternative", "Claude alternative", "Mac Mini setup", "AI security"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 28, 2026",
+      "readTime": "14 min read",
+      "keywords": ["Moltbot", "Clawdbot", "self-hosted AI assistant", "proactive AI automation", "AI that executes tasks", "Moltbot vs ChatGPT", "Moltbot security", "autonomous AI agent", "DevOps AI"]
+    },
+    {
       "title": "Vector Databases on Kubernetes: Production Guide 2026 (78% Miss These Tricks)",
       "url": "/blog/posts/vector-databases-kubernetes-production-guide-2026.html",
       "excerpt": "Master vector database deployment on Kubernetes with StatefulSets, Milvus Operator, and performance optimization. Learn why 78% of teams fail and how to achieve 471 QPS at 99% recall.",
