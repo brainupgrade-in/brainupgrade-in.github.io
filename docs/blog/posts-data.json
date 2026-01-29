@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "title": "Context Engineering: 5 Techniques That 10x Your AI Performance in 2026",
+      "url": "/blog/posts/context-engineering-ai-performance-guide-2026.html",
+      "excerpt": "Master context engineering to improve AI accuracy by 40-60%. Learn chunking, RAG, memory systems, and optimization techniques that save 70% on LLM costs.",
+      "category": "AI Tools",
+      "tags": ["Context Engineering", "RAG", "LLM optimization", "AI performance", "vector databases", "prompt engineering", "chunking strategies", "AI context window", "LangChain", "semantic search"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 29, 2026",
+      "readTime": "16 min read",
+      "keywords": ["context engineering", "RAG", "LLM optimization", "AI performance", "vector databases", "prompt engineering", "chunking strategies", "AI context window", "LangChain", "semantic search"]
+    },
+    {
       "title": "Why 90% of Developers Get Prompt Engineering Wrong: GitHub Copilot Mastery Guide 2026",
       "url": "/blog/posts/prompt-engineering-github-copilot-mastery-guide-2026.html",
       "excerpt": "Master the ICES framework for GitHub Copilot prompt engineering. Learn why 73% of developers use vague prompts and how proper techniques increase code accuracy from 30% to 85%+.",
