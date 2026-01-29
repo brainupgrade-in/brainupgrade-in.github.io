@@ -72,6 +72,19 @@
             title: 'AI Agent Design Patterns 2026',
             duration: '10:00',
             views: '2.1k'
+        },
+        'sre-burnout-ai-incident-prevention-clawdbot-2026': {
+            videoId: 'zimqsZhzui4',
+            title: 'Why 70% of SREs Are Quitting (And How AI Fixes Everything)',
+            duration: '7:36',
+            views: 'New'
+        },
+        'context-engineering-ai-performance-guide-2026': {
+            videoId: '8rtwLmkW1Ic',
+            title: 'Context Engineering: 5 Techniques That 10x Your AI Performance',
+            duration: '8:30',
+            views: 'New',
+            engagementLevel: 'high'
         }
     };
 
@@ -319,6 +332,36 @@
     };
 
     /**
+     * Play video inline by replacing thumbnail with YouTube iframe
+     * @param {HTMLElement} thumbnailElement - The clicked thumbnail element
+     */
+    window.playInlineVideo = function(thumbnailElement) {
+        const videoPlayer = thumbnailElement.closest('.inline-video-player');
+        if (!videoPlayer) return;
+
+        const videoId = videoPlayer.dataset.videoId;
+        if (!videoId) return;
+
+        // Track video play event
+        trackEvent('inline_video_play', 'video_interaction', videoId);
+
+        // Create YouTube iframe
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.className = 'youtube-iframe';
+
+        // Replace thumbnail with iframe
+        videoPlayer.innerHTML = '';
+        videoPlayer.appendChild(iframe);
+        videoPlayer.classList.add('playing');
+
+        console.log('[YouTube Integration] Inline video started:', videoId);
+    };
+
+    /**
      * Initialize all YouTube integration features
      */
     function init() {
@@ -352,6 +395,7 @@
         getVideoForPost,
         generateVideoCTA: window.generateVideoCTA,
         generateVideoBanner: window.generateVideoBanner,
+        playInlineVideo: window.playInlineVideo,
         videoMapping: VIDEO_MAPPING,
         config: CONFIG
     };
