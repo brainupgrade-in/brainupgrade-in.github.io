@@ -272,7 +272,6 @@
                                 this.closest('.trending-videos-section') ? 'trending_video' :
                                 this.closest('.youtube-sticky-bar') ? 'sticky_bar' :
                                 this.closest('.playlist-card') ? 'playlist' :
-                                this.closest('.video-cta-card') ? 'video_cta' :
                                 this.closest('.video-banner') ? 'video_banner' :
                                 this.closest('.cross-platform-links') ? 'cross_platform' :
                                 this.closest('.video-cta-badge-card') ? 'video_badge' : 'general';
@@ -287,35 +286,6 @@
      * @param {string} slug - Blog post slug
      * @returns {string} HTML string or empty string
      */
-    window.generateVideoCTA = function(slug) {
-        const videoInfo = getVideoForPost(slug);
-        if (!videoInfo) return '';
-
-        return `
-            <div class="video-cta-card">
-                <div class="video-cta-thumbnail">
-                    <a href="https://www.youtube.com/watch?v=${videoInfo.videoId}" target="_blank" rel="noopener">
-                        <img src="https://img.youtube.com/vi/${videoInfo.videoId}/maxresdefault.jpg"
-                             alt="${videoInfo.title}"
-                             loading="lazy"
-                             onerror="this.src='https://img.youtube.com/vi/${videoInfo.videoId}/hqdefault.jpg'">
-                        <span class="play-icon">&#9654;</span>
-                    </a>
-                </div>
-                <div class="video-cta-content">
-                    <span class="video-cta-badge">&#128250; Watch Video</span>
-                    <h4>${videoInfo.title}</h4>
-                    <p>Visual walkthrough with real examples and demos. Perfect complement to this article.</p>
-                    <a href="https://www.youtube.com/watch?v=${videoInfo.videoId}" class="video-cta-button" target="_blank" rel="noopener">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                        </svg>
-                        Watch on YouTube
-                    </a>
-                </div>
-            </div>
-        `;
-    };
 
     /**
      * Generate video banner HTML for blog posts
