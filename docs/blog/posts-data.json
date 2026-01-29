@@ -1,6 +1,17 @@
 {
   "posts": [
     {
+      "title": "Why 70% of SREs Are Quitting (And How AI Fixes Everything)",
+      "url": "/blog/posts/sre-burnout-ai-incident-prevention-clawdbot-2026.html",
+      "excerpt": "70% of SREs quit due to on-call burnout. Discover how AI-powered incident prevention with Clawdbot reduces MTTR by 85% and saves $23,750/minute in downtime costs.",
+      "category": "AI Tools",
+      "tags": ["SRE", "AI Automation", "Incident Management", "AI incident prevention SRE", "Clawdbot DevOps automation", "AI SRE tools 2026", "reduce on-call burnout", "MTTR reduction AI", "self-healing Kubernetes", "AIOps"],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 29, 2026",
+      "readTime": "15 min read",
+      "keywords": ["AI incident prevention SRE", "Clawdbot DevOps automation", "AI SRE tools 2026", "reduce on-call burnout", "MTTR reduction AI", "self-healing Kubernetes", "AIOps"]
+    },
+    {
       "title": "Context Engineering: 5 Techniques That 10x Your AI Performance in 2026",
       "url": "/blog/posts/context-engineering-ai-performance-guide-2026.html",
       "excerpt": "Master context engineering to improve AI accuracy by 40-60%. Learn chunking, RAG, memory systems, and optimization techniques that save 70% on LLM costs.",
