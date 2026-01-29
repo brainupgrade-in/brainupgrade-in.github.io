@@ -331,6 +331,30 @@
                 </ul>
             </aside>
 
+            <!-- Video Cross-Reference CTA (Mid-Content) -->
+            <div class="cta-video" style="border: 2px solid #2496ED; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; background: linear-gradient(90deg, #f8fafc 0%, #e2e8f0 100%); position: relative;">
+
+                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                    <div style="width: 40px; height: 40px; background: #2496ED; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; animation: pulse 2s infinite;">
+                        <span style="color: white; font-size: 1.2rem;">🎥</span>
+                    </div>
+                    <h4 style="margin: 0; color: #1E3A5F; font-size: 1.3rem;">See This in Action</h4>
+                </div>
+
+                <p style="color: #4a5568; margin-bottom: 1rem; font-size: 1rem;">
+                    Watch our step-by-step video walkthrough for visual learners:
+                </p>
+
+                <!-- When no video yet -->
+                <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 1rem; margin-top: 1rem;">
+                    <p style="margin: 0; color: #856404; font-style: italic;">
+                        🎬 <strong>Video tutorial coming soon!</strong>
+                        <a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A?sub_confirmation=1" style="color: #F97316; text-decoration: none; font-weight: 600;" target="_blank" rel="noopener">Subscribe</a>
+                        to get notified first when we release the Context Engineering video guide.
+                    </p>
+                </div>
+            </div>
+
             <!-- Table of Contents -->
             <nav class="table-of-contents" aria-label="Table of Contents">
                 <h2>Table of Contents</h2>
@@ -353,6 +377,16 @@
                     <h3 style="margin-top: 0; color: #22C55E;">TL;DR</h3>
                     <p style="margin-bottom: 0;">90% of AI developers waste their context window by dumping everything into the prompt. Context engineering - the systematic approach to selecting, structuring, and delivering information to LLMs - can improve accuracy by 40-60% and reduce costs by 70%. The five core techniques are: intelligent chunking, context prioritization, compression, structured formatting, and RAG with memory systems.</p>
                 </aside>
+
+                <!-- Video Banner -->
+                <div class="video-banner" style="background: linear-gradient(135deg, #1E3A5F 0%, #2496ED 100%); color: white; padding: 1.5rem; margin: 1.5rem 0; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);">
+                    <span class="video-banner-icon" style="font-size: 2rem; margin-bottom: 0.5rem; display: block;">🎬</span>
+                    <p class="video-banner-text" style="margin: 0; font-size: 1.1rem; line-height: 1.5;">
+                        <strong>Prefer video?</strong> Watch
+                        <a href="https://www.youtube.com/watch?v=8rtwLmkW1Ic" target="_blank" rel="noopener" style="color: #22C55E; text-decoration: none; font-weight: bold;">Context Engineering: 5 Techniques That 10x Your AI Performance</a>
+                        on YouTube <span class="video-banner-duration" style="opacity: 0.8;">(7:40)</span>
+                    </p>
+                </div>
 
                 <!-- Section 1: What is Context Engineering -->
                 <section id="what-is-context-engineering">
@@ -940,15 +974,61 @@ response = anthropic.messages.create(
 
                     <p>Start with the 5-step implementation process: assess your current state, choose the right strategy for your use case, implement core components with LangChain or LlamaIndex, measure with proper evaluation datasets, and iterate based on A/B testing results.</p>
 
-                    <div class="cta-box" style="background: linear-gradient(135deg, #1E3A5F 0%, #2496ED 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center;">
-                        <h3 style="margin-top: 0;">Want to Master AI Development?</h3>
-                        <p>Subscribe to our YouTube channel for video tutorials on context engineering, RAG implementation, and AI application development.</p>
-                        <a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A?sub_confirmation=1" target="_blank" rel="noopener" style="display: inline-block; background: #22C55E; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem;">Subscribe to Gheware DevOps AI</a>
+                    <!-- Primary YouTube Subscribe CTA (Conclusion - MANDATORY) -->
+                    <div class="cta-primary" style="background: linear-gradient(135deg, #1E3A5F 0%, #2496ED 100%); padding: 2rem; border-radius: 16px; margin: 2rem 0; box-shadow: 0 8px 32px rgba(30, 58, 95, 0.3); text-align: center; color: white;">
+                        <div style="display: inline-flex; align-items: center; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 25px; margin-bottom: 1rem;">
+                            <span style="font-size: 1.5rem; margin-right: 0.5rem;">🎬</span>
+                            <span style="font-weight: 600; font-size: 1.1rem;">Want to Master AI Development?</span>
+                        </div>
+
+                        <p style="font-size: 1.2rem; margin: 1.5rem 0; line-height: 1.5;">
+                            <strong style="color: #F97316;">Join 160+ DevOps engineers</strong> getting weekly context engineering tutorials,
+                            RAG implementation guides, and AI application development techniques.
+                        </p>
+
+                        <a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A?sub_confirmation=1"
+                           style="display: inline-flex; align-items: center; background: #F97316; color: white; padding: 1rem 2rem;
+                                  border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem;
+                                  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4); transition: transform 0.2s ease; margin: 1rem 0;"
+                           onmouseover="this.style.transform='scale(1.05)'"
+                           onmouseout="this.style.transform='scale(1)'"
+                           target="_blank" rel="noopener">
+                            <span style="font-size: 1.3rem; margin-right: 0.5rem;">🔔</span>
+                            Subscribe Free → Get Instant Access
+                        </a>
+
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 1rem; font-style: italic;">
+                            ✨ New videos every Tuesday & Thursday • No spam, just pure DevOps value
+                        </p>
                     </div>
 
                     <p>Context engineering is evolving rapidly. In the coming years, we'll see infinite context windows, neural compression, multimodal context management, and AI agents that autonomously manage their own context. Stay ahead of the curve by mastering these fundamentals today.</p>
                 </section>
 
+            </div>
+
+            <!-- Video CTA Card -->
+            <div class="video-cta-card" style="display: flex; gap: 1.5rem; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1px solid #2496ED; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; align-items: center; box-shadow: 0 4px 12px rgba(36, 150, 237, 0.1);">
+                <div class="video-cta-thumbnail" style="flex-shrink: 0; position: relative;">
+                    <a href="https://www.youtube.com/watch?v=8rtwLmkW1Ic" target="_blank" rel="noopener" style="display: block; position: relative;">
+                        <img src="https://img.youtube.com/vi/8rtwLmkW1Ic/maxresdefault.jpg"
+                             alt="Context Engineering: 5 Techniques That 10x Your AI Performance"
+                             loading="lazy"
+                             style="width: 200px; height: 112px; object-fit: cover; border-radius: 8px; transition: transform 0.3s ease;">
+                        <span class="play-icon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; transition: all 0.3s ease;">▶</span>
+                    </a>
+                </div>
+                <div class="video-cta-content" style="flex: 1;">
+                    <span class="video-cta-badge" style="display: inline-block; background: #22C55E; color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem;">📺 Watch Video</span>
+                    <h4 style="margin: 0 0 0.5rem 0; color: #1E3A5F; font-size: 1.25rem; line-height: 1.3;">Context Engineering: 5 Techniques That 10x Your AI Performance</h4>
+                    <p style="margin: 0 0 1rem 0; color: #64748b; line-height: 1.5;">Visual walkthrough of all 5 context engineering techniques with hands-on examples. Perfect for understanding RAG implementation and memory systems architecture.</p>
+                    <a href="https://www.youtube.com/watch?v=8rtwLmkW1Ic" class="video-cta-button" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #2496ED; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                        </svg>
+                        Watch on YouTube (7:40)
+                    </a>
+                </div>
             </div>
 
             <!-- Author Bio Placeholder -->
@@ -973,15 +1053,32 @@ response = anthropic.messages.create(
                 </div>
             </section>
 
-            <!-- CTA Section -->
-            <section class="post-cta">
-                <h2>Ready to Implement Context Engineering?</h2>
-                <p>Join our corporate training programs to master AI development, RAG systems, and production LLM deployment.</p>
-                <a href="/training/corporate-training.html" class="btn-cta-primary">
-                    <span>Explore Training Programs</span>
-                    <span class="btn-arrow">-></span>
+            <!-- Corporate Training CTA -->
+            <div class="cta-training" style="background: linear-gradient(135deg, #F97316 0%, #EA580C 100%); border-radius: 16px; padding: 2rem; margin: 1.5rem 0; text-align: center; color: white; box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);">
+                <div style="display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <div style="background: rgba(255,255,255,0.2); border-radius: 50%; padding: 1rem; margin-right: 1rem;">
+                        <span style="font-size: 2rem;">🏢</span>
+                    </div>
+                    <div style="text-align: left;">
+                        <h4 style="margin: 0 0 0.5rem 0; font-size: 1.4rem;">Ready to Implement Context Engineering?</h4>
+                        <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Enterprise training for your team</p>
+                    </div>
+                </div>
+                <p style="font-size: 1.1rem; margin: 1.5rem 0;">
+                    Join our corporate training programs to master AI development, RAG systems, and production LLM deployment with hands-on labs.
+                </p>
+                <a href="https://calendly.com/rajeshg/devops-ai-training"
+                   style="display: inline-flex; align-items: center; background: white; color: #EA580C; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;"
+                   onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'"
+                   onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'"
+                   target="_blank" rel="noopener">
+                    <span style="margin-right: 0.5rem;">📅</span>
+                    Book Free Consultation
                 </a>
-            </section>
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">
+                    ⚡ 2-5 day intensive programs • Enterprise-grade curriculum • ROI guaranteed
+                </p>
+            </div>
         </div>
     </article>
 
