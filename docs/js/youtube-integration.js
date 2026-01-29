@@ -85,6 +85,13 @@
             duration: '8:30',
             views: 'New',
             engagementLevel: 'high'
+        },
+        'prompt-engineering-github-copilot-mastery-guide-2026': {
+            videoId: 'Tlz4sB6ChIE',
+            title: 'Why 90% of Developers Get Prompt Engineering Wrong: GitHub Copilot Mastery Guide',
+            duration: '9:00',
+            views: 'New',
+            engagementLevel: 'high'
         }
     };
 
