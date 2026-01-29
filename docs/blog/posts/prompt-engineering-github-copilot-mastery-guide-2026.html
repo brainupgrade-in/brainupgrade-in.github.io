@@ -418,11 +418,11 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
                         <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #DC2626;">Bad:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// sort array</code></pre>
+                            <pre><code>// sort array</code></pre>
                         </div>
                         <div style="background: #DCFCE7; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #16A34A;">Good:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// Sort user array by registration date (newest first) for dashboard display</code></pre>
+                            <pre><code>// Sort user array by registration date (newest first) for dashboard display</code></pre>
                         </div>
                     </div>
 
@@ -433,11 +433,11 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
                         <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #DC2626;">Bad:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// validate email</code></pre>
+                            <pre><code>// validate email</code></pre>
                         </div>
                         <div style="background: #DCFCE7; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #16A34A;">Good:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// Validate email using RFC 5322 standard
+                            <pre><code>// Validate email using RFC 5322 standard
 // Allow international domains
 // Reject disposable email providers</code></pre>
                         </div>
@@ -450,11 +450,11 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
                         <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #DC2626;">Bad:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// calculate discount</code></pre>
+                            <pre><code>// calculate discount</code></pre>
                         </div>
                         <div style="background: #DCFCE7; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #16A34A;">Good:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// Calculate tiered discount for bulk orders
+                            <pre><code>// Calculate tiered discount for bulk orders
 // Example: qty=10 -> 5%
 // Example: qty=50 -> 15%
 // Example: qty=100 -> 25%</code></pre>
@@ -468,11 +468,11 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
                         <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #DC2626;">Bad:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// fetch user data</code></pre>
+                            <pre><code>// fetch user data</code></pre>
                         </div>
                         <div style="background: #DCFCE7; padding: 1rem; border-radius: 8px;">
                             <strong style="color: #16A34A;">Good:</strong>
-                            <pre style="margin: 0.5rem 0 0 0; background: white; padding: 0.5rem; border-radius: 4px;"><code>// Fetch user profile from /api/users/:id
+                            <pre><code>// Fetch user profile from /api/users/:id
 // Returns: Promise&lt;UserProfile&gt;
 // Fields: id, name, email, role, lastLogin
 // Error: Return null if not found
@@ -537,10 +537,10 @@
 
                     <p><strong>Scenario:</strong> Building a new REST API endpoint</p>
 
-                    <pre style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-python"># What 90% do (Anti-Pattern):
+                    <pre><code class="language-python"># What 90% do (Anti-Pattern):
 # create API endpoint</code></pre>
 
-                    <pre style="background: #DCFCE7; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-python"># Effective Pattern:
+                    <pre><code class="language-python"># Effective Pattern:
 # Create REST API endpoint POST /api/orders
 # Request body: { productId: string, quantity: number, userId: string }
 # Response: { orderId: string, totalPrice: number, estimatedDelivery: Date }
@@ -554,11 +554,11 @@
 
                     <p><strong>Scenario:</strong> Function returning unexpected results</p>
 
-                    <pre style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-java">// Anti-Pattern:
+                    <pre><code class="language-java">// Anti-Pattern:
 // fix this function
 public List&lt;User&gt; getActiveUsers() { ... }</code></pre>
 
-                    <pre style="background: #DCFCE7; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-java">// Effective Pattern:
+                    <pre><code class="language-java">// Effective Pattern:
 // BUG: This function returns all users instead of only active ones
 // Expected behavior: Return users where status='active' and lastLogin within 30 days
 // Current problem: SQL query missing WHERE clause for status field
@@ -571,7 +571,7 @@ public List&lt;User&gt; getActiveUsers() {
 
                     <p><strong>Scenario:</strong> Optimizing nested loops for performance</p>
 
-                    <pre style="background: #DCFCE7; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-javascript">// REFACTOR: Replace nested O(n^2) loops with HashMap for O(n) performance
+                    <pre><code class="language-javascript">// REFACTOR: Replace nested O(n^2) loops with HashMap for O(n) performance
 // Current: Iterates through orders array for each customer (slow for 10k+ records)
 // Goal: Single pass using customer ID as key, aggregated orders as value
 // Maintain same output format: Array&lt;{customerId, totalOrders, totalRevenue}&gt;
@@ -583,7 +583,7 @@ public List&lt;User&gt; getActiveUsers() {
 
                     <p><strong>Scenario:</strong> Writing comprehensive test cases</p>
 
-                    <pre style="background: #DCFCE7; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-typescript">// Write Jest unit tests for LoginService.authenticate()
+                    <pre><code class="language-typescript">// Write Jest unit tests for LoginService.authenticate()
 // Test cases to cover:
 // 1. Success: Valid credentials return JWT token and user object
 // 2. Failure: Invalid password returns 401 with error message
@@ -599,7 +599,7 @@ public List&lt;User&gt; getActiveUsers() {
 
                     <p><strong>Scenario:</strong> Documenting a complex algorithm</p>
 
-                    <pre style="background: #DCFCE7; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-python"># Generate docstring for calculate_shipping_cost function
+                    <pre><code class="language-python"># Generate docstring for calculate_shipping_cost function
 # Include: Purpose, algorithm explanation, parameter descriptions, return value
 # Document formula: base_rate + (weight * weight_multiplier) + zone_surcharge
 # Add examples:
@@ -642,7 +642,7 @@ def calculate_shipping_cost(order): ...</code></pre>
 
                     <h3>Real-World Example</h3>
 
-                    <pre style="background: #F3F4F6; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-javascript">// PASS 1:
+                    <pre><code class="language-javascript">// PASS 1:
 // Fetch paginated user list from API
 async function getUserList(page) { ... }
 // Copilot generates basic fetch with page parameter
@@ -677,7 +677,7 @@ async function getUserList(page: number): Promise&lt;User[]&gt; { ... }
                         <li><strong>Inline comments</strong> (Step-by-step guidance within function)</li>
                     </ol>
 
-                    <pre style="background: #F3F4F6; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-typescript">// Implement exponential backoff retry logic for API calls
+                    <pre><code class="language-typescript">// Implement exponential backoff retry logic for API calls
 // Max retries: 3, delays: 1s, 2s, 4s
 // Return successful response or throw RetryExhaustedError
 async function retryWithBackoff&lt;T&gt;(
@@ -708,7 +708,7 @@ async function retryWithBackoff&lt;T&gt;(
 
                     <h3>Python: Leverage Type Hints & Docstrings</h3>
 
-                    <pre style="background: #F3F4F6; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-python">def process_order(
+                    <pre><code class="language-python">def process_order(
     order_id: str,
     items: List[OrderItem],
     user: User,
@@ -737,7 +737,7 @@ async function retryWithBackoff&lt;T&gt;(
 
                     <h3>Java: Leverage Annotations & JavaDoc</h3>
 
-                    <pre style="background: #F3F4F6; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-java">/**
+                    <pre><code class="language-java">/**
  * Processes user authentication with JWT token generation
  *
  * @param username User's email address (RFC 5322 validated)
@@ -765,7 +765,7 @@ public class AuthenticationService {
 
                     <h3>JavaScript/TypeScript: Leverage JSDoc + Type Definitions</h3>
 
-                    <pre style="background: #F3F4F6; padding: 1rem; border-radius: 8px; margin: 1rem 0;"><code class="language-typescript">/**
+                    <pre><code class="language-typescript">/**
  * Implements rate limiting middleware for Express.js using token bucket algorithm
  *
  * Configuration:
@@ -839,7 +839,7 @@ const rateLimitMiddleware: RequestHandler = (req, res, next) => {
                     <p>Avoiding these common mistakes is just as important as learning the right techniques. Each anti-pattern costs developers hours of debugging time.</p>
 
                     <h3>Anti-Pattern 1: The "Magic Mind Reader"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> <code>// create function</code></p>
                         <p><strong>What they expect:</strong> Copilot reads their mind and generates exactly what they need</p>
                         <p><strong>Reality:</strong> Copilot generates generic, useless code</p>
@@ -847,42 +847,42 @@ const rateLimitMiddleware: RequestHandler = (req, res, next) => {
                     </div>
 
                     <h3>Anti-Pattern 2: The "Vague Verb"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> <code># handle user data</code></p>
                         <p><strong>Problem:</strong> "Handle" could mean fetch, validate, transform, save, delete, or anything</p>
                         <p><strong>Fix:</strong> Use specific verbs: "Validate", "Transform", "Persist", "Fetch"</p>
                     </div>
 
                     <h3>Anti-Pattern 3: The "Context-Free Island"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> <code>// calculate total</code></p>
                         <p><strong>Problem:</strong> No context about what "total" means. Price? Quantity? Tax included?</p>
                         <p><strong>Fix:</strong> Provide business domain context - "Calculate order total including item prices, quantity discounts, sales tax (8.5%), and shipping"</p>
                     </div>
 
                     <h3>Anti-Pattern 4: The "Single-Word Prompt"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> <code>// authentication</code></p>
                         <p><strong>Problem:</strong> Too broad. Could be login, logout, registration, password reset, OAuth, etc.</p>
                         <p><strong>Fix:</strong> Be specific - "Implement JWT-based authentication middleware for Express.js, verify Bearer token from Authorization header"</p>
                     </div>
 
                     <h3>Anti-Pattern 5: The "Copy-Paste Lazy"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> Copy example code from documentation, change variable names, hope it works</p>
                         <p><strong>Problem:</strong> Copilot doesn't understand your specific domain/requirements</p>
                         <p><strong>Fix:</strong> Adapt examples with your specific context, error handling, and business logic</p>
                     </div>
 
                     <h3>Anti-Pattern 6: The "One-Shot Wonder"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> Write one prompt, accept first suggestion, move on (even if 60% accurate)</p>
                         <p><strong>Problem:</strong> Miss opportunity for 90%+ accuracy through iteration</p>
                         <p><strong>Fix:</strong> Use 3-pass refinement strategy - generate, refine, optimize</p>
                     </div>
 
                     <h3>Anti-Pattern 7: The "No Examples"</h3>
-                    <div style="background: #FEE2E2; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <div >
                         <p><strong>What developers do:</strong> <code># validate email address</code></p>
                         <p><strong>Problem:</strong> No examples of valid/invalid inputs. Copilot guesses the validation rules.</p>
                         <p><strong>Fix:</strong> Provide concrete examples - "Valid: user@example.com, Invalid: user@.com, user@domain (no TLD)"</p>

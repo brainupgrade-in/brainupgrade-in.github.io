@@ -625,27 +625,36 @@
     margin-bottom: var(--space-2);
 }
 
+/* Enhanced Code Styling - Dark Theme for DevOps Brand */
 .post-content code {
     background: var(--gray-100);
+    color: var(--gray-800);
     padding: var(--space-1) var(--space-2);
     border-radius: var(--radius-sm);
     font-family: 'SF Mono', Monaco, Consolas, 'Courier New', monospace;
     font-size: 0.9em;
+    font-weight: 500;
 }
 
 .post-content pre {
-    background: var(--dark);
-    color: #e5e7eb;
+    background: #1e293b; /* Enhanced dark background - slightly lighter than pure black */
+    color: #e2e8f0; /* Excellent contrast light gray text */
+    border-left: 4px solid #10b981; /* Brand green accent border */
     padding: var(--space-6);
     border-radius: var(--radius-lg);
     overflow-x: auto;
     margin: var(--space-6) 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .post-content pre code {
     background: transparent;
     padding: 0;
     color: inherit;
+    font-size: 0.95em;
+    line-height: 1.6;
+    display: block;
 }
 
 /* Author Bio */
