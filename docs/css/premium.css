@@ -2,14 +2,20 @@
 
 /* Enhanced Root Variables */
 :root {
-    /* DevOps Color Palette - Green/Teal Theme */
-    --primary: #10b981;
-    --primary-dark: #059669;
-    --primary-light: #34d399;
-    --secondary: #2563eb;
-    --secondary-light: #3b82f6;
-    --accent: #f59e0b;
-    --accent-light: #fbbf24;
+    /* Gheware DevOps AI Brand Colors (CLAUDE.md compliant) */
+    --brand-navy: #1E3A5F;
+    --brand-docker-blue: #2496ED;
+    --brand-success-green: #22C55E;
+    --brand-accent-orange: #F97316;
+
+    /* Legacy color mappings for backward compatibility */
+    --primary: var(--brand-success-green);
+    --primary-dark: #16A34A;
+    --primary-light: #4ADE80;
+    --secondary: var(--brand-docker-blue);
+    --secondary-light: #60A5FA;
+    --accent: var(--brand-accent-orange);
+    --accent-light: #FB923C;
 
     /* Premium Neutrals */
     --dark: #0f172a;
@@ -26,10 +32,11 @@
     --gray-50: #f9fafb;
     --white: #ffffff;
 
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-    --gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #10b981 100%);
+    /* Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--brand-success-green) 0%, var(--primary-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--brand-docker-blue) 0%, var(--secondary-light) 100%);
+    --gradient-brand-navy: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-docker-blue) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--brand-navy) 0%, #1e293b 50%, var(--brand-success-green) 100%);
     --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
 
     /* Premium Shadows */
