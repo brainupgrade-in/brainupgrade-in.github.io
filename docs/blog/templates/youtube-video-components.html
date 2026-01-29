@@ -214,31 +214,11 @@ CHANNEL INFO:
      COMPONENT 5: Sticky YouTube Subscribe Bar
      ============================================
 
-     USE: Add to end of body for all blog posts
-     BEST FOR: Channel subscriptions, repeat visitors
-     NOTE: Auto-dismisses after 7 days, respects localStorage
+     DEPRECATED: This component has been replaced by the new 3-CTA system.
+     Use the Primary YouTube Subscribe CTA (conclusion) instead.
+     See blog-writer agent CTA requirements for modern implementation.
 
 -->
-
-<div id="youtube-subscribe-bar" class="youtube-sticky-bar hidden">
-    <div class="sticky-bar-content">
-        <div class="sticky-bar-left">
-            <img src="/assets/images/rajesh-gheware-avatar.png" alt="Rajesh Gheware" class="sticky-avatar">
-            <span class="sticky-text">
-                <strong>Prefer video tutorials?</strong> Watch on YouTube
-            </span>
-        </div>
-        <div class="sticky-bar-right">
-            <a href="https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A?sub_confirmation=1"
-               class="sticky-subscribe-btn" target="_blank" rel="noopener">
-                Subscribe &#8594;
-            </a>
-            <button class="dismiss-btn" onclick="dismissYouTubeBar()" aria-label="Dismiss">
-                &#10005;
-            </button>
-        </div>
-    </div>
-</div>
 
 
 <!-- ============================================

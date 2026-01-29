@@ -322,8 +322,8 @@
      * Initialize all YouTube integration features
      */
     function init() {
-        // Initialize sticky bar
-        initStickyBar();
+        // Sticky bar disabled - replaced by 3-CTA system
+        // initStickyBar();
 
         // Add video badges to cards (only on blog index)
         if (window.location.pathname.includes('/blog/') && !window.location.pathname.includes('/posts/')) {
