@@ -1,6 +1,11 @@
 # .claudeignore - devops.gheware.com (GitHub Pages Blog)
 
 # ===================
+# Claude Code
+# ===================
+.claude/
+
+# ===================
 # Git
 # ===================
 .git/
@@ -54,3 +59,9 @@ node_modules/
 # ===================
 *.log
 logs/
+
+# ===================
+# Backup files
+# ===================
+*.backup
+*.backup-*
