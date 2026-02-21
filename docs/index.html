@@ -1,1413 +1,1748 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Page-specific meta tags (optional - auto-generated if not provided) -->
-    <meta name="description" content="Gheware DevOps AI - Expert-led corporate training for Kubernetes, Docker, CI/CD, Jenkins. Transform your teams with future-ready tech skills. Enterprise solutions by certified professionals.">
-    <meta name="keywords" content="kubernetes training, docker training, devops lab, k8s learning, CI/CD pipeline, cloud native, container orchestration, devops certification, CKA, CKAD, CKS">
-
-    <!-- Google Search Console Verification (must be in static HTML, not JS) -->
     <meta name="google-site-verification" content="Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE" />
-
-    <!-- Yandex Webmaster Verification -->
     <meta name="yandex-verification" content="71628c72cd289d6b" />
 
-    <!-- Google Analytics GA4 (Static for immediate detection) -->
+    <!-- Google Analytics GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRDMMEZ26F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-TRDMMEZ26F');
     </script>
 
-    <title>How Fortune 500 Companies Cut DevOps Deployment Time by 67% (Without Hiring More Engineers)</title>
+    <title>gheWARE — Enterprise AI & DevOps Training | Build Production-Ready AI Agents</title>
+    <meta name="description"
+        content="Transform your engineering teams with Agentic AI training rated 4.91/5.0 at Oracle. 5,000+ professionals trained at Fortune 500 companies. Kubernetes, Docker, CI/CD, and AI-Powered DevOps.">
+    <meta property="og:title" content="gheWARE — Enterprise AI & DevOps Training">
+    <meta property="og:description"
+        content="Build Production-Ready AI Agents in 5 Days. Rated 4.91/5.0 at Oracle. 5,000+ professionals trained.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devops.gheware.com">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://devops.gheware.com/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-    <!-- Common head elements: GA, meta tags, favicon (auto-loaded) -->
-    <script src="/js/head-loader.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/premium.css">
-    <link rel="stylesheet" href="/css/local-dev-fixes.css">
-
-    <!-- Template Loader for header/footer -->
-    <script src="/js/template-loader.js" defer></script>
-</head>
-<body>
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
-
-    <!-- Body spacing to account for fixed header (dynamically calculated) -->
-    <div id="header-spacing" style="height: 80px;"></div>
-
-    <!-- Subtle Urgency Banner -->
-    <div class="urgency-banner" style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white; text-align: center; padding: 0.5rem; font-weight: 600; font-size: 0.85rem; border-bottom: 1px solid rgba(255,255,255,0.2); position: relative; z-index: 100; margin: 0;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem;">
-            <span style="background: rgba(245, 158, 11, 0.9); color: #1a1a1a; padding: 0.25rem 0.75rem; border-radius: 12px; font-weight: 700; font-size: 0.8rem;">⏰ LIMITED SPOTS</span>
-            <span>February Cohort: Only 3 spots remaining</span>
-            <span style="opacity: 0.8;">•</span>
-            <span style="opacity: 0.9;">Next training: June 2026</span>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero-premium devops-hero" style="position: relative; z-index: 1; margin: 0; padding-top: 0;">
-        <div class="hero-background">
-            <div class="hero-pattern"></div>
-        </div>
-        <div class="container">
-            <!-- Problem Agitation Section -->
-            <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border: 3px solid #dc2626; border-radius: 16px; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2); position: relative; overflow: hidden;">
-                <!-- Warning Pattern Background -->
-                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(220, 38, 38, 0.05) 10px, rgba(220, 38, 38, 0.05) 20px); pointer-events: none;"></div>
-
-                <!-- Content -->
-                <div style="position: relative; z-index: 1;">
-                    <div style="background: #dc2626; color: white; display: inline-block; padding: 0.625rem 1.5rem; border-radius: 20px; margin-bottom: 0.75rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);">
-                        🚨 STOP: Read This Before Your Next Deployment
-                    </div>
-
-                    <h2 style="color: #991b1b; margin-bottom: 1rem; font-size: 2.2rem; font-weight: 800; line-height: 1.2; text-shadow: 0 1px 2px rgba(0,0,0,0.1);">
-                        ❌ Your Current DevOps Nightmare
-                    </h2>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.625rem; margin-bottom: 1rem; max-width: 1100px; margin-left: auto; margin-right: auto;">
-                        <div style="background: white; padding: 1rem; border-radius: 12px; border-left: 6px solid #dc2626; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: rotate(-1deg); transition: transform 0.3s ease;">
-                            <div style="font-size: 1.4rem; margin-bottom: 0.375rem;">⏰</div>
-                            <div style="font-weight: 700; color: #991b1b; margin-bottom: 0.375rem; font-size: 1.05rem;">• Deployments take 6+ hours</div>
-                            <div style="color: #64748b; font-size: 0.85rem;">(should take 15 minutes)</div>
-                        </div>
-
-                        <div style="background: white; padding: 1rem; border-radius: 12px; border-left: 6px solid #dc2626; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: rotate(1deg); transition: transform 0.3s ease;">
-                            <div style="font-size: 1.4rem; margin-bottom: 0.375rem;">💥</div>
-                            <div style="font-weight: 700; color: #991b1b; margin-bottom: 0.375rem; font-size: 1.05rem;">• 1 in 4 deployments break</div>
-                            <div style="color: #64748b; font-size: 0.85rem;">something in production</div>
-                        </div>
-
-                        <div style="background: white; padding: 1rem; border-radius: 12px; border-left: 6px solid #dc2626; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: rotate(-1deg); transition: transform 0.3s ease;">
-                            <div style="font-size: 1.4rem; margin-bottom: 0.375rem;">😴</div>
-                            <div style="font-weight: 700; color: #991b1b; margin-bottom: 0.375rem; font-size: 1.05rem;">• Engineers work weekends</div>
-                            <div style="color: #64748b; font-size: 0.85rem;">fixing "urgent" issues</div>
-                        </div>
-
-                        <div style="background: white; padding: 1rem; border-radius: 12px; border-left: 6px solid #dc2626; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: rotate(1deg); transition: transform 0.3s ease;">
-                            <div style="font-size: 1.4rem; margin-bottom: 0.375rem;">💸</div>
-                            <div style="font-weight: 700; color: #991b1b; margin-bottom: 0.375rem; font-size: 1.05rem;">• Losing $50K+ monthly</div>
-                            <div style="color: #64748b; font-size: 0.85rem;">to technical debt</div>
-                        </div>
-
-                        <div style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 1rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4); grid-column: 1 / -1; transform: scale(1.02); margin: 0.5rem 0;">
-                            <div style="font-size: 1.75rem; margin-bottom: 0.375rem;">💔</div>
-                            <div style="font-weight: 800; margin-bottom: 0.375rem; font-size: 1.2rem;">• Your best developers are updating their LinkedIn profiles</div>
-                            <div style="opacity: 0.9; font-size: 0.9rem;">And you know exactly why...</div>
-                        </div>
-                    </div>
-
-                    <div style="background: #991b1b; color: white; padding: 1rem 1.25rem; border-radius: 10px; display: inline-block; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 12px rgba(153, 27, 27, 0.4);">
-                        👆 Sound familiar? You're not alone... but your competitors are fixing this RIGHT NOW.
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-content-premium" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; padding: 1rem 0;">
-                <!-- Left Column: Core Content -->
-                <div class="hero-main" style="max-width: 600px;">
-                    <div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); border: 2px solid rgba(255,255,255,0.1);">
-                        🔥 Why 73% of Enterprise Teams Fail at DevOps
-                    </div>
-
-                    <h1 class="hero-title" style="font-size: 2.5rem; line-height: 1.1; margin-bottom: 1rem;">
-                        <span style="color: #1e40af; font-weight: 800; display: block;">How Fortune 500 Companies</span>
-                        <span style="color: #dc2626; font-weight: 800; display: block;">Cut DevOps Deployment Time by 67%</span>
-                        <span style="color: #374151; font-weight: 600; display: block; font-size: 1.25rem; margin-top: 0.5rem;">(Without Hiring More Engineers)</span>
-                    </h1>
-
-                    <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0;">
-                        <p style="font-size: 1.1rem; color: #1e40af; margin: 0; font-weight: 600;">
-                            If you're still manually deploying code, your team is wasting <strong>40+ hours per week</strong>
-                            that could be spent building features your customers actually want.
-                        </p>
-                    </div>
-
-                    <!-- FREE DevOps Assessment Form -->
-                    <div id="devops-assessment-form" class="hero-actions" style="margin: 1.25rem 0 1rem 0;">
-                        <div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(220, 38, 38, 0.3); position: relative; overflow: hidden; max-width: 680px; margin: 0 auto;">
-                            <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); animation: slide 2s infinite;"></div>
-                            <div style="position: relative; z-index: 2;">
-                                <h3 style="color: white; font-size: 1.3rem; font-weight: 800; margin: 0 0 0.5rem 0; text-align: center;">
-                                    🎯 Claim Your FREE DevOps Assessment ($2,500 Value)
-                                </h3>
-                                <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; margin: 0 0 1rem 0; text-align: center;">
-                                    ⏰ Only 3 Spots Left This Month
-                                </p>
-                                <div style="background: rgba(255,255,255,0.95); border-radius: 8px; padding: 1rem;">
-                                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdFomS8Wwr9TB71pdKqUFbC-SKOac6oXmQzfUxQtqUimLbOCg/viewform?embedded=true" width="640" height="400" frameborder="0" marginheight="0" marginwidth="0" style="width: 100%; max-width: 640px; height: 400px; border: none; border-radius: 4px;">Loading…</iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <style>
-                            @keyframes slide {
-                                0% { left: -100%; }
-                                100% { left: 100%; }
-                            }
-                            @media (max-width: 768px) {
-                                .hero-actions iframe {
-                                    height: 350px !important;
-                                }
-                            }
-                        </style>
-                    </div>
-
-                    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #059669; font-size: 1.1rem;">✅</span>
-                            <span style="font-weight: 600; font-size: 0.95rem;">Cut deployment time from hours to minutes</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #059669; font-size: 1.1rem;">✅</span>
-                            <span style="font-weight: 600; font-size: 0.95rem;">Eliminate "works on my machine" forever</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #059669; font-size: 1.1rem;">✅</span>
-                            <span style="font-weight: 600; font-size: 0.95rem;">Stop weekend deployment emergencies</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            <span style="color: #059669; font-size: 1.1rem;">✅</span>
-                            <span style="font-weight: 600; font-size: 0.95rem;">Get your life back (and your team's sanity)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Hero Image + Value Stack -->
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <!-- Compact Hero Image -->
-                    <div class="hero-image-container" style="position: relative; display: flex; align-items: center; justify-content: center;">
-                        <div style="
-                            width: 100%;
-                            height: 280px;
-                            background: url('/images/home-page-hero-image.jpeg?v=20260125') center/cover;
-                            border-radius: 12px;
-                            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
-                            position: relative;
-                            overflow: hidden;
-                        ">
-                            <!-- Professional Badge Overlay -->
-                            <div style="
-                                position: absolute;
-                                top: 1rem;
-                                left: 1rem;
-                                background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-                                color: white;
-                                padding: 0.5rem 1rem;
-                                border-radius: 6px;
-                                font-weight: 600;
-                                font-size: 0.875rem;
-                                box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
-                            ">
-                                <span>🔥</span> Proven ROI Results
-                            </div>
-
-                            <!-- Results Badge -->
-                            <div style="
-                                position: absolute;
-                                bottom: 1rem;
-                                left: 1rem;
-                                right: 1rem;
-                                background: rgba(0, 0, 0, 0.9);
-                                color: white;
-                                padding: 0.875rem;
-                                border-radius: 8px;
-                                backdrop-filter: blur(10px);
-                            ">
-                                <p style="margin: 0; font-weight: 700; margin-bottom: 0.25rem; color: #10b981; font-size: 0.95rem;">Rajesh Gheware - DevOps Expert</p>
-                                <p style="margin: 0; font-size: 0.825rem; opacity: 0.9;">"Helped enterprise companies achieve 67% faster deployments"</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Value Stack - Now on Right Side -->
-                    <div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 1.25rem; border-radius: 16px; position: relative; box-shadow: 0 15px 35px rgba(5, 150, 105, 0.4); border: 2px solid #10b981;">
-                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; padding: 0.6rem 1.25rem; border-radius: 25px; font-size: 0.85rem; font-weight: 800; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4); border: 2px solid white;">
-                            💰 What You Get (Worth $50,000)
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.1); padding: 0.875rem; margin-bottom: 0.625rem; border-radius: 8px; border-left: 4px solid #10b981;">
-                                <span style="font-size: 0.95rem; font-weight: 600;">✅ 5-Day Intensive Training</span>
-                                <span style="font-weight: 800; font-size: 0.95rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 15px;">$15,000</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.1); padding: 0.875rem; margin-bottom: 0.625rem; border-radius: 8px; border-left: 4px solid #10b981;">
-                                <span style="font-size: 0.95rem; font-weight: 600;">✅ Implementation Roadmap</span>
-                                <span style="font-weight: 800; font-size: 0.95rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 15px;">$10,000</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.1); padding: 0.875rem; margin-bottom: 0.625rem; border-radius: 8px; border-left: 4px solid #10b981;">
-                                <span style="font-size: 0.95rem; font-weight: 600;">✅ 90-Day Support</span>
-                                <span style="font-weight: 800; font-size: 0.95rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 15px;">$25,000</span>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 1.25rem; margin-top: 1rem; border: 2px dashed rgba(255,255,255,0.3);">
-                                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                                    <div>
-                                        <div style="text-decoration: line-through; opacity: 0.8; font-size: 0.9rem; margin-bottom: 0.375rem;">Total Value: $50,000</div>
-                                        <div style="font-size: 1.5rem; font-weight: 900; color: #fbbf24;">Investment: $12,000</div>
-                                    </div>
-                                    <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 0.75rem 1rem; border-radius: 12px; font-weight: 800; font-size: 1rem; text-align: center; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); border: 2px solid #fbbf24;">
-                                        <div style="font-size: 0.7rem; opacity: 0.9; margin-bottom: 0.25rem;">YOU SAVE</div>
-                                        <div style="font-size: 1.25rem;">$38,000</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Optimized Mobile Responsive Styles -->
-            <style>
-                /* Space-Optimized Mobile Experience */
-                @media (max-width: 768px) {
-                    .hero-content-premium {
-                        grid-template-columns: 1fr !important;
-                        gap: 1.5rem !important;
-                        text-align: center;
-                        padding: 1.5rem 0 !important;
-                    }
-                    .hero-premium .container > div:first-child {
-                        padding: 1.25rem !important;
-                        margin-bottom: 1.25rem !important;
-                    }
-                    .hero-premium .container > div:first-child > div:nth-child(2) > div {
-                        gap: 0.5rem !important;
-                        margin-bottom: 1rem !important;
-                    }
-                    .hero-image-container div {
-                        height: 250px !important;
-                        margin: 0 1rem !important;
-                    }
-                    .hero-title {
-                        font-size: 1.75rem !important;
-                        line-height: 1.2 !important;
-                    }
-                    .hero-main {
-                        max-width: 100% !important;
-                        padding: 0 1rem !important;
-                    }
-                    .container {
-                        padding: 0 1rem !important;
-                    }
-                    /* Right column stacks vertically */
-                    .hero-content-premium > div:nth-child(2) {
-                        order: 2;
-                    }
-                    /* Value stack mobile optimization */
-                    .hero-content-premium > div:nth-child(2) > div:nth-child(2) {
-                        padding: 1rem !important;
-                    }
-                    .hero-content-premium > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div {
-                        flex-direction: column !important;
-                        text-align: center !important;
-                        gap: 0.5rem !important;
-                        font-size: 0.9rem !important;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .hero-title {
-                        font-size: 1.5rem !important;
-                    }
-                    .hero-content-premium {
-                        gap: 1.25rem !important;
-                        padding: 1.25rem 0 !important;
-                    }
-                    .hero-image-container div {
-                        height: 200px !important;
-                    }
-                    /* Compact mobile layout */
-                    .hero-main > div:first-child {
-                        margin-bottom: 1.25rem !important;
-                        padding: 0.625rem 1.25rem !important;
-                        font-size: 0.85rem !important;
-                    }
-                    .hero-main > div:nth-child(3) {
-                        padding: 1rem !important;
-                        margin: 1.25rem 0 !important;
-                    }
-                    /* Problem agitation section mobile optimization */
-                    .hero-premium .container > div:first-child {
-                        padding: 1rem !important;
-                        margin-bottom: 1rem !important;
-                    }
-                    .hero-premium .container > div:first-child > div:nth-child(2) > div {
-                        gap: 0.5rem !important;
-                        margin-bottom: 0.75rem !important;
-                        grid-template-columns: 1fr !important;
-                    }
-                    .hero-premium .container > div:first-child > div:nth-child(2) > div > div {
-                        padding: 1rem !important;
-                    }
-                    /* Ultra-compact value stack for small screens */
-                    .hero-content-premium > div:nth-child(2) > div:nth-child(2) {
-                        padding: 0.875rem !important;
-                    }
-                    .hero-content-premium > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div {
-                        padding: 0.625rem !important;
-                        margin-bottom: 0.375rem !important;
-                        font-size: 0.8rem !important;
-                    }
-                    .hero-content-premium > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:last-child {
-                        padding: 0.875rem !important;
-                    }
-                }
-
-                /* Enhanced Spacing for All Sections */
-                .section-spacing {
-                    padding: 2rem 0;
-                }
-
-                @media (max-width: 768px) {
-                    .section-spacing {
-                        padding: 1.5rem 0;
-                    }
-                }
-
-                /* Prevent header overlapping issues */
-                body {
-                    margin: 0;
-                    padding: 0;
-                    padding-top: 0; /* No padding needed as we have spacing div */
-                }
-
-                /* Fixed header adjustments */
-                .header-premium {
-                    position: fixed !important;
-                    top: 0 !important;
-                    z-index: 9999 !important;
-                }
-
-                .hero-premium {
-                    position: relative;
-                    z-index: 1;
-                    margin-top: 0;
-                }
-
-                .urgency-banner {
-                    position: relative;
-                    z-index: 1;
-                    margin: 0;
-                    padding: 0.5rem;
-                }
-
-                /* Remove any default spacing and gaps */
-                #header-spacing {
-                    margin: 0 !important;
-                    padding: 0 !important;
-                    border: none !important;
-                    display: block;
-                    line-height: 0;
-                    font-size: 0;
-                }
-
-                #header-spacing + .urgency-banner {
-                    margin-top: 0 !important;
-                    margin-bottom: 0 !important;
-                }
-
-                .urgency-banner + .hero-premium {
-                    margin-top: 0 !important;
-                    padding-top: 0 !important;
-                }
-
-                /* Force tight spacing */
-                .hero-premium .container > div:first-child {
-                    margin-top: 0 !important;
-                }
-
-                /* Mobile adjustments for fixed header */
-                @media (max-width: 768px) {
-                    #header-spacing {
-                        height: 70px !important; /* Smaller spacing on mobile */
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    #header-spacing {
-                        height: 60px !important; /* Even smaller on very small screens */
-                    }
-                }
-
-                /* Better Card Layouts */
-                .card-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                    gap: 1.5rem;
-                    margin-bottom: 2rem;
-                }
-
-                @media (max-width: 768px) {
-                    .card-grid {
-                        grid-template-columns: 1fr;
-                        gap: 1rem;
-                        margin-bottom: 1.5rem;
-                    }
-                }
-            </style>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section style="background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%); padding: 2.5rem 0; border-top: 1px solid #e2e8f0;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <!-- Section Header -->
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; display: inline-block; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Proven Results
-                </div>
-                <h2 style="color: #1e40af; font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2;">
-                    Success Stories from Industry Leaders
-                </h2>
-                <p style="font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                    Join Fortune 500 companies who've transformed their DevOps teams with our proven training
-                </p>
-            </div>
-
-            <!-- Company Logos Strip -->
-            <div style="background: white; border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                <div style="text-align: center; margin-bottom: 1.5rem;">
-                    <span style="color: #64748b; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Trusted by Industry Leaders</span>
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap;">
-                    <div style="color: #1e40af; font-weight: 800; font-size: 1.1rem; padding: 0.5rem 1rem;">JP Morgan</div>
-                    <div style="color: #059669; font-weight: 800; font-size: 1.1rem; padding: 0.5rem 1rem;">Deloitte</div>
-                    <div style="color: #dc2626; font-weight: 800; font-size: 1.1rem; padding: 0.5rem 1rem;">Bank of America</div>
-                    <div style="color: #7c3aed; font-weight: 800; font-size: 1.1rem; padding: 0.5rem 1rem;">Standard Chartered</div>
-                    <div style="color: #ea580c; font-weight: 800; font-size: 1.1rem; padding: 0.5rem 1rem;">Oracle</div>
-                    <div style="color: #0369a1; font-weight: 800; font-size: 1.1rem; padding: 0.5rem 1rem;">Ericsson</div>
-                </div>
-            </div>
-
-            <!-- Featured Testimonials -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(30, 64, 175, 0.1); border-top: 4px solid #1e40af; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -2px; right: -2px; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 0.5rem 1rem; border-radius: 0 16px 0 20px; font-size: 0.75rem; font-weight: 700;">
-                        5⭐ RATING
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.2rem; margin-right: 1rem;">M</div>
-                        <div>
-                            <div style="font-weight: 800; color: #1e40af; font-size: 1.1rem;">Senior Software Engineer</div>
-                            <div style="color: #64748b; font-weight: 600;">JP Morgan • Kubernetes & Docker</div>
-                            <div style="color: #94a3b8; font-size: 0.85rem;">Zero to production-ready in 3 days</div>
-                        </div>
-                    </div>
-                    <blockquote style="font-size: 1.15rem; color: #374151; margin: 0; line-height: 1.7; font-style: italic; position: relative;">
-                        <span style="position: absolute; top: -10px; left: -10px; font-size: 3rem; color: #e2e8f0; font-family: serif;">"</span>
-                        I am from non kubernetes/EKS background where I dont even know what is cluster/pod/docker but after this workshop, <strong style="color: #059669;">I am not only able to understand the concepts but now I can run the kubernetes commands</strong>. Thank you for the wonderful training.
-                    </blockquote>
-                </div>
-
-                <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(220, 38, 38, 0.1); border-top: 4px solid #dc2626; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -2px; right: -2px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.5rem 1rem; border-radius: 0 16px 0 20px; font-size: 0.75rem; font-weight: 700;">
-                        HANDS-ON
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.2rem; margin-right: 1rem;">P</div>
-                        <div>
-                            <div style="font-weight: 800; color: #dc2626; font-size: 1.1rem;">SRE Engineer</div>
-                            <div style="color: #64748b; font-weight: 600;">JP Morgan • Prometheus & Grafana</div>
-                            <div style="color: #94a3b8; font-size: 0.85rem;">Real-time observability expert</div>
-                        </div>
-                    </div>
-                    <blockquote style="font-size: 1.15rem; color: #374151; margin: 0; line-height: 1.7; font-style: italic; position: relative;">
-                        <span style="position: absolute; top: -10px; left: -10px; font-size: 3rem; color: #e2e8f0; font-family: serif;">"</span>
-                        Rajesh has a thorough knowledge about both Prometheus and Grafana. Training is very informative, interactive and insightful. <strong style="color: #dc2626;">All the examples and dashboards used are really useful and very close to real time experience.</strong>
-                    </blockquote>
-                </div>
-            </div>
-
-            <!-- Results Stats Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-                <div style="text-align: center; background: linear-gradient(135deg, white 0%, #f8fafc 100%); padding: 3rem 2rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <div style="background: linear-gradient(135deg, #059669 0%, #047857 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem;">100%</div>
-                    <div style="font-weight: 800; color: #374151; margin-bottom: 0.75rem; font-size: 1.1rem;">Training Success Rate</div>
-                    <div style="font-size: 0.95rem; color: #64748b; line-height: 1.5;">Teams successfully implement learned concepts in production</div>
-                </div>
-
-                <div style="text-align: center; background: linear-gradient(135deg, white 0%, #f8fafc 100%); padding: 3rem 2rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem;">Expert</div>
-                    <div style="font-weight: 800; color: #374151; margin-bottom: 0.75rem; font-size: 1.1rem;">Training Programs</div>
-                    <div style="font-size: 0.95rem; color: #64748b; line-height: 1.5;">Comprehensive enterprise training solutions</div>
-                </div>
-
-                <div style="text-align: center; background: linear-gradient(135deg, white 0%, #f8fafc 100%); padding: 3rem 2rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
-                    <div style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3.5rem; font-weight: 900; margin-bottom: 1rem;">67%</div>
-                    <div style="font-weight: 800; color: #374151; margin-bottom: 0.75rem; font-size: 1.1rem;">Faster Deployments</div>
-                    <div style="font-size: 0.95rem; color: #64748b; line-height: 1.5;">Average improvement after completing training</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Training Expertise Section -->
-    <section id="expertise" class="features-premium">
-        <div class="container">
-            <div class="section-header-premium">
-                <div class="section-badge">
-                    <span class="badge-text">🎓 Training Excellence</span>
-                </div>
-                <h2 class="section-title-premium">
-                    Why Industry Leaders<br>Choose Our Training
-                </h2>
-                <p class="section-description-premium">
-                    Expert-led corporate training designed for immediate business impact and measurable team transformation
-                </p>
-            </div>
-
-            <div class="features-grid-premium">
-                <!-- Expertise 1 -->
-                <div class="feature-card-premium">
-                    <span class="feature-icon">👨‍🏫</span>
-                    <h3 class="feature-title-premium">Industry Expert Instructors</h3>
-                    <p class="feature-description">
-                        Learn from certified professionals with 15+ years enterprise experience at Fortune 500 companies.
-                    </p>
-                </div>
-
-                <!-- Expertise 2 -->
-                <div class="feature-card-premium">
-                    <span class="feature-icon">🎯</span>
-                    <h3 class="feature-title-premium">Customized Curriculum</h3>
-                    <p class="feature-description">
-                        Training programs aligned with your organization's goals and technology stack requirements.
-                    </p>
-                </div>
-
-                <!-- Expertise 3 -->
-                <div class="feature-card-premium">
-                    <span class="feature-icon">🛠️</span>
-                    <h3 class="feature-title-premium">Enterprise Training Facilities</h3>
-                    <p class="feature-description">
-                        Delivered training in JP Morgan's advanced halls: large projector + dual TV displays accommodating 25+ professionals with hands-on Kubernetes workshops.
-                    </p>
-                </div>
-
-                <!-- Expertise 4 -->
-                <div class="feature-card-premium">
-                    <span class="feature-icon">📈</span>
-                    <h3 class="feature-title-premium">Measurable Results</h3>
-                    <p class="feature-description">
-                        Track team progress with assessments, certification paths, and immediate productivity improvements.
-                    </p>
-                </div>
-
-                <!-- Expertise 5 -->
-                <div class="feature-card-premium">
-                    <span class="feature-icon">🏆</span>
-                    <h3 class="feature-title-premium">Certification Alignment</h3>
-                    <p class="feature-description">
-                        Prepare your teams for CKA, CKAD, CKS, and Docker certifications with expert guidance.
-                    </p>
-                </div>
-
-                <!-- Expertise 6 -->
-                <div class="feature-card-premium">
-                    <span class="feature-icon">🔄</span>
-                    <h3 class="feature-title-premium">Ongoing Support</h3>
-                    <p class="feature-description">
-                        Post-training mentorship, Q&A sessions, and continuous learning paths for sustained growth.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Packages Section -->
-    <section style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white; padding: 3rem 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.03) 0%, transparent 50%); pointer-events: none;"></div>
-
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <div style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; display: inline-block; padding: 0.75rem 1.5rem; border-radius: 25px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; border: 1px solid rgba(251, 191, 36, 0.3);">
-                    🎯 Choose Your Investment Level
-                </div>
-                <h2 style="font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; color: white; line-height: 1.1;">
-                    Transform Your Team Today
-                </h2>
-                <p style="font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                    All packages include our industry-leading 90-day success guarantee
-                </p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                <!-- Bronze Package -->
-                <div style="background: white; color: #374151; padding: 2rem; border-radius: 12px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                    <div style="text-align: center; margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #b45309; margin-bottom: 0.5rem;">BRONZE</h3>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #1e40af;">$8,000</div>
-                        <div style="color: #64748b; margin-bottom: 1rem;">Basic Team (5-10)</div>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• 3-Day Training</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• Email Support</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• Basic Materials</li>
-                        <li style="padding: 0.5rem 0;">• Course Completion Certificates</li>
-                    </ul>
-                    <a href="mailto:training@gheware.com?subject=Bronze Package Inquiry" style="background: #b45309; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; display: block; text-align: center;">
-                        Get Started
-                    </a>
-                </div>
-
-                <!-- Silver Package -->
-                <div style="background: white; color: #374151; padding: 2rem; border-radius: 12px; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.3); transform: scale(1.05); border: 3px solid #f59e0b;">
-                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #f59e0b; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: 700; font-size: 0.875rem;">
-                        👑 MOST POPULAR
-                    </div>
-                    <div style="text-align: center; margin-bottom: 2rem; margin-top: 1rem;">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #6b7280; margin-bottom: 0.5rem;">SILVER</h3>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #1e40af;">$12,000</div>
-                        <div style="color: #64748b; margin-bottom: 1rem;">Growing Team (11-25)</div>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• 5-Day Training</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• Phone + Email Support</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• Advanced Labs</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• 30-Day Follow-up</li>
-                        <li style="padding: 0.5rem 0;">• Implementation Roadmap</li>
-                    </ul>
-                    <a href="mailto:training@gheware.com?subject=Silver Package Inquiry" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; display: block; text-align: center;">
-                        Choose Silver
-                    </a>
-                </div>
-
-                <!-- Gold Package -->
-                <div style="background: white; color: #374151; padding: 2rem; border-radius: 12px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                    <div style="position: absolute; top: -10px; right: -10px; background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700; font-size: 0.75rem; transform: rotate(15deg);">
-                        🔥 BEST VALUE
-                    </div>
-                    <div style="text-align: center; margin-bottom: 2rem;">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #d97706; margin-bottom: 0.5rem;">GOLD</h3>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: #1e40af;">$18,000</div>
-                        <div style="color: #64748b; margin-bottom: 1rem;">Enterprise (25+)</div>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• 7-Day Training</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• Dedicated Success Manager</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• Custom Lab Environment</li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">• 90-Day Implementation Support</li>
-                        <li style="padding: 0.5rem 0;">• C-Level Executive Briefing</li>
-                    </ul>
-                    <a href="mailto:training@gheware.com?subject=Gold Package Inquiry" style="background: #d97706; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; display: block; text-align: center;">
-                        Go Premium
-                    </a>
-                </div>
-            </div>
-
-            <!-- Risk Reversal Guarantee -->
-            <div style="background: rgba(16, 185, 129, 0.1); border: 2px solid #10b981; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; text-align: center;">
-                <h3 style="color: #10b981; font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">
-                    🛡️ Our "Zero Risk" Guarantee
-                </h3>
-                <p style="font-size: 1.2rem; color: white; margin-bottom: 1rem; line-height: 1.6;">
-                    If your team doesn't achieve at least <strong>40% faster deployments</strong> within 90 days,
-                    we'll refund 100% <em>AND</em> pay you <strong>$1,000</strong> for wasting your time.
-                </p>
-                <p style="color: rgba(255,255,255,0.9); font-style: italic;">
-                    (We've never had to pay this out in 8 years)
-                </p>
-            </div>
-
-            <!-- Early Bird Savings -->
-            <div style="background: #dc2626; border-radius: 12px; padding: 2rem; text-align: center;">
-                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">
-                    ⏰ Early Bird Ends Friday: Save $4,000
-                </h3>
-                <p style="opacity: 0.9; margin-bottom: 1rem;">
-                    Book your February training this week and save $4,000 on any package
-                </p>
-                <a href="mailto:training@gheware.com?subject=Early Bird Special" style="background: white; color: #dc2626; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem;">
-                    Claim Early Bird Discount
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Training Programs Section -->
-    <section id="programs" class="products-premium">
-        <div class="container">
-            <div class="section-header-premium">
-                <div class="section-badge">
-                    <span class="badge-text">🎯 Training Programs</span>
-                </div>
-                <h2 class="section-title-premium">
-                    Comprehensive Corporate Training Solutions
-                </h2>
-                <p class="section-description-premium">
-                    Practical, hands-on training programs designed to accelerate your team's DevOps transformation
-                </p>
-            </div>
-
-            <div class="products-grid-premium">
-                <!-- Kubernetes Training -->
-                <div class="product-card-premium featured-card">
-                    <div class="card-header">
-                        <div class="product-icon-premium devops-icon">
-                            <span style="font-size: 2rem;">☸️</span>
-                        </div>
-                        <span class="featured-badge">MOST POPULAR</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Kubernetes Mastery</h3>
-                        <p class="product-description">
-                            Complete Kubernetes training from fundamentals to advanced production deployments with hands-on labs.
-                        </p>
-                        <ul class="features-list-premium">
-                            <li>✅ Container orchestration fundamentals</li>
-                            <li>✅ Production deployment strategies</li>
-                            <li>✅ Monitoring & troubleshooting</li>
-                            <li>✅ CKA/CKAD certification prep</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/training/corporate-training.html" class="btn-product-primary">
-                            <span>View Kubernetes Training</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Docker Training -->
-                <div class="product-card-premium">
-                    <div class="card-header">
-                        <div class="product-icon-premium devops-icon">
-                            <span style="font-size: 2rem;">🐳</span>
-                        </div>
-                        <span class="new-badge">FOUNDATION</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">Docker & Containers</h3>
-                        <p class="product-description">
-                            Master containerization with Docker, from basics to advanced optimization and security best practices.
-                        </p>
-                        <ul class="features-list-premium">
-                            <li>✅ Container fundamentals & benefits</li>
-                            <li>✅ Dockerfile optimization techniques</li>
-                            <li>✅ Multi-stage builds & security</li>
-                            <li>✅ Docker Compose workflows</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/training/corporate-training.html" class="btn-product-secondary">
-                            <span>View Docker Training</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- CI/CD Training -->
-                <div class="product-card-premium">
-                    <div class="card-header">
-                        <div class="product-icon-premium devops-icon">
-                            <span style="font-size: 2rem;">🔄</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="product-title">CI/CD Pipeline Mastery</h3>
-                        <p class="product-description">
-                            Build robust automated pipelines with Jenkins, GitHub Actions, and GitOps practices for reliable deployments.
-                        </p>
-                        <ul class="features-list-premium">
-                            <li>✅ Pipeline design & automation</li>
-                            <li>✅ Jenkins & GitHub Actions</li>
-                            <li>✅ GitOps with ArgoCD</li>
-                            <li>✅ Testing & deployment strategies</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/training/corporate-training.html" class="btn-product-secondary">
-                            <span>View CI/CD Training</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Enhanced Blog Section with Dynamic Content -->
-    <section id="blog" class="products-premium">
-        <div class="container">
-            <div class="section-header-premium">
-                <div class="section-badge">
-                    <span class="badge-text">📝 Blog</span>
-                </div>
-                <h2 class="section-title-premium">
-                    DevOps & AI Insights That Drive Results
-                </h2>
-                <p class="section-description-premium">
-                    Production secrets from enterprise transformations • 25+ in-depth guides
-                </p>
-            </div>
-
-            <!-- Featured Article Section -->
-            <div style="margin-bottom: 3rem;">
-                <div style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); border: 2px solid rgba(255,255,255,0.1);">
-                    🔥 Featured Article - Most Read This Week
-                </div>
-
-                <div style="background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); border-radius: 16px; padding: 2rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 1px solid #e5e7eb; position: relative; overflow: hidden;">
-                    <!-- Featured post background pattern -->
-                    <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%); border-radius: 50%; transform: translate(25%, -25%);"></div>
-
-                    <div style="position: relative; z-index: 1;">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                            <span style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">AI Infrastructure</span>
-                            <span style="background: #fef3c7; color: #92400e; padding: 0.5rem 1rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">⭐ Expert Level</span>
-                            <span style="color: #6b7280; font-size: 0.9rem;">📖 20 min read • 🔥 Popular</span>
-                        </div>
-
-                        <h3 style="font-size: 1.75rem; font-weight: 800; color: #1e40af; margin-bottom: 1rem; line-height: 1.3;">
-                            Vector Databases on Kubernetes: Production Guide 2026 (78% Miss These Tricks)
-                        </h3>
-
-                        <p style="color: #4b5563; font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem;">
-                            Master vector database deployment on Kubernetes with StatefulSets, Milvus Operator, and performance optimization. Learn why most teams fail and how to achieve <strong style="color: #dc2626;">optimal performance.</strong>
-                        </p>
-
-                        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1e40af 0%, #10b981 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.9rem;">RG</div>
-                                    <div>
-                                        <div style="font-weight: 600; color: #374151; font-size: 0.9rem;">Rajesh Gheware</div>
-                                        <div style="color: #6b7280; font-size: 0.8rem;">January 24, 2026</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="/blog/posts/vector-databases-kubernetes-production-guide-2026.html" style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
-                                Read Full Guide <span style="font-size: 1.1rem;">→</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trending Posts Grid -->
-            <div style="margin-bottom: 2rem;">
-                <h3 style="font-size: 1.5rem; font-weight: 700; color: #374151; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                    <span style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 0.5rem; border-radius: 8px; font-size: 1rem;">📈</span>
-                    Trending This Week
-                </h3>
-
-                <div class="blog-preview-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
-                    <!-- LLMOps Guide -->
-                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 25px 50px -12px rgba(0, 0, 0, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 15px -3px rgba(0, 0, 0, 0.1)'">
-                        <div style="position: absolute; top: 1rem; right: 1rem; background: #dc2626; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 700;">HOT</div>
-
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                            <span style="background: #ddd6fe; color: #7c3aed; padding: 0.5rem; border-radius: 8px; font-size: 1.2rem;">🤖</span>
-                            <div>
-                                <span style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">AI Infrastructure</span>
-                                <div style="color: #6b7280; font-size: 0.8rem; margin-top: 0.25rem;">22 min • Expert</div>
-                            </div>
-                        </div>
-
-                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.75rem; line-height: 1.4;">
-                            LLMOps Pipeline on Kubernetes 2026: Production Secrets 83% Get Wrong
-                        </h4>
-
-                        <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
-                            Master LLMOps on Kubernetes with vLLM, KServe, and GPU optimization. Achieve <strong>94% cost reduction</strong>.
-                        </p>
-
-                        <a href="/blog/posts/llmops-pipeline-kubernetes-2026.html" style="color: #1e40af; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Guide <span style="transition: transform 0.2s ease;">→</span>
-                        </a>
-                    </div>
-
-                    <!-- DevSecOps Secrets -->
-                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 25px 50px -12px rgba(0, 0, 0, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 15px -3px rgba(0, 0, 0, 0.1)'">
-                        <div style="position: absolute; top: 1rem; right: 1rem; background: #059669; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 700;">NEW</div>
-
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                            <span style="background: #fef2f2; color: #dc2626; padding: 0.5rem; border-radius: 8px; font-size: 1.2rem;">🔒</span>
-                            <div>
-                                <span style="background: #fef2f2; color: #dc2626; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">DevSecOps</span>
-                                <div style="color: #6b7280; font-size: 0.8rem; margin-top: 0.25rem;">15 min • Intermediate</div>
-                            </div>
-                        </div>
-
-                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.75rem; line-height: 1.4;">
-                            DevSecOps Secrets: Why 90% Get Security Integration Wrong in 2026
-                        </h4>
-
-                        <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
-                            Discover the DevSecOps secrets that prevent <strong>critical vulnerabilities</strong>. Master shift-left security.
-                        </p>
-
-                        <a href="/blog/posts/devsecops-best-practices-guide.html" style="color: #1e40af; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Guide <span style="transition: transform 0.2s ease;">→</span>
-                        </a>
-                    </div>
-
-                    <!-- Kubernetes EKS Migration -->
-                    <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 25px 50px -12px rgba(0, 0, 0, 0.25)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 15px -3px rgba(0, 0, 0, 0.1)'">
-                        <div style="position: absolute; top: 1rem; right: 1rem; background: #2563eb; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem; font-weight: 700;">POPULAR</div>
-
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                            <span style="background: #dbeafe; color: #2563eb; padding: 0.5rem; border-radius: 8px; font-size: 1.2rem;">☸️</span>
-                            <div>
-                                <span style="background: #dbeafe; color: #2563eb; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600;">Kubernetes</span>
-                                <div style="color: #6b7280; font-size: 0.8rem; margin-top: 0.25rem;">18 min • Advanced</div>
-                            </div>
-                        </div>
-
-                        <h4 style="font-size: 1.1rem; font-weight: 700; color: #1f2937; margin-bottom: 0.75rem; line-height: 1.4;">
-                            Kubernetes to EKS Migration: Secret Steps 95% Miss in 2026
-                        </h4>
-
-                        <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1rem;">
-                            Avoid the 3 critical migration mistakes that cost companies <strong>$50K+</strong>. Master EKS migration.
-                        </p>
-
-                        <a href="/blog/posts/kubernetes-to-eks-migration-guide.html" style="color: #1e40af; text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
-                            Read Guide <span style="transition: transform 0.2s ease;">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Enhanced CTA Section -->
-            <div style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); border-radius: 16px; padding: 2rem; text-align: center; position: relative; overflow: hidden; margin-top: 2rem;">
-                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%); pointer-events: none;"></div>
-
-                <div style="position: relative; z-index: 1;">
-                    <h3 style="color: white; font-size: 1.75rem; font-weight: 800; margin-bottom: 1rem;">
-                        Ready for Production-Grade DevOps?
-                    </h3>
-                    <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        Join 12,000+ DevOps professionals getting weekly insights from our <strong>25+ in-depth guides</strong>
-                    </p>
-
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="/blog/" style="background: white; color: #1e40af; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.75rem;">
-                            <span>Browse All Articles</span>
-                            <span style="background: #dbeafe; color: #1e40af; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">25+ Guides</span>
-                        </a>
-                        <a href="mailto:training@gheware.com" style="border: 2px solid white; color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
-                            <span>Get Training Consultation</span>
-                            <span>→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); color: white; padding: 3rem 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 80% 20%, rgba(251,191,36,0.1) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(255,255,255,0.05) 0%, transparent 50%); pointer-events: none;"></div>
-
-        <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <div style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; display: inline-block; padding: 0.75rem 1.5rem; border-radius: 25px; margin-bottom: 1.5rem; font-weight: 700; font-size: 0.9rem; border: 1px solid rgba(251, 191, 36, 0.3);">
-                    ⏰ Limited Time Opportunity
-                </div>
-                <h2 style="font-size: 2.75rem; font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2;">
-                    Ready to Transform Your<br>DevOps Operations?
-                </h2>
-                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-                    Join industry leaders who've already transformed their teams.
-                    <strong style="color: #fbbf24;">February cohort filling fast</strong> - only 3 spots remaining.
-                </p>
-            </div>
-
-            <!-- Elegant Timer Section -->
-            <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; text-align: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
-                <div style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #fbbf24; font-weight: 600;">
-                    ⏰ Early Bird Pricing Expires Soon
-                </div>
-                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <div style="background: rgba(255,255,255,0.15); color: white; padding: 1.25rem; border-radius: 12px; min-width: 90px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div style="font-size: 1.75rem; font-weight: 800; color: #fbbf24;">02</div>
-                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Days</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.15); color: white; padding: 1.25rem; border-radius: 12px; min-width: 90px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div style="font-size: 1.75rem; font-weight: 800; color: #fbbf24;">14</div>
-                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Hours</div>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.15); color: white; padding: 1.25rem; border-radius: 12px; min-width: 90px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.2);">
-                        <div style="font-size: 1.75rem; font-weight: 800; color: #fbbf24;">37</div>
-                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9;">Minutes</div>
-                    </div>
-                </div>
-                <div style="color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.95rem;">
-                    Save $5,000 with early bird pricing
-                </div>
-            </div>
-
-            <!-- What Happens If You Wait -->
-            <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
-                <h3 style="color: #fbbf24; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center;">
-                    🚨 What Happens If You Don't Act Now:
-                </h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📅</div>
-                        <div style="font-weight: 600;">Next Training: June 2026</div>
-                        <div style="font-size: 0.875rem; opacity: 0.9;">(4-month delay)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💰</div>
-                        <div style="font-weight: 600;">Price Increase: +$5,000</div>
-                        <div style="font-size: 0.875rem; opacity: 0.9;">(Early bird expires Friday)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📈</div>
-                        <div style="font-weight: 600;">Competitor Advantage</div>
-                        <div style="font-size: 0.875rem; opacity: 0.9;">(While you wait, they improve)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💔</div>
-                        <div style="font-weight: 600;">Team Frustration</div>
-                        <div style="font-size: 0.875rem; opacity: 0.9;">(More weekend emergencies)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Enhanced CTA Section -->
-            <div style="text-align: center;">
-                <div style="margin-bottom: 3rem;">
-                    <div style="background: rgba(245, 158, 11, 0.2); display: inline-block; padding: 1rem 2rem; border-radius: 12px; margin-bottom: 1rem; border: 1px solid rgba(251, 191, 36, 0.3);">
-                        <div style="font-weight: 700; margin-bottom: 0.5rem; color: #fbbf24; font-size: 1.1rem;">🎯 3 Spots Remaining</div>
-                        <div style="font-size: 0.9rem; opacity: 0.9;">Join enterprise leaders who've already transformed</div>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-                    <a href="mailto:training@gheware.com?subject=February Training Inquiry - Early Bird" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #1a1a1a; padding: 1.5rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 1.2rem; box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; overflow: hidden; border: 2px solid rgba(255,255,255,0.3);">
-                        <span style="position: relative; z-index: 1; display: block;">
-                            <div style="font-size: 1.3rem; margin-bottom: 0.25rem;">🚀 Secure Your Spot</div>
-                            <small style="font-size: 0.85rem; opacity: 0.8; font-weight: 600;">Save $5,000 • Early Bird Ends Soon</small>
-                        </span>
-                    </a>
-
-                    <a href="https://wa.me/919606795215?text=Hi%2C%20I%27m%20interested%20in%20securing%20a%20spot%20in%20the%20February%20DevOps%20training%20cohort.%20Can%20you%20share%20more%20details%3F" target="_blank" style="background: rgba(255,255,255,0.15); color: white; padding: 1.5rem 2.5rem; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-flex; flex-direction: column; align-items: center; gap: 0.25rem; font-size: 1.1rem; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: transform 0.2s ease;">
-                        <div style="display: flex; align-items: center; gap: 0.5rem;">
-                            💬 <span>WhatsApp Now</span>
-                        </div>
-                        <small style="font-size: 0.8rem; opacity: 0.8; font-weight: 600;">Response in 2 hours</small>
-                    </a>
-                </div>
-
-                <div style="background: rgba(255,255,255,0.1); border-radius: 8px; padding: 1.5rem; max-width: 600px; margin: 0 auto;">
-                    <div style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-                        <strong>⚡ Response Time:</strong> Under 2 hours (even weekends)
-                    </div>
-                    <div style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-                        <strong>🛡️ Guarantee:</strong> 40% faster deployments or 100% refund + $1,000
-                    </div>
-                    <div style="font-size: 0.9rem;">
-                        <strong>🏆 Track Record:</strong> Proven results and strong ROI
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile Touch Optimizations & Enhanced Animations -->
     <style>
-        /* Enhanced Problem Card Animations */
-        .problem-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .problem-card:hover {
-            transform: rotate(0deg) translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+        :root {
+            --ink: #0a0a0f;
+            --ink-2: #1a1a2e;
+            --ink-3: #2d2d44;
+            --ink-muted: #6b6b8d;
+            --surface: #fefefe;
+            --surface-warm: #f8f7f4;
+            --surface-cool: #f0f0f5;
+            --border: #e8e8ed;
+            --amber: #e8a317;
+            --amber-light: #fbbf24;
+            --teal: #0d9488;
+            --teal-deep: #0f766e;
+            --violet: #6d28d9;
+            --violet-light: #8b5cf6;
+            --rose: #e11d48;
+            --rose-light: #fb7185;
         }
 
-        /* Mobile-First Touch Interactions */
-        @media (hover: none) {
-            .problem-card:active {
-                transform: rotate(0deg) translateY(-4px) scale(1.02);
-                transition: transform 0.1s ease;
-            }
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
 
-        /* Sticky Mobile CTA */
-        .sticky-mobile-cta {
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--surface);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAVIGATION ─── */
+        .nav {
             position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(254, 254, 254, 0.92);
+            backdrop-filter: saturate(180%) blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .nav.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            height: 64px;
+        }
+
+        .nav-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            color: var(--ink);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-brand span {
+            color: var(--rose);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--ink-3);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--violet);
+        }
+
+        .nav-cta {
+            background: var(--ink);
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .nav-cta:hover {
+            background: var(--violet);
+            transform: translateY(-1px);
+        }
+
+        .nav-mobile {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-mobile span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--ink);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+            padding-top: 64px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% 40%, rgba(109, 40, 217, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 50% at 80% 60%, rgba(13, 148, 136, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 50% 20%, rgba(232, 163, 23, 0.08) 0%, transparent 60%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            padding: 1rem;
-            z-index: 1000;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
-            display: none;
+            height: 5px;
+            background: linear-gradient(90deg, var(--violet) 0%, var(--teal) 33%, var(--amber) 66%, var(--rose) 100%);
         }
 
-        .sticky-mobile-cta.visible {
-            transform: translateY(0);
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 64px;
+            align-items: center;
         }
 
-        .sticky-mobile-cta a {
-            display: block;
-            background: white;
-            color: #dc2626;
-            text-align: center;
-            padding: 1rem;
-            border-radius: 8px;
+        .hero-content {}
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(109, 40, 217, 0.15);
+            border: 1px solid rgba(109, 40, 217, 0.25);
+            color: var(--violet-light);
+            padding: 6px 16px;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--teal);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.05;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--teal);
+            background: linear-gradient(135deg, var(--teal) 0%, #5eead4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 520px;
+            font-weight: 300;
+        }
+
+        .hero-sub strong {
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--rose) 0%, #be123c 100%);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
             text-decoration: none;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(225, 29, 72, 0.35);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #fff;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .hero-proof {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .proof-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--amber);
+            line-height: 1;
+        }
+
+        .proof-num small {
+            font-size: 0.5em;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .proof-label {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.35);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            line-height: 1.3;
+        }
+
+        .proof-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero side card */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 36px;
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-card-label {
+            font-size: 0.7rem;
             font-weight: 700;
-            font-size: 1.1rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 20px;
+        }
+
+        .hero-card-rating {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card-rating .big {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4.5rem;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .hero-card-rating .of {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-card-stars {
+            color: var(--amber);
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        .hero-card-quote {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .hero-card-author {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .hero-card-author strong {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+
+        .hero-card-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            background: rgba(13, 148, 136, 0.15);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #5eead4;
+        }
+
+        /* ─── TRUST BAR ─── */
+        .trust-bar {
+            background: var(--surface-warm);
+            border-bottom: 1px solid var(--border);
+            padding: 24px 32px;
+        }
+
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .trust-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-muted);
+        }
+
+        .trust-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ink-3);
+            opacity: 0.5;
+            letter-spacing: 0.03em;
+            transition: opacity 0.2s;
+        }
+
+        .trust-name:hover {
+            opacity: 1;
+        }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            padding: 96px 32px;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--violet);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--ink-muted);
+            max-width: 600px;
+            margin-bottom: 48px;
+            line-height: 1.7;
+        }
+
+        /* ─── FLAGSHIP OFFERING ─── */
+        .flagship {
+            background: var(--surface-warm);
+        }
+
+        .flagship-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .flagship-left {}
+
+        .flagship-curriculum {
+            list-style: none;
+        }
+
+        .flagship-day {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .day-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .day-1 {
+            background: linear-gradient(135deg, var(--violet), #4c1d95);
+        }
+
+        .day-2 {
+            background: linear-gradient(135deg, var(--teal), var(--teal-deep));
+        }
+
+        .day-3 {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+
+        .day-4 {
+            background: linear-gradient(135deg, var(--amber), #b45309);
+        }
+
+        .day-5 {
+            background: linear-gradient(135deg, var(--rose), #9f1239);
+        }
+
+        .day-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .day-desc {
+            font-size: 0.82rem;
+            color: var(--ink-muted);
+        }
+
+        .day-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .day-tag {
+            background: rgba(109, 40, 217, 0.06);
+            border: 1px solid rgba(109, 40, 217, 0.12);
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--ink-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .flagship-right {}
+
+        .flagship-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .f-stat {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .f-stat-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            color: var(--teal-deep);
+            line-height: 1;
+        }
+
+        .f-stat-num small {
+            font-size: 0.4em;
+            color: var(--ink-muted);
+        }
+
+        .f-stat-label {
+            font-size: 0.72rem;
+            color: var(--ink-muted);
+            font-weight: 600;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .f-testimonial {
+            background: var(--surface);
+            border-left: 3px solid var(--violet);
+            padding: 24px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 16px;
+        }
+
+        .f-testimonial p {
+            font-size: 0.9rem;
+            color: var(--ink-3);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .f-testimonial cite {
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+            font-style: normal;
+        }
+
+        .f-testimonial cite strong {
+            color: var(--ink);
+        }
+
+        /* ─── TRAINING SUITE ─── */
+        .suite-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .suite-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        .sticky-mobile-cta a:active {
-            transform: scale(0.95);
+        .suite-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
         }
 
-        /* Enhanced Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .sticky-mobile-cta {
+        .suite-card.flagship-card {
+            border-color: var(--violet);
+            border-width: 2px;
+        }
+
+        .suite-card.flagship-card::before {
+            content: 'FLAGSHIP';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--violet);
+            color: #fff;
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .suite-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .suite-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .suite-card p {
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .suite-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.75rem;
+            color: var(--ink-muted);
+            font-weight: 600;
+        }
+
+        .suite-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ─── RESULTS ─── */
+        .results {
+            background: var(--ink);
+            color: #fff;
+        }
+
+        .results .section-label {
+            color: var(--amber);
+        }
+
+        .results .section-title {
+            color: #fff;
+        }
+
+        .results .section-desc {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+
+        .result-card {
+            background: var(--ink-2);
+            padding: 40px 28px;
+            text-align: center;
+        }
+
+        .result-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            color: var(--teal);
+            line-height: 1;
+        }
+
+        .result-num small {
+            font-size: 0.4em;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .result-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 600;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .t-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .t-card.wide {
+            grid-column: 1 / -1;
+            border-color: rgba(13, 148, 136, 0.2);
+            background: rgba(13, 148, 136, 0.05);
+        }
+
+        .t-stars {
+            color: var(--amber);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .t-quote {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.75;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .t-card.wide .t-quote {
+            font-size: 1rem;
+        }
+
+        .t-author {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .t-author strong {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ─── TRAINER ─── */
+        .trainer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .trainer-creds {
+            list-style: none;
+        }
+
+        .trainer-creds li {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.92rem;
+            color: var(--ink-3);
+            display: flex;
+            gap: 12px;
+        }
+
+        .trainer-creds li::before {
+            content: '✦';
+            color: var(--violet);
+            flex-shrink: 0;
+        }
+
+        .trainer-creds li strong {
+            color: var(--ink);
+        }
+
+        .trainer-highlight {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ecfdf5 100%);
+            border-radius: 16px;
+            padding: 36px;
+        }
+
+        .trainer-highlight h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .th-item {
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            color: var(--ink-3);
+            line-height: 1.6;
+        }
+
+        .th-item strong {
+            color: var(--ink);
+        }
+
+        /* ─── PACKAGES ─── */
+        .packages {
+            background: var(--surface-warm);
+        }
+
+        .pkg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .pkg-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            position: relative;
+        }
+
+        .pkg-card.featured {
+            border: 2px solid var(--teal);
+            box-shadow: 0 8px 32px rgba(13, 148, 136, 0.1);
+        }
+
+        .pkg-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 12px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .pkg-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .pkg-duration {
+            font-size: 0.82rem;
+            color: var(--ink-muted);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .pkg-features {
+            list-style: none;
+        }
+
+        .pkg-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--ink-3);
+            display: flex;
+            gap: 10px;
+        }
+
+        .pkg-features li::before {
+            content: '✓';
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .pkg-features li.em {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .guarantee-block {
+            background: linear-gradient(135deg, #fef2f2, #fff7ed);
+            border: 2px solid var(--rose);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .guarantee-block h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: var(--rose);
+            margin-bottom: 12px;
+        }
+
+        .guarantee-block p {
+            font-size: 0.95rem;
+            color: var(--ink-3);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ─── CTA ─── */
+        .cta-section {
+            background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 50%, #1e1b4b 100%);
+            color: #fff;
+            padding: 96px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 50% 50% at 30% 50%, rgba(109, 40, 217, 0.1), transparent),
+                radial-gradient(ellipse 50% 50% at 70% 50%, rgba(13, 148, 136, 0.08), transparent);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--violet), var(--teal), var(--amber), var(--rose));
+        }
+
+        .cta-inner {
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-inner .section-label {
+            color: var(--teal);
+        }
+
+        .cta-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .cta-desc {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.25s;
+        }
+
+        .cta-btn.primary {
+            background: var(--rose);
+            color: #fff;
+        }
+
+        .cta-btn.primary:hover {
+            background: #be123c;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(225, 29, 72, 0.3);
+        }
+
+        .cta-btn.ghost {
+            background: transparent;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-btn.ghost:hover {
+            border-color: rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+            flex-wrap: wrap;
+            gap: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--violet);
+            text-decoration: none;
+        }
+
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            color: var(--ink);
+        }
+
+        .footer-brand span {
+            color: var(--rose);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            opacity: 0.6;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .flagship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .suite-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .t-card.wide {
+                grid-column: 1;
+            }
+
+            .trainer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pkg-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-mobile {
                 display: block;
             }
 
-            /* Better touch targets */
-            .blog-preview-card,
-            .feature-card-premium {
-                min-height: 44px;
-                padding: 1.5rem;
-            }
-
-            /* Improved button sizes for touch */
-            .btn-hero-primary,
-            .btn-product-primary {
-                min-height: 48px;
-                padding: 1rem 1.5rem;
-                font-size: 1rem;
-            }
-
-            /* Enhanced spacing for touch */
-            .hero-actions a {
-                margin-bottom: 1rem;
-                width: 100%;
-                text-align: center;
+            .hero-proof {
+                gap: 16px;
             }
         }
 
-        /* Smooth scroll enhancement */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
 
-        /* Enhanced focus states for accessibility */
-        a:focus,
-        button:focus {
-            outline: 2px solid #1e40af;
-            outline-offset: 2px;
-        }
-
-        /* Loading animation for blog cards */
-        .blog-card-loading {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideInUp 0.6s ease forwards;
-        }
-
-        @keyframes slideInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Interactive element hover effects */
-        .interactive-scale {
-            transition: transform 0.2s ease;
+        .hero-content>* {
+            animation: fadeUp 0.7s ease-out both;
         }
 
-        .interactive-scale:hover {
-            transform: scale(1.02);
+        .hero-eyebrow {
+            animation-delay: 0.05s;
         }
 
-        @media (hover: none) {
-            .interactive-scale:active {
-                transform: scale(0.98);
-            }
+        .hero h1 {
+            animation-delay: 0.1s;
         }
 
-        /* Enhanced testimonial card interactions */
-        .testimonial-card {
-            transition: all 0.3s ease;
+        .hero-sub {
+            animation-delay: 0.15s;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+        .hero-actions {
+            animation-delay: 0.25s;
         }
 
-        /* Pulse animation for urgent elements */
-        .pulse-urgent {
-            animation: pulseUrgent 2s infinite;
+        .hero-proof {
+            animation-delay: 0.35s;
         }
 
-        @keyframes pulseUrgent {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+        .hero-card {
+            animation: fadeUp 0.7s ease-out 0.3s both;
         }
     </style>
+</head>
 
-    <!-- Mobile Touch Optimization JavaScript -->
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">ghe<span>WARE</span></a>
+            <ul class="nav-links">
+                <li><a href="#training">Training</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#trainer">Instructor</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="mailto:training@gheware.com?subject=Training Inquiry" class="nav-cta">Get Started →</a>
+                </li>
+            </ul>
+            <button class="nav-mobile" aria-label="Menu"
+                onclick="document.querySelector('.nav-links').classList.toggle('show')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-eyebrow"><span class="dot"></span> Enterprise AI Training</div>
+                <h1>Build Production&#8209;Ready <em>AI Agents</em> in Five Days</h1>
+                <p class="hero-sub">An intensive, hands-on workshop where your team builds real agentic systems — from
+                    <strong>LangGraph workflows</strong> to <strong>MCP servers</strong> — with the trainer who scored
+                    <strong>4.91/5.0 at Oracle</strong>.</p>
+                <div class="hero-actions">
+                    <a href="mailto:training@gheware.com?subject=Agentic%20AI%20Training%20Inquiry"
+                        class="btn-primary">✉ Inquire Now</a>
+                    <a href="https://wa.me/919740807444?text=Hi%2C%20I'm%20interested%20in%20the%20Agentic%20AI%20training"
+                        class="btn-ghost" target="_blank">💬 WhatsApp</a>
+                </div>
+                <div class="hero-proof">
+                    <div class="proof-item">
+                        <div class="proof-num">4.91<small>/5</small></div>
+                        <div class="proof-label">Oracle<br>Rating</div>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <div class="proof-num">5,000<small>+</small></div>
+                        <div class="proof-label">Professionals<br>Trained</div>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <div class="proof-num">119</div>
+                        <div class="proof-label">Hands-On<br>Labs</div>
+                    </div>
+                    <div class="proof-divider"></div>
+                    <div class="proof-item">
+                        <div class="proof-num">15</div>
+                        <div class="proof-label">Sessions<br>5 Days</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="hero-card-label">Latest Feedback — Oracle, Feb 2026</div>
+                <div class="hero-card-rating">
+                    <span class="big">4.91</span>
+                    <span class="of">/5.0</span>
+                </div>
+                <div class="hero-card-stars">★★★★★</div>
+                <p class="hero-card-quote">"This course significantly expanded my understanding of modern agent
+                    architectures. The hands-on experience with LangGraph was particularly impactful."</p>
+                <div class="hero-card-author"><strong>Mariam A.</strong> — AI Engineer, Oracle</div>
+                <div class="hero-card-badge">✓ 91% gave perfect 5/5</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <span class="trust-label">Trusted by</span>
+            <span class="trust-name">Oracle</span>
+            <span class="trust-name">JP Morgan</span>
+            <span class="trust-name">Deloitte</span>
+            <span class="trust-name">Bank of America</span>
+            <span class="trust-name">Standard Chartered</span>
+            <span class="trust-name">Ericsson</span>
+        </div>
+    </div>
+
+    <!-- FLAGSHIP -->
+    <section class="section flagship" id="training">
+        <div class="section-inner">
+            <div class="section-label">Flagship Program</div>
+            <h2 class="section-title">Agentic AI Workshop</h2>
+            <p class="section-desc">Five days. Fifteen sessions. One hundred and nineteen labs. Your team goes from zero
+                to building production-ready AI agents with observability, safety guardrails, and MCP integration.</p>
+
+            <div class="flagship-grid">
+                <div class="flagship-left">
+                    <ul class="flagship-curriculum">
+                        <li class="flagship-day">
+                            <div class="day-num day-1">D1</div>
+                            <div>
+                                <div class="day-title">Foundations & AI-Assisted Development</div>
+                                <div class="day-desc">AI agents, reasoning, tool use, vibe coding, prompt engineering
+                                </div>
+                                <div class="day-tags"><span class="day-tag">ReAct</span><span
+                                        class="day-tag">Chain-of-Thought</span><span class="day-tag">Memory
+                                        Systems</span></div>
+                            </div>
+                        </li>
+                        <li class="flagship-day">
+                            <div class="day-num day-2">D2</div>
+                            <div>
+                                <div class="day-title">LangChain, RAG & Agents</div>
+                                <div class="day-desc">LCEL chains, document loaders, embeddings, vector stores, agent
+                                    types</div>
+                                <div class="day-tags"><span class="day-tag">RAG</span><span
+                                        class="day-tag">Embeddings</span><span class="day-tag">Vector Stores</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flagship-day">
+                            <div class="day-num day-3">D3</div>
+                            <div>
+                                <div class="day-title">LangGraph & Multi-Agent Systems</div>
+                                <div class="day-desc">Stateful workflows, parallel execution, supervisor/worker patterns
+                                </div>
+                                <div class="day-tags"><span class="day-tag">StateGraph</span><span
+                                        class="day-tag">HITL</span><span class="day-tag">Multi-Agent</span></div>
+                            </div>
+                        </li>
+                        <li class="flagship-day">
+                            <div class="day-num day-4">D4</div>
+                            <div>
+                                <div class="day-title">Observability & Production</div>
+                                <div class="day-desc">OpenTelemetry, FastAPI, Langfuse tracing, cost tracking, health
+                                    probes</div>
+                                <div class="day-tags"><span class="day-tag">OTel</span><span
+                                        class="day-tag">Langfuse</span><span class="day-tag">FastAPI</span></div>
+                            </div>
+                        </li>
+                        <li class="flagship-day" style="border-bottom:none;">
+                            <div class="day-num day-5">D5</div>
+                            <div>
+                                <div class="day-title">MCP, Safety & Capstone</div>
+                                <div class="day-desc">Model Context Protocol, OWASP AI Top 10, guardrails, red teaming,
+                                    full capstone project</div>
+                                <div class="day-tags"><span class="day-tag">MCP</span><span
+                                        class="day-tag">Guardrails</span><span class="day-tag">Capstone</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flagship-right">
+                    <div class="flagship-stats">
+                        <div class="f-stat">
+                            <div class="f-stat-num">15</div>
+                            <div class="f-stat-label">Sessions</div>
+                        </div>
+                        <div class="f-stat">
+                            <div class="f-stat-num">119</div>
+                            <div class="f-stat-label">Hands-On Labs</div>
+                        </div>
+                        <div class="f-stat">
+                            <div class="f-stat-num">5</div>
+                            <div class="f-stat-label">Days Intensive</div>
+                        </div>
+                        <div class="f-stat">
+                            <div class="f-stat-num">4.91<small>/5</small></div>
+                            <div class="f-stat-label">Oracle Rating</div>
+                        </div>
+                    </div>
+
+                    <div class="f-testimonial">
+                        <p>"The 5-day agents workshop was extremely valuable. We actually built and implemented agents
+                            step by step. It was one of the most useful and actionable workshops I've attended."</p>
+                        <cite><strong>Youssef G.</strong> — Oracle</cite>
+                    </div>
+                    <div class="f-testimonial">
+                        <p>"Rajesh delivered a highly practical, hands-on program and worked closely with everyone. I
+                            highly recommend it to anyone looking to gain real hands-on experience."</p>
+                        <cite><strong>Joseph A.</strong> — Workshop Participant</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL TRAINING SUITE -->
+    <section class="section" id="suite">
+        <div class="section-inner">
+            <div class="section-label">Full Training Suite</div>
+            <h2 class="section-title">Enterprise Training Programs</h2>
+            <p class="section-desc">From AI agents to Kubernetes operations — comprehensive training programs tailored
+                for Fortune 500 engineering teams.</p>
+
+            <div class="suite-grid">
+                <div class="suite-card flagship-card">
+                    <div class="suite-icon" style="background:linear-gradient(135deg,#ede9fe,#f5f3ff);">🤖</div>
+                    <h3>Agentic AI Workshop</h3>
+                    <p>LangChain, LangGraph, RAG, MCP, Langfuse, AI Safety. Build production-ready multi-agent systems.
+                    </p>
+                    <div class="suite-meta">
+                        <span>⬡ 119 labs</span>
+                        <span>📅 5 days</span>
+                        <span>⭐ 4.91/5</span>
+                    </div>
+                </div>
+                <div class="suite-card">
+                    <div class="suite-icon" style="background:linear-gradient(135deg,#ecfdf5,#f0fdfa);">⚡</div>
+                    <h3>AI-Powered DevOps</h3>
+                    <p>Integrate AI agents into your DevOps workflows. Automated incident response, intelligent CI/CD,
+                        smart monitoring.</p>
+                    <div class="suite-meta">
+                        <span>📅 3 days</span>
+                        <span>🔥 New</span>
+                    </div>
+                </div>
+                <div class="suite-card">
+                    <div class="suite-icon" style="background:linear-gradient(135deg,#dbeafe,#eff6ff);">☸️</div>
+                    <h3>Kubernetes Mastery</h3>
+                    <p>Production-grade K8s operations, CKA/CKAD/CKS preparation. Real clusters, not simulations.</p>
+                    <div class="suite-meta">
+                        <span>📅 5 days</span>
+                        <span>📜 CKA prep</span>
+                    </div>
+                </div>
+                <div class="suite-card">
+                    <div class="suite-icon" style="background:linear-gradient(135deg,#e0f2fe,#f0f9ff);">🐳</div>
+                    <h3>Docker & Containers</h3>
+                    <p>Container fundamentals to advanced orchestration. Image optimization, security best practices,
+                        multi-stage builds.</p>
+                    <div class="suite-meta">
+                        <span>📅 3 days</span>
+                        <span>📜 DCA prep</span>
+                    </div>
+                </div>
+                <div class="suite-card">
+                    <div class="suite-icon" style="background:linear-gradient(135deg,#fef3c7,#fffbeb);">🔄</div>
+                    <h3>CI/CD Pipeline Mastery</h3>
+                    <p>Jenkins, GitHub Actions, GitOps with ArgoCD. End-to-end automated deployment pipelines.</p>
+                    <div class="suite-meta">
+                        <span>📅 3 days</span>
+                    </div>
+                </div>
+                <div class="suite-card">
+                    <div class="suite-icon" style="background:linear-gradient(135deg,#fce7f3,#fff1f2);">📊</div>
+                    <h3>Observability Stack</h3>
+                    <p>Prometheus, Grafana, OpenTelemetry. Full-stack monitoring and alerting for cloud-native systems.
+                    </p>
+                    <div class="suite-meta">
+                        <span>📅 2 days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section results" id="results">
+        <div class="section-inner">
+            <div class="section-label">Proven Results</div>
+            <h2 class="section-title">Numbers That Speak</h2>
+            <p class="section-desc">Aggregated feedback from 200+ participants across 14 training batches since 2024.
+            </p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-num">4.91<small>/5</small></div>
+                    <div class="result-label">Agentic AI Rating</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-num">4.51<small>/5</small></div>
+                    <div class="result-label">Overall Average</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-num">5,000<small>+</small></div>
+                    <div class="result-label">Professionals Trained</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-num">14</div>
+                    <div class="result-label">Training Batches</div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="t-card wide">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"This course significantly expanded my understanding of modern agent
+                        architectures and tooling. I gained valuable clarity on MCPs, which I previously hadn't explored
+                        in depth, and I was introduced to Langfuse for the first time. The hands-on experience with
+                        LangGraph was particularly impactful — I now understand the nodes, edges, and conditional edges.
+                        Overall, the course strengthened my practical understanding of how to build more reliable,
+                        traceable, and resilient AI agents."</p>
+                    <div class="t-author"><strong>Mariam A.</strong> — AI Engineer, Oracle</div>
+                </div>
+                <div class="t-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"The sessions were highly interactive, with multiple hands-on labs and plenty of
+                        time for Q&A. I especially enjoyed the final session on building our own MCP server — it was
+                        both interesting and very practical."</p>
+                    <div class="t-author"><strong>Workshop Participant</strong> — Oracle, EMEA</div>
+                </div>
+                <div class="t-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"Rajesh was attentive, supportive, and clearly passionate about teaching. I
+                        highly recommend it to anyone looking to gain real hands-on experience with AI agents."</p>
+                    <div class="t-author"><strong>Joseph A.</strong> — Workshop Participant</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINER -->
+    <section class="section" id="trainer">
+        <div class="section-inner">
+            <div class="section-label">Your Instructor</div>
+            <h2 class="section-title">Rajesh Gheware</h2>
+            <p class="section-desc">Chief Architect · Corporate Trainer · Author</p>
+
+            <div class="trainer-grid">
+                <ul class="trainer-creds">
+                    <li><strong>25+ years</strong> building enterprise platforms at <strong>JPMorgan Chase</strong>,
+                        <strong>Deutsche Bank</strong>, and <strong>Morgan Stanley</strong></li>
+                    <li>Trained <strong>5,000+ professionals</strong> at Fortune 500 companies since 2019</li>
+                    <li><strong>4.91/5.0</strong> instructor rating — Agentic AI at Oracle (Feb 2026)</li>
+                    <li>Author: <em>"Ultimate CKA Certification Guide"</em> (Amazon)</li>
+                    <li><strong>M.Tech — IIT Madras</strong> (Industrial Management)</li>
+                    <li>Certified: <strong>CKA, CKS, TOGAF</strong> Enterprise Architect, Spring Professional (96%)</li>
+                    <li>Currently building <strong>production AI agent systems</strong> for enterprise clients</li>
+                </ul>
+                <div class="trainer-highlight">
+                    <h3>Why Teams Choose Rajesh</h3>
+                    <div class="th-item"><strong>Practitioner, not a lecturer</strong> — actively builds AI agentic
+                        systems used in production today</div>
+                    <div class="th-item"><strong>Enterprise DNA</strong> — 25 years at Tier 1 banks means he understands
+                        compliance, security, and scale</div>
+                    <div class="th-item"><strong>96% of participants</strong> rate instructor effectiveness 4+ out of 5
+                    </div>
+                    <div class="th-item"><strong>Hands-on philosophy</strong> — 119 labs, zero death-by-PowerPoint</div>
+                    <div class="th-item"><strong>98% recommendation rate</strong> — participants recommend to colleagues
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="section packages" id="packages">
+        <div class="section-inner">
+            <div class="section-label">Training Packages</div>
+            <h2 class="section-title">Choose Your Engagement</h2>
+            <p class="section-desc">All packages include the full curriculum, hands-on labs, and completion
+                certificates. Customized to your team's skill level.</p>
+
+            <div class="pkg-grid">
+                <div class="pkg-card">
+                    <div class="pkg-name">Bronze</div>
+                    <div class="pkg-duration">3 Days · Core Curriculum</div>
+                    <ul class="pkg-features">
+                        <li>Core training sessions</li>
+                        <li>Hands-on labs & exercises</li>
+                        <li>Course materials & slides</li>
+                        <li>Email support during training</li>
+                        <li>Completion certificates</li>
+                    </ul>
+                </div>
+                <div class="pkg-card featured">
+                    <div class="pkg-badge">Recommended</div>
+                    <div class="pkg-name">Silver</div>
+                    <div class="pkg-duration">5 Days · Full Program</div>
+                    <ul class="pkg-features">
+                        <li class="em">All 15 sessions + 119 labs</li>
+                        <li class="em">Phone & email support</li>
+                        <li>Advanced lab environment</li>
+                        <li class="em">30-day post-training follow-up</li>
+                        <li class="em">Implementation roadmap</li>
+                        <li>Architecture review session</li>
+                    </ul>
+                </div>
+                <div class="pkg-card">
+                    <div class="pkg-name">Gold</div>
+                    <div class="pkg-duration">7 Days · Enterprise</div>
+                    <ul class="pkg-features">
+                        <li class="em">Everything in Silver</li>
+                        <li class="em">Dedicated success manager</li>
+                        <li class="em">Custom lab environment</li>
+                        <li class="em">90-day implementation support</li>
+                        <li class="em">C-level executive briefing</li>
+                        <li>Custom use-case workshop</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guarantee-block">
+                <h3>🛡️ Zero-Risk Guarantee</h3>
+                <p>If your team doesn't achieve at least 40% faster deployments within 90 days, we refund 100%
+                    <strong>AND</strong> pay you $1,000 for wasting your time. Never paid out in 8 years.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <div class="section-label">Let's Build</div>
+            <h2 class="cta-title">Ready to Give Your Team an AI Advantage?</h2>
+            <p class="cta-desc">Schedule a free 30-minute AI strategy briefing with Rajesh. We'll assess your team's
+                current state, identify the highest-impact AI opportunities, and design a custom training plan.</p>
+            <div class="cta-buttons">
+                <a href="mailto:training@gheware.com?subject=Agentic%20AI%20Training%20Inquiry"
+                    class="cta-btn primary">✉ training@gheware.com</a>
+                <a href="https://wa.me/919740807444?text=Hi%2C%20I'm%20interested%20in%20the%20Agentic%20AI%20training"
+                    class="cta-btn ghost" target="_blank">💬 WhatsApp</a>
+                <a href="tel:+15076667197" class="cta-btn ghost">📞 Call Dev</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-brand">ghe<span>WARE</span> uniGPS Solutions LLP</div>
+        <div class="footer-links">
+            <a href="/about/">About</a>
+            <a href="/blog/">Blog</a>
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms</a>
+            <a href="https://youtube.com/@ghewaredevopsai" target="_blank">YouTube</a>
+        </div>
+        <div class="footer-copy">© 2026 Gheware Technologies. Made in India 🇮🇳</div>
+    </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create sticky mobile CTA
-            const stickyCTA = document.createElement('div');
-            stickyCTA.className = 'sticky-mobile-cta';
-            stickyCTA.innerHTML = `
-                <a href="#devops-assessment-form" onclick="document.querySelector('.hero-actions').scrollIntoView({behavior: 'smooth'}); return false;">
-                    🚀 Get FREE DevOps Assessment ($2,500 Value)
-                </a>
-            `;
-            document.body.appendChild(stickyCTA);
+        // Nav scroll effect
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 32);
+        });
 
-            // Show/hide sticky CTA based on scroll
-            let isVisible = false;
-            window.addEventListener('scroll', function() {
-                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        // Mobile nav toggle
+        document.querySelector('.nav-mobile')?.addEventListener('click', () => {
+            const links = document.querySelector('.nav-links');
+            links.classList.toggle('show');
+        });
 
-                if (scrollPercent > 20 && !isVisible && window.innerWidth <= 768) {
-                    stickyCTA.classList.add('visible');
-                    isVisible = true;
-                } else if (scrollPercent <= 20 && isVisible) {
-                    stickyCTA.classList.remove('visible');
-                    isVisible = false;
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Track CTA clicks
+        document.querySelectorAll('.btn-primary, .cta-btn, .nav-cta').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'cta_click', {
+                        event_category: 'conversion',
+                        event_label: btn.textContent.trim(),
+                        link_url: btn.href
+                    });
                 }
             });
-
-            // Enhanced problem card interactions
-            const problemCards = document.querySelectorAll('[style*="transform: rotate"]');
-            problemCards.forEach(card => {
-                card.classList.add('problem-card');
-
-                // Add click interaction for mobile
-                card.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        this.style.transform = 'rotate(0deg) translateY(-4px) scale(1.02)';
-                        setTimeout(() => {
-                            this.style.transform = '';
-                        }, 300);
-                    }
-                });
-            });
-
-            // Add loading animation to blog cards
-            const blogCards = document.querySelectorAll('.blog-preview-grid > div');
-            blogCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.classList.add('blog-card-loading');
-            });
-
-            // Add interactive scaling to buttons and cards
-            const interactiveElements = document.querySelectorAll('.btn-hero-primary, .btn-product-primary, .feature-card-premium');
-            interactiveElements.forEach(element => {
-                element.classList.add('interactive-scale');
-            });
-
-            // Add testimonial card class
-            const testimonials = document.querySelectorAll('[style*="border-top: 4px solid"]');
-            testimonials.forEach(card => {
-                card.classList.add('testimonial-card');
-            });
-
-            // Add pulse effect to urgent elements
-            const urgentElements = document.querySelectorAll('[style*="LIMITED SPOTS"]');
-            urgentElements.forEach(element => {
-                element.classList.add('pulse-urgent');
-            });
-
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Enhanced touch feedback for mobile
-            if ('ontouchstart' in window) {
-                document.querySelectorAll('a, button').forEach(element => {
-                    element.addEventListener('touchstart', function() {
-                        this.style.opacity = '0.8';
-                    });
-
-                    element.addEventListener('touchend', function() {
-                        setTimeout(() => {
-                            this.style.opacity = '';
-                        }, 150);
-                    });
-                });
-            }
-
-            // Lazy loading for images (if any)
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            if (img.dataset.src) {
-                                img.src = img.dataset.src;
-                                img.classList.add('loaded');
-                                observer.unobserve(img);
-                            }
-                        }
-                    });
-                });
-
-                document.querySelectorAll('img[data-src]').forEach(img => {
-                    imageObserver.observe(img);
-                });
-            }
-
-            // Performance optimization: Debounce scroll events
-            function debounce(func, wait) {
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                };
-            }
-
-            // Optimized scroll handler
-            const optimizedScrollHandler = debounce(() => {
-                // Any additional scroll-based functionality
-                document.body.classList.toggle('scrolled', window.scrollY > 100);
-            }, 16); // ~60fps
-
-            window.addEventListener('scroll', optimizedScrollHandler);
-
-            console.log('✅ Mobile touch optimizations loaded successfully');
         });
     </script>
 
-
-
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "gheWARE uniGPS Solutions LLP",
+  "url": "https://devops.gheware.com",
+  "description": "Enterprise AI and DevOps training provider. Specializing in Agentic AI, Kubernetes, Docker, and CI/CD training for Fortune 500 companies.",
+  "founder": {
+    "@type": "Person",
+    "name": "Rajesh Gheware",
+    "jobTitle": "Chief Architect & Corporate Trainer",
+    "alumniOf": "IIT Madras"
+  },
+  "areaServed": ["India", "United Arab Emirates", "United Kingdom", "United States"],
+  "numberOfEmployees": "2-10",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "training@gheware.com",
+    "telephone": "+919740807444",
+    "contactType": "sales"
+  }
+}
+</script>
 </body>
+
 </html>
