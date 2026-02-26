@@ -1,10 +1,10 @@
-# Robots.txt for brainupgrade-in.github.io
+# Robots.txt for devops.gheware.com
 
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://brainupgrade-in.github.io/sitemap.xml
+# Sitemaps
+Sitemap: https://devops.gheware.com/sitemap.xml
 
-# Crawl-delay (optional, be nice to servers)
+# Crawl-delay
 Crawl-delay: 1
