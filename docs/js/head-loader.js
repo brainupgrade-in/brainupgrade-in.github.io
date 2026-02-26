@@ -18,10 +18,10 @@
         ogImage: '/images/og-image.png',
         // Domain-specific Google Analytics IDs
         gaId: {
-            'brainupgrade-in.github.io': 'G-9904BXNJ3H',
-            'www.brainupgrade-in.github.io': 'G-9904BXNJ3H',
-            'devops.gheware.com': 'G-TRDMMEZ26F',
-            'www.devops.gheware.com': 'G-TRDMMEZ26F'
+            'brainupgrade-in.github.io': 'G-TRDMMEZ26',
+            'www.brainupgrade-in.github.io': 'G-TRDMMEZ26',
+            'devops.gheware.com': 'G-TRDMMEZ26',
+            'www.devops.gheware.com': 'G-TRDMMEZ26'
         },
         googleVerification: 'Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE',
         social: {

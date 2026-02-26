@@ -8,10 +8,10 @@
 
     // Domain-specific GA4 Measurement IDs
     const GA_MEASUREMENT_IDS = {
-        'brainupgrade-in.github.io': 'G-9904BXNJ3H',
-        'www.brainupgrade-in.github.io': 'G-9904BXNJ3H',
-        'devops.gheware.com': 'G-TRDMMEZ26F',
-        'www.devops.gheware.com': 'G-TRDMMEZ26F'
+        'brainupgrade-in.github.io': 'G-TRDMMEZ26',
+        'www.brainupgrade-in.github.io': 'G-TRDMMEZ26',
+        'devops.gheware.com': 'G-TRDMMEZ26',
+        'www.devops.gheware.com': 'G-TRDMMEZ26'
     };
 
     const hostname = window.location.hostname;
