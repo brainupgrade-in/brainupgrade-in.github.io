@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems | Gheware DevOps AI">
+    <meta name="description" content="Traditional Prometheus/Grafana stacks cannot explain why your AI agent hallucinated. Learn how OTel-native observability with distributed tracing solves multi-agent AI systems in 2026.">
+    <meta name="keywords" content="AI agent observability, OpenTelemetry for LLMs, multi-agent observability 2026, LangChain tracing, Langfuse, OTel AI, LLM distributed tracing, AI hallucination debugging, OTel Python SDK, agentic AI monitoring">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html">
+    <meta property="og:title" content="From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems — OTel-Native Stack 2026">
+    <meta property="og:description" content="Traditional Prometheus/Grafana stacks cannot explain why your AI agent hallucinated. Learn how OTel-native observability with distributed tracing solves multi-agent AI systems in 2026.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/llmops-pipeline-kubernetes-2026-hero.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-02-28T06:00:00Z">
+    <meta property="article:modified_time" content="2026-02-28T06:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="DevOps &amp; AI">
+    <meta property="article:tag" content="AI Agent Observability">
+    <meta property="article:tag" content="OpenTelemetry">
+    <meta property="article:tag" content="Multi-Agent Systems">
+    <meta property="article:tag" content="LangChain">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems — OTel-Native Stack 2026">
+    <meta name="twitter:description" content="Can you explain WHY your AI agent hallucinated in production last Tuesday? If not, read this. OTel-native observability for multi-agent AI — complete practitioner guide.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/llmops-pipeline-kubernetes-2026-hero.png">
+
+    <title>From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html"
+        },
+        "headline": "From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems — OTel-Native Stack 2026",
+        "description": "Traditional Prometheus/Grafana stacks cannot explain why your AI agent hallucinated. Learn how OTel-native observability with distributed tracing solves multi-agent AI systems in 2026.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/llmops-pipeline-kubernetes-2026-hero.png",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-02-28T06:00:00Z",
+        "dateModified": "2026-02-28T06:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Chief Architect &amp; Corporate Trainer",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "gheWARE uniGPS Solutions LLP"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "AI agent observability, OpenTelemetry for LLMs, multi-agent observability 2026, LangChain tracing, Langfuse, LLM distributed tracing, AI hallucination debugging",
+        "articleSection": "DevOps &amp; AI",
+        "wordCount": "2100",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "From Logs to Traces: Multi-Agent AI Observability",
+                "item": "https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why does traditional observability fail for AI agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Traditional observability tools like Prometheus and Grafana track numerical metrics (CPU, memory, request rates). AI agents produce causal chains — prompt → retrieval → reasoning → tool call → response — that require distributed traces, not counters. A spike in latency metric tells you something is slow; an OTel trace tells you exactly which reasoning step, which tool call, or which LLM token budget caused the slowdown."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is OpenTelemetry for LLMs and why does it matter in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OpenTelemetry (OTel) for LLMs extends the CNCF open standard to capture AI-specific telemetry: prompt content, token counts, model name, temperature, retrieval scores, tool invocations, and agent reasoning steps — all as first-class trace spans. With eBPF 1.0 GA and the KubeCon EU 2026 convergence on OTel as the AI observability standard, teams can now get end-to-end traces from user query to final agent response without vendor lock-in."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I trace a LangChain agent with OpenTelemetry?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Install opentelemetry-sdk and opentelemetry-instrumentation-langchain. Set up a tracer provider pointing to your OTel Collector or Langfuse endpoint. Use the LangChainInstrumentor().instrument() call before your agent runs. Every LLM call, tool use, and chain step will automatically emit spans with token counts, latency, and model metadata. See the full code example in this article."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+
+    <style>
+        .code-block {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            border: 1px solid #1e293b;
+            position: relative;
+        }
+        .code-block pre {
+            margin: 0;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: #e2e8f0;
+        }
+        .code-lang-badge {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.8rem;
+            background: #22C55E;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .warning-box {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .warning-box strong { color: #c2410c; }
+        .info-box {
+            background: #f0fdf4;
+            border-left: 4px solid #22C55E;
+            padding: 1.2rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .info-box strong { color: #15803d; }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .comparison-table th {
+            background: #1E3A5F;
+            color: #fff;
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .comparison-table tr:nth-child(even) td { background: #f8fafc; }
+        .comparison-table .check { color: #22C55E; font-weight: 700; }
+        .comparison-table .cross { color: #ef4444; font-weight: 700; }
+        .stat-callout {
+            display: inline-block;
+            background: linear-gradient(135deg, #1E3A5F 0%, #22C55E 100%);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .author-bio-section {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem 0;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            border: 1px solid #e2e8f0;
+        }
+        .author-bio-section img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .author-bio-section h3 { margin: 0 0 0.3rem; color: #1E3A5F; }
+        .author-bio-section p { margin: 0.4rem 0; font-size: 0.95rem; color: #475569; line-height: 1.6; }
+        .cta-workshop {
+            background: linear-gradient(135deg, #1E3A5F 0%, #0f766e 100%);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            color: #fff;
+            text-align: center;
+        }
+        .cta-workshop h2 { color: #fff; margin-top: 0; }
+        .cta-workshop p { color: rgba(255,255,255,0.88); font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .cta-workshop .cta-btn {
+            display: inline-block;
+            background: #22C55E;
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .cta-workshop .cta-btn:hover { background: #16a34a; }
+        .cta-workshop .rating-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Multi-Agent AI Observability</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">DevOps &amp; AI</span>
+                    <span class="post-category" style="background: #7c3aed; margin-left: 0.5rem;">Agentic AI</span>
+                    <span class="post-category" style="background: #0891b2; margin-left: 0.5rem;">AI in Observability</span>
+                    <span class="reading-time">14 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems — OTel-Native Stack 2026</h1>
+                <p class="post-subtitle" itemprop="description">Traditional Prometheus/Grafana stacks cannot explain why your AI agent hallucinated in production. Here's how to build an OTel-native observability stack purpose-built for multi-agent AI systems — with working code.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-02-28T06:00:00Z">February 28, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html&text=From+Logs+to+Traces%3A+Why+Traditional+Observability+Fails+for+Multi-Agent+AI+Systems" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/ai-observability-multi-agent-otel-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/llmops-pipeline-kubernetes-2026-hero.png"
+                     alt="OTel-Native Observability for Multi-Agent AI Systems — LLMOps Pipeline on Kubernetes 2026"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>OTel-native distributed tracing for multi-agent AI pipelines running on Kubernetes — the 2026 observability standard.</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>Traditional Prometheus/Grafana metrics answer <em>what</em> — OTel traces answer <em>why</em>. For AI agents, you need "why".</li>
+                    <li>Multi-agent systems produce causal chains (prompt → retrieval → reasoning → tool call → response) that only distributed tracing can capture end-to-end.</li>
+                    <li>OpenTelemetry is now the CNCF-endorsed standard for AI tracing in 2026, converging with eBPF 1.0 GA and the KubeCon EU consensus on LLM observability.</li>
+                    <li>LangChain has first-class OTel instrumentation; Langfuse provides an open-source backend purpose-built for LLM traces — together they give you the full picture.</li>
+                    <li>The 2026 OTel-native AI stack: OTel Python SDK + LangChain instrumentation + OTel Collector + Langfuse/Jaeger — production-ready in under 2 hours.</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#section-1">The Problem: AI Agents Are a Black Box</a></li>
+                    <li><a href="#section-2">Why Logs and Metrics Are Structurally Insufficient</a></li>
+                    <li><a href="#section-3">OpenTelemetry for LLMs: The 2026 Standard</a></li>
+                    <li><a href="#section-4">Hands-On: Tracing a LangChain Agent with OTel + Langfuse</a></li>
+                    <li><a href="#section-5">The Full OTel-Native Observability Stack for Multi-Agent AI</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #22C55E; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">Logs tell you <em>what</em> your AI agent did. Traces tell you <em>why</em> it did it — and which step hallucinated. In 2026, OpenTelemetry + LangChain instrumentation + Langfuse is the production-grade observability stack for multi-agent AI systems. This article shows you the architecture and the working code.</p>
+                </aside>
+
+                <!-- Section 1 -->
+                <section id="section-1">
+                    <h2>The Problem: AI Agents Are a Black Box in Production</h2>
+
+                    <p>Picture this: It's Tuesday afternoon. Your on-call engineer gets an alert — your customer-facing AI assistant has been giving wrong pricing information to enterprise accounts for the past three hours. You open your observability dashboard. Prometheus shows a normal request rate. Grafana shows p99 latency at 620ms — within SLO. Error rate: 0.2%. Nothing is obviously wrong.</p>
+
+                    <p>But your agent has been confidently hallucinating prices.</p>
+
+                    <div class="warning-box">
+                        <strong>⚠️ The Enterprise Reality Check:</strong> At JPMorgan and Deutsche Bank, when a system produces wrong output, "the metrics looked fine" is not an acceptable post-mortem finding. You need to explain the causal chain — exactly what data was retrieved, which reasoning step failed, and what the model's confidence was at each step.
+                    </div>
+
+                    <p>This is the fundamental problem with applying traditional observability to AI agents. The tools that served us brilliantly for microservices — Prometheus, Grafana, structured logs, Jaeger for HTTP traces — were designed for <strong>deterministic, stateless request-response systems</strong>. AI agents are none of those things.</p>
+
+                    <p>An AI agent in a multi-agent system performs a fundamentally different kind of work:</p>
+
+                    <ul>
+                        <li><strong>It reasons</strong> — internal chain-of-thought steps that have no HTTP equivalent</li>
+                        <li><strong>It retrieves</strong> — vector database lookups where result quality directly affects output quality</li>
+                        <li><strong>It calls tools</strong> — spawning sub-agents, APIs, or code executors with non-deterministic results</li>
+                        <li><strong>It synthesizes</strong> — combining retrieved context + prior reasoning into a final response</li>
+                    </ul>
+
+                    <p>A latency metric at the boundary tells you nothing about which of these steps degraded. And the community has noticed: the r/devops thread <em>"Observability For AI Models and GPU Inferencing"</em> hit the front page this week, with hundreds of engineers sharing the same frustration — their traditional stacks are blind to what's happening inside their agents.</p>
+
+                    <p><span class="stat-callout">506 stars/week on PostHog</span> — one of the largest non-AI open source growth rates in early 2026 — reflects this demand. Engineers are actively searching for new tools because the old ones don't fit.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="section-2">
+                    <h2>Why Logs and Metrics Are Structurally Insufficient</h2>
+
+                    <p>Let me be precise here, because this is where I see enterprise teams make a costly mistake: they add more logging and call it observability. It isn't. There is a structural mismatch between what logs/metrics capture and what AI agents need.</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Observability Signal</th>
+                                <th>Good for Microservices?</th>
+                                <th>Good for AI Agents?</th>
+                                <th>Why It Fails for AI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Prometheus Metrics</td>
+                                <td class="check">✓ Excellent</td>
+                                <td class="cross">✗ Insufficient</td>
+                                <td>Counters/gauges can't express the causal reasoning chain</td>
+                            </tr>
+                            <tr>
+                                <td>Structured Logs</td>
+                                <td class="check">✓ Good</td>
+                                <td class="cross">✗ Partial</td>
+                                <td>No parent-child span context; can't correlate prompt → retrieval → response</td>
+                            </tr>
+                            <tr>
+                                <td>Grafana Dashboards</td>
+                                <td class="check">✓ Excellent</td>
+                                <td class="cross">✗ Misleading</td>
+                                <td>Aggregated metrics mask per-request quality degradation</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP Distributed Tracing</td>
+                                <td class="check">✓ Good</td>
+                                <td>⚠️ Incomplete</td>
+                                <td>Captures network hops but not LLM reasoning steps or token budgets</td>
+                            </tr>
+                            <tr>
+                                <td>OTel LLM Spans</td>
+                                <td>N/A</td>
+                                <td class="check">✓ Purpose-Built</td>
+                                <td>Captures prompt, completion, tokens, model, temp, retrieval scores, tool calls</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The core issue is <strong>context propagation</strong>. In a multi-agent system, a single user query might spawn three sub-agents, each making two LLM calls and one vector DB lookup. A traditional log aggregator captures 12 disconnected log lines. An OTel trace captures them as a single causal tree — you can see exactly which sub-agent retrieved what, which LLM call exceeded its token budget, and which tool invocation returned a 404 that the agent then "hallucinated" around.</p>
+
+                    <p>This is not a tooling preference. It is a <strong>structural capability difference</strong> that determines whether you can do root-cause analysis on agent failures at all.</p>
+
+                    <p>I have trained teams at financial institutions where a single wrong AI response could trigger regulatory exposure. "We checked our Grafana dashboards and everything looked fine" is an answer that gets engineering leadership fired. You need traces.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="section-3">
+                    <h2>OpenTelemetry for LLMs: The 2026 Standard</h2>
+
+                    <p>The good news: the industry has converged on a standard. At KubeCon EU 2026, OpenTelemetry was formally positioned as the canonical observability layer for AI/ML workloads — not a nice-to-have, but the reference architecture that cloud vendors, LLM providers, and orchestration frameworks are aligning behind.</p>
+
+                    <p>The OTel GenAI semantic conventions (finalized in late 2025) define a rich set of span attributes specifically for LLM interactions:</p>
+
+                    <div class="info-box">
+                        <strong>OTel GenAI Semantic Conventions — Key Span Attributes:</strong>
+                        <ul style="margin: 0.5rem 0 0;">
+                            <li><code>gen_ai.system</code> — e.g., <code>openai</code>, <code>anthropic</code>, <code>ollama</code></li>
+                            <li><code>gen_ai.request.model</code> — the exact model version used</li>
+                            <li><code>gen_ai.request.max_tokens</code>, <code>gen_ai.request.temperature</code></li>
+                            <li><code>gen_ai.usage.prompt_tokens</code>, <code>gen_ai.usage.completion_tokens</code></li>
+                            <li><code>gen_ai.response.finish_reason</code> — <code>stop</code> vs <code>length</code> vs <code>tool_calls</code></li>
+                            <li>Agent-specific: tool name, tool input/output, retrieval score, span kind (<code>agent</code>, <code>chain</code>, <code>tool</code>, <code>retriever</code>)</li>
+                        </ul>
+                    </div>
+
+                    <p>eBPF 1.0 GA (released Q1 2026) adds another dimension: zero-instrumentation capture of LLM API calls at the kernel level, even from containers that have no OTel SDK installed. For legacy model serving infrastructure, this is transformative — you get traces without touching the application code at all.</p>
+
+                    <p>The converging 2026 stack looks like this:</p>
+
+                    <ul>
+                        <li><strong>OTel Python SDK</strong> with <code>opentelemetry-instrumentation-langchain</code> for automatic LangChain/LangGraph tracing</li>
+                        <li><strong>OTel Collector</strong> as the telemetry gateway (batching, filtering, routing to multiple backends)</li>
+                        <li><strong>Langfuse</strong> as the LLM-native trace backend (open source, Kubernetes-deployable, understands prompt/completion natively)</li>
+                        <li><strong>Jaeger or Tempo</strong> for the broader distributed tracing picture (non-LLM service hops)</li>
+                        <li><strong>Grafana</strong> for infrastructure metrics — retained, but now downstream of the OTel Collector, not the source of truth for AI behaviour</li>
+                    </ul>
+
+                    <p>grafana/pyroscope (<span class="stat-callout">47 stars/week</span> trending on GitHub) rounds this out with continuous profiling — especially valuable for GPU inference workloads where you want to correlate LLM latency spikes with CUDA kernel execution time.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="section-4">
+                    <h2>Hands-On: Tracing a LangChain Agent with OTel + Langfuse</h2>
+
+                    <p>Enough theory. Let me show you exactly how to instrument a LangChain ReAct agent with OpenTelemetry and ship traces to Langfuse. This is the pattern I use in production environments and the one I teach in the gheWARE Agentic AI Workshop.</p>
+
+                    <h3>Step 1 — Install Dependencies</h3>
+
+                    <div class="code-block">
+                        <span class="code-lang-badge">bash</span>
+                        <pre>pip install \
+  opentelemetry-sdk \
+  opentelemetry-api \
+  opentelemetry-exporter-otlp-proto-http \
+  opentelemetry-instrumentation-langchain \
+  langchain \
+  langchain-openai \
+  langfuse</pre>
+                    </div>
+
+                    <h3>Step 2 — Configure OTel Tracer Provider</h3>
+
+                    <div class="code-block">
+                        <span class="code-lang-badge">python</span>
+                        <pre>"""
+otel_setup.py — OTel tracer configuration for multi-agent AI observability
+gheWARE Agentic AI Workshop pattern
+"""
+import os
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from opentelemetry.sdk.resources import Resource
+
+def configure_otel_for_agents(service_name: str = "multi-agent-pipeline") -> trace.Tracer:
+    """
+    Set up OpenTelemetry tracing for a multi-agent AI system.
+    Exports to OTel Collector → Langfuse via OTLP HTTP.
+    """
+    resource = Resource.create({
+        "service.name": service_name,
+        "service.version": "1.0.0",
+        "deployment.environment": os.getenv("ENVIRONMENT", "production"),
+        # AI-specific resource attributes
+        "ai.framework": "langchain",
+        "ai.orchestrator": "langgraph",
+    })
+
+    # OTLP exporter pointing to your OTel Collector (or directly to Langfuse)
+    otlp_exporter = OTLPSpanExporter(
+        endpoint=os.getenv(
+            "OTEL_EXPORTER_OTLP_ENDPOINT",
+            "http://otel-collector:4318/v1/traces"
+        ),
+        headers={
+            "Authorization": f"Bearer {os.getenv('OTEL_AUTH_TOKEN', '')}",
+        }
+    )
+
+    provider = TracerProvider(resource=resource)
+    provider.add_span_processor(BatchSpanProcessor(otlp_exporter))
+    trace.set_tracer_provider(provider)
+
+    return trace.get_tracer(service_name)</pre>
+                    </div>
+
+                    <h3>Step 3 — Auto-Instrument LangChain and Run Your Agent</h3>
+
+                    <div class="code-block">
+                        <span class="code-lang-badge">python</span>
+                        <pre">"""
+agent_runner.py — LangChain ReAct agent with full OTel tracing
+Every LLM call, tool invocation, and chain step emits a span.
+"""
+from opentelemetry.instrumentation.langchain import LangChainInstrumentor
+from langchain.agents import AgentExecutor, create_react_agent
+from langchain_openai import ChatOpenAI
+from langchain.tools import tool
+from langchain import hub
+from otel_setup import configure_otel_for_agents
+
+# 1. Configure OTel BEFORE any LangChain imports or usage
+tracer = configure_otel_for_agents(service_name="pricing-agent")
+
+# 2. Auto-instrument LangChain — this patches all chains, LLM calls, and tools
+LangChainInstrumentor().instrument()
+
+# 3. Define your tools
+@tool
+def get_product_price(product_id: str) -> str:
+    """Retrieve current pricing for a product from the pricing service."""
+    # In production: call your internal pricing API
+    prices = {"PROD-001": "$499/month", "PROD-002": "$999/month"}
+    return prices.get(product_id, "Product not found")
+
+@tool
+def search_knowledge_base(query: str) -> str:
+    """Search the product knowledge base for relevant information."""
+    # In production: vector DB lookup (Chroma, Weaviate, Qdrant)
+    return f"Knowledge base result for: {query}"
+
+# 4. Build the agent
+llm = ChatOpenAI(model="gpt-4o", temperature=0.1)
+tools = [get_product_price, search_knowledge_base]
+prompt = hub.pull("hwchase17/react")
+agent = create_react_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=False)
+
+# 5. Run with manual span wrapping for the top-level user request
+def handle_user_query(query: str, user_id: str) -> str:
+    with tracer.start_as_current_span(
+        "user-query",
+        attributes={
+            "user.id": user_id,
+            "query.length": len(query),
+            "agent.type": "react",
+        }
+    ) as span:
+        try:
+            result = agent_executor.invoke({"input": query})
+            span.set_attribute("agent.output_length", len(result["output"]))
+            span.set_status(trace.StatusCode.OK)
+            return result["output"]
+        except Exception as e:
+            span.record_exception(e)
+            span.set_status(trace.StatusCode.ERROR, str(e))
+            raise
+
+if __name__ == "__main__":
+    response = handle_user_query(
+        query="What is the current price for PROD-001 and what are its key features?",
+        user_id="enterprise-user-42"
+    )
+    print(response)</pre>
+                    </div>
+
+                    <p>With this setup, every run of <code>handle_user_query</code> produces a trace tree in Langfuse that looks like:</p>
+
+                    <div class="info-box">
+                        <strong>Example OTel Trace — Pricing Agent Query:</strong>
+                        <pre style="margin: 0.5rem 0; font-size: 0.85rem; color: #374151; background: none; padding: 0;">
+└─ user-query [342ms] ← your top-level span
+   ├─ langchain.AgentExecutor [338ms]
+   │  ├─ langchain.ChatOpenAI [210ms]  ← initial reasoning
+   │  │   ├─ gen_ai.request.model: gpt-4o
+   │  │   ├─ gen_ai.usage.prompt_tokens: 487
+   │  │   └─ gen_ai.response.finish_reason: tool_calls
+   │  ├─ langchain.tool.get_product_price [12ms]
+   │  │   └─ tool.input: "PROD-001"
+   │  ├─ langchain.tool.search_knowledge_base [18ms]
+   │  │   └─ tool.input: "PROD-001 features"
+   │  └─ langchain.ChatOpenAI [88ms]  ← synthesis call
+   │      ├─ gen_ai.usage.prompt_tokens: 721
+   │      ├─ gen_ai.usage.completion_tokens: 156
+   │      └─ gen_ai.response.finish_reason: stop
+   └─ [end]
+                        </pre>
+                    </div>
+
+                    <p>Now when an agent produces a wrong answer, you open this trace and immediately see: was it the retrieval step that returned bad context? Was it the synthesis LLM call that truncated due to <code>finish_reason: length</code>? Was the tool call returning stale data? The trace answers the question that logs cannot.</p>
+
+                    <h3>Step 4 — Langfuse Integration (Alternative Backend)</h3>
+
+                    <p>Langfuse provides a hosted or self-hosted LLM-native trace backend with a UI purpose-built for LLM observability — prompt playground, cost analytics, evaluation scoring, and regression testing against trace history. For teams who want a zero-config start, use the Langfuse SDK directly:</p>
+
+                    <div class="code-block">
+                        <span class="code-lang-badge">python</span>
+                        <pre">"""
+langfuse_tracing.py — Langfuse integration for LLM observability
+Works alongside OTel or standalone; recommended for LLM-first teams.
+"""
+import os
+from langfuse import Langfuse
+from langfuse.callback import CallbackHandler
+
+# Initialize Langfuse client
+langfuse = Langfuse(
+    public_key=os.getenv("LANGFUSE_PUBLIC_KEY"),
+    secret_key=os.getenv("LANGFUSE_SECRET_KEY"),
+    host=os.getenv("LANGFUSE_HOST", "https://cloud.langfuse.com"),  # or self-hosted
+)
+
+# Create a Langfuse callback handler for LangChain
+langfuse_handler = CallbackHandler(
+    trace_name="pricing-agent-production",
+    user_id="enterprise-user-42",
+    session_id="session-2026-02-28-001",
+    tags=["production", "pricing", "react-agent"],
+    metadata={
+        "deployment_env": "production",
+        "agent_version": "2.1.0",
+        "kubernetes_namespace": "ai-agents",
+    }
+)
+
+# Use the handler in your AgentExecutor
+result = agent_executor.invoke(
+    {"input": "What is the current price for PROD-001?"},
+    config={"callbacks": [langfuse_handler]}
+)
+
+# Flush traces before process exit (critical in serverless/short-lived containers)
+langfuse.flush()</pre>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>💡 Production Tip:</strong> Use <strong>both</strong> OTel and Langfuse in production. OTel gives you the infrastructure-level distributed trace (spans across all services, Kubernetes metadata, database calls). Langfuse gives you LLM-native analytics (cost per session, evaluation scoring, prompt version comparison). They are complementary, not competing.
+                    </div>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="section-5">
+                    <h2>The Full OTel-Native Observability Stack for Multi-Agent AI</h2>
+
+                    <p>Individual instrumentation is step one. The full production-grade multi-agent observability stack requires all the layers working together — and deployed on Kubernetes where your agents actually run.</p>
+
+                    <h3>Reference Architecture</h3>
+
+                    <p>Here's the Kubernetes-native observability stack I deploy for enterprise teams running multi-agent AI in production:</p>
+
+                    <div class="code-block">
+                        <span class="code-lang-badge">yaml</span>
+                        <pre"># otel-collector-config.yaml
+# OTel Collector as the central telemetry hub for multi-agent AI
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: ai-otel-collector
+  namespace: observability
+spec:
+  config: |
+    receivers:
+      otlp:
+        protocols:
+          http:
+            endpoint: 0.0.0.0:4318
+          grpc:
+            endpoint: 0.0.0.0:4317
+      # eBPF receiver — zero-instrumentation capture of LLM API calls
+      ebpf:
+        endpoint: 0.0.0.0:4319
+
+    processors:
+      batch:
+        timeout: 1s
+        send_batch_size: 1024
+      # Enrich spans with K8s pod/namespace metadata
+      k8sattributes:
+        auth_type: serviceAccount
+        passthrough: false
+        extract:
+          metadata:
+            - k8s.pod.name
+            - k8s.namespace.name
+            - k8s.deployment.name
+            - k8s.node.name
+      # Filter sensitive PII from prompt content
+      attributes/redact_pii:
+        actions:
+          - key: gen_ai.prompt
+            action: hash
+          - key: gen_ai.completion
+            action: hash
+
+    exporters:
+      # Langfuse for LLM-native analytics
+      otlphttp/langfuse:
+        endpoint: https://cloud.langfuse.com/api/public/otel
+        headers:
+          Authorization: "Basic ${LANGFUSE_AUTH}"
+      # Jaeger for infrastructure-level distributed tracing
+      jaeger:
+        endpoint: jaeger-collector:14250
+        tls:
+          insecure: true
+      # Prometheus for infrastructure metrics (GPU, token rate, latency histograms)
+      prometheus:
+        endpoint: 0.0.0.0:8889
+
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp, ebpf]
+          processors: [k8sattributes, attributes/redact_pii, batch]
+          exporters: [otlphttp/langfuse, jaeger]
+        metrics:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [prometheus]</pre>
+                    </div>
+
+                    <p>A few things worth calling out explicitly from production experience:</p>
+
+                    <ul>
+                        <li><strong>PII Redaction at the Collector level</strong> — never let raw prompt content reach your trace backends unless you have explicit data governance approval. Hash it at the collector, store a reference, and have a secure audit path for when you need to inspect specific traces.</li>
+                        <li><strong>k8sattributes processor</strong> — automatically enriches every span with Kubernetes metadata. When you're debugging a multi-agent failure, knowing exactly which pod and node served the request is invaluable.</li>
+                        <li><strong>Dual export to Langfuse + Jaeger</strong> — Langfuse for LLM-specific analysis, Jaeger for the full service graph including your non-LLM services (databases, APIs, message queues) that your agents interact with.</li>
+                        <li><strong>Prometheus for token budget monitoring</strong> — set up alerts on <code>gen_ai.usage.prompt_tokens</code> histograms. Token budget exhaustion (<code>finish_reason: length</code>) is a leading indicator of hallucination risk and often invisible to infrastructure metrics.</li>
+                    </ul>
+
+                    <h3>The 2026 Observability Maturity Model for AI Teams</h3>
+
+                    <p>Based on what I've seen across enterprise AI teams from financial services to e-commerce, here's how observability maturity maps to operational capability:</p>
+
+                    <ul>
+                        <li><strong>Level 1 — Blind</strong>: Logs only. Can't explain why an agent failed. Post-mortems are guesswork.</li>
+                        <li><strong>Level 2 — Reactive</strong>: Prometheus + Grafana. Know when latency spiked; can't explain why an agent hallucinated.</li>
+                        <li><strong>Level 3 — Trace-Aware</strong>: OTel instrumentation on LangChain/LangGraph. Can trace individual agent runs. Manual investigation of failures.</li>
+                        <li><strong>Level 4 — AI-Native Observability</strong>: OTel + Langfuse + automated evaluation. Detect quality regressions automatically. A/B test prompts with trace-level evidence. Real-time token budget alerts.</li>
+                        <li><strong>Level 5 — Self-Healing</strong>: OTel traces feed back into agent behaviour. Anomalous reasoning patterns trigger automatic fallbacks. Continuous evaluation against ground truth in production.</li>
+                    </ul>
+
+                    <p>Most enterprise teams in 2026 are at Level 1 or 2. The teams shipping reliable AI products to production are at Level 3-4. Level 5 is where the most advanced AI-native companies are heading — and the OTel ecosystem is the infrastructure layer that makes it possible.</p>
+
+                    <p>The question for your organisation is not whether to adopt OTel for your AI systems. Given the KubeCon EU 2026 convergence, the CNCF standardisation, and the fact that every major LLM provider is shipping OTel-native SDKs, it will become as default as Prometheus is for Kubernetes today. The question is how quickly you adopt it and whether your engineering teams have the skills to implement it correctly before a production incident forces the issue.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Why does traditional observability fail for AI agents?</h3>
+                        <p>Traditional observability tools like Prometheus and Grafana track numerical metrics — CPU, memory, request rates, latency percentiles. AI agents produce causal chains: prompt → retrieval → reasoning → tool call → response. A latency spike metric tells you something was slow; it cannot tell you whether the LLM hit its token limit, whether the vector search returned irrelevant context, or whether a tool call returned stale data that the agent then incorporated incorrectly. You need distributed traces — specifically OTel traces with GenAI semantic conventions — to capture and correlate those causal steps end-to-end.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is OpenTelemetry for LLMs and why does it matter in 2026?</h3>
+                        <p>OpenTelemetry (OTel) for LLMs extends the CNCF open standard to capture AI-specific telemetry as first-class trace spans: prompt content, token counts, model name, temperature, retrieval scores, tool invocations, and agent reasoning steps. With eBPF 1.0 GA and KubeCon EU 2026 convergence on OTel as the AI observability standard, teams can now get end-to-end traces from user query to final agent response without vendor lock-in. Every major LLM provider — OpenAI, Anthropic, Google — is aligning their SDKs to OTel GenAI semantic conventions.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I trace a LangChain agent with OpenTelemetry?</h3>
+                        <p>Install <code>opentelemetry-sdk</code> and <code>opentelemetry-instrumentation-langchain</code>. Set up a TracerProvider pointing to your OTel Collector or Langfuse endpoint. Call <code>LangChainInstrumentor().instrument()</code> before any agent runs. Every LLM call, tool invocation, and chain step will automatically emit spans with token counts, latency, model metadata, and tool inputs/outputs. See the full working code in Step 2 and Step 3 of this article — it is production-ready as written.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is Langfuse and how does it compare to Jaeger for AI observability?</h3>
+                        <p>Langfuse is an open-source LLM observability platform with a UI purpose-built for LLM traces — it understands prompt/completion natively, provides cost analytics per session, supports evaluation scoring, and lets you compare prompt versions against historical traces. Jaeger is a general-purpose distributed tracing backend. For multi-agent AI systems, use both: Langfuse for LLM-native analytics and prompt debugging, Jaeger (or Tempo) for the full service graph including your non-LLM services. Route both from a single OTel Collector instance.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I prevent PII in prompts from leaking into my trace backend?</h3>
+                        <p>Configure an <code>attributes/redact_pii</code> processor in your OTel Collector pipeline (see the YAML in Section 5). Hash sensitive span attributes — particularly <code>gen_ai.prompt</code> and <code>gen_ai.completion</code> — before they reach any external backend. Store a mapping of hash → original in a separate, access-controlled store for audit purposes. Never log raw prompt content to general-purpose log aggregators. This is non-negotiable for financial services, healthcare, and any system processing personal data.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion: The Observability Gap Is Now a Competitive Risk</h2>
+
+                    <p>The question I started with — "Can you explain why your AI agent hallucinated in production last Tuesday?" — is not a gotcha. It's the baseline competency question for any team running AI agents in production in 2026. If your answer is "we checked our Grafana dashboard and it looked fine," you have a structural observability gap that will eventually manifest as a production incident, a customer complaint, or worse.</p>
+
+                    <p>The OTel-native observability stack I've walked through here — OTel Python SDK + LangChain instrumentation + OTel Collector + Langfuse — is battle-tested, open source, vendor-neutral, and deployable on any Kubernetes cluster in under two hours. The code in this article is the exact pattern we teach and deploy in enterprise engagements.</p>
+
+                    <p>The teams who invest in AI observability now, before they're forced to by a production incident, will have a significant operational advantage as multi-agent AI systems become core business infrastructure. The teams who wait will be doing forensic archaeology on logs, trying to reconstruct why their agent behaved the way it did, with no causal evidence to work from.</p>
+
+                    <p>Build the traces-first culture now. Your future on-call engineer will thank you.</p>
+                </section>
+
+            </div>
+
+            <!-- Author Bio -->
+            <div class="author-bio-section">
+                <img src="/blog/assets/images/rajesh-gheware-photo.png" alt="Rajesh Gheware — Enterprise DevOps &amp; AI Architect">
+                <div>
+                    <h3>Rajesh Gheware</h3>
+                    <p><strong>Chief Architect &amp; Corporate Trainer | gheWARE uniGPS Solutions LLP</strong></p>
+                    <p>25 years of enterprise engineering experience — JPMorgan Chase, Deutsche Bank, and Fortune 500 technology organizations. Trained 5,000+ DevOps and Cloud professionals across India, the UAE, and APAC. Oracle-rated trainer at <strong>4.91/5.0</strong>. Specialist in Agentic AI, LangChain/LangGraph, Kubernetes architecture, and cloud-native observability.</p>
+                    <p>
+                        <a href="https://linkedin.com/in/rajesh-gheware" target="_blank" rel="noopener" style="color: #0891b2; text-decoration: none; margin-right: 1rem;">🔗 LinkedIn</a>
+                        <a href="https://twitter.com/gheware_tech" target="_blank" rel="noopener" style="color: #0891b2; text-decoration: none; margin-right: 1rem;">🐦 @gheware_tech</a>
+                        <a href="https://devops.gheware.com" target="_blank" rel="noopener" style="color: #0891b2; text-decoration: none;">🌐 devops.gheware.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-workshop">
+                <div class="rating-badge">⭐ 4.91/5.0 Oracle Rating · 5,000+ Professionals Trained</div>
+                <h2>Build Production-Ready AI Agents — With Observability Baked In</h2>
+                <p>The gheWARE <strong>Agentic AI Workshop</strong> is a 5-day intensive that takes enterprise engineers from LangChain fundamentals to production multi-agent systems — including OTel instrumentation, Langfuse integration, Kubernetes deployment, and LLMOps practices. Hands-on labs. Real enterprise architectures. Zero fluff.</p>
+                <p style="color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 1.5rem;">✅ LangChain + LangGraph · ✅ RAG + Vector DBs · ✅ OTel AI Observability · ✅ Multi-Agent Orchestration · ✅ Kubernetes LLMOps</p>
+                <a href="https://devops.gheware.com" class="cta-btn">Explore the Agentic AI Workshop →</a>
+            </div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="blog-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
+                        <div class="blog-card-content" style="padding: 1.25rem;">
+                            <span class="blog-card-category">DevOps &amp; Observability</span>
+                            <h3 class="blog-card-title" style="font-size: 1rem; margin: 0.75rem 0 0.5rem;">
+                                <a href="/blog/posts/ebpf-kubernetes-observability-2026.html">eBPF for Kubernetes Observability: Zero-Instrumentation Monitoring in 2026</a>
+                            </h3>
+                            <p class="blog-card-excerpt" style="font-size: 0.9rem;">How eBPF eliminates the observability tax with Cilium, Pixie, and Tetragon.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
+                        <div class="blog-card-content" style="padding: 1.25rem;">
+                            <span class="blog-card-category">Agentic AI</span>
+                            <h3 class="blog-card-title" style="font-size: 1rem; margin: 0.75rem 0 0.5rem;">
+                                <a href="/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html">AI Agent Design Patterns: Implementation Guide 2026</a>
+                            </h3>
+                            <p class="blog-card-excerpt" style="font-size: 0.9rem;">ReAct, Plan-and-Execute, Multi-Agent Supervisor patterns with LangGraph.</p>
+                        </div>
+                    </article>
+                    <article class="blog-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
+                        <div class="blog-card-content" style="padding: 1.25rem;">
+                            <span class="blog-card-category">LLMOps</span>
+                            <h3 class="blog-card-title" style="font-size: 1rem; margin: 0.75rem 0 0.5rem;">
+                                <a href="/blog/posts/context-engineering-ai-performance-guide-2026.html">Context Engineering for AI Performance: Complete Guide 2026</a>
+                            </h3>
+                            <p class="blog-card-excerpt" style="font-size: 0.9rem;">Optimize LLM context windows for accuracy, cost, and latency at scale.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
