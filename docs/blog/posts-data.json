@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "title": "eBPF for Kubernetes Observability: Zero-Instrumentation Monitoring in 2026",
+      "url": "/blog/posts/ebpf-kubernetes-observability-2026.html",
+      "excerpt": "Learn how eBPF transforms Kubernetes observability without touching your application code. Complete guide covering Cilium, Pixie, Hubble, and Tetragon for enterprise-grade monitoring.",
+      "category": "DevOps & AI",
+      "tags": [
+        "eBPF",
+        "Kubernetes",
+        "Observability",
+        "Cilium",
+        "Prometheus",
+        "OpenTelemetry",
+        "SRE"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "February 27, 2026",
+      "readTime": "12 min read",
+      "keywords": [
+        "eBPF Kubernetes observability",
+        "Cilium eBPF",
+        "zero instrumentation monitoring",
+        "Pixie Kubernetes",
+        "Hubble network observability",
+        "Tetragon security"
+      ]
+    },
+    {
       "title": "Why Every SMB Needs an AI Chief Business Officer in 2026",
       "url": "/blog/posts/why-every-smb-needs-ai-cbo-2026.html",
       "excerpt": "Deploy an AI CBO that publishes content, manages social media, captures leads, and reports via Telegram — for $499/month. Real agents are already live generating 80+ blog posts and 47 leads.",
