@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1e"/>
+      <stop offset="55%" stop-color="#0d2137"/>
+      <stop offset="100%" stop-color="#051a0d"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4aa"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4aa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00d4aa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="gf" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gf2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- BG -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Grid -->
+  <g stroke="#00d4aa" stroke-width="0.4" opacity="0.1">
+    <line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/><line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Orbital rings around center -->
+  <circle cx="600" cy="315" r="140" fill="none" stroke="#00d4aa" stroke-width="0.8" opacity="0.18" stroke-dasharray="8,6"/>
+  <circle cx="600" cy="315" r="95" fill="none" stroke="#00d4aa" stroke-width="1.2" opacity="0.28" stroke-dasharray="5,4"/>
+  <circle cx="600" cy="315" r="55" fill="url(#orbGlow)" stroke="#00d4aa" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Neural network LEFT -->
+  <g opacity="0.85">
+    <line x1="110" y1="170" x2="195" y2="270" stroke="#00d4aa" stroke-width="1" opacity="0.4"/>
+    <line x1="110" y1="170" x2="240" y2="150" stroke="#00d4aa" stroke-width="1" opacity="0.35"/>
+    <line x1="195" y1="270" x2="175" y2="375" stroke="#00d4aa" stroke-width="1" opacity="0.4"/>
+    <line x1="195" y1="270" x2="75" y2="345" stroke="#00d4aa" stroke-width="1" opacity="0.3"/>
+    <line x1="175" y1="375" x2="290" y2="450" stroke="#00d4aa" stroke-width="1" opacity="0.35"/>
+    <circle cx="110" cy="170" r="9" fill="#00d4aa" filter="url(#gf2)"/>
+    <circle cx="195" cy="270" r="7" fill="#00ff88" opacity="0.8"/>
+    <circle cx="175" cy="375" r="11" fill="#00d4aa" filter="url(#gf2)"/>
+    <circle cx="75" cy="345" r="5" fill="#00ff88" opacity="0.7"/>
+    <circle cx="240" cy="150" r="7" fill="#00d4aa" opacity="0.8"/>
+    <circle cx="290" cy="450" r="6" fill="#00ff88" opacity="0.6"/>
+  </g>
+
+  <!-- Neural network RIGHT -->
+  <g opacity="0.85">
+    <line x1="1090" y1="190" x2="1005" y2="295" stroke="#00d4aa" stroke-width="1" opacity="0.4"/>
+    <line x1="1090" y1="190" x2="960" y2="160" stroke="#00d4aa" stroke-width="1" opacity="0.35"/>
+    <line x1="1005" y1="295" x2="1025" y2="415" stroke="#00d4aa" stroke-width="1" opacity="0.4"/>
+    <line x1="1005" y1="295" x2="1125" y2="375" stroke="#00d4aa" stroke-width="1" opacity="0.3"/>
+    <line x1="1025" y1="415" x2="910" y2="455" stroke="#00d4aa" stroke-width="1" opacity="0.35"/>
+    <circle cx="1090" cy="190" r="9" fill="#00d4aa" filter="url(#gf2)"/>
+    <circle cx="1005" cy="295" r="7" fill="#00ff88" opacity="0.8"/>
+    <circle cx="1025" cy="415" r="11" fill="#00d4aa" filter="url(#gf2)"/>
+    <circle cx="1125" cy="375" r="5" fill="#00ff88" opacity="0.7"/>
+    <circle cx="960" cy="160" r="7" fill="#00d4aa" opacity="0.8"/>
+    <circle cx="910" cy="455" r="6" fill="#00ff88" opacity="0.6"/>
+  </g>
+
+  <!-- Server racks bottom -->
+  <g opacity="0.85">
+    <!-- Left rack -->
+    <rect x="55" y="465" width="85" height="130" rx="5" fill="#0d2137" stroke="#00d4aa" stroke-width="1.5"/>
+    <rect x="64" y="475" width="67" height="7" rx="2" fill="#00d4aa" opacity="0.75"/>
+    <rect x="64" y="488" width="67" height="7" rx="2" fill="#00ff88" opacity="0.55"/>
+    <rect x="64" y="501" width="67" height="7" rx="2" fill="#00d4aa" opacity="0.65"/>
+    <rect x="64" y="514" width="67" height="7" rx="2" fill="#00ff88" opacity="0.45"/>
+    <rect x="64" y="527" width="67" height="7" rx="2" fill="#00d4aa" opacity="0.75"/>
+    <circle cx="130" cy="564" r="5" fill="#00ff88" filter="url(#gf2)"/>
+    <!-- Right rack -->
+    <rect x="1060" y="465" width="85" height="130" rx="5" fill="#0d2137" stroke="#00d4aa" stroke-width="1.5"/>
+    <rect x="1069" y="475" width="67" height="7" rx="2" fill="#00d4aa" opacity="0.75"/>
+    <rect x="1069" y="488" width="67" height="7" rx="2" fill="#00ff88" opacity="0.55"/>
+    <rect x="1069" y="501" width="67" height="7" rx="2" fill="#00d4aa" opacity="0.65"/>
+    <rect x="1069" y="514" width="67" height="7" rx="2" fill="#00ff88" opacity="0.45"/>
+    <rect x="1069" y="527" width="67" height="7" rx="2" fill="#00d4aa" opacity="0.75"/>
+    <circle cx="1135" cy="564" r="5" fill="#00ff88" filter="url(#gf2)"/>
+  </g>
+
+  <!-- Center brain/AI core -->
+  <circle cx="600" cy="315" r="32" fill="#00d4aa" opacity="0.25"/>
+  <circle cx="600" cy="315" r="20" fill="#00d4aa" opacity="0.45" filter="url(#gf)"/>
+
+  <!-- K8s hexagon top-center -->
+  <polygon points="600,42 628,58 628,90 600,106 572,90 572,58" fill="none" stroke="#00d4aa" stroke-width="2" opacity="0.9"/>
+  <text x="600" y="83" text-anchor="middle" fill="#00d4aa" font-family="monospace" font-size="16" font-weight="bold">K8s</text>
+
+  <!-- $110B label -->
+  <text x="270" y="200" text-anchor="middle" fill="#00ff88" font-family="monospace" font-size="42" font-weight="bold" filter="url(#gf)" opacity="0.95">$110B</text>
+
+  <!-- Cloud shapes -->
+  <ellipse cx="200" cy="120" rx="60" ry="22" fill="#00d4aa" opacity="0.12" stroke="#00d4aa" stroke-width="1" opacity="0.3"/>
+  <ellipse cx="1000" cy="130" rx="55" ry="20" fill="#00ff88" opacity="0.1" stroke="#00ff88" stroke-width="1" opacity="0.25"/>
+
+  <!-- Data flow lines to center -->
+  <path d="M340,220 Q470,200 565,300" stroke="#00ff88" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="10,6"/>
+  <path d="M860,220 Q730,200 635,300" stroke="#00ff88" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="10,6"/>
+
+  <!-- Labels -->
+  <text x="820" y="210" fill="#00d4aa" font-family="monospace" font-size="18" font-weight="bold" opacity="0.85">GenAI Scale</text>
+  <text x="820" y="232" fill="#00d4aa" font-family="monospace" font-size="13" opacity="0.6">AWS Bedrock · vLLM</text>
+
+  <text x="40" y="440" fill="#00d4aa" font-family="monospace" font-size="13" opacity="0.5">01001001 01001110</text>
+  <text x="40" y="456" fill="#00d4aa" font-family="monospace" font-size="13" opacity="0.4">11000010 00110101</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="617" width="1200" height="4" fill="url(#barGrad)" opacity="0.9"/>
+
+  <!-- Floating dots -->
+  <circle cx="400" cy="490" r="3" fill="#00ff88" opacity="0.5"/>
+  <circle cx="455" cy="510" r="2" fill="#00d4aa" opacity="0.4"/>
+  <circle cx="510" cy="475" r="4" fill="#00ff88" opacity="0.35"/>
+  <circle cx="690" cy="500" r="3" fill="#00d4aa" opacity="0.5"/>
+  <circle cx="740" cy="470" r="2" fill="#00ff88" opacity="0.4"/>
+  <circle cx="795" cy="520" r="4" fill="#00d4aa" opacity="0.35"/>
+
+  <!-- Brand watermark -->
+  <text x="600" y="602" text-anchor="middle" fill="#00d4aa" font-family="monospace" font-size="13" opacity="0.4">devops.gheware.com</text>
+</svg>
