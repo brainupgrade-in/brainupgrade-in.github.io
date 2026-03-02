@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="AI Agent Sandboxing in Kubernetes: Enterprise Security Guide 2026 | Gheware DevOps AI">
+    <meta name="description" content="Learn how to sandbox agentic AI workloads in Kubernetes using namespace isolation, network policies, OPA/Gatekeeper, and micro-VM techniques for enterprise security.">
+    <meta name="keywords" content="AI agent sandboxing Kubernetes, agentic AI security, Kubernetes namespace isolation, network policies AI agents, OPA Gatekeeper AI, enterprise AI security 2026">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html">
+    <meta property="og:title" content="AI Agent Sandboxing in Kubernetes: Enterprise Security Guide 2026">
+    <meta property="og:description" content="Learn how to sandbox agentic AI workloads in Kubernetes using namespace isolation, network policies, OPA/Gatekeeper, and micro-VM techniques for enterprise security.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/agentic-ai-security-kubernetes-sandboxing-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-03-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-02T00:00:00+00:00">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Agentic AI">
+    <meta property="article:tag" content="Agentic AI Security">
+    <meta property="article:tag" content="Kubernetes">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="AI Agent Sandboxing in Kubernetes: Enterprise Security Guide 2026">
+    <meta name="twitter:description" content="Learn how to sandbox agentic AI workloads in Kubernetes using namespace isolation, network policies, OPA/Gatekeeper, and micro-VM techniques.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/agentic-ai-security-kubernetes-sandboxing-2026.jpg">
+
+    <title>AI Agent Sandboxing in Kubernetes: Enterprise Security Guide 2026 | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html"
+        },
+        "headline": "AI Agent Sandboxing in Kubernetes: Enterprise Security Guide 2026",
+        "description": "Learn how to sandbox agentic AI workloads in Kubernetes using namespace isolation, network policies, OPA/Gatekeeper, and micro-VM techniques for enterprise security.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/agentic-ai-security-kubernetes-sandboxing-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-03-02T00:00:00+00:00",
+        "dateModified": "2026-03-02T00:00:00+00:00",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "AI agent sandboxing Kubernetes, agentic AI security, Kubernetes namespace isolation, network policies AI agents, OPA Gatekeeper, enterprise AI security 2026",
+        "articleSection": "Agentic AI",
+        "wordCount": "2300",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AI Agent Sandboxing in Kubernetes",
+                "item": "https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why do AI agents need sandboxing in Kubernetes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI agents are autonomous — they browse the web, write and execute code, call APIs, and manage files. Without sandboxing, a compromised or misbehaving agent can exfiltrate data, move laterally across your cluster, or consume unbounded compute resources. Sandboxing enforces least-privilege isolation at the namespace, network, and kernel level."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between Kubernetes namespace isolation and micro-VM sandboxing for AI agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Namespace isolation (RBAC + NetworkPolicy + ResourceQuota) is a Kubernetes-native, lightweight layer that limits what a pod can reach within the cluster. Micro-VM sandboxing (Kata Containers, Firecracker, Unikraft) adds a hardware-level virtualization boundary — each agent pod runs inside its own mini-VM with a separate kernel, preventing container escape exploits. For high-security agentic workloads, use both layers together."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can OPA Gatekeeper prevent AI agent prompt injection attacks?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OPA Gatekeeper operates at the Kubernetes admission layer — it cannot inspect LLM prompt content. However, it can enforce security policies that limit an agent's blast radius: preventing privileged containers, blocking hostPath mounts, requiring non-root UIDs, and enforcing image allow-lists. This ensures that even if an agent is prompt-injected, its Kubernetes-level permissions are hardened."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">AI Agent Sandboxing in Kubernetes</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Agentic AI</span>
+                    <span class="reading-time">14 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">AI Agent Sandboxing in Kubernetes: The Enterprise Security Guide for 2026</h1>
+                <p class="post-subtitle" itemprop="description">Your AI agents browse the web, execute code, and call production APIs autonomously. Here's how to sandbox them in Kubernetes so a single rogue agent can't bring down your entire platform.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-03-02T00:00:00+00:00">March 2, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html&text=AI%20Agent%20Sandboxing%20in%20Kubernetes%3A%20Enterprise%20Security%20Guide%202026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/agentic-ai-security-kubernetes-sandboxing-2026.jpg"
+                     alt="AI Agent Sandboxing in Kubernetes — enterprise security architecture with namespace isolation and network policies"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>AI agent sandboxing in Kubernetes — multi-layer security isolation for production agentic workloads</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>AI agents are not stateless microservices — they act autonomously, making <strong>AI agent sandboxing in Kubernetes</strong> a first-class security requirement, not an afterthought.</li>
+                    <li>A four-layer isolation model (namespace + RBAC + NetworkPolicy + micro-VM) gives you defense-in-depth against prompt injection, container escape, and lateral movement.</li>
+                    <li>OPA/Gatekeeper admission policies enforce hardened pod specs at deploy time — preventing privileged containers, host-path mounts, and root-user execution before agents ever run.</li>
+                    <li>ResourceQuota and LimitRange are your blast-radius controls — a runaway agent loop cannot consume cluster-wide GPU or memory without hitting enforced ceilings.</li>
+                    <li>Kata Containers / Firecracker micro-VMs add a kernel-level isolation boundary that makes container escape from an AI agent practically impossible in production.</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-agents-are-different">Why AI Agents Are a Different Security Beast</a></li>
+                    <li><a href="#namespace-isolation">Layer 1 — Namespace Isolation &amp; RBAC</a></li>
+                    <li><a href="#network-policies">Layer 2 — NetworkPolicy: Zero-Trust Egress for Agents</a></li>
+                    <li><a href="#opa-gatekeeper">Layer 3 — OPA/Gatekeeper Admission Control</a></li>
+                    <li><a href="#resource-quotas">Layer 4 — ResourceQuota &amp; Blast-Radius Containment</a></li>
+                    <li><a href="#micro-vm-sandboxing">Layer 5 — Micro-VM Sandboxing with Kata Containers</a></li>
+                    <li><a href="#implementation-guide">End-to-End Implementation Guide</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR Section -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">AI agents running in Kubernetes without isolation are one compromised tool call away from a cluster-wide breach. This guide shows you the five-layer sandboxing model — namespace, RBAC, NetworkPolicy, OPA/Gatekeeper, and Kata Containers — that enterprises need before shipping agentic AI to production in 2026.</p>
+                </aside>
+
+                <!-- Intro Hook -->
+                <p>Picture this scenario: your AI coding agent — deployed in production to help developers — gets a prompt-injected instruction through a malicious code comment. Instead of writing tests, it starts port-scanning your internal Kubernetes services, reading Secrets from other namespaces, and exfiltrating credentials through an outbound HTTPS call to an attacker-controlled domain.</p>
+
+                <p>This is not a hypothetical. The OWASP Top 10 for Large Language Model Applications (2025 edition) lists <strong>LLM02: Insecure Output Handling</strong> and <strong>LLM09: Overreliance on Agents</strong> as critical risks. At JPMorgan and Deutsche Bank during my years in financial technology infrastructure, we had a saying: <em>"Trust nothing that crosses a boundary — whether it's a packet, a process, or a person."</em> The same principle applies to AI agents in 2026.</p>
+
+                <p>The difference is that <strong>AI agent sandboxing in Kubernetes</strong> is now both urgently needed and fully achievable with the tooling available in today's cloud-native stack. This guide walks you through the complete five-layer model, with working YAML and the architectural reasoning behind every decision.</p>
+
+                <!-- Section 1 -->
+                <section id="why-agents-are-different">
+                    <h2>Why AI Agents Are a Different Security Beast</h2>
+
+                    <p>Traditional microservices have predictable behavior: they handle requests, query databases, return responses. Security is mostly about network boundaries and secrets management. An AI agent, by contrast, is <strong>goal-directed and adaptive</strong>. It decides at runtime which tools to call, in what order, with what parameters.</p>
+
+                    <p>Consider what a typical production agentic AI system does in a single workflow:</p>
+
+                    <ul>
+                        <li>Browses external URLs (web search, documentation lookup)</li>
+                        <li>Reads and writes files to mounted volumes</li>
+                        <li>Executes shell commands or code in a sandboxed subprocess</li>
+                        <li>Calls internal APIs (CRM, ERP, databases, message queues)</li>
+                        <li>Sends outbound emails, Slack messages, webhooks</li>
+                        <li>Spawns sub-agents with their own tool access</li>
+                    </ul>
+
+                    <p>Each of these capabilities is a potential blast vector. The attack surface of a single agent pod is significantly larger than a typical microservice — and it grows with every tool you add to the agent's toolkit. That's why agent sandboxing must be <strong>multi-layered and defense-in-depth</strong>, not a single NetworkPolicy or a read-only filesystem flag.</p>
+
+                    <h3>The Three AI Agent Threat Vectors</h3>
+                    <p>From my work designing multi-agent systems for enterprise clients, the three primary threats are:</p>
+
+                    <ol>
+                        <li><strong>Prompt Injection via Tool Output:</strong> An attacker embeds instructions in data the agent reads (web pages, files, API responses) that redirect the agent's behavior.</li>
+                        <li><strong>Lateral Movement via Over-Permissioned Identity:</strong> An agent with a cluster-admin ServiceAccount (or even namespace-admin) can read Secrets, impersonate other pods, or access out-of-scope resources.</li>
+                        <li><strong>Resource Exhaustion via Infinite Loop:</strong> An agent stuck in a self-calling loop consumes GPU, memory, and API quotas until cluster stability is impacted.</li>
+                    </ol>
+
+                    <p>Our five-layer model directly addresses each of these threat vectors.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="namespace-isolation">
+                    <h2>Layer 1 — Namespace Isolation &amp; RBAC</h2>
+
+                    <p>The first line of defense is giving each agent (or logical group of agents) its own Kubernetes namespace with a tightly-scoped ServiceAccount. This is the equivalent of a process running in its own Unix user context — limited by design.</p>
+
+                    <h3>Create a Dedicated Agent Namespace</h3>
+                    <pre><code class="language-yaml"># agent-namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: agent-coding-assistant
+  labels:
+    app.kubernetes.io/managed-by: "agentops"
+    security.gheware.com/isolation: "strict"
+    pod-security.kubernetes.io/enforce: "restricted"
+    pod-security.kubernetes.io/enforce-version: "latest"
+---
+# Dedicated ServiceAccount — never use default
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: coding-agent-sa
+  namespace: agent-coding-assistant
+  annotations:
+    description: "ServiceAccount for coding AI agent — read-only cluster access"
+automountServiceAccountToken: false  # Opt-in, not opt-out</code></pre>
+
+                    <p>Note the <code>automountServiceAccountToken: false</code>. By default, Kubernetes mounts a ServiceAccount token into every pod — which means your agent can authenticate to the Kubernetes API server the moment it starts. Disable this globally and opt-in only when the agent genuinely needs Kubernetes API access.</p>
+
+                    <h3>RBAC: Minimum Viable Permissions</h3>
+                    <pre><code class="language-yaml"># agent-rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: coding-agent-role
+  namespace: agent-coding-assistant
+rules:
+  # Only allow reading ConfigMaps (for agent config)
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list"]
+  # Allow reading its own pod status (for health checks)
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get"]
+    resourceNames: []  # Further restrict by pod name if known
+  # NEVER: secrets, nodes, clusterroles, rolebindings
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: coding-agent-rolebinding
+  namespace: agent-coding-assistant
+subjects:
+  - kind: ServiceAccount
+    name: coding-agent-sa
+    namespace: agent-coding-assistant
+roleRef:
+  kind: Role
+  name: coding-agent-role
+  apiGroup: rbac.authorization.k8s.io</code></pre>
+
+                    <p>The principle: if your agent doesn't need to list Pods, don't give it <code>pods/list</code>. Every unnecessary permission is a privilege escalation waiting to happen when an agent is prompt-injected.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="network-policies">
+                    <h2>Layer 2 — NetworkPolicy: Zero-Trust Egress for Agents</h2>
+
+                    <p>The second layer is network isolation. By default, Kubernetes allows all pod-to-pod and pod-to-external communication. For an AI agent, this is catastrophically permissive. We need <strong>explicit allowlists</strong> for every outbound connection.</p>
+
+                    <h3>Default-Deny Policy First</h3>
+                    <pre><code class="language-yaml"># agent-netpol-default-deny.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: agent-coding-assistant
+spec:
+  podSelector: {}  # Applies to ALL pods in namespace
+  policyTypes:
+    - Ingress
+    - Egress
+  # No ingress/egress rules = deny everything</code></pre>
+
+                    <h3>Allowlist Only What the Agent Needs</h3>
+                    <pre><code class="language-yaml"># agent-netpol-allowlist.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: coding-agent-egress-allowlist
+  namespace: agent-coding-assistant
+spec:
+  podSelector:
+    matchLabels:
+      app: coding-agent
+  policyTypes:
+    - Egress
+  egress:
+    # Allow DNS resolution (critical — don't forget this)
+    - ports:
+        - port: 53
+          protocol: UDP
+        - port: 53
+          protocol: TCP
+
+    # Allow HTTPS to external LLM API (e.g., Anthropic, OpenAI)
+    - ports:
+        - port: 443
+          protocol: TCP
+      to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+            except:
+              # Block access to cluster CIDR and metadata server
+              - 10.0.0.0/8
+              - 172.16.0.0/12
+              - 192.168.0.0/16
+              - 169.254.169.254/32  # AWS/GCP metadata server
+
+    # Allow internal CRM API only (explicit cluster-internal access)
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: crm-prod
+          podSelector:
+            matchLabels:
+              app: crm-api
+      ports:
+        - port: 8080
+          protocol: TCP</code></pre>
+
+                    <p>This pattern — <em>deny everything, allow exactly what's needed</em> — is how we designed inter-service communication at Deutsche Bank's technology infrastructure. It's non-negotiable for any autonomous process that can decide where to connect next.</p>
+
+                    <blockquote style="border-left: 4px solid #0d9488; padding: 1rem 1.5rem; margin: 2rem 0; background: #f0fdf4; border-radius: 0 8px 8px 0;">
+                        <p style="margin: 0; font-style: italic;">"If your AI agent can reach your internal Kubernetes API server, your internal databases, and the public internet — all from the same pod — you don't have an AI agent, you have an inside threat waiting for a bad prompt."</p>
+                    </blockquote>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="opa-gatekeeper">
+                    <h2>Layer 3 — OPA/Gatekeeper Admission Control</h2>
+
+                    <p>Namespace isolation and network policies are runtime controls. But what if a developer accidentally deploys an agent pod with <code>privileged: true</code> or mounts the Docker socket? We need <strong>admission-time guardrails</strong> that prevent misconfigured agent deployments from ever reaching your cluster.</p>
+
+                    <p>OPA/Gatekeeper is the standard here — it intercepts every <code>kubectl apply</code> and validates it against your policy library before accepting it.</p>
+
+                    <h3>Install Gatekeeper</h3>
+                    <pre><code class="language-bash"># Install OPA Gatekeeper
+kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/deploy/gatekeeper.yaml
+
+# Verify installation
+kubectl get pods -n gatekeeper-system</code></pre>
+
+                    <h3>Constraint Template: No Privileged Agent Pods</h3>
+                    <pre><code class="language-yaml"># constraint-template-no-privileged.yaml
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: k8snoagentprivileged
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sNoAgentPrivileged
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8snoagentprivileged
+
+        violation[{"msg": msg}] {
+          # Apply only to namespaces labelled as agent namespaces
+          input.review.object.metadata.namespace == "agent-coding-assistant"
+          container := input.review.object.spec.containers[_]
+          container.securityContext.privileged == true
+          msg := sprintf("Agent container '%v' must not run as privileged", [container.name])
+        }
+
+        violation[{"msg": msg}] {
+          input.review.object.metadata.namespace == "agent-coding-assistant"
+          container := input.review.object.spec.containers[_]
+          container.securityContext.allowPrivilegeEscalation == true
+          msg := sprintf("Agent container '%v' must set allowPrivilegeEscalation: false", [container.name])
+        }
+---
+# Activate the constraint
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sNoAgentPrivileged
+metadata:
+  name: no-privileged-agent-pods
+spec:
+  match:
+    namespaces: ["agent-coding-assistant", "agent-browser", "agent-ops"]</code></pre>
+
+                    <h3>Constraint: Require Non-Root and Read-Only Filesystem</h3>
+                    <pre><code class="language-yaml"># agent-pod-security-constraint.yaml
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: k8sagentsecuritybaseline
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sAgentSecurityBaseline
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sagentsecuritybaseline
+
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          not container.securityContext.runAsNonRoot == true
+          msg := sprintf("Agent '%v' must set runAsNonRoot: true", [container.name])
+        }
+
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          not container.securityContext.readOnlyRootFilesystem == true
+          msg := sprintf("Agent '%v' must use readOnlyRootFilesystem: true", [container.name])
+        }
+
+        violation[{"msg": msg}] {
+          container := input.review.object.spec.containers[_]
+          mount := container.volumeMounts[_]
+          mount.mountPath == "/var/run/docker.sock"
+          msg := "Agent pods must not mount the Docker socket"
+        }</code></pre>
+
+                    <p>These admission policies mean that even if a developer or a CI/CD pipeline attempts to deploy an insecure agent spec, Gatekeeper will reject it with a clear error message — closing the misconfiguration gap before it becomes a runtime vulnerability.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="resource-quotas">
+                    <h2>Layer 4 — ResourceQuota &amp; Blast-Radius Containment</h2>
+
+                    <p>AI agents that enter infinite tool-calling loops are a real production problem. I've seen an agentic coding assistant stuck in a code-test-fix loop consume $3,000 of LLM API credits overnight because no limits were enforced. In Kubernetes terms, the same pattern can exhaust your GPU node pool and impact unrelated services sharing the cluster.</p>
+
+                    <p>ResourceQuota and LimitRange are your insurance policies.</p>
+
+                    <h3>Namespace-Level ResourceQuota</h3>
+                    <pre><code class="language-yaml"># agent-resource-quota.yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: agent-namespace-quota
+  namespace: agent-coding-assistant
+spec:
+  hard:
+    # Compute limits
+    requests.cpu: "8"
+    limits.cpu: "16"
+    requests.memory: 16Gi
+    limits.memory: 32Gi
+
+    # GPU limit (critical for LLM inference agents)
+    requests.nvidia.com/gpu: "2"
+    limits.nvidia.com/gpu: "2"
+
+    # Object count limits (prevent pod flooding)
+    pods: "20"
+    services: "5"
+    persistentvolumeclaims: "10"
+    secrets: "20"
+    configmaps: "30"
+
+    # Prevent LoadBalancer creation (agents don't need external exposure)
+    services.loadbalancers: "0"
+    services.nodeports: "0"</code></pre>
+
+                    <h3>Per-Pod LimitRange</h3>
+                    <pre><code class="language-yaml"># agent-limitrange.yaml
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: agent-pod-limits
+  namespace: agent-coding-assistant
+spec:
+  limits:
+    - type: Container
+      default:
+        cpu: "500m"
+        memory: "1Gi"
+      defaultRequest:
+        cpu: "250m"
+        memory: "512Mi"
+      max:
+        cpu: "4"
+        memory: "8Gi"
+      min:
+        cpu: "50m"
+        memory: "64Mi"
+    - type: PersistentVolumeClaim
+      max:
+        storage: "20Gi"</code></pre>
+
+                    <p>With these controls, a single agent pod cannot claim more than 4 CPU cores and 8GiB RAM — and the entire agent namespace cannot exceed 16 CPU and 32GiB. A runaway loop hits its ceiling and gets OOMKilled or CPU-throttled rather than degrading your production cluster.</p>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="micro-vm-sandboxing">
+                    <h2>Layer 5 — Micro-VM Sandboxing with Kata Containers</h2>
+
+                    <p>The first four layers are excellent — but they all assume the Linux kernel is a trusted boundary. Container escape vulnerabilities (CVE-2019-5736 runc escape, Leaky Vessels 2024, etc.) prove that this assumption doesn't always hold. For high-security agentic workloads — especially agents that execute arbitrary user-provided code — you need a <strong>hardware-level kernel boundary</strong>.</p>
+
+                    <p><strong>Kata Containers</strong> gives each pod its own micro-VM with a separate lightweight kernel. From the Kubernetes scheduler's perspective it's just a pod. From a security perspective, an attacker who achieves container escape is now inside a micro-VM with no access to the host kernel or other pods' memory spaces.</p>
+
+                    <h3>Install Kata Containers Runtime on K3s/K8s</h3>
+                    <pre><code class="language-bash"># Install containerd-shim-kata-v2 (on each node)
+sudo apt-get install -y kata-containers
+
+# Configure containerd to use Kata runtime class
+sudo tee -a /etc/containerd/config.toml &lt;&lt;EOF
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.kata]
+  runtime_type = "io.containerd.kata.v2"
+EOF
+
+sudo systemctl restart containerd</code></pre>
+
+                    <h3>Create a RuntimeClass for Agent Pods</h3>
+                    <pre><code class="language-yaml"># kata-runtimeclass.yaml
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: kata-agent-secure
+handler: kata
+overhead:
+  podFixed:
+    memory: "160Mi"   # Kata VM overhead
+    cpu: "250m"
+scheduling:
+  nodeClassification:
+    tolerations:
+      - key: "kata-capable"
+        operator: "Exists"</code></pre>
+
+                    <h3>Agent Deployment Using Kata Runtime</h3>
+                    <pre><code class="language-yaml"># agent-deployment-secured.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coding-agent
+  namespace: agent-coding-assistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: coding-agent
+  template:
+    metadata:
+      labels:
+        app: coding-agent
+    spec:
+      # ← Kata micro-VM runtime (hardware isolation)
+      runtimeClassName: kata-agent-secure
+
+      serviceAccountName: coding-agent-sa
+      automountServiceAccountToken: false
+
+      # Security context hardening
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534      # nobody
+        runAsGroup: 65534
+        fsGroup: 65534
+        seccompProfile:
+          type: RuntimeDefault
+
+      containers:
+        - name: coding-agent
+          image: ghcr.io/gheware/coding-agent:v2.1.0@sha256:abc123...  # Pin digest
+          imagePullPolicy: Always
+
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "2"
+              memory: "4Gi"
+
+          volumeMounts:
+            - name: tmp-volume
+              mountPath: /tmp
+            - name: agent-workspace
+              mountPath: /workspace
+
+          env:
+            - name: ANTHROPIC_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: agent-secrets
+                  key: anthropic-api-key
+
+      volumes:
+        - name: tmp-volume
+          emptyDir: {}
+        - name: agent-workspace
+          emptyDir:
+            sizeLimit: 5Gi</code></pre>
+
+                    <p>With Kata Containers, even if an agent achieves a container escape (via a CVE or a malicious tool), it lands inside a micro-VM kernel with no path to the host. Combined with the NetworkPolicy zero-trust egress, a compromised agent cannot phone home or reach lateral targets.</p>
+                </section>
+
+                <!-- Section 7 - Implementation Guide -->
+                <section id="implementation-guide">
+                    <h2>End-to-End Implementation Guide</h2>
+
+                    <p>Here's the practical deployment sequence for hardening an existing agent deployment:</p>
+
+                    <h3>Phase 1: Assess Current State (Day 1)</h3>
+                    <pre><code class="language-bash"># Audit existing agent pods for security issues
+kubectl auth can-i --list --as=system:serviceaccount:default:default
+# Should return minimal permissions — if it lists many resources, you have work to do
+
+# Check for privileged pods in agent namespaces
+kubectl get pods -A -o json | \
+  jq '.items[] | select(.spec.containers[].securityContext.privileged == true) | .metadata.name'
+
+# List pods running as root
+kubectl get pods -A -o json | \
+  jq '.items[] | select(.spec.securityContext.runAsUser == 0 or .spec.securityContext.runAsNonRoot == null) | .metadata.name'
+
+# Find pods with no resource limits
+kubectl get pods -A -o json | \
+  jq '.items[] | select(.spec.containers[].resources.limits == null) | .metadata.name'</code></pre>
+
+                    <h3>Phase 2: Apply Namespace Controls (Day 2-3)</h3>
+                    <pre><code class="language-bash"># Create agent namespaces with PSS enforcement
+kubectl apply -f agent-namespace.yaml
+kubectl apply -f agent-rbac.yaml
+
+# Apply default-deny NetworkPolicy
+kubectl apply -f agent-netpol-default-deny.yaml
+kubectl apply -f agent-netpol-allowlist.yaml
+
+# Apply ResourceQuota and LimitRange
+kubectl apply -f agent-resource-quota.yaml
+kubectl apply -f agent-limitrange.yaml</code></pre>
+
+                    <h3>Phase 3: OPA/Gatekeeper Rollout (Day 4-5)</h3>
+                    <pre><code class="language-bash"># Install Gatekeeper in dry-run mode first
+kubectl apply -f gatekeeper.yaml
+
+# Deploy constraint templates in audit mode (won't block yet)
+kubectl apply -f constraint-template-no-privileged.yaml
+
+# Check existing violations
+kubectl get k8snoagentprivileged.constraints.gatekeeper.sh \
+  no-privileged-agent-pods -o json | jq '.status.violations'
+
+# Fix violations, then switch to enforcement mode
+kubectl patch constraint no-privileged-agent-pods \
+  --type=merge -p '{"spec":{"enforcementAction":"deny"}}'</code></pre>
+
+                    <h3>Phase 4: Kata Containers Migration (Day 6-10)</h3>
+                    <pre><code class="language-bash"># Install Kata on your nodes (K3s example)
+# On each K3s agent node:
+sudo apt-get install -y kata-containers
+# Configure containerd to support kata runtime
+
+# Apply RuntimeClass
+kubectl apply -f kata-runtimeclass.yaml
+
+# Roll out agent deployment with Kata runtime
+kubectl apply -f agent-deployment-secured.yaml
+
+# Verify Kata is active
+kubectl exec -it -n agent-coding-assistant \
+  $(kubectl get pod -n agent-coding-assistant -l app=coding-agent -o name) \
+  -- uname -r
+# Should show a different kernel version than the host</code></pre>
+
+                    <h3>The Mature Architecture at a Glance</h3>
+                    <div style="background: #0f172a; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; font-family: monospace; color: #e2e8f0; font-size: 0.9rem; overflow-x: auto;">
+                        <pre style="margin: 0; color: #e2e8f0;">
+┌─────────────────────────────────────────────────────────┐
+│                  Kubernetes Cluster                       │
+│                                                          │
+│  ┌──────────────────────────────────┐                   │
+│  │  Namespace: agent-coding         │                   │
+│  │  PSS: restricted                 │                   │
+│  │  ResourceQuota: 16 CPU / 32Gi    │                   │
+│  │                                  │                   │
+│  │  ┌───────────────────────────┐   │                   │
+│  │  │  Kata Micro-VM            │   │                   │
+│  │  │  ┌─────────────────────┐  │   │                   │
+│  │  │  │  Agent Container    │  │   │                   │
+│  │  │  │  runAsNonRoot: true │  │   │                   │
+│  │  │  │  readOnly FS: true  │  │   │                   │
+│  │  │  │  caps: DROP ALL     │  │   │                   │
+│  │  │  └─────────────────────┘  │   │                   │
+│  │  │  Separate Guest Kernel    │   │                   │
+│  │  └───────────────────────────┘   │                   │
+│  │                                  │                   │
+│  │  NetworkPolicy: deny-all         │                   │
+│  │  + allowlist: HTTPS to LLM API   │                   │
+│  │  + allowlist: internal CRM only  │                   │
+│  │                                  │                   │
+│  │  RBAC: configmaps:get only       │                   │
+│  │  SA: no auto-mount token         │                   │
+│  └──────────────────────────────────┘                   │
+│                                                          │
+│  OPA/Gatekeeper: enforces at admission time              │
+└─────────────────────────────────────────────────────────┘</pre>
+                    </div>
+
+                    <p>This architecture is exactly what we implement for enterprises at <a href="https://devops.gheware.com/training/">Gheware DevOps AI Training</a> — and it's what you'll build hands-on in our <a href="https://devops.gheware.com/training/">Agentic AI for Enterprise workshop</a>. Five days, production-ready architecture, CKS-aligned security patterns.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Why do AI agents need sandboxing in Kubernetes?</h3>
+                        <p>AI agents are autonomous — they browse the web, write and execute code, call APIs, and manage files. Without sandboxing, a compromised or misbehaving agent can exfiltrate data, move laterally across your cluster, or consume unbounded compute resources. Sandboxing enforces least-privilege isolation at the namespace, network, and kernel level, limiting the blast radius of any incident to a single contained boundary.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the difference between Kubernetes namespace isolation and micro-VM sandboxing for AI agents?</h3>
+                        <p>Namespace isolation (RBAC + NetworkPolicy + ResourceQuota) is a Kubernetes-native, lightweight layer that limits what a pod can reach within the cluster. Micro-VM sandboxing (Kata Containers, Firecracker, Unikraft) adds a hardware-level virtualization boundary — each agent pod runs inside its own mini-VM with a separate kernel, preventing container escape exploits. For high-security agentic workloads, you should use both layers together: namespace controls for logical isolation, micro-VMs for kernel-level protection.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can OPA Gatekeeper prevent AI agent prompt injection attacks?</h3>
+                        <p>OPA Gatekeeper operates at the Kubernetes admission layer — it cannot inspect LLM prompt content at runtime. However, it can enforce security policies that limit an agent's blast radius at deploy time: preventing privileged containers, blocking hostPath mounts, requiring non-root UIDs, and enforcing image allow-lists. This ensures that even if an agent is prompt-injected and attempts to exploit its environment, its Kubernetes-level permissions are already hardened. Gatekeeper is a structural control, not a content filter — use it alongside application-level input validation.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does Kata Containers significantly increase agent pod startup time?</h3>
+                        <p>Kata Containers typically adds 1-2 seconds to pod startup time (vs. standard container startup in milliseconds) because it boots a micro-VM kernel. For long-running agent deployments — which persist across multiple tasks — this overhead is negligible. For short-lived agent pods that start and stop per request, evaluate whether the security benefit justifies the latency. Most enterprise agentic deployments use persistent long-running agent pods, making Kata an excellent fit.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I monitor agent security events in Kubernetes?</h3>
+                        <p>Pair your sandboxing setup with Falco (runtime security monitoring) to detect anomalous agent behavior: unexpected outbound connections, file system writes to non-tmp paths, privilege escalation attempts, and shell spawning. Use OTel-instrumented audit logs (Kubernetes Audit Policy + OpenTelemetry Collector) to trace every API call made by agent ServiceAccounts. This gives you the observability layer on top of the isolation layer — detection and containment working together.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion: Isolation is Not Optional for Production AI Agents</h2>
+
+                    <p>In 2024, teams were asking "how do we build AI agents?" In 2026, the more important question is "how do we run AI agents safely at scale?" The five-layer sandboxing model — namespace + RBAC + NetworkPolicy + OPA/Gatekeeper + Kata Containers — is the answer that enterprise security teams are converging on as agentic AI moves from proof-of-concept into revenue-critical production systems.</p>
+
+                    <p>The good news: every layer I've described here is open-source, Kubernetes-native, and works on any cloud or on-premises cluster. The architecture that protects a multi-agent system at a financial institution is the same architecture you can implement on a three-node K3s cluster this week.</p>
+
+                    <p>What I've seen across 25+ years of enterprise technology infrastructure — from JPMorgan's trading floor to Morgan Stanley's investment banking platforms — is that security discipline applied early costs a fraction of the incident response, regulatory fines, and customer trust damage that comes from getting it wrong in production.</p>
+
+                    <p>AI agents are powerful. They're also the newest entry point in your attack surface. <strong>Sandbox them properly, and they'll be your most capable autonomous infrastructure.</strong> Skip the isolation, and you're one malicious prompt away from a very bad day.</p>
+
+                    <hr style="margin: 2rem 0; border-color: #e2e8f0;">
+
+                    <p><strong>Ready to build production-grade agentic AI systems with enterprise security built in?</strong> Our <a href="https://devops.gheware.com/training/">5-Day Agentic AI Workshop</a> covers multi-agent architecture, Kubernetes deployment, security hardening (this exact content), observability with OpenTelemetry, and LLMOps pipelines. Enterprise cohorts available for teams of 5+.</p>
+                </section>
+
+            </div>
+
+            <!-- Author Bio Placeholder -->
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/ai-observability-multi-agent-otel-2026.html">From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems</a></h3>
+                        <p>OpenTelemetry GenAI conventions, Grafana AI dashboards, and distributed tracing for agentic systems.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/llmops-pipeline-kubernetes-2026.html">LLMOps on Kubernetes: Building Production ML Pipelines in 2026</a></h3>
+                        <p>Model evaluation gates, KEDA autoscaling for inference, and GitOps-driven ModelOps.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/zero-trust-devops-implementation-guide-2026.html">Zero-Trust DevOps: Implementing Zero-Trust Architecture in Modern CI/CD Pipelines</a></h3>
+                        <p>SPIFFE/SPIRE workload identity, mTLS service meshes, and secrets management in DevOps pipelines.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Master Agentic AI Security in Production</h2>
+                <p>Learn to build, deploy, and secure multi-agent AI systems on Kubernetes — with hands-on labs covering everything in this guide and more.</p>
+                <a href="/training/" class="btn-cta-primary">
+                    <span>View Training Programs</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
