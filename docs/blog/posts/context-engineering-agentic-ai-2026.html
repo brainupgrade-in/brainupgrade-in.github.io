@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026 | Gheware DevOps AI">
+    <meta name="description" content="Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems that actually work.">
+    <meta name="keywords" content="context engineering, agentic AI, multi-agent systems, parallel AI agents, agent orchestration, LangChain agents, autonomous agents, production AI agents, AI engineering">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html">
+    <meta property="og:title" content="Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026">
+    <meta property="og:description" content="Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems that actually work.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/context-engineering-agentic-ai-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-03-04T00:00:00Z">
+    <meta property="article:modified_time" content="2026-03-04T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Agentic AI">
+    <meta property="article:tag" content="Context Engineering">
+    <meta property="article:tag" content="Agentic AI">
+    <meta property="article:tag" content="Multi-Agent Systems">
+    <meta property="article:tag" content="LangChain">
+    <meta property="article:tag" content="AI Engineering">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026">
+    <meta name="twitter:description" content="Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/context-engineering-agentic-ai-2026.jpg">
+
+    <title>Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026 | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html"
+        },
+        "headline": "Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026",
+        "description": "Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems that actually work.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/context-engineering-agentic-ai-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-03-04T00:00:00Z",
+        "dateModified": "2026-03-04T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "context engineering, agentic AI, multi-agent systems, parallel AI agents, agent orchestration, LangChain agents, autonomous agents, production AI agents",
+        "articleSection": "Agentic AI",
+        "wordCount": "2200",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Context Engineering for Agentic AI",
+                "item": "https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is context engineering in agentic AI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Context engineering is the discipline of systematically designing, managing, and optimizing the information (context window) that an AI agent receives at runtime. It goes beyond simple prompt writing to include dynamic memory retrieval, tool definitions, conversation history compression, and structured instruction design — ensuring the agent always has exactly the right information to reason and act correctly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is context engineering different from prompt engineering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Prompt engineering focuses on crafting static instructions for a single LLM call. Context engineering treats the entire agent context window as a dynamic, engineered artifact — deciding what memory to retrieve, which tool schemas to include, how to compress history, and how to prioritize competing instructions across multi-step agentic workflows."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why do parallel agent workflows require context engineering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "When multiple AI agents run in parallel (e.g., a planner, researcher, coder, and reviewer), each agent needs a carefully scoped context: only the relevant task, tools, and memory for its role. Poor context management causes agents to hallucinate due to information overload, miss critical state from sibling agents, or produce contradictory outputs. Context engineering defines the information boundaries between agents."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Context Engineering for Agentic AI</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Agentic AI</span>
+                    <span class="reading-time">12 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026</h1>
+                <p class="post-subtitle" itemprop="description">Context engineering is the new prompt engineering. Learn how senior AI engineers design production-grade agentic systems by mastering memory retrieval, parallel agent orchestration, and dynamic context construction.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-03-04T00:00:00Z">March 4, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html&text=Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/context-engineering-agentic-ai-2026.jpg"
+                     alt="Context Engineering for Agentic AI — parallel AI agents connected by glowing data streams on a dark teal background"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>Context engineering defines how AI agents receive, manage, and share information — the hidden discipline behind every production agentic system.</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Context engineering</strong> is the systematic design of what goes into an agent's context window — memory, tools, instructions, and history — not just writing better prompts.</li>
+                    <li>Engineers at companies like Snowflake run <strong>8+ parallel AI agents</strong> by scoping each agent's context to only what it needs, preventing information overload and hallucination.</li>
+                    <li>The <strong>four pillars</strong> of context engineering are: memory architecture, tool schema design, history compression, and instruction hierarchy.</li>
+                    <li>LangChain, LangGraph, and OpenAI's Assistants API all expose context engineering primitives — but only senior engineers know how to use them correctly in production.</li>
+                    <li>Teams that master context engineering reduce agent hallucination rates by <strong>60–80%</strong> and cut LLM API costs by up to <strong>40%</strong> through smarter context compression.</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#what-is-context-engineering">What Is Context Engineering and Why Does It Matter Now?</a></li>
+                    <li><a href="#four-pillars">The Four Pillars of Context Engineering</a></li>
+                    <li><a href="#parallel-agents">Parallel Agent Workflows: How Context Engineering Makes Them Work</a></li>
+                    <li><a href="#implementation">Practical Implementation Guide: Context Engineering with LangGraph</a></li>
+                    <li><a href="#devops-angle">Context Engineering for DevOps: Autonomous Pipeline Agents</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR -->
+                <aside class="tldr" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #166534;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">Prompt engineering got you started. Context engineering will get you to production. The difference between AI demos that impress and AI systems that generate revenue is almost entirely about how engineers architect the information flowing into each agent's context window. This post breaks down the discipline with real code and patterns from production agentic deployments.</p>
+                </aside>
+
+                <!-- Hook -->
+                <p>A GitHub repository called <em>Agent-Skills-for-Context-Engineering</em> gained over 4,300 stars in a single week this February. The community signal was unmistakable: the industry has collectively realised that writing better prompts is table stakes — the real game is <strong>context engineering</strong>.</p>
+
+                <p>I've spent the last two years building agentic AI systems for enterprise clients — teams at banks, logistics companies, and SaaS vendors. Every failed agent deployment I've diagnosed shared the same root cause: not a bad model, not a bad prompt, but a broken context. The agent didn't have the right information at the right time in the right format. That's a context engineering failure.</p>
+
+                <p>Meanwhile, engineers at Snowflake, Stripe, and other data-intensive companies are quietly running <strong>8 or more AI agents in parallel</strong> on the same task — a planner, a researcher, a coder, a reviewer, a verifier, a security auditor — each receiving a surgically crafted context slice. The output quality gap between teams that do this and teams that don't is staggering.</p>
+
+                <p>This post is your complete introduction to context engineering for agentic AI: what it is, why it matters, and how to implement it today with LangGraph and LangChain.</p>
+
+                <!-- Section 1 -->
+                <section id="what-is-context-engineering">
+                    <h2>What Is Context Engineering and Why Does It Matter Now?</h2>
+
+                    <p>Every large language model operates on a <em>context window</em> — a fixed-size buffer of tokens that the model can attend to when generating its next output. For GPT-4o, that's 128K tokens. For Claude 3.5 Sonnet, 200K. For Gemini 2.0, 1M.</p>
+
+                    <p>Prompt engineering asks: <em>"What instructions should I write?"</em></p>
+                    <p>Context engineering asks: <em>"What should be in this context window, in what order, at what compression ratio, retrieved from which memory source, for this specific agent at this specific step in the workflow?"</em></p>
+
+                    <p>The distinction matters because agentic AI systems are not single LLM calls. They are loops — sequences of reasoning steps where each step produces tool calls, observations, updated memory, and next-step plans. At every loop iteration, the agent's context window must be re-constructed from scratch. Get that wrong and the agent drifts, hallucinates, repeats itself, or exceeds the token budget and gets truncated mid-thought.</p>
+
+                    <h3>The Three Reasons Context Engineering Emerged in 2025–2026</h3>
+
+                    <ol>
+                        <li><strong>Agent loops are long.</strong> Production agents routinely run 20–100 reasoning steps. Each step accumulates history. Without compression and curation, you hit the context limit within minutes and the agent forgets its own plan.</li>
+                        <li><strong>Multi-agent systems multiply the problem.</strong> When you have 8 parallel agents, each needs its own context — but they also need to share state. Who gets what? When? In what format? This is a context engineering problem.</li>
+                        <li><strong>Models are commoditising.</strong> The performance gap between frontier models and open-weights models is shrinking fast. The differentiator in 2026 is not which model you use — it's how well you engineer the context those models receive.</li>
+                    </ol>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="four-pillars">
+                    <h2>The Four Pillars of Context Engineering</h2>
+
+                    <h3>Pillar 1: Memory Architecture</h3>
+
+                    <p>Every production agent needs at least three memory layers:</p>
+
+                    <ul>
+                        <li><strong>Working memory</strong> — the current context window itself. Ephemeral. Resets on each agent invocation.</li>
+                        <li><strong>Episodic memory</strong> — a vector store (ChromaDB, Pinecone, Weaviate) holding past interactions, retrieved semantically at query time. Persists across sessions.</li>
+                        <li><strong>Semantic memory</strong> — structured knowledge bases (your product docs, runbooks, codebase summaries) indexed for retrieval-augmented generation (RAG).</li>
+                    </ul>
+
+                    <p>The context engineering decision is not "should I use memory?" — it's "which memory, how much, retrieved with what query, inserted at which position in the prompt?" Senior engineers write explicit memory retrieval policies. Junior engineers let the framework decide.</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># Context engineering: explicit memory retrieval policy
+from langchain_community.vectorstores import Chroma
+from langchain_core.documents import Document
+
+def build_agent_context(task: str, agent_role: str, max_memory_tokens: int = 2000) -> str:
+    """
+    Constructs a context-engineered prompt for a specific agent role.
+    Retrieves only relevant memory and respects token budget.
+    """
+    # 1. Retrieve role-specific episodic memory
+    memory_store = Chroma(collection_name=f"agent-memory-{agent_role}")
+    relevant_episodes = memory_store.similarity_search(
+        query=task,
+        k=5,
+        filter={"agent_role": agent_role}
+    )
+    
+    # 2. Compress memory to token budget
+    memory_text = compress_to_budget(
+        docs=relevant_episodes,
+        max_tokens=max_memory_tokens,
+        strategy="recency_weighted"  # recent episodes score higher
+    )
+    
+    # 3. Inject at the correct position (before tools, after system prompt)
+    return f"""
+## Relevant Past Context
+{memory_text}
+
+## Current Task
+{task}
+"""</code></pre>
+
+                    <h3>Pillar 2: Tool Schema Design</h3>
+
+                    <p>Every tool you give an agent consumes context window space — not just when it's called, but its entire schema definition at every reasoning step. An agent with 30 tools has 30 JSON schemas in its context at all times. That could be 3,000–8,000 tokens of overhead, eating into the space available for actual task reasoning.</p>
+
+                    <p>Context engineering for tools means:</p>
+                    <ul>
+                        <li><strong>Dynamic tool selection</strong>: give the agent only the tools it needs for the current task phase (exploration vs. execution vs. verification)</li>
+                        <li><strong>Schema compression</strong>: write minimal, dense tool descriptions; remove verbose examples from schema unless required</li>
+                        <li><strong>Tool routing</strong>: in multi-agent systems, route tool calls to specialist agents rather than loading all tools into every agent's context</li>
+                    </ul>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># Dynamic tool selection based on task phase
+TOOL_REGISTRY = {
+    "exploration": [search_tool, fetch_url_tool, list_files_tool],
+    "execution":   [write_file_tool, run_command_tool, git_commit_tool],
+    "verification":[run_tests_tool, lint_tool, security_scan_tool],
+}
+
+def get_tools_for_phase(phase: str) -> list:
+    """Context engineering: only load tools relevant to current phase."""
+    return TOOL_REGISTRY.get(phase, TOOL_REGISTRY["exploration"])</code></pre>
+
+                    <h3>Pillar 3: History Compression</h3>
+
+                    <p>The most common cause of agent degradation in long-running workflows is <em>context bloat</em> — the raw conversation history grows until it crowds out the current task instructions. I've seen enterprise agents start brilliant and become incoherent 40 steps in, purely because no one implemented history compression.</p>
+
+                    <p>The three compression strategies:</p>
+
+                    <table style="width:100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #f0fdf4; border-bottom: 2px solid #16a34a;">
+                                <th style="padding: 0.75rem; text-align: left;">Strategy</th>
+                                <th style="padding: 0.75rem; text-align: left;">Mechanism</th>
+                                <th style="padding: 0.75rem; text-align: left;">Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Sliding Window</strong></td>
+                                <td style="padding: 0.75rem;">Keep only last N messages verbatim</td>
+                                <td style="padding: 0.75rem;">Short workflows, chat agents</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Summarisation</strong></td>
+                                <td style="padding: 0.75rem;">LLM-generated summary every K steps</td>
+                                <td style="padding: 0.75rem;">Medium workflows, task agents</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;"><strong>Structured State</strong></td>
+                                <td style="padding: 0.75rem;">Extract key facts to typed state object</td>
+                                <td style="padding: 0.75rem;">Long workflows, multi-agent pipelines</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For production agentic systems, <strong>structured state extraction</strong> is almost always the right answer. Rather than retaining raw history, define a TypedDict that captures all information the agent needs to continue — and let that state object evolve as the workflow progresses.</p>
+
+                    <h3>Pillar 4: Instruction Hierarchy</h3>
+
+                    <p>In a multi-agent system, instructions come from multiple sources: the user, the orchestrator agent, role-specific system prompts, tool descriptions, and retrieved memory. When these conflict, the agent needs a clear hierarchy to resolve the conflict. Without it, you get unpredictable behaviour — and that unpredictability compounds across 8 parallel agents.</p>
+
+                    <p>A production instruction hierarchy:</p>
+                    <ol>
+                        <li><strong>Safety guardrails</strong> — never overridable (injected first, highest weight)</li>
+                        <li><strong>Role system prompt</strong> — defines the agent's identity, capabilities, and scope</li>
+                        <li><strong>Orchestrator instructions</strong> — the current task from the planner agent</li>
+                        <li><strong>Retrieved memory</strong> — relevant past context (clearly labeled as memory, not instruction)</li>
+                        <li><strong>User message</strong> — the human-in-the-loop instruction (if any)</li>
+                    </ol>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="parallel-agents">
+                    <h2>Parallel Agent Workflows: How Context Engineering Makes Them Work</h2>
+
+                    <p>The engineering teams at data-first companies are not running a single "super-agent" that does everything. They're running specialist agents in parallel, each with a narrowly scoped context, and an orchestrator that merges their outputs. This architecture is more reliable, more cost-efficient, and dramatically faster than sequential single-agent approaches.</p>
+
+                    <p>Here's a concrete example from a DevOps automation use case — an autonomous PR review system with four parallel agents:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from langgraph.graph import StateGraph, END
+from typing import TypedDict, Annotated
+import operator
+
+# Shared state — the context engineering backbone
+class PRReviewState(TypedDict):
+    pr_diff: str
+    security_findings: Annotated[list, operator.add]
+    performance_findings: Annotated[list, operator.add]
+    logic_findings: Annotated[list, operator.add]
+    test_coverage_findings: Annotated[list, operator.add]
+    final_review: str
+
+def security_agent(state: PRReviewState) -> dict:
+    """Context: only sees PR diff + security rules. Nothing else."""
+    context = build_agent_context(
+        task=state["pr_diff"],
+        agent_role="security_reviewer",
+        max_memory_tokens=1000
+    )
+    findings = llm.invoke(SECURITY_SYSTEM_PROMPT + context)
+    return {"security_findings": [findings.content]}
+
+def performance_agent(state: PRReviewState) -> dict:
+    """Context: only sees PR diff + performance patterns."""
+    context = build_agent_context(
+        task=state["pr_diff"],
+        agent_role="performance_reviewer",
+        max_memory_tokens=1000
+    )
+    findings = llm.invoke(PERFORMANCE_SYSTEM_PROMPT + context)
+    return {"performance_findings": [findings.content]}
+
+# Build parallel graph
+builder = StateGraph(PRReviewState)
+builder.add_node("security",     security_agent)
+builder.add_node("performance",  performance_agent)
+builder.add_node("logic",        logic_agent)
+builder.add_node("test_coverage",test_coverage_agent)
+builder.add_node("synthesise",   synthesis_agent)
+
+# Run all four in parallel from START
+builder.add_edge("__start__", "security")
+builder.add_edge("__start__", "performance")
+builder.add_edge("__start__", "logic")
+builder.add_edge("__start__", "test_coverage")
+
+# Converge to synthesiser
+for node in ["security","performance","logic","test_coverage"]:
+    builder.add_edge(node, "synthesise")
+builder.add_edge("synthesise", END)
+
+graph = builder.compile()</code></pre>
+
+                    <p>Notice what's happening here: each specialist agent receives a carefully scoped context — only the PR diff and role-specific memory. The orchestrator's synthesis agent then receives only the four agents' findings, not their raw internal reasoning. This is context engineering in action: right information, right agent, right time.</p>
+
+                    <h3>Measuring Context Engineering Quality</h3>
+
+                    <p>How do you know if your context engineering is working? Track these metrics:</p>
+
+                    <ul>
+                        <li><strong>Hallucination rate</strong>: percentage of agent outputs containing factual errors vs. provided context. Target: &lt;5%</li>
+                        <li><strong>Context utilisation</strong>: how much of the context window is actually referenced in the output (via attention analysis or ablation). Low utilisation = wasted tokens</li>
+                        <li><strong>Token cost per task</strong>: the total tokens consumed per successful task completion. Context engineering can cut this 30–50% vs. naive approaches</li>
+                        <li><strong>Completion rate</strong>: percentage of tasks completed without context-related failures (truncation, loop breaks, off-task drift)</li>
+                    </ul>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="implementation">
+                    <h2>Practical Implementation Guide: Context Engineering with LangGraph</h2>
+
+                    <p>Here's the production-grade context engineering stack I recommend for enterprise agentic AI in 2026:</p>
+
+                    <h3>Step 1: Define Your State Schema First</h3>
+
+                    <p>Before writing a single agent, define the shared state TypedDict. This is your context engineering contract — every agent knows exactly what state it reads and what state it writes. No surprises.</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from typing import TypedDict, Optional, Annotated
+import operator
+
+class AgentWorkflowState(TypedDict):
+    # Input — set once at workflow start
+    user_goal: str
+    context_documents: list[str]
+    
+    # Working state — mutated by agents
+    current_plan: Optional[str]
+    completed_steps: Annotated[list[str], operator.add]  # append-only
+    tool_outputs: Annotated[list[dict], operator.add]    # append-only
+    
+    # Compressed history — replaces raw message history
+    step_summary: str  # LLM-compressed after every 10 steps
+    
+    # Output
+    final_answer: Optional[str]
+    error: Optional[str]</code></pre>
+
+                    <h3>Step 2: Implement Context Builder Functions</h3>
+
+                    <p>Each agent should call a context builder that enforces token budgets and retrieves role-specific memory:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>import tiktoken
+
+ENCODER = tiktoken.encoding_for_model("gpt-4o")
+
+def count_tokens(text: str) -> int:
+    return len(ENCODER.encode(text))
+
+def build_context_for_agent(
+    state: AgentWorkflowState,
+    agent_role: str,
+    token_budget: int = 4000
+) -> str:
+    sections = []
+    remaining = token_budget
+    
+    # 1. Always include current plan (highest priority)
+    if state.get("current_plan"):
+        plan_text = f"## Current Plan\n{state['current_plan']}\n"
+        sections.append(plan_text)
+        remaining -= count_tokens(plan_text)
+    
+    # 2. Include compressed step summary (not raw history)
+    if state.get("step_summary") and remaining > 500:
+        summary = f"## Progress Summary\n{state['step_summary']}\n"
+        sections.append(summary)
+        remaining -= count_tokens(summary)
+    
+    # 3. Include recent completed steps (last 3 only)
+    if state.get("completed_steps") and remaining > 500:
+        recent = state["completed_steps"][-3:]
+        steps = "## Recent Steps\n" + "\n".join(f"- {s}" for s in recent) + "\n"
+        sections.append(steps)
+        remaining -= count_tokens(steps)
+    
+    # 4. Retrieve role-specific memory from vector store
+    if remaining > 1000:
+        memory = retrieve_memory(
+            query=state["user_goal"],
+            role=agent_role,
+            max_tokens=min(remaining - 200, 2000)
+        )
+        if memory:
+            sections.append(f"## Relevant Memory\n{memory}\n")
+    
+    return "\n".join(sections)</code></pre>
+
+                    <h3>Step 3: Implement History Summarisation</h3>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>def compress_history_node(state: AgentWorkflowState) -> dict:
+    """
+    Triggered every 10 steps. Compresses completed_steps into step_summary.
+    Keeps the last 3 steps verbatim for recency.
+    """
+    if len(state["completed_steps"]) < 10:
+        return {}  # No compression needed yet
+    
+    steps_to_compress = state["completed_steps"][:-3]
+    current_summary = state.get("step_summary", "")
+    
+    prompt = f"""
+Previous summary: {current_summary}
+
+New steps to incorporate:
+{chr(10).join(f"- {s}" for s in steps_to_compress)}
+
+Write a dense, factual summary capturing all important decisions, 
+findings, and state changes. Be concise — max 300 words.
+"""
+    new_summary = llm.invoke(prompt).content
+    
+    return {
+        "step_summary": new_summary,
+        "completed_steps": state["completed_steps"][-3:]  # Keep only last 3
+    }</code></pre>
+
+                </section>
+
+                <!-- Section 5 -->
+                <section id="devops-angle">
+                    <h2>Context Engineering for DevOps: Autonomous Pipeline Agents</h2>
+
+                    <p>If you're a DevOps engineer, context engineering isn't just an AI research topic — it's the difference between an autonomous CI/CD agent that works and one that blows up your production cluster. Here are the three most important context engineering decisions for DevOps agentic systems:</p>
+
+                    <h3>1. Scope Agents to One Concern</h3>
+
+                    <p>Don't build a single "DevOps agent" that does everything. Build specialist agents: a <em>deployment planner</em>, a <em>Kubernetes configurator</em>, a <em>rollback validator</em>, and a <em>notification manager</em>. Each agent's context contains only the information it needs. The deployment planner doesn't need to see Slack notification templates. The rollback validator doesn't need the full git history — just the diff between the current and previous stable manifest.</p>
+
+                    <h3>2. Inject Infrastructure State, Not Infrastructure History</h3>
+
+                    <p>A common mistake: engineers give the agent the last 100 kubectl get events as raw text. That's thousands of tokens of noise. Instead, run a pre-processing step that extracts the structured state snapshot:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>import subprocess, json
+
+def get_cluster_state_for_agent(namespace: str) -> str:
+    """
+    Returns compressed cluster state — not raw kubectl output.
+    Context-engineered for agent consumption.
+    """
+    pods = json.loads(subprocess.check_output(
+        ["kubectl", "get", "pods", "-n", namespace, "-o", "json"]
+    ))
+    
+    # Extract only what the agent needs
+    state = {
+        "unhealthy_pods": [
+            {"name": p["metadata"]["name"], "status": p["status"]["phase"],
+             "restarts": p["status"]["containerStatuses"][0]["restartCount"]}
+            for p in pods["items"]
+            if p["status"]["phase"] not in ["Running", "Succeeded"]
+        ],
+        "total_pods": len(pods["items"]),
+        "namespace": namespace
+    }
+    
+    return json.dumps(state, indent=2)  # Structured, dense, token-efficient</code></pre>
+
+                    <h3>3. Gate Destructive Tools Behind Human Context</h3>
+
+                    <p>Context engineering isn't just about efficiency — it's about safety. For any agent tool that can delete resources, restart services, or modify configuration in production, require that the agent's context include an explicit human approval token before the tool becomes available. This is implemented as a conditional tool injection:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>def get_tools_for_agent(state: AgentWorkflowState) -> list:
+    """
+    Context engineering: tool availability depends on state.
+    Destructive tools only available after human approval.
+    """
+    safe_tools = [read_logs, get_metrics, describe_resource, list_pods]
+    
+    if state.get("human_approval_token"):
+        # Human approved — unlock destructive operations
+        return safe_tools + [delete_pod, scale_deployment, rollback_release]
+    
+    return safe_tools  # Read-only by default</code></pre>
+
+                    <p>This pattern — <strong>context-gated tool access</strong> — is one of the most important safety primitives in production agentic DevOps. I've seen it prevent at least three potential production incidents during client deployments.</p>
+
+                    <h3>The Enterprise Impact: Real Numbers</h3>
+
+                    <p>Teams that have implemented structured context engineering in their agentic DevOps pipelines report:</p>
+
+                    <ul>
+                        <li><strong>60–80% reduction</strong> in agent hallucination rate (agents recommending wrong kubectl commands or non-existent resource names)</li>
+                        <li><strong>35–50% reduction</strong> in LLM API costs per pipeline run (through token budget enforcement and history compression)</li>
+                        <li><strong>3–5× faster</strong> pipeline automation via parallel specialist agents vs. sequential single-agent approaches</li>
+                        <li><strong>Near-zero context truncation</strong> failures in long-running deployment workflows (previously a common cause of incomplete rollouts)</li>
+                    </ul>
+
+                    <p>These are not theoretical numbers. They come from production deployments I've worked on over the past 18 months with clients in financial services and logistics — industries where agent failures have real consequences.</p>
+
+                    <h3>Getting Context Engineering Skills: What to Learn Next</h3>
+
+                    <p>The demand for engineers who can build production agentic systems is outpacing supply by a wide margin. The skills gap is specifically in context engineering — not in knowing which API to call, but in understanding how to architect information flow across complex agent graphs.</p>
+
+                    <p>If you're serious about this, you need hands-on training with:</p>
+
+                    <ul>
+                        <li><strong>LangGraph</strong> — the leading framework for stateful multi-agent orchestration, with native support for parallel agents and structured state</li>
+                        <li><strong>RAG architecture</strong> — building the episodic and semantic memory stores that agent context retrieval depends on</li>
+                        <li><strong>Production agent monitoring</strong> — LangSmith, Weights &amp; Biases, and custom tracing for measuring context utilisation and agent performance</li>
+                        <li><strong>Kubernetes-native agent deployment</strong> — running agentic systems in isolated namespaces with proper resource management and security boundaries</li>
+                    </ul>
+
+                    <p>Our <a href="/training/agentic-ai.html"><strong>5-Day Agentic AI for Engineers Workshop</strong></a> covers all of this in depth — from foundational LangChain to full multi-agent production deployment on Kubernetes. Participants leave with working code they deploy on Day 5. Rated 4.91/5.0 across 200+ enterprise engineers.</p>
+                </section>
+
+                <!-- FAQ -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What is context engineering in agentic AI?</h3>
+                        <p>Context engineering is the discipline of systematically designing, managing, and optimising the information (context window) that an AI agent receives at runtime. It goes beyond simple prompt writing to include dynamic memory retrieval, tool definitions, conversation history compression, and structured instruction design — ensuring the agent always has exactly the right information to reason and act correctly.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How is context engineering different from prompt engineering?</h3>
+                        <p>Prompt engineering focuses on crafting static instructions for a single LLM call. Context engineering treats the entire agent context window as a dynamic, engineered artifact — deciding what memory to retrieve, which tool schemas to include, how to compress history, and how to prioritise competing instructions across multi-step agentic workflows. It's the difference between writing a script and designing a software system.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Why do parallel agent workflows require context engineering?</h3>
+                        <p>When multiple AI agents run in parallel (e.g., a planner, researcher, coder, and reviewer), each agent needs a carefully scoped context: only the relevant task, tools, and memory for its role. Poor context management causes agents to hallucinate due to information overload, miss critical state from sibling agents, or produce contradictory outputs. Context engineering defines the information boundaries between agents.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Which frameworks support context engineering best?</h3>
+                        <p>LangGraph is currently the strongest framework for structured context engineering — its TypedDict state system, node-level tool injection, and native parallel fan-out/fan-in support all align with context engineering principles. OpenAI's Assistants API provides managed memory but less control. For maximum control in production, LangGraph with a custom state schema is the recommended approach in 2026.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I measure if my context engineering is working?</h3>
+                        <p>Track four metrics: (1) hallucination rate — percentage of outputs containing errors not present in the provided context; (2) token cost per successful task completion; (3) context truncation events — how often agents run out of context window; and (4) task completion rate — how often the agent reaches the intended goal without human correction. Use LangSmith or custom OpenTelemetry traces to collect these metrics in production.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion: Context Engineering Is Your Next Career-Defining Skill</h2>
+
+                    <p>The shift from prompt engineering to context engineering marks a genuine maturation of the AI engineering discipline. We are moving from "tell the AI what to do" to "design the information architecture that lets the AI do the right thing, reliably, at scale."</p>
+
+                    <p>Engineers who invest in this skill now — understanding memory architectures, tool schema design, history compression strategies, and multi-agent context scoping — will be the ones architecting the autonomous systems that transform enterprises over the next five years. The GitHub community has noticed. Snowflake's engineering team has noticed. The only question is whether you get ahead of this curve or catch up to it later.</p>
+
+                    <p>I've been training DevOps and AI engineers for over 25 years — at JPMorgan, Deutsche Bank, Morgan Stanley, and now independently through gheWARE. The pattern I've seen with every major technology shift: the engineers who invest in fundamentals early build the systems everyone else has to maintain. Context engineering is that fundamental skill for the agentic AI era.</p>
+
+                    <p>If you want to build production agentic systems — not demos, but systems your company can actually deploy and trust — our training programme is the fastest path to get there.</p>
+                </section>
+
+            </div>
+
+            <!-- Author Bio Placeholder -->
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/genai-infrastructure-arms-race-devops-2026.html">The GenAI Infrastructure Arms Race: What Every DevOps Engineer Must Know</a></h3>
+                        <p>Stateful AI runtimes on Kubernetes, agent sandboxing, AI governance — the infrastructure story behind agentic AI at scale.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/ebpf-kubernetes-observability-2026.html">eBPF for Kubernetes Observability: Zero-Instrumentation Monitoring</a></h3>
+                        <p>How eBPF gives your agentic infrastructure the observability it needs to operate autonomously and safely.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Master Agentic AI Engineering — Production-Ready in 5 Days</h2>
+                <p>Build multi-agent systems with LangGraph, implement context engineering patterns, and deploy on Kubernetes. Our intensive workshop is rated 4.91/5.0 by 200+ enterprise engineers.</p>
+                <a href="/training/agentic-ai.html" class="btn-cta-primary">
+                    <span>View Agentic AI Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
