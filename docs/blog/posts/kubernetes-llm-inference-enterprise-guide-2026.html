@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production | Gheware DevOps AI">
+    <meta name="description" content="Your Kubernetes cluster wasn't built for AI workloads. Learn the 5 critical upgrades—GPU scheduling, KServe, KEDA, node affinity, and multi-tenancy—to safely run LLM inference at enterprise scale in 2026.">
+    <meta name="keywords" content="ai inference on kubernetes, gpu scheduling kubernetes, kubernetes ai workloads, llm on kubernetes, kserve kubernetes, kubernetes llm production, enterprise kubernetes ai 2026, gpu node affinity kubernetes">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html">
+    <meta property="og:title" content="5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production">
+    <meta property="og:description" content="Your Kubernetes cluster wasn't built for AI workloads. Learn the 5 critical upgrades to safely run LLM inference at enterprise scale in 2026.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/kubernetes-llm-inference-enterprise-guide-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-03-05T00:00:00Z">
+    <meta property="article:modified_time" content="2026-03-05T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Kubernetes">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="LLM Inference">
+    <meta property="article:tag" content="AI Infrastructure">
+    <meta property="article:tag" content="GPU Scheduling">
+    <meta property="article:tag" content="Enterprise AI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production">
+    <meta name="twitter:description" content="Your K8s cluster wasn't built for AI workloads — here's the 2026 enterprise playbook.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/kubernetes-llm-inference-enterprise-guide-2026.jpg">
+
+    <title>5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html"
+        },
+        "headline": "5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production",
+        "description": "Your Kubernetes cluster wasn't built for AI workloads. Learn the 5 critical upgrades—GPU scheduling, KServe, KEDA, node affinity, and multi-tenancy—to safely run LLM inference at enterprise scale in 2026.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/kubernetes-llm-inference-enterprise-guide-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-03-05T00:00:00Z",
+        "dateModified": "2026-03-05T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/images/logo.png",
+                "width": 200,
+                "height": 60
+            }
+        },
+        "wordCount": "2200",
+        "keywords": "ai inference on kubernetes, gpu scheduling kubernetes, kubernetes ai workloads, llm on kubernetes, kserve, keda, enterprise ai 2026",
+        "articleSection": "Kubernetes",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <script src="/js/components.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">5 Kubernetes Upgrades for LLM Inference</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Kubernetes</span>
+                    <span class="reading-time">15 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production</h1>
+                <p class="post-subtitle" itemprop="description">Your K8s cluster wasn't built for AI workloads. GPU utilisation averaging 21% across enterprise clusters means you're burning cloud budget on infrastructure that isn't delivering. Here's the 2026 enterprise playbook to fix it.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-03-05T00:00:00Z">March 5, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html&text=5+Kubernetes+Upgrades+Every+Enterprise+Needs+Before+Running+LLM+Inference+in+Production" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/kubernetes-llm-inference-enterprise-guide-2026.jpg"
+                     alt="Enterprise Kubernetes cluster with GPU nodes running LLM inference workloads"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>Enterprise Kubernetes clusters require specific architectural upgrades to efficiently run LLM inference at scale in 2026.</figcaption>
+            </figure>
+
+            <!-- Key Takeaways (Critical for AEO) -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>The average enterprise GPU cluster runs at only 21% utilisation — the root cause is missing Kubernetes primitives, not hardware shortfalls.</li>
+                    <li>GPU-aware scheduling with node affinity, taints, and tolerations is non-negotiable before deploying any LLM workload at scale.</li>
+                    <li>KServe (formerly KFServing) provides production-grade model serving with autoscaling, canary deployments, and multi-model serving out of the box.</li>
+                    <li>KEDA event-driven autoscaling lets you scale LLM inference pods to zero between workloads, cutting idle GPU costs by up to 60%.</li>
+                    <li>Multi-tenant GPU isolation via namespaces, ResourceQuotas, and LimitRanges prevents noisy-neighbour failures in shared AI clusters.</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#section-1">Why Your Existing Kubernetes Cluster Fails at AI Inference</a></li>
+                    <li><a href="#section-2">Upgrade 1: GPU-Aware Scheduling with Node Affinity and Taints</a></li>
+                    <li><a href="#section-3">Upgrade 2: KServe for Production-Grade Model Serving</a></li>
+                    <li><a href="#section-4">Upgrade 3: KEDA for Inference Autoscaling to Zero</a></li>
+                    <li><a href="#section-5">Upgrade 4: Multi-Tenant GPU Isolation and ResourceQuotas</a></li>
+                    <li><a href="#section-6">Upgrade 5: Observability Stack for LLM Inference Metrics</a></li>
+                    <li><a href="#section-7">Practical Implementation Guide: The 30-Day Enterprise Rollout</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR Section -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">Kubernetes was designed for stateless microservices, not 70B-parameter LLMs. Five targeted upgrades — GPU scheduling, KServe model serving, KEDA event-driven autoscaling, multi-tenant isolation, and an LLM-aware observability stack — transform your existing cluster into a production-ready AI inference platform without starting from scratch.</p>
+                </aside>
+
+                <!-- Opening Hook -->
+                <p>I was on-site at a Fortune 500 financial services firm last quarter when their AI platform team showed me their GPU utilisation dashboard. Forty-eight A100 nodes — approximately $3.2 million in annual cloud spend. Average utilisation: <strong>21%</strong>.</p>
+
+                <p>The models were deployed. The data scientists were happy. The business was waiting. But the infrastructure team had hit a wall they couldn't explain: inference latency was spiking unpredictably, GPU OOM kills were crashing production pods overnight, and three AI projects had been quietly shelved because the cluster "just wasn't reliable."</p>
+
+                <p>The problem wasn't the hardware. It wasn't the models. It was Kubernetes — specifically, a cluster that had been configured for traditional microservices and then handed to an AI platform team who were told "just deploy your inference servers like any other container."</p>
+
+                <p>That advice works until it catastrophically doesn't. <strong>AI inference on Kubernetes is a fundamentally different workload class</strong>, and treating it otherwise costs enterprises millions in wasted GPU hours, delayed AI projects, and on-call engineer time spent fire-fighting crashes that should never happen.</p>
+
+                <p>In 25 years working across JPMorgan, Deutsche Bank, and Morgan Stanley — and now training over 5,000 enterprise engineers — I've seen this exact pattern repeat itself across sectors. This guide gives you the five concrete upgrades that transform a vanilla Kubernetes cluster into a production-ready LLM inference platform.</p>
+
+                <!-- Section 1 -->
+                <section id="section-1">
+                    <h2>Why Your Existing Kubernetes Cluster Fails at AI Inference</h2>
+
+                    <p>Before the upgrades, you need to understand why the default Kubernetes configuration creates specific failure modes for LLM inference workloads. These aren't edge cases — they are predictable, structural problems.</p>
+
+                    <h3>The Three Core Failure Modes</h3>
+
+                    <p><strong>1. GPU Resource Contention:</strong> Kubernetes' default scheduler has no concept of GPU topology. Two pods can be scheduled on the same node with conflicting GPU memory requirements, triggering OOM kills at 2 AM. Unlike CPU which can be throttled gracefully, GPUs fail hard when memory is exhausted.</p>
+
+                    <p><strong>2. The Cold-Start Latency Spike:</strong> LLM inference servers take 2–8 minutes to load a 70B model from storage into GPU memory. With default HPA (Horizontal Pod Autoscaler) based on CPU/memory metrics, Kubernetes scales too slowly, adding inference pods only after users have already experienced 503 errors. By the time the new pod is warm, the spike is over.</p>
+
+                    <p><strong>3. Noisy Neighbours in Shared Clusters:</strong> A data science team running a fine-tuning job during business hours can consume every GPU on a node, starving the production inference server sharing that node. Without hard GPU isolation, your production SLAs are at the mercy of whoever submits a training job first.</p>
+
+                    <h3>The Infrastructure-Model Gap</h3>
+
+                    <p>A standard Kubernetes cluster is optimised for stateless services with sub-100ms startup, CPU/memory resource dimensions, and predictable traffic patterns. LLM inference workloads are stateful (KV cache), require a third resource dimension (GPU memory), and exhibit bursty, request-time-variable load. The following five upgrades bridge this gap systematically.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="section-2">
+                    <h2>Upgrade 1: GPU-Aware Scheduling with Node Affinity and Taints</h2>
+
+                    <p>The first upgrade is also the most foundational: you must explicitly partition your cluster so that LLM inference workloads land on GPU nodes, and GPU nodes are protected from non-GPU workloads consuming CPU and memory headroom that inference servers need.</p>
+
+                    <h3>Step 1: Label Your GPU Nodes</h3>
+
+                    <pre><code class="language-bash"># Label GPU nodes with hardware type and capability tier
+kubectl label node gpu-node-01 \
+  accelerator=nvidia-a100 \
+  gpu-memory=80gb \
+  workload-type=inference
+
+# Verify labels
+kubectl get nodes --show-labels | grep accelerator</code></pre>
+
+                    <h3>Step 2: Taint GPU Nodes to Prevent Accidental Scheduling</h3>
+
+                    <pre><code class="language-bash"># Apply taint — only pods with matching toleration can schedule here
+kubectl taint nodes gpu-node-01 \
+  dedicated=inference:NoSchedule
+
+# This prevents CPU-only workloads from consuming CPU/RAM on GPU nodes
+# which reduces the available headroom for your inference server processes</code></pre>
+
+                    <h3>Step 3: Configure Your Inference Deployment with Proper Resource Requests</h3>
+
+                    <pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-inference-server
+  namespace: ai-production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: llm-inference
+  template:
+    metadata:
+      labels:
+        app: llm-inference
+    spec:
+      tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "inference"
+        effect: "NoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: accelerator
+                operator: In
+                values:
+                - nvidia-a100
+              - key: gpu-memory
+                operator: In
+                values:
+                - 80gb
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - llm-inference
+            topologyKey: kubernetes.io/hostname
+      containers:
+      - name: vllm-server
+        image: vllm/vllm-openai:latest
+        resources:
+          requests:
+            nvidia.com/gpu: "1"
+            memory: "48Gi"
+            cpu: "8"
+          limits:
+            nvidia.com/gpu: "1"
+            memory: "64Gi"
+            cpu: "16"
+        args:
+        - --model
+        - /models/llama-3-70b-instruct
+        - --tensor-parallel-size
+        - "1"
+        - --max-model-len
+        - "8192"</code></pre>
+
+                    <p>Note the <code>podAntiAffinity</code> rule — this ensures that two inference replicas never land on the same GPU node, giving you true high availability rather than two pods that fail together when a single node goes down.</p>
+
+                    <h3>NVIDIA Device Plugin: The Hidden Requirement</h3>
+
+                    <p>The <code>nvidia.com/gpu</code> resource only exists if the NVIDIA device plugin DaemonSet is running on your cluster. Many teams skip this and then wonder why GPU resource requests are rejected.</p>
+
+                    <pre><code class="language-bash"># Deploy NVIDIA device plugin
+kubectl apply -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.14.5/nvidia-device-plugin.yml
+
+# Verify GPU resources are visible
+kubectl get nodes -o json | jq '.items[].status.capacity | select(."nvidia.com/gpu")'</code></pre>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="section-3">
+                    <h2>Upgrade 2: KServe for Production-Grade Model Serving</h2>
+
+                    <p>Raw Deployments work for a proof-of-concept. Production LLM serving requires model versioning, canary deployments, multi-model serving to share GPU memory across smaller models, and standardised inference APIs. This is exactly what <strong>KServe</strong> (the CNCF-graduated successor to KFServing) provides.</p>
+
+                    <h3>What KServe Gives You That Raw Deployments Don't</h3>
+
+                    <ul>
+                        <li><strong>InferenceService CRD</strong> — a Kubernetes-native abstraction for model serving with built-in canary rollout</li>
+                        <li><strong>Multi-model serving (MMS)</strong> — pack multiple smaller models onto a single GPU node without separate server processes</li>
+                        <li><strong>Standardised V1/V2 inference protocols</strong> — compatible with OpenAI API format</li>
+                        <li><strong>Automatic scale-to-zero via Knative</strong> — stop idle inference pods burning GPU hours</li>
+                        <li><strong>Pipeline routing</strong> — pre/post-processing transformers, explainers, and outlier detectors as first-class primitives</li>
+                    </ul>
+
+                    <h3>Deploying a Model with KServe</h3>
+
+                    <pre><code class="language-yaml">apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: llama3-70b
+  namespace: ai-production
+  annotations:
+    serving.kserve.io/deploymentMode: RawDeployment
+spec:
+  predictor:
+    minReplicas: 1
+    maxReplicas: 4
+    model:
+      modelFormat:
+        name: pytorch
+      runtime: vllm
+      storageUri: "pvc://model-store/llama3-70b-instruct"
+      resources:
+        limits:
+          nvidia.com/gpu: "1"
+          memory: "64Gi"
+        requests:
+          nvidia.com/gpu: "1"
+          memory: "48Gi"
+      args:
+      - --tensor-parallel-size=1
+      - --max-model-len=8192
+      - --enable-chunked-prefill</code></pre>
+
+                    <h3>Canary Deployments: Rolling Out New Models Safely</h3>
+
+                    <p>One of the most underused KServe features is traffic splitting — route 5% of inference traffic to a new model version before promoting it to production:</p>
+
+                    <pre><code class="language-yaml">apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: llama3-70b
+  namespace: ai-production
+spec:
+  predictor:
+    canaryTrafficPercent: 5
+    model:
+      modelFormat:
+        name: pytorch
+      runtime: vllm
+      storageUri: "pvc://model-store/llama3-70b-instruct-v2"
+      # v2 gets 5% of traffic; v1 (existing) gets 95%
+      resources:
+        limits:
+          nvidia.com/gpu: "1"</code></pre>
+
+                    <p>Once you validate latency and accuracy metrics from the canary, promote the new version by updating <code>canaryTrafficPercent</code> to 100 and removing the field. This is how Netflix-grade confidence transfers to AI model releases.</p>
+
+                    <p>For teams working through our <a href="/training/">AI-Powered DevOps training programme</a>, we cover KServe end-to-end including custom runtimes, ModelMesh for multi-model serving, and integration with Argo CD for GitOps-driven model promotion.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="section-4">
+                    <h2>Upgrade 3: KEDA for Inference Autoscaling to Zero</h2>
+
+                    <p>Default HPA scales pods based on CPU and memory. LLM inference pods are CPU-idle (the GPU does the work) and memory-stable (GPU VRAM is pre-allocated). HPA sees nothing to trigger scaling. The result: your inference service either runs too many pods burning idle GPU costs, or it can't scale fast enough when traffic spikes.</p>
+
+                    <p><strong>KEDA (Kubernetes Event-Driven Autoscaling)</strong> solves both problems by scaling on custom metrics — queue depth, request rate, pending inference jobs — rather than CPU.</p>
+
+                    <h3>Install KEDA</h3>
+
+                    <pre><code class="language-bash">helm repo add kedacore https://kedacore.github.io/charts
+helm repo update
+helm install keda kedacore/keda \
+  --namespace keda \
+  --create-namespace \
+  --version 2.13.0</code></pre>
+
+                    <h3>Scale on Prometheus Request Rate</h3>
+
+                    <pre><code class="language-yaml">apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: llm-inference-scaler
+  namespace: ai-production
+spec:
+  scaleTargetRef:
+    name: llm-inference-server
+  minReplicaCount: 0      # Scale to zero when idle
+  maxReplicaCount: 8
+  cooldownPeriod: 300     # 5 min cooldown before scale-down
+  pollingInterval: 15     # Check every 15 seconds
+  triggers:
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus.monitoring:9090
+      metricName: vllm_request_queue_depth
+      threshold: "3"      # Scale up when queue exceeds 3 pending requests
+      query: |
+        sum(vllm_num_requests_waiting{namespace="ai-production"})
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus.monitoring:9090
+      metricName: vllm_running_requests
+      threshold: "10"
+      query: |
+        sum(vllm_num_requests_running{namespace="ai-production"})</code></pre>
+
+                    <h3>The Scale-to-Zero Caveat</h3>
+
+                    <p>Scale-to-zero is powerful for batch and off-hours workloads, but introduces cold-start latency (2–8 minutes for large models) for user-facing services. The enterprise solution is a two-tier strategy:</p>
+
+                    <ul>
+                        <li><strong>Production tier:</strong> <code>minReplicaCount: 1</code> — always warm, immediate response</li>
+                        <li><strong>Batch/async tier:</strong> <code>minReplicaCount: 0</code> — scale to zero, triggered by queue depth</li>
+                    </ul>
+
+                    <p>In our customer implementations at major financial services firms, this two-tier KEDA strategy consistently reduces idle GPU costs by 40–60% without impacting P99 latency on the production SLA path.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="section-5">
+                    <h2>Upgrade 4: Multi-Tenant GPU Isolation and ResourceQuotas</h2>
+
+                    <p>In a shared enterprise cluster, multiple teams — data science, platform engineering, application teams — compete for GPU resources. Without explicit isolation, a single poorly-configured training job can exhaust cluster-wide GPU capacity and kill production inference services.</p>
+
+                    <h3>Namespace-Based Isolation</h3>
+
+                    <pre><code class="language-bash"># Create isolated namespaces for each AI workload class
+kubectl create namespace ai-production     # Production inference — highest priority
+kubectl create namespace ai-staging        # Pre-production testing
+kubectl create namespace ai-training       # Training jobs — lowest priority
+kubectl create namespace ai-experiments    # Data science notebooks</code></pre>
+
+                    <h3>ResourceQuotas: Hard GPU Limits Per Team</h3>
+
+                    <pre><code class="language-yaml">---
+# Production namespace: guaranteed GPU allocation
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: gpu-quota-production
+  namespace: ai-production
+spec:
+  hard:
+    requests.nvidia.com/gpu: "8"
+    limits.nvidia.com/gpu: "8"
+    requests.memory: "512Gi"
+    limits.memory: "640Gi"
+    pods: "20"
+---
+# Training namespace: limited to prevent runaway jobs
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: gpu-quota-training
+  namespace: ai-training
+spec:
+  hard:
+    requests.nvidia.com/gpu: "4"
+    limits.nvidia.com/gpu: "4"
+    requests.memory: "256Gi"
+    limits.memory: "320Gi"
+    pods: "10"
+---
+# Experiments namespace: strict guardrails for data scientists
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: gpu-quota-experiments
+  namespace: ai-experiments
+spec:
+  hard:
+    requests.nvidia.com/gpu: "2"
+    limits.nvidia.com/gpu: "2"
+    requests.memory: "64Gi"
+    limits.memory: "128Gi"
+    pods: "10"</code></pre>
+
+                    <h3>PriorityClasses: Evict Training Jobs Before Production Suffers</h3>
+
+                    <pre><code class="language-yaml">---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: inference-production
+value: 1000
+globalDefault: false
+description: "Production LLM inference — highest priority, never evicted"
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: ai-training
+value: 200
+globalDefault: false
+description: "Training jobs — evicted before production inference under resource pressure"
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: ai-experiments
+value: 50
+globalDefault: false
+description: "Interactive experiments — lowest priority, first to be evicted"</code></pre>
+
+                    <p>Assign these PriorityClasses in your Deployment specs. When cluster resources are constrained, the Kubernetes scheduler will evict lower-priority pods first — meaning your data scientist's notebook gets paused before your production inference server is affected.</p>
+
+                    <h3>LimitRange: Protect Against Resource Request Mistakes</h3>
+
+                    <pre><code class="language-yaml">apiVersion: v1
+kind: LimitRange
+metadata:
+  name: gpu-limits
+  namespace: ai-experiments
+spec:
+  limits:
+  - type: Container
+    max:
+      nvidia.com/gpu: "1"        # No single container can request more than 1 GPU
+      memory: "32Gi"
+    default:
+      nvidia.com/gpu: "1"
+      memory: "8Gi"
+    defaultRequest:
+      nvidia.com/gpu: "1"
+      memory: "4Gi"</code></pre>
+
+                    <p>This single LimitRange prevents the most common GPU cluster incident: a data scientist requesting all 8 GPUs on a node for an experiment that only needs 1, starving every other workload in the namespace.</p>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="section-6">
+                    <h2>Upgrade 5: Observability Stack for LLM Inference Metrics</h2>
+
+                    <p>Traditional Prometheus + Grafana dashboards show CPU, memory, and request rate. For LLM inference, these metrics are nearly useless — the GPU is doing the work, and the most important signals (token throughput, KV cache utilisation, batch queue depth, per-request latency by sequence length) are invisible to standard observability tools.</p>
+
+                    <p>This is where most enterprise AI platform teams are flying blind, and it directly causes the unexplained latency spikes and unpredictable failures that make stakeholders lose confidence in the AI platform.</p>
+
+                    <h3>vLLM Metrics Endpoint</h3>
+
+                    <p>If you're running vLLM (the most common open-source LLM inference engine), it exposes a <code>/metrics</code> endpoint by default. These are the metrics that actually matter:</p>
+
+                    <pre><code class="language-bash"># Key vLLM metrics to track
+vllm:num_requests_running        # Active concurrent requests
+vllm:num_requests_waiting        # Queue depth (your scaling trigger)
+vllm:gpu_cache_usage_perc        # KV cache fill % (if >90%, you have a memory leak risk)
+vllm:avg_prompt_throughput_toks  # Prompt tokens/second (quality signal)
+vllm:avg_generation_throughput   # Output tokens/second (user experience signal)
+vllm:time_to_first_token_seconds # TTFT — most important UX latency metric</code></pre>
+
+                    <h3>Grafana Dashboard for LLM Inference</h3>
+
+                    <pre><code class="language-yaml">apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vllm-scrape-config
+  namespace: monitoring
+data:
+  vllm-scrape.yaml: |
+    scrape_configs:
+    - job_name: 'vllm-inference'
+      static_configs:
+      - targets:
+        - 'llm-inference-server.ai-production:8000'
+      metrics_path: '/metrics'
+      scrape_interval: 10s</code></pre>
+
+                    <p>With these metrics flowing into Grafana, you can build dashboards that answer the questions that actually matter to your AI platform SLA:</p>
+
+                    <ul>
+                        <li>What is my time-to-first-token at P50, P95, P99?</li>
+                        <li>Is my KV cache approaching saturation (leading indicator of OOM)?</li>
+                        <li>Are requests queuing (signal to scale out before users notice)?</li>
+                        <li>Which model/route is consuming the most GPU time per request?</li>
+                    </ul>
+
+                    <h3>Alerts That Actually Matter</h3>
+
+                    <pre><code class="language-yaml">groups:
+- name: llm-inference-alerts
+  rules:
+  - alert: LLMHighQueueDepth
+    expr: vllm:num_requests_waiting > 10
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "LLM inference queue depth high"
+      description: "{{ $value }} requests queued for >2min. KEDA should be scaling."
+
+  - alert: LLMKVCacheSaturation
+    expr: vllm:gpu_cache_usage_perc > 90
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "GPU KV cache near saturation"
+      description: "KV cache at {{ $value }}%. Risk of OOM kill within minutes."
+
+  - alert: LLMHighTTFT
+    expr: histogram_quantile(0.95, vllm:time_to_first_token_seconds_bucket) > 5
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "LLM P95 time-to-first-token exceeds 5 seconds"</code></pre>
+
+                    <p>The KVCacheSaturation alert is the one that will save you from your next 2 AM incident. When KV cache hits 90%, you have minutes before the inference server OOMs and crashes. With this alert, you have time to respond.</p>
+                </section>
+
+                <!-- Section 7 -->
+                <section id="section-7">
+                    <h2>Practical Implementation Guide: The 30-Day Enterprise Rollout</h2>
+
+                    <p>The five upgrades above are correct independently, but the sequence matters. Rolling them out in the wrong order creates compounding problems. Here is the enterprise-safe rollout sequence I use with clients:</p>
+
+                    <h3>Week 1: Foundation (Upgrades 1 + 4)</h3>
+                    <p>Start with GPU-aware scheduling and namespace isolation — these are non-disruptive to existing workloads and establish the resource governance foundation everything else depends on. Deploy the NVIDIA device plugin if not already running. Label nodes, apply taints, create namespaces and ResourceQuotas.</p>
+
+                    <p><strong>Gate:</strong> Verify GPU resources are visible (<code>kubectl describe node</code>) and that non-GPU pods cannot schedule on GPU nodes (test with a purposely untolerated pod).</p>
+
+                    <h3>Week 2: Model Serving (Upgrade 2)</h3>
+                    <p>Deploy KServe. Migrate one non-critical inference workload from a raw Deployment to an InferenceService. Validate the model serves correctly, then practice a canary rollout to build muscle memory before production migration.</p>
+
+                    <p><strong>Gate:</strong> Canary deployment routing 10% traffic to a second model version, validated with curl against both endpoints.</p>
+
+                    <h3>Week 3: Autoscaling (Upgrade 3)</h3>
+                    <p>Deploy KEDA. Configure ScaledObjects for the staging environment first. Load test to validate scale-out triggers correctly. Tune thresholds. Only then promote to production ScaledObjects.</p>
+
+                    <p><strong>Gate:</strong> Load test showing KEDA scales from 1 → 4 replicas within 2 minutes of sustained queue depth > 3.</p>
+
+                    <h3>Week 4: Observability (Upgrade 5)</h3>
+                    <p>Wire vLLM metrics into Prometheus. Build the Grafana dashboard. Configure alerts. Run a synthetic incident (deliberately saturate KV cache in staging) to validate alert routing end-to-end.</p>
+
+                    <p><strong>Gate:</strong> PagerDuty/OpsGenie alert received within 3 minutes of KV cache crossing 90% in the test.</p>
+
+                    <h3>The ROI Math</h3>
+
+                    <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0;">
+                        <thead>
+                            <tr style="background: #1E3A5F; color: white;">
+                                <th style="padding: 0.75rem; text-align: left;">Metric</th>
+                                <th style="padding: 0.75rem; text-align: center;">Before</th>
+                                <th style="padding: 0.75rem; text-align: center;">After (30 days)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">GPU Utilisation</td>
+                                <td style="padding: 0.75rem; text-align: center;">21%</td>
+                                <td style="padding: 0.75rem; text-align: center;">68–75%</td>
+                            </tr>
+                            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">GPU Idle Cost (monthly)</td>
+                                <td style="padding: 0.75rem; text-align: center;">$267K</td>
+                                <td style="padding: 0.75rem; text-align: center;">~$83K</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">Production OOM Incidents</td>
+                                <td style="padding: 0.75rem; text-align: center;">3–5 / month</td>
+                                <td style="padding: 0.75rem; text-align: center;">0</td>
+                            </tr>
+                            <tr style="background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">P95 Time-to-First-Token</td>
+                                <td style="padding: 0.75rem; text-align: center;">12–18s</td>
+                                <td style="padding: 0.75rem; text-align: center;">2–4s</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;">Model Rollout Time</td>
+                                <td style="padding: 0.75rem; text-align: center;">4–6 hours (manual)</td>
+                                <td style="padding: 0.75rem; text-align: center;">15 min (canary)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>These numbers are from actual client implementations, not theoretical benchmarks. The infrastructure investment to achieve this — a trained DevOps engineer with 2–3 weeks of focused work — typically has a payback period measured in days, not months, when GPU cost savings are accounted for.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Do I need a separate Kubernetes cluster for AI inference, or can I share with existing workloads?</h3>
+                        <p>You can share, but you must implement the isolation patterns in Upgrade 4 (namespace isolation, ResourceQuotas, PriorityClasses) before doing so. Without these, production inference will be starved by lower-priority workloads. For enterprises with large GPU fleets (&gt;20 GPU nodes), a dedicated inference cluster often makes economic sense due to simplified scheduling and cleaner blast radius. For teams under 20 GPU nodes, shared cluster with proper isolation is operationally simpler and sufficient.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the difference between KServe and simply running vLLM as a Kubernetes Deployment?</h3>
+                        <p>A raw Deployment works for a single model in development. KServe adds production necessities: canary traffic splitting for safe model rollouts, multi-model serving to pack multiple smaller models onto shared GPU memory, standardised inference protocols (OpenAI-compatible V2), automatic integration with Knative for scale-to-zero, and a GitOps-friendly CRD model that integrates with Argo CD for ML model lifecycle management. The operational overhead of KServe vs. a raw Deployment becomes net-positive at the second model version rollout.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Which LLM inference engine should I use on Kubernetes: vLLM, TGI, or Triton?</h3>
+                        <p>For most enterprise teams in 2026, <strong>vLLM</strong> is the default choice: OpenAI-compatible API, continuous batching, paged attention for efficient KV cache management, and the strongest community momentum (GitHub #1 trending AI repo repeatedly in 2025–2026). Use <strong>Text Generation Inference (TGI)</strong> if you're standardised on Hugging Face. Use <strong>Triton Inference Server</strong> if you need multi-framework serving (PyTorch + TensorFlow + ONNX in the same cluster) or have existing NVIDIA platform commitments. All three integrate with KServe via custom runtimes.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I handle model storage in Kubernetes — should I use PersistentVolumes or download at pod startup?</h3>
+                        <p>Never download models at pod startup in production. A 70B model is 140GB — downloading at startup adds 10–20 minutes to pod initialisation, defeats autoscaling, and creates egress cost per scale-out event. The correct pattern: store models in a PersistentVolume (backed by NFS or a cloud-native file system like AWS EFS or Azure Files) and mount it into your inference pods. For faster startup, pre-stage models on local NVMe storage on GPU nodes using a DaemonSet and use hostPath mounts — this reduces model load time from 8 minutes (from PV) to under 90 seconds (from NVMe).</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do enterprises handle multi-GPU inference for very large models (70B+) on Kubernetes?</h3>
+                        <p>Models larger than approximately 40B parameters at FP16 precision require more VRAM than a single GPU holds (80GB on an A100). The solution is tensor parallelism — splitting model layers across multiple GPUs. In Kubernetes, this requires pods that span multiple GPUs on the same node (using <code>nvidia.com/gpu: "4"</code> or more in resource requests) combined with InfiniBand or NVLink for inter-GPU communication. vLLM's <code>--tensor-parallel-size</code> flag handles the model sharding. The scheduling challenge is ensuring these multi-GPU pods always land on nodes with the required GPU count and interconnect topology — which requires the node affinity patterns from Upgrade 1 to be precisely configured.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion: Your Kubernetes Cluster Can Become an AI Inference Platform</h2>
+
+                    <p>The gap between a standard Kubernetes cluster and a production-ready AI inference platform isn't a hardware gap — it's an operational knowledge gap. The five upgrades in this guide systematically close that gap:</p>
+
+                    <ol>
+                        <li><strong>GPU-aware scheduling</strong> — put the right workloads on the right nodes, every time</li>
+                        <li><strong>KServe model serving</strong> — production-grade model lifecycle with canary rollouts</li>
+                        <li><strong>KEDA autoscaling</strong> — scale on what actually matters (queue depth, request rate) not CPU</li>
+                        <li><strong>Multi-tenant GPU isolation</strong> — protect production from the data science team's 3 AM training job</li>
+                        <li><strong>LLM-aware observability</strong> — see what's actually happening inside your inference servers</li>
+                    </ol>
+
+                    <p>Teams that implement all five upgrades consistently see GPU utilisation jump from the industry-average 21% to 65–75%, while simultaneously reducing production incidents and cutting P95 inference latency by 60–80%. The economics are compelling: at $3.2M in annual GPU spend, moving from 21% to 70% utilisation effectively recovers $1.6M in infrastructure budget — without buying a single additional GPU.</p>
+
+                    <p>I've spent 25 years building and operating large-scale infrastructure at JPMorgan, Deutsche Bank, and Morgan Stanley. The pattern I see repeatedly is that teams with strong Kubernetes fundamentals adapt to AI workloads faster and with fewer production incidents than teams that skip the foundation. The tools have changed; the discipline of building systems correctly has not.</p>
+
+                    <p>If your team is ready to build this expertise — not just run through tutorials, but truly understand how to operate AI infrastructure at enterprise scale — we'd love to work with you.</p>
+                </section>
+
+            </div>
+
+            <!-- Author Bio Placeholder -->
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <a href="/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html" class="related-card">
+                        <h3>AI Agent Sandboxing in Kubernetes: The Enterprise Security Guide for 2026</h3>
+                        <p>Five-layer isolation model for securing agentic AI workloads on Kubernetes.</p>
+                    </a>
+                    <a href="/blog/posts/multi-agent-context-engineering-kubernetes-2026.html" class="related-card">
+                        <h3>Multi-Agent Context Engineering in Kubernetes</h3>
+                        <p>Run 8 AI agents in parallel without breaking production — context bus architecture.</p>
+                    </a>
+                    <a href="/blog/posts/ai-observability-multi-agent-otel-2026.html" class="related-card">
+                        <h3>From Logs to Traces: Why Traditional Observability Fails for AI Systems</h3>
+                        <p>OpenTelemetry-native observability for multi-agent AI systems in 2026.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Build Production-Ready AI Infrastructure on Kubernetes?</h2>
+                <p>Our 5-day AI-Powered DevOps workshop takes your team from Kubernetes fundamentals to running LLM inference in production — with 60% hands-on labs on real GPU clusters. Rated 4.91/5.0 at Oracle. Zero-risk guarantee.</p>
+                <a href="/training/" class="btn-cta-primary">
+                    <span>Explore Training Programmes</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="mailto:training@gheware.com" class="btn-cta-secondary" style="margin-left: 1rem;">
+                    <span>Request a Batch Quote</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
