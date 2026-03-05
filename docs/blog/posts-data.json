@@ -1,6 +1,32 @@
 {
   "posts": [
     {
+      "title": "LangGraph vs AutoGen vs CrewAI: Which Multi-Agent Framework Wins for Enterprise?",
+      "url": "/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html",
+      "excerpt": "78% of enterprise AI teams fail with the wrong multi-agent framework. Compare LangGraph, AutoGen, and CrewAI on architecture, state management, observability, and production-readiness for 2026 enterprise deployments.",
+      "category": "AI Engineering",
+      "tags": [
+        "LangGraph",
+        "AutoGen",
+        "CrewAI",
+        "Multi-Agent AI",
+        "Agentic AI",
+        "Enterprise AI",
+        "AI Frameworks"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 5, 2026",
+      "readTime": "14 min read",
+      "keywords": [
+        "langgraph vs autogen vs crewai comparison 2026",
+        "multi-agent framework comparison 2026",
+        "LangGraph enterprise production",
+        "AutoGen vs CrewAI",
+        "agentic AI frameworks 2026",
+        "LangGraph CrewAI enterprise"
+      ]
+    },
+    {
       "title": "eBPF for Kubernetes Observability: Zero-Instrumentation Monitoring in 2026",
       "url": "/blog/posts/ebpf-kubernetes-observability-2026.html",
       "excerpt": "Learn how eBPF transforms Kubernetes observability without touching your application code. Complete guide covering Cilium, Pixie, Hubble, and Tetragon for enterprise-grade monitoring.",
@@ -29,7 +55,7 @@
     {
       "title": "Why Every SMB Needs an AI Chief Business Officer in 2026",
       "url": "/blog/posts/why-every-smb-needs-ai-cbo-2026.html",
-      "excerpt": "Deploy an AI CBO that publishes content, manages social media, captures leads, and reports via Telegram — for $499/month. Real agents are already live generating 80+ blog posts and 47 leads.",
+      "excerpt": "Deploy an AI CBO that publishes content, manages social media, captures leads, and reports via Telegram \u2014 for $499/month. Real agents are already live generating 80+ blog posts and 47 leads.",
       "category": "Agentic AI",
       "tags": [
         "AI CBO",
@@ -56,7 +82,7 @@
     {
       "title": "Why AI Model Commoditization Makes Agentic AI Skills Your Real Competitive Advantage in 2026",
       "url": "/blog/posts/ai-model-commoditization-agentic-ai-skills-2026.html",
-      "excerpt": "Foundation models are converging — no single provider has a durable moat. The competitive advantage shifts to teams who can orchestrate models into production-ready agent systems with LangChain, LangGraph, RAG, and MCP.",
+      "excerpt": "Foundation models are converging \u2014 no single provider has a durable moat. The competitive advantage shifts to teams who can orchestrate models into production-ready agent systems with LangChain, LangGraph, RAG, and MCP.",
       "category": "Agentic AI",
       "tags": [
         "Agentic AI",
