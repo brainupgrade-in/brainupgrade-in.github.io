@@ -1,6 +1,7 @@
 /**
  * Google Analytics Loader for DevOps Gheware
  * Handles GA4 tracking across all pages
+ * Updated: 2026-03-08 — cache bust for custom domain CDN
  */
 
 (function() {
