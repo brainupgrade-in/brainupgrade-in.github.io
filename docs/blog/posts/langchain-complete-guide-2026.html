@@ -859,7 +859,56 @@ except Exception as e:
             </div>
 
             <!-- Author Bio Placeholder -->
-            <div id="author-bio-placeholder"></div>
+            
+<!-- Lead Magnet CTA -->
+<div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
+  <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
+  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+  <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <input type="hidden" name="website" value="">
+    <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+    <input name="email" type="email" required placeholder="Work email" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:200px">
+    <input name="company" placeholder="Company" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+    <button type="submit" style="background:#f59e0b;color:#1e3a5f;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer">Get Free Guide</button>
+  </form>
+  <p class="lead-msg" style="margin:8px 0 0;font-size:13px;display:none"></p>
+</div>
+
+
+<!-- Newsletter Signup -->
+<div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+  <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+  <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+  <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <input type="hidden" name="website" value="">
+    <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+    <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+    <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+  </form>
+  <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+</div>
+<script>
+async function submitNewsletter(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const msg = document.getElementById('newsletter-msg');
+  try {
+    const r = await fetch('https://dev-leads.gheware-ai.com/newsletter', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    msg.textContent = j.message || 'Thanks! Check your inbox.';
+    msg.style.display = 'block';
+    form.reset();
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+  }
+}
+</script>
+
+<div id="author-bio-placeholder"></div>
 
             <!-- CTA Section -->
             <section class="post-cta">
@@ -875,5 +924,26 @@ except Exception as e:
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
+
+<script>
+async function submitLeadMagnet(e, leadId, ctaId) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const cta = document.getElementById(ctaId);
+  const msg = cta ? cta.querySelector('.lead-msg') : null;
+  try {
+    const r = await fetch('https://dev-leads.gheware-ai.com/' + leadId, {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    if (msg) { msg.textContent = j.message || 'Check your inbox!'; msg.style.display = 'block'; }
+    form.reset();
+  } catch(err) {
+    if (msg) { msg.textContent = 'Something went wrong. Try again.'; msg.style.display = 'block'; }
+  }
+}
+</script>
+
 </body>
 </html>
