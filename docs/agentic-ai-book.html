@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta -->
+    <title>AGENTIC AI: The Practitioner's Guide — Book by Rajesh Gheware | Amazon India</title>
+    <meta name="description"
+        content="505 pages. 119 hands-on labs. Build Production-Ready AI Agents with LangChain, LangGraph, RAG, MCP, and FastAPI. By Rajesh Gheware. Rated 4.91/5.0 at Oracle. Now on Amazon India.">
+    <meta name="keywords"
+        content="Agentic AI book, LangChain, LangGraph, RAG, MCP, FastAPI, AI agents, Rajesh Gheware, gheWARE, enterprise AI training">
+    <link rel="canonical" href="https://devops.gheware.com/agentic-ai-book.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AGENTIC AI: The Practitioner's Guide">
+    <meta property="og:description"
+        content="505 pages. 119 hands-on labs. Build Production-Ready AI Agents with LangChain, LangGraph, RAG, MCP, and FastAPI. Rated 4.91/5.0 at Oracle.">
+    <meta property="og:type" content="book">
+    <meta property="og:url" content="https://devops.gheware.com/agentic-ai-book.html">
+    <meta property="og:image" content="https://devops.gheware.com/images/agentic-ai-book-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="gheWARE — Enterprise AI & DevOps Training">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AGENTIC AI: The Practitioner's Guide">
+    <meta name="twitter:description"
+        content="505 pages. 119 hands-on labs. LangChain → LangGraph → RAG → MCP → FastAPI → Production.">
+    <meta name="twitter:image" content="https://devops.gheware.com/images/agentic-ai-book-cover.jpg">
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRDMMEZ26F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TRDMMEZ26F');
+    </script>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ink: #0a0a0f;
+            --ink-2: #0d1b2e;
+            --ink-3: #1a2f4a;
+            --surface-dark: #0a1628;
+            --surface-mid: #112030;
+            --border-dark: #1e3a5f;
+            --text-primary: #e8edf2;
+            --text-secondary: #a0b4c8;
+            --text-muted: #607080;
+            --amber: #ff9900;
+            --amber-light: #ffb347;
+            --teal: #4ecdc4;
+            --teal-deep: #0d9488;
+            --violet: #8b5cf6;
+            --violet-deep: #6d28d9;
+            --rose: #ff6b35;
+            --green: #22c55e;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            color: var(--text-primary);
+            background: var(--surface-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ─── NAV ─── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 22, 40, 0.92);
+            backdrop-filter: saturate(180%) blur(16px);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            height: 64px;
+        }
+
+        .nav-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-brand span {
+            color: var(--rose);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta-btn {
+            background: var(--amber);
+            color: #0a1628 !important;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 700 !important;
+            font-size: 0.85rem !important;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .nav-cta-btn:hover {
+            background: var(--amber-light);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--surface-dark);
+            position: relative;
+            overflow: hidden;
+            padding-top: 64px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 15% 40%, rgba(139, 92, 246, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 85% 60%, rgba(78, 205, 196, 0.10) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 50% 20%, rgba(255, 153, 0, 0.06) 0%, transparent 60%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--violet) 0%, var(--teal) 33%, var(--amber) 66%, var(--rose) 100%);
+        }
+
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 32px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 153, 0, 0.12);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            color: var(--amber-light);
+            padding: 6px 16px;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 .subtitle-line {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary);
+            font-style: italic;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin: 24px 0 36px;
+            max-width: 540px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-amazon {
+            background: var(--amber);
+            color: #0a1628;
+            padding: 16px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s;
+            box-shadow: 0 4px 20px rgba(255, 153, 0, 0.3);
+        }
+
+        .btn-amazon:hover {
+            background: var(--amber-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(255, 153, 0, 0.45);
+        }
+
+        .btn-free {
+            background: transparent;
+            color: var(--teal);
+            border: 2px solid var(--teal);
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s;
+        }
+
+        .btn-free:hover {
+            background: var(--teal);
+            color: #0a1628;
+            transform: translateY(-2px);
+        }
+
+        .hero-book-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .book-cover-wrap {
+            position: relative;
+        }
+
+        .book-cover-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .book-cover-img {
+            width: 100%;
+            max-width: 340px;
+            border-radius: 12px;
+            box-shadow:
+                -8px 8px 0 rgba(0, 0, 0, 0.4),
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(139, 92, 246, 0.2);
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover-img:hover {
+            transform: rotate(-2deg) scale(1.02);
+        }
+
+        .book-cover-placeholder {
+            width: 280px;
+            height: 380px;
+            background: linear-gradient(135deg, #1a2f4a 0%, #0d1b2e 100%);
+            border-radius: 12px;
+            border: 1px solid var(--border-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            text-align: center;
+            box-shadow: -8px 8px 0 rgba(0,0,0,0.4), 0 20px 60px rgba(0,0,0,0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-cover-placeholder .book-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .book-cover-placeholder h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .book-cover-placeholder p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .book-rating-badge {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: var(--amber);
+            color: #0a1628;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(255,153,0,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-ctas { justify-content: center; }
+            .hero-desc { margin: 24px auto 36px; }
+        }
+
+        /* ─── SOCIAL PROOF BAR ─── */
+        .proof-bar {
+            background: var(--ink-3);
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+            padding: 20px 32px;
+        }
+
+        .proof-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .proof-item {
+            text-align: center;
+        }
+
+        .proof-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .proof-number .highlight {
+            color: var(--amber);
+        }
+
+        .proof-label {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 2px;
+        }
+
+        .proof-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--border-dark);
+        }
+
+        @media (max-width: 600px) {
+            .proof-divider { display: none; }
+        }
+
+        /* ─── SECTIONS ─── */
+        .section {
+            padding: 80px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-full {
+            padding: 80px 32px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--violet);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 2px;
+            background: var(--violet);
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin-bottom: 48px;
+        }
+
+        /* ─── WHAT'S INSIDE ─── */
+        .whats-inside-bg {
+            background: var(--surface-mid);
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(26, 47, 74, 0.5);
+            border: 1px solid var(--border-dark);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--violet);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(109, 40, 217, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ─── CHAPTERS ─── */
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .chapter-card {
+            background: var(--surface-mid);
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            padding: 20px 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: all 0.25s;
+        }
+
+        .chapter-card:hover {
+            border-color: var(--teal);
+            background: rgba(17, 32, 48, 0.8);
+        }
+
+        .chapter-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--teal);
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .chapter-info h4 {
+            color: #fff;
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .chapter-info p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* ─── FREE CHAPTER FORM ─── */
+        .free-chapter-bg {
+            background: linear-gradient(135deg, #0a1628 0%, #112030 100%);
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .free-chapter-inner {
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .free-chapter-form {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .free-chapter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 18px;
+            background: rgba(26, 47, 74, 0.6);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .free-chapter-form input:focus {
+            border-color: var(--teal);
+        }
+
+        .free-chapter-form input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .free-chapter-form button {
+            background: var(--teal);
+            color: #0a1628;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .free-chapter-form button:hover {
+            background: #62e8e0;
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
+        /* ─── AUTHOR BIO ─── */
+        .author-bg {
+            background: var(--surface-mid);
+            border-top: 1px solid var(--border-dark);
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .author-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--violet-deep), var(--teal-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            flex-shrink: 0;
+            border: 3px solid var(--border-dark);
+        }
+
+        .author-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .author-title {
+            color: var(--violet);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .author-bio {
+            color: var(--text-secondary);
+            font-size: 0.97rem;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .author-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .author-badge {
+            background: rgba(26, 47, 74, 0.8);
+            border: 1px solid var(--border-dark);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .author-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .author-avatar { margin: 0 auto; }
+            .author-badges { justify-content: center; }
+        }
+
+        /* ─── AMAZON CTA SECTION ─── */
+        .amazon-cta-bg {
+            background: linear-gradient(135deg, #1a0a00 0%, #2a1500 50%, #1a0a00 100%);
+            border-top: 1px solid rgba(255, 153, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 153, 0, 0.2);
+        }
+
+        .amazon-cta-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* ─── TRAINING CTA ─── */
+        .training-cta {
+            background: linear-gradient(135deg, #0d0a2e 0%, #1a1445 100%);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            text-align: center;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer {
+            background: #060c14;
+            border-top: 1px solid var(--border-dark);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand span { color: var(--rose); }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--teal); }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* ─── UTILITIES ─── */
+        .text-teal { color: var(--teal); }
+        .text-amber { color: var(--amber); }
+        .text-violet { color: var(--violet); }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(78, 205, 196, 0.1);
+            border: 1px solid rgba(78, 205, 196, 0.2);
+            color: var(--teal);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">ghe<span>WARE</span></a>
+            <ul class="nav-links">
+                <li><a href="/#training">Training</a></li>
+                <li><a href="/#courses">Courses</a></li>
+                <li><a href="/#testimonials">Testimonials</a></li>
+                <li><a href="https://www.amazon.in/dp/B0GRRRK91D" target="_blank" class="nav-cta-btn">🛒 Buy on Amazon</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="dot"></span>
+                    📚 Now Live on Amazon India
+                </div>
+                <h1>
+                    AGENTIC AI
+                    <span class="subtitle-line">The Practitioner's Guide</span>
+                </h1>
+                <p class="hero-desc">
+                    Build Production-Ready AI Agents with LangChain, LangGraph, RAG, MCP, and FastAPI.
+                    505 pages. 119 hands-on labs. Zero fluff. Built from 14 enterprise training batches
+                    at Oracle, JPMorgan &amp; Deloitte.
+                </p>
+                <div class="tech-tags">
+                    <span class="tag">LangChain</span>
+                    <span class="tag">LangGraph</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">MCP</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">ChromaDB</span>
+                    <span class="tag">Langfuse</span>
+                </div>
+                <div class="hero-ctas" style="margin-top:36px;">
+                    <a href="https://www.amazon.in/dp/B0GRRRK91D" target="_blank" rel="noopener" class="btn-amazon">
+                        🛒 Buy on Amazon India
+                    </a>
+                    <a href="#free-chapter" class="btn-free">
+                        🎁 Get Chapter 1 Free
+                    </a>
+                </div>
+            </div>
+            <div class="hero-book-visual">
+                <div class="book-cover-wrap">
+                    <span class="book-rating-badge">⭐ 4.91/5.0 Oracle</span>
+                    <img
+                        src="/images/agentic-ai-book-cover.jpg"
+                        alt="AGENTIC AI: The Practitioner's Guide — Book Cover"
+                        class="book-cover-img"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                    >
+                    <div class="book-cover-placeholder" style="display:none;">
+                        <div class="book-icon">📘</div>
+                        <h3>AGENTIC AI</h3>
+                        <p>The Practitioner's Guide</p>
+                        <p style="margin-top:8px; color: var(--teal); font-size:0.75rem;">By Rajesh Gheware</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF BAR -->
+    <div class="proof-bar">
+        <div class="proof-bar-inner">
+            <div class="proof-item">
+                <div class="proof-number"><span class="highlight">4.91</span>/5.0</div>
+                <div class="proof-label">Rating at Oracle</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-item">
+                <div class="proof-number"><span class="highlight">5,000+</span></div>
+                <div class="proof-label">Professionals Trained</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-item">
+                <div class="proof-number"><span class="highlight">505</span></div>
+                <div class="proof-label">Pages</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-item">
+                <div class="proof-number"><span class="highlight">119</span></div>
+                <div class="proof-label">Hands-On Labs</div>
+            </div>
+            <div class="proof-divider"></div>
+            <div class="proof-item">
+                <div class="proof-number"><span class="highlight">14</span></div>
+                <div class="proof-label">Enterprise Batches</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT'S INSIDE -->
+    <div class="whats-inside-bg section-full">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <div class="section-label">What's Inside</div>
+            <h2 class="section-title">Everything You Need to Ship AI Agents to Production</h2>
+            <p class="section-desc">Every concept backed by working code. Every chapter has labs you can run today.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⛓️</div>
+                    <h3>LangChain Fundamentals to Patterns</h3>
+                    <p>From zero to production-grade chains, agents, tools, and memory — with real-world enterprise patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗃️</div>
+                    <h3>RAG with ChromaDB</h3>
+                    <p>Build retrieval-augmented generation systems from scratch. Embeddings, vector stores, hybrid search, and enterprise RAG pipelines.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕸️</div>
+                    <h3>LangGraph Workflows &amp; Multi-Agent</h3>
+                    <p>Stateful agent graphs, human-in-the-loop, multi-agent orchestration, and complex workflow management.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3>MCP — Model Context Protocol</h3>
+                    <p>Integrate external tools and data sources via the emerging standard for AI agent interoperability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>FastAPI Deployment</h3>
+                    <p>Deploy agents as production APIs. Async endpoints, streaming responses, authentication, and scalability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Langfuse Observability</h3>
+                    <p>Monitor, trace, and evaluate your AI agents in production. Cost tracking, latency, and quality metrics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAPTERS -->
+    <div class="section-full" style="background: var(--surface-dark); border-top: 1px solid var(--border-dark);">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <div class="section-label">Table of Contents</div>
+            <h2 class="section-title">12 Chapters. Zero Filler.</h2>
+            <p class="section-desc">A clear, progressive path from foundations to enterprise deployment.</p>
+            <div class="chapters-grid">
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 01</span>
+                    <div class="chapter-info">
+                        <h4>Introduction to Agentic AI</h4>
+                        <p>LLM fundamentals, agent taxonomy, and the production mindset</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 02</span>
+                    <div class="chapter-info">
+                        <h4>LangChain Core Concepts</h4>
+                        <p>Chains, prompts, parsers, memory, and LCEL patterns</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 03</span>
+                    <div class="chapter-info">
+                        <h4>Tools &amp; Custom Agents</h4>
+                        <p>Building tools, ReAct agents, and custom agent architectures</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 04</span>
+                    <div class="chapter-info">
+                        <h4>RAG — Retrieval Augmented Generation</h4>
+                        <p>Embeddings, vector stores, ChromaDB, and advanced retrieval</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 05</span>
+                    <div class="chapter-info">
+                        <h4>Enterprise RAG Pipelines</h4>
+                        <p>Hybrid search, re-ranking, query expansion, and evaluation</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 06</span>
+                    <div class="chapter-info">
+                        <h4>LangGraph — Stateful Workflows</h4>
+                        <p>Graph-based agents, state machines, and conditional flows</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 07</span>
+                    <div class="chapter-info">
+                        <h4>Multi-Agent Systems</h4>
+                        <p>Supervisor-worker patterns, agent collaboration, and coordination</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 08</span>
+                    <div class="chapter-info">
+                        <h4>Human-in-the-Loop &amp; Safety</h4>
+                        <p>Approval flows, guardrails, content filtering, and responsible AI</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 09</span>
+                    <div class="chapter-info">
+                        <h4>MCP — Model Context Protocol</h4>
+                        <p>Tool integration standard, MCP servers, and ecosystem interop</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 10</span>
+                    <div class="chapter-info">
+                        <h4>FastAPI for AI Agents</h4>
+                        <p>REST APIs, async endpoints, streaming, and agent-as-a-service</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 11</span>
+                    <div class="chapter-info">
+                        <h4>Production Deployment</h4>
+                        <p>Docker, Kubernetes, CI/CD pipelines, and scaling AI agents</p>
+                    </div>
+                </div>
+                <div class="chapter-card">
+                    <span class="chapter-num">Ch. 12</span>
+                    <div class="chapter-info">
+                        <h4>Observability with Langfuse</h4>
+                        <p>Tracing, evaluation, cost control, and production monitoring</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FREE CHAPTER FORM -->
+    <div class="free-chapter-bg section-full" id="free-chapter">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <div class="free-chapter-inner">
+                <div class="section-label" style="justify-content: center;">Free Chapter</div>
+                <h2 class="section-title">Get Chapter 1 — Completely Free</h2>
+                <p class="section-desc" style="margin: 0 auto 0; text-align: center;">
+                    Enter your email and we'll send you Chapter 1: <em>Introduction to Agentic AI</em> — immediately, no waiting.
+                </p>
+                <form class="free-chapter-form" action="https://devops.gheware-ai.com/subscribe" method="POST" id="chapterForm">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your work email" required>
+                    <input type="hidden" name="source" value="agentic-ai-book-landing">
+                    <input type="hidden" name="interest" value="free-chapter-1">
+                    <button type="submit">📖 Send Me Chapter 1</button>
+                </form>
+                <p class="form-note">🔒 No spam. Unsubscribe any time. We respect your inbox.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AMAZON BUY CTA -->
+    <div class="amazon-cta-bg section-full">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <div class="amazon-cta-inner">
+                <div style="font-size: 3rem; margin-bottom: 16px;">📦</div>
+                <div class="section-label" style="justify-content: center;">Available Now</div>
+                <h2 class="section-title">Order on Amazon India</h2>
+                <p class="section-desc" style="text-align: center; margin: 16px auto 36px;">
+                    Join 5,000+ engineers who've leveled up with gheWARE's enterprise training programs.
+                    Now you can have the full curriculum in your hands.
+                </p>
+                <a href="https://www.amazon.in/dp/B0GRRRK91D" target="_blank" rel="noopener" class="btn-amazon"
+                    style="font-size: 1.15rem; padding: 18px 40px; margin: 0 auto; display: inline-flex;">
+                    🛒 Buy on Amazon ₹ — B0GRRRK91D
+                </a>
+                <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 16px;">
+                    Also available on Amazon.com (US) and Amazon worldwide
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTHOR BIO -->
+    <div class="author-bg section-full">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <div class="section-label">About the Author</div>
+            <div class="author-inner">
+                <div class="author-avatar">👨‍💻</div>
+                <div>
+                    <div class="author-name">Rajesh Gheware</div>
+                    <div class="author-title">Enterprise AI Architect &amp; Trainer · gheWARE uniGPS Solutions LLP</div>
+                    <p class="author-bio">
+                        Rajesh Gheware brings 25+ years of enterprise technology experience spanning financial services,
+                        capital markets, and cloud infrastructure. An alumnus of <strong>IIT Madras</strong>, he has
+                        designed and deployed mission-critical systems at <strong>JPMorgan Chase</strong>,
+                        <strong>Deutsche Bank</strong>, and <strong>Morgan Stanley</strong>.<br><br>
+                        As founder of gheWARE, Rajesh has trained 5,000+ engineers at Fortune 500 companies including
+                        Oracle, JPMorgan, Deloitte, and Bank of America — consistently rated <strong>4.91/5.0</strong>
+                        at Oracle for his Agentic AI workshops. He specialises in translating cutting-edge AI research
+                        into production systems that actually ship.<br><br>
+                        <em>AGENTIC AI: The Practitioner's Guide</em> is the written companion to everything
+                        he teaches live in the labs — distilled into 505 pages of battle-tested patterns.
+                    </p>
+                    <div class="author-badges">
+                        <span class="author-badge">🎓 IIT Madras</span>
+                        <span class="author-badge">🏦 JPMorgan Chase</span>
+                        <span class="author-badge">🏦 Deutsche Bank</span>
+                        <span class="author-badge">🏦 Morgan Stanley</span>
+                        <span class="author-badge">☁️ Oracle Trainer</span>
+                        <span class="author-badge">🤝 Deloitte Trainer</span>
+                        <span class="author-badge">25+ Years Enterprise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRAINING WORKSHOP CTA -->
+    <div class="training-cta section-full">
+        <div class="section" style="padding-top: 0; padding-bottom: 0;">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <div class="section-label" style="justify-content: center;">Live Training</div>
+                <h2 class="section-title">Want the Full 5-Day Workshop?</h2>
+                <p class="section-desc" style="text-align: center; margin: 16px auto 36px;">
+                    Take your team from zero to production-ready in 5 days. Live, hands-on, enterprise-grade.
+                    Bring the book to life with instructor-led labs at your company.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://devops.gheware.com/#training" class="btn-amazon" style="background: var(--violet);">
+                        🎓 Book a Workshop
+                    </a>
+                    <a href="https://wa.me/919740807444?text=Hi%2C%20I%27m%20interested%20in%20the%20Agentic%20AI%20workshop" target="_blank" class="btn-free" style="border-color: var(--violet); color: var(--violet);">
+                        💬 WhatsApp Us
+                    </a>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 20px;">
+                    Rated 4.91/5.0 at Oracle · Delivered at JPMorgan, Deloitte, Bank of America
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-brand">ghe<span>WARE</span> uniGPS Solutions LLP</div>
+        <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#training">Training</a></li>
+            <li><a href="/#courses">Courses</a></li>
+            <li><a href="https://www.amazon.in/dp/B0GRRRK91D" target="_blank">Buy Book</a></li>
+            <li><a href="mailto:training@gheware.com">Contact</a></li>
+        </ul>
+        <div class="footer-copy">© 2026 gheWARE uniGPS Solutions LLP. Made in India 🇮🇳</div>
+    </footer>
+
+    <script>
+        // Form submission feedback
+        document.getElementById('chapterForm')?.addEventListener('submit', function (e) {
+            const btn = this.querySelector('button');
+            btn.textContent = '✉️ Sending...';
+            btn.disabled = true;
+            // Allow form to submit naturally; server redirects/handles response
+        });
+    </script>
+</body>
+
+</html>
