@@ -964,7 +964,7 @@ body {
 
 .footer-main {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: var(--space-8);
     margin-bottom: var(--space-4);
 }
@@ -1255,4 +1255,296 @@ body {
     .container { padding: 0 var(--space-4); }
     .hero-premium { padding: var(--space-3) 0 var(--space-4); }
     .products-premium, .features-premium { padding: var(--space-3) 0; }
+}
+
+/* ============================================================
+   FOOTER — Complete Styles
+   All classes used by /templates/footer.html
+   ============================================================ */
+
+/* Override: footer uses white background (light theme) */
+.footer-premium {
+    background: #ffffff;
+    border-top: 2px solid var(--gray-100);
+    padding: var(--space-10) 0 var(--space-6);
+    color: var(--gray-700);
+    font-family: var(--font-body);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* Brand column */
+.footer-brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    display: block;
+}
+
+.footer-brand-tagline {
+    font-size: 0.75rem;
+    color: var(--brand-success-green);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+.footer-brand-description {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.65;
+    margin: var(--space-4) 0 var(--space-5);
+}
+
+.footer-logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Contact action buttons */
+.contact-actions-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.contact-actions-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.contact-action-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+    transition: all 0.2s ease;
+    background: var(--gray-50);
+}
+
+.contact-action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    background: #ffffff;
+}
+
+.contact-action-btn--email   { border-left: 3px solid var(--brand-docker-blue); }
+.contact-action-btn--whatsapp { border-left: 3px solid #25D366; }
+.contact-action-btn--calendar { border-left: 3px solid var(--brand-accent-orange); }
+
+.contact-action-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.contact-action-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-500);
+    margin-bottom: 2px;
+}
+
+/* Trust badges */
+.trust-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.trust-badge--blue   { background: #eff6ff; color: #1d4ed8; }
+.trust-badge--green  { background: #f0fdf4; color: #15803d; }
+.trust-badge--orange { background: #fff7ed; color: #c2410c; }
+
+/* Footer section columns */
+.footer-section-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gray-900);
+    margin: 0 0 var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.footer-links-item {
+    line-height: 1.4;
+}
+
+.footer-link--accent {
+    color: var(--brand-success-green) !important;
+    font-weight: 600;
+}
+
+.footer-link--accent:hover {
+    color: var(--primary-dark) !important;
+}
+
+/* Social proof stats bar */
+.social-proof-container {
+    background: linear-gradient(135deg, var(--brand-navy) 0%, #1e3a5f 100%);
+    border-radius: 16px;
+    padding: var(--space-6) var(--space-8);
+    margin: var(--space-8) 0;
+}
+
+.social-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    text-align: center;
+}
+
+.social-proof-stat {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.social-proof-stat--blue   { color: #60a5fa; }
+.social-proof-stat--green  { color: #4ade80; }
+.social-proof-stat--red    { color: #f87171; }
+.social-proof-stat--orange { color: #fb923c; }
+
+.social-proof-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-6);
+    margin-top: var(--space-4);
+}
+
+.footer-bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.footer-copyright {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.footer-legal-link {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-legal-link:hover { color: var(--brand-docker-blue); }
+
+/* Social icon buttons */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.footer-social-label {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    font-weight: 600;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.social-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.social-btn--youtube  { background: #FF0000; }
+.social-btn--linkedin { background: #0A66C2; }
+.social-btn--whatsapp { background: #25D366; }
+
+/* Made in India badge */
+.made-in-india-badge {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+    font-weight: 600;
+    background: var(--gray-100);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* ---- Responsive overrides ---- */
+@media (max-width: 768px) {
+    .footer-main { grid-template-columns: 1fr; gap: var(--space-8); }
+    .social-proof-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+    .footer-bottom-content { flex-direction: column; align-items: flex-start; }
+    .footer-legal { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+    .contact-actions-row { flex-direction: column; }
+}
+
+@media (min-width: 640px) {
+    .contact-actions-row { flex-direction: row; flex-wrap: wrap; }
+    .contact-action-btn { flex: 1; min-width: 180px; }
 }
