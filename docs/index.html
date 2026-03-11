@@ -1708,18 +1708,70 @@
             <p class="cta-desc">Reach out to discuss your team's AI training needs. We'll assess your current state,
                 identify the highest-impact opportunities, and design a custom training plan — all through a simple
                 conversation.</p>
-            <!-- Lead Capture — ACTION-DG-05 -->
-            <div class="lead-capture" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 28px 32px; margin-bottom: 32px; text-align: left; max-width: 520px; margin-left: auto; margin-right: auto;">
+            <!-- Lead Capture — LangGraph Cheat Sheet -->
+            <div id="lead-capture-dg" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 28px 32px; margin-bottom: 32px; text-align: left; max-width: 520px; margin-left: auto; margin-right: auto;">
                 <h3 style="margin: 0 0 6px; font-size: 1.05rem; color: #fff;">📥 Get the Free LangGraph Cheat Sheet + Chapter 1</h3>
                 <p style="margin: 0 0 18px; color: #a0b0c0; font-size: 0.88rem;">Join 500+ AI engineers getting weekly agent patterns and lab code.</p>
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <input type="email" name="email" placeholder="work@company.com" required
+                <form id="cheatsheet-form-dg" novalidate style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <!-- honeypot — bots fill this, humans don't -->
+                    <input type="text" name="website" tabindex="-1" autocomplete="off"
+                        style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true" />
+                    <input type="email" name="email" id="dg-email" placeholder="work@company.com" required
                         style="flex: 1; min-width: 200px; padding: 11px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; font-size: 0.9rem; background: rgba(255,255,255,0.08); color: #fff; outline: none;" />
-                    <input type="hidden" name="_subject" value="New subscriber — LangGraph Cheat Sheet (devops.gheware.com)" />
-                    <button type="submit"
+                    <button type="submit" id="dg-submit-btn"
                         style="background: #f59e0b; color: #0a1628; border: none; padding: 11px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; white-space: nowrap;">Get Free Resources →</button>
                 </form>
+                <div id="dg-success" style="display:none; margin-top:14px; background:rgba(5,150,105,0.2); border:1px solid #059669; border-radius:8px; padding:12px 16px; color:#6ee7b7; font-size:0.9rem;">
+                    ✅ <strong>You're in!</strong> <a href="/assets/pdfs/langgraph-cheat-sheet.pdf" download style="color:#6ee7b7; font-weight:700;">Download your LangGraph Cheat Sheet →</a> &nbsp;Chapter 1 will follow via email.
+                </div>
+                <div id="dg-error" style="display:none; margin-top:14px; background:rgba(220,38,38,0.15); border:1px solid #dc2626; border-radius:8px; padding:12px 16px; color:#fca5a5; font-size:0.9rem;">
+                    ⚠️ Something went wrong. Please try emailing <a href="mailto:training@gheware.com" style="color:#fcd34d;">training@gheware.com</a> directly.
+                </div>
             </div>
+            <script>
+            (function() {
+                var form = document.getElementById('cheatsheet-form-dg');
+                var btn  = document.getElementById('dg-submit-btn');
+                var suc  = document.getElementById('dg-success');
+                var err  = document.getElementById('dg-error');
+                if (!form) return;
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // honeypot check
+                    if (form.elements['website'] && form.elements['website'].value) return;
+                    var email = document.getElementById('dg-email').value.trim();
+                    if (!email) return;
+                    btn.textContent = 'Sending…';
+                    btn.disabled = true;
+                    suc.style.display = 'none';
+                    err.style.display = 'none';
+                    fetch('https://dev-leads.gheware-ai.com/dev-lead-langgraph-cheatsheet', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email, source: 'devops.gheware.com', page: 'index' })
+                    })
+                    .then(function(res) {
+                        if (res.ok) {
+                            suc.style.display = 'block';
+                            form.reset();
+                            // GA4 generate_lead event
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'generate_lead', {
+                                    event_category: 'lead_magnet',
+                                    event_label: 'langgraph_cheatsheet',
+                                    value: 1
+                                });
+                            }
+                        } else { throw new Error('non-ok'); }
+                    })
+                    .catch(function() { err.style.display = 'block'; })
+                    .finally(function() {
+                        btn.textContent = 'Get Free Resources →';
+                        btn.disabled = false;
+                    });
+                });
+            })();
+            </script>
             <div class="cta-buttons">
                 <a href="mailto:training@gheware.com?subject=Agentic%20AI%20Training%20Inquiry"
                     class="cta-btn primary">✉ training@gheware.com</a>
