@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Rajesh Gheware — Enterprise AI & DevOps Trainer, Author, and Chief Architect at gheWARE. Email: rajeshgheware@gmail.com | Phone: +91-974-080-7444">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Rajesh Gheware | gheWARE DevOps AI Training">
+    <meta property="og:description" content="Get in touch with Rajesh Gheware for corporate AI & DevOps training, speaking engagements, or book inquiries. Email: rajeshgheware@gmail.com">
+    <meta property="og:url" content="https://devops.gheware.com/contact/">
+    <meta property="og:type" content="website">
+
+    <title>Contact Rajesh Gheware | gheWARE Enterprise AI & DevOps Training</title>
+
+    <!-- Common head elements: GA, meta tags, favicon -->
+    <script src="/js/head-loader.js"></script>
+    <link rel="stylesheet" href="/css/premium.css">
+    <script src="/js/template-loader.js" defer></script>
+
+    <style>
+        /* ── Page Shell ── */
+        .contact-page {
+            background: var(--gray-50, #f8f8f8);
+            min-height: 70vh;
+            padding: 4rem 0 5rem;
+        }
+        .contact-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ── Hero Header ── */
+        .contact-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contact-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--dark, #111);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        .contact-hero p {
+            font-size: 1.15rem;
+            color: var(--gray-600, #555);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── Cards Grid ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 680px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-hero h1 { font-size: 2rem; }
+        }
+
+        .contact-card {
+            background: var(--white, #fff);
+            border-radius: 16px;
+            padding: 2rem 1.75rem;
+            box-shadow: 0 2px 16px rgba(0,0,0,.07);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .contact-card.featured {
+            border: 2px solid #6d28d9;
+            grid-column: span 2;
+        }
+        @media (max-width: 680px) {
+            .contact-card.featured { grid-column: span 1; }
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+        .card-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6d28d9;
+            margin-bottom: 0.1rem;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark, #111);
+            margin-bottom: 0.25rem;
+        }
+        .card-value {
+            font-size: 1.05rem;
+            color: var(--gray-700, #333);
+        }
+        .card-value a {
+            color: #6d28d9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .card-value a:hover { text-decoration: underline; }
+        .card-note {
+            font-size: 0.88rem;
+            color: var(--gray-500, #777);
+            margin-top: 0.25rem;
+        }
+
+        /* ── Author Profile Card ── */
+        .author-card {
+            background: linear-gradient(135deg, #1a0533 0%, #2d1b69 100%);
+            color: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 24px rgba(109,40,217,.25);
+        }
+        @media (max-width: 680px) {
+            .author-card { flex-direction: column; }
+            .author-avatar { width: 80px; height: 80px; }
+        }
+        .author-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,.3);
+            flex-shrink: 0;
+            background: rgba(255,255,255,.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .author-info h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 0.35rem;
+            color: #fff;
+        }
+        .author-info .author-title {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,.75);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .author-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .author-tag {
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 20px;
+            padding: 0.2rem 0.75rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,.9);
+        }
+
+        /* ── Section Heading ── */
+        .section-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark, #111);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: 2rem 0 1rem;
+        }
+
+        /* ── Response time banner ── */
+        .response-banner {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            color: #166534;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .response-banner strong { font-weight: 700; }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main class="contact-page">
+        <div class="contact-container">
+
+            <!-- Hero -->
+            <div class="contact-hero">
+                <h1>Get in Touch</h1>
+                <p>Training inquiries, speaking engagements, book questions, or just want to connect — I'd love to hear from you.</p>
+            </div>
+
+            <!-- Author Profile -->
+            <div class="author-card">
+                <div class="author-avatar">👨‍💻</div>
+                <div class="author-info">
+                    <h2>Rajesh Gheware</h2>
+                    <p class="author-title">
+                        Chief Architect &amp; Corporate Trainer · gheWARE uniGPS Solutions LLP<br>
+                        Author · "AGENTIC AI: The Practitioner's Guide" &amp; "Ultimate CKA Certification Guide"<br>
+                        M.Tech IIT Madras · 25+ Years Enterprise Architecture · JPMorgan, Deutsche Bank, Morgan Stanley
+                    </p>
+                    <div class="author-tags">
+                        <span class="author-tag">🤖 Agentic AI</span>
+                        <span class="author-tag">☸️ Kubernetes CKA/CKS</span>
+                        <span class="author-tag">⚙️ DevOps</span>
+                        <span class="author-tag">🏦 FinTech Architecture</span>
+                        <span class="author-tag">🎓 Fortune 500 Trainer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary contacts -->
+            <div class="section-heading">📬 Contact Information</div>
+
+            <div class="contact-grid">
+
+                <!-- Email — Primary (required for Goodreads etc.) -->
+                <div class="contact-card featured">
+                    <div class="card-icon">✉️</div>
+                    <div class="card-label">Email — Author &amp; Personal</div>
+                    <div class="card-title">Rajesh Gheware</div>
+                    <div class="card-value">
+                        <a href="mailto:rajeshgheware@gmail.com">rajeshgheware@gmail.com</a>
+                    </div>
+                    <div class="card-note">Best for book inquiries, author requests, media, and personal correspondence</div>
+                </div>
+
+                <!-- Training email -->
+                <div class="contact-card">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-label">Corporate Training</div>
+                    <div class="card-title">Training Enquiries</div>
+                    <div class="card-value">
+                        <a href="mailto:training@gheware.com">training@gheware.com</a>
+                    </div>
+                    <div class="card-note">Agentic AI, Kubernetes, DevOps workshops for enterprise teams</div>
+                </div>
+
+                <!-- Dev / business email -->
+                <div class="contact-card">
+                    <div class="card-icon">💼</div>
+                    <div class="card-label">Business &amp; Partnerships</div>
+                    <div class="card-title">Dev — Chief of Staff, AI</div>
+                    <div class="card-value">
+                        <a href="mailto:dev@gheware.com">dev@gheware.com</a>
+                    </div>
+                    <div class="card-note">Business development, proposals, partnership discussions</div>
+                </div>
+
+                <!-- India phone -->
+                <div class="contact-card">
+                    <div class="card-icon">📞</div>
+                    <div class="card-label">Phone — India</div>
+                    <div class="card-title">WhatsApp / Mobile</div>
+                    <div class="card-value">
+                        <a href="tel:+919740807444">+91-974-080-7444</a>
+                    </div>
+                    <div class="card-note">Business hours IST 9 AM – 7 PM</div>
+                </div>
+
+                <!-- US phone -->
+                <div class="contact-card">
+                    <div class="card-icon">🇺🇸</div>
+                    <div class="card-label">Phone — United States</div>
+                    <div class="card-title">US Line</div>
+                    <div class="card-value">
+                        <a href="tel:+15076667197">+1-507-666-7197</a>
+                    </div>
+                    <div class="card-note">For US &amp; international training inquiries</div>
+                </div>
+
+                <!-- Website -->
+                <div class="contact-card">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-label">Website</div>
+                    <div class="card-title">devops.gheware.com</div>
+                    <div class="card-value">
+                        <a href="https://devops.gheware.com" target="_blank" rel="noopener">devops.gheware.com</a>
+                    </div>
+                    <div class="card-note">Training programs, blog, and resources</div>
+                </div>
+
+            </div>
+
+            <!-- Social / Author links -->
+            <div class="section-heading">🔗 Find Me Online</div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <div class="card-icon">💼</div>
+                    <div class="card-label">LinkedIn</div>
+                    <div class="card-title">Rajesh Gheware</div>
+                    <div class="card-value">
+                        <a href="https://linkedin.com/in/rajesh-gheware" target="_blank" rel="noopener">linkedin.com/in/rajesh-gheware</a>
+                    </div>
+                    <div class="card-note">Connect for thought leadership on AI &amp; DevOps</div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="card-icon">▶️</div>
+                    <div class="card-label">YouTube</div>
+                    <div class="card-title">gheWARE DevOps AI</div>
+                    <div class="card-value">
+                        <a href="https://youtube.com/@ghewaredevopsai" target="_blank" rel="noopener">@ghewaredevopsai</a>
+                    </div>
+                    <div class="card-note">DevOps, AI, Kubernetes tutorials</div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="card-icon">📖</div>
+                    <div class="card-label">Amazon Author</div>
+                    <div class="card-title">Books on Amazon</div>
+                    <div class="card-value">
+                        <a href="https://amzn.in/d/07mpECwD" target="_blank" rel="noopener">India 🇮🇳</a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="https://a.co/d/04f16dWE" target="_blank" rel="noopener">US 🇺🇸</a>
+                    </div>
+                    <div class="card-note">"AGENTIC AI: The Practitioner's Guide" — Kindle &amp; Print</div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="card-icon">📸</div>
+                    <div class="card-label">Instagram</div>
+                    <div class="card-title">gheWARE DevOps AI</div>
+                    <div class="card-value">
+                        <a href="https://instagram.com/ghewaredevopsai" target="_blank" rel="noopener">@ghewaredevopsai</a>
+                    </div>
+                    <div class="card-note">Daily AI &amp; DevOps insights</div>
+                </div>
+
+            </div>
+
+            <!-- Response time note -->
+            <div class="response-banner">
+                ⚡ <strong>Typical response time: 24–48 hours.</strong> For urgent training proposals, call directly on the India or US line above.
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>

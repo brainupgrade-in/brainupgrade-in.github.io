@@ -24,6 +24,14 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Contact Page -->
+    <url>
+        <loc>https://devops.gheware.com/contact/</loc>
+        <lastmod>2026-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Training Pages -->
     <url>
         <loc>https://devops.gheware.com/training/</loc>
