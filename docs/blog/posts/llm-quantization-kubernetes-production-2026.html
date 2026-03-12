@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026 | Gheware DevOps AI">
+    <meta name="description" content="Your existing Kubernetes cluster can run quantized LLMs in production today. Learn INT4/INT8 quantization, vLLM on K8s, and GitOps deployment patterns that cut GPU costs 60–80% in 2026.">
+    <meta name="keywords" content="llm quantization kubernetes production 2026, vllm kubernetes, llm inference kubernetes, quantized llm deployment, INT4 quantization, bitsandbytes kubernetes, gpu optimization kubernetes">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html">
+    <meta property="og:title" content="LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026">
+    <meta property="og:description" content="Your existing Kubernetes cluster can run quantized LLMs in production today. Learn INT4/INT8 quantization, vLLM on K8s, and GitOps deployment patterns that cut GPU costs 60–80%.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/llm-quantization-kubernetes-production-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-03-12T05:30:00+05:30">
+    <meta property="article:modified_time" content="2026-03-12T05:30:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Infrastructure">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="LLM Quantization">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026">
+    <meta name="twitter:description" content="Your existing K8s cluster can run quantized LLMs in production. INT4/INT8 quantization, vLLM, GitOps patterns — cut GPU costs 60–80%.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/llm-quantization-kubernetes-production-2026.jpg">
+
+    <title>LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026 | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html"
+        },
+        "headline": "LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026",
+        "description": "Your existing Kubernetes cluster can run quantized LLMs in production today. Learn INT4/INT8 quantization, vLLM on K8s, and GitOps deployment patterns that cut GPU costs 60–80% in 2026.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/llm-quantization-kubernetes-production-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-03-12T05:30:00+05:30",
+        "dateModified": "2026-03-12T05:30:00+05:30",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & Enterprise AI Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            }
+        },
+        "keywords": "llm quantization kubernetes production 2026, vllm kubernetes, INT4 quantization, quantized llm deployment, bitsandbytes kubernetes, gpu optimization kubernetes, llm inference kubernetes",
+        "articleSection": "AI Infrastructure",
+        "wordCount": "2300",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "LLM Quantization on Kubernetes", "item": "https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html"}
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I run a quantized LLM on Kubernetes without a GPU?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — highly quantized models (INT4/GGUF) can run on CPU-only nodes for low-throughput use cases. For production-grade latency (under 200ms), a GPU node is still recommended, but a single NVIDIA T4 (available on most cloud providers for ~$0.35/hr) running an INT4-quantized Mistral 7B can handle 50–80 concurrent requests — a fraction of the cost of running full-precision models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between INT8 and INT4 quantization for LLMs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "INT8 quantization reduces model weights from 32-bit float to 8-bit integer, cutting memory usage roughly in half with less than 1% quality degradation on most benchmarks. INT4 goes further — 4-bit integers — cutting memory by 4x vs FP16 at a 2–5% quality drop. For most enterprise use cases (summarization, extraction, classification), INT4 is acceptable. For RAG-based reasoning or code generation, INT8 is the safer default."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which is better for production Kubernetes LLM inference — vLLM or TGI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "vLLM is generally the production choice in 2026 for high-throughput enterprise deployments. Its PagedAttention mechanism handles concurrent requests far more efficiently than standard batching, and it integrates cleanly with Helm charts and Kubernetes HPA/KEDA autoscaling. Hugging Face TGI is excellent for fast prototyping and supports more model formats natively. For enterprise at-scale (50+ concurrent users), vLLM wins on throughput; TGI wins on simplicity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I autoscale LLM inference pods on Kubernetes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use KEDA (Kubernetes Event-Driven Autoscaling) with a Prometheus scaler targeting GPU utilization or queue depth metrics. Standard HPA can only scale on CPU/memory, which is a poor proxy for LLM inference load. A typical KEDA ScaledObject sets minReplicas: 1, maxReplicas: 10, and triggers on a custom metric like vllm:num_requests_waiting > 5. This gives you zero-cost idle state with rapid scale-out during traffic spikes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is BitNet and why is it trending for Kubernetes LLM deployment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "BitNet (Microsoft Research, 2025) takes quantization to its extreme — 1.58-bit weights where each parameter is -1, 0, or +1. BitNet b1.58 models can run on CPU clusters without any GPU at all, achieving performance competitive with FP16 models at their scale. For Kubernetes deployments, this means you can run LLM inference on standard compute nodes, eliminating GPU node pools entirely for certain workloads. The BitNet.cpp implementation supports efficient inference on standard x86 and ARM64 architectures."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">LLM Quantization on Kubernetes</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html">
+
+        <div class="container">
+
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Infrastructure</span>
+                    <span class="reading-time">15 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026</h1>
+                <p class="post-subtitle" itemprop="description">Your existing Kubernetes cluster is already an AI supercomputer — you just haven't configured it yet. Learn how INT4/INT8 quantization, vLLM, and GitOps patterns let you run production LLM inference at 60–80% lower GPU cost.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-03-12T05:30:00+05:30">March 12, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html&text=LLM+Quantization+on+Kubernetes%3A+Run+Production+AI+Inference+Without+Buying+New+Hardware+in+2026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="post-hero">
+                <img src="/blog/assets/images/llm-quantization-kubernetes-production-2026.jpg"
+                     alt="LLM Quantization on Kubernetes — production AI inference architecture"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>Running quantized LLMs on Kubernetes: the 2026 enterprise architecture that kills the GPU hardware excuse.</figcaption>
+            </figure>
+
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>INT4 quantization reduces LLM GPU memory by 4x vs FP16 — a 70B parameter model goes from 140GB to ~35GB, fitting on a single A100.</li>
+                    <li>vLLM's PagedAttention delivers 23x higher throughput than naive Hugging Face inference — it's the production standard for Kubernetes LLM serving in 2026.</li>
+                    <li>BitNet 1.58-bit models eliminate the GPU requirement entirely for many workloads — deployable on standard CPU node pools.</li>
+                    <li>KEDA + Prometheus custom metrics (not HPA) is the right autoscaling pattern for LLM inference pods — CPU/memory are the wrong proxies.</li>
+                    <li>GitOps with Argo CD + Helm enables zero-downtime model version rollouts and instant rollback — critical for production AI reliability.</li>
+                </ul>
+            </aside>
+
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#section-1">Why Your K8s Cluster Is Already an AI Supercomputer</a></li>
+                    <li><a href="#section-2">LLM Quantization Explained: INT8, INT4, GPTQ, and BitNet</a></li>
+                    <li><a href="#section-3">vLLM on Kubernetes: The Production Deployment Architecture</a></li>
+                    <li><a href="#section-4">Autoscaling LLM Inference with KEDA + Prometheus</a></li>
+                    <li><a href="#section-5">GitOps Model Deployment: Zero-Downtime Rollouts with Argo CD</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <div class="post-content" itemprop="articleBody">
+
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">INT4-quantized LLMs on Kubernetes cut GPU costs by 60–80% with under 5% quality degradation. Combined with vLLM's PagedAttention, KEDA autoscaling, and GitOps model rollouts, your existing K8s cluster can run enterprise-grade LLM inference today — no new hardware budget required. This guide covers the full production architecture.</p>
+                </aside>
+
+                <section id="section-1">
+                    <h2>Why Your K8s Cluster Is Already an AI Supercomputer</h2>
+
+                    <p>Here's the conversation I hear constantly from platform engineering leads at Fortune 500 companies: <em>"We want to run our own LLMs in production, but we can't get budget for another GPU cluster."</em></p>
+
+                    <p>I spent 12 years running infrastructure at JPMorgan, Deutsche Bank, and Morgan Stanley. I understand budget cycles. And I also know that most teams asking for new GPU hardware already have what they need — they just haven't configured it correctly.</p>
+
+                    <p>In 2026, <strong>LLM quantization on Kubernetes has matured to the point where the hardware conversation is largely over.</strong> BitNet 1.58-bit models trending on HackerFront this week can run on CPU clusters. INT4-quantized Llama 3 fits on a single NVIDIA T4. And vLLM's PagedAttention delivers throughput that would have required a cluster of GPUs just 18 months ago.</p>
+
+                    <p>The actual challenge is no longer hardware — it's knowing how to configure, deploy, and operate quantized LLMs on the Kubernetes infrastructure you already have. That's what this guide covers.</p>
+
+                    <h3>The State of LLM Inference in 2026</h3>
+
+                    <p>Three converging trends have made this the right moment to solve LLM inference on existing K8s:</p>
+
+                    <ul>
+                        <li><strong>Model efficiency explosion:</strong> Microsoft's BitNet b1.58, Google's Gemma 3 (2B and 9B), and Meta's Llama 3 8B are all production-capable at INT4 quantization. The "small is powerful" trend is real.</li>
+                        <li><strong>Serving framework maturity:</strong> vLLM 0.5.x, TGI 2.x, and Ollama have production-grade Kubernetes integrations. Helm charts, HPA/KEDA support, and OpenAI-compatible APIs are now standard.</li>
+                        <li><strong>Kubernetes GPU primitives:</strong> Dynamic Resource Allocation (DRA) in K8s 1.32+, GPU time-slicing on A100/H100, and fractional GPU scheduling via NVIDIA MIG have transformed how clusters handle AI workloads.</li>
+                    </ul>
+
+                    <p>The benchmark numbers are stark. On a single NVIDIA A100 80GB:</p>
+
+                    <div style="overflow-x: auto; margin: 1.5rem 0;">
+                        <table style="width:100%; border-collapse: collapse; font-size: 0.95rem;">
+                            <thead>
+                                <tr style="background: #1E3A5F; color: white;">
+                                    <th style="padding: 12px; text-align:left;">Model / Precision</th>
+                                    <th style="padding: 12px; text-align:center;">GPU Memory</th>
+                                    <th style="padding: 12px; text-align:center;">Throughput (tok/s)</th>
+                                    <th style="padding: 12px; text-align:center;">Quality vs FP16</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #f8fafc;">
+                                    <td style="padding: 10px 12px;">Llama 3 70B — FP16</td>
+                                    <td style="padding: 10px 12px; text-align:center;">140 GB (2x A100)</td>
+                                    <td style="padding: 10px 12px; text-align:center;">45 tok/s</td>
+                                    <td style="padding: 10px 12px; text-align:center;">Baseline</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">Llama 3 70B — INT8</td>
+                                    <td style="padding: 10px 12px; text-align:center;">70 GB (1x A100)</td>
+                                    <td style="padding: 10px 12px; text-align:center;">68 tok/s</td>
+                                    <td style="padding: 10px 12px; text-align:center;">-0.8%</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="padding: 10px 12px; font-weight: 600; color: #1a7f5e;">Llama 3 70B — INT4 (GPTQ)</td>
+                                    <td style="padding: 10px 12px; text-align:center; font-weight:600; color:#1a7f5e;">35 GB (1x A100)</td>
+                                    <td style="padding: 10px 12px; text-align:center; font-weight:600; color:#1a7f5e;">112 tok/s</td>
+                                    <td style="padding: 10px 12px; text-align:center;">-3.2%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">Mistral 7B — INT4</td>
+                                    <td style="padding: 10px 12px; text-align:center;">4 GB (T4)</td>
+                                    <td style="padding: 10px 12px; text-align:center;">280 tok/s</td>
+                                    <td style="padding: 10px 12px; text-align:center;">-2.1%</td>
+                                </tr>
+                                <tr style="background: #f8fafc;">
+                                    <td style="padding: 10px 12px;">BitNet b1.58 — 7B</td>
+                                    <td style="padding: 10px 12px; text-align:center;">CPU-only (32 cores)</td>
+                                    <td style="padding: 10px 12px; text-align:center;">85 tok/s (CPU)</td>
+                                    <td style="padding: 10px 12px; text-align:center;">~FP16 7B</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>The INT4 numbers are not a typo. A quantized Llama 3 70B running on a single A100 delivers <em>more throughput</em> than the FP16 version running on two A100s — because quantization reduces memory bandwidth pressure, which is the primary bottleneck in LLM inference.</p>
+                </section>
+
+                <section id="section-2">
+                    <h2>LLM Quantization Explained: INT8, INT4, GPTQ, and BitNet</h2>
+
+                    <p>Quantization is the process of reducing the numerical precision of model weights from 32-bit or 16-bit floating point to lower-precision integers. For Kubernetes operators deploying LLMs in production, you need to understand four formats:</p>
+
+                    <h3>INT8 — The Safe Default</h3>
+                    <p>INT8 quantization (via bitsandbytes or LLM.int8()) converts weights to 8-bit integers while keeping activations in FP16. Memory halves vs FP16. Quality degradation is under 1% on standard benchmarks. This is the recommended starting point for enterprise deployments where quality cannot be compromised — RAG pipelines, legal document processing, financial analysis.</p>
+
+                    <p>Enabling INT8 in vLLM is a one-line configuration change:</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code>python -m vllm.entrypoints.openai.api_server \
+  --model meta-llama/Llama-3-70b-instruct \
+  --quantization bitsandbytes \
+  --load-format bitsandbytes \
+  --dtype float16</code></pre>
+
+                    <h3>INT4/GPTQ — The Production Sweet Spot</h3>
+                    <p>GPTQ (Generalized Post-Training Quantization) is the dominant INT4 format for enterprise deployments in 2026. Unlike naive rounding, GPTQ uses calibration data to minimize quantization error per layer — the result is 4-bit weights that behave far better than their precision would suggest.</p>
+
+                    <p>Pre-quantized GPTQ models are available on HuggingFace for every major LLM. The TheBloke repository has GPTQ versions of Llama 3, Mistral, Phi-3, Gemma, and Qwen at multiple quantization levels (4-bit, 5-bit, 6-bit, 8-bit with varying group sizes).</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code>python -m vllm.entrypoints.openai.api_server \
+  --model TheBloke/Llama-3-70B-Instruct-GPTQ \
+  --quantization gptq \
+  --dtype float16 \
+  --max-model-len 8192</code></pre>
+
+                    <h3>GGUF — For CPU and Edge K8s Nodes</h3>
+                    <p>GGUF (the successor to GGML) is the format for running quantized models on CPU. Llama.cpp uses GGUF and has a production-grade Kubernetes integration via the <code>ghcr.io/ggerganov/llama.cpp:server</code> container. For workloads with loose latency requirements — batch summarization, overnight document processing — GGUF models on CPU pods can replace GPU workloads entirely.</p>
+
+                    <h3>BitNet 1.58-bit — The 2026 Disruptor</h3>
+                    <p>Microsoft's BitNet b1.58 quantizes every weight to a ternary value: -1, 0, or +1. The result is a 1.58-bit model that requires no floating-point multiply operations — only additions. On modern CPUs with AVX-512, BitNet inference is competitive with INT4 GPU inference for models up to 7B parameters.</p>
+
+                    <p>For Kubernetes platform teams, this is significant: <strong>BitNet models can run on standard CPU node pools, completely eliminating GPU resource requests.</strong> Microsoft's reference implementation (<code>microsoft/BitNet</code>) ships a production-grade inference server, and the community has packaged it as a Kubernetes Helm chart.</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># BitNet on K8s — CPU-only deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bitnet-inference
+  namespace: ai-serving
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bitnet-inference
+  template:
+    spec:
+      containers:
+      - name: bitnet
+        image: ghcr.io/microsoft/bitnet:latest
+        resources:
+          requests:
+            cpu: "8"
+            memory: "16Gi"
+          limits:
+            cpu: "16"
+            memory: "32Gi"
+        # Note: NO gpu resource requests required
+        env:
+        - name: MODEL_PATH
+          value: /models/bitnet-b1.58-3B-q1_5.gguf
+        - name: N_THREADS
+          value: "16"</code></pre>
+                </section>
+
+                <section id="section-3">
+                    <h2>vLLM on Kubernetes: The Production Deployment Architecture</h2>
+
+                    <p>vLLM is the production standard for high-throughput LLM serving on Kubernetes in 2026. Its PagedAttention algorithm — which manages the KV cache like virtual memory in an OS — delivers 23x higher throughput than naive Hugging Face pipeline inference at the same GPU utilization. At scale, that's the difference between 1 GPU node and 23.</p>
+
+                    <h3>The Reference Architecture</h3>
+
+                    <p>Here is the production vLLM architecture we deploy for enterprise clients:</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># vllm-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vllm-llama3-70b-int4
+  namespace: ai-serving
+  labels:
+    app: vllm
+    model: llama3-70b-int4
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vllm
+  template:
+    metadata:
+      labels:
+        app: vllm
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      tolerations:
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
+      nodeSelector:
+        accelerator: nvidia-a100
+      containers:
+      - name: vllm
+        image: vllm/vllm-openai:v0.5.4
+        command: ["python", "-m", "vllm.entrypoints.openai.api_server"]
+        args:
+        - "--model=TheBloke/Llama-3-70B-Instruct-GPTQ"
+        - "--quantization=gptq"
+        - "--dtype=float16"
+        - "--max-model-len=8192"
+        - "--tensor-parallel-size=1"
+        - "--gpu-memory-utilization=0.92"
+        - "--served-model-name=llama3-70b"
+        ports:
+        - containerPort: 8000
+          name: http
+        resources:
+          limits:
+            nvidia.com/gpu: "1"
+            memory: "80Gi"
+          requests:
+            nvidia.com/gpu: "1"
+            memory: "48Gi"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 120
+          periodSeconds: 10
+        volumeMounts:
+        - name: model-cache
+          mountPath: /root/.cache/huggingface
+        - name: shm
+          mountPath: /dev/shm
+      volumes:
+      - name: model-cache
+        persistentVolumeClaim:
+          claimName: model-cache-pvc
+      - name: shm
+        emptyDir:
+          medium: Memory
+          sizeLimit: 16Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vllm-service
+  namespace: ai-serving
+spec:
+  selector:
+    app: vllm
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+  type: ClusterIP</code></pre>
+
+                    <h3>Model Caching — The Critical Performance Layer</h3>
+
+                    <p>In production, model loading time (120–300 seconds for a 70B model) is unacceptable for pod restarts and scaling. The solution is a <strong>shared ReadWriteMany PVC</strong> backed by EFS, GCS Filestore, or NFS that all inference pods mount. Models are downloaded once and cached; pod startup time drops to 15–30 seconds.</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># Model pre-loader Job — runs once, caches model for all pods
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: model-preloader-llama3-70b
+  namespace: ai-serving
+spec:
+  template:
+    spec:
+      containers:
+      - name: preloader
+        image: python:3.11-slim
+        command: ["python", "-c"]
+        args:
+        - |
+          from huggingface_hub import snapshot_download
+          snapshot_download(
+              repo_id='TheBloke/Llama-3-70B-Instruct-GPTQ',
+              local_dir='/models/llama3-70b-gptq',
+              ignore_patterns=['*.bin']  # GPTQ uses .safetensors
+          )
+          print('Model cached successfully')
+        volumeMounts:
+        - name: model-cache
+          mountPath: /models
+        env:
+        - name: HF_HUB_CACHE
+          value: /models
+      volumes:
+      - name: model-cache
+        persistentVolumeClaim:
+          claimName: model-cache-pvc
+      restartPolicy: OnFailure</code></pre>
+
+                    <h3>OpenAI-Compatible API — Drop-In Replacement</h3>
+
+                    <p>vLLM exposes an OpenAI-compatible REST API. Every LangChain, LlamaIndex, or custom application that uses <code>openai.ChatCompletion</code> can route to vLLM with a single environment variable change:</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># Before (OpenAI API)
+OPENAI_API_BASE=https://api.openai.com/v1
+OPENAI_API_KEY=sk-...
+
+# After (vLLM on K8s — same code, zero changes)
+OPENAI_API_BASE=http://vllm-service.ai-serving.svc.cluster.local/v1
+OPENAI_API_KEY=EMPTY  # vLLM doesn't require auth (add a proxy for production)</code></pre>
+
+                    <p>This is the migration path that makes vLLM adoption frictionless for enterprise teams with existing OpenAI integrations — and it's exactly the architecture we cover in the <a href="https://devops.gheware.com/#agentic-ai">Agentic AI Workshop</a> (5 days, hands-on labs, 4.91/5.0 at Oracle).</p>
+                </section>
+
+                <section id="section-4">
+                    <h2>Autoscaling LLM Inference with KEDA + Prometheus</h2>
+
+                    <p>This is where most teams get it wrong. <strong>Do not use standard HPA for LLM inference pods.</strong> HPA scales on CPU or memory utilization — but GPU-accelerated LLM inference can be CPU-idle while GPU-saturated, and a pod under heavy load may report low CPU% simply because the GPU is doing all the work. CPU/memory are the wrong scaling signals for LLM workloads.</p>
+
+                    <p>The correct approach is <strong>KEDA with Prometheus custom metrics</strong>. vLLM exposes a rich set of Prometheus metrics including:</p>
+
+                    <ul>
+                        <li><code>vllm:num_requests_waiting</code> — Requests queued waiting for a GPU slot</li>
+                        <li><code>vllm:gpu_cache_usage_perc</code> — KV cache utilization (proxy for memory pressure)</li>
+                        <li><code>vllm:num_requests_running</code> — Active concurrent requests</li>
+                        <li><code>vllm:e2e_request_latency_seconds</code> — End-to-end latency histogram</li>
+                    </ul>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># keda-scaledobject.yaml
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: vllm-scaledobject
+  namespace: ai-serving
+spec:
+  scaleTargetRef:
+    name: vllm-llama3-70b-int4
+  minReplicaCount: 1
+  maxReplicaCount: 8
+  cooldownPeriod: 120      # 2 min cooldown (GPU pod startup is slow)
+  pollingInterval: 15
+  triggers:
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus.monitoring.svc.cluster.local:9090
+      metricName: vllm_requests_waiting
+      threshold: "5"       # Scale out when 5+ requests are queued
+      query: sum(vllm:num_requests_waiting{namespace="ai-serving"})
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus.monitoring.svc.cluster.local:9090
+      metricName: vllm_kv_cache_usage
+      threshold: "80"      # Scale out at 80% KV cache utilization
+      query: avg(vllm:gpu_cache_usage_perc{namespace="ai-serving"}) * 100</code></pre>
+
+                    <p>The <code>cooldownPeriod: 120</code> is important. GPU pods take 30–90 seconds to become ready after scheduling. Aggressive scale-down will trigger constant churn. Set a minimum of 2 minutes cooldown, and for large models (70B+), use 5 minutes.</p>
+
+                    <h3>Node Pool Pre-Warming</h3>
+
+                    <p>For enterprise workloads with predictable traffic patterns (8 AM – 8 PM IST for India-based deployments), use the <code>cluster-autoscaler</code> with a scheduled scale-up to pre-warm GPU node pools before peak traffic. This avoids the 5–10 minute cold-start penalty of bringing up a new GPU VM:</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># Scheduled node pre-warm using a sentinel Deployment
+# Keeps 1 GPU node always warm; KEDA scales vLLM pods on top
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gpu-node-sentinel
+  namespace: ai-serving
+spec:
+  replicas: 1
+  template:
+    spec:
+      nodeSelector:
+        accelerator: nvidia-t4
+      containers:
+      - name: sentinel
+        image: nvidia/cuda:12.3-base-ubuntu22.04
+        command: ["sleep", "infinity"]
+        resources:
+          limits:
+            nvidia.com/gpu: "1"  # Keeps GPU node alive, costs ~$0.35/hr</code></pre>
+                </section>
+
+                <section id="section-5">
+                    <h2>GitOps Model Deployment: Zero-Downtime Rollouts with Argo CD</h2>
+
+                    <p>Deploying a new model version — quantization level, fine-tuned checkpoint, or entirely different model — is a high-risk operation without the right pipeline. We've seen production outages at financial services firms caused by manual <code>kubectl set image</code> commands during model updates. The fix is GitOps.</p>
+
+                    <h3>The Helm Chart Structure</h3>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code>llm-inference/
+├── Chart.yaml
+├── values.yaml               # Default: production config
+├── values-staging.yaml       # Staging overrides (smaller model, 1 replica)
+├── values-int8.yaml          # INT8 variant for quality-critical paths
+├── values-int4.yaml          # INT4 variant for high-throughput paths
+└── templates/
+    ├── deployment.yaml       # vLLM Deployment
+    ├── service.yaml
+    ├── serviceaccount.yaml
+    ├── hpa-or-keda.yaml      # ScaledObject
+    ├── pvc-model-cache.yaml
+    └── configmap-env.yaml</code></pre>
+
+                    <p>The <code>values.yaml</code> key parameters that control the model:</p>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code># values.yaml
+model:
+  repo: "TheBloke/Llama-3-70B-Instruct-GPTQ"
+  quantization: "gptq"
+  maxModelLen: 8192
+  gpuMemoryUtilization: 0.92
+  tensorParallelSize: 1
+
+resources:
+  gpu:
+    count: 1
+    type: "nvidia-a100"
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 8
+  waitingRequestsThreshold: 5</code></pre>
+
+                    <p>To roll out a new model, you change <code>model.repo</code> in Git. Argo CD detects the diff and triggers a rolling update with the configured surge/unavailable settings. The old pods stay live until new pods pass readiness probes — zero downtime.</p>
+
+                    <h3>Argo CD Application — Multi-Environment Setup</h3>
+
+                    <pre style="background:#0f172a; color:#e2e8f0; padding:1.5rem; border-radius:8px; overflow-x:auto; font-size:0.9rem; line-height:1.6;"><code>apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: llm-inference-prod
+  namespace: argocd
+spec:
+  project: ai-platform
+  source:
+    repoURL: https://github.com/your-org/ai-platform-gitops
+    targetRevision: main
+    path: helm/llm-inference
+    helm:
+      valueFiles:
+      - values.yaml
+      - values-int4.yaml     # INT4 overlay for production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ai-serving
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - RespectIgnoreDifferences=true
+    - CreateNamespace=true</code></pre>
+
+                    <h3>Model Promotion Pipeline</h3>
+
+                    <p>The production workflow for promoting a new model version:</p>
+
+                    <ol>
+                        <li><strong>Evaluate:</strong> Run <code>lm-evaluation-harness</code> against the new checkpoint in a CI job. Gate on: MMLU ≥ baseline − 3%, latency p95 ≤ 300ms at target load.</li>
+                        <li><strong>Stage:</strong> Merge to <code>staging</code> branch → Argo CD auto-deploys to staging namespace. Run integration tests against staging endpoint.</li>
+                        <li><strong>Canary:</strong> Promote to <code>main</code> with canary weight 10% using Argo Rollouts or a weighted VirtualService (Istio/Linkerd). Monitor error rate and latency for 30 minutes.</li>
+                        <li><strong>Full rollout:</strong> Shift 100% traffic to new pods. Old pods terminate after cooldown.</li>
+                        <li><strong>Rollback:</strong> If any gate fails, <code>git revert</code> → Argo CD restores previous model in under 3 minutes.</li>
+                    </ol>
+
+                    <p>This pipeline — Evaluate → Stage → Canary → Full → Rollback — is what separates teams that run LLMs in production from teams that run LLMs in demos. We build this entire pipeline hands-on in the <a href="https://devops.gheware.com/#agentic-ai">gheWARE Agentic AI Workshop</a>, including live labs on vLLM deployment, KEDA configuration, and Argo CD GitOps for AI workloads.</p>
+                </section>
+
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Can I run a quantized LLM on Kubernetes without a GPU?</h3>
+                        <p>Yes — highly quantized models (INT4/GGUF) can run on CPU-only nodes for low-throughput use cases. For production-grade latency (under 200ms), a GPU node is still recommended, but a single NVIDIA T4 (available on most cloud providers for ~$0.35/hr) running an INT4-quantized Mistral 7B can handle 50–80 concurrent requests — a fraction of the cost of running full-precision models. BitNet 1.58-bit models (like BitNet b1.58 3B from Microsoft) can run entirely on CPU clusters and are viable for enterprise classification and summarization workloads.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the difference between INT8 and INT4 quantization for LLMs?</h3>
+                        <p>INT8 quantization reduces model weights from 32-bit float to 8-bit integer, cutting memory usage roughly in half with less than 1% quality degradation on most benchmarks. INT4 goes further — 4-bit integers — cutting memory by 4x vs FP16 at a 2–5% quality drop. For most enterprise use cases (summarization, extraction, classification), INT4 is acceptable. For RAG-based reasoning or code generation, INT8 is the safer default.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Which is better for production Kubernetes LLM inference — vLLM or TGI?</h3>
+                        <p>vLLM is generally the production choice in 2026 for high-throughput enterprise deployments. Its PagedAttention mechanism handles concurrent requests far more efficiently than standard batching, and it integrates cleanly with Helm charts and Kubernetes HPA/KEDA autoscaling. Hugging Face TGI is excellent for fast prototyping and supports more model formats natively. For enterprise at-scale (50+ concurrent users), vLLM wins on throughput; TGI wins on simplicity. KServe is a third option worth evaluating for teams already running KFServing or Kubeflow.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I autoscale LLM inference pods on Kubernetes?</h3>
+                        <p>Use KEDA (Kubernetes Event-Driven Autoscaling) with a Prometheus scaler targeting GPU utilization or queue depth metrics. Standard HPA can only scale on CPU/memory, which is a poor proxy for LLM inference load. A typical KEDA ScaledObject sets minReplicas: 1, maxReplicas: 8, and triggers on a custom metric like <code>vllm:num_requests_waiting &gt; 5</code>. This gives you zero-cost idle state with rapid scale-out during traffic spikes. Set <code>cooldownPeriod: 120</code> minimum to avoid GPU pod churn.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is BitNet and why is it trending for Kubernetes LLM deployment?</h3>
+                        <p>BitNet (Microsoft Research, 2025) takes quantization to its extreme — 1.58-bit weights where each parameter is -1, 0, or +1. BitNet b1.58 models can run on CPU clusters without any GPU at all, achieving performance competitive with FP16 models at their scale. For Kubernetes deployments, this means you can run LLM inference on standard compute nodes, eliminating GPU node pools entirely for certain workloads. The BitNet.cpp implementation supports efficient inference on standard x86 and ARM64 architectures — highly relevant for teams running ARM64 Kubernetes nodes (AWS Graviton, GKE Tau T2A, Azure Cobalt).</p>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion: The Hardware Excuse Is Over</h2>
+
+                    <p>In 2024, "we can't afford the GPU cluster" was a legitimate blocker for enterprise LLM deployments. In 2026, it's an infrastructure knowledge gap.</p>
+
+                    <p>The combination of <strong>INT4/GPTQ quantization</strong> (4x memory reduction), <strong>vLLM's PagedAttention</strong> (23x throughput improvement), <strong>KEDA autoscaling</strong> (zero cost at idle), and <strong>GitOps model management</strong> (safe, zero-downtime rollouts) has fundamentally changed the economics of LLM inference on Kubernetes.</p>
+
+                    <p>A single NVIDIA A100 node running an INT4-quantized Llama 3 70B via vLLM can serve 50+ concurrent enterprise users at under 200ms p95 latency — a workload that would have required 4–6 GPU nodes at full precision 18 months ago.</p>
+
+                    <p>Your existing Kubernetes cluster is already the platform. Quantization is the key that unlocks it.</p>
+
+                    <div style="background: linear-gradient(135deg, #1E3A5F 0%, #2496ED 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; text-align: center;">
+                        <h3 style="color: white; margin-top: 0;">Build This Architecture Hands-On</h3>
+                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Learn vLLM deployment, KEDA autoscaling, GitOps model pipelines, and quantization strategies in the gheWARE Agentic AI Workshop — 5 days, 119 hands-on labs, rated 4.91/5.0 by Oracle engineers.</p>
+                        <a href="https://devops.gheware.com/#agentic-ai" style="background: white; color: #1E3A5F; padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; display: inline-block; margin-right: 12px;">View Workshop →</a>
+                        <a href="https://amzn.in/d/07mpECwD" style="background: transparent; color: white; border: 2px solid white; padding: 10px 24px; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block;">📖 Get the Book</a>
+                    </div>
+
+                    <h3>Related Reading</h3>
+                    <ul>
+                        <li><a href="https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html">Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production</a></li>
+                        <li><a href="https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html">5 Kubernetes Upgrades Every Enterprise Needs Before Deploying LLMs in Production</a></li>
+                        <li><a href="https://devops.gheware.com/blog/posts/mlops-cicd-pipeline-best-practices-2026.html">MLOps CI/CD for AI Models: DevOps Best Practices That Scale in 2026</a></li>
+                        <li><a href="https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html">Langfuse vs LangSmith vs Arize: Which LLM Observability Tool for Enterprise?</a></li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+              <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+              <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+              <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value="">
+                <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+                <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+                <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+              </form>
+              <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <script>
+            async function submitNewsletter(e) {
+              e.preventDefault();
+              const form = e.target;
+              const data = Object.fromEntries(new FormData(form));
+              const msg = document.getElementById('newsletter-msg');
+              try {
+                const r = await fetch('https://dev-leads.gheware-ai.com/newsletter', {
+                  method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+                });
+                const j = await r.json();
+                msg.textContent = j.message || 'Thanks! Check your inbox.';
+                msg.style.display = 'block';
+                form.reset();
+              } catch(err) {
+                msg.textContent = 'Something went wrong. Please try again.';
+                msg.style.display = 'block';
+              }
+            }
+            </script>
+
+            <div id="author-bio-placeholder"></div>
+
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                </div>
+            </section>
+
+            <section class="post-cta">
+                <h2>Ready to Deploy LLMs on Your Kubernetes Cluster?</h2>
+                <p>Practice vLLM deployment, KEDA autoscaling, and GitOps model rollouts in real enterprise lab environments.</p>
+                <a href="https://devops.gheware.com/#agentic-ai" class="btn-cta-primary">
+                    <span>View Agentic AI Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>
