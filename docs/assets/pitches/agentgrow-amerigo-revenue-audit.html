@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentGrow × Amerigo Auto Transport — Revenue Recovery Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0b;
+  --dark: #111113;
+  --card: #18181b;
+  --border: #27272a;
+  --muted: #71717a;
+  --text: #e4e4e7;
+  --white: #fafafa;
+  --orange: #ff9b2f;
+  --orange-glow: rgba(255, 155, 47, 0.15);
+  --red: #ef4444;
+  --red-glow: rgba(239, 68, 68, 0.12);
+  --green: #22c55e;
+  --green-glow: rgba(34, 197, 94, 0.12);
+  --blue: #3b82f6;
+  --amber: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--black);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.slide {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-number {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.slide-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+/* ─── NAV ─── */
+.nav-dots {
+  position: fixed;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+}
+
+.nav-dot.active {
+  background: var(--orange);
+  box-shadow: 0 0 12px var(--orange-glow);
+}
+
+.nav-dot:hover { background: var(--orange); transform: scale(1.3); }
+
+.nav-dot .tooltip {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.nav-dot:hover .tooltip { opacity: 1; }
+
+/* ─── COVER ─── */
+.slide-cover {
+  align-items: center;
+  text-align: center;
+}
+
+.slide-cover::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,155,47,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.slide-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 120px, rgba(255,255,255,0.015) 120px, rgba(255,255,255,0.015) 121px);
+  pointer-events: none;
+}
+
+.cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-glow);
+  border: 1px solid rgba(255,155,47,0.3);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: var(--orange);
+  margin-bottom: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.cover-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(48px, 7vw, 96px);
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.cover-title em { color: var(--orange); font-style: italic; }
+
+.cover-sub {
+  font-size: 20px;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 640px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.cover-logos {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cover-logos .x-mark {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: var(--orange);
+}
+
+.cover-logos .logo-text {
+  padding: 10px 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.cover-date {
+  position: absolute;
+  bottom: 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+/* ─── SECTION TITLES ─── */
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 4.5vw, 56px);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-title span { color: var(--orange); }
+.section-title .red { color: var(--red); }
+
+.section-sub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+/* ─── SCORECARD (Slide 2) ─── */
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.score-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.score-label {
+  font-size: 13px;
+  color: var(--text);
+  min-width: 200px;
+  text-align: right;
+}
+
+.score-bar-bg {
+  flex: 1;
+  height: 28px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--black);
+  transition: width 1s ease;
+}
+
+.score-bar-fill.score-high { background: var(--green); }
+.score-bar-fill.score-mid { background: var(--amber); }
+.score-bar-fill.score-low { background: var(--red); }
+
+.overall-score {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.overall-grade {
+  font-family: 'DM Serif Display', serif;
+  font-size: 100px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.overall-grade.grade-d { color: var(--red); }
+
+.overall-score-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.overall-note {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* ─── WHAT'S WORKING (Slide 3) ─── */
+.working-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.working-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.working-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--green);
+}
+
+.working-card .w-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.working-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.working-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── CRITICAL ISSUES (Slide 4) ─── */
+.issues-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.issue-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.issue-card:hover {
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+
+.issue-priority {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.issue-priority.p0 { background: var(--red-glow); color: var(--red); }
+.issue-priority.p1 { background: var(--amber-glow); color: var(--amber); }
+
+.issue-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.issue-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ─── SEO AUDIT (Slide 5) ─── */
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.seo-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.seo-card:hover { border-color: var(--orange); transform: translateY(-3px); }
+
+.seo-score {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.seo-score.fail { color: var(--red); }
+.seo-score.warn { color: var(--amber); }
+.seo-score.ok { color: var(--green); }
+
+.seo-max {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.seo-card h4 {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.seo-findings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.finding-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.finding-card h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.finding-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.finding-card li {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+  padding-left: 16px;
+  position: relative;
+}
+
+.finding-card li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+}
+
+/* ─── LEAK SLIDES (6 & 7) ─── */
+.leak-slide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.leak-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 180px;
+  color: rgba(239, 68, 68, 0.06);
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.leak-content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.leak-content h2 span { color: var(--red); }
+
+.leak-content p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+.stat-row {
+  display: flex;
+  gap: 28px;
+}
+
+.stat-item { text-align: left; }
+
+.stat-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 38px;
+  color: var(--red);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Browser mockup */
+.browser-mockup {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.3);
+}
+
+.browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+.browser-dot:nth-child(1) { background: #ef4444; }
+.browser-dot:nth-child(2) { background: #eab308; }
+.browser-dot:nth-child(3) { background: #22c55e; }
+
+.browser-url {
+  flex: 1;
+  margin-left: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.browser-content { padding: 20px; }
+
+.form-mockup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.form-field.abandoned {
+  border-color: rgba(239,68,68,0.3);
+  background: var(--red-glow);
+}
+
+.form-field .field-label { flex: 1; }
+
+.abandon-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: var(--red-glow);
+  border: 1px dashed rgba(239,68,68,0.3);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* Funnel visual */
+.funnel-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.funnel-stage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.funnel-stage .label { color: var(--text); }
+.funnel-stage .count {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.funnel-arrow { color: var(--muted); font-size: 16px; }
+
+.funnel-stage.leak {
+  border-color: rgba(239,68,68,0.3);
+  background: var(--red-glow);
+}
+
+.funnel-stage.leak .count { color: var(--red); }
+
+/* Content comparison */
+.content-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.content-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.content-box.current { border-color: rgba(239,68,68,0.3); }
+.content-box.proposed { border-color: rgba(34,197,94,0.3); }
+
+.content-box-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.content-box.current .content-box-label { color: var(--red); }
+.content-box.proposed .content-box-label { color: var(--green); }
+
+.content-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 12px;
+}
+
+.content-metric:last-child { border-bottom: none; }
+.content-metric .val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+.content-box.current .val { color: var(--red); }
+.content-box.proposed .val { color: var(--green); }
+
+/* ─── SOLUTION GRID (Slide 8) ─── */
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.solution-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.solution-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.solution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), rgba(255,155,47,0.3));
+}
+
+.solution-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--orange-glow);
+  border: 1px solid rgba(255,155,47,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.solution-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.solution-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─── ROI (Slide 9) ─── */
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.roi-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.roi-card.highlight {
+  border-color: var(--orange);
+  background: linear-gradient(180deg, rgba(255,155,47,0.06), var(--card));
+}
+
+.roi-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.roi-card.highlight .roi-value { color: var(--orange); }
+
+.roi-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.roi-detail {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text);
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.ba-col {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.ba-col.before { border-color: rgba(239,68,68,0.3); }
+.ba-col.after { border-color: rgba(34,197,94,0.3); }
+
+.ba-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ba-col.before .ba-label { color: var(--red); }
+.ba-col.after .ba-label { color: var(--green); }
+
+.ba-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.ba-arrow {
+  font-size: 28px;
+  color: var(--orange);
+}
+
+/* ─── CTA (Slide 10) ─── */
+.slide-cta {
+  align-items: center;
+  text-align: center;
+}
+
+.slide-cta::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(255,155,47,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(36px, 5vw, 68px);
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.cta-title em { color: var(--orange); font-style: italic; }
+
+.cta-sub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  background: #ffad52;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255,155,47,0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover { border-color: var(--orange); color: var(--orange); }
+
+.cta-guarantee {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.contact-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-item { font-size: 13px; color: var(--muted); }
+.contact-item strong { color: var(--text); font-weight: 500; }
+
+/* ─── Phone mismatch visual ─── */
+.phone-mismatch {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.phone-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+}
+
+.phone-row .location {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  color: var(--muted);
+  min-width: 120px;
+}
+
+.phone-row.mismatch {
+  background: var(--red-glow);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: var(--red);
+}
+
+.phone-row.correct {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ─── Competitor table ─── */
+.competitor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.competitor-table th {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--border);
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.competitor-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+}
+
+.competitor-table tr.amerigo td {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.competitor-table .kw-count {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .slide { padding: 40px; }
+  .scorecard-grid { grid-template-columns: 1fr; }
+  .working-grid { grid-template-columns: 1fr 1fr; }
+  .issues-grid { grid-template-columns: 1fr; }
+  .seo-grid { grid-template-columns: repeat(3, 1fr); }
+  .seo-findings { grid-template-columns: 1fr; }
+  .leak-slide { grid-template-columns: 1fr; gap: 40px; }
+  .solution-grid { grid-template-columns: 1fr 1fr; }
+  .roi-grid { grid-template-columns: 1fr; }
+  .before-after { grid-template-columns: 1fr; }
+  .ba-arrow { transform: rotate(90deg); text-align: center; }
+  .leak-number { font-size: 120px; }
+  .content-comparison { grid-template-columns: 1fr; }
+  .nav-dots { display: none; }
+  .score-label { min-width: 140px; font-size: 11px; }
+}
+
+@media (max-width: 640px) {
+  .slide { padding: 28px 16px; }
+  .working-grid { grid-template-columns: 1fr; }
+  .seo-grid { grid-template-columns: repeat(2, 1fr); }
+  .solution-grid { grid-template-columns: 1fr; }
+  .stat-row { flex-direction: column; gap: 16px; }
+  .cover-logos { flex-direction: column; }
+  .contact-row { flex-direction: column; gap: 16px; }
+  .score-row { flex-direction: column; align-items: stretch; }
+  .score-label { text-align: left; min-width: unset; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide > * { animation: fadeUp 0.5s ease both; }
+.slide > *:nth-child(2) { animation-delay: 0.08s; }
+.slide > *:nth-child(3) { animation-delay: 0.16s; }
+.slide > *:nth-child(4) { animation-delay: 0.24s; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<nav class="nav-dots" id="navDots">
+  <button class="nav-dot active" onclick="goSlide(0)"><span class="tooltip">Cover</span></button>
+  <button class="nav-dot" onclick="goSlide(1)"><span class="tooltip">Site Scorecard</span></button>
+  <button class="nav-dot" onclick="goSlide(2)"><span class="tooltip">What's Working</span></button>
+  <button class="nav-dot" onclick="goSlide(3)"><span class="tooltip">Critical Issues</span></button>
+  <button class="nav-dot" onclick="goSlide(4)"><span class="tooltip">SEO Audit</span></button>
+  <button class="nav-dot" onclick="goSlide(5)"><span class="tooltip">Conversion Leaks</span></button>
+  <button class="nav-dot" onclick="goSlide(6)"><span class="tooltip">Content & SEO Gap</span></button>
+  <button class="nav-dot" onclick="goSlide(7)"><span class="tooltip">AgentGrow Solution</span></button>
+  <button class="nav-dot" onclick="goSlide(8)"><span class="tooltip">Projected ROI</span></button>
+  <button class="nav-dot" onclick="goSlide(9)"><span class="tooltip">Next Steps</span></button>
+</nav>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 1: COVER -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide slide-cover" id="slide-0">
+  <div class="cover-badge">&#9672; Revenue Recovery Proposal</div>
+  <h1 class="cover-title">Close the <em>Revenue Leaks</em></h1>
+  <p class="cover-sub">A data-driven audit of amerigoautotransport.net — SEO performance, conversion gaps, content effectiveness — and how AgentGrow can fix them on autopilot.</p>
+  <div class="cover-logos">
+    <span class="logo-text">AgentGrow.io</span>
+    <span class="x-mark">&times;</span>
+    <span class="logo-text">Amerigo Auto Transport</span>
+  </div>
+  <span class="cover-date">MARCH 2026 &nbsp;&middot;&nbsp; CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 2: SITE SCORECARD -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-1">
+  <span class="slide-number">02 / 10</span>
+  <div class="slide-label">Site Audit Scorecard</div>
+  <h2 class="section-title">Strong bones. <span class="red">Leaky plumbing.</span></h2>
+  <p class="section-sub">Your site scores well on clarity and CTA placement, but falls short on trust, SEO, pricing transparency, and technical credibility — the factors that actually close deals.</p>
+
+  <div class="scorecard-grid">
+    <div class="score-bars">
+      <div class="score-row">
+        <span class="score-label">Clarity of Offer</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-high" style="width:90%">9/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">CTA Placement</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-high" style="width:80%">8/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Trust & Social Proof</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-mid" style="width:50%">5/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Technical SEO</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-low" style="width:43%">4.3/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">SEO Content Depth</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-low" style="width:40%">4/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Emotional Storytelling</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-low" style="width:40%">4/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Pricing Transparency</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-low" style="width:30%">3/10</div></div>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Structured Data</span>
+        <div class="score-bar-bg"><div class="score-bar-fill score-low" style="width:20%">2/10</div></div>
+      </div>
+    </div>
+    <div class="overall-score">
+      <div class="overall-grade grade-d">D+</div>
+      <div class="overall-score-num">4.3 / 10 Overall SEO</div>
+      <p class="overall-note">The site converts visitors who already trust you. But Google can't find you, and new visitors don't stay long enough to trust you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 3: WHAT'S WORKING -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-2">
+  <span class="slide-number">03 / 10</span>
+  <div class="slide-label">What's Working</div>
+  <h2 class="section-title">Credit where it's <span>due</span></h2>
+  <p class="section-sub">The site has a solid foundation. These strengths are real competitive advantages — the fixes we propose build on them, not replace them.</p>
+
+  <div class="working-grid">
+    <div class="working-card">
+      <div class="w-icon">&#9889;</div>
+      <h3>Value Prop Hits in 3 Seconds</h3>
+      <p>Veteran-owned, nationwide, price-lock guarantee, 30-second quote — hero communicates differentiation immediately.</p>
+    </div>
+    <div class="working-card">
+      <div class="w-icon">&#128170;</div>
+      <h3>Trust Signals Well-Placed</h3>
+      <p>Google 5-star badge, "100% American Agents" callout, $250K insurance coverage — positioned where hesitant buyers need them.</p>
+    </div>
+    <div class="working-card">
+      <div class="w-icon">&#128483;</div>
+      <h3>Tone Has Real Personality</h3>
+      <p>"Dead serious about delivering your vehicle" and "professionals who actually give a damn" — breaks from generic corporate copy. Feels human.</p>
+    </div>
+    <div class="working-card">
+      <div class="w-icon">&#10003;</div>
+      <h3>3-Step Process is Excellent</h3>
+      <p>Simple, visual, removes ambiguity around how shipping works — directly addresses first-timer anxiety.</p>
+    </div>
+    <div class="working-card">
+      <div class="w-icon">&#10067;</div>
+      <h3>FAQ Covers Real Objections</h3>
+      <p>Cost, timing, tracking, insurance — exactly the questions buyers Google before committing. Smart content strategy.</p>
+    </div>
+    <div class="working-card">
+      <div class="w-icon">&#128666;</div>
+      <h3>Impressive Service Breadth</h3>
+      <p>Military, snowbird, college, fleet, auction — footer signals sophisticated operations that handle edge cases.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 4: CRITICAL ISSUES -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-3">
+  <span class="slide-number">04 / 10</span>
+  <div class="slide-label">Critical Issues</div>
+  <h2 class="section-title">8 issues <span class="red">killing trust & conversions</span></h2>
+  <p class="section-sub">These aren't minor optimizations — they're credibility gaps that actively cost you bookings every single day.</p>
+
+  <div class="issues-grid">
+    <div class="issue-card">
+      <span class="issue-priority p0">P0</span>
+      <div>
+        <h3>Phone Number Mismatch</h3>
+        <p>Footer CTA links to (305) 676-5682 but every other instance shows (954) 642-2118. Confused visitors simply leave.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p0">P0</span>
+      <div>
+        <h3>Title Tag Has a Typo</h3>
+        <p>Calculator page title reads "Amerigo Auto Transportimg" — a live indexing error visible to Google and every visitor.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p0">P0</span>
+      <div>
+        <h3>No USDOT/MC License Displayed</h3>
+        <p>FMCSA credentials are table-stakes in auto transport. Their absence raises red flags for informed buyers comparing options.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p0">P0</span>
+      <div>
+        <h3>Testimonials Look Fake</h3>
+        <p>"Michael J." and "Jessica R." with no photos, dates, or locations. In 2026, buyers disregard vague first-name-initial reviews.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p1">P1</span>
+      <div>
+        <h3>"Price Lock Guarantee" Undefined</h3>
+        <p>Strong claim, zero explanation. What does it lock? For how long? Without detail, it reads as marketing fluff.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p1">P1</span>
+      <div>
+        <h3>Veteran Story is Buried</h3>
+        <p>Most differentiating asset — mentioned in 2 words. No founder photo, no branch, no backstory. Free differentiation, untapped.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p1">P1</span>
+      <div>
+        <h3>No Pricing Anchors</h3>
+        <p>Zero indication of what "competitive" means. Even a range ($800–$1,500) would dramatically reduce quote-click friction.</p>
+      </div>
+    </div>
+    <div class="issue-card">
+      <span class="issue-priority p1">P1</span>
+      <div>
+        <h3>Brand Name Inconsistency</h3>
+        <p>Title tags alternate between "Transport," "Transporting," and "Transportimg." Damages brand coherence in search results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 5: SEO DEEP DIVE -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-4">
+  <span class="slide-number">05 / 10</span>
+  <div class="slide-label">SEO Performance Audit</div>
+  <h2 class="section-title">Google can barely <span class="red">find you</span></h2>
+  <p class="section-sub">93 indexed pages, zero structured data, missing meta descriptions, and 3+ months without new content. Your competitors have 10-20x more indexed pages.</p>
+
+  <div class="seo-grid">
+    <div class="seo-card">
+      <div class="seo-score warn">6</div>
+      <div class="seo-max">/10</div>
+      <h4>Technical SEO</h4>
+    </div>
+    <div class="seo-card">
+      <div class="seo-score fail">3.5</div>
+      <div class="seo-max">/10</div>
+      <h4>On-Page SEO</h4>
+    </div>
+    <div class="seo-card">
+      <div class="seo-score fail">2</div>
+      <div class="seo-max">/10</div>
+      <h4>Structured Data</h4>
+    </div>
+    <div class="seo-card">
+      <div class="seo-score fail">3</div>
+      <div class="seo-max">/10</div>
+      <h4>E-E-A-T Signals</h4>
+    </div>
+    <div class="seo-card">
+      <div class="seo-score fail">1</div>
+      <div class="seo-max">/10</div>
+      <h4>Social/OG Tags</h4>
+    </div>
+  </div>
+
+  <div class="seo-findings">
+    <div class="finding-card">
+      <h4><span style="color:var(--red)">&#9888;</span> Critical SEO Failures</h4>
+      <ul>
+        <li>Meta descriptions missing across ALL pages — Google auto-generates suboptimal snippets</li>
+        <li>Zero JSON-LD structured data — no FAQ, Review, Organization, or Service schema</li>
+        <li>No Open Graph or Twitter Card tags — social shares produce blank previews</li>
+        <li>No canonical tags — risk of duplicate content with location page hierarchy</li>
+        <li>Blog stale since Nov 2025 — 3+ months without new content signals abandonment</li>
+        <li>No author bylines or publish dates on blog posts — hurts E-E-A-T</li>
+      </ul>
+    </div>
+    <div class="finding-card">
+      <h4><span style="color:var(--amber)">&#9888;</span> Competitor Gap Analysis</h4>
+      <table class="competitor-table">
+        <thead>
+          <tr><th>Competitor</th><th>Keywords</th><th>Indexed Pages</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>uShip</td><td class="kw-count">20,000+</td><td class="kw-count">2,000+</td></tr>
+          <tr><td>Montway</td><td class="kw-count">15,000+</td><td class="kw-count">1,500+</td></tr>
+          <tr><td>Sherpa Auto</td><td class="kw-count">8,000+</td><td class="kw-count">800+</td></tr>
+          <tr><td>AmeriFreight</td><td class="kw-count">5,000+</td><td class="kw-count">500+</td></tr>
+          <tr class="amerigo"><td>Amerigo</td><td class="kw-count">~200</td><td class="kw-count">93</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 6: CONVERSION LEAKS -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-5">
+  <span class="slide-number">06 / 10</span>
+  <span class="leak-number">01</span>
+  <div class="leak-slide">
+    <div class="leak-content">
+      <div class="slide-label">Conversion Leak</div>
+      <h2>Your quote form is <span>killing conversions</span></h2>
+      <p>8+ fields before showing any value. No pricing anchor. In a low-trust industry where customers compare 3-5 companies, this friction is a dealbreaker. 78% of buyers choose the first company to respond — but your form makes sure they never submit.</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-value">67%</div>
+          <div class="stat-label">Form Abandonment</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">8+</div>
+          <div class="stat-label">Fields Required</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">$0</div>
+          <div class="stat-label">Value Shown First</div>
+        </div>
+      </div>
+    </div>
+    <div class="leak-visual">
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+          <span class="browser-url">amerigoautotransport.net</span>
+        </div>
+        <div class="browser-content">
+          <div class="form-mockup">
+            <div class="form-field"><span class="field-label">Pickup Location</span><span>&#10003;</span></div>
+            <div class="form-field"><span class="field-label">Delivery Location</span><span>&#10003;</span></div>
+            <div class="form-field"><span class="field-label">Vehicle Year</span><span>&#10003;</span></div>
+            <div class="form-field abandoned"><span class="field-label">Vehicle Make</span><span>&#10007;</span></div>
+            <div class="form-field abandoned"><span class="field-label">Vehicle Model</span><span>&#10007;</span></div>
+            <div class="form-field abandoned"><span class="field-label">Full Name</span><span>&#10007;</span></div>
+            <div class="form-field abandoned"><span class="field-label">Phone Number</span><span>&#10007;</span></div>
+            <div class="form-field abandoned"><span class="field-label">Email Address</span><span>&#10007;</span></div>
+          </div>
+          <div class="abandon-label">&#9888; 67% of visitors abandon here — before seeing any price</div>
+        </div>
+      </div>
+      <div class="phone-mismatch" style="margin-top:16px;">
+        <div class="phone-row mismatch">
+          <span class="location">Footer CTA:</span> (305) 676-5682
+        </div>
+        <div class="phone-row correct">
+          <span class="location">Everywhere else:</span> (954) 642-2118
+        </div>
+        <div style="font-size:11px; color:var(--red); padding:4px 0;">&#9888; Phone mismatch — immediate credibility killer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 7: CONTENT & SEO GAP -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-6">
+  <span class="slide-number">07 / 10</span>
+  <span class="leak-number">02</span>
+  <div class="leak-slide">
+    <div class="leak-content">
+      <div class="slide-label">Content & SEO Gap</div>
+      <h2>Invisible to Google, <span>silent on social</span></h2>
+      <p>93 indexed pages vs. competitors with 500-2,000+. Blog stale since November 2025. Zero structured data means zero rich snippets. No social autopilot. Missing high-value keywords: "how to ship a car," "motorcycle shipping," "luxury car transport," "snowbird car shipping."</p>
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-value">93</div>
+          <div class="stat-label">Indexed pages (vs 2,000+)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">3+</div>
+          <div class="stat-label">Months without content</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">$50+</div>
+          <div class="stat-label">CPC for paid traffic</div>
+        </div>
+      </div>
+    </div>
+    <div class="leak-visual">
+      <div class="content-comparison">
+        <div class="content-box current">
+          <div class="content-box-label">&#10060; Current State</div>
+          <div class="content-metric"><span>Indexed Pages</span><span class="val">93</span></div>
+          <div class="content-metric"><span>Blog Posts</span><span class="val">32 (stale)</span></div>
+          <div class="content-metric"><span>Structured Data</span><span class="val">None</span></div>
+          <div class="content-metric"><span>Meta Descriptions</span><span class="val">Missing</span></div>
+          <div class="content-metric"><span>Social Posts/Week</span><span class="val">0</span></div>
+          <div class="content-metric"><span>Rich Snippets</span><span class="val">0</span></div>
+          <div class="content-metric"><span>Open Graph Tags</span><span class="val">None</span></div>
+        </div>
+        <div class="content-box proposed">
+          <div class="content-box-label">&#10004; With AgentGrow</div>
+          <div class="content-metric"><span>Indexed Pages</span><span class="val">250+ by month 3</span></div>
+          <div class="content-metric"><span>Blog Posts</span><span class="val">12-20/month</span></div>
+          <div class="content-metric"><span>Structured Data</span><span class="val">Full schema</span></div>
+          <div class="content-metric"><span>Meta Descriptions</span><span class="val">All pages</span></div>
+          <div class="content-metric"><span>Social Posts/Week</span><span class="val">7-14</span></div>
+          <div class="content-metric"><span>Rich Snippets</span><span class="val">FAQ + Review</span></div>
+          <div class="content-metric"><span>Open Graph Tags</span><span class="val">All pages</span></div>
+        </div>
+      </div>
+      <div class="funnel-visual" style="margin-top:16px; gap:3px;">
+        <div class="funnel-stage" style="width:100%;"><span class="label">&#127760; Monthly Traffic</span><span class="count">~1,000</span></div>
+        <div class="funnel-arrow">&#8595;</div>
+        <div class="funnel-stage leak" style="width:80%;"><span class="label">&#128683; Form Abandons</span><span class="count">-670 lost</span></div>
+        <div class="funnel-arrow">&#8595;</div>
+        <div class="funnel-stage leak" style="width:50%;"><span class="label">&#128164; No Follow-Up</span><span class="count">-230 go cold</span></div>
+        <div class="funnel-arrow">&#8595;</div>
+        <div class="funnel-stage" style="width:20%;"><span class="label">&#128176; Booked</span><span class="count">~42/mo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 8: AGENTGROW SOLUTION -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-7">
+  <span class="slide-number">08 / 10</span>
+  <div class="slide-label">The Solution</div>
+  <h2 class="section-title">AgentGrow: Your AI-Powered <span>Growth Engine</span></h2>
+  <p class="section-sub">An always-on AI Chief Business Officer that fixes every leak — SEO, content, leads, follow-up, social, and structured data — live in under an hour.</p>
+
+  <div class="solution-grid">
+    <div class="solution-card">
+      <div class="solution-icon">&#9997;</div>
+      <h3>SEO Content Engine</h3>
+      <p>3-5 SEO-optimized posts/week targeting high-intent keywords: route-specific guides, cost calculators, shipping tips. Proper meta descriptions, schema markup, and OG tags on every page.</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#128232;</div>
+      <h3>Smart Lead Capture</h3>
+      <p>2-step form: zip codes first, instant estimate shown, then vehicle details. AI follow-up via email + SMS within 60 seconds. Lead scoring and nurture sequences for cold leads.</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#128225;</div>
+      <h3>Social Media Autopilot</h3>
+      <p>Daily posts across Instagram, Facebook, LinkedIn — customer stories, transport tips, behind-the-scenes veteran founder content. Builds the trust signals buyers check.</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#128202;</div>
+      <h3>Structured Data & Technical SEO</h3>
+      <p>FAQ schema on all FAQ sections, Review schema on testimonials, Organization + LocalBusiness markup, canonical tags, breadcrumbs — unlocking rich snippets in search results.</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#129302;</div>
+      <h3>AI Voice Follow-Up</h3>
+      <p>Outbound AI calls to warm leads who haven't booked. Natural conversations that convert fence-sitters. 78% of buyers choose the first responder — be that responder.</p>
+    </div>
+    <div class="solution-card">
+      <div class="solution-icon">&#128161;</div>
+      <h3>Conversion Intelligence</h3>
+      <p>Learns weekly which routes, seasons, and messaging convert best. Identifies missing keyword pages. Builds competitor gap reports. Compounds knowledge over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 9: PROJECTED ROI -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide" id="slide-8">
+  <span class="slide-number">09 / 10</span>
+  <div class="slide-label">Projected Impact</div>
+  <h2 class="section-title">Conservative <span>projections</span></h2>
+  <p class="section-sub">Based on industry benchmarks for auto transport companies adopting AI-driven growth systems. These numbers assume current traffic levels — organic growth compounds on top.</p>
+
+  <div class="roi-grid">
+    <div class="roi-card">
+      <div class="roi-value">3x</div>
+      <div class="roi-desc">More quote requests from same traffic via 2-step form + pricing anchors</div>
+      <div class="roi-detail">139 &#8594; 400+ quotes/mo</div>
+    </div>
+    <div class="roi-card highlight">
+      <div class="roi-value">40%</div>
+      <div class="roi-desc">Lower cost-per-lead as organic content replaces $50+ CPC paid ads</div>
+      <div class="roi-detail">$50+ CPC &#8594; $0 organic</div>
+    </div>
+    <div class="roi-card">
+      <div class="roi-value">2x</div>
+      <div class="roi-desc">Close rate improvement with instant AI follow-up within 60 seconds</div>
+      <div class="roi-detail">~42 &#8594; 85+ bookings/mo</div>
+    </div>
+  </div>
+
+  <div class="before-after">
+    <div class="ba-col before">
+      <div class="ba-label">Today</div>
+      <div class="ba-item">&#10060; 67% form abandonment</div>
+      <div class="ba-item">&#10060; 93 indexed pages (vs 2,000+)</div>
+      <div class="ba-item">&#10060; Zero structured data / rich snippets</div>
+      <div class="ba-item">&#10060; No automated follow-up</div>
+      <div class="ba-item">&#10060; Silent social channels</div>
+      <div class="ba-item">&#10060; Phone number mismatch</div>
+      <div class="ba-item">&#10060; ~42 bookings/month</div>
+    </div>
+    <div class="ba-arrow">&#10132;</div>
+    <div class="ba-col after">
+      <div class="ba-label">With AgentGrow (90 Days)</div>
+      <div class="ba-item">&#10004; 2-step form, 85%+ completion</div>
+      <div class="ba-item">&#10004; 250+ indexed pages with full SEO</div>
+      <div class="ba-item">&#10004; FAQ + Review rich snippets live</div>
+      <div class="ba-item">&#10004; AI follow-up in &lt;60 seconds</div>
+      <div class="ba-item">&#10004; Daily social posts, all channels</div>
+      <div class="ba-item">&#10004; All technical issues fixed</div>
+      <div class="ba-item">&#10004; ~85+ bookings/month</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SLIDE 10: NEXT STEPS -->
+<!-- ═══════════════════════════════════════ -->
+<section class="slide slide-cta" id="slide-9">
+  <span class="slide-number">10 / 10</span>
+  <h2 class="cta-title">Ready to stop<br><em>leaving money on the table?</em></h2>
+  <p class="cta-sub">Your site has strong bones. AgentGrow adds the growth engine — SEO, content, leads, follow-up, social — all on autopilot, live this week.</p>
+  <div class="cta-guarantee">&#128274; 90-day satisfaction guarantee &nbsp;&middot;&nbsp; Live in under 1 hour &nbsp;&middot;&nbsp; No dev work required</div>
+  <div class="contact-row">
+    <div class="contact-item"><strong>AgentGrow.io</strong><br>AI-Powered Growth Engine</div>
+    <div class="contact-item"><strong>Prepared for</strong><br>Amerigo Auto Transport</div>
+    <div class="contact-item"><strong>Date</strong><br>March 2026</div>
+  </div>
+</section>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.nav-dot');
+
+function goSlide(i) { slides[i].scrollIntoView({ behavior: 'smooth' }); }
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const i = Array.from(slides).indexOf(entry.target);
+      dots.forEach((d, j) => d.classList.toggle('active', j === i));
+    }
+  });
+}, { threshold: 0.5 });
+
+slides.forEach(s => observer.observe(s));
+
+document.addEventListener('keydown', (e) => {
+  const cur = Array.from(dots).findIndex(d => d.classList.contains('active'));
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+    e.preventDefault();
+    if (cur < slides.length - 1) goSlide(cur + 1);
+  }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+    e.preventDefault();
+    if (cur > 0) goSlide(cur - 1);
+  }
+});
+
+// Animate score bars on visibility
+const barObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.score-bar-fill').forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0%';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => { bar.style.width = w; });
+        });
+      });
+      barObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.score-bars').forEach(el => barObserver.observe(el));
+</script>
+</body>
+</html>
