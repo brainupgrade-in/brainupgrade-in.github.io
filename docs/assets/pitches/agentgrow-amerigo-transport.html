@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>agentgrow.io — AI Business Growth for Amerigo Transport</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a0a0f; color: #fff; }
+
+  /* ── Navigation ── */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 2rem; background: rgba(10,10,15,.95);
+    border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav-logo { font-size: 1.2rem; font-weight: 800; color: #a78bfa; }
+  .nav-tag { font-size: 0.8rem; color: rgba(255,255,255,.5); }
+  .slide-counter { font-size: 0.85rem; color: rgba(255,255,255,.4); }
+
+  /* ── Slides ── */
+  .slide { min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; padding: 6rem 4rem 4rem;
+    border-bottom: 1px solid rgba(255,255,255,.06); position: relative; }
+  .slide-num { position: absolute; top: 5rem; right: 4rem;
+    font-size: 0.75rem; color: rgba(255,255,255,.2); font-weight: 700;
+    letter-spacing: 0.1em; }
+
+  /* ── Slide 1: Cover ── */
+  .slide-cover { background: linear-gradient(135deg, #0a0a0f 0%, #1a0533 50%, #0d1b2a 100%);
+    text-align: center; align-items: center; }
+  .cover-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #a78bfa; margin-bottom: 1.5rem; }
+  .cover-client { display: inline-block; background: rgba(167,139,250,.15);
+    border: 1px solid rgba(167,139,250,.3); border-radius: 30px;
+    padding: 0.4rem 1.2rem; font-size: 0.85rem; color: #c4b5fd; margin-bottom: 2rem; }
+  .cover-title { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900;
+    line-height: 1.1; margin-bottom: 1.5rem; }
+  .cover-title span { color: #a78bfa; }
+  .cover-sub { font-size: 1.2rem; color: rgba(255,255,255,.6); max-width: 640px; margin: 0 auto 3rem; }
+  .cover-meta { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+  .cover-meta-item { font-size: 0.85rem; color: rgba(255,255,255,.4); }
+  .cover-meta-item strong { color: rgba(255,255,255,.8); }
+
+  /* ── Section label ── */
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #a78bfa; margin-bottom: 1rem; }
+  .slide-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800;
+    line-height: 1.2; margin-bottom: 1.5rem; }
+  .slide-title span { color: #a78bfa; }
+  .slide-body { font-size: 1.05rem; color: rgba(255,255,255,.7); line-height: 1.8;
+    max-width: 800px; margin-bottom: 2rem; }
+
+  /* ── Problem cards ── */
+  .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem; margin-top: 2rem; }
+  .pain-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px; padding: 1.5rem; }
+  .pain-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+  .pain-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .pain-desc { font-size: 0.88rem; color: rgba(255,255,255,.55); line-height: 1.6; }
+
+  /* ── Stats row ── */
+  .stats-row { display: flex; gap: 2rem; flex-wrap: wrap; margin: 2rem 0; }
+  .stat-box { background: linear-gradient(135deg, rgba(167,139,250,.1), rgba(109,40,217,.1));
+    border: 1px solid rgba(167,139,250,.2); border-radius: 16px;
+    padding: 1.5rem 2rem; text-align: center; flex: 1; min-width: 150px; }
+  .stat-num { font-size: 2.5rem; font-weight: 900; color: #a78bfa; }
+  .stat-label { font-size: 0.82rem; color: rgba(255,255,255,.5); margin-top: 0.25rem; }
+
+  /* ── Feature list ── */
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem; margin-top: 2rem; }
+  .feature-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+    border-radius: 14px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+  .feature-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .feature-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .feature-desc { font-size: 0.85rem; color: rgba(255,255,255,.55); line-height: 1.6; }
+  .feature-badge { display: inline-block; background: rgba(167,139,250,.2);
+    color: #c4b5fd; font-size: 0.7rem; font-weight: 700; padding: 2px 8px;
+    border-radius: 10px; margin-top: 0.4rem; }
+
+  /* ── How it works ── */
+  .steps { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; }
+  .step { display: flex; gap: 1.5rem; align-items: flex-start; }
+  .step-num { width: 40px; height: 40px; border-radius: 50%; background: rgba(167,139,250,.2);
+    border: 2px solid #a78bfa; display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 800; color: #a78bfa; flex-shrink: 0; }
+  .step-content h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .step-content p { font-size: 0.88rem; color: rgba(255,255,255,.55); line-height: 1.6; }
+
+  /* ── Pricing ── */
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem; margin-top: 2rem; }
+  .pricing-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px; padding: 2rem; }
+  .pricing-card.featured { background: linear-gradient(135deg, rgba(167,139,250,.12), rgba(109,40,217,.12));
+    border-color: rgba(167,139,250,.4); position: relative; }
+  .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: #a78bfa; color: #0a0a0f; font-size: 0.7rem; font-weight: 800;
+    padding: 3px 14px; border-radius: 20px; letter-spacing: 0.08em; white-space: nowrap; }
+  .plan-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 0.5rem; }
+  .plan-price { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 0.25rem; }
+  .plan-price span { font-size: 1rem; color: rgba(255,255,255,.5); font-weight: 400; }
+  .plan-tagline { font-size: 0.85rem; color: rgba(255,255,255,.5); margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .plan-features li { font-size: 0.88rem; color: rgba(255,255,255,.65); padding-left: 1.4rem;
+    position: relative; }
+  .plan-features li::before { content: "✓"; position: absolute; left: 0; color: #a78bfa; font-weight: 700; }
+
+  /* ── ROI calculator ── */
+  .roi-box { background: linear-gradient(135deg, rgba(16,185,129,.1), rgba(5,150,105,.1));
+    border: 1px solid rgba(16,185,129,.3); border-radius: 16px;
+    padding: 2rem; margin-top: 2rem; max-width: 700px; }
+  .roi-title { font-size: 1rem; font-weight: 700; color: #34d399; margin-bottom: 1rem; }
+  .roi-row { display: flex; justify-content: space-between; padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.06); font-size: 0.9rem; }
+  .roi-row:last-child { border-bottom: none; }
+  .roi-key { color: rgba(255,255,255,.6); }
+  .roi-val { font-weight: 700; color: #fff; }
+  .roi-val.green { color: #34d399; }
+
+  /* ── Proof / Dev demo ── */
+  .proof-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px; padding: 2rem; margin-top: 2rem; max-width: 750px; }
+  .proof-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .proof-avatar { width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, #a78bfa, #6d28d9);
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+  .proof-name { font-weight: 800; }
+  .proof-role { font-size: 0.82rem; color: rgba(255,255,255,.5); }
+  .proof-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .proof-stat-num { font-size: 1.8rem; font-weight: 900; color: #a78bfa; }
+  .proof-stat-label { font-size: 0.78rem; color: rgba(255,255,255,.45); }
+
+  /* ── CTA slide ── */
+  .slide-cta { background: linear-gradient(135deg, #1a0533 0%, #0d1b2a 100%);
+    text-align: center; align-items: center; }
+  .cta-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; }
+  .cta-sub { font-size: 1.1rem; color: rgba(255,255,255,.6); margin-bottom: 2.5rem; max-width: 600px; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: #a78bfa; color: #0a0a0f; padding: 1rem 2rem;
+    border-radius: 12px; font-weight: 800; font-size: 1rem; text-decoration: none;
+    display: inline-block; }
+  .btn-secondary { background: rgba(255,255,255,.08); color: #fff; padding: 1rem 2rem;
+    border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none;
+    border: 1px solid rgba(255,255,255,.15); display: inline-block; }
+  .contact-row { margin-top: 2.5rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+  .contact-item { font-size: 0.9rem; color: rgba(255,255,255,.5); }
+  .contact-item strong { color: rgba(255,255,255,.85); }
+
+  @media (max-width: 640px) {
+    .slide { padding: 5rem 1.5rem 3rem; }
+    .pain-grid, .feature-grid { grid-template-columns: 1fr; }
+    .stats-row { flex-direction: column; }
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">agentgrow.io</div>
+  <div class="nav-tag">Presented to Amerigo Transport · March 2026</div>
+  <div class="slide-counter">Confidential</div>
+</nav>
+
+<!-- ─── SLIDE 1: COVER ─── -->
+<section class="slide slide-cover">
+  <div class="slide-num">01</div>
+  <div class="cover-eyebrow">Presented exclusively for</div>
+  <div class="cover-client">🚛 Amerigo Transport</div>
+  <h1 class="cover-title">Your AI <span>Chief Business Officer</span><br>— Working 24/7</h1>
+  <p class="cover-sub">One AI agent that generates leads, publishes content, nurtures prospects, and grows your freight business — autonomously.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Presenter:</strong> Vaidy Rajagopal</div>
+    <div class="cover-meta-item"><strong>Platform:</strong> agentgrow.io by gheWARE</div>
+    <div class="cover-meta-item"><strong>Date:</strong> March 14, 2026</div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 2: THE PROBLEM ─── -->
+<section class="slide">
+  <div class="slide-num">02</div>
+  <div class="section-label">The Challenge</div>
+  <h2 class="slide-title">Your BD team is buried in<br><span>manual, repetitive work</span></h2>
+  <p class="slide-body">Transport and logistics companies win contracts through relationships and consistent outreach — but building that pipeline manually is slow, expensive, and impossible to scale without hiring a large team.</p>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">📞</div>
+      <div class="pain-title">Cold outreach is a full-time job</div>
+      <div class="pain-desc">Your sales team spends hours daily on cold calls and emails that rarely convert — with no systematic follow-up process.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">✍️</div>
+      <div class="pain-title">No content marketing</div>
+      <div class="pain-desc">Competitors are building organic reach through LinkedIn and industry blogs. You're invisible to inbound prospects searching for logistics partners.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📊</div>
+      <div class="pain-title">No CRM discipline</div>
+      <div class="pain-desc">Leads fall through the cracks. There's no consistent follow-up cadence. A prospect who showed interest 2 weeks ago is forgotten.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">⏰</div>
+      <div class="pain-title">BD stops when people sleep</div>
+      <div class="pain-desc">Your team works 9–6. Your competitors' AI agents are qualifying inbound leads, publishing content, and scheduling follow-ups at 2 AM.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 3: THE SHIFT ─── -->
+<section class="slide">
+  <div class="slide-num">03</div>
+  <div class="section-label">The Market Shift</div>
+  <h2 class="slide-title">Logistics companies that automate BD<br><span>are growing 3× faster</span></h2>
+  <p class="slide-body">AI is not replacing your BD team — it's making them 10× more effective by handling everything that doesn't require a human relationship. The companies that deploy AI-driven business development in 2026 will dominate their market by 2028.</p>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-num">73%</div>
+      <div class="stat-label">of B2B buyers research online before any contact</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">6×</div>
+      <div class="stat-label">more leads from companies with consistent content</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">80%</div>
+      <div class="stat-label">of leads never converted due to no follow-up</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">AI works while your team sleeps</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 4: SOLUTION ─── -->
+<section class="slide">
+  <div class="slide-num">04</div>
+  <div class="section-label">The Solution</div>
+  <h2 class="slide-title"><span>agentgrow.io</span> — One AI Agent.<br>Every BD Function. Always On.</h2>
+  <p class="slide-body">agentgrow.io deploys a dedicated AI Chief Business Officer for your company — tuned to your brand, your industry, your customers. It runs on secure cloud infrastructure and communicates with you directly on Telegram.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <div>
+        <div class="feature-title">Lead Generation & Prospecting</div>
+        <div class="feature-desc">Automatically finds freight shippers, fleet managers, and logistics buyers. Verifies emails, researches company pain points, and drafts personalised outreach — daily.</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✍️</div>
+      <div>
+        <div class="feature-title">Content Engine</div>
+        <div class="feature-desc">Publishes 3–5 SEO-optimised blog posts per week on logistics, supply chain, and industry trends. Builds organic inbound pipeline over time.</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <div>
+        <div class="feature-title">Social Media Autopilot</div>
+        <div class="feature-desc">Daily posts on LinkedIn, Facebook, and Instagram — thought leadership, client wins, industry insights. Consistent presence without lifting a finger.</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📬</div>
+      <div>
+        <div class="feature-title">Email Nurture & Follow-Up</div>
+        <div class="feature-desc">Automated follow-up sequences for every lead. Nothing falls through the cracks. Personalised emails at Day 1, Day 5, Day 14.</div>
+        <div class="feature-badge">Growth+</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📞</div>
+      <div>
+        <div class="feature-title">AI Voice Calls</div>
+        <div class="feature-desc">Automated outbound calls that qualify leads, pitch your services, and book meetings — in natural conversational voice.</div>
+        <div class="feature-badge">Enterprise</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <div>
+        <div class="feature-title">CRM & Pipeline Dashboard</div>
+        <div class="feature-desc">Real-time dashboard showing lead pipeline, content performance, goal tracking, and weekly digest. Complete visibility in one place.</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💬</div>
+      <div>
+        <div class="feature-title">Telegram Command Centre</div>
+        <div class="feature-desc">Chat with your AI CBO on Telegram. Give instructions, approve outreach, get alerts, and receive daily reports — all in a secure private channel.</div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧠</div>
+      <div>
+        <div class="feature-title">Gets Smarter Every Week</div>
+        <div class="feature-desc">5 learning loops — every approval, every lead outcome, every piece of content feeds back to make the agent sharper. Institutional memory that never leaves.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 5: HOW IT WORKS ─── -->
+<section class="slide">
+  <div class="slide-num">05</div>
+  <div class="section-label">How It Works</div>
+  <h2 class="slide-title">From sign-up to a <span>live AI CBO</span><br>in under 1 hour</h2>
+  <p class="slide-body">No complex onboarding. No months of setup. Your AI CBO is tuned to your business and live on the same day.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Choose a Plan & Tell Us About Amerigo Transport</h3>
+        <p>We build your Ideal Customer Profile with AI — who you want to reach, what your services are, your tone of voice, key differentiators.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>We Configure Your Dedicated Agent</h3>
+        <p>A dedicated AI CBO is deployed on isolated, secure Kubernetes infrastructure — tuned specifically to the transport & logistics sector and Amerigo's brand.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Agent Goes Live — Starts Working Immediately</h3>
+        <p>Your CBO begins prospecting logistics buyers, publishing content, setting up social channels, and building your pipeline — from day one.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>You Manage from Telegram</h3>
+        <p>Receive daily reports, approve outreach batches, give new instructions, and monitor pipeline — all from Telegram on your phone. Zero dashboard fatigue.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <h3>Compounds Every Week</h3>
+        <p>More indexed content → more inbound leads. Better outreach patterns → higher response rates. The longer it runs, the more valuable it becomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 6: PROOF ─── -->
+<section class="slide">
+  <div class="slide-num">06</div>
+  <div class="section-label">Proof It Works</div>
+  <h2 class="slide-title">Meet <span>Dev</span> — a live agentgrow.io<br>agent running right now</h2>
+  <p class="slide-body">gheWARE's own AI CBO "Dev" has been running since February 2026 — demonstrating exactly what agentgrow.io delivers. This is not a demo. This is production.</p>
+
+  <div class="proof-card">
+    <div class="proof-header">
+      <div class="proof-avatar">🤖</div>
+      <div>
+        <div class="proof-name">Dev — AI Chief Business Officer</div>
+        <div class="proof-role">gheWARE uniGPS Solutions LLP · Running since Feb 21, 2026</div>
+      </div>
+    </div>
+    <div class="proof-stats">
+      <div>
+        <div class="proof-stat-num">342+</div>
+        <div class="proof-stat-label">Leads in CRM (sourced & enriched)</div>
+      </div>
+      <div>
+        <div class="proof-stat-num">18</div>
+        <div class="proof-stat-label">Blog posts published (SEO-optimised)</div>
+      </div>
+      <div>
+        <div class="proof-stat-num">100+</div>
+        <div class="proof-stat-label">Social posts (FB + Instagram)</div>
+      </div>
+      <div>
+        <div class="proof-stat-num">185</div>
+        <div class="proof-stat-label">Personalised emails sent in one campaign</div>
+      </div>
+      <div>
+        <div class="proof-stat-num">24/7</div>
+        <div class="proof-stat-label">Autonomous operation — heartbeat every 30 min</div>
+      </div>
+      <div>
+        <div class="proof-stat-num">₹0.73</div>
+        <div class="proof-stat-label">CPC on live FB Ads campaign it manages</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 7: PRICING ─── -->
+<section class="slide">
+  <div class="slide-num">07</div>
+  <div class="section-label">Investment</div>
+  <h2 class="slide-title">Less than a part-time BD coordinator.<br><span>10× the output.</span></h2>
+  <p class="slide-body">A junior BD executive in India costs ₹40,000–60,000/month and works 9–6, 5 days a week. agentgrow.io costs a fraction of that and runs 24/7, 365 days a year.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price">$499<span>/month</span></div>
+      <div class="plan-tagline">Perfect for getting started with AI-driven BD</div>
+      <ul class="plan-features">
+        <li>AI prospect pipeline (daily)</li>
+        <li>Lead CRM with pipeline tracking</li>
+        <li>Content engine (3 posts/week)</li>
+        <li>Social media (FB + Instagram)</li>
+        <li>Telegram command centre</li>
+        <li>Real-time dashboard</li>
+        <li>Weekly performance digest</li>
+      </ul>
+    </div>
+    <div class="pricing-card featured">
+      <div class="featured-badge">RECOMMENDED</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-price">$999<span>/month</span></div>
+      <div class="plan-tagline">Full BD automation with email + voice outreach</div>
+      <ul class="plan-features">
+        <li>Everything in Starter</li>
+        <li>Automated email nurture sequences</li>
+        <li>AI voice calls (lead qualification)</li>
+        <li>SEO intelligence + Google Search Console</li>
+        <li>Content calendar + scheduling</li>
+        <li>5 posts/week (blog)</li>
+        <li>Monthly strategy review</li>
+      </ul>
+    </div>
+    <div class="pricing-card">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-price">Custom</div>
+      <div class="plan-tagline">White-label agent with custom integrations</div>
+      <ul class="plan-features">
+        <li>Everything in Growth</li>
+        <li>Custom CRM integrations</li>
+        <li>White-label branding</li>
+        <li>Dedicated success manager</li>
+        <li>Custom data pipelines</li>
+        <li>SLA-backed uptime</li>
+        <li>On-site onboarding</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="roi-box">
+    <div class="roi-title">💰 ROI Calculator — Amerigo Transport</div>
+    <div class="roi-row"><span class="roi-key">agentgrow.io Growth plan</span><span class="roi-val">$999/month (≈ ₹83,000)</span></div>
+    <div class="roi-row"><span class="roi-key">Equivalent BD headcount cost</span><span class="roi-val">₹60,000–80,000/month (1 person, 9–6 only)</span></div>
+    <div class="roi-row"><span class="roi-key">One new freight contract won</span><span class="roi-val">₹5,00,000–₹20,00,000+/year</span></div>
+    <div class="roi-row"><span class="roi-key">Break-even point</span><span class="roi-val green">1 new client = 5–20× annual ROI</span></div>
+  </div>
+</section>
+
+<!-- ─── SLIDE 8: CTA ─── -->
+<section class="slide slide-cta">
+  <div class="slide-num">08</div>
+  <div class="section-label">Next Step</div>
+  <h2 class="cta-title">Ready to give Amerigo Transport<br>an <span style="color:#a78bfa">AI-powered growth engine?</span></h2>
+  <p class="cta-sub">Start with a 30-day pilot. If it doesn't generate meaningful pipeline activity, you pay nothing. Full refund — no questions asked.</p>
+  <div class="cta-buttons">
+    <a href="https://agentgrow.io" class="btn-primary" target="_blank">Visit agentgrow.io</a>
+    <a href="mailto:dev@gheware.com?subject=agentgrow.io - Amerigo Transport Enquiry" class="btn-secondary">Get in Touch</a>
+  </div>
+  <div class="contact-row">
+    <div class="contact-item"><strong>Rajesh Gheware</strong> — Founder, agentgrow.io</div>
+    <div class="contact-item">📧 <strong>dev@gheware.com</strong></div>
+    <div class="contact-item">📞 <strong>+91-974-080-7444</strong></div>
+    <div class="contact-item">🌐 <strong>agentgrow.io</strong></div>
+  </div>
+</section>
+
+</body>
+</html>
