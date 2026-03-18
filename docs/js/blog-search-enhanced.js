@@ -52,6 +52,12 @@ class EnhancedBlogSearch {
                 featured: post.category === 'AI Engineering' || post.title.includes('Claude Code'), // Mark featured posts
                 categoryEmoji: this.getCategoryEmoji(post.category)
             }));
+            // Sort newest-first using _isoDate (YYYY-MM-DD) falling back to publishedDate
+            this.allPosts.sort((a, b) => {
+                const da = a._isoDate || '1970-01-01';
+                const db = b._isoDate || '1970-01-01';
+                return db.localeCompare(da); // lexicographic on ISO dates = correct date order
+            });
             this.filteredPosts = [...this.allPosts];
         } catch (error) {
             console.error('Error loading posts:', error);

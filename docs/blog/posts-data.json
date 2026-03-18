@@ -1,6 +1,364 @@
 {
   "posts": [
     {
+      "title": "The MCP Context Window Crisis: Why Enterprise AI Agents Are Hitting a Hidden Token Wall",
+      "url": "/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html",
+      "excerpt": "3 MCP servers can consume 143k of your 200k context window before your AI agent does any real work. Learn the CLI-first design patterns that fix this in enterprise production environments.",
+      "category": "Agentic AI",
+      "tags": [
+        "MCP Servers",
+        "AI Agents",
+        "Context Window",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 18, 2026",
+      "_isoDate": "2026-03-18",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "From DevOps to AgentOps: The Enterprise Guide to Managing AI Agent Fleets in Production (2026)",
+      "url": "/blog/posts/devops-to-agentops-enterprise-guide-2026.html",
+      "excerpt": "AgentOps is the next evolution of DevOps. Learn how enterprise teams manage AI agent fleets in 2026 — NVIDIA Vera, CLI-first architecture, MCP context limits, and the 5-layer production platform.",
+      "category": "Agentic AI",
+      "tags": [
+        "AgentOps",
+        "Agentic AI",
+        "DevOps",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 17, 2026",
+      "_isoDate": "2026-03-17",
+      "readTime": "15 min read",
+      "keywords": []
+    },
+    {
+      "title": "AI-Powered GitOps: How AI Agents Are Transforming Kubernetes Deployment Automation in 2026",
+      "url": "/blog/posts/ai-powered-gitops-kubernetes-automation-2026.html",
+      "excerpt": "Traditional GitOps is static. AI-powered GitOps thinks. Learn how AI agents integrated with ArgoCD and Flux are enabling autonomous drift remediation, predictive rollbacks, and self-healing pipelines in 2026.",
+      "category": "Agentic AI",
+      "tags": [
+        "GitOps",
+        "Kubernetes",
+        "AI Agents",
+        "ArgoCD"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 16, 2026",
+      "_isoDate": "2026-03-16",
+      "readTime": "15 min read",
+      "keywords": []
+    },
+    {
+      "title": "Why Enterprise DevOps Teams Are Standardizing on MCP Over CLIs in 2026",
+      "url": "/blog/posts/enterprise-mcp-vs-cli-devops-2026.html",
+      "excerpt": "While developers debate MCP vs CLI, enterprises are quietly standardizing on Model Context Protocol. Learn the enterprise case for MCP: auth, telemetry, governance, and migration guide.",
+      "category": "Agentic AI",
+      "tags": [
+        "MCP",
+        "Enterprise DevOps",
+        "Agentic AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 15, 2026",
+      "_isoDate": "2026-03-15",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "AIOps on Kubernetes: Why Your Observability Stack Is Blind Without AI (2026 Guide)",
+      "url": "/blog/posts/aiops-kubernetes-observability-2026.html",
+      "excerpt": "Prometheus and Grafana can",
+      "category": "AIOps",
+      "tags": [
+        "AIOps",
+        "Kubernetes Observability"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 14, 2026",
+      "_isoDate": "2026-03-14",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "Platform Engineering with AI Agents: Building Your AI-Powered IDP in 2026",
+      "url": "/blog/posts/platform-engineering-ai-agents-idp-2026.html",
+      "excerpt": "Discover how platform engineering teams are embedding AI agents into Internal Developer Platforms in 2026. Architecture patterns, Backstage AI plugins, self-healing golden paths, and a 90-day IDP modernisation roadmap.",
+      "category": "Platform Engineering",
+      "tags": [
+        "Platform Engineering",
+        "AI Agents",
+        "Internal Developer Platform"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 13, 2026",
+      "_isoDate": "2026-03-13",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026",
+      "url": "/blog/posts/llm-quantization-kubernetes-production-2026.html",
+      "excerpt": "Your existing Kubernetes cluster can run quantized LLMs in production today. Learn INT4/INT8 quantization, vLLM on K8s, and GitOps deployment patterns that cut GPU costs 60–80%.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "Kubernetes",
+        "LLM Quantization"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 12, 2026",
+      "_isoDate": "2026-03-12",
+      "readTime": "15 min read",
+      "keywords": []
+    },
+    {
+      "title": "AI DevOps Governance: The 5-Checkpoint Framework Every Enterprise Needs in 2026",
+      "url": "/blog/posts/ai-devops-governance-framework-2026.html",
+      "excerpt": "Amazon",
+      "category": "AI Governance",
+      "tags": [
+        "AI DevOps Governance",
+        "Agentic AI Safety"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 11, 2026",
+      "_isoDate": "2026-03-11",
+      "readTime": "13 min read",
+      "keywords": []
+    },
+    {
+      "title": "From DevOps to AgentOps: Why Enterprise Engineering Teams Need a New Playbook in 2026",
+      "url": "/blog/posts/devops-to-agentops-enterprise-playbook-2026.html",
+      "excerpt": "74% of enterprises plan autonomous AI agent deployment within 2 years. Learn how DevOps teams must evolve to AgentOps with practical enterprise guidance.",
+      "category": "Agentic AI",
+      "tags": [
+        "AgentOps",
+        "DevOps",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 10, 2026",
+      "_isoDate": "2026-03-10",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "Agentic AI vs RPA: The Enterprise ROI Comparison Every CTO Needs in 2026",
+      "url": "/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html",
+      "excerpt": "Agentic AI vs RPA ROI compared for 2026 enterprise automation. Which delivers faster payback? Real cost data from Fortune 500 deployments.",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI",
+        "RPA",
+        "Enterprise Automation ROI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 9, 2026",
+      "_isoDate": "2026-03-09",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "Enterprise Agentic AI Deployment 2026: The Complete Infrastructure Guide",
+      "url": "/blog/posts/enterprise-agentic-ai-deployment-2026.html",
+      "excerpt": "Enterprise agentic AI deployment 2026 guide: infrastructure stack, Kubernetes configs, governance, security, observability, and phased rollout strategy from 25 years of enterprise experience.",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI",
+        "Enterprise AI",
+        "Kubernetes",
+        "LangGraph"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 9, 2026",
+      "_isoDate": "2026-03-09",
+      "readTime": "15 min read",
+      "keywords": []
+    },
+    {
+      "title": "How Fortune 500 Companies Deploy Agentic AI Teams in 2026: Real Playbook",
+      "url": "/blog/posts/fortune-500-agentic-ai-deployment-playbook-2026.html",
+      "excerpt": "73% of Fortune 500 CIOs are deploying agentic AI teams in 2026. Here",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI",
+        "Enterprise AI",
+        "Fortune 500"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 9, 2026",
+      "_isoDate": "2026-03-09",
+      "readTime": "11 min read",
+      "keywords": []
+    },
+    {
+      "title": "Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production",
+      "url": "/blog/posts/kubernetes-genai-architecture-patterns-2026.html",
+      "excerpt": "The definitive 2026 enterprise guide to running GenAI workloads on Kubernetes. GPU scheduling, KServe, vLLM, KEDA autoscaling, RAG pipelines, and multi-tenant isolation — production-tested patterns from a 25-year enterprise architect.",
+      "category": "Kubernetes",
+      "tags": [
+        "Kubernetes",
+        "GenAI",
+        "MLOps"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 9, 2026",
+      "_isoDate": "2026-03-09",
+      "readTime": "16 min read",
+      "keywords": []
+    },
+    {
+      "title": "How to Train Enterprise Teams on Agentic AI: The Complete L&D Playbook 2026",
+      "url": "/blog/posts/agentic-ai-corporate-training-enterprise-2026.html",
+      "excerpt": "74% of enterprises cite workforce skill gaps as their #1 barrier to AI deployment. This step-by-step L&D playbook trains your teams on agentic AI—fast.",
+      "category": "Agentic AI Training",
+      "tags": [
+        "Agentic AI",
+        "Enterprise Training",
+        "L&D Playbook"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 8, 2026",
+      "_isoDate": "2026-03-08",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "Langfuse vs LangSmith vs Arize: Which LLM Observability Tool for Enterprise?",
+      "url": "/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html",
+      "excerpt": "Compare Langfuse, LangSmith, and Arize Phoenix for enterprise LLM observability in 2026. Pricing, features, Kubernetes integration, and the right choice for your AI platform team.",
+      "category": "AI Observability",
+      "tags": [
+        "LLM Observability",
+        "LangSmith",
+        "Langfuse",
+        "Arize Phoenix",
+        "Enterprise AI 2026"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 8, 2026",
+      "_isoDate": "2026-03-08",
+      "readTime": "13 min read",
+      "keywords": []
+    },
+    {
+      "title": "OpenTelemetry for AI Agents: Production Observability Setup Guide",
+      "url": "/blog/posts/opentelemetry-ai-agents-production-observability.html",
+      "excerpt": "AI agents fail silently—73% of production incidents go undetected without OTel. Step-by-step guide to instrument AI agents with OpenTelemetry for enterprise production use.",
+      "category": "AI Observability",
+      "tags": [
+        "OpenTelemetry",
+        "AI Agents",
+        "Production Observability",
+        "LLM Monitoring",
+        "Enterprise DevOps 2026"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 8, 2026",
+      "_isoDate": "2026-03-08",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "The GenAI Red Team Revolution: How AI Agents Are Replacing Human Security Researchers in 2026",
+      "url": "/blog/posts/genai-red-team-revolution-ai-security-2026.html",
+      "excerpt": "Claude Opus 4.6 found 22 Firefox zero-days in 2 weeks. AI red teaming is here. Learn how to implement GenAI security agents on Kubernetes with SPIFFE, OPA, Trivy, and LangGraph.",
+      "category": "Agentic AI",
+      "tags": [
+        "GenAI Red Team",
+        "AI Security 2026",
+        "LangGraph",
+        "Kubernetes Security"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 7, 2026",
+      "_isoDate": "2026-03-07",
+      "readTime": "13 min read",
+      "keywords": []
+    },
+    {
+      "title": "MLOps CI/CD for AI Models: DevOps Best Practices That Scale in 2026",
+      "url": "/blog/posts/mlops-cicd-pipeline-best-practices-2026.html",
+      "excerpt": "87% of AI models never reach production. Build an MLOps CI/CD pipeline that ships AI models at DevOps speed — model versioning, automated testing, canary rollouts, Kubernetes-native deployment.",
+      "category": "MLOps",
+      "tags": [
+        "MLOps",
+        "CI/CD",
+        "AI Model Deployment"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 7, 2026",
+      "_isoDate": "2026-03-07",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "Zero-Trust Security for AI Agents: Enterprise Implementation Guide 2026",
+      "url": "/blog/posts/zero-trust-ai-agents-enterprise-2026.html",
+      "excerpt": "AI agents are the new attack surface. Learn how to apply zero-trust principles to your agentic AI stack — identity, least-privilege, tool scoping, audit trails, and Kubernetes enforcement.",
+      "category": "AI Security",
+      "tags": [
+        "Zero Trust",
+        "AI Agent Security",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 7, 2026",
+      "_isoDate": "2026-03-07",
+      "readTime": "13 min read",
+      "keywords": []
+    },
+    {
+      "title": "Agentic AI in Banking & Financial Services: 7 Real Use Cases in 2026",
+      "url": "/blog/posts/agentic-ai-banking-financial-services-2026.html",
+      "excerpt": "73% of tier-1 banks now run agentic AI in production. Discover 7 real use cases — from fraud detection to autonomous trade execution — with ROI data and a deployment playbook.",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI",
+        "Banking",
+        "Financial Services"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 6, 2026",
+      "_isoDate": "2026-03-06",
+      "readTime": "15 min read",
+      "keywords": []
+    },
+    {
+      "title": "MCP Servers Explained: Model Context Protocol for Enterprise Developers",
+      "url": "/blog/posts/mcp-servers-model-context-protocol-enterprise.html",
+      "excerpt": "MCP adoption surged 400% in 2025. Learn how Model Context Protocol servers give enterprise AI agents secure, standardized tool access — and how to deploy them in production.",
+      "category": "Agentic AI",
+      "tags": [
+        "MCP",
+        "Model Context Protocol",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 6, 2026",
+      "_isoDate": "2026-03-06",
+      "readTime": "11 min read",
+      "keywords": []
+    },
+    {
+      "title": "How to Build a Production RAG Pipeline on Kubernetes: Enterprise Guide 2026",
+      "url": "/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html",
+      "excerpt": "Step-by-step enterprise guide to building a production RAG pipeline on Kubernetes. Covers vector databases, KServe, KEDA autoscaling, observability and security at scale.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "RAG Pipeline",
+        "Kubernetes",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 6, 2026",
+      "_isoDate": "2026-03-06",
+      "readTime": "16 min read",
+      "keywords": []
+    },
+    {
       "title": "LangGraph vs AutoGen vs CrewAI: Which Multi-Agent Framework Wins for Enterprise?",
       "url": "/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html",
       "excerpt": "78% of enterprise AI teams fail with the wrong multi-agent framework. Compare LangGraph, AutoGen, and CrewAI on architecture, state management, observability, and production-readiness for 2026 enterprise deployments.",
@@ -24,7 +382,159 @@
         "AutoGen vs CrewAI",
         "agentic AI frameworks 2026",
         "LangGraph CrewAI enterprise"
-      ]
+      ],
+      "_isoDate": "2026-03-05"
+    },
+    {
+      "title": "5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production",
+      "url": "/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html",
+      "excerpt": "Your Kubernetes cluster wasn",
+      "category": "Kubernetes",
+      "tags": [
+        "Kubernetes",
+        "LLM Inference",
+        "AI Infrastructure",
+        "GPU Scheduling",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 5, 2026",
+      "_isoDate": "2026-03-05",
+      "readTime": "15 min read",
+      "keywords": []
+    },
+    {
+      "title": "What Is an AI Agent? Enterprise Guide for CTOs (2026)",
+      "url": "/blog/posts/what-is-an-ai-agent-enterprise-guide-2026.html",
+      "excerpt": "Most CTOs still confuse AI agents with chatbots. Here",
+      "category": "Agentic AI",
+      "tags": [
+        "AI Agents",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 5, 2026",
+      "_isoDate": "2026-03-05",
+      "readTime": "13 min read",
+      "keywords": []
+    },
+    {
+      "title": "Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026",
+      "url": "/blog/posts/context-engineering-agentic-ai-2026.html",
+      "excerpt": "Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems that actually work.",
+      "category": "Agentic AI",
+      "tags": [
+        "Context Engineering",
+        "Agentic AI",
+        "Multi-Agent Systems",
+        "LangChain",
+        "AI Engineering"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 4, 2026",
+      "_isoDate": "2026-03-04",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "Multi-Agent Context Engineering in Kubernetes: Run 8 AI Agents in Parallel Without Breaking Production",
+      "url": "/blog/posts/multi-agent-context-engineering-kubernetes-2026.html",
+      "excerpt": "Context engineering is the skill separating senior from junior AI engineers in 2026. Learn how to architect shared context buses, memory layers, and Kubernetes-native patterns for multi-agent systems at scale.",
+      "category": "Agentic AI",
+      "tags": [
+        "multi-agent context engineering",
+        "Kubernetes AI agents",
+        "LangGraph",
+        "DevOps AI 2026"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 3, 2026",
+      "_isoDate": "2026-03-03",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "AI Agent Sandboxing in Kubernetes: Enterprise Security Guide 2026",
+      "url": "/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html",
+      "excerpt": "Learn how to sandbox agentic AI workloads in Kubernetes using namespace isolation, network policies, OPA/Gatekeeper, and micro-VM techniques for enterprise security.",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI Security",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 2, 2026",
+      "_isoDate": "2026-03-02",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "Building Production-Ready AI Agents with LangGraph: Lessons from the Field",
+      "url": "/blog/posts/langgraph-production-ai-agents-2026.html",
+      "excerpt": "Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training at Oracle.",
+      "category": "Agentic AI",
+      "tags": [
+        "LangGraph",
+        "AI Agents",
+        "Production AI",
+        "Multi-Agent Orchestration"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 2, 2026",
+      "_isoDate": "2026-03-02",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "The GenAI Infrastructure Arms Race: What Every DevOps Engineer Must Know in 2026",
+      "url": "/blog/posts/genai-infrastructure-arms-race-devops-2026.html",
+      "excerpt": "OpenAI",
+      "category": "Agentic AI",
+      "tags": [
+        "GenAI Infrastructure",
+        "DevOps AI",
+        "Kubernetes",
+        "AI Governance"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 1, 2026",
+      "_isoDate": "2026-03-01",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "How AI Agents Are Transforming CI/CD Pipelines in 2026",
+      "url": "/blog/posts/ai-cicd-pipeline-automation-2026.html",
+      "excerpt": "AI agents are rewriting the CI/CD playbook. Learn how autonomous pipeline orchestration, predictive failure detection, and agentic DevOps reduce release cycles by 60% in 2026.",
+      "category": "DevOps &amp; AI",
+      "tags": [
+        "AI CI/CD",
+        "Agentic AI",
+        "DevOps Automation",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "February 28, 2026",
+      "_isoDate": "2026-02-28",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
+      "title": "From Logs to Traces: Why Traditional Observability Fails for Multi-Agent AI Systems — OTel-Native Stack 2026",
+      "url": "/blog/posts/ai-observability-multi-agent-otel-2026.html",
+      "excerpt": "Traditional Prometheus/Grafana stacks cannot explain why your AI agent hallucinated. Learn how OTel-native observability with distributed tracing solves multi-agent AI systems in 2026.",
+      "category": "DevOps &amp; AI",
+      "tags": [
+        "AI Agent Observability",
+        "OpenTelemetry",
+        "Multi-Agent Systems",
+        "LangChain"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "February 28, 2026",
+      "_isoDate": "2026-02-28",
+      "readTime": "14 min read",
+      "keywords": []
     },
     {
       "title": "eBPF for Kubernetes Observability: Zero-Instrumentation Monitoring in 2026",
@@ -50,12 +560,13 @@
         "Pixie Kubernetes",
         "Hubble network observability",
         "Tetragon security"
-      ]
+      ],
+      "_isoDate": "2026-02-27"
     },
     {
       "title": "Why Every SMB Needs an AI Chief Business Officer in 2026",
       "url": "/blog/posts/why-every-smb-needs-ai-cbo-2026.html",
-      "excerpt": "Deploy an AI CBO that publishes content, manages social media, captures leads, and reports via Telegram \u2014 for $499/month. Real agents are already live generating 80+ blog posts and 47 leads.",
+      "excerpt": "Deploy an AI CBO that publishes content, manages social media, captures leads, and reports via Telegram — for $499/month. Real agents are already live generating 80+ blog posts and 47 leads.",
       "category": "Agentic AI",
       "tags": [
         "AI CBO",
@@ -77,12 +588,13 @@
         "AI content automation",
         "AI lead generation",
         "autonomous AI agent"
-      ]
+      ],
+      "_isoDate": "2026-02-26"
     },
     {
       "title": "Why AI Model Commoditization Makes Agentic AI Skills Your Real Competitive Advantage in 2026",
       "url": "/blog/posts/ai-model-commoditization-agentic-ai-skills-2026.html",
-      "excerpt": "Foundation models are converging \u2014 no single provider has a durable moat. The competitive advantage shifts to teams who can orchestrate models into production-ready agent systems with LangChain, LangGraph, RAG, and MCP.",
+      "excerpt": "Foundation models are converging — no single provider has a durable moat. The competitive advantage shifts to teams who can orchestrate models into production-ready agent systems with LangChain, LangGraph, RAG, and MCP.",
       "category": "Agentic AI",
       "tags": [
         "Agentic AI",
@@ -106,7 +618,8 @@
         "MCP servers",
         "AI skills gap 2026",
         "enterprise AI training"
-      ]
+      ],
+      "_isoDate": "2026-02-26"
     },
     {
       "title": "Why 70% of SREs Are Quitting (And How AI Fixes Everything)",
@@ -136,7 +649,8 @@
         "MTTR reduction AI",
         "self-healing Kubernetes",
         "AIOps"
-      ]
+      ],
+      "_isoDate": "2026-01-29"
     },
     {
       "title": "Context Engineering: 5 Techniques That 10x Your AI Performance in 2026",
@@ -169,7 +683,8 @@
         "AI context window",
         "LangChain",
         "semantic search"
-      ]
+      ],
+      "_isoDate": "2026-01-29"
     },
     {
       "title": "Why 90% of Developers Get Prompt Engineering Wrong: GitHub Copilot Mastery Guide 2026",
@@ -198,7 +713,8 @@
         "AI coding assistant",
         "prompt patterns",
         "iterative prompting"
-      ]
+      ],
+      "_isoDate": "2026-01-29"
     },
     {
       "title": "Moltbot: Why 90% of AI Assistants Are USELESS (But This One Actually Works)",
@@ -228,7 +744,8 @@
         "Moltbot security",
         "autonomous AI agent",
         "DevOps AI"
-      ]
+      ],
+      "_isoDate": "2026-01-28"
     },
     {
       "title": "Vector Databases on Kubernetes: Production Guide 2026 (78% Miss These Tricks)",
@@ -254,7 +771,8 @@
         "vector search",
         "production deployment",
         "performance optimization"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "LLMOps Pipeline on Kubernetes 2026: Production Secrets 83% Get Wrong",
@@ -280,7 +798,8 @@
         "AI pipeline",
         "production LLM",
         "cost reduction"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "DevSecOps Secrets: Why 90% Get Security Integration Wrong in 2026",
@@ -309,7 +828,8 @@
         "CI/CD security",
         "infrastructure security",
         "container security"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "Kubernetes to EKS Migration: Secret Steps 95% Miss in 2026",
@@ -339,7 +859,8 @@
         "container orchestration",
         "eksctl",
         "Velero"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "AWS EKS High Availability: Hidden Secrets 87% Don't Know in 2026",
@@ -365,7 +886,8 @@
         "EKS autoscaling",
         "Kubernetes resilience",
         "cluster autoscaler"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "Kubernetes Storage Secrets: Why 78% Lose Critical Data in 2026",
@@ -395,7 +917,8 @@
         "StorageClass",
         "data protection",
         "volume management"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "Setup Kubernetes on Laptop: Secret Tricks 92% Miss in 2026",
@@ -422,7 +945,396 @@
         "K8s laptop setup",
         "kubectl",
         "container orchestration"
-      ]
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Kubernetes AI/ML Workloads: Secret Strategies 89% Miss in 2026",
+      "url": "/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html",
+      "excerpt": "Master AI/ML deployment on Kubernetes with GPU optimization secrets, auto-scaling strategies, and security practices that 89% of teams miss in 2026.",
+      "category": "Kubernetes",
+      "tags": [
+        "Kubernetes",
+        "AI/ML",
+        "workloads",
+        "GPU",
+        "Kubeflow",
+        "TensorFlow",
+        "machine learning",
+        "auto-scaling",
+        "security"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "15 min read",
+      "keywords": [
+        "Kubernetes AI/ML workloads",
+        "GPU optimization",
+        "Kubeflow",
+        "TensorFlow Kubernetes",
+        "machine learning",
+        "auto-scaling",
+        "security"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "DevOps Trends 2026: Hidden Strategies 93% Will Miss",
+      "url": "/blog/posts/devops-trends-2026-analysis-guide.html",
+      "excerpt": "Discover the 7 DevOps trends reshaping 2026. AI automation secrets, DevSecOps revolution, and cloud-native strategies that 93% of teams will miss.",
+      "category": "DevOps",
+      "tags": [
+        "DevOps trends",
+        "AI automation",
+        "DevSecOps",
+        "cloud-native",
+        "Kubernetes evolution",
+        "CI/CD",
+        "market growth"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "16 min read",
+      "keywords": [
+        "DevOps trends 2026",
+        "AI automation DevOps",
+        "DevSecOps",
+        "cloud-native",
+        "Kubernetes trends",
+        "CI/CD evolution"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Docker Networking Secrets: Why 84% Get Container Communication Wrong in 2026",
+      "url": "/blog/posts/docker-networking-complete-guide-2026.html",
+      "excerpt": "Master Docker bridge and overlay networks with secrets 84% miss. Complete guide to container communication, service discovery, and production networking.",
+      "category": "Docker",
+      "tags": [
+        "Docker networking",
+        "bridge networks",
+        "overlay networks",
+        "container communication",
+        "service discovery",
+        "production"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "14 min read",
+      "keywords": [
+        "Docker networking",
+        "bridge networks",
+        "overlay networks",
+        "container communication",
+        "service discovery",
+        "production networking"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Kubernetes Certifications 2026: Hidden Secrets 91% Miss",
+      "url": "/blog/posts/advanced-kubernetes-certifications-guide-2026.html",
+      "excerpt": "Master CKA, CKS, CKAD, and KCSA with insider secrets 91% miss. Complete guide to Kubernetes certification paths, salary impact, and exam strategies.",
+      "category": "Kubernetes",
+      "tags": [
+        "Kubernetes certification",
+        "CKA",
+        "CKS",
+        "CKAD",
+        "KCSA",
+        "exam strategies",
+        "career growth",
+        "salary impact"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "17 min read",
+      "keywords": [
+        "Kubernetes certification",
+        "CKA",
+        "CKS",
+        "CKAD",
+        "KCSA",
+        "exam strategies",
+        "career growth",
+        "salary impact"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "AI-First DevOps Secrets: Why 87% Get Intelligent Automation Wrong in 2026",
+      "url": "/blog/posts/ai-first-devops-transformation-guide-2026.html",
+      "excerpt": "Discover the AI-First DevOps strategies that 87% miss. Master predictive analytics, intelligent automation, and proactive operations for competitive advantage.",
+      "category": "DevOps",
+      "tags": [
+        "AI-First DevOps",
+        "intelligent automation",
+        "predictive analytics",
+        "machine learning",
+        "proactive operations",
+        "transformation"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": [
+        "AI-First DevOps",
+        "intelligent automation",
+        "predictive analytics",
+        "machine learning DevOps",
+        "proactive operations"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Self-Healing Kubernetes Apps: Complete Guide to Automatic Recovery and Scaling (2026)",
+      "url": "/blog/posts/self-healing-kubernetes-apps-guide-2026.html",
+      "excerpt": "Master self-healing Kubernetes applications that recover from failures and scale automatically. Complete guide with real examples, HPA configuration, and production best practices.",
+      "category": "Kubernetes",
+      "tags": [
+        "kubernetes self healing",
+        "kubernetes auto scaling",
+        "HPA",
+        "livenessProbe",
+        "readinessProbe",
+        "kubernetes resilience",
+        "container orchestration"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "15 min read",
+      "keywords": [
+        "kubernetes self healing",
+        "kubernetes auto scaling",
+        "HPA",
+        "livenessProbe",
+        "readinessProbe",
+        "kubernetes resilience",
+        "container orchestration",
+        "self healing applications",
+        "production kubernetes"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "GitHub Actions CI/CD Complete Guide: Master Docker, Kubernetes & KIND Automation (2026)",
+      "url": "/blog/posts/github-actions-cicd-guide-2026.html",
+      "excerpt": "Master GitHub Actions CI/CD with Docker and Kubernetes deployment. Complete guide with working examples, KIND integration, security best practices, and production workflows.",
+      "category": "DevOps",
+      "tags": [
+        "github actions",
+        "ci cd",
+        "docker github actions",
+        "kubernetes github actions",
+        "kind deployment",
+        "github workflows",
+        "continuous integration",
+        "devops automation"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": [
+        "github actions",
+        "ci cd",
+        "docker github actions",
+        "kubernetes github actions",
+        "kind deployment",
+        "github workflows",
+        "continuous integration",
+        "devops automation",
+        "security best practices",
+        "production workflows"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "ArgoCD vs Flux vs Jenkins X: Complete 2026 GitOps Comparison",
+      "url": "/blog/posts/argocd-vs-flux-vs-jenkins-x-comparison-2026.html",
+      "excerpt": "Compare ArgoCD, Flux CD, and Jenkins X for Kubernetes GitOps in 2026. Learn market share, features, performance benchmarks, and which tool wins for your use case.",
+      "category": "GitOps",
+      "tags": [
+        "ArgoCD",
+        "Flux",
+        "GitOps",
+        "Kubernetes",
+        "Jenkins X",
+        "CNCF"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": [
+        "ArgoCD vs Flux",
+        "GitOps tools comparison 2026",
+        "ArgoCD vs Flux vs Jenkins X",
+        "Kubernetes continuous delivery",
+        "GitOps",
+        "CNCF GitOps"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Building Internal Developer Platforms 2026: Platform Engineering Roadmap 91% Miss",
+      "url": "/blog/posts/building-internal-developer-platforms-2026.html",
+      "excerpt": "Master platform engineering with the complete IDP implementation guide. Learn why 91% fail, how to achieve 40% faster delivery, and unlock $375K+ career potential in 2026.",
+      "category": "Platform Engineering",
+      "tags": [
+        "Platform Engineering",
+        "Internal Developer Platform",
+        "DevOps",
+        "Backstage",
+        "Humanitec",
+        "Crossplane"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "22 min read",
+      "keywords": [
+        "internal developer platform",
+        "platform engineering",
+        "IDP",
+        "developer platform",
+        "Backstage",
+        "Humanitec",
+        "Crossplane",
+        "golden paths",
+        "self-service platform"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Container Supply Chain Security 2026: Why 67% Can't Detect the $80B Threat",
+      "url": "/blog/posts/container-supply-chain-security-2026.html",
+      "excerpt": "Master container supply chain security with SBOM, Sigstore, SLSA Level 3, and admission controllers. Learn why 67% fail to detect threats costing $80.6B annually.",
+      "category": "DevSecOps",
+      "tags": [
+        "Container Security",
+        "Supply Chain",
+        "SBOM",
+        "CKS Certification",
+        "Sigstore",
+        "SLSA"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "22 min read",
+      "keywords": [
+        "container supply chain security",
+        "SBOM implementation",
+        "Sigstore cosign",
+        "SLSA framework",
+        "container vulnerability scanning",
+        "Kubernetes admission controller",
+        "DevSecOps",
+        "CKS certification"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Developer Experience Automation with AI 2026: The $30B Revolution 91% of Teams Get Wrong",
+      "url": "/blog/posts/developer-experience-automation-ai-2026.html",
+      "excerpt": "Master AI-powered developer productivity in 2026. Learn why 95% of enterprise AI pilots fail, compare GitHub Copilot vs Cursor vs Claude Code, and implement the ROI framework that saved Walmart 4M hours.",
+      "category": "DevOps & AI",
+      "tags": [
+        "Developer Experience",
+        "AI Coding Tools",
+        "Enterprise DevOps",
+        "GitHub Copilot",
+        "Claude Code"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": [
+        "developer experience automation AI",
+        "AI coding tools ROI",
+        "developer productivity AI",
+        "GitHub Copilot enterprise",
+        "AI DevEx tools",
+        "DORA metrics",
+        "SPACE framework",
+        "agentic development 2026"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Kubernetes vs Docker Swarm 2026: Why 89% Choose Wrong Orchestrator",
+      "url": "/blog/posts/kubernetes-vs-docker-swarm-2026-reality-check.html",
+      "excerpt": "Kubernetes dominates with 82% adoption but Docker Swarm uses 40-60% fewer resources. Learn when each wins with our decision framework backed by enterprise data.",
+      "category": "Container Orchestration",
+      "tags": [
+        "Kubernetes",
+        "Docker Swarm",
+        "Container Orchestration",
+        "DevOps",
+        "CNCF"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "18 min read",
+      "keywords": [
+        "kubernetes vs docker swarm",
+        "docker swarm vs kubernetes 2026",
+        "container orchestration comparison",
+        "is docker swarm dead",
+        "kubernetes vs swarm performance"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "RAG Systems on Kubernetes 2026: Why 85% Fail (Architecture Secrets for 10x Performance)",
+      "url": "/blog/posts/rag-systems-kubernetes-deployment-2026.html",
+      "excerpt": "Master RAG deployment on Kubernetes with production architecture patterns. Learn semantic caching (82% hit rates), framework selection (LlamaIndex vs LangChain), and why 85% of RAG projects fail.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "RAG",
+        "Kubernetes",
+        "Vector Database",
+        "LangChain",
+        "LlamaIndex",
+        "AI Infrastructure"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "20 min read",
+      "keywords": [
+        "RAG Kubernetes deployment",
+        "RAG architecture Kubernetes",
+        "RAG production deployment",
+        "LangChain vs LlamaIndex",
+        "semantic caching RAG",
+        "vector database Kubernetes",
+        "retrieval augmented generation"
+      ],
+      "_isoDate": "2026-01-24"
+    },
+    {
+      "title": "Zero-Trust DevOps Implementation Guide 2026: Secrets 74% of Security Teams Miss",
+      "url": "/blog/posts/zero-trust-devops-implementation-guide-2026.html",
+      "excerpt": "Master Zero-Trust DevOps implementation with SPIFFE/SPIRE, HashiCorp Vault, and OPA. Learn the DoD 4-phase approach, achieve 340% ROI, and save $1.76M per breach. Complete CI/CD pipeline security guide.",
+      "category": "DevSecOps",
+      "tags": [
+        "Zero Trust",
+        "DevSecOps",
+        "CI/CD Security",
+        "SPIFFE",
+        "HashiCorp Vault",
+        "OPA"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 24, 2026",
+      "readTime": "22 min read",
+      "keywords": [
+        "zero trust DevOps implementation",
+        "zero trust CI/CD security",
+        "SPIFFE SPIRE Kubernetes",
+        "DevOps security best practices 2026",
+        "HashiCorp Vault DevOps",
+        "OPA policy engine",
+        "secrets management"
+      ],
+      "_isoDate": "2026-01-24"
     },
     {
       "title": "AI Agent Design Patterns 2026: ReAct, Reflection & Planning Implementation Guide",
@@ -457,7 +1369,8 @@
         "Python",
         "benchmarks",
         "production"
-      ]
+      ],
+      "_isoDate": "2026-01-13"
     },
     {
       "title": "5 AI Agent Design Patterns That Power Every Modern Application",
@@ -490,7 +1403,8 @@
         "benchmarks",
         "production",
         "intelligent applications"
-      ]
+      ],
+      "_isoDate": "2026-01-13"
     },
     {
       "title": "LangGraph vs CrewAI vs AutoGen: Complete AI Agent Framework Comparison 2026",
@@ -521,7 +1435,8 @@
         "production readiness",
         "2026",
         "projects"
-      ]
+      ],
+      "_isoDate": "2026-01-13"
     },
     {
       "title": "Claude Skills Tutorial 2026: Build Custom AI Workflows in 10 Minutes",
@@ -551,7 +1466,8 @@
         "no coding",
         "step-by-step",
         "custom"
-      ]
+      ],
+      "_isoDate": "2026-01-11"
     },
     {
       "title": "Kubernetes Security Best Practices 2026: Complete Production Hardening Guide",
@@ -587,7 +1503,8 @@
         "runtime security",
         "supply chain",
         "Sigstore"
-      ]
+      ],
+      "_isoDate": "2026-01-11"
     },
     {
       "title": "Docker Image Layers Explained: Complete DCA Certification Guide 2026",
@@ -617,7 +1534,8 @@
         "optimization",
         "reduce image size",
         "90%"
-      ]
+      ],
+      "_isoDate": "2026-01-11"
     },
     {
       "title": "Claude Code vs Cursor: The Ultimate Deep Dive for Developers in 2026",
@@ -649,7 +1567,8 @@
         "performance",
         "development workflow",
         "2026"
-      ]
+      ],
+      "_isoDate": "2026-01-10"
     },
     {
       "title": "Claude Code for DevOps Engineers: The Complete Guide 2026",
@@ -681,7 +1600,8 @@
         "IaC automation",
         "CI/CD pipeline",
         "practical examples"
-      ]
+      ],
+      "_isoDate": "2026-01-09"
     },
     {
       "title": "LangChain Complete Guide 2026: Build AI Applications from Scratch",
@@ -714,381 +1634,9 @@
         "memory",
         "hands-on examples",
         "production-ready"
-      ]
-    },
-    {
-      "title": "Kubernetes AI/ML Workloads: Secret Strategies 89% Miss in 2026",
-      "url": "/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html",
-      "excerpt": "Master AI/ML deployment on Kubernetes with GPU optimization secrets, auto-scaling strategies, and security practices that 89% of teams miss in 2026.",
-      "category": "Kubernetes",
-      "tags": [
-        "Kubernetes",
-        "AI/ML",
-        "workloads",
-        "GPU",
-        "Kubeflow",
-        "TensorFlow",
-        "machine learning",
-        "auto-scaling",
-        "security"
       ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "15 min read",
-      "keywords": [
-        "Kubernetes AI/ML workloads",
-        "GPU optimization",
-        "Kubeflow",
-        "TensorFlow Kubernetes",
-        "machine learning",
-        "auto-scaling",
-        "security"
-      ]
-    },
-    {
-      "title": "DevOps Trends 2026: Hidden Strategies 93% Will Miss",
-      "url": "/blog/posts/devops-trends-2026-analysis-guide.html",
-      "excerpt": "Discover the 7 DevOps trends reshaping 2026. AI automation secrets, DevSecOps revolution, and cloud-native strategies that 93% of teams will miss.",
-      "category": "DevOps",
-      "tags": [
-        "DevOps trends",
-        "AI automation",
-        "DevSecOps",
-        "cloud-native",
-        "Kubernetes evolution",
-        "CI/CD",
-        "market growth"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "16 min read",
-      "keywords": [
-        "DevOps trends 2026",
-        "AI automation DevOps",
-        "DevSecOps",
-        "cloud-native",
-        "Kubernetes trends",
-        "CI/CD evolution"
-      ]
-    },
-    {
-      "title": "Docker Networking Secrets: Why 84% Get Container Communication Wrong in 2026",
-      "url": "/blog/posts/docker-networking-complete-guide-2026.html",
-      "excerpt": "Master Docker bridge and overlay networks with secrets 84% miss. Complete guide to container communication, service discovery, and production networking.",
-      "category": "Docker",
-      "tags": [
-        "Docker networking",
-        "bridge networks",
-        "overlay networks",
-        "container communication",
-        "service discovery",
-        "production"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "14 min read",
-      "keywords": [
-        "Docker networking",
-        "bridge networks",
-        "overlay networks",
-        "container communication",
-        "service discovery",
-        "production networking"
-      ]
-    },
-    {
-      "title": "Kubernetes Certifications 2026: Hidden Secrets 91% Miss",
-      "url": "/blog/posts/advanced-kubernetes-certifications-guide-2026.html",
-      "excerpt": "Master CKA, CKS, CKAD, and KCSA with insider secrets 91% miss. Complete guide to Kubernetes certification paths, salary impact, and exam strategies.",
-      "category": "Kubernetes",
-      "tags": [
-        "Kubernetes certification",
-        "CKA",
-        "CKS",
-        "CKAD",
-        "KCSA",
-        "exam strategies",
-        "career growth",
-        "salary impact"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "17 min read",
-      "keywords": [
-        "Kubernetes certification",
-        "CKA",
-        "CKS",
-        "CKAD",
-        "KCSA",
-        "exam strategies",
-        "career growth",
-        "salary impact"
-      ]
-    },
-    {
-      "title": "AI-First DevOps Secrets: Why 87% Get Intelligent Automation Wrong in 2026",
-      "url": "/blog/posts/ai-first-devops-transformation-guide-2026.html",
-      "excerpt": "Discover the AI-First DevOps strategies that 87% miss. Master predictive analytics, intelligent automation, and proactive operations for competitive advantage.",
-      "category": "DevOps",
-      "tags": [
-        "AI-First DevOps",
-        "intelligent automation",
-        "predictive analytics",
-        "machine learning",
-        "proactive operations",
-        "transformation"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "18 min read",
-      "keywords": [
-        "AI-First DevOps",
-        "intelligent automation",
-        "predictive analytics",
-        "machine learning DevOps",
-        "proactive operations"
-      ]
-    },
-    {
-      "title": "Self-Healing Kubernetes Apps: Complete Guide to Automatic Recovery and Scaling (2026)",
-      "url": "/blog/posts/self-healing-kubernetes-apps-guide-2026.html",
-      "excerpt": "Master self-healing Kubernetes applications that recover from failures and scale automatically. Complete guide with real examples, HPA configuration, and production best practices.",
-      "category": "Kubernetes",
-      "tags": [
-        "kubernetes self healing",
-        "kubernetes auto scaling",
-        "HPA",
-        "livenessProbe",
-        "readinessProbe",
-        "kubernetes resilience",
-        "container orchestration"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "15 min read",
-      "keywords": [
-        "kubernetes self healing",
-        "kubernetes auto scaling",
-        "HPA",
-        "livenessProbe",
-        "readinessProbe",
-        "kubernetes resilience",
-        "container orchestration",
-        "self healing applications",
-        "production kubernetes"
-      ]
-    },
-    {
-      "title": "GitHub Actions CI/CD Complete Guide: Master Docker, Kubernetes & KIND Automation (2026)",
-      "url": "/blog/posts/github-actions-cicd-guide-2026.html",
-      "excerpt": "Master GitHub Actions CI/CD with Docker and Kubernetes deployment. Complete guide with working examples, KIND integration, security best practices, and production workflows.",
-      "category": "DevOps",
-      "tags": [
-        "github actions",
-        "ci cd",
-        "docker github actions",
-        "kubernetes github actions",
-        "kind deployment",
-        "github workflows",
-        "continuous integration",
-        "devops automation"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "18 min read",
-      "keywords": [
-        "github actions",
-        "ci cd",
-        "docker github actions",
-        "kubernetes github actions",
-        "kind deployment",
-        "github workflows",
-        "continuous integration",
-        "devops automation",
-        "security best practices",
-        "production workflows"
-      ]
-    },
-    {
-      "title": "ArgoCD vs Flux vs Jenkins X: Complete 2026 GitOps Comparison",
-      "url": "/blog/posts/argocd-vs-flux-vs-jenkins-x-comparison-2026.html",
-      "excerpt": "Compare ArgoCD, Flux CD, and Jenkins X for Kubernetes GitOps in 2026. Learn market share, features, performance benchmarks, and which tool wins for your use case.",
-      "category": "GitOps",
-      "tags": [
-        "ArgoCD",
-        "Flux",
-        "GitOps",
-        "Kubernetes",
-        "Jenkins X",
-        "CNCF"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "18 min read",
-      "keywords": [
-        "ArgoCD vs Flux",
-        "GitOps tools comparison 2026",
-        "ArgoCD vs Flux vs Jenkins X",
-        "Kubernetes continuous delivery",
-        "GitOps",
-        "CNCF GitOps"
-      ]
-    },
-    {
-      "title": "Building Internal Developer Platforms 2026: Platform Engineering Roadmap 91% Miss",
-      "url": "/blog/posts/building-internal-developer-platforms-2026.html",
-      "excerpt": "Master platform engineering with the complete IDP implementation guide. Learn why 91% fail, how to achieve 40% faster delivery, and unlock $375K+ career potential in 2026.",
-      "category": "Platform Engineering",
-      "tags": [
-        "Platform Engineering",
-        "Internal Developer Platform",
-        "DevOps",
-        "Backstage",
-        "Humanitec",
-        "Crossplane"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "22 min read",
-      "keywords": [
-        "internal developer platform",
-        "platform engineering",
-        "IDP",
-        "developer platform",
-        "Backstage",
-        "Humanitec",
-        "Crossplane",
-        "golden paths",
-        "self-service platform"
-      ]
-    },
-    {
-      "title": "Container Supply Chain Security 2026: Why 67% Can't Detect the $80B Threat",
-      "url": "/blog/posts/container-supply-chain-security-2026.html",
-      "excerpt": "Master container supply chain security with SBOM, Sigstore, SLSA Level 3, and admission controllers. Learn why 67% fail to detect threats costing $80.6B annually.",
-      "category": "DevSecOps",
-      "tags": [
-        "Container Security",
-        "Supply Chain",
-        "SBOM",
-        "CKS Certification",
-        "Sigstore",
-        "SLSA"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "22 min read",
-      "keywords": [
-        "container supply chain security",
-        "SBOM implementation",
-        "Sigstore cosign",
-        "SLSA framework",
-        "container vulnerability scanning",
-        "Kubernetes admission controller",
-        "DevSecOps",
-        "CKS certification"
-      ]
-    },
-    {
-      "title": "Developer Experience Automation with AI 2026: The $30B Revolution 91% of Teams Get Wrong",
-      "url": "/blog/posts/developer-experience-automation-ai-2026.html",
-      "excerpt": "Master AI-powered developer productivity in 2026. Learn why 95% of enterprise AI pilots fail, compare GitHub Copilot vs Cursor vs Claude Code, and implement the ROI framework that saved Walmart 4M hours.",
-      "category": "DevOps & AI",
-      "tags": [
-        "Developer Experience",
-        "AI Coding Tools",
-        "Enterprise DevOps",
-        "GitHub Copilot",
-        "Claude Code"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "18 min read",
-      "keywords": [
-        "developer experience automation AI",
-        "AI coding tools ROI",
-        "developer productivity AI",
-        "GitHub Copilot enterprise",
-        "AI DevEx tools",
-        "DORA metrics",
-        "SPACE framework",
-        "agentic development 2026"
-      ]
-    },
-    {
-      "title": "Kubernetes vs Docker Swarm 2026: Why 89% Choose Wrong Orchestrator",
-      "url": "/blog/posts/kubernetes-vs-docker-swarm-2026-reality-check.html",
-      "excerpt": "Kubernetes dominates with 82% adoption but Docker Swarm uses 40-60% fewer resources. Learn when each wins with our decision framework backed by enterprise data.",
-      "category": "Container Orchestration",
-      "tags": [
-        "Kubernetes",
-        "Docker Swarm",
-        "Container Orchestration",
-        "DevOps",
-        "CNCF"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "18 min read",
-      "keywords": [
-        "kubernetes vs docker swarm",
-        "docker swarm vs kubernetes 2026",
-        "container orchestration comparison",
-        "is docker swarm dead",
-        "kubernetes vs swarm performance"
-      ]
-    },
-    {
-      "title": "RAG Systems on Kubernetes 2026: Why 85% Fail (Architecture Secrets for 10x Performance)",
-      "url": "/blog/posts/rag-systems-kubernetes-deployment-2026.html",
-      "excerpt": "Master RAG deployment on Kubernetes with production architecture patterns. Learn semantic caching (82% hit rates), framework selection (LlamaIndex vs LangChain), and why 85% of RAG projects fail.",
-      "category": "AI Infrastructure",
-      "tags": [
-        "RAG",
-        "Kubernetes",
-        "Vector Database",
-        "LangChain",
-        "LlamaIndex",
-        "AI Infrastructure"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "20 min read",
-      "keywords": [
-        "RAG Kubernetes deployment",
-        "RAG architecture Kubernetes",
-        "RAG production deployment",
-        "LangChain vs LlamaIndex",
-        "semantic caching RAG",
-        "vector database Kubernetes",
-        "retrieval augmented generation"
-      ]
-    },
-    {
-      "title": "Zero-Trust DevOps Implementation Guide 2026: Secrets 74% of Security Teams Miss",
-      "url": "/blog/posts/zero-trust-devops-implementation-guide-2026.html",
-      "excerpt": "Master Zero-Trust DevOps implementation with SPIFFE/SPIRE, HashiCorp Vault, and OPA. Learn the DoD 4-phase approach, achieve 340% ROI, and save $1.76M per breach. Complete CI/CD pipeline security guide.",
-      "category": "DevSecOps",
-      "tags": [
-        "Zero Trust",
-        "DevSecOps",
-        "CI/CD Security",
-        "SPIFFE",
-        "HashiCorp Vault",
-        "OPA"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 24, 2026",
-      "readTime": "22 min read",
-      "keywords": [
-        "zero trust DevOps implementation",
-        "zero trust CI/CD security",
-        "SPIFFE SPIRE Kubernetes",
-        "DevOps security best practices 2026",
-        "HashiCorp Vault DevOps",
-        "OPA policy engine",
-        "secrets management"
-      ]
+      "_isoDate": "2026-01-08"
     }
-  ]
+  ],
+  "total": 69
 }
