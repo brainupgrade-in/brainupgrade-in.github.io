@@ -40,6 +40,28 @@
         gtag('config', 'G-TRDMMEZ26F');
     </script>
 
+    <!-- Meta Pixel — DevOpsEssentials (897304668552605) -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '897304668552605');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+        content_name: 'Agentic AI: The Practitioner\'s Guide',
+        content_category: 'Book',
+        content_ids: ['agentic-ai-book'],
+        content_type: 'product',
+        value: 799,
+        currency: 'INR'
+    });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=897304668552605&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel -->
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1231,6 +1253,28 @@
             btn.textContent = '✉️ Sending...';
             btn.disabled = true;
             // Allow form to submit naturally; server redirects/handles response
+        });
+
+        // Meta Pixel — track InitiateCheckout on all Amazon buy button clicks
+        function trackAmazonClick(market) {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', {
+                    content_name: 'Agentic AI: The Practitioner\'s Guide',
+                    content_category: 'Book',
+                    content_ids: ['agentic-ai-book'],
+                    content_type: 'product',
+                    num_items: 1,
+                    value: market === 'IN' ? 799 : 19.99,
+                    currency: market === 'IN' ? 'INR' : 'USD'
+                });
+            }
+        }
+
+        document.querySelectorAll('a[href*="amzn.in"]').forEach(function(el) {
+            el.addEventListener('click', function() { trackAmazonClick('IN'); });
+        });
+        document.querySelectorAll('a[href*="a.co/d"]').forEach(function(el) {
+            el.addEventListener('click', function() { trackAmazonClick('US'); });
         });
     </script>
 </body>
