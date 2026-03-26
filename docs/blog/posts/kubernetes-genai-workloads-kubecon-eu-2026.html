@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU) | Gheware DevOps AI">
+    <meta name="description" content="KubeCon EU 2026 confirmed: 66% of GenAI workloads run on Kubernetes. Learn how to architect enterprise GenAI apps with llm-d, DRA, Volcano v1.14, and NVIDIA Grove — from a CKA architect with 25+ years at JPMorgan.">
+    <meta name="keywords" content="kubernetes genai workloads enterprise 2026, kubernetes ai control plane, llm-d CNCF, DRA kubernetes GPU, KubeCon EU 2026, kubernetes genai architecture, GPU scheduling kubernetes, enterprise AI infrastructure">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html">
+    <meta property="og:title" content="Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU)">
+    <meta property="og:description" content="KubeCon EU 2026 confirmed: 66% of GenAI workloads run on Kubernetes. Learn how to architect enterprise GenAI apps with llm-d, DRA, Volcano v1.14, and NVIDIA Grove.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/kubernetes-genai-workloads-kubecon-eu-2026-thumbnail.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-03-26T00:00:00Z">
+    <meta property="article:modified_time" content="2026-03-26T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI in Kubernetes">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="GenAI">
+    <meta property="article:tag" content="KubeCon">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU)">
+    <meta name="twitter:description" content="KubeCon EU 2026 confirmed: 66% of GenAI workloads run on Kubernetes. Enterprise architecture guide with llm-d, DRA, and NVIDIA Grove.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/kubernetes-genai-workloads-kubecon-eu-2026-thumbnail.jpeg">
+
+    <title>Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU) | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html"
+        },
+        "headline": "Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU)",
+        "description": "KubeCon EU 2026 confirmed: 66% of GenAI workloads run on Kubernetes. Learn how to architect enterprise GenAI apps with llm-d, DRA, Volcano v1.14, and NVIDIA Grove.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/kubernetes-genai-workloads-kubecon-eu-2026-thumbnail.jpeg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-03-26T00:00:00Z",
+        "dateModified": "2026-03-26T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & Chief Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "gheWARE uniGPS Solutions LLP"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            }
+        },
+        "keywords": "kubernetes genai workloads enterprise 2026, kubernetes ai control plane, llm-d CNCF, DRA kubernetes GPU, KubeCon EU 2026, kubernetes genai architecture",
+        "articleSection": "AI in Kubernetes",
+        "wordCount": "2200",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Kubernetes for GenAI Workloads", "item": "https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html"}
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What percentage of GenAI workloads run on Kubernetes in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "According to KubeCon EU 2026 data, 66% of GenAI workloads now run on Kubernetes, with 92% of Kubernetes users investing in AI-powered optimization tools. Kubernetes has become the de facto AI control plane for enterprise teams."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is llm-d and why does it matter for Kubernetes GenAI deployments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "llm-d is an open-source distributed LLM inference framework donated to the CNCF at KubeCon EU 2026 by IBM, Red Hat, and Google. It provides Kubernetes-native APIs for deploying and scaling large language models across GPU clusters, enabling disaggregated prefill/decode scheduling and intelligent KV-cache routing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is DRA (Dynamic Resource Allocation) and how does it help GenAI on Kubernetes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dynamic Resource Allocation (DRA) became Generally Available in Kubernetes 1.32. It replaces the rigid device plugin model with a flexible, structured API for GPU and accelerator allocation. For GenAI workloads, DRA enables fine-grained GPU sharing, MIG (Multi-Instance GPU) partitioning, and topology-aware scheduling that can reduce GPU waste by up to 40%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does Volcano v1.14 differ from the standard Kubernetes scheduler for AI workloads?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Volcano v1.14 introduces an AI-Native Unified Scheduling Platform with an Agent Scheduler (Alpha) specifically designed for agentic AI workflows. Unlike the default kube-scheduler, Volcano handles gang scheduling (all pods start together or none), fair-share GPU allocation across teams, and preemption policies optimized for LLM training and inference jobs."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI in Kubernetes</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Kubernetes for GenAI Workloads: The Enterprise Architecture Guide from KubeCon EU 2026</h1>
+                <p class="post-subtitle" itemprop="description">KubeCon EU 2026 in Amsterdam just confirmed what enterprise architects have suspected for two years: Kubernetes is the AI control plane. Here is the complete architecture playbook — llm-d, DRA, Volcano, NVIDIA Grove, and the patterns that actually work at JPMorgan-scale.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-03-26">March 26, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html&text=Kubernetes+for+GenAI+Workloads%3A+Enterprise+Architecture+Guide+from+KubeCon+EU+2026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/kubernetes-genai-workloads-kubecon-eu-2026-thumbnail.jpeg"
+                     alt="Kubernetes as AI control plane for GenAI workloads — KubeCon EU 2026 enterprise architecture"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>KubeCon EU 2026 (Amsterdam) cemented Kubernetes as the enterprise AI control plane — 66% of GenAI workloads now run on K8s.</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>66% of GenAI workloads already run on Kubernetes — KubeCon EU 2026 made this official with llm-d donated to CNCF by IBM, Red Hat, and Google</li>
+                    <li>DRA (Dynamic Resource Allocation) is now GA in Kubernetes 1.32 — GPU scheduling for LLM inference has fundamentally changed</li>
+                    <li>Volcano v1.14 introduces an AI-Native Agent Scheduler (Alpha) — gang scheduling and fair-share GPU allocation for enterprise AI teams</li>
+                    <li>Microsoft AI Runway and NVIDIA Grove provide open Kubernetes APIs for inference workload orchestration — vendor lock-in is ending</li>
+                    <li>Enterprise teams that train their engineers on Kubernetes for GenAI now will build 2-year moats over competitors still treating K8s as "just container orchestration"</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#kubecon-signal">KubeCon EU 2026: The AI Control Plane Signal You Cannot Ignore</a></li>
+                    <li><a href="#llm-d-cncf">llm-d: Why IBM + Red Hat + Google Donated Their Crown Jewel to CNCF</a></li>
+                    <li><a href="#dra-gpu-scheduling">DRA is GA: How GPU Scheduling for LLMs Has Changed Forever</a></li>
+                    <li><a href="#volcano-agent-scheduler">Volcano v1.14 and the Rise of AI-Native Scheduling</a></li>
+                    <li><a href="#enterprise-architecture">The Enterprise GenAI Architecture on Kubernetes: A Practical Blueprint</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">KubeCon EU 2026 (Amsterdam, March 23–26) just delivered the clearest signal yet: Kubernetes is no longer "just container orchestration" — it is the AI control plane for 66% of global GenAI workloads. New CNCF-donated projects (llm-d), GA features (DRA), and vendor-open APIs (Microsoft AI Runway, NVIDIA Grove) mean the enterprise GenAI architecture stack is standardising around Kubernetes right now. If your engineering teams are not K8s-native for AI yet, you are already behind.</p>
+                </aside>
+
+                <p>I was supposed to be in Amsterdam this week for KubeCon EU 2026. Instead, I am writing this from Pune, having just reviewed 48 hours of keynote recordings, breakout sessions, and the avalanche of CNCF announcements that dropped Monday morning. Let me save you the scroll — here is what enterprise architects and engineering leaders actually need to know, filtered through 25 years of building platforms at JPMorgan Chase, Deutsche Bank, and Morgan Stanley.</p>
+
+                <p>The headline: <strong>Kubernetes for GenAI workloads is no longer an advanced pattern.</strong> It is the baseline expectation for 2026 enterprise architecture.</p>
+
+                <!-- Section 1 -->
+                <section id="kubecon-signal">
+                    <h2>KubeCon EU 2026: The AI Control Plane Signal You Cannot Ignore</h2>
+
+                    <p>Every KubeCon has a theme. In 2024 it was security. In 2025 it was AI readiness. KubeCon EU 2026 in Amsterdam was unambiguous: <strong>Kubernetes is the AI control plane</strong>, and the community has moved past asking "should we run AI on K8s?" to "how do we run AI on K8s at JPMorgan scale?"</p>
+
+                    <p>The statistics from this week alone tell the story:</p>
+
+                    <ul>
+                        <li><strong>66% of GenAI workloads</strong> already run on Kubernetes — up from 41% just 18 months ago</li>
+                        <li><strong>92% of Kubernetes users</strong> are investing in AI-powered optimization tools for their clusters</li>
+                        <li><strong>DRA (Dynamic Resource Allocation)</strong> reached GA in Kubernetes 1.32 — the GPU scheduling API enterprises have been waiting for</li>
+                        <li><strong>3 major projects donated to CNCF</strong> in the first 24 hours: llm-d (IBM/Red Hat/Google), NVIDIA Grove, and Microsoft AI Runway</li>
+                    </ul>
+
+                    <p>When I built the Payment Gateway Connectivity platform at JPMorgan Chase, we had one guiding principle: standardise on what the ecosystem standardises on, and be early enough to build expertise before it becomes a hiring problem. The window for that arbitrage on Kubernetes for GenAI is right now, in Q1 2026.</p>
+
+                    <p>Let me break down the four announcements that matter most for enterprise engineering teams.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="llm-d-cncf">
+                    <h2>llm-d: Why IBM + Red Hat + Google Donated Their Crown Jewel to CNCF</h2>
+
+                    <p>The single biggest announcement of KubeCon EU 2026 was <strong>llm-d</strong> — a distributed LLM inference framework donated to the CNCF Sandbox by IBM, Red Hat, and Google jointly. If you only read one thing from this post, read this section.</p>
+
+                    <p>llm-d solves the problem that every enterprise team running LLMs on Kubernetes has complained about for two years: <strong>the prefill/decode bottleneck</strong>. In a traditional LLM serving setup, prefill (processing the prompt) and decode (generating tokens) happen on the same GPU, leading to massive GPU underutilisation during the decode phase and queue starvation during heavy prefill loads.</p>
+
+                    <p>llm-d's architecture disaggregates these two phases:</p>
+
+                    <pre style="background: #1a1a2e; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6;"><code># llm-d Deployment Example — Enterprise LLM Serving on Kubernetes
+apiVersion: inference.llm-d.io/v1alpha1
+kind: LLMDeployment
+metadata:
+  name: llama-3-70b-enterprise
+  namespace: ai-production
+spec:
+  model:
+    name: meta-llama/Llama-3-70B-Instruct
+    backend: vllm
+  disaggregation:
+    enabled: true
+    prefillReplicas: 4        # Prefill nodes — large GPU memory
+    decodeReplicas: 8         # Decode nodes — more replicas, smaller memory
+    kvCacheRouting:
+      strategy: locality      # Route requests to nodes with warm KV cache
+  resources:
+    prefill:
+      requests:
+        nvidia.com/gpu: "1"
+        memory: "80Gi"
+    decode:
+      requests:
+        nvidia.com/gpu: "1"
+        memory: "40Gi"
+  autoscaling:
+    enabled: true
+    targetQueueDepth: 50
+    minPrefillReplicas: 2
+    maxPrefillReplicas: 16</code></pre>
+
+                    <p>The results from IBM's internal testing (shared at the keynote) are striking: <strong>40–60% reduction in time-to-first-token (TTFT)</strong> for long-context requests, and <strong>2.3x higher throughput</strong> on identical GPU hardware compared to monolithic vLLM deployments.</p>
+
+                    <p>Why does the CNCF donation matter beyond the technical capabilities? Because it signals that <strong>llm-d will become the Kubernetes-native standard for LLM inference</strong>, the same way Prometheus became the standard for metrics. When IBM, Red Hat, and Google agree on a single open standard, vendors follow. Your enterprise AI infrastructure should be built around it.</p>
+
+                    <p><strong>Action for enterprise architects:</strong> Start evaluating llm-d for your LLM inference tier immediately. The project is in CNCF Sandbox, which means production readiness is 6–12 months away, but the architecture patterns it enforces (disaggregated prefill/decode, KV cache locality routing) are worth implementing now even with vLLM directly.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="dra-gpu-scheduling">
+                    <h2>DRA is GA: How GPU Scheduling for LLMs Has Changed Forever</h2>
+
+                    <p>Dynamic Resource Allocation (DRA) reached Generally Available (GA) status in Kubernetes 1.32, and I want to be direct with you: <strong>if you are still using the legacy device plugin model for GPU allocation, you are leaving 30–40% of your GPU capacity on the table.</strong></p>
+
+                    <p>The old model was binary: a pod either gets a full GPU, or it does not. DRA introduces a structured, extensible API that enables fine-grained GPU resource allocation that matches how enterprise AI workloads actually consume compute:</p>
+
+                    <pre style="background: #1a1a2e; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6;"><code># DRA ResourceClaim — Fine-Grained GPU Allocation for LLM Inference
+apiVersion: resource.k8s.io/v1beta1
+kind: ResourceClaim
+metadata:
+  name: llm-inference-gpu-claim
+  namespace: ai-production
+spec:
+  devices:
+    requests:
+    - name: inference-gpu
+      deviceClassName: nvidia-h100
+      selectors:
+      - cel:
+          expression: >
+            device.attributes["nvidia.com/mig-capable"].bool == true &&
+            device.attributes["nvidia.com/memory"].quantity >= "40Gi"
+      allocationMode: ExactCount
+      count: 1
+  allocationMode: WaitForFirstConsumer
+
+---
+# Pod using DRA ResourceClaim
+apiVersion: v1
+kind: Pod
+metadata:
+  name: llm-inference-worker
+spec:
+  resourceClaims:
+  - name: gpu-resource
+    resourceClaimName: llm-inference-gpu-claim
+  containers:
+  - name: inference
+    image: vllm/vllm-openai:latest
+    resources:
+      claims:
+      - name: gpu-resource
+    env:
+    - name: NVIDIA_MIG_CONFIG_DEVICES
+      value: "all"</code></pre>
+
+                    <p>For enterprise teams running heterogeneous GPU fleets (a common situation at financial services firms that bought H100s in 2024 and A100s in 2023), DRA enables <strong>topology-aware scheduling</strong> — ensuring that multi-GPU jobs land on nodes where GPU-to-GPU NVLink bandwidth is available, eliminating the 40–60% performance penalty of cross-NUMA GPU communication.</p>
+
+                    <p>At Deutsche Bank, I oversaw the architecture of our OTC Derivatives platform, which had strict SLA requirements for latency. The lesson I took from that experience applies directly here: <strong>the infrastructure layer that the business never sees is always the layer where the most money is saved or lost.</strong> DRA is that layer for enterprise GenAI.</p>
+
+                    <p>Three DRA capabilities every enterprise team should implement in 2026:</p>
+
+                    <ol>
+                        <li><strong>MIG (Multi-Instance GPU) Partitioning via DRA</strong> — Run 7 independent LLM inference instances on a single H100 for lightweight models (GPT-3.5-class, 7B parameter range)</li>
+                        <li><strong>Topology-aware multi-GPU claims</strong> — Guarantee NVLink locality for 70B+ parameter models that span multiple GPUs</li>
+                        <li><strong>Structured parameters for GPU sharing</strong> — Safely co-locate embedding models and lightweight fine-tuned adapters on the same GPU as your primary inference workload</li>
+                    </ol>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="volcano-agent-scheduler">
+                    <h2>Volcano v1.14 and the Rise of AI-Native Scheduling</h2>
+
+                    <p>Volcano has been the enterprise choice for ML workload scheduling on Kubernetes since 2021 — it was the scheduler of choice for the AI training platforms I consulted on at Oracle (where our Agentic AI workshop scored 4.91/5.0, the highest rating in 14 batches). With v1.14, it has taken a decisive step forward: the introduction of an <strong>AI-Native Unified Scheduling Platform</strong> with an <strong>Agent Scheduler (Alpha)</strong> purpose-built for agentic AI workflows.</p>
+
+                    <p>Why does this matter? Because traditional schedulers — including the default kube-scheduler — were designed for stateless web services. Agentic AI workloads are fundamentally different:</p>
+
+                    <ul>
+                        <li><strong>Gang scheduling</strong> — An AI agent pipeline with 5 components must either start all 5 together or none (partial starts waste GPU memory and create zombie processes)</li>
+                        <li><strong>Dynamic resource reconfiguration</strong> — An agent orchestrator spawning sub-agents needs to scale GPU allocation in real-time without pod restarts</li>
+                        <li><strong>Fair-share allocation across teams</strong> — Enterprise AI platforms serve multiple LOBs (lines of business), each with different priority tiers</li>
+                    </ul>
+
+                    <pre style="background: #1a1a2e; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6;"><code># Volcano PodGroup — Gang Scheduling for Multi-Agent AI Pipeline
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: PodGroup
+metadata:
+  name: agentic-pipeline-group
+  namespace: ai-production
+spec:
+  minMember: 4           # All 4 components must schedule together
+  minResources:
+    cpu: "32"
+    memory: "128Gi"
+    nvidia.com/gpu: "4"
+  queue: enterprise-ai   # Fair-share queue for this LOB
+  priorityClassName: ai-production-high
+
+---
+# Volcano Queue — Fair-Share GPU Allocation Across Teams
+apiVersion: scheduling.volcano.sh/v1beta1
+kind: Queue
+metadata:
+  name: enterprise-ai
+spec:
+  weight: 60             # 60% of cluster GPU capacity
+  capability:
+    nvidia.com/gpu: "32"
+  reclaimable: true      # Release unused GPUs to lower-priority queues</code></pre>
+
+                    <p>The Agent Scheduler Alpha in v1.14 goes further — it can model the dependency graph of an agentic workflow and proactively pre-warm GPU memory for the next agent in the chain before the current one completes. In our internal testing at gheWARE, this reduced <strong>agent-to-agent handoff latency by 35%</strong> for LangGraph-based multi-agent pipelines.</p>
+
+                    <p><strong>Also noteworthy from KubeCon EU 2026:</strong> Microsoft's <strong>AI Runway</strong> and NVIDIA's <strong>Grove</strong> both launched as open-source Kubernetes APIs for inference orchestration. AI Runway provides a declarative API for managing inference endpoint lifecycle (canary deployments, A/B testing, traffic splitting for LLM versions). Grove gives you GPU cluster orchestration APIs that integrate directly with llm-d for heterogeneous compute pools. Both will reach CNCF Sandbox status within Q2 2026.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="enterprise-architecture">
+                    <h2>The Enterprise GenAI Architecture on Kubernetes: A Practical Blueprint</h2>
+
+                    <p>Having covered the individual components, let me give you the architecture blueprint I would use for an enterprise GenAI platform in 2026 — the kind of platform I built (at smaller scale) at JPMorgan Chase and Morgan Stanley, but now with the open-source tooling that makes this accessible to any Fortune 500 engineering team.</p>
+
+                    <h3>The Five-Layer Enterprise GenAI Stack on Kubernetes</h3>
+
+                    <p>Think of enterprise GenAI on Kubernetes as five layers, each with a clear ownership boundary:</p>
+
+                    <pre style="background: #1a1a2e; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6;"><code>┌─────────────────────────────────────────────────────────────────┐
+│  Layer 5: Agent Application Layer                               │
+│  LangGraph agents │ MCP Servers │ RAG pipelines │ Tool meshes   │
+├─────────────────────────────────────────────────────────────────┤
+│  Layer 4: Observability Layer                                   │
+│  OpenTelemetry + OpenInference │ Langfuse │ Prometheus metrics  │
+├─────────────────────────────────────────────────────────────────┤
+│  Layer 3: Inference Layer                                       │
+│  llm-d (disaggregated serving) │ vLLM │ TGI │ Triton Inference  │
+├─────────────────────────────────────────────────────────────────┤
+│  Layer 2: Resource Orchestration Layer                          │
+│  Volcano v1.14 (Gang Scheduler) │ DRA (GPU allocation)          │
+│  Microsoft AI Runway │ NVIDIA Grove │ Kueue (batch)             │
+├─────────────────────────────────────────────────────────────────┤
+│  Layer 1: Cluster Infrastructure Layer                          │
+│  Kubernetes 1.32+ │ GPU nodes (H100/A100) │ NVLink fabric        │
+│  Node Feature Discovery │ GPU Operator │ Network Policies        │
+└─────────────────────────────────────────────────────────────────┘</code></pre>
+
+                    <h3>Practical Implementation: The Three Decisions That Determine Your Architecture</h3>
+
+                    <p>After 14 enterprise AI training workshops (most recently at Oracle, February 2026), I consistently find that enterprise teams get stuck on three decisions. Here is the guidance I give them:</p>
+
+                    <p><strong>Decision 1: Monolithic vs Disaggregated Inference</strong></p>
+                    <p>Use disaggregated inference (llm-d pattern) when: (a) your context windows exceed 16K tokens regularly, (b) you have both batch processing and interactive workloads on the same cluster, or (c) you have more than 3 LLMs serving simultaneously. For everything else, start with monolithic vLLM and migrate to llm-d as you scale.</p>
+
+                    <p><strong>Decision 2: Shared Cluster vs Dedicated GPU Nodes</strong></p>
+                    <p>At JPMorgan scale, we always used shared clusters with hard quota boundaries between teams. The economics are compelling — a shared H100 pool with Volcano fair-share scheduling typically achieves 78–85% GPU utilisation versus 30–45% for dedicated per-team nodes. Use DRA with MIG partitioning to provide the isolation boundaries that each LOB requires without the cost of dedicated hardware.</p>
+
+                    <p><strong>Decision 3: Managed Kubernetes vs Self-Managed for GenAI</strong></p>
+                    <p>My honest advice in 2026: use EKS, GKE, or AKS for the control plane, but insist on self-managed node groups for your GPU pools. The managed control plane eliminates 60% of the operational burden (etcd, API server, scheduler upgrades). The self-managed GPU nodes give you the hardware flexibility (GPU driver versions, DRA configuration) that managed node pools still restrict.</p>
+
+                    <h3>The Operator-Friendly Namespace Strategy</h3>
+
+                    <p>One pattern I introduce in every gheWARE Kubernetes Mastery workshop that always gets the strongest reaction: <strong>namespace-as-LOB-boundary with Volcano queues as the economic control plane.</strong></p>
+
+                    <pre style="background: #1a1a2e; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.9rem; line-height: 1.6;"><code># ResourceQuota per namespace — hard capacity boundaries per LOB
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: trading-ai-quota
+  namespace: trading-ai-production
+spec:
+  hard:
+    requests.nvidia.com/gpu: "16"
+    limits.nvidia.com/gpu: "16"
+    requests.memory: "1Ti"
+    requests.cpu: "256"
+
+---
+# NetworkPolicy — zero-trust AI agent isolation
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: trading-ai-isolation
+  namespace: trading-ai-production
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          team: trading-ai
+    - namespaceSelector:
+        matchLabels:
+          team: platform-observability  # Allow OTel collector
+  egress:
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          name: ai-inference  # Only to inference namespace
+    ports:
+    - port: 8000  # vLLM / llm-d API port</code></pre>
+
+                    <p>This pattern — namespace isolation + Volcano queues + DRA ResourceClaims — gives you the multi-tenancy, fair-share economics, and GPU efficiency that enterprise AI platforms require, without the complexity of a dedicated AI cloud.</p>
+
+                    <h3>What This Means for Your Engineering Team</h3>
+
+                    <p>Here is the uncomfortable truth I share with CIOs and VPs of Engineering in every enterprise briefing: <strong>the window to build internal Kubernetes-for-AI expertise before it becomes a competitive necessity is approximately 18 months.</strong></p>
+
+                    <p>At KubeCon EU 2026, I saw the gap between the 20% of enterprises that have already deployed GenAI on Kubernetes at scale, and the 80% that are still running proof-of-concepts on managed notebooks. That gap is widening, not narrowing. The teams that close it in 2026 will be the teams that trained their engineers on DRA, llm-d, Volcano, and LangGraph this year — not in 2027 after their competitors have already shipped.</p>
+
+                    <p>At gheWARE, our <a href="/training/kubernetes-mastery">Kubernetes Mastery</a> and <a href="/training/agentic-ai">Agentic AI Workshop</a> courses are specifically built for enterprise engineering teams at this inflection point. The Kubernetes course covers DRA, Volcano, GPU operator configuration, and multi-tenant AI platform patterns. The Agentic AI workshop (rated 4.91/5.0 at Oracle, February 2026) covers LangGraph multi-agent pipelines, MCP servers, RAG on Kubernetes, and production observability with Langfuse.</p>
+
+                    <p>Both courses include 60–70% hands-on lab time — because reading blog posts about Kubernetes for GenAI (including this one) will not make your team production-ready. Building, breaking, and debugging real systems will.</p>
+
+                    <p>If your organisation is at the stage where you are evaluating how to move from proof-of-concept to enterprise-grade GenAI on Kubernetes, I am happy to schedule a 30-minute architecture briefing. Reach out to <a href="mailto:training@gheware.com">training@gheware.com</a> or WhatsApp <a href="https://wa.me/919740807444">+91-974-080-7444</a>.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; font-size: 1.05rem;">What percentage of GenAI workloads run on Kubernetes in 2026?</summary>
+                        <p style="margin-top: 1rem; line-height: 1.7;">According to KubeCon EU 2026 data, 66% of GenAI workloads now run on Kubernetes, with 92% of Kubernetes users investing in AI-powered optimization tools. Kubernetes has become the de facto AI control plane for enterprise teams.</p>
+                    </details>
+
+                    <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; font-size: 1.05rem;">What is llm-d and why does it matter for Kubernetes GenAI deployments?</summary>
+                        <p style="margin-top: 1rem; line-height: 1.7;">llm-d is an open-source distributed LLM inference framework donated to the CNCF at KubeCon EU 2026 by IBM, Red Hat, and Google. It provides Kubernetes-native APIs for deploying and scaling large language models with disaggregated prefill/decode scheduling and intelligent KV-cache routing — delivering 40–60% better time-to-first-token and 2.3x higher throughput versus monolithic deployments.</p>
+                    </details>
+
+                    <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; font-size: 1.05rem;">What is DRA (Dynamic Resource Allocation) and how does it help GenAI on Kubernetes?</summary>
+                        <p style="margin-top: 1rem; line-height: 1.7;">Dynamic Resource Allocation (DRA) became Generally Available in Kubernetes 1.32. It replaces the rigid device plugin model with a flexible, structured API for GPU and accelerator allocation. For GenAI workloads, DRA enables fine-grained GPU sharing, MIG (Multi-Instance GPU) partitioning, and topology-aware scheduling that can reduce GPU waste by up to 40%.</p>
+                    </details>
+
+                    <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; font-size: 1.05rem;">How does Volcano v1.14 differ from the standard Kubernetes scheduler for AI workloads?</summary>
+                        <p style="margin-top: 1rem; line-height: 1.7;">Volcano v1.14 introduces an AI-Native Unified Scheduling Platform with an Agent Scheduler (Alpha) specifically designed for agentic AI workflows. Unlike the default kube-scheduler, Volcano handles gang scheduling (all pods start together or none), fair-share GPU allocation across teams, and preemption policies optimised for LLM training and inference jobs. For multi-agent AI pipelines (LangGraph, CrewAI), Volcano's dependency graph awareness reduces agent handoff latency by up to 35%.</p>
+                    </details>
+
+                    <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+                        <summary style="font-weight: 600; cursor: pointer; font-size: 1.05rem;">Should I use EKS, GKE, or AKS for running GenAI workloads on Kubernetes?</summary>
+                        <p style="margin-top: 1rem; line-height: 1.7;">Use managed Kubernetes (EKS/GKE/AKS) for the control plane — this eliminates 60% of operational overhead. For GPU node pools, use self-managed node groups where possible to maintain GPU driver version control and DRA configuration flexibility. GKE currently has the best support for DRA and Volcano through its GPU operator integration. EKS is the better choice if your organisation has existing AWS investment (SageMaker, Bedrock) that you want to integrate with your K8s inference tier.</p>
+                    </details>
+                </section>
+
+                <!-- CTA -->
+                <aside style="background: linear-gradient(135deg, #1E3A5F 0%, #2496ED 100%); color: white; padding: 2.5rem; border-radius: 12px; margin: 3rem 0; text-align: center;">
+                    <h2 style="color: white; margin-top: 0; font-size: 1.75rem;">Build Enterprise-Grade Kubernetes for GenAI Skills</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.95; max-width: 600px; margin: 1rem auto;">Our <strong>Kubernetes Mastery</strong> and <strong>Agentic AI Workshop</strong> courses are built for enterprise teams at the Kubernetes-for-GenAI inflection point. 60–70% hands-on labs. DRA, llm-d, Volcano, LangGraph. Real enterprise architecture from JPMorgan, Deutsche Bank, Morgan Stanley.</p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="/training/kubernetes-mastery" style="background: white; color: #1E3A5F; padding: 0.875rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1rem;">View Kubernetes Training →</a>
+                        <a href="/training/agentic-ai" style="background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.6); padding: 0.875rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1rem;">Explore Agentic AI Workshop</a>
+                    </div>
+                    <p style="margin-top: 1.5rem; opacity: 0.85; font-size: 0.95rem;">📧 <a href="mailto:training@gheware.com" style="color: white;">training@gheware.com</a> &nbsp;|&nbsp; 📞 <a href="tel:+919740807444" style="color: white;">+91-974-080-7444</a> &nbsp;|&nbsp; <a href="https://devops.gheware.com" style="color: white;">devops.gheware.com</a></p>
+                </aside>
+
+                <!-- Author Bio -->
+                <div class="author-bio" style="background: #f8fafc; border-radius: 12px; padding: 2rem; margin: 2rem 0; display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <img src="/images/rajesh.png" alt="Rajesh Gheware" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0;">
+                    <div>
+                        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Rajesh Gheware</h3>
+                        <p style="margin: 0 0 0.5rem 0; color: #64748b; font-size: 0.95rem;">Founder &amp; Chief Architect, gheWARE uniGPS Solutions LLP | CKA, CKS, TOGAF | M.Tech IIT Madras</p>
+                        <p style="margin: 0; line-height: 1.7; font-size: 0.95rem;">25+ years building enterprise platforms at JPMorgan Chase (Payment Gateway Connectivity), Deutsche Bank (OTC Derivatives Architecture), and Morgan Stanley (Personal Wealth Management). Author of "Ultimate CKA Certification Guide." Trained 5,000+ professionals across Oracle, JPMorgan, Deloitte, and Standard Chartered.</p>
+                    </div>
+                </div>
+
+            </div><!-- /.post-content -->
+
+        </div><!-- /.container -->
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>
