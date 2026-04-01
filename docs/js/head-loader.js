@@ -10,7 +10,7 @@
     // Configuration
     const CONFIG = {
         siteTitle: 'Gheware DevOps AI - Kubernetes Virtual Lab Platform',
-        siteUrl: 'https://brainupgrade-in.github.io',
+        siteUrl: 'https://devops.gheware.com',
         defaultDescription: 'Master Kubernetes and DevOps with hands-on virtual labs. Enterprise-grade training platform for developers and teams.',
         defaultKeywords: 'kubernetes training, docker training, devops lab, k8s learning, CI/CD pipeline, cloud native, container orchestration, devops certification, CKA, CKAD, CKS',
         author: 'Gheware Technologies',
