@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents | Gheware DevOps AI">
+    <meta name="description" content="LangFuse is the open-source observability layer every production AI agent needs. Step-by-step guide to tracing LangChain agents, setting up evals, and tracking LLM costs per workflow.">
+    <meta name="keywords" content="LangFuse, LLM observability, AI agent tracing, LangFuse evaluation, LangChain tracing, LLM cost tracking, LangFuse vs LangSmith, open-source LLM monitoring">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html">
+    <meta property="og:title" content="LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents">
+    <meta property="og:description" content="LangFuse is to AI agents what Datadog is to microservices. Complete guide: instrumentation, evals, cost tracking, and self-hosted setup for enterprise privacy.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/langfuse-tracing-evaluation-tutorial-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-09T00:00:00Z">
+    <meta property="article:modified_time" content="2026-04-09T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Observability">
+    <meta property="article:tag" content="LangFuse">
+    <meta property="article:tag" content="LLM Observability">
+    <meta property="article:tag" content="AI Monitoring">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents">
+    <meta name="twitter:description" content="73% of agent quality regressions caught before users with LangFuse. Complete guide to tracing, evals, and self-hosted deployment.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/langfuse-tracing-evaluation-tutorial-2026.jpg">
+    <title>LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents | Gheware DevOps AI Blog</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html"},
+        "headline": "LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents",
+        "description": "LangFuse is the open-source observability layer every production AI agent needs. Step-by-step guide to tracing LangChain agents, setting up evals, and tracking LLM costs per workflow.",
+        "image": {"@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/langfuse-tracing-evaluation-tutorial-2026.jpg", "width": 1200, "height": 630},
+        "datePublished": "2026-04-09T00:00:00Z",
+        "dateModified": "2026-04-09T00:00:00Z",
+        "author": {"@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware", "sameAs": ["https://linkedin.com/in/rajesh-gheware","https://twitter.com/gheware_tech","https://github.com/rajeshgheware"], "jobTitle": "Founder & Chief Architect", "worksFor": {"@type": "Organization", "name": "gheWARE uniGPS Solutions LLP"}},
+        "publisher": {"@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com", "logo": {"@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg"}},
+        "keywords": "LangFuse, LLM observability, AI agent tracing, LangFuse evaluation, LangChain monitoring",
+        "articleSection": "AI Observability",
+        "wordCount": "2300",
+        "inLanguage": "en-US"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "LangFuse Tracing Evaluation Tutorial", "item": "https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is LangFuse?", "acceptedAnswer": {"@type": "Answer", "text": "LangFuse is an open-source LLM observability platform that provides tracing, evaluation, and cost tracking for AI applications. It records every LLM call, tool invocation, and agent step as structured traces with spans and generations. Teams use LangFuse to debug agent behaviour, measure output quality with automated evaluations, track token costs per workflow, and detect quality regressions before they reach end users. It is self-hostable (Docker/Kubernetes) with unlimited traces at zero per-trace cost."}},
+            {"@type": "Question", "name": "How do I add LangFuse to a LangChain agent?", "acceptedAnswer": {"@type": "Answer", "text": "Add LangFuse to a LangChain agent with two lines: import CallbackHandler from langfuse.callback and pass it as a callback to your agent's invoke call. Install with pip install langfuse, set LANGFUSE_PUBLIC_KEY and LANGFUSE_SECRET_KEY environment variables (from your LangFuse project settings), and every LLM call, tool call, and chain step in your agent will be automatically traced. For self-hosted instances, also set LANGFUSE_HOST to your instance URL."}},
+            {"@type": "Question", "name": "Is LangFuse free?", "acceptedAnswer": {"@type": "Answer", "text": "LangFuse is open-source and self-hosted deployments are free with unlimited traces. The managed cloud tier (langfuse.com) has a free tier with 50,000 traces/month and paid plans starting at $59/month for 1M traces. For enterprises with data privacy requirements — where all LLM inputs and outputs must stay on-premises — self-hosted LangFuse on Kubernetes is the recommended approach. It runs on a 2-CPU / 4GB RAM instance and stores traces in PostgreSQL."}},
+            {"@type": "Question", "name": "What is the difference between a trace and a span in LangFuse?", "acceptedAnswer": {"@type": "Answer", "text": "In LangFuse: a Trace represents the complete execution of a single user request — from the moment the agent receives input to the moment it returns output. A Span represents one step within a trace — a tool call, a retrieval operation, a chain link. A Generation is a special span type specifically for LLM API calls — it records the model name, prompt tokens, completion tokens, cost, and latency. One trace typically contains multiple spans and generations. The trace/span hierarchy gives you both the macro view (end-to-end request) and the micro view (individual LLM calls)."}},
+            {"@type": "Question", "name": "How do I run LangFuse evaluations?", "acceptedAnswer": {"@type": "Answer", "text": "LangFuse evaluations use the langfuse.score() method to attach quality scores to traces. You can run evaluations in three ways: (1) LLM-as-judge — use a second LLM call to score the first LLM's output on dimensions like accuracy, relevance, and tone; (2) Exact match — compare agent output against a ground-truth dataset programmatically; (3) Human annotation — reviewers score traces manually through the LangFuse UI. Scores are attached to traces and visible in dashboards, enabling trend analysis over time and regression detection when scores drop."}}
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a><meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">LangFuse Tracing Evaluation Tutorial</span><meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Observability</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents</h1>
+                <p class="post-subtitle" itemprop="description">LangFuse is the open-source observability layer every production AI agent needs. Step-by-step guide to tracing LangChain agents, setting up evals, and tracking LLM costs per workflow.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-09T00:00:00Z">April 9, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html&text=LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="post-hero">
+                <img src="/blog/assets/images/langfuse-tracing-evaluation-tutorial-2026.jpg"
+                     alt="LangFuse observability dashboard showing AI agent traces, spans, and quality scores"
+                     class="post-hero-image" itemprop="image" loading="eager" width="1200" height="630">
+                <figcaption>LangFuse is to AI agents what Datadog is to microservices — you cannot operate what you cannot observe.</figcaption>
+            </figure>
+
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>73% of agent quality regressions</strong> are caught before they reach end users by teams using LangFuse automated evaluations, according to 2025 LLMOps practitioner survey data.</li>
+                    <li><strong>Self-hosted LangFuse</strong> is zero-cost for unlimited traces — critical for enterprises where LLM inputs/outputs cannot leave on-premises infrastructure.</li>
+                    <li><strong>Three evaluation strategies</strong>: LLM-as-judge (automated scoring), exact match (ground-truth dataset), and human annotation via LangFuse UI — each has a distinct use case.</li>
+                    <li><strong>Cost tracking per workflow</strong> enables you to identify which agent workflows are 10× more expensive than others — the token cost distribution is almost never uniform.</li>
+                    <li><strong>LangFuse vs LangSmith vs Arize</strong>: open-source/self-host vs managed/tight-LangChain vs enterprise MLOps — the right choice depends on data residency requirements and team size.</li>
+                </ul>
+            </aside>
+
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-observability">Why AI Agent Observability Is Non-Negotiable</a></li>
+                    <li><a href="#instrumentation">Instrumenting a LangChain Agent in 10 Minutes</a></li>
+                    <li><a href="#evaluations">Automated Evaluations with langfuse.score()</a></li>
+                    <li><a href="#self-hosted">Self-Hosted LangFuse: Docker Compose Setup</a></li>
+                    <li><a href="#comparison">LangFuse vs LangSmith vs Arize</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <div class="post-content" itemprop="articleBody">
+
+                <aside class="tldr" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #166534;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">LangFuse is the open-source observability platform that makes production AI agents operable. Two lines of code to instrument, a Docker Compose to self-host, and a scoring API that catches quality regressions before your users do. This post is the complete setup guide — from zero to production-grade observability in one afternoon.</p>
+                </aside>
+
+                <p>In December 2025, an enterprise customer's AI document summarisation agent started producing summaries that were noticeably shorter and less specific than before. Users noticed. The support team noticed. Three days passed before anyone could pinpoint the cause: a model temperature parameter had been changed from 0.1 to 0.7 in a config update — an undocumented change that made the LLM more "creative" and less focused. Three days of degraded output. Hundreds of summaries that users had to redo manually.</p>
+
+                <p>If LangFuse had been instrumented and automated evaluations configured, the regression would have been detected on the first deployment. The quality score — measuring summary specificity against a ground-truth dataset — would have dropped from 0.87 to 0.61 on the first post-deployment run. An alert would have fired. The config would have been reverted within an hour.</p>
+
+                <p>I tell this story in every workshop session because it illustrates a fundamental truth about production AI systems: <strong>you cannot manage what you cannot measure, and you cannot measure what you do not observe</strong>. LangFuse is the observability layer that makes AI agents operable at production scale.</p>
+
+                <section id="why-observability">
+                    <h2>Why AI Agent Observability Is Non-Negotiable</h2>
+
+                    <p>Traditional software observability (Prometheus, Datadog, OpenTelemetry) captures metrics, logs, and traces for deterministic systems. AI agents introduce a new observability challenge: the output is probabilistic. The same input can produce different outputs on different runs. A change to the system prompt, model version, temperature, or context content can silently shift output quality without causing any error, exception, or metric spike.</p>
+
+                    <p>This is why AI observability requires a fourth dimension that traditional monitoring lacks: <strong>semantic quality evaluation</strong>. You need to know not just that the agent responded (uptime), how fast it responded (latency), and how much it cost (token usage) — you need to know whether the response was <em>good</em>.</p>
+
+                    <p>LangFuse provides all four dimensions:</p>
+                    <ul>
+                        <li><strong>Traces</strong>: complete execution records for every agent invocation</li>
+                        <li><strong>Spans</strong>: individual steps within traces (LLM calls, tool calls, retrieval operations)</li>
+                        <li><strong>Cost tracking</strong>: token usage and estimated API cost per span, trace, user, and workflow</li>
+                        <li><strong>Scores</strong>: quality evaluations attached to traces — automated, LLM-as-judge, or human-annotated</li>
+                    </ul>
+                </section>
+
+                <section id="instrumentation">
+                    <h2>Instrumenting a LangChain Agent in 10 Minutes</h2>
+
+                    <p>LangFuse integrates with LangChain via a callback handler. Every LLM call, tool invocation, and chain step is automatically captured as a structured trace — no manual span creation required for standard LangChain components.</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># pip install langfuse langchain langchain-openai
+
+import os
+from langfuse.callback import CallbackHandler
+from langchain_openai import ChatOpenAI
+from langchain.agents import create_react_agent, AgentExecutor
+from langchain_core.prompts import PromptTemplate
+from langchain_core.tools import tool
+
+# LangFuse configuration — set in environment, never hardcode in production
+os.environ["LANGFUSE_PUBLIC_KEY"] = "pk-lf-..."       # from LangFuse project settings
+os.environ["LANGFUSE_SECRET_KEY"] = "sk-lf-..."       # from LangFuse project settings
+os.environ["LANGFUSE_HOST"] = "https://cloud.langfuse.com"  # or your self-hosted URL
+
+# Create the LangFuse callback handler
+# WHY named traces: session_id groups all traces for a user session,
+# making it easy to see the full conversation history in the LangFuse UI.
+langfuse_handler = CallbackHandler(
+    session_id="workshop-demo-session-001",   # groups traces by session
+    user_id="student-rajiv-001",              # enables per-user cost tracking
+    metadata={
+        "environment": "production",
+        "workshop_batch": "April-2026",
+        "agent_version": "v2.1.0"
+    }
+)
+
+@tool
+def search_knowledge_base(query: str) -> str:
+    """Search the workshop knowledge base for information."""
+    # In production: ChromaDB or Pinecone retrieval here
+    return f"Knowledge base result for: {query}"
+
+@tool
+def calculate_deployment_cost(nodes: int, hours: int) -> str:
+    """Calculate Kubernetes cluster cost for given nodes and hours."""
+    cost = nodes * hours * 0.12  # $0.12/node/hour estimate
+    return f"Estimated cost: ${cost:.2f} for {nodes} nodes × {hours} hours"
+
+llm = ChatOpenAI(model="gpt-4o", temperature=0)
+tools = [search_knowledge_base, calculate_deployment_cost]
+
+# Standard ReAct agent setup
+prompt = PromptTemplate.from_template("""
+You are a DevOps and AI training assistant.
+Answer the user's question using available tools.
+
+Tools: {tools}
+Tool names: {tool_names}
+Question: {input}
+Scratchpad: {agent_scratchpad}
+""")
+
+agent = create_react_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=False)
+
+# Pass langfuse_handler as a callback — all steps are automatically traced
+result = agent_executor.invoke(
+    {"input": "What does a 10-node Kubernetes cluster cost for 8 hours?"},
+    config={"callbacks": [langfuse_handler]}   # ← this is all that's needed
+)
+
+print(result["output"])
+# LangFuse now contains a complete trace with:
+# - The agent's reasoning steps
+# - Each tool call (name, input, output, latency)
+# - Each LLM call (model, prompt tokens, completion tokens, cost)
+# - Total trace duration and cost</code></pre>
+
+                    <h3>Creating Named Traces for Multi-Step Workflows</h3>
+                    <p>For workflows with multiple distinct phases, use the LangFuse SDK directly to create named parent traces. This gives you clear hierarchy in the dashboard — you can see that the "retrieval" phase cost 800 tokens while "synthesis" cost 3,200 tokens:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from langfuse import Langfuse
+
+langfuse = Langfuse()
+
+# Create a named parent trace for the entire workflow
+trace = langfuse.trace(
+    name="document-summarisation-workflow",
+    user_id="user-deepti-001",
+    metadata={"document_type": "legal_contract", "pages": 24}
+)
+
+# Create child spans for each phase — gives cost breakdown per phase
+retrieval_span = trace.span(name="retrieval-phase")
+# ... run retrieval
+retrieval_span.end(
+    output={"chunks_retrieved": 8, "retrieval_latency_ms": 145}
+)
+
+# LLM generation span — automatically captures token costs
+generation = trace.generation(
+    name="summary-generation",
+    model="gpt-4o",
+    input=[{"role": "user", "content": "Summarise the following contract..."}]
+)
+response = llm.invoke("Summarise the following contract...")
+generation.end(
+    output=response.content,
+    usage={"input": 2400, "output": 380}  # LangFuse calculates cost automatically
+)
+
+# Flush before process exit in short-lived scripts
+langfuse.flush()</code></pre>
+                </section>
+
+                <section id="evaluations">
+                    <h2>Automated Evaluations with langfuse.score()</h2>
+
+                    <p>Tracing tells you what happened. Evaluations tell you whether what happened was good. LangFuse's scoring API attaches quality scores to individual traces — enabling you to track quality trends over time, compare agent versions, and trigger alerts when scores drop below threshold.</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from langfuse import Langfuse
+from langchain_openai import ChatOpenAI
+
+langfuse = Langfuse()
+judge_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)  # cheaper model for eval
+
+def evaluate_summary_quality(
+    trace_id: str,
+    original_document: str,
+    generated_summary: str,
+    reference_summary: str  # ground truth from your eval dataset
+) -> dict:
+    """
+    Three-dimension evaluation using LLM-as-judge.
+    WHY three dimensions: a summary can be accurate but incomplete,
+    or complete but factually wrong. Single-score evals miss this.
+    """
+
+    # Dimension 1: Accuracy (does it contradict the source?)
+    accuracy_prompt = f"""
+Rate the factual accuracy of this summary vs the original document.
+Score: 0.0 (completely wrong) to 1.0 (perfectly accurate).
+Respond with ONLY a number between 0.0 and 1.0.
+
+Original: {original_document[:2000]}
+Summary: {generated_summary}
+"""
+    accuracy_score = float(judge_llm.invoke(accuracy_prompt).content.strip())
+
+    # Dimension 2: Completeness (does it cover key points?)
+    completeness_prompt = f"""
+Rate how completely this summary covers the key points of the original.
+Score: 0.0 (misses everything important) to 1.0 (covers all key points).
+Respond with ONLY a number between 0.0 and 1.0.
+
+Reference summary (key points): {reference_summary}
+Generated summary: {generated_summary}
+"""
+    completeness_score = float(judge_llm.invoke(completeness_prompt).content.strip())
+
+    # Dimension 3: Conciseness (is it appropriately brief?)
+    conciseness_score = max(0.0, 1.0 - (len(generated_summary) / len(original_document)))
+
+    # Attach scores to the trace — visible in LangFuse dashboard
+    langfuse.score(trace_id=trace_id, name="accuracy", value=accuracy_score)
+    langfuse.score(trace_id=trace_id, name="completeness", value=completeness_score)
+    langfuse.score(trace_id=trace_id, name="conciseness", value=conciseness_score)
+
+    overall = (accuracy_score + completeness_score + conciseness_score) / 3
+    langfuse.score(trace_id=trace_id, name="overall_quality", value=overall)
+
+    # Alert if quality drops below threshold
+    if overall < 0.70:
+        print(f"⚠️  QUALITY ALERT: trace {trace_id} scored {overall:.2f} — below 0.70 threshold")
+        # In production: PagerDuty / Slack alert here
+
+    return {
+        "accuracy": accuracy_score,
+        "completeness": completeness_score,
+        "conciseness": conciseness_score,
+        "overall": overall
+    }
+
+# Run evaluation on the most recent 20 traces
+traces = langfuse.fetch_traces(limit=20).data
+for trace in traces:
+    if trace.name == "document-summarisation-workflow":
+        scores = evaluate_summary_quality(
+            trace_id=trace.id,
+            original_document=trace.input.get("document", ""),
+            generated_summary=trace.output.get("summary", ""),
+            reference_summary=eval_dataset.get(trace.input.get("doc_id"))
+        )
+        print(f"Trace {trace.id}: overall={scores['overall']:.2f}")</code></pre>
+                </section>
+
+                <section id="self-hosted">
+                    <h2>Self-Hosted LangFuse: Docker Compose Setup</h2>
+
+                    <p>For enterprise teams where LLM inputs and outputs — which may contain confidential data — cannot leave the on-premises network, self-hosted LangFuse is the only viable option. The Docker Compose configuration below deploys LangFuse with PostgreSQL on a single VM (minimum: 2 CPU, 4 GB RAM):</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># docker-compose.yml — LangFuse self-hosted (production-grade)
+# WHY self-host: enterprise data never leaves your network.
+# All LLM inputs/outputs are stored in your PostgreSQL instance.
+
+version: "3.9"
+
+services:
+  langfuse-server:
+    image: langfuse/langfuse:latest
+    container_name: langfuse
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Database — use a dedicated PostgreSQL instance in production
+      - DATABASE_URL=postgresql://langfuse:${POSTGRES_PASSWORD}@postgres:5432/langfuse
+
+      # Auth — generate secure random strings for these
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - NEXTAUTH_URL=https://langfuse.internal.yourcompany.com
+
+      # Salt for API key hashing
+      - SALT=${SALT}
+
+      # Encryption for secrets stored in DB
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+
+      # Optional: disable signup for internal-only deployments
+      - AUTH_DISABLE_SIGNUP=true
+
+      # Optional: restrict to company email domain
+      - AUTH_ALLOWED_EMAIL_DOMAINS=yourcompany.com
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: langfuse-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=langfuse
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=langfuse
+    volumes:
+      - langfuse-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U langfuse"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  langfuse-postgres-data:</code></pre>
+
+                    <p>Start with: <code>POSTGRES_PASSWORD=$(openssl rand -hex 32) NEXTAUTH_SECRET=$(openssl rand -hex 32) SALT=$(openssl rand -hex 16) ENCRYPTION_KEY=$(openssl rand -hex 32) docker-compose up -d</code></p>
+                    <p>Then point your LangFuse SDK to your internal URL: <code>LANGFUSE_HOST=https://langfuse.internal.yourcompany.com</code></p>
+                </section>
+
+                <section id="comparison">
+                    <h2>LangFuse vs LangSmith vs Arize: Which Should You Use?</h2>
+
+                    <p><strong>LangFuse</strong> is the open-source, self-hostable choice. It gives you full control over data residency, unlimited traces at zero per-trace cost on self-hosted, and a clean UI for trace exploration and evaluation. The trade-off: you manage the infrastructure. Best for: enterprise teams with data privacy requirements, high-volume deployments where managed pricing would be prohibitive, and teams that want to contribute to or customise the platform.</p>
+
+                    <p><strong>LangSmith</strong> is Anthropic/LangChain's managed observability platform. It has the tightest integration with LangChain — auto-tracing with a single environment variable (<code>LANGCHAIN_TRACING_V2=true</code>). The UI is polished and the playground for testing chains is excellent. The trade-off: data leaves your infrastructure, pricing at $10/1M traces on the paid tier. Best for: teams already deep in the LangChain ecosystem who want zero-friction setup and don't have strict data residency requirements.</p>
+
+                    <p><strong>Arize AI</strong> is the enterprise MLOps platform with AI agent observability capabilities added in 2025. It has the strongest integrations with traditional ML model monitoring, A/B testing, and model comparison. The trade-off: higher cost, steeper learning curve, more complexity than most teams need for pure LLM observability. Best for: organisations that already run traditional ML models and want a single platform for all model types.</p>
+
+                    <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #f0fdf4; border-bottom: 2px solid #16a34a;">
+                                <th style="padding: 0.75rem; text-align: left;">Dimension</th>
+                                <th style="padding: 0.75rem; text-align: left;">LangFuse</th>
+                                <th style="padding: 0.75rem; text-align: left;">LangSmith</th>
+                                <th style="padding: 0.75rem; text-align: left;">Arize</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Open-source</strong></td>
+                                <td style="padding: 0.75rem;">✅ Yes</td>
+                                <td style="padding: 0.75rem;">❌ No</td>
+                                <td style="padding: 0.75rem;">❌ No</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Self-hostable</strong></td>
+                                <td style="padding: 0.75rem;">✅ Docker/K8s</td>
+                                <td style="padding: 0.75rem;">❌ Managed only</td>
+                                <td style="padding: 0.75rem;">✅ Enterprise plan</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Free tier</strong></td>
+                                <td style="padding: 0.75rem;">Unlimited (self-hosted)</td>
+                                <td style="padding: 0.75rem;">5K traces/month</td>
+                                <td style="padding: 0.75rem;">Limited trial</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>LangChain integration</strong></td>
+                                <td style="padding: 0.75rem;">CallbackHandler</td>
+                                <td style="padding: 0.75rem;">Native (env var)</td>
+                                <td style="padding: 0.75rem;">Callback/SDK</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>LLM-as-judge evals</strong></td>
+                                <td style="padding: 0.75rem;">✅ via score() API</td>
+                                <td style="padding: 0.75rem;">✅ Built-in</td>
+                                <td style="padding: 0.75rem;">✅ Built-in</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;"><strong>Best for</strong></td>
+                                <td style="padding: 0.75rem;">Data privacy, scale</td>
+                                <td style="padding: 0.75rem;">LangChain teams</td>
+                                <td style="padding: 0.75rem;">Enterprise MLOps</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is LangFuse?</h3>
+                        <p>LangFuse is an open-source LLM observability platform that provides tracing, evaluation, and cost tracking for AI applications. It records every LLM call, tool invocation, and agent step as structured traces with spans and generations. Teams use LangFuse to debug agent behaviour, measure output quality with automated evaluations, track token costs per workflow, and detect quality regressions before they reach end users. It is self-hostable with unlimited traces at zero per-trace cost.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I add LangFuse to a LangChain agent?</h3>
+                        <p>Add LangFuse to a LangChain agent with two steps: (1) <code>pip install langfuse</code>, set <code>LANGFUSE_PUBLIC_KEY</code> and <code>LANGFUSE_SECRET_KEY</code> environment variables; (2) pass <code>CallbackHandler()</code> as a callback in your agent's <code>invoke(config={"callbacks": [langfuse_handler]})</code> call. Every LLM call, tool call, and chain step is automatically traced. For self-hosted instances, also set <code>LANGFUSE_HOST</code> to your instance URL.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is LangFuse free?</h3>
+                        <p>Self-hosted LangFuse deployments are completely free with unlimited traces — you pay only for the infrastructure (a 2-CPU/4GB VM running Docker is sufficient for moderate workloads). The managed cloud tier (langfuse.com) has a free tier with 50,000 traces/month and paid plans starting at $59/month for 1M traces. For enterprises where LLM inputs/outputs must stay on-premises, self-hosted is the only viable option and the cost advantage is significant at scale.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between a trace and a span in LangFuse?</h3>
+                        <p>A Trace represents the complete execution of a single user request — from input to output. A Span represents one step within a trace — a tool call, retrieval operation, or chain step. A Generation is a special span type for LLM API calls that records model name, prompt tokens, completion tokens, cost, and latency. One trace typically contains multiple spans and generations. The hierarchy gives you both the macro view (end-to-end cost and latency) and the micro view (which specific LLM call took the most time).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I run LangFuse evaluations?</h3>
+                        <p>Use <code>langfuse.score(trace_id=..., name="quality", value=0.85)</code> to attach scores to traces. Run evaluations in three ways: (1) LLM-as-judge — use a second LLM to score the output on accuracy, completeness, and relevance; (2) Exact match — compare output against ground-truth test cases programmatically; (3) Human annotation — reviewers score traces through the LangFuse UI. Scores appear in dashboards and can trigger alerts when they drop below threshold.</p>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion: Observe First, Optimise Second</h2>
+                    <p>The document summarisation incident I opened with is not an edge case. It is the default state of unobserved AI systems. Models change. Prompts drift. Config parameters get updated without documentation. Without observability, these changes are invisible until users notice — and by then, the damage is done.</p>
+                    <p>The LangFuse setup I've described takes one afternoon: instrument your agents, deploy self-hosted LangFuse on Docker, write three evaluation functions that cover your key quality dimensions, and set an alert threshold. From that point forward, every deployment is automatically evaluated. Every regression is caught in staging, not production. Your on-call rotation stops getting 2 AM pages about "the AI giving weird answers."</p>
+                    <p>In Day 4 of the Agentic AI Workshop, we build the complete LangFuse observability stack as a live lab — from raw agent to fully instrumented, evaluated, cost-tracked production system. By end of day, every participant has LangFuse running on their machine, tracing their agents, and running LLM-as-judge evaluations on real outputs.</p>
+                </section>
+
+            </div>
+
+            <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
+              <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
+              <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+              <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value=""><input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <input name="email" type="email" required placeholder="Work email" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:200px">
+                <input name="company" placeholder="Company" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <button type="submit" style="background:#f59e0b;color:#1e3a5f;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer">Get Free Guide</button>
+              </form>
+              <p class="lead-msg" style="margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+              <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+              <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+              <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value=""><input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+                <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+                <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+              </form>
+              <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <script>
+            async function submitNewsletter(e){e.preventDefault();const form=e.target;const data=Object.fromEntries(new FormData(form));const msg=document.getElementById('newsletter-msg');try{const r=await fetch('https://dev-leads.gheware-ai.com/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();msg.textContent=j.message||'Thanks! Check your inbox.';msg.style.display='block';form.reset();}catch(err){msg.textContent='Something went wrong.';msg.style.display='block';}}
+            </script>
+
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/ai-observability-multi-agent-otel-2026.html">AI Observability with OpenTelemetry for Multi-Agent Systems</a></h3>
+                        <p>OpenTelemetry-based distributed tracing across multi-agent workflows — the infrastructure complement to LangFuse application tracing.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/llmops-pipeline-kubernetes-2026.html">LLMOps Pipeline on Kubernetes: CI/CD for AI Agents</a></h3>
+                        <p>How to wire LangFuse quality gates into your CI/CD pipeline — block deployments when evaluation scores drop below threshold.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html">The Supervisor Pattern: Orchestrating Multi-Agent Teams</a></h3>
+                        <p>LangFuse traces are especially valuable in supervisor workflows — you can see exactly which worker agent caused a quality drop.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Learn This in a Hands-On Lab</h2>
+                <p>This concept is covered in depth in Rajesh's 5-Day Agentic AI Workshop — with working code, live labs, and real production scenarios. Join 5,000+ engineers who've made the shift.</p>
+                <a href="/index.html#workshop" class="btn-cta-primary"><span>Explore the Workshop</span><span class="btn-arrow">→</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+<script>
+async function submitLeadMagnet(e,leadId,ctaId){e.preventDefault();const form=e.target;const data=Object.fromEntries(new FormData(form));const cta=document.getElementById(ctaId);const msg=cta?cta.querySelector('.lead-msg'):null;try{const r=await fetch('https://dev-leads.gheware-ai.com/'+leadId,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();if(msg){msg.textContent=j.message||'Check your inbox!';msg.style.display='block';}form.reset();}catch(err){if(msg){msg.textContent='Something went wrong.';msg.style.display='block';}}}
+</script>
+</body>
+</html>
