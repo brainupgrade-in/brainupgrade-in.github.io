@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="FastAPI for AI Agents: Production Deployment Patterns That Scale | Gheware DevOps AI">
+    <meta name="description" content="FastAPI is the standard for deploying AI agents as production APIs. Learn async endpoints, streaming responses, background tasks, health checks, and Docker deployment patterns with complete code examples.">
+    <meta name="keywords" content="FastAPI AI agents, FastAPI production deployment, FastAPI streaming, FastAPI async, AI agent API, FastAPI Docker, FastAPI LangChain, FastAPI health check, AI microservices">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html">
+    <meta property="og:title" content="FastAPI for AI Agents: Production Deployment Patterns That Scale">
+    <meta property="og:description" content="Async endpoints, streaming responses, background tasks, and Docker deployment patterns for AI agents with FastAPI. Complete, production-ready code.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/fastapi-ai-agent-deployment-production-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-11T00:00:00Z">
+    <meta property="article:modified_time" content="2026-04-11T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Engineering">
+    <meta property="article:tag" content="FastAPI">
+    <meta property="article:tag" content="AI Agents">
+    <meta property="article:tag" content="Production Deployment">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="FastAPI for AI Agents: Production Deployment Patterns That Scale">
+    <meta name="twitter:description" content="Async, streaming, background tasks, health checks, and Docker patterns for deploying AI agents with FastAPI.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/fastapi-ai-agent-deployment-production-2026.jpg">
+    <title>FastAPI for AI Agents: Production Deployment Patterns That Scale | Gheware DevOps AI Blog</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html"},
+        "headline": "FastAPI for AI Agents: Production Deployment Patterns That Scale",
+        "description": "FastAPI is the standard for deploying AI agents as production APIs. Learn async endpoints, streaming responses, background tasks, health checks, and Docker deployment patterns.",
+        "image": {"@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/fastapi-ai-agent-deployment-production-2026.jpg", "width": 1200, "height": 630},
+        "datePublished": "2026-04-11T00:00:00Z",
+        "dateModified": "2026-04-11T00:00:00Z",
+        "author": {"@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware", "sameAs": ["https://linkedin.com/in/rajesh-gheware","https://twitter.com/gheware_tech","https://github.com/rajeshgheware"], "jobTitle": "Founder & Chief Architect", "worksFor": {"@type": "Organization", "name": "gheWARE uniGPS Solutions LLP"}},
+        "publisher": {"@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com", "logo": {"@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg"}},
+        "keywords": "FastAPI AI agents, FastAPI production deployment, FastAPI streaming, AI microservices",
+        "articleSection": "AI Engineering",
+        "wordCount": "2300",
+        "inLanguage": "en-US"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "FastAPI for AI Agents Production", "item": "https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Why use FastAPI for AI agents instead of Flask or Django?", "acceptedAnswer": {"@type": "Answer", "text": "FastAPI is purpose-built for async I/O, which is exactly what AI agent APIs require. LLM calls are network-bound operations that can take 2–30 seconds. With Flask's synchronous model, each slow LLM call blocks a worker thread for its entire duration — under 10 concurrent users, your API becomes unresponsive. FastAPI's async/await model allows hundreds of concurrent LLM calls with the same resource footprint. Additionally, FastAPI auto-generates OpenAPI documentation, includes built-in Pydantic request/response validation, and supports Server-Sent Events for streaming out of the box."}},
+            {"@type": "Question", "name": "How do I stream LLM responses with FastAPI?", "acceptedAnswer": {"@type": "Answer", "text": "Use FastAPI's StreamingResponse with an async generator. The generator yields chunks from the LLM stream as they arrive. The client receives each chunk immediately rather than waiting for the complete response. Implement using: async def stream_generator(query): async for chunk in llm.astream(query): yield chunk. Then return StreamingResponse(stream_generator(query), media_type='text/event-stream'). The media_type 'text/event-stream' enables Server-Sent Events (SSE) which browsers and API clients handle natively."}},
+            {"@type": "Question", "name": "How many Uvicorn workers should I run for an AI agent API?", "acceptedAnswer": {"@type": "Answer", "text": "For async FastAPI handling LLM calls: 1–2 workers per CPU core, minimum 2 workers total. Unlike CPU-bound workloads where the rule is 2*CPU+1 workers, LLM workloads are network-bound. A single async worker can handle hundreds of concurrent LLM calls by yielding control during each await. More workers add memory overhead (each worker loads the full model into RAM) without proportional throughput gain. Production recommendation: start with 2 workers, measure p95 latency under load, add workers only if CPU utilisation exceeds 70%."}},
+            {"@type": "Question", "name": "What health check endpoints should my AI agent API expose?", "acceptedAnswer": {"@type": "Answer", "text": "Expose three health endpoints: /health/live (liveness — always returns 200 if the process is running, no external checks), /health/ready (readiness — checks all dependencies: LLM API reachable, vector store connected, model loaded), and /health/startup (startup probe — returns 200 only after full initialisation including model loading is complete). Kubernetes uses liveness to decide whether to restart a pod, readiness to decide whether to route traffic to it, and startup to give slow-starting services extra time to initialise. Never put dependency checks in the liveness probe — a temporary LLM API outage should not cause your pod to restart."}}
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a><meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">FastAPI for AI Agents Production</span><meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Engineering</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">FastAPI for AI Agents: Production Deployment Patterns That Scale</h1>
+                <p class="post-subtitle" itemprop="description">FastAPI is the standard for deploying AI agents as production APIs. Async endpoints, streaming responses, background tasks, health checks, and Docker deployment patterns — with complete, production-ready code.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-11T00:00:00Z">April 11, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html&text=FastAPI for AI Agents: Production Deployment Patterns That Scale" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="post-hero">
+                <img src="/blog/assets/images/fastapi-ai-agent-deployment-production-2026.jpg"
+                     alt="FastAPI serving AI agent requests with streaming responses and Kubernetes deployment"
+                     class="post-hero-image" itemprop="image" loading="eager" width="1200" height="630">
+                <figcaption>FastAPI's async architecture lets a single worker handle hundreds of concurrent LLM calls — critical for AI agent APIs where each call takes 2–30 seconds.</figcaption>
+            </figure>
+
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Always use async endpoints</strong> for LLM calls — synchronous FastAPI under 10 concurrent users will block every worker thread during each slow LLM call.</li>
+                    <li><strong>Streaming is a requirement</strong>, not a feature — users abandon AI interfaces after 8 seconds of silence; streaming keeps them engaged from token 1.</li>
+                    <li><strong>Separate health probes</strong>: liveness (process alive?), readiness (dependencies reachable?), startup (model loaded?). Never put dependency checks in liveness.</li>
+                    <li><strong>Background tasks for fire-and-forget</strong>: email notifications, logging, async vector store updates — anything that doesn't affect the HTTP response.</li>
+                    <li><strong>Lifespan context manager</strong> (not deprecated <code>@app.on_event</code>) is the correct pattern for initialising model connections at startup.</li>
+                </ul>
+            </aside>
+
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-fastapi">Why FastAPI Is the Standard for AI Agent APIs</a></li>
+                    <li><a href="#async-endpoints">Async Endpoints: The Foundation</a></li>
+                    <li><a href="#streaming">Streaming Responses for Real-Time AI Output</a></li>
+                    <li><a href="#health-checks">Health Check Patterns for Kubernetes</a></li>
+                    <li><a href="#docker-deployment">Docker and Kubernetes Deployment</a></li>
+                    <li><a href="#code">Complete Production FastAPI Agent Code</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <div class="post-content" itemprop="articleBody">
+
+                <aside class="tldr" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #166534;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">FastAPI is the right choice for AI agent APIs because its async model handles hundreds of concurrent LLM calls without thread blocking. The three patterns every production AI agent API needs: async endpoints with proper timeout handling, streaming responses via Server-Sent Events, and three-tier health checks for Kubernetes. This post delivers all three with complete, production-ready Python code.</p>
+                </aside>
+
+                <p>At JPMorgan Chase, before I moved into the training space, I spent two years building a high-concurrency API gateway that handled 40,000 requests per second. The lesson from that system that I apply directly to AI agent APIs: <em>blocking I/O at scale is always fatal</em>. Every synchronous call that waits for a slow downstream service becomes a thread that cannot serve other requests.</p>
+
+                <p>LLM calls are the slowest downstream services you will ever integrate. A <code>gpt-4o</code> call for a complex reasoning task can take 15–30 seconds. A RAG pipeline that retrieves 10 chunks and generates a 500-token response might take 8 seconds. If your AI agent API uses a synchronous framework like Flask, each of those calls occupies a worker thread for its entire duration. With 4 workers and 4 concurrent users all making 15-second LLM calls, your 5th user gets a timeout.</p>
+
+                <p>FastAPI solves this structurally. Its async model is not optional — it is the architecture. One async worker can handle hundreds of concurrent LLM calls by yielding CPU during each <code>await</code>, freeing the event loop to serve other requests while waiting for the LLM response. This is not a micro-optimisation; it is a 100x throughput difference at realistic AI agent concurrency levels.</p>
+
+                <section id="why-fastapi">
+                    <h2>Why FastAPI Is the Standard for AI Agent APIs</h2>
+
+                    <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #f0fdf4; border-bottom: 2px solid #16a34a;">
+                                <th style="padding: 0.75rem; text-align: left;">Feature</th>
+                                <th style="padding: 0.75rem; text-align: left;">Flask</th>
+                                <th style="padding: 0.75rem; text-align: left;">Django REST</th>
+                                <th style="padding: 0.75rem; text-align: left;">FastAPI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Async I/O</strong></td>
+                                <td style="padding: 0.75rem;">❌ Sync by default</td>
+                                <td style="padding: 0.75rem;">⚠️ Partial (ASGI)</td>
+                                <td style="padding: 0.75rem;">✅ First-class async</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Streaming Responses</strong></td>
+                                <td style="padding: 0.75rem;">⚠️ Manual setup</td>
+                                <td style="padding: 0.75rem;">⚠️ Complex</td>
+                                <td style="padding: 0.75rem;">✅ StreamingResponse built-in</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Request Validation</strong></td>
+                                <td style="padding: 0.75rem;">❌ Manual</td>
+                                <td style="padding: 0.75rem;">⚠️ Serializers (verbose)</td>
+                                <td style="padding: 0.75rem;">✅ Pydantic (auto)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>OpenAPI Docs</strong></td>
+                                <td style="padding: 0.75rem;">❌ Plugin required</td>
+                                <td style="padding: 0.75rem;">⚠️ DRF Spectacular</td>
+                                <td style="padding: 0.75rem;">✅ Auto-generated</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;"><strong>Concurrent LLM calls (4 workers)</strong></td>
+                                <td style="padding: 0.75rem;">~4 concurrent</td>
+                                <td style="padding: 0.75rem;">~4–8 concurrent</td>
+                                <td style="padding: 0.75rem;">~400+ concurrent</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="async-endpoints">
+                    <h2>Async Endpoints: The Foundation</h2>
+
+                    <p>The single most impactful change you can make to an AI agent API: make every endpoint that calls an LLM <code>async def</code> and use <code>await</code> for every I/O operation. This is not optional for production systems.</p>
+
+                    <p>Use the <strong>lifespan context manager</strong> (not the deprecated <code>@app.on_event("startup")</code>) for initialising shared resources like LLM clients, embedding models, and vector store connections. The lifespan pattern ensures resources are properly initialised before the first request and cleaned up when the process exits.</p>
+
+                    <p>For timeout handling, wrap every LLM call in <code>asyncio.wait_for</code> with an explicit timeout. A hung LLM call that never returns will block an async worker indefinitely. The 30-second timeout is not a performance target — it is a safety net that prevents cascading failures when the upstream LLM API degrades.</p>
+                </section>
+
+                <section id="streaming">
+                    <h2>Streaming Responses for Real-Time AI Output</h2>
+
+                    <p>Users abandon AI interfaces after 8 seconds of silence. Before streaming, a RAG query that takes 12 seconds shows nothing for 12 seconds, then the complete answer appears. With streaming, token 1 arrives in ~500ms and the user reads along as the model generates. Perceived quality increases dramatically even when total generation time is identical.</p>
+
+                    <p>FastAPI's <code>StreamingResponse</code> with an async generator is the correct implementation. The generator yields chunks as they arrive from the LLM stream. The HTTP response stays open until the generator is exhausted. The <code>media_type="text/event-stream"</code> enables Server-Sent Events — a standard protocol that browsers and API clients handle natively with automatic reconnection.</p>
+
+                    <p>For agent pipelines with multiple steps (retrieval → generation → validation), stream intermediate events too: "Retrieving context...", "Generating response...", "Validating output...". This transforms a 12-second black box into a transparent pipeline that users trust.</p>
+                </section>
+
+                <section id="health-checks">
+                    <h2>Health Check Patterns for Kubernetes</h2>
+
+                    <p>Kubernetes uses three probe types to manage pod lifecycle. Getting these wrong causes two failure modes: pods that are crashed but not restarted (liveness too permissive), or pods that restart endlessly due to transient dependency failures (liveness too strict). The correct pattern separates concerns clearly.</p>
+
+                    <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+                        <thead>
+                            <tr style="background: #f0fdf4; border-bottom: 2px solid #16a34a;">
+                                <th style="padding: 0.75rem; text-align: left;">Probe</th>
+                                <th style="padding: 0.75rem; text-align: left;">Endpoint</th>
+                                <th style="padding: 0.75rem; text-align: left;">Checks</th>
+                                <th style="padding: 0.75rem; text-align: left;">Action on Failure</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Liveness</strong></td>
+                                <td style="padding: 0.75rem;"><code>/health/live</code></td>
+                                <td style="padding: 0.75rem;">Process running, event loop active</td>
+                                <td style="padding: 0.75rem;">Restart pod</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;"><strong>Readiness</strong></td>
+                                <td style="padding: 0.75rem;"><code>/health/ready</code></td>
+                                <td style="padding: 0.75rem;">LLM API reachable, vector store connected</td>
+                                <td style="padding: 0.75rem;">Remove from load balancer</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;"><strong>Startup</strong></td>
+                                <td style="padding: 0.75rem;"><code>/health/startup</code></td>
+                                <td style="padding: 0.75rem;">Model loaded, warmup complete</td>
+                                <td style="padding: 0.75rem;">Delay liveness/readiness checks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="docker-deployment">
+                    <h2>Docker and Kubernetes Deployment</h2>
+
+                    <p>The Dockerfile for a FastAPI AI agent has two requirements beyond standard Python containers: a non-root user for security (Kubernetes PodSecurityPolicy will reject root containers in most enterprise environments), and a multi-stage build that separates dependency installation from the final image to minimise image size and attack surface.</p>
+
+                    <p>Use <code>uvicorn</code> as the ASGI server with explicit <code>--workers 2</code> for container deployments. Do not use Gunicorn + Uvicorn workers in containers — horizontal scaling via Kubernetes replicas is the correct scaling pattern, not vertical scaling via multiple workers per container. Each replica should be a lean, single-responsibility process.</p>
+                </section>
+
+                <section id="code">
+                    <h2>Complete Production FastAPI Agent Code</h2>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; line-height: 1.6;"><code># pip install fastapi uvicorn[standard] langchain-openai langchain-community pydantic
+
+import asyncio
+import logging
+from contextlib import asynccontextmanager
+from typing import AsyncGenerator
+
+from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel, Field
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# -------------------------------------------------------------------
+# Request / Response schemas
+# WHY Pydantic: automatic validation + clear OpenAPI documentation.
+# FastAPI rejects malformed requests before they reach your handler.
+# -------------------------------------------------------------------
+class AgentQuery(BaseModel):
+    question: str = Field(..., min_length=1, max_length=4000, description="Question for the AI agent")
+    session_id: str = Field(..., description="Session identifier for conversation context")
+    stream: bool = Field(default=True, description="Stream tokens as they are generated")
+
+class AgentResponse(BaseModel):
+    answer: str
+    session_id: str
+    tokens_used: int
+    latency_ms: float
+
+class HealthStatus(BaseModel):
+    status: str  # "healthy" | "degraded" | "unhealthy"
+    checks: dict[str, str]
+
+# -------------------------------------------------------------------
+# Global state (initialised in lifespan, not at module level)
+# WHY lifespan: replaces deprecated @app.on_event("startup").
+# Resources are ready before the first request. Cleaned up on shutdown.
+# -------------------------------------------------------------------
+app_state: dict = {}
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncGenerator:
+    # STARTUP — initialise all shared resources
+    logger.info("Initialising LLM client...")
+    app_state["llm"] = ChatOpenAI(
+        model="gpt-4o-mini",
+        temperature=0.0,
+        streaming=True,
+        request_timeout=30,  # seconds
+        max_retries=2,
+    )
+    app_state["ready"] = True
+    logger.info("Agent API ready")
+    yield
+    # SHUTDOWN — clean up resources
+    app_state.clear()
+    logger.info("Agent API shut down cleanly")
+
+app = FastAPI(
+    title="Gheware AI Agent API",
+    version="1.0.0",
+    description="Production-ready AI agent with streaming, health checks, and background tasks",
+    lifespan=lifespan,
+)
+
+# -------------------------------------------------------------------
+# Async non-streaming endpoint
+# -------------------------------------------------------------------
+@app.post("/agent/query", response_model=AgentResponse)
+async def query_agent(request: AgentQuery, background_tasks: BackgroundTasks):
+    """
+    Non-streaming agent query. Returns the complete answer once generation finishes.
+    Use for programmatic clients that need the full response before processing.
+    """
+    if not app_state.get("ready"):
+        raise HTTPException(status_code=503, detail="Agent not yet initialised")
+
+    llm: ChatOpenAI = app_state["llm"]
+    start = asyncio.get_event_loop().time()
+
+    try:
+        # WHY asyncio.wait_for: prevents a hung LLM call from blocking the event loop forever.
+        # 30s timeout matches the LLM client's request_timeout for consistent behaviour.
+        response = await asyncio.wait_for(
+            llm.ainvoke([HumanMessage(content=request.question)]),
+            timeout=30.0,
+        )
+    except asyncio.TimeoutError:
+        raise HTTPException(status_code=504, detail="LLM call timed out after 30 seconds")
+    except Exception as e:
+        logger.error(f"LLM error for session {request.session_id}: {e}")
+        raise HTTPException(status_code=502, detail=f"LLM error: {str(e)}")
+
+    latency_ms = (asyncio.get_event_loop().time() - start) * 1000
+    tokens_used = response.usage_metadata.get("total_tokens", 0) if response.usage_metadata else 0
+
+    # Background task: log interaction (does not affect response latency)
+    background_tasks.add_task(log_interaction, request.session_id, request.question, latency_ms)
+
+    return AgentResponse(
+        answer=response.content,
+        session_id=request.session_id,
+        tokens_used=tokens_used,
+        latency_ms=round(latency_ms, 1),
+    )
+
+# -------------------------------------------------------------------
+# Streaming endpoint — Server-Sent Events
+# -------------------------------------------------------------------
+@app.post("/agent/stream")
+async def stream_agent(request: AgentQuery):
+    """
+    Streaming agent query. Yields tokens via Server-Sent Events as they are generated.
+    Use for chat UIs — eliminates perceived latency by showing token 1 within ~500ms.
+    """
+    if not app_state.get("ready"):
+        raise HTTPException(status_code=503, detail="Agent not yet initialised")
+
+    llm: ChatOpenAI = app_state["llm"]
+
+    async def token_generator() -> AsyncGenerator[str, None]:
+        try:
+            async for chunk in llm.astream([HumanMessage(content=request.question)]):
+                token = chunk.content
+                if token:
+                    # SSE format: "data: <content>\n\n"
+                    # WHY escaped newline: SSE spec requires double newline to delimit events.
+                    yield f"data: {token}\n\n"
+            # Signal stream completion to client
+            yield "data: [DONE]\n\n"
+        except Exception as e:
+            logger.error(f"Streaming error: {e}")
+            yield f"data: [ERROR] {str(e)}\n\n"
+
+    return StreamingResponse(
+        token_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",    # Disable Nginx buffering for true streaming
+            "Connection": "keep-alive",
+        },
+    )
+
+# -------------------------------------------------------------------
+# Background task helper (fire and forget)
+# -------------------------------------------------------------------
+async def log_interaction(session_id: str, question: str, latency_ms: float) -> None:
+    """Runs after the HTTP response is sent — does not block the client."""
+    logger.info(f"Interaction logged | session={session_id} | latency={latency_ms:.0f}ms | q={question[:50]}")</code></pre>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; line-height: 1.6;"><code># Health check endpoints + Dockerfile
+
+# -------------------------------------------------------------------
+# Three-tier health check endpoints
+# -------------------------------------------------------------------
+@app.get("/health/live", response_model=HealthStatus, tags=["Health"])
+async def liveness():
+    """
+    Liveness probe — is the process running?
+    NEVER include external dependency checks here.
+    A failed LLM API call should NOT restart the pod — it should only
+    remove it from the load balancer (readiness concern).
+    """
+    return HealthStatus(status="healthy", checks={"process": "alive"})
+
+@app.get("/health/ready", response_model=HealthStatus, tags=["Health"])
+async def readiness():
+    """
+    Readiness probe — can the pod serve traffic?
+    Checks all dependencies. Failure removes pod from load balancer.
+    """
+    checks = {}
+    overall = "healthy"
+
+    # Check LLM connectivity (lightweight — just validate the client is configured)
+    if app_state.get("ready") and app_state.get("llm"):
+        checks["llm_client"] = "configured"
+    else:
+        checks["llm_client"] = "not_ready"
+        overall = "unhealthy"
+
+    if overall == "unhealthy":
+        from fastapi.responses import JSONResponse
+        return JSONResponse(
+            status_code=503,
+            content=HealthStatus(status=overall, checks=checks).model_dump()
+        )
+    return HealthStatus(status=overall, checks=checks)
+
+@app.get("/health/startup", response_model=HealthStatus, tags=["Health"])
+async def startup_probe():
+    """
+    Startup probe — has the application fully initialised?
+    Kubernetes waits for this to succeed before enabling liveness/readiness.
+    Gives slow-starting services (model loading, warm-up) extra time.
+    """
+    if app_state.get("ready"):
+        return HealthStatus(status="healthy", checks={"init": "complete"})
+    from fastapi.responses import JSONResponse
+    return JSONResponse(
+        status_code=503,
+        content=HealthStatus(status="starting", checks={"init": "in_progress"}).model_dump()
+    )
+
+# -------------------------------------------------------------------
+# Dockerfile (save as Dockerfile in project root)
+# -------------------------------------------------------------------
+# FROM python:3.11-slim AS builder
+# WORKDIR /app
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
+#
+# FROM python:3.11-slim
+# WORKDIR /app
+# COPY --from=builder /install /usr/local
+# COPY . .
+# # Run as non-root — required by most enterprise Kubernetes policies
+# RUN adduser --disabled-password --gecos "" appuser && chown -R appuser /app
+# USER appuser
+# EXPOSE 8000
+# # WHY --workers 2: single responsibility per container.
+# # Scale horizontally via Kubernetes replicas, not vertical via workers.
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+
+# -------------------------------------------------------------------
+# Kubernetes Deployment snippet (k8s-deployment.yaml)
+# -------------------------------------------------------------------
+# apiVersion: apps/v1
+# kind: Deployment
+# spec:
+#   replicas: 3
+#   template:
+#     spec:
+#       containers:
+#       - name: agent-api
+#         image: ghcr.io/gheware/agent-api:latest
+#         resources:
+#           requests: {cpu: "250m", memory: "512Mi"}
+#           limits:   {cpu: "1000m", memory: "1Gi"}
+#         startupProbe:
+#           httpGet: {path: /health/startup, port: 8000}
+#           failureThreshold: 30     # 30 * 10s = 5 min startup budget
+#           periodSeconds: 10
+#         livenessProbe:
+#           httpGet: {path: /health/live, port: 8000}
+#           initialDelaySeconds: 5
+#           periodSeconds: 15
+#           failureThreshold: 3
+#         readinessProbe:
+#           httpGet: {path: /health/ready, port: 8000}
+#           initialDelaySeconds: 10
+#           periodSeconds: 10
+#           failureThreshold: 3</code></pre>
+                </section>
+
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>Why use FastAPI for AI agents instead of Flask or Django?</h3>
+                        <p>FastAPI is purpose-built for async I/O. LLM calls take 2–30 seconds each. Flask's synchronous model blocks a worker thread for the entire duration of each LLM call — under 10 concurrent users, every worker is occupied. FastAPI's async model handles hundreds of concurrent LLM calls with a single worker by yielding control during each <code>await</code>. Additionally: auto-generated OpenAPI docs, built-in Pydantic validation, and native streaming support via <code>StreamingResponse</code>.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I stream LLM responses with FastAPI?</h3>
+                        <p>Use <code>StreamingResponse</code> with an async generator that yields Server-Sent Event formatted strings (<code>data: {chunk}\n\n</code>). The LLM's <code>astream()</code> method returns an async iterator of chunks. Yield each non-empty chunk immediately. Signal completion with <code>data: [DONE]\n\n</code>. Set <code>media_type="text/event-stream"</code> and the <code>X-Accel-Buffering: no</code> header to disable Nginx buffering in production deployments.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How many Uvicorn workers should I run for an AI agent API?</h3>
+                        <p>For containerised deployments: 1–2 workers per container. LLM calls are network-bound, not CPU-bound — a single async worker handles hundreds of concurrent LLM calls by yielding during each <code>await</code>. More workers per container add memory overhead without proportional throughput gain. Scale horizontally via Kubernetes replicas instead. Start with 2 workers, measure p95 latency under load at your expected concurrency, add workers only if CPU utilisation consistently exceeds 70%.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What health check endpoints should my AI agent API expose?</h3>
+                        <p>Three endpoints: <code>/health/live</code> (liveness — is the process alive? no external checks, returns 200 if the event loop is running), <code>/health/ready</code> (readiness — are all dependencies reachable? checks LLM API connectivity and vector store, returns 503 to remove from load balancer if any check fails), and <code>/health/startup</code> (startup — has model loading completed? gives slow-starting services extra time before liveness checks begin). Never put dependency checks in liveness — a temporary LLM API outage should not restart your pod.</p>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion: FastAPI Is Infrastructure, Not Scaffolding</h2>
+                    <p>The teams I see struggle with AI agent API performance are consistently the ones that treat FastAPI as a thin HTTP wrapper — a place to put their agent logic. The teams that succeed treat FastAPI as infrastructure: they design for async from the first line, they stream every response, they implement health checks for every deployment environment, and they use background tasks for anything that does not affect the HTTP response.</p>
+                    <p>Day 3 of the Agentic AI Workshop covers the full FastAPI deployment pipeline — from the first <code>async def</code> endpoint through to a running Kubernetes deployment with three-tier health probes and Prometheus metrics scraping. Every participant deploys their own agent API on a real cluster by end of day. The difference between understanding these patterns and having shipped them is exactly one lab session.</p>
+                </section>
+            </div>
+
+            <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
+              <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
+              <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+              <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value=""><input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <input name="email" type="email" required placeholder="Work email" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:200px">
+                <input name="company" placeholder="Company" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <button type="submit" style="background:#f59e0b;color:#1e3a5f;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer">Get Free Guide</button>
+              </form>
+              <p class="lead-msg" style="margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+              <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+              <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+              <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value=""><input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+                <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+                <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+              </form>
+              <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <script>async function submitNewsletter(e){e.preventDefault();const form=e.target;const data=Object.fromEntries(new FormData(form));const msg=document.getElementById('newsletter-msg');try{const r=await fetch('https://dev-leads.gheware-ai.com/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();msg.textContent=j.message||'Thanks!';msg.style.display='block';form.reset();}catch(err){msg.textContent='Something went wrong.';msg.style.display='block';}}</script>
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html">Supervisor Pattern: Multi-Agent Systems with LangGraph</a></h3>
+                        <p>The LangGraph agent architecture you'll be exposing via FastAPI — supervisor routing, worker coordination, and structured output.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html">LangFuse Tracing and Evaluation for AI Agents</a></h3>
+                        <p>Add observability to your FastAPI AI agent — trace every LLM call, measure quality, track costs per endpoint.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/human-in-the-loop-langgraph-patterns-2026.html">Human-in-the-Loop Patterns with LangGraph</a></h3>
+                        <p>Build approval gates and interrupt-and-resume patterns into the AI agents you deploy with FastAPI.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Learn This in a Hands-On Lab</h2>
+                <p>This concept is covered in depth in Rajesh's 5-Day Agentic AI Workshop — with working code, live labs, and real production scenarios. Join 5,000+ engineers who've made the shift.</p>
+                <a href="/index.html#workshop" class="btn-cta-primary"><span>Explore the Workshop</span><span class="btn-arrow">→</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+<script>async function submitLeadMagnet(e,leadId,ctaId){e.preventDefault();const form=e.target;const data=Object.fromEntries(new FormData(form));const cta=document.getElementById(ctaId);const msg=cta?cta.querySelector('.lead-msg'):null;try{const r=await fetch('https://dev-leads.gheware-ai.com/'+leadId,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();if(msg){msg.textContent=j.message||'Check your inbox!';msg.style.display='block';}form.reset();}catch(err){if(msg){msg.textContent='Something went wrong.';msg.style.display='block';}}}</script>
+</body>
+</html>
