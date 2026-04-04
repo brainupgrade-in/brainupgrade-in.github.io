@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026 | Gheware DevOps AI">
+    <meta name="description" content="LangGraph StateGraph is the foundation of every production AI agent. Learn nodes, edges, state management, and conditional routing from first principles — with complete runnable Python examples.">
+    <meta name="keywords" content="LangGraph StateGraph, LangGraph tutorial, LangGraph beginners guide, LangGraph nodes edges, LangGraph state, LangGraph conditional edges, LangGraph AI agent, LangGraph Python">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html">
+    <meta property="og:title" content="LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026">
+    <meta property="og:description" content="LangGraph StateGraph nodes, edges, state management, and conditional routing from first principles. Build your first stateful AI agent in under 50 lines of Python.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/langgraph-stategraph-beginners-guide-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-16T00:00:00Z">
+    <meta property="article:modified_time" content="2026-04-16T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Engineering">
+    <meta property="article:tag" content="LangGraph">
+    <meta property="article:tag" content="StateGraph">
+    <meta property="article:tag" content="AI Agents">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026">
+    <meta name="twitter:description" content="Nodes, edges, state, and conditional routing from first principles. Build your first stateful AI agent in under 50 lines of Python.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/langgraph-stategraph-beginners-guide-2026.jpg">
+    <title>LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026 | Gheware DevOps AI Blog</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html"},
+        "headline": "LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026",
+        "description": "LangGraph StateGraph is the foundation of every production AI agent. Learn nodes, edges, state management, and conditional routing from first principles — with complete runnable Python examples.",
+        "image": {"@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/langgraph-stategraph-beginners-guide-2026.jpg", "width": 1200, "height": 630},
+        "datePublished": "2026-04-16T00:00:00Z",
+        "dateModified": "2026-04-16T00:00:00Z",
+        "author": {"@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware", "sameAs": ["https://linkedin.com/in/rajesh-gheware","https://twitter.com/gheware_tech","https://github.com/rajeshgheware"], "jobTitle": "Founder & Chief Architect", "worksFor": {"@type": "Organization", "name": "gheWARE uniGPS Solutions LLP"}},
+        "publisher": {"@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com", "logo": {"@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg"}},
+        "keywords": "LangGraph StateGraph, LangGraph tutorial, LangGraph nodes edges, LangGraph conditional routing",
+        "articleSection": "AI Engineering",
+        "wordCount": "2300",
+        "inLanguage": "en-US"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "LangGraph StateGraph Beginners Guide", "item": "https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is LangGraph StateGraph?", "acceptedAnswer": {"@type": "Answer", "text": "LangGraph StateGraph is a Python class for defining stateful agent workflows as directed graphs. A StateGraph has three building blocks: (1) State — a TypedDict or Pydantic model that defines the shared data structure passed between all nodes; (2) Nodes — Python functions (or LCEL chains) that receive the current state and return a dict of updates; (3) Edges — connections between nodes that define execution order. Conditional edges are functions that examine the current state and return the name of the next node to execute — this is how agents make routing decisions. StateGraph supports cycles (unlike simple DAGs), enabling agent loops where the graph revisits nodes based on LLM decisions."}},
+            {"@type": "Question", "name": "What is the difference between LangGraph and LangChain?", "acceptedAnswer": {"@type": "Answer", "text": "LangChain is a collection of components (LLM wrappers, prompts, retrievers, output parsers) connected with LCEL. It is well-suited for linear pipelines: input → retrieve → generate → output. LangGraph is built on top of LangChain and adds stateful, cyclic graph execution. It is designed for agent loops where the LLM decides whether to use more tools, which tool to use next, or when to stop. In practice: use LangChain/LCEL for simple prompt chains and RAG pipelines; use LangGraph when you need an agent that can loop, branch, use multiple tools sequentially, or have its state persisted across multiple user interactions."}},
+            {"@type": "Question", "name": "What is state in LangGraph?", "acceptedAnswer": {"@type": "Answer", "text": "State in LangGraph is a TypedDict (or Pydantic model) that is passed to every node in the graph. Each node receives the current state, does work, and returns a dict of updates. LangGraph merges these updates into the state using reducers — the default reducer is replacement (new value replaces old), but you can use operator.add for fields that should accumulate (like a list of messages or tool calls). State is also what LangGraph checkpoints — saved at each step so the agent can be paused (for human-in-the-loop approval) and resumed exactly where it left off."}},
+            {"@type": "Question", "name": "When should I use LangGraph instead of a simple LangChain chain?", "acceptedAnswer": {"@type": "Answer", "text": "Use LangGraph when your workflow requires: (1) Loops — the agent needs to retry, iterate, or continue until a condition is met; (2) Branching — the next step depends on the LLM's output or current state; (3) Multiple tools used sequentially — the agent decides which tool to use next based on the previous tool's result; (4) Human-in-the-loop — the agent needs to pause for human review and resume; (5) Persistent state — the agent's context needs to survive across multiple HTTP requests (multi-turn conversations). For simple one-shot question-answering or RAG, a plain LCEL chain is sufficient and simpler. LangGraph's value is proportional to the complexity and statefulness of your agent's workflow."}}
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a><meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">LangGraph StateGraph Beginners Guide</span><meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Engineering</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026</h1>
+                <p class="post-subtitle" itemprop="description">LangGraph StateGraph is the foundation of every production AI agent. Learn nodes, edges, state management, and conditional routing from first principles — build your first stateful agent in under 50 lines of Python.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-16T00:00:00Z">April 16, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html&text=LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="post-hero">
+                <img src="/blog/assets/images/langgraph-stategraph-beginners-guide-2026.jpg"
+                     alt="LangGraph StateGraph diagram showing nodes connected by conditional edges with shared state flowing between them"
+                     class="post-hero-image" itemprop="image" loading="eager" width="1200" height="630">
+                <figcaption>StateGraph models an AI agent as a directed graph. Nodes do work; edges route between them; conditional edges let the LLM decide what happens next. Cycles make agent loops possible.</figcaption>
+            </figure>
+
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>StateGraph has 3 primitives</strong>: State (shared TypedDict), Nodes (functions that update state), and Edges (connections — direct or conditional).</li>
+                    <li><strong>Conditional edges</strong> are the agent's decision mechanism — a function inspects state and returns the next node name. This is how "should I use another tool or stop?" is implemented.</li>
+                    <li><strong>State reducers</strong> control how node updates merge — default is replacement; use <code>operator.add</code> for fields that accumulate (like message lists).</li>
+                    <li><strong>Checkpointing</strong> (via <code>MemorySaver</code> or <code>PostgresSaver</code>) enables human-in-the-loop pause/resume and multi-turn conversations with persistent state.</li>
+                    <li><strong>Compile before invoke</strong> — <code>graph.compile()</code> validates the graph structure and returns the executable agent. Catch structural errors at compile time, not at runtime.</li>
+                </ul>
+            </aside>
+
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-langgraph">Why LangGraph Exists: The Limits of Linear Chains</a></li>
+                    <li><a href="#three-primitives">The 3 StateGraph Primitives</a></li>
+                    <li><a href="#conditional-edges">Conditional Edges: The Agent's Decision Engine</a></li>
+                    <li><a href="#checkpointing">Checkpointing: Persistent State Across Turns</a></li>
+                    <li><a href="#code">Complete Code: Build Your First LangGraph Agent</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <div class="post-content" itemprop="articleBody">
+
+                <aside class="tldr" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #166534;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">LangGraph StateGraph models AI agent workflows as directed graphs with shared state. Three primitives: <strong>State</strong> (TypedDict shared by all nodes), <strong>Nodes</strong> (Python functions that read and update state), and <strong>Edges</strong> (routing rules — direct or conditional). The key insight: conditional edges let the LLM decide the execution path. This post builds a complete, runnable LangGraph agent from scratch in under 50 lines of Python.</p>
+                </aside>
+
+                <p>On Day 1 of the Agentic AI Workshop, I show participants two implementations of the same agent. The first uses a LangChain LCEL chain — clean, readable, 12 lines. It handles 80% of queries perfectly. The second uses a LangGraph StateGraph — 45 lines. It handles every query, including the 20% where the first implementation fails or gives wrong answers.</p>
+
+                <p>The 20% that LCEL cannot handle are the cases where the agent needs to loop: it calls a tool, gets an insufficient result, decides to try a different approach, and eventually arrives at an answer. Linear chains cannot loop — by definition, they execute each step exactly once. StateGraph supports cycles, and cycles are what separate agents that can reason iteratively from pipelines that execute once and return whatever they get.</p>
+
+                <p>Understanding StateGraph from first principles takes 30 minutes. Building your first agent with it takes another 30. This post is those 60 minutes, distilled.</p>
+
+                <section id="why-langgraph">
+                    <h2>Why LangGraph Exists: The Limits of Linear Chains</h2>
+
+                    <p>A LangChain LCEL chain is a DAG — a Directed Acyclic Graph. Data flows from left to right; each component executes exactly once; there are no cycles. For simple pipelines (user query → retrieve context → generate answer), this is perfectly adequate.</p>
+
+                    <p>The limitation emerges when your agent needs to make decisions mid-execution:</p>
+                    <ul>
+                        <li>Call a search tool. If the results are insufficient, call a different tool.</li>
+                        <li>Generate a code solution. If it fails validation, revise it.</li>
+                        <li>Attempt to answer a question. If confidence is low, retrieve more context.</li>
+                        <li>Process a request. If it requires human approval, pause and wait.</li>
+                    </ul>
+
+                    <p>All of these require loops — executing the same node multiple times with updated state based on previous results. DAGs cannot express this. LangGraph's StateGraph can, because it supports directed graphs with cycles.</p>
+
+                    <p>The mental model: a LangChain chain is a conveyor belt (linear, one pass). A LangGraph StateGraph is a flowchart (branches, loops, conditional paths). Both are appropriate for different problems. The complexity of your agent's reasoning determines which you need.</p>
+                </section>
+
+                <section id="three-primitives">
+                    <h2>The 3 StateGraph Primitives</h2>
+
+                    <h3>Primitive 1: State</h3>
+                    <p>State is a TypedDict (or Pydantic model) that defines the data structure shared between all nodes. Every node receives the current state as input and returns a dict of updates. LangGraph merges these updates using reducers.</p>
+                    <p>The default reducer is replacement: if node A returns <code>{"answer": "42"}</code>, the state's <code>answer</code> field becomes <code>"42"</code>, replacing any previous value. For fields that should accumulate across multiple node calls — like a list of messages or tool calls — use <code>Annotated[list, operator.add]</code> as the type, which tells LangGraph to concatenate rather than replace.</p>
+
+                    <h3>Primitive 2: Nodes</h3>
+                    <p>Nodes are Python functions (or LCEL chains) that take the current state as input and return a dict of state updates. A node that calls an LLM reads the current messages from state, calls the LLM, and returns the LLM's response as an update to the messages field. A node that calls a tool reads the tool name and arguments from state, executes the tool, and returns the result.</p>
+                    <p>Nodes should be pure in intent: each node has one clear responsibility. An LLM decision node decides what to do next. A tool execution node executes one specific tool. A validation node checks results against a schema. Mixing concerns makes debugging and testing significantly harder.</p>
+
+                    <h3>Primitive 3: Edges</h3>
+                    <p>Edges define how control flows between nodes. There are two types:</p>
+                    <p><strong>Direct edges</strong>: <code>graph.add_edge("node_a", "node_b")</code> — control always flows from node_a to node_b. Use for deterministic sequential steps.</p>
+                    <p><strong>Conditional edges</strong>: <code>graph.add_conditional_edges("node_a", routing_function)</code> — control flows to the node returned by <code>routing_function(state)</code>. The routing function examines the current state and returns a node name (or <code>END</code>). This is the agent's decision mechanism.</p>
+                </section>
+
+                <section id="conditional-edges">
+                    <h2>Conditional Edges: The Agent's Decision Engine</h2>
+
+                    <p>Conditional edges are what makes LangGraph agents capable of genuine reasoning loops. The routing function is a plain Python function that inspects the current state and returns the name of the next node. The LLM's last message determines the routing decision.</p>
+
+                    <p>The canonical pattern for a tool-using agent:</p>
+                    <ol>
+                        <li>LLM node: given the current state (messages), call the LLM. It either returns a final answer or specifies a tool call.</li>
+                        <li>Router function: if the LLM's last message contains a tool call, return <code>"tools"</code>. Otherwise, return <code>END</code>.</li>
+                        <li>Tool node: execute the specified tool, add the result to state as a tool message.</li>
+                        <li>Edge from tool node back to LLM node — creating the loop.</li>
+                    </ol>
+
+                    <p>This four-element pattern (LLM node → conditional router → tool node → back to LLM) is the foundation of every ReAct-style agent in LangGraph. The agent loops until the LLM decides it has enough information to produce a final answer without calling another tool.</p>
+                </section>
+
+                <section id="checkpointing">
+                    <h2>Checkpointing: Persistent State Across Turns</h2>
+
+                    <p>LangGraph's checkpointing system saves the complete graph state at every step. This enables two critical production capabilities:</p>
+
+                    <p><strong>Human-in-the-loop</strong>: Compile the graph with <code>interrupt_before=["approval_node"]</code>. The graph executes until it reaches the approval node, then pauses and saves its state. A human reviews the pending action, approves or rejects it, and the graph resumes from exactly the checkpoint — no state is lost.</p>
+
+                    <p><strong>Multi-turn conversations</strong>: Each user message continues the same graph execution by passing the same <code>thread_id</code> in the config. The checkpointer loads the saved state for that thread, appends the new user message, and continues execution. This is how agents maintain conversation context across multiple HTTP requests in production.</p>
+
+                    <p>For development: use <code>MemorySaver</code> (in-memory, ephemeral). For production: use <code>PostgresSaver</code> from <code>langgraph-checkpoint-postgres</code> for durable state that survives pod restarts.</p>
+                </section>
+
+                <section id="code">
+                    <h2>Complete Code: Build Your First LangGraph Agent</h2>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; line-height: 1.6;"><code># pip install langgraph langchain-openai
+
+import operator
+from typing import Annotated, TypedDict, Literal
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage, BaseMessage, ToolMessage
+from langchain_core.tools import tool
+from langgraph.graph import StateGraph, END
+from langgraph.checkpoint.memory import MemorySaver
+
+# ===================================================================
+# Step 1: Define State
+# WHY TypedDict + Annotated: explicit schema prevents state mutation bugs.
+# operator.add on messages means each node APPENDS, not replaces the list.
+# ===================================================================
+
+class AgentState(TypedDict):
+    messages: Annotated[list[BaseMessage], operator.add]
+    # Add more fields as your agent grows:
+    # retrieved_context: str
+    # tool_results: Annotated[list[dict], operator.add]
+    # approval_status: str
+
+# ===================================================================
+# Step 2: Define Tools
+# WHY @tool decorator: LangChain wraps the function with metadata
+# (name, description, input schema) that the LLM uses to decide
+# when and how to call it. Docstring becomes the tool description.
+# ===================================================================
+
+@tool
+def search_knowledge_base(query: str) -> str:
+    """Search the DevOps knowledge base for answers to technical questions."""
+    # In production: replace with real vector store retrieval
+    # See embeddings-explained-ai-engineers-2026.html for the full implementation
+    mock_results = {
+        "kubernetes": "Kubernetes is a container orchestration platform that automates deployment, scaling, and management of containerised applications.",
+        "helm": "Helm is the package manager for Kubernetes. Charts bundle K8s YAML manifests into reusable, versioned packages.",
+        "gitops": "GitOps is a practice where Git is the single source of truth for infrastructure and application config. ArgoCD and Flux implement GitOps for Kubernetes.",
+    }
+    for keyword, result in mock_results.items():
+        if keyword.lower() in query.lower():
+            return result
+    return "No specific result found. Recommend consulting official documentation."
+
+@tool
+def calculate_resource_cost(cpu_cores: float, memory_gb: float, hours: int) -> str:
+    """Calculate the estimated monthly cost for a Kubernetes workload."""
+    # Simplified cost model (USD, AWS us-east-1 approximate pricing)
+    cpu_cost = cpu_cores * 0.048 * hours
+    memory_cost = memory_gb * 0.006 * hours
+    total = cpu_cost + memory_cost
+    return f"Estimated cost: ${total:.2f}/month for {cpu_cores} vCPU, {memory_gb}GB RAM, {hours}h/month"
+
+tools = [search_knowledge_base, calculate_resource_cost]
+
+# ===================================================================
+# Step 3: Define Nodes
+# Each node is a function: AgentState -> dict (state updates only)
+# ===================================================================
+
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.0)
+llm_with_tools = llm.bind_tools(tools)   # LLM knows about available tools
+
+def llm_node(state: AgentState) -> dict:
+    """
+    The reasoning node. The LLM sees all messages and decides:
+    (a) call a tool, or (b) return a final answer.
+    Returns a dict — LangGraph merges it into state using the reducer.
+    """
+    response = llm_with_tools.invoke(state["messages"])
+    return {"messages": [response]}  # operator.add appends this to the list
+
+def tool_node(state: AgentState) -> dict:
+    """
+    Execute the tool calls specified in the last LLM message.
+    Returns tool results as ToolMessages appended to state.
+    """
+    last_message = state["messages"][-1]
+    tool_messages = []
+
+    for tool_call in last_message.tool_calls:
+        # Find the matching tool function
+        tool_fn = next((t for t in tools if t.name == tool_call["name"]), None)
+        if tool_fn is None:
+            result = f"Error: tool '{tool_call['name']}' not found"
+        else:
+            try:
+                result = tool_fn.invoke(tool_call["args"])
+            except Exception as e:
+                result = f"Error executing {tool_call['name']}: {str(e)}"
+
+        tool_messages.append(ToolMessage(
+            content=str(result),
+            tool_call_id=tool_call["id"],
+        ))
+
+    return {"messages": tool_messages}
+
+# ===================================================================
+# Step 4: Define the Router (Conditional Edge function)
+# This function examines state and returns the next node name.
+# WHY: the LLM's tool_calls attribute signals its decision.
+# ===================================================================
+
+def should_continue(state: AgentState) -> Literal["tools", "__end__"]:
+    """
+    Router function for the conditional edge.
+    If the last LLM message has tool_calls → route to tool node.
+    Otherwise → END (LLM has produced its final answer).
+    """
+    last_message = state["messages"][-1]
+    if hasattr(last_message, "tool_calls") and last_message.tool_calls:
+        return "tools"
+    return END
+
+# ===================================================================
+# Step 5: Build and Compile the Graph
+# WHY compile(): validates graph structure (no orphan nodes, etc.)
+# and returns the executable CompiledGraph.
+# ===================================================================
+
+# MemorySaver: development checkpointer (in-memory, not persistent)
+# Replace with PostgresSaver for production
+checkpointer = MemorySaver()
+
+builder = StateGraph(AgentState)
+
+# Add nodes
+builder.add_node("llm", llm_node)
+builder.add_node("tools", tool_node)
+
+# Set entry point
+builder.set_entry_point("llm")
+
+# Direct edge: after tools executes, always go back to LLM
+builder.add_edge("tools", "llm")
+
+# Conditional edge: after LLM executes, route based on should_continue()
+builder.add_conditional_edges(
+    "llm",            # source node
+    should_continue,  # routing function
+    # Optional explicit mapping (improves graph visualisation):
+    {"tools": "tools", END: END}
+)
+
+# Compile the graph with checkpointer
+agent = builder.compile(checkpointer=checkpointer)
+
+print("Graph compiled successfully")
+print(agent.get_graph().draw_ascii())  # ASCII visualisation in terminal</code></pre>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; line-height: 1.6;"><code># ===================================================================
+# Step 6: Invoke the Agent
+# thread_id in config = session identifier for checkpointing.
+# Same thread_id on the next call = continues the same conversation.
+# ===================================================================
+
+config = {"configurable": {"thread_id": "workshop-session-01"}}
+
+# Turn 1
+result = agent.invoke(
+    {"messages": [HumanMessage(content="What is Helm and how does it relate to Kubernetes?")]},
+    config=config
+)
+print("\n=== Turn 1 ===")
+print("Answer:", result["messages"][-1].content)
+print("Total messages in state:", len(result["messages"]))
+
+# Turn 2 — same thread_id, state is automatically loaded from checkpoint
+result = agent.invoke(
+    {"messages": [HumanMessage(content="Now calculate the cost for 2 vCPU, 4GB RAM, 720 hours/month")]},
+    config=config
+)
+print("\n=== Turn 2 (same session) ===")
+print("Answer:", result["messages"][-1].content)
+print("Total messages in state:", len(result["messages"]))  # Growing list
+
+# ===================================================================
+# Step 7: Async streaming (for FastAPI integration)
+# ===================================================================
+
+import asyncio
+
+async def stream_agent():
+    async for chunk in agent.astream(
+        {"messages": [HumanMessage(content="What is GitOps?")]},
+        config={"configurable": {"thread_id": "stream-session-01"}}
+    ):
+        if "llm" in chunk:
+            # Streaming tokens from the LLM node
+            last_msg = chunk["llm"]["messages"][-1]
+            if hasattr(last_msg, "content") and last_msg.content:
+                print(last_msg.content, end="", flush=True)
+    print()
+
+# asyncio.run(stream_agent())
+
+# ===================================================================
+# Understanding the execution trace for "What is Helm?"
+# ===================================================================
+# 1. Entry: START → llm_node
+# 2. llm_node: LLM receives [HumanMessage("What is Helm...")]
+#              LLM decides to call search_knowledge_base("helm")
+#              Returns: AIMessage with tool_calls=[{name:"search_knowledge_base",...}]
+#              State: messages = [HumanMessage, AIMessage(tool_call)]
+#
+# 3. should_continue: last message has tool_calls → return "tools"
+#
+# 4. tool_node: executes search_knowledge_base("helm")
+#              Returns: ToolMessage("Helm is the package manager...")
+#              State: messages = [HumanMessage, AIMessage(tool_call), ToolMessage]
+#
+# 5. Direct edge: tools → llm
+#
+# 6. llm_node: LLM receives all 3 messages including tool result
+#              Generates final answer (no more tool_calls needed)
+#              Returns: AIMessage("Helm is the package manager for Kubernetes...")
+#              State: messages = [HumanMessage, AIMessage(tc), ToolMessage, AIMessage(answer)]
+#
+# 7. should_continue: last message has no tool_calls → return END
+#
+# 8. Graph complete. Final answer in state["messages"][-1].content</code></pre>
+                </section>
+
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is LangGraph StateGraph?</h3>
+                        <p>LangGraph StateGraph is a Python class for defining stateful AI agent workflows as directed graphs that support cycles. Three building blocks: (1) <strong>State</strong> — a TypedDict defining the shared data structure; (2) <strong>Nodes</strong> — Python functions that receive state and return updates; (3) <strong>Edges</strong> — routing rules, either direct (always go to X) or conditional (go to X or Y based on state). Unlike LangChain LCEL chains (linear, acyclic), StateGraph supports loops — critical for agents that reason iteratively, use tools multiple times, or need human-in-the-loop pause/resume.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between LangGraph and LangChain?</h3>
+                        <p>LangChain provides components (LLMs, prompts, retrievers, parsers) composed with LCEL into linear pipelines. LangGraph is built on top of LangChain and adds cyclic, stateful graph execution. Use LangChain LCEL for simple RAG pipelines and one-shot question-answering. Use LangGraph when your agent needs loops, branching, multiple tools used sequentially, human-in-the-loop, or persistent multi-turn conversation state. LangGraph nodes are LCEL chains — the two are complementary, not alternatives.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is state in LangGraph?</h3>
+                        <p>State is a TypedDict passed to every node. Each node returns a dict of updates; LangGraph merges them using reducers. Default reducer: replacement (new value overwrites old). For accumulating lists (messages, tool results): use <code>Annotated[list[T], operator.add]</code> — LangGraph concatenates rather than replaces. State is also what checkpointers save — enabling pause/resume and multi-turn conversation continuity across HTTP requests.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>When should I use LangGraph instead of a simple LangChain chain?</h3>
+                        <p>Use LangGraph when you need: (1) loops — retry, iterate, or continue until a condition is met; (2) branching — next step depends on LLM output or state; (3) sequential tool use — the agent decides which tool to call next based on previous results; (4) human-in-the-loop — pause for human review and resume; (5) persistent state across multiple HTTP requests (multi-turn). For simple one-shot RAG or question-answering, LCEL is simpler and sufficient. LangGraph's value scales with workflow complexity.</p>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion: StateGraph Is the Foundation</h2>
+                    <p>Every advanced LangGraph pattern in the workshop — the supervisor multi-agent system, the human-in-the-loop approval gate, the self-correcting code generator — is built on the three primitives covered in this post. State, nodes, and conditional edges. Once you understand how a single tool-using agent loops to completion using a conditional edge, the step to a multi-agent supervisor is straightforward: the supervisor's routing decision becomes a conditional edge that routes to one of several worker agents instead of one of several tools.</p>
+                    <p>Day 1 of the Agentic AI Workshop is entirely focused on building StateGraph agents from scratch — starting with exactly the pattern in this post and progressively adding complexity: multiple tools, error handling, checkpointing, human approval gates. By end of Day 1, every participant has shipped a working multi-turn agent to a FastAPI endpoint. The fundamentals covered here are what make that possible in a single day.</p>
+                </section>
+            </div>
+
+            <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
+              <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
+              <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+              <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value=""><input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <input name="email" type="email" required placeholder="Work email" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:200px">
+                <input name="company" placeholder="Company" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <button type="submit" style="background:#f59e0b;color:#1e3a5f;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer">Get Free Guide</button>
+              </form>
+              <p class="lead-msg" style="margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+              <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+              <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+              <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value=""><input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+                <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+                <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+              </form>
+              <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <script>async function submitNewsletter(e){e.preventDefault();const form=e.target;const data=Object.fromEntries(new FormData(form));const msg=document.getElementById('newsletter-msg');try{const r=await fetch('https://dev-leads.gheware-ai.com/newsletter',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();msg.textContent=j.message||'Thanks!';msg.style.display='block';form.reset();}catch(err){msg.textContent='Something went wrong.';msg.style.display='block';}}</script>
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html">Supervisor Pattern: Multi-Agent Systems with LangGraph</a></h3>
+                        <p>The natural next step after this guide — extending StateGraph to route between multiple specialised worker agents.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/human-in-the-loop-langgraph-patterns-2026.html">Human-in-the-Loop Patterns with LangGraph</a></h3>
+                        <p>Adding interrupt_before checkpoints and approval gates to the StateGraph pattern introduced here.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/langchain-expression-language-lcel-guide-2026.html">LangChain Expression Language (LCEL) Complete Guide</a></h3>
+                        <p>LangGraph nodes are LCEL chains — master LCEL to build more powerful and composable StateGraph nodes.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Learn This in a Hands-On Lab</h2>
+                <p>This concept is covered in depth in Rajesh's 5-Day Agentic AI Workshop — with working code, live labs, and real production scenarios. Join 5,000+ engineers who've made the shift.</p>
+                <a href="/index.html#workshop" class="btn-cta-primary"><span>Explore the Workshop</span><span class="btn-arrow">→</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+<script>async function submitLeadMagnet(e,leadId,ctaId){e.preventDefault();const form=e.target;const data=Object.fromEntries(new FormData(form));const cta=document.getElementById(ctaId);const msg=cta?cta.querySelector('.lead-msg'):null;try{const r=await fetch('https://dev-leads.gheware-ai.com/'+leadId,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();if(msg){msg.textContent=j.message||'Check your inbox!';msg.style.display='block';}form.reset();}catch(err){if(msg){msg.textContent='Something went wrong.';msg.style.display='block';}}}</script>
+</body>
+</html>
