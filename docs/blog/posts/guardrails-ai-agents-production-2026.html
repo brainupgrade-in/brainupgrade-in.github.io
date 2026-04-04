@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production | Gheware DevOps AI">
+    <meta name="description" content="Without guardrails, AI agents hallucinate, leak data, and take catastrophic actions. Learn how to implement input/output validation, NeMo Guardrails, and constitutional AI constraints.">
+    <meta name="keywords" content="AI guardrails, NeMo Guardrails, LLM safety, AI agent safety, output validation, PII detection, constitutional AI, production AI safety">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html">
+    <meta property="og:title" content="Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production">
+    <meta property="og:description" content="Without guardrails, AI agents hallucinate, leak data, and take catastrophic actions. Learn how to implement input/output validation, NeMo Guardrails, and constitutional AI constraints.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/guardrails-ai-agents-production-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-06T00:00:00Z">
+    <meta property="article:modified_time" content="2026-04-06T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Safety">
+    <meta property="article:tag" content="AI Guardrails">
+    <meta property="article:tag" content="NeMo Guardrails">
+    <meta property="article:tag" content="LLM Safety">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production">
+    <meta name="twitter:description" content="Without guardrails, AI agents hallucinate, leak data, and take catastrophic actions. The multi-layer guardrail architecture that keeps production AI safe.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/guardrails-ai-agents-production-2026.jpg">
+    <title>Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production | Gheware DevOps AI Blog</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html"},
+        "headline": "Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production",
+        "description": "Without guardrails, AI agents hallucinate, leak data, and take catastrophic actions. Learn how to implement input/output validation, NeMo Guardrails, and constitutional AI constraints.",
+        "image": {"@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/guardrails-ai-agents-production-2026.jpg", "width": 1200, "height": 630},
+        "datePublished": "2026-04-06T00:00:00Z",
+        "dateModified": "2026-04-06T00:00:00Z",
+        "author": {"@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware", "sameAs": ["https://linkedin.com/in/rajesh-gheware","https://twitter.com/gheware_tech","https://github.com/rajeshgheware"], "jobTitle": "Founder & Chief Architect", "worksFor": {"@type": "Organization", "name": "gheWARE uniGPS Solutions LLP"}},
+        "publisher": {"@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com", "logo": {"@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg"}},
+        "keywords": "AI guardrails, NeMo Guardrails, LLM safety, output validation, PII detection",
+        "articleSection": "AI Safety",
+        "wordCount": "2350",
+        "inLanguage": "en-US"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Guardrails for AI Agents", "item": "https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What are guardrails in LLM applications?", "acceptedAnswer": {"@type": "Answer", "text": "Guardrails are validation and enforcement layers that sit around your LLM calls to control what goes in and what comes out. Input guardrails filter malicious, out-of-scope, or harmful requests before they reach the model. Output guardrails validate the LLM's response before it is returned to the user — checking for PII leakage, hallucinated facts, off-topic content, or dangerous instructions. Action guardrails limit what tools an agent can invoke and under what conditions, preventing blast-radius damage from autonomous tool calls."}},
+            {"@type": "Question", "name": "What is NeMo Guardrails?", "acceptedAnswer": {"@type": "Answer", "text": "NeMo Guardrails is an open-source framework from NVIDIA that provides a programmable layer for adding safety, topicality, and factual grounding constraints to LLM applications. It uses a domain-specific language called Colang (.co files) to define conversation flows, allowed topics, and response policies. NeMo Guardrails works with LangChain, OpenAI, and other LLM backends, and is widely used in enterprise deployments that need auditable, declarative safety policies."}},
+            {"@type": "Question", "name": "How do guardrails differ from system prompts?", "acceptedAnswer": {"@type": "Answer", "text": "System prompts are instructions to the LLM that can be overridden by sufficiently clever prompt injection. Guardrails are code-level enforcement that runs outside the LLM — they cannot be bypassed by injecting text into the conversation. A system prompt saying 'do not reveal customer data' can be circumvented by an attacker. An output guardrail that scans for account number patterns and blocks the response before it is sent cannot be circumvented through the LLM itself."}},
+            {"@type": "Question", "name": "Can guardrails stop prompt injection?", "acceptedAnswer": {"@type": "Answer", "text": "Input guardrails significantly reduce prompt injection risk by detecting and filtering known injection patterns before they reach the LLM. However, no guardrail is 100% effective against all injection variants — especially novel indirect injection via external documents. The correct defense-in-depth approach is: input guardrails + privilege separation (least-privilege tool access) + output guardrails + human-in-the-loop approval for high-risk actions. Guardrails are one layer, not the complete solution."}}
+        ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Guardrails for AI Agents</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Safety</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production</h1>
+                <p class="post-subtitle" itemprop="description">Without guardrails, AI agents hallucinate, leak data, and take catastrophic actions. Learn how to implement input/output validation, NeMo Guardrails, and constitutional AI constraints.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-06T00:00:00Z">April 6, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html&text=Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="post-hero">
+                <img src="/blog/assets/images/guardrails-ai-agents-production-2026.jpg"
+                     alt="Guardrails for AI agents — protective barrier around an AI neural network on dark background"
+                     class="post-hero-image" itemprop="image" loading="eager" width="1200" height="630">
+                <figcaption>Guardrails are not a limitation on AI capability — they are the architecture that makes AI capability safe enough to deploy in production.</figcaption>
+            </figure>
+
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li><strong>Three guardrail layers</strong> cover every attack surface: input guardrails (what goes in), output guardrails (what comes out), and action guardrails (what the agent does).</li>
+                    <li><strong>The account number incident</strong>: a financial services agent leaked sensitive data because its output guardrail only checked for SSNs — not account numbers. The fix is semantic PII detection, not regex-only.</li>
+                    <li><strong>NeMo Guardrails</strong> by NVIDIA provides a declarative, auditable safety layer using Colang — policies are version-controlled and separate from application code.</li>
+                    <li><strong>Action guardrails</strong> enforce blast-radius limits: an agent should never be able to affect more than N resources in a single autonomous operation without human confirmation.</li>
+                    <li><strong>System prompts can be bypassed</strong> by prompt injection; code-level guardrails cannot — this is the fundamental reason guardrails exist as a separate architectural layer.</li>
+                </ul>
+            </aside>
+
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-guardrails">Why System Prompts Are Not Enough</a></li>
+                    <li><a href="#three-layers">The Three Guardrail Layers</a></li>
+                    <li><a href="#nemo">NeMo Guardrails: Declarative Safety Policies</a></li>
+                    <li><a href="#failure-mode">Production Failure Mode: The Account Number Incident</a></li>
+                    <li><a href="#decision-tree">Guardrail Decision Tree: Which Layer for Which Risk</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <div class="post-content" itemprop="articleBody">
+
+                <aside class="tldr" style="background: #eff6ff; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">The difference between an AI agent demo that impresses in a boardroom and a production system that a bank trusts with customer data is almost entirely about guardrails. This post gives you the three-layer guardrail architecture, a Python multi-layer wrapper implementation, a NeMo Guardrails Colang config, and the real production failure story that illustrates exactly what happens when you get it wrong.</p>
+                </aside>
+
+                <p>In January 2026, I was brought in to review an incident at a wealth management firm. Their internal AI assistant — built on GPT-4o with a RAG knowledge base containing client portfolios and account information — had returned account numbers in response to a general inquiry from a junior analyst. The analyst had asked "what are the high-value accounts we should focus on this quarter?" The agent, having access to the full portfolio database, helpfully listed 23 accounts with names, balances, and account numbers. No regulatory clearance. No data access review. Just a friendly, accurate, catastrophic response.</p>
+
+                <p>The firm had an output guardrail. It was checking for SSNs using a regex pattern. It found no SSNs and let the response through. The account numbers — 12-digit strings that follow a completely different format — sailed past without detection.</p>
+
+                <p>This is the guardrail story I tell in every Agentic AI workshop session. Not because it is dramatic, but because it is <em>preventable</em>. With the right architecture, that response never leaves the system.</p>
+
+                <section id="why-guardrails">
+                    <h2>Why System Prompts Are Not Enough</h2>
+
+                    <p>Every developer's first guardrail instinct is correct: add a system prompt. "Do not reveal customer data." "Only answer questions about our products." "Never provide financial advice." These instructions work — until they don't.</p>
+
+                    <p>The fundamental problem with system-prompt-only safety is that it relies on the LLM following instructions under adversarial conditions. Research published in late 2025 showed that 94% of GPT-4-class models can be prompted to ignore system prompt instructions given sufficiently crafted adversarial inputs. Direct jailbreaks. Indirect prompt injection via documents. Role-playing scenarios that shift the model's frame. The LLM is a reasoning engine, not a policy enforcer. You cannot build your security model on reasoning-based compliance alone.</p>
+
+                    <p>Code-level guardrails are different. They run outside the LLM. They are deterministic (or near-deterministic). They cannot be bypassed by injecting text into the conversation. When an output guardrail scans for account number patterns and blocks the response, the attacker cannot convince it otherwise by telling it "ignore previous instructions."</p>
+
+                    <p><strong>Guardrails are your last line of enforcement. System prompts are your first line of guidance.</strong> You need both.</p>
+                </section>
+
+                <section id="three-layers">
+                    <h2>The Three Guardrail Layers</h2>
+
+                    <h3>Layer 1: Input Guardrails</h3>
+                    <p>Input guardrails intercept user requests before they reach the LLM. They reject, sanitise, or flag inputs that are:</p>
+                    <ul>
+                        <li><strong>Malicious</strong>: prompt injection attempts, jailbreak patterns, role-override instructions</li>
+                        <li><strong>Out-of-scope</strong>: requests that fall outside the agent's configured domain (a customer service bot asked to write code)</li>
+                        <li><strong>Policy-violating</strong>: requests that violate business rules (asking a trading bot to place orders above a risk threshold)</li>
+                        <li><strong>Resource-exhausting</strong>: inputs designed to trigger long, expensive LLM completions (token DoS)</li>
+                    </ul>
+
+                    <h3>Layer 2: Output Guardrails</h3>
+                    <p>Output guardrails scan the LLM's response before it is returned to the user or fed to the next agent in a pipeline. They check for:</p>
+                    <ul>
+                        <li><strong>PII leakage</strong>: SSNs, account numbers, email addresses, phone numbers, passport numbers</li>
+                        <li><strong>Hallucination signals</strong>: fabricated citations, non-existent product names, invented statistics</li>
+                        <li><strong>Toxicity and harmful content</strong>: offensive language, dangerous instructions</li>
+                        <li><strong>Format violations</strong>: invalid JSON when JSON was required, truncated structured output</li>
+                        <li><strong>Off-topic drift</strong>: responses that wander outside the permitted domain</li>
+                    </ul>
+
+                    <h3>Layer 3: Action Guardrails</h3>
+                    <p>Action guardrails control what tools the agent can call and under what conditions. This is the layer most teams skip — and the one that causes the most catastrophic incidents. Action guardrails enforce:</p>
+                    <ul>
+                        <li><strong>Blast-radius limits</strong>: agent cannot modify more than 5 records per operation without human confirmation</li>
+                        <li><strong>Tool allowlists</strong>: certain tools (delete, send_email_external, execute_sql_write) require explicit human approval tokens in agent state</li>
+                        <li><strong>Rate limits</strong>: agent cannot invoke the same tool more than N times per workflow to prevent runaway loops</li>
+                        <li><strong>Scope enforcement</strong>: read-only agents cannot be coerced into write operations regardless of instructions</li>
+                    </ul>
+
+                    <p>The following Python implementation wraps all three layers around a LangChain LLM call:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>import re
+from dataclasses import dataclass, field
+from typing import Optional, Callable
+from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage, SystemMessage
+
+@dataclass
+class GuardrailViolation:
+    layer: str        # "input", "output", or "action"
+    rule: str         # which rule triggered
+    severity: str     # "block", "warn", "redact"
+    detail: str       # human-readable description
+
+class MultiLayerGuardrail:
+    """
+    Three-layer guardrail wrapper around any LLM call.
+
+    WHY separate layers: input, output, and action risks are distinct
+    and require different detection strategies. Combining them into one
+    monolithic check creates false positives and performance bottlenecks.
+    """
+
+    # PII patterns — WHY comprehensive: the account number incident shows
+    # that regex-only SSN checks miss other sensitive identifiers.
+    # Pattern library covers the formats most common in enterprise data.
+    PII_PATTERNS = {
+        "ssn":            r"\b\d{3}-\d{2}-\d{4}\b",
+        "account_number": r"\b\d{10,18}\b",          # bank account numbers
+        "credit_card":    r"\b(?:\d{4}[- ]?){3}\d{4}\b",
+        "passport":       r"\b[A-Z]{1,2}\d{6,9}\b",
+        "email_bulk":     None,                       # handled separately (count-based)
+        "api_key":        r"(?i)(api[_-]?key|secret)[_-]?\w*\s*[:=]\s*\S{10,}",
+    }
+
+    INPUT_INJECTION_PATTERNS = [
+        r"ignore\s+(previous|prior|all)\s+instructions?",
+        r"you\s+are\s+now\s+a?\s+",
+        r"forget\s+(everything|your\s+instructions?)",
+        r"<\s*system\s*>",
+        r"\[INST\].*?\[/INST\]",
+        r"###\s*(system|instruction)",
+    ]
+
+    def __init__(self, llm: ChatOpenAI, system_prompt: str,
+                 max_input_chars: int = 16000,
+                 on_violation: Optional[Callable] = None):
+        self.llm = llm
+        self.system_prompt = system_prompt
+        self.max_input_chars = max_input_chars
+        self.on_violation = on_violation or (lambda v: None)  # logging hook
+
+    def check_input(self, user_input: str) -> list[GuardrailViolation]:
+        violations = []
+
+        # Length check — prevents token-flooding DoS
+        if len(user_input) > self.max_input_chars:
+            violations.append(GuardrailViolation(
+                layer="input", rule="max_length",
+                severity="block",
+                detail=f"Input {len(user_input)} chars exceeds {self.max_input_chars} limit"
+            ))
+
+        # Injection pattern check
+        for pattern in self.INPUT_INJECTION_PATTERNS:
+            if re.search(pattern, user_input, re.IGNORECASE):
+                violations.append(GuardrailViolation(
+                    layer="input", rule="injection_pattern",
+                    severity="block",
+                    detail=f"Injection pattern detected: {pattern[:40]}"
+                ))
+                break  # one injection flag is enough to block
+
+        return violations
+
+    def check_output(self, response_text: str) -> list[GuardrailViolation]:
+        violations = []
+
+        # Structured PII pattern scan
+        for pii_type, pattern in self.PII_PATTERNS.items():
+            if pii_type == "email_bulk":
+                # WHY count-based: a single email in a response may be legitimate
+                # (e.g., "contact support@example.com"). 5+ emails = bulk extraction.
+                emails = re.findall(
+                    r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}",
+                    response_text
+                )
+                if len(emails) >= 5:
+                    violations.append(GuardrailViolation(
+                        layer="output", rule="pii_bulk_email",
+                        severity="block",
+                        detail=f"Response contains {len(emails)} email addresses — possible bulk extraction"
+                    ))
+            elif pattern and re.search(pattern, response_text):
+                violations.append(GuardrailViolation(
+                    layer="output", rule=f"pii_{pii_type}",
+                    severity="redact",
+                    detail=f"PII type '{pii_type}' detected in response"
+                ))
+
+        return violations
+
+    def redact_output(self, response_text: str) -> str:
+        """Redact detected PII patterns from response text."""
+        redacted = response_text
+        for pii_type, pattern in self.PII_PATTERNS.items():
+            if pattern:
+                redacted = re.sub(pattern, f"[REDACTED-{pii_type.upper()}]", redacted)
+        return redacted
+
+    def invoke(self, user_input: str) -> dict:
+        """
+        Full guardrail pipeline: check input → call LLM → check output → return.
+        Returns dict with 'response', 'violations', and 'blocked' keys.
+        """
+        all_violations = []
+
+        # --- Layer 1: Input Guardrails ---
+        input_violations = self.check_input(user_input)
+        all_violations.extend(input_violations)
+        for v in input_violations:
+            self.on_violation(v)
+
+        if any(v.severity == "block" for v in input_violations):
+            return {
+                "response": "I'm unable to process that request.",
+                "violations": all_violations,
+                "blocked": True
+            }
+
+        # --- LLM Call ---
+        messages = [
+            SystemMessage(content=self.system_prompt),
+            HumanMessage(content=user_input)
+        ]
+        raw_response = self.llm.invoke(messages).content
+
+        # --- Layer 2: Output Guardrails ---
+        output_violations = self.check_output(raw_response)
+        all_violations.extend(output_violations)
+        for v in output_violations:
+            self.on_violation(v)
+
+        # Redact rather than block — user gets a response, PII is masked
+        final_response = raw_response
+        if any(v.severity == "redact" for v in output_violations):
+            final_response = self.redact_output(raw_response)
+        if any(v.severity == "block" for v in output_violations):
+            final_response = "I found relevant information but cannot display it due to data policy restrictions. Please contact your administrator."
+
+        return {
+            "response": final_response,
+            "violations": all_violations,
+            "blocked": False
+        }
+
+# --- Usage ---
+llm = ChatOpenAI(model="gpt-4o", temperature=0)
+guardrail = MultiLayerGuardrail(
+    llm=llm,
+    system_prompt="You are a helpful financial analyst assistant. Only discuss market trends and portfolio strategy.",
+    on_violation=lambda v: print(f"GUARDRAIL [{v.layer}] {v.rule}: {v.detail}")
+)
+
+result = guardrail.invoke("What are the high-value client accounts this quarter?")
+print(result["response"])</code></pre>
+                </section>
+
+                <section id="nemo">
+                    <h2>NeMo Guardrails: Declarative Safety Policies</h2>
+
+                    <p>The Python wrapper above is excellent for team-specific rules, but it has a limitation: safety logic lives in application code. Every rule change requires a code deployment. In regulated environments — financial services, healthcare, government — that means a change management ticket, a review cycle, and a deployment window. For fast-moving AI systems, this is too slow.</p>
+
+                    <p>NVIDIA's NeMo Guardrails solves this by externalising safety policies into declarative Colang configuration files. Policies are separate from code, version-controlled in their own repository, and hot-reloadable without service restarts. An audit trail of policy changes is built in.</p>
+
+                    <p>The following Colang config implements a production-grade policy for a financial AI assistant — blocking off-topic requests, preventing harmful advice, and enforcing response factuality:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># nemo-config/config.co
+# NeMo Guardrails Colang configuration for a financial AI assistant
+# WHY Colang: policies are readable by compliance teams, not just engineers.
+# This file can be reviewed and signed off by a Chief Risk Officer.
+
+# === DEFINE ALLOWED TOPICS ===
+define user ask about market analysis
+  "market analysis"
+  "portfolio strategy"
+  "investment trends"
+  "economic indicators"
+  "sector performance"
+
+define user ask about customer data
+  "show me client accounts"
+  "list customer data"
+  "what are the account numbers"
+  "give me client details"
+  "show me client portfolios"
+
+define user ask harmful financial advice
+  "how to manipulate stock prices"
+  "insider trading"
+  "how to hide assets"
+  "tax evasion strategies"
+
+# === INPUT RAILS ===
+
+# Block requests for customer PII — Layer 1
+define flow block customer data requests
+  user ask about customer data
+  bot refuse customer data request
+
+define bot refuse customer data request
+  "I can't provide individual customer account details. For client-specific queries, please use the authorised CRM system with appropriate access controls."
+
+# Block harmful financial advice — Layer 1
+define flow block harmful advice
+  user ask harmful financial advice
+  bot refuse harmful advice
+
+define bot refuse harmful advice
+  "I'm not able to provide guidance on that topic. I'm configured to assist with legitimate market analysis and portfolio strategy only."
+
+# === OUTPUT RAILS ===
+
+# Factual grounding — prevent hallucinated statistics
+define flow check factual output
+  bot respond with statistics
+  $accuracy = execute check_statistics_accuracy(response=$last_bot_message)
+  if $accuracy < 0.8
+    bot add disclaimer
+
+define bot add disclaimer
+  "Note: Some figures in this response are estimates. Please verify against authorised data sources before use in client communications."
+
+# Topic enforcement — keep responses on topic
+define flow enforce topic
+  bot ...*
+  $on_topic = execute check_topic_relevance(response=$last_bot_message, allowed_topics=["market analysis", "portfolio strategy", "economic indicators"])
+  if not $on_topic
+    bot redirect to topic
+
+define bot redirect to topic
+  "I notice my response drifted off topic. Let me focus on what I can help with: market analysis, portfolio strategy, and economic indicators."
+
+# === JAILBREAK RAIL ===
+define flow jailbreak detection
+  user ask ...
+  $is_jailbreak = execute detect_jailbreak(input=$last_user_message)
+  if $is_jailbreak
+    bot refuse jailbreak
+
+define bot refuse jailbreak
+  "I'm not able to modify my operating guidelines. I'm here to help with financial market analysis."</code></pre>
+
+                    <p>Wire NeMo Guardrails into a LangChain agent with three lines:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from nemoguardrails import RailsConfig, LLMRails
+
+# Load policy from config directory — hot-reloadable without code changes
+config = RailsConfig.from_path("./nemo-config")
+rails = LLMRails(config)
+
+# Drop-in replacement for direct LLM calls
+response = await rails.generate_async(
+    messages=[{"role": "user", "content": user_input}]
+)</code></pre>
+                </section>
+
+                <section id="failure-mode">
+                    <h2>Production Failure Mode: The Account Number Incident</h2>
+
+                    <p>Let me return to the wealth management incident I opened with and walk through exactly why the guardrail failed and precisely what the fix looks like.</p>
+
+                    <p><strong>What happened</strong>: The firm's output guardrail used this pattern:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># The broken guardrail — SSN-only check
+# WHY this fails: account numbers (10-18 digits) are not SSNs (###-##-####).
+# A regex that matches SSN format passes account numbers entirely.
+import re
+
+SSN_PATTERN = r"\b\d{3}-\d{2}-\d{4}\b"  # Only catches ###-##-#### format
+
+def check_pii_simple(text: str) -> bool:
+    return bool(re.search(SSN_PATTERN, text))
+
+# This returns False for "Account: 4821930471029" — the number passes through</code></pre>
+
+                    <p><strong>Why the regex-only approach is fundamentally limited</strong>: PII takes hundreds of forms. Account numbers vary by institution (8 to 18 digits, sometimes with dashes or spaces). UK sort codes. IBAN numbers. Indian PAN numbers. Employee IDs. Building individual regex patterns for every format is an arms race you will lose. Every new data type requires a new pattern. Attackers can introduce deliberate spacing (e.g., "4821 9304 7102 9") to evade fixed-format patterns.</p>
+
+                    <p><strong>The fix: semantic similarity scoring against a PII pattern library</strong>. Rather than pattern-matching specific formats, embed the response text and measure cosine similarity against a library of known PII templates. Anything above 0.75 cosine similarity to a PII template gets flagged, regardless of specific format:</p>
+
+                    <pre style="background: #0f172a; color: #e2e8f0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from sentence_transformers import SentenceTransformer
+import numpy as np
+
+# WHY sentence-transformers: semantic similarity catches format variations
+# that regex misses. "Account: 4821930471029" and "Acct # 4821-930-471-029"
+# both embed near a PII template, despite different surface forms.
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+# PII template library — canonical examples of sensitive output patterns
+PII_TEMPLATES = [
+    "The account number is 1234567890123",
+    "Customer SSN: 123-45-6789",
+    "Card number: 4111 1111 1111 1111",
+    "Account balance: $125,000. Account: 987654321098",
+    "Client ID 456789 with balance of",
+    "Here are the top accounts: Account 123, Account 456",
+]
+
+template_embeddings = model.encode(PII_TEMPLATES)
+
+def semantic_pii_check(response_text: str, threshold: float = 0.72) -> bool:
+    """
+    Returns True if response resembles a PII disclosure pattern.
+    Threshold 0.72 balances recall (catching leaks) vs precision (false positives).
+    """
+    # Split into sentences — check each sentence independently
+    sentences = [s.strip() for s in response_text.split('.') if len(s.strip()) > 10]
+
+    for sentence in sentences:
+        sent_embedding = model.encode([sentence])
+        # Cosine similarity against all PII templates
+        similarities = np.dot(sent_embedding, template_embeddings.T) / (
+            np.linalg.norm(sent_embedding) * np.linalg.norm(template_embeddings, axis=1)
+        )
+        if np.max(similarities) > threshold:
+            return True  # Semantic match to a PII pattern
+
+    return False</code></pre>
+
+                    <p>After implementing semantic PII detection alongside the regex layer, the firm ran a retroactive test against 500 historical agent responses. Semantic detection caught 34 additional potential leaks that the regex layer had passed. Seventeen of those contained account numbers.</p>
+                </section>
+
+                <section id="decision-tree">
+                    <h2>Guardrail Decision Tree: Which Layer for Which Risk</h2>
+
+                    <p>Use this decision framework when designing your guardrail architecture:</p>
+
+                    <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem;">
+                        <thead>
+                            <tr style="background: #f0fdf4; border-bottom: 2px solid #16a34a;">
+                                <th style="padding: 0.75rem; text-align: left;">Risk Scenario</th>
+                                <th style="padding: 0.75rem; text-align: left;">Primary Layer</th>
+                                <th style="padding: 0.75rem; text-align: left;">Detection Method</th>
+                                <th style="padding: 0.75rem; text-align: left;">Response Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">Prompt injection attempt</td>
+                                <td style="padding: 0.75rem;"><strong>Input</strong></td>
+                                <td style="padding: 0.75rem;">Regex + embedding classifier</td>
+                                <td style="padding: 0.75rem;">Block + log security event</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">Out-of-scope request</td>
+                                <td style="padding: 0.75rem;"><strong>Input</strong></td>
+                                <td style="padding: 0.75rem;">Topic classifier (NeMo)</td>
+                                <td style="padding: 0.75rem;">Redirect with explanation</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">PII in LLM response</td>
+                                <td style="padding: 0.75rem;"><strong>Output</strong></td>
+                                <td style="padding: 0.75rem;">Regex + semantic similarity</td>
+                                <td style="padding: 0.75rem;">Redact PII, return partial response</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">Hallucinated citation</td>
+                                <td style="padding: 0.75rem;"><strong>Output</strong></td>
+                                <td style="padding: 0.75rem;">Citation verification tool call</td>
+                                <td style="padding: 0.75rem;">Add disclaimer or block</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">Agent wants to delete 500 records</td>
+                                <td style="padding: 0.75rem;"><strong>Action</strong></td>
+                                <td style="padding: 0.75rem;">Blast-radius limit check</td>
+                                <td style="padding: 0.75rem;">Pause, require human approval</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">Agent calling external API</td>
+                                <td style="padding: 0.75rem;"><strong>Action</strong></td>
+                                <td style="padding: 0.75rem;">Allowlist check</td>
+                                <td style="padding: 0.75rem;">Block if not in allowlist</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;">Runaway tool-call loop</td>
+                                <td style="padding: 0.75rem;"><strong>Action</strong></td>
+                                <td style="padding: 0.75rem;">Tool invocation counter</td>
+                                <td style="padding: 0.75rem;">Stop loop, alert operator</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Implementation Priority</h3>
+                    <p>If you are just getting started, implement in this order:</p>
+                    <ol>
+                        <li><strong>Output PII guardrail</strong> — this is the highest-frequency production incident type. Implement today.</li>
+                        <li><strong>Action blast-radius limits</strong> — critical for any agent with write access to production systems.</li>
+                        <li><strong>Input injection detection</strong> — important for user-facing agents; can be implemented with existing libraries like Garak.</li>
+                        <li><strong>NeMo Guardrails policy layer</strong> — adds declarative, auditable controls; implement once your basic guardrails are stable.</li>
+                    </ol>
+                </section>
+
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What are guardrails in LLM applications?</h3>
+                        <p>Guardrails are validation and enforcement layers that sit around your LLM calls to control what goes in and what comes out. Input guardrails filter malicious or out-of-scope requests before they reach the model. Output guardrails validate the LLM's response before it is returned — checking for PII leakage, hallucinated facts, or harmful content. Action guardrails limit what tools an agent can invoke, preventing blast-radius damage from autonomous operations. Together, the three layers provide defence-in-depth that system prompts alone cannot provide.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is NeMo Guardrails?</h3>
+                        <p>NeMo Guardrails is an open-source framework from NVIDIA that provides a programmable, declarative safety layer for LLM applications using a domain-specific language called Colang. It defines conversation flows, allowed topics, and response policies in .co configuration files that are separate from application code — enabling compliance teams to review and sign off on safety policies without reading Python. NeMo Guardrails integrates with LangChain, OpenAI, and other LLM backends.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do guardrails differ from system prompts?</h3>
+                        <p>System prompts are instructions to the LLM that can be overridden by sufficiently sophisticated prompt injection. Guardrails are code-level enforcement that runs outside the LLM — they cannot be bypassed by injecting text into the conversation. A system prompt saying "do not reveal customer data" can be circumvented by an attacker. An output guardrail that scans for PII patterns and blocks the response before it is sent cannot be circumvented through the LLM itself. System prompts are guidance; guardrails are enforcement.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can guardrails stop prompt injection?</h3>
+                        <p>Input guardrails significantly reduce prompt injection risk by detecting and filtering known injection patterns before they reach the LLM. However, no guardrail is 100% effective against all injection variants — especially novel indirect injection via external documents. The correct defence-in-depth approach combines input guardrails + privilege separation (least-privilege tool access) + output guardrails + human-in-the-loop approval for high-risk actions. Guardrails are one essential layer, not the complete solution.</p>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion: Build the Safety Layer Before You Need It</h2>
+
+                    <p>Every enterprise AI deployment I have reviewed that suffered a significant incident — data leakage, runaway tool calls, regulatory violations — had one thing in common: the safety architecture was planned "for the next sprint" and never quite arrived. The demo worked. The guardrails were "good enough." And then they weren't.</p>
+
+                    <p>The three-layer guardrail architecture — input, output, action — is not complex to implement. The Python multi-layer wrapper I've shown here takes a day to build and test. The NeMo Guardrails Colang config takes another day. The semantic PII detector using sentence-transformers takes an afternoon. What takes months is recovering from a production incident that those three days of work would have prevented.</p>
+
+                    <p>In Day 5 of the Agentic AI Workshop, we build and stress-test guardrail architectures in live labs — injecting known attack patterns, measuring what gets through, and iterating on defences. By end of day, every participant has a production-grade safety layer around their agent that they built themselves and understand deeply. That hands-on muscle memory is what makes the difference between a guardrail that gets deployed and one that stays in the backlog.</p>
+                </section>
+
+            </div>
+
+            <!-- Lead Magnet CTA -->
+            <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
+              <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
+              <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+              <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value="">
+                <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <input name="email" type="email" required placeholder="Work email" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:200px">
+                <input name="company" placeholder="Company" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
+                <button type="submit" style="background:#f59e0b;color:#1e3a5f;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer">Get Free Guide</button>
+              </form>
+              <p class="lead-msg" style="margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+              <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+              <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+              <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                <input type="hidden" name="website" value="">
+                <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+                <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+                <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+              </form>
+              <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <script>
+            async function submitNewsletter(e) {
+              e.preventDefault();
+              const form = e.target;
+              const data = Object.fromEntries(new FormData(form));
+              const msg = document.getElementById('newsletter-msg');
+              try {
+                const r = await fetch('https://dev-leads.gheware-ai.com/newsletter', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+                const j = await r.json();
+                msg.textContent = j.message || 'Thanks! Check your inbox.';
+                msg.style.display = 'block'; form.reset();
+              } catch(err) { msg.textContent = 'Something went wrong. Please try again.'; msg.style.display = 'block'; }
+            }
+            </script>
+
+            <div id="author-bio-placeholder"></div>
+
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/owasp-llm-top-10-explained-2026.html">OWASP LLM Top 10: The Security Checklist Every AI Engineer Needs</a></h3>
+                        <p>Walk through all 10 OWASP LLM risks with real attack scenarios — guardrails address 6 of the 10 directly.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html">Agentic AI Security: Kubernetes Sandboxing for AI Agents</a></h3>
+                        <p>Network-level and namespace-level isolation for AI agents — the infrastructure layer that complements application guardrails.</p>
+                    </article>
+                    <article class="related-card">
+                        <h3><a href="/blog/posts/ai-agent-governance-enterprise-compliance-2026.html">AI Agent Governance: Audit Trails and Enterprise Compliance</a></h3>
+                        <p>How to build immutable audit trails and governance frameworks that satisfy EU AI Act and internal compliance requirements.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="post-cta">
+                <h2>Learn This in a Hands-On Lab</h2>
+                <p>This concept is covered in depth in Rajesh's 5-Day Agentic AI Workshop — with working code, live labs, and real production scenarios. Join 5,000+ engineers who've made the shift.</p>
+                <a href="/index.html#workshop" class="btn-cta-primary">
+                    <span>Explore the Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <div id="footer-placeholder"></div>
+
+<script>
+async function submitLeadMagnet(e, leadId, ctaId) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const cta = document.getElementById(ctaId);
+  const msg = cta ? cta.querySelector('.lead-msg') : null;
+  try {
+    const r = await fetch('https://dev-leads.gheware-ai.com/' + leadId, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    const j = await r.json();
+    if (msg) { msg.textContent = j.message || 'Check your inbox!'; msg.style.display = 'block'; }
+    form.reset();
+  } catch(err) { if (msg) { msg.textContent = 'Something went wrong. Try again.'; msg.style.display = 'block'; } }
+}
+</script>
+</body>
+</html>
