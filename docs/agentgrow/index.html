@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE" />
+
+    <title>AgentGrow — Open-Source AI Browser Extension | Gheware DevOps AI</title>
+    <meta name="description" content="AgentGrow is a free, open-source Chrome extension that brings AI intelligence to every browser tab. Connect to any LLM — OpenRouter, Ollama, OpenAI, or your own server. No subscriptions. No vendor lock-in. Full privacy policy and Chrome Web Store compliance documentation.">
+    <meta name="keywords" content="AgentGrow, Chrome extension, AI browser assistant, open source, Ollama, OpenRouter, privacy, LLM, local AI">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AgentGrow — Open-Source AI Browser Extension">
+    <meta property="og:description" content="Free, open-source Chrome extension. Connect to any LLM. No subscriptions. Your data stays on your device.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devops.gheware.com/agentgrow/">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://devops.gheware.com/agentgrow/">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AgentGrow",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome",
+      "description": "Free, open-source Chrome extension that connects to any LLM provider for AI-powered browser assistance.",
+      "url": "https://devops.gheware.com/agentgrow/",
+      "author": {
+        "@type": "Organization",
+        "name": "Gheware Technologies",
+        "url": "https://devops.gheware.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "license": "https://opensource.org/licenses/MIT"
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/premium.css">
+    <script src="/js/head-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+
+    <style>
+        /* ── Page-specific tokens ── */
+        :root {
+            --ag-teal:       #10b981;
+            --ag-teal-dark:  #059669;
+            --ag-teal-light: #d1fae5;
+            --ag-navy:       #0f172a;
+            --ag-slate:      #1e293b;
+            --ag-border:     #e2e8f0;
+            --ag-text:       #1e293b;
+            --ag-muted:      #64748b;
+            --ag-warning:    #f59e0b;
+            --ag-red:        #ef4444;
+        }
+
+        /* ── Hero ── */
+        .ag-hero {
+            background: linear-gradient(135deg, var(--ag-navy) 0%, var(--ag-slate) 60%, #064e3b 100%);
+            color: white;
+            padding: 7rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .ag-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(16,185,129,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ag-hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        .ag-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(16,185,129,0.15);
+            border: 1px solid rgba(16,185,129,0.4);
+            color: #6ee7b7;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .ag-badge-dot {
+            width: 6px; height: 6px;
+            background: #34d399;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
+        }
+        .ag-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+        .ag-hero h1 span {
+            color: #34d399;
+        }
+        .ag-hero-lead {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+        .ag-hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .ag-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ag-teal);
+            color: white;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(16,185,129,0.35);
+        }
+        .ag-btn-primary:hover {
+            background: var(--ag-teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16,185,129,0.4);
+        }
+        .ag-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .ag-btn-outline:hover {
+            border-color: rgba(255,255,255,0.6);
+            color: white;
+        }
+
+        /* Hero terminal mockup */
+        .ag-terminal {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .ag-terminal-bar {
+            background: #161b22;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #30363d;
+        }
+        .ag-terminal-dot {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+        }
+        .ag-terminal-body {
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+        .ag-t-comment { color: #8b949e; }
+        .ag-t-key     { color: #79c0ff; }
+        .ag-t-val     { color: #a5d6ff; }
+        .ag-t-str     { color: #a8ff82; }
+        .ag-t-num     { color: #f8cc65; }
+        .ag-t-green   { color: #56d364; }
+        .ag-t-dim     { color: #6e7681; }
+
+        /* ── Section layout ── */
+        .ag-section {
+            padding: 5rem 0;
+        }
+        .ag-section-alt {
+            background: #f8fafc;
+        }
+        .ag-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .ag-section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ag-teal-dark);
+            margin-bottom: 0.75rem;
+        }
+        .ag-section-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--ag-navy);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        .ag-section-lead {
+            font-size: 1.1rem;
+            color: var(--ag-muted);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        .ag-section-header {
+            margin-bottom: 3.5rem;
+        }
+
+        /* ── Why section ── */
+        .ag-why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .ag-why-card {
+            background: white;
+            border: 1px solid var(--ag-border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+        .ag-why-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .ag-why-icon {
+            width: 48px; height: 48px;
+            background: var(--ag-teal-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .ag-why-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--ag-navy);
+            margin-bottom: 0.6rem;
+        }
+        .ag-why-card p {
+            color: var(--ag-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        /* ── Story section ── */
+        .ag-story {
+            background: var(--ag-navy);
+            color: white;
+            padding: 5rem 0;
+        }
+        .ag-story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        .ag-story h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .ag-story h2 span { color: #34d399; }
+        .ag-story p {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+        .ag-author-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .ag-author-avatar {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ag-teal), #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            flex-shrink: 0;
+        }
+        .ag-author-name {
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.2rem;
+        }
+        .ag-author-bio {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .ag-stats-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .ag-stat {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .ag-stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #34d399;
+            display: block;
+        }
+        .ag-stat-label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        /* ── Trust features ── */
+        .ag-trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .ag-trust-card {
+            background: white;
+            border: 1px solid var(--ag-border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.2s ease;
+        }
+        .ag-trust-card:hover {
+            border-color: var(--ag-teal);
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.08);
+        }
+        .ag-trust-tag {
+            display: inline-block;
+            background: var(--ag-teal-light);
+            color: var(--ag-teal-dark);
+            padding: 0.2rem 0.7rem;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .ag-trust-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ag-navy);
+            margin-bottom: 0.6rem;
+        }
+        .ag-trust-card p {
+            font-size: 0.9rem;
+            color: var(--ag-muted);
+            line-height: 1.6;
+        }
+
+        /* ── Permissions table ── */
+        .ag-perm-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            font-size: 0.93rem;
+        }
+        .ag-perm-table thead {
+            background: var(--ag-navy);
+            color: white;
+        }
+        .ag-perm-table th {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+        }
+        .ag-perm-table td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: top;
+        }
+        .ag-perm-table tr:last-child td { border-bottom: none; }
+        .ag-perm-table tr:nth-child(even) td { background: #f8fafc; }
+        .ag-perm-mono {
+            font-family: 'Courier New', monospace;
+            font-size: 0.82rem;
+            background: #e2e8f0;
+            color: #1e293b;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        /* ── Data table ── */
+        .ag-data-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .ag-data-card {
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+        .ag-data-card--local {
+            background: #ecfdf5;
+            border: 1px solid #6ee7b7;
+        }
+        .ag-data-card--sync {
+            background: #eff6ff;
+            border: 1px solid #93c5fd;
+        }
+        .ag-data-card--never {
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+        }
+        .ag-data-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .ag-data-card--local h3 { color: #065f46; }
+        .ag-data-card--sync h3  { color: #1e40af; }
+        .ag-data-card--never h3 { color: #991b1b; }
+        .ag-data-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ag-data-list li {
+            font-size: 0.9rem;
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            line-height: 1.4;
+        }
+        .ag-data-list li:last-child { border-bottom: none; }
+
+        /* ── Privacy policy ── */
+        .ag-policy {
+            background: white;
+            border: 1px solid var(--ag-border);
+            border-radius: 16px;
+            padding: 3rem;
+        }
+        .ag-policy h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--ag-navy);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--ag-border);
+        }
+        .ag-policy h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+        .ag-policy p {
+            color: var(--ag-text);
+            line-height: 1.8;
+            font-size: 0.97rem;
+            margin-bottom: 1rem;
+        }
+        .ag-policy ul {
+            margin: 0.75rem 0 1rem 1.5rem;
+        }
+        .ag-policy ul li {
+            color: var(--ag-text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0.4rem;
+        }
+        .ag-policy .highlight-box {
+            background: #ecfdf5;
+            border: 1px solid #6ee7b7;
+            border-left: 4px solid var(--ag-teal);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .ag-policy .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+            color: #065f46;
+        }
+        .ag-policy .warning-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-left: 4px solid var(--ag-warning);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .ag-policy .warning-box p {
+            margin: 0;
+            color: #92400e;
+        }
+        .ag-meta-bar {
+            background: #f8fafc;
+            border: 1px solid var(--ag-border);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            font-size: 0.88rem;
+            color: var(--ag-muted);
+        }
+        .ag-meta-bar strong { color: var(--ag-navy); }
+
+        /* ── CWS compliance checklist ── */
+        .ag-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .ag-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.95rem;
+            color: var(--ag-text);
+            line-height: 1.5;
+        }
+        .ag-checklist li:last-child { border-bottom: none; }
+        .ag-check { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.05rem; }
+
+        /* ── Contact ── */
+        .ag-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .ag-contact-card {
+            background: white;
+            border: 1px solid var(--ag-border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .ag-contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .ag-contact-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ag-navy);
+            margin-bottom: 0.5rem;
+        }
+        .ag-contact-card p, .ag-contact-card a {
+            font-size: 0.9rem;
+            color: var(--ag-muted);
+            text-decoration: none;
+        }
+        .ag-contact-card a:hover { color: var(--ag-teal-dark); }
+
+        /* ── Page nav ── */
+        .ag-page-nav {
+            background: white;
+            border-bottom: 1px solid var(--ag-border);
+            position: sticky;
+            top: 72px;
+            z-index: 100;
+        }
+        .ag-page-nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .ag-page-nav a {
+            padding: 1rem 1.25rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--ag-muted);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .ag-page-nav a:hover, .ag-page-nav a.active {
+            color: var(--ag-teal-dark);
+            border-bottom-color: var(--ag-teal);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .ag-hero-grid, .ag-story-grid { grid-template-columns: 1fr; }
+            .ag-hero { padding: 5rem 0 3rem; }
+            .ag-hero h1 { font-size: 2.2rem; }
+            .ag-terminal { display: none; }
+            .ag-why-grid { grid-template-columns: 1fr; }
+            .ag-trust-grid, .ag-data-grid, .ag-contact-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .ag-trust-grid, .ag-data-grid, .ag-contact-grid { grid-template-columns: 1fr; }
+            .ag-policy { padding: 1.75rem; }
+            .ag-stats-box { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Shared site header injected by template-loader.js -->
+    <div id="header-placeholder"></div>
+    <div id="header-spacing"></div>
+
+    <!-- Page-level nav -->
+    <nav class="ag-page-nav" aria-label="Page sections">
+        <div class="ag-page-nav-inner">
+            <a href="#why">Why We Built It</a>
+            <a href="#trust">Trust & Transparency</a>
+            <a href="#permissions">Permissions</a>
+            <a href="#data">Data Handling</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#compliance">CWS Compliance</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ HERO -->
+    <section class="ag-hero">
+        <div class="ag-hero-grid">
+            <div>
+                <div class="ag-badge">
+                    <span class="ag-badge-dot"></span>
+                    Open Source · Free · Privacy-First
+                </div>
+                <h1>AgentGrow<br><span>AI Browser Extension</span></h1>
+                <p class="ag-hero-lead">
+                    Connect to <strong style="color:white">any LLM</strong> — OpenRouter, Ollama, OpenAI, or your own on-premise server.
+                    Summarize pages, chat with any website, and manage your browser with AI.
+                    No subscriptions. No data collection. No vendor lock-in.
+                </p>
+                <div class="ag-hero-cta">
+                    <a href="https://chromewebstore.google.com" class="ag-btn-primary">
+                        ⚙️ Install from Chrome Web Store
+                    </a>
+                    <a href="https://github.com/gheware-tech/agentgrow" class="ag-btn-outline" target="_blank" rel="noopener">
+                        ⭐ View Source on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Provider config preview -->
+            <div class="ag-terminal" role="img" aria-label="Provider configuration example">
+                <div class="ag-terminal-bar">
+                    <span class="ag-terminal-dot" style="background:#ff5f57"></span>
+                    <span class="ag-terminal-dot" style="background:#febc2e"></span>
+                    <span class="ag-terminal-dot" style="background:#28c840"></span>
+                    <span style="margin-left:0.5rem;color:#8b949e;font-size:0.78rem;font-family:monospace">AgentGrow — Add Provider</span>
+                </div>
+                <div class="ag-terminal-body" style="color:#c9d1d9">
+<span class="ag-t-comment">// Works with any OpenAI-compatible API</span><br>
+<br>
+<span class="ag-t-comment">// Option 1: OpenRouter (300+ models)</span><br>
+{<br>
+&nbsp;&nbsp;<span class="ag-t-key">"name"</span>: <span class="ag-t-str">"OpenRouter"</span>,<br>
+&nbsp;&nbsp;<span class="ag-t-key">"apiUrl"</span>: <span class="ag-t-str">"https://openrouter.ai/api/v1"</span>,<br>
+&nbsp;&nbsp;<span class="ag-t-key">"model"</span>: <span class="ag-t-str">"anthropic/claude-3.5-sonnet"</span><br>
+}<br>
+<br>
+<span class="ag-t-comment">// Option 2: Local Ollama (no key needed)</span><br>
+{<br>
+&nbsp;&nbsp;<span class="ag-t-key">"name"</span>: <span class="ag-t-str">"Ollama Local"</span>,<br>
+&nbsp;&nbsp;<span class="ag-t-key">"apiUrl"</span>: <span class="ag-t-str">"http://localhost:11434"</span>,<br>
+&nbsp;&nbsp;<span class="ag-t-key">"model"</span>: <span class="ag-t-str">"llama3.2"</span>,<br>
+&nbsp;&nbsp;<span class="ag-t-key">"apiKey"</span>: <span class="ag-t-dim">null</span> <span class="ag-t-comment">// not required</span><br>
+}<br>
+<br>
+<span class="ag-t-comment">// Option 3: Your on-prem vLLM server</span><br>
+{<br>
+&nbsp;&nbsp;<span class="ag-t-key">"apiUrl"</span>: <span class="ag-t-str">"https://llm.corp.internal/v1"</span>,<br>
+&nbsp;&nbsp;<span class="ag-t-key">"model"</span>: <span class="ag-t-str">"mistral-7b-instruct"</span><br>
+}<br>
+<br>
+<span class="ag-t-green">✓ Connection verified — 187ms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ WHY -->
+    <section class="ag-section ag-section-alt" id="why">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">The Problem We're Solving</div>
+                <h2 class="ag-section-title">Why We Built AgentGrow</h2>
+                <p class="ag-section-lead">
+                    After 25 years building enterprise systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley,
+                    and training 5,000+ DevOps professionals, one thing became clear: the best AI browser tools
+                    are locked behind subscriptions and force you to send your data to their servers.
+                    That's wrong — especially for engineers and enterprises who run their own infrastructure.
+                </p>
+            </div>
+
+            <div class="ag-why-grid">
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">🔐</div>
+                    <h3>Your Data Stays on Your Machine</h3>
+                    <p>Every conversation, every setting, every API key is stored locally on your device using
+                    AES-GCM-256 encryption. Nothing is sent to AgentGrow servers — because there are none.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">🔓</div>
+                    <h3>No Vendor Lock-In, Ever</h3>
+                    <p>Connect to OpenRouter, Ollama on localhost, your company's vLLM deployment, or any
+                    OpenAI-compatible API. Switch providers with one click. Export all your data anytime.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">💸</div>
+                    <h3>Free. Genuinely Free.</h3>
+                    <p>No freemium limits. No feature gating. No "Pro" tier. AgentGrow is MIT-licensed
+                    open source. The code is on GitHub. You can read every line, fork it, and self-host it.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">🏭</div>
+                    <h3>Built for Enterprise Too</h3>
+                    <p>Teams running on-premise LLMs (vLLM, Ollama, LM Studio on internal networks) can use
+                    AgentGrow without any data leaving the corporate network — ideal for regulated industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ STORY -->
+    <section class="ag-story">
+        <div class="ag-container">
+            <div class="ag-story-grid">
+                <div>
+                    <h2>Built by a <span>practitioner</span>,<br>for practitioners</h2>
+                    <p>
+                        I've spent 25+ years as a technologist at some of the world's largest financial institutions.
+                        When AI browser extensions emerged, I tried them all — and kept hitting the same wall:
+                        they required sending my research, my client notes, my code to a third-party server I don't control,
+                        behind a subscription I had to justify to procurement.
+                    </p>
+                    <p>
+                        Our DevOps training platform already helps professionals build production-ready AI agents.
+                        AgentGrow is the natural extension of that mission — an open tool that puts the power
+                        of any LLM directly in your browser, on your terms.
+                    </p>
+                    <p>
+                        Every line of code is public. Every architectural decision is documented. If something
+                        concerns you, open an issue. If you want a feature, open a PR.
+                    </p>
+                    <div class="ag-author-card">
+                        <div class="ag-author-avatar">RG</div>
+                        <div>
+                            <div class="ag-author-name">Rajesh Gheware</div>
+                            <div class="ag-author-bio">Founder, Gheware Technologies · 25 yrs JPMorgan Chase / Deutsche Bank / Morgan Stanley · CKA · Oracle Certified</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="ag-stats-box">
+                        <div class="ag-stat">
+                            <span class="ag-stat-number">5,000+</span>
+                            <span class="ag-stat-label">Professionals Trained</span>
+                        </div>
+                        <div class="ag-stat">
+                            <span class="ag-stat-number">4.91★</span>
+                            <span class="ag-stat-label">Oracle Rating</span>
+                        </div>
+                        <div class="ag-stat">
+                            <span class="ag-stat-number">25+</span>
+                            <span class="ag-stat-label">Years in Production Systems</span>
+                        </div>
+                        <div class="ag-stat">
+                            <span class="ag-stat-number">MIT</span>
+                            <span class="ag-stat-label">Open Source License</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:2rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;">
+                        <p style="color:#6ee7b7;font-weight:700;margin-bottom:0.75rem;font-size:0.9rem;">100% REFUND GUARANTEE</p>
+                        <p style="color:#94a3b8;font-size:0.9rem;margin:0;">If AgentGrow ever introduces telemetry, data collection, or mandatory subscriptions without a major version announcement and 90 days notice — full refund of any donations. Our reputation is the product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ TRUST -->
+    <section class="ag-section" id="trust">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">Verifiable by Design</div>
+                <h2 class="ag-section-title">Built to Be Trusted</h2>
+                <p class="ag-section-lead">Every trust claim in AgentGrow is verifiable — not just stated.
+                Here's how we make privacy and transparency something you can actually check.</p>
+            </div>
+
+            <div class="ag-trust-grid">
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">Open Source</span>
+                    <h3>Read Every Line</h3>
+                    <p>The full source is on GitHub under MIT license. No obfuscation. No minified-only builds. Build it yourself from source and compare the SHA-256 hash to the Chrome Web Store version.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">Privacy Dashboard</span>
+                    <h3>See Exactly What's Stored</h3>
+                    <p>Options → Privacy shows a live view of every piece of data stored on your device, where it lives, and lets you delete any or all of it with one click.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">Live Network Log</span>
+                    <h3>Know Every API Call</h3>
+                    <p>A local audit log records the endpoint, timestamp, and token count of every LLM call. No content is logged — only metadata. Visible in Options → Privacy → Network Log.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">Encrypted Keys</span>
+                    <h3>AES-GCM-256 At Rest</h3>
+                    <p>API keys are encrypted using the Web Crypto API before being written to storage. They are never readable in plaintext, never sent to content scripts, never exported.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">HTTPS Enforcement</span>
+                    <h3>Remote Calls Are Always Encrypted</h3>
+                    <p>The extension rejects HTTP provider URLs for any non-localhost endpoint. Local Ollama and LM Studio on private networks are explicitly allowed.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">Data Export</span>
+                    <h3>Your Data, Your Format</h3>
+                    <p>Export all conversations, templates, and settings as a standard JSON file at any time. API keys are redacted from exports. Import them back to a new device.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">No Telemetry</span>
+                    <h3>Zero Analytics, Zero Tracking</h3>
+                    <p>AgentGrow has no analytics SDK, no crash reporter, no usage metrics. The only network calls it makes are to your configured LLM endpoint.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">First-Run Screen</span>
+                    <h3>Informed Consent First</h3>
+                    <p>On first install, before any feature is accessible, we show exactly what AgentGrow stores, what it doesn't collect, and link to this page. No dark patterns.</p>
+                </div>
+                <div class="ag-trust-card">
+                    <span class="ag-trust-tag">Reproducible Builds</span>
+                    <h3>Verify the Published Build</h3>
+                    <p>Every GitHub release publishes a SHA-256 hash of the production ZIP. You can build from source and verify the hash matches what was submitted to the Chrome Web Store.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ PERMISSIONS -->
+    <section class="ag-section ag-section-alt" id="permissions">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">Chrome Web Store Requirement</div>
+                <h2 class="ag-section-title">Every Permission Explained</h2>
+                <p class="ag-section-lead">AgentGrow requests only the permissions it needs. Here is what each one does
+                and why it is required — in plain English, not legal language.</p>
+            </div>
+
+            <table class="ag-perm-table" aria-label="Extension permissions and their purpose">
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>What Chrome Allows</th>
+                        <th>Why AgentGrow Needs It</th>
+                        <th>Granted At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="ag-perm-mono">storage</code></td>
+                        <td>Read and write to the extension's local and sync storage</td>
+                        <td>Save conversations, settings, and encrypted API keys on your device. Nothing in sync storage contains sensitive data.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">tabs</code></td>
+                        <td>Access tab titles, URLs, and tab group membership</td>
+                        <td>Build multi-tab summaries. Without this, tab group intelligence is impossible.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">tabGroups</code></td>
+                        <td>Read which tabs belong to a Chrome tab group</td>
+                        <td>Detect and summarize all tabs within a group. The headline feature of AgentGrow.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">sidePanel</code></td>
+                        <td>Show a persistent panel in the browser sidebar</td>
+                        <td>The main chat UI. Without this, there's no panel to show responses in.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">activeTab</code></td>
+                        <td>Access the current tab's page content — only when the user invokes the extension</td>
+                        <td>Read page text for summarization and Q&amp;A. Safer than host permissions — grants access only on explicit user action, shows no install warning.</td>
+                        <td>On user action</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">scripting</code></td>
+                        <td>Inject JavaScript into web pages</td>
+                        <td>Inject the content script that extracts readable page text. Without it, page summarization doesn't work.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">alarms</code></td>
+                        <td>Schedule recurring background events</td>
+                        <td>Reserved for Phase 3 scheduled summarization. Not active in v1.0. We include it to avoid a permissions update that would re-prompt users.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">contextMenus</code></td>
+                        <td>Add items to the browser right-click menu</td>
+                        <td>Adds "Ask AgentGrow about this" to the right-click menu on selected text.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">notifications</code></td>
+                        <td>Show desktop notifications</td>
+                        <td>Notify when a long-running summarization task completes. Never used for marketing.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">&lt;all_urls&gt;</code> (optional)</td>
+                        <td>Access any website's content</td>
+                        <td><strong>Not granted by default.</strong> Users explicitly opt in per-site or globally for page reading features. Shows a clear prompt before any access is granted.</td>
+                        <td>User opt-in only</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ DATA -->
+    <section class="ag-section" id="data">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">Data Handling</div>
+                <h2 class="ag-section-title">What AgentGrow Stores — and What It Doesn't</h2>
+                <p class="ag-section-lead">Three columns. One rule: if it's not in these tables, AgentGrow doesn't collect it.</p>
+            </div>
+
+            <div class="ag-data-grid">
+                <div class="ag-data-card ag-data-card--local">
+                    <h3>✅ Stored Locally Only<br><small style="font-weight:400;font-size:0.85rem">(Your device — never leaves)</small></h3>
+                    <ul class="ag-data-list">
+                        <li>✓ Conversation history (up to 100 conversations)</li>
+                        <li>✓ API keys (AES-GCM-256 encrypted)</li>
+                        <li>✓ Provider configurations (URL, name, model)</li>
+                        <li>✓ Prompt templates</li>
+                        <li>✓ Network audit log (metadata only, no content)</li>
+                    </ul>
+                </div>
+
+                <div class="ag-data-card ag-data-card--sync">
+                    <h3>☁️ Synced via Google Account<br><small style="font-weight:400;font-size:0.85rem">(Non-sensitive preferences only)</small></h3>
+                    <ul class="ag-data-list">
+                        <li>✓ Theme (dark/light/system)</li>
+                        <li>✓ Default context mode</li>
+                        <li>✓ Keyboard shortcut overrides</li>
+                        <li style="color:#9ca3af">✗ No conversations</li>
+                        <li style="color:#9ca3af">✗ No API keys</li>
+                        <li style="color:#9ca3af">✗ No page content</li>
+                    </ul>
+                </div>
+
+                <div class="ag-data-card ag-data-card--never">
+                    <h3>🚫 Never Collected<br><small style="font-weight:400;font-size:0.85rem">(Not possible — no AgentGrow servers)</small></h3>
+                    <ul class="ag-data-list">
+                        <li>✗ Browsing history</li>
+                        <li>✗ Message content or conversation data</li>
+                        <li>✗ Personal identifiable information (PII)</li>
+                        <li>✗ Analytics or usage metrics</li>
+                        <li>✗ Crash reports</li>
+                        <li>✗ IP addresses</li>
+                        <li>✗ Installed extensions list</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top:2rem;background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:1.5rem 2rem">
+                <p style="font-weight:700;color:#15803d;margin:0 0 0.5rem">⚠️ The only third-party network call AgentGrow makes is to YOUR configured LLM endpoint.</p>
+                <p style="color:#166534;font-size:0.95rem;margin:0">When you ask AgentGrow a question, it sends your message (and optionally the current page text) to the API URL you configured in settings — whether that's api.openrouter.ai, localhost:11434, or your company's internal server. No other outbound connection is made.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ PRIVACY POLICY -->
+    <section class="ag-section ag-section-alt" id="privacy">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">Legal · Chrome Web Store Required</div>
+                <h2 class="ag-section-title">Privacy Policy</h2>
+            </div>
+
+            <div class="ag-policy">
+                <div class="ag-meta-bar">
+                    <span><strong>Effective Date:</strong> April 11, 2026</span>
+                    <span><strong>Last Updated:</strong> April 11, 2026</span>
+                    <span><strong>Extension:</strong> AgentGrow — AI Browser Extension</span>
+                    <span><strong>Publisher:</strong> Gheware Technologies</span>
+                </div>
+
+                <div class="highlight-box">
+                    <p>📋 <strong>Short version:</strong> AgentGrow stores your data only on your device, encrypted. It sends your messages only to the LLM endpoint you configure. It collects zero analytics, zero telemetry, and has no servers of its own.</p>
+                </div>
+
+                <h2>1. Who We Are</h2>
+                <p>AgentGrow is developed and maintained by Gheware Technologies ("we", "our", "us"), a technology training and tooling company based in India. Contact: <a href="mailto:contact@gheware.com">contact@gheware.com</a></p>
+
+                <h2>2. Information AgentGrow Collects</h2>
+                <p>AgentGrow collects and stores the following data <strong>locally on your device only</strong>:</p>
+                <ul>
+                    <li><strong>Conversation history:</strong> The messages you send and receive within AgentGrow. Stored in <code>chrome.storage.local</code>, which is accessible only to the AgentGrow extension on your device.</li>
+                    <li><strong>Provider configurations:</strong> The API endpoint URL, provider name, and selected model you configure. Your API key is stored encrypted (AES-GCM-256) and is never readable in plaintext after entry.</li>
+                    <li><strong>Prompt templates:</strong> Any templates you save for reuse.</li>
+                    <li><strong>User preferences:</strong> Theme, default context mode, and keyboard shortcuts. Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
+                    <li><strong>Network audit log:</strong> Metadata about API calls (endpoint, timestamp, token count). Message content is NOT logged.</li>
+                </ul>
+
+                <h2>3. Information AgentGrow Does NOT Collect</h2>
+                <p>AgentGrow has no servers, no backend, and no analytics infrastructure. The following data is never collected:</p>
+                <ul>
+                    <li>Your browsing history or the URLs you visit</li>
+                    <li>The content of your conversations (beyond local storage on your device)</li>
+                    <li>Personal identifiable information of any kind</li>
+                    <li>Crash reports or error logs sent to external services</li>
+                    <li>Usage analytics, feature tracking, or session data</li>
+                    <li>Your IP address or device fingerprint</li>
+                </ul>
+
+                <h2>4. How Information Is Used</h2>
+                <p>Data stored locally is used solely to:</p>
+                <ul>
+                    <li>Display your conversation history within the extension</li>
+                    <li>Authenticate requests to your configured LLM provider</li>
+                    <li>Remember your UI preferences</li>
+                    <li>Provide the audit log feature</li>
+                </ul>
+
+                <h2>5. Data Sharing</h2>
+                <p>AgentGrow shares data with <strong>one party only</strong>: the LLM API endpoint you configure in Settings. When you send a message, that message (and optionally the current page text, if you have enabled context mode) is sent to your configured endpoint.</p>
+
+                <div class="warning-box">
+                    <p>⚠️ <strong>Important:</strong> The privacy practices of your chosen LLM provider (OpenRouter, OpenAI, Groq, your company's internal server, etc.) are governed by that provider's own privacy policy. AgentGrow has no control over, and no visibility into, what that provider does with the data you send. Please review your provider's policy before use.</p>
+                </div>
+
+                <p>We do not sell, share, rent, or disclose your data to any other third party.</p>
+
+                <h2>6. Data Security</h2>
+                <ul>
+                    <li><strong>API key encryption:</strong> API keys are encrypted using AES-GCM-256 via the Web Crypto API before storage. They cannot be decrypted without the per-device encryption key, which is also stored locally.</li>
+                    <li><strong>HTTPS enforcement:</strong> AgentGrow refuses to send API calls over HTTP to non-localhost endpoints.</li>
+                    <li><strong>Content Security Policy:</strong> The extension enforces a strict CSP that prevents execution of any remote code.</li>
+                    <li><strong>Isolated architecture:</strong> API keys and provider configurations are accessible only in the extension's service worker, never in content scripts or web pages.</li>
+                </ul>
+
+                <h2>7. Data Retention and Deletion</h2>
+                <p>Your data is retained locally until you delete it. You can delete individual conversations, all conversations, all provider configurations, or all data at any time via Options → Privacy → Delete All Data.</p>
+                <p>If you uninstall the extension, all data stored in <code>chrome.storage.local</code> is deleted by Chrome automatically. Sync storage is removed when you disconnect your Google account from Chrome Sync.</p>
+
+                <h2>8. Children's Privacy</h2>
+                <p>AgentGrow is not directed to children under 13. We do not knowingly collect information from children. If you are under 13, please do not use this extension.</p>
+
+                <h2>9. Your Rights (GDPR / CCPA)</h2>
+                <p>Because all data is stored locally on your device and we have no servers, we cannot access your data to fulfil erasure or portability requests through our systems. However:</p>
+                <ul>
+                    <li><strong>Access:</strong> All data is visible via Options → Privacy Dashboard.</li>
+                    <li><strong>Portability:</strong> Export all data as JSON via Options → Privacy → Export All Data.</li>
+                    <li><strong>Erasure:</strong> Delete all data via Options → Privacy → Delete All Data, or uninstall the extension.</li>
+                    <li><strong>Correction:</strong> Edit any stored data directly within the extension.</li>
+                </ul>
+                <p>If you have questions about your rights, contact us at <a href="mailto:privacy@gheware.com">privacy@gheware.com</a>.</p>
+
+                <h2>10. Changes to This Policy</h2>
+                <p>We will post any changes to this Privacy Policy on this page and update the "Last Updated" date. For material changes, we will provide a notification within the extension. Continued use of AgentGrow after changes constitutes acceptance of the updated policy.</p>
+
+                <h2>11. Contact</h2>
+                <p>For privacy-related questions or concerns:</p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:privacy@gheware.com">privacy@gheware.com</a></li>
+                    <li><strong>GitHub Issues:</strong> <a href="https://github.com/gheware-tech/agentgrow/issues" target="_blank" rel="noopener">github.com/gheware-tech/agentgrow/issues</a></li>
+                    <li><strong>Address:</strong> Gheware Technologies, India</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ CWS COMPLIANCE -->
+    <section class="ag-section" id="compliance">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">Chrome Web Store Policy</div>
+                <h2 class="ag-section-title">CWS Developer Policy Compliance</h2>
+                <p class="ag-section-lead">Chrome Web Store requires extensions to comply with its
+                <a href="https://developer.chrome.com/docs/webstore/program-policies/" target="_blank" rel="noopener" style="color:var(--ag-teal-dark)">Developer Program Policies</a>.
+                Here is how AgentGrow meets each requirement.</p>
+            </div>
+
+            <div style="background:white;border:1px solid var(--ag-border);border-radius:16px;padding:2.5rem">
+                <ul class="ag-checklist">
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Single Purpose:</strong> AgentGrow has one purpose — AI-powered browser assistance via user-configured LLM providers. It does not inject ads, mine cryptocurrency, redirect traffic, or perform any unrelated function.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>No Deceptive Practices:</strong> The extension does exactly what its description states. All features are visible in the source code on GitHub. There are no hidden capabilities.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Privacy Policy Posted:</strong> Full privacy policy is published on this page and linked from the Chrome Web Store listing. It discloses all data collection (local storage only) and data sharing (to user-configured LLM endpoint only).</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Minimum Permissions:</strong> AgentGrow requests only the permissions required for its stated features. Broad host access (<code class="ag-perm-mono">&lt;all_urls&gt;</code>) is optional, not declared by default, and requires explicit user opt-in.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>No Remote Code Execution:</strong> All JavaScript is bundled at build time. The Content Security Policy blocks <code>eval()</code>, inline scripts, and remote script loading. No CDN-served scripts are used.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Manifest V3:</strong> AgentGrow is built on Manifest V3, using a service worker background, declarative permissions, and the current Chrome extension APIs.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Secure Data Handling:</strong> API keys are encrypted with AES-GCM-256. All remote LLM calls use HTTPS. No sensitive data is sent to content scripts or stored in plaintext.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>User Consent:</strong> On first install, users see a full transparency screen before the extension is usable. No features are activated before consent is acknowledged.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Data Minimization:</strong> AgentGrow collects no more data than necessary. Browsing history, PII, analytics, and telemetry are never collected. The audit log records only metadata (no message content).</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>No Misleading Functionality:</strong> AgentGrow is not affiliated with, endorsed by, or impersonating AbacusAI, Anthropic, OpenAI, or any other AI company. It is an independent open-source tool.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>User Data Disclosure:</strong> The Chrome Web Store listing specifies: data is stored locally, encrypted, and never transmitted except to the user's configured endpoint. This page provides the complete disclosure.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Open Source / Auditable:</strong> The full source code is publicly available at <a href="https://github.com/gheware-tech/agentgrow" target="_blank" rel="noopener" style="color:var(--ag-teal-dark)">github.com/gheware-tech/agentgrow</a>. Reproducible builds allow independent verification of the published binary.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Developer Account Security:</strong> The Chrome Web Store publisher account uses two-factor authentication and is restricted to authorised maintainers.</div>
+                    </li>
+                    <li>
+                        <span class="ag-check">✅</span>
+                        <div><strong>Content Policy:</strong> AgentGrow does not generate, display, or facilitate access to hate speech, sexually explicit content, violence, or other prohibited content. All AI responses are generated by the user's chosen external provider.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ CONTACT -->
+    <section class="ag-section ag-section-alt" id="contact">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">Support & Reporting</div>
+                <h2 class="ag-section-title">Contact & Responsible Disclosure</h2>
+            </div>
+
+            <div class="ag-contact-grid">
+                <div class="ag-contact-card">
+                    <span class="ag-contact-icon">🐛</span>
+                    <h3>Bug Reports & Features</h3>
+                    <p>Open an issue on GitHub — public and tracked.</p>
+                    <a href="https://github.com/gheware-tech/agentgrow/issues" target="_blank" rel="noopener">github.com/gheware-tech/agentgrow/issues →</a>
+                </div>
+                <div class="ag-contact-card">
+                    <span class="ag-contact-icon">🔒</span>
+                    <h3>Security Vulnerabilities</h3>
+                    <p>Please disclose privately before opening a public issue.</p>
+                    <a href="mailto:security@gheware.com">security@gheware.com →</a>
+                </div>
+                <div class="ag-contact-card">
+                    <span class="ag-contact-icon">🛡️</span>
+                    <h3>Privacy Concerns</h3>
+                    <p>Questions about data handling or your rights under GDPR/CCPA.</p>
+                    <a href="mailto:privacy@gheware.com">privacy@gheware.com →</a>
+                </div>
+            </div>
+
+            <div style="margin-top:3rem;text-align:center;padding:2.5rem;background:linear-gradient(135deg,var(--ag-navy) 0%,#064e3b 100%);border-radius:16px;color:white">
+                <h3 style="font-size:1.6rem;font-weight:800;margin-bottom:1rem">Ready to use AI without compromise?</h3>
+                <p style="color:#94a3b8;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto">Free, open source, works with any LLM. Your data stays on your device.</p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                    <a href="https://chromewebstore.google.com" class="ag-btn-primary">⚙️ Install AgentGrow Free</a>
+                    <a href="https://github.com/gheware-tech/agentgrow" class="ag-btn-outline" target="_blank" rel="noopener">⭐ Star on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer injected by template-loader.js -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Active nav highlight on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.ag-page-nav a');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
