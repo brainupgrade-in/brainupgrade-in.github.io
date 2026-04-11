@@ -6,12 +6,12 @@
     <meta name="google-site-verification" content="Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE" />
 
     <title>AgentGrow — Open-Source AI Browser Assistant | Automate Browser Tasks with Any LLM</title>
-    <meta name="description" content="AgentGrow is a free, open-source Chrome extension that automates browser tasks — fill forms, write drafts, compose messages, summarize documents — using any LLM provider. OpenRouter, OpenAI, Anthropic, Groq, Ollama, or your own server. No subscriptions. No vendor lock-in.">
-    <meta name="keywords" content="AgentGrow, Chrome extension, AI browser assistant, open source, form filling, email drafts, browser automation, Ollama, OpenRouter, OpenAI, Anthropic, Groq, Gemini, privacy, LLM, local AI">
+    <meta name="description" content="AgentGrow is a free, open-source Chrome extension that automates browser tasks — fill forms, click buttons, navigate pages, write drafts, compose messages, summarize documents — using any LLM provider. OpenRouter, OpenAI, Anthropic, Groq, Ollama, or your own server. No subscriptions. No vendor lock-in.">
+    <meta name="keywords" content="AgentGrow, Chrome extension, AI browser assistant, open source, form filling, click automation, page navigation, email drafts, browser automation, Ollama, OpenRouter, OpenAI, Anthropic, Groq, Gemini, privacy, LLM, local AI, on-premise LLM, private network">
 
     <!-- Open Graph -->
     <meta property="og:title" content="AgentGrow — Open-Source AI Browser Assistant">
-    <meta property="og:description" content="Automate browser tasks — fill forms, write drafts, summarize pages — with any LLM. Free, open-source, privacy-first. No subscriptions.">
+    <meta property="og:description" content="Automate browser tasks — fill forms, click buttons, navigate pages, write drafts, summarize pages — with any LLM. Free, open-source, privacy-first. No subscriptions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devops.gheware.com/agentgrow/">
     <meta property="og:site_name" content="Gheware DevOps AI">
@@ -27,7 +27,7 @@
       "name": "AgentGrow",
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Chrome",
-      "description": "Free, open-source Chrome extension that automates browser tasks — fill forms, write drafts, compose messages, summarize documents — using any LLM provider.",
+      "description": "Free, open-source Chrome extension that automates browser tasks — fill forms, click buttons, navigate pages, write drafts, compose messages, summarize documents — using any LLM provider. Smart selector resolution, action safety mode, and private network support for on-premise LLMs.",
       "url": "https://devops.gheware.com/agentgrow/",
       "author": {
         "@type": "Organization",
@@ -689,7 +689,7 @@
                 </div>
                 <h1>AgentGrow<br><span>AI Browser Assistant</span></h1>
                 <p class="ag-hero-lead">
-                    Automate everyday browser tasks — <strong style="color:white">fill forms, write email drafts, compose messages, summarize documents, navigate complex sites</strong> — to save time.
+                    Automate everyday browser tasks — <strong style="color:white">click buttons, navigate pages, fill forms, write email drafts, compose messages, summarize documents</strong> — to save time.
                     Works with <strong style="color:white">any LLM provider</strong>: OpenRouter, OpenAI, Anthropic, Groq, Gemini, Ollama, or your own server.
                     No subscriptions. No data collection. No vendor lock-in.
                 </p>
@@ -705,7 +705,7 @@
 
             <!-- Animated demo -->
             <div class="ag-terminal" role="img" aria-label="AgentGrow browser automation demo" style="padding:0;overflow:hidden;background:transparent;border:none;">
-                <img src="demo-animation.svg" alt="AgentGrow demo: ask about pages, auto-fill forms, draft emails, switch models" style="width:100%;height:auto;display:block;border-radius:12px;" loading="lazy"/>
+                <img src="demo-animation.svg" alt="AgentGrow demo: click buttons, navigate pages, auto-fill forms, draft emails, switch models" style="width:100%;height:auto;display:block;border-radius:12px;" loading="lazy"/>
             </div>
         </div>
     </section>
@@ -717,7 +717,7 @@
                 <div class="ag-section-label">What AgentGrow Does</div>
                 <h2 class="ag-section-title">Your AI Assistant for Everyday Browser Tasks</h2>
                 <p class="ag-section-lead">
-                    AgentGrow reads and interacts with any webpage in real-time, helping you automate the tasks that eat your time — forms, emails, documents, messages, and more.
+                    AgentGrow reads and interacts with any webpage in real-time, helping you automate the tasks that eat your time — click buttons, navigate pages, fill forms, write emails, summarize documents, and more.
                 </p>
             </div>
 
@@ -725,12 +725,32 @@
                 <div class="ag-why-card">
                     <div class="ag-why-icon">&#x1f4dd;</div>
                     <h3>Browser Task Automation</h3>
-                    <p>Fill forms, write drafts, compose messages in any web app. Tell AgentGrow what to do in plain English and watch it interact with the page for you.</p>
+                    <p>Fill forms, click buttons, navigate pages, write drafts, compose messages in any web app. Tell AgentGrow what to do in plain English and watch it interact with the page for you.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f446;</div>
+                    <h3>Click &amp; Navigate</h3>
+                    <p>Click buttons, follow links, submit forms — all from chat. AgentGrow scrolls to the element and clicks it with React/Angular/Vue-compatible events. Browse the web without lifting your hands from the keyboard.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f6e1;</div>
+                    <h3>Action Safety Mode</h3>
+                    <p>"Ask before acting" (default) shows what AgentGrow will do and waits for your approval. Switch to "Auto-act" for power users — with a persistent risk warning. You stay in control.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f3af;</div>
+                    <h3>Smart Selector Resolution</h3>
+                    <p>5-level fallback (ID, name, aria-label, placeholder, positional) ensures form filling works across Google, Amazon, AWS, Salesforce, and any SPA. No brittle CSS selectors — it finds the right element every time.</p>
                 </div>
                 <div class="ag-why-card">
                     <div class="ag-why-icon">&#x1f310;</div>
                     <h3>Any LLM Provider</h3>
                     <p>7 built-in presets: OpenRouter (300+ models), OpenAI, Anthropic, Groq, Google Gemini, Ollama on localhost, plus Custom for any OpenAI-compatible endpoint. No vendor lock-in.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f3e0;</div>
+                    <h3>Private Network Support</h3>
+                    <p>Works with local and on-premise LLM servers (Ollama, vLLM, LM Studio) on 192.168.*, 10.*, 172.16.* without CORS issues. Your data never leaves the corporate network.</p>
                 </div>
                 <div class="ag-why-card">
                     <div class="ag-why-icon">&#x1f50d;</div>
