@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgentGrow Privacy Policy | Gheware DevOps AI</title>
+    <meta name="description" content="Privacy Policy for AgentGrow Chrome Extension. Your data stays on your device. No telemetry, no tracking, no servers.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://devops.gheware.com/agentgrow/privacy/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="AgentGrow Privacy Policy">
+    <meta property="og:description" content="AgentGrow stores data only on your device. Zero telemetry. Zero servers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devops.gheware.com/agentgrow/privacy/">
+
+    <link rel="stylesheet" href="/css/premium.css">
+    <script src="/js/head-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+
+    <style>
+        :root {
+            --ag-teal:       #10b981;
+            --ag-teal-dark:  #059669;
+            --ag-teal-light: #d1fae5;
+            --ag-navy:       #0f172a;
+            --ag-slate:      #1e293b;
+            --ag-border:     #e2e8f0;
+            --ag-text:       #1e293b;
+            --ag-muted:      #64748b;
+        }
+
+        .pp-hero {
+            background: linear-gradient(135deg, var(--ag-navy) 0%, var(--ag-slate) 100%);
+            color: white;
+            padding: 5rem 0 4rem;
+        }
+        .pp-hero-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .pp-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #6ee7b7;
+            margin-bottom: 1rem;
+        }
+        .pp-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .pp-hero h1 span { color: #34d399; }
+        .pp-hero-lead {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .pp-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: #64748b;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .pp-meta span { color: #94a3b8; }
+        .pp-meta strong { color: #e2e8f0; }
+
+        .pp-body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .pp-summary {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid var(--ag-teal);
+            border-radius: 8px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #14532d;
+        }
+
+        .pp-body h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--ag-navy);
+            margin: 2.5rem 0 0.85rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--ag-teal-light);
+        }
+        .pp-body h2:first-of-type { margin-top: 0; }
+
+        .pp-body p {
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .pp-body ul {
+            color: #374151;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .pp-body ul li { margin-bottom: 0.5rem; }
+        .pp-body a {
+            color: var(--ag-teal-dark);
+            text-decoration: underline;
+        }
+        .pp-body code {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 0.15em 0.4em;
+            font-size: 0.88em;
+            font-family: 'Courier New', monospace;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 4px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #78350f;
+        }
+
+        .pp-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--ag-teal-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-bottom: 2.5rem;
+        }
+        .pp-back:hover { color: var(--ag-navy); }
+
+        .pp-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .pp-contact-card {
+            background: #f8fafc;
+            border: 1px solid var(--ag-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+        .pp-contact-card strong {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--ag-muted);
+            margin-bottom: 0.4rem;
+        }
+        .pp-contact-card a {
+            color: var(--ag-teal-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- site header injected by template-loader.js -->
+
+    <section class="pp-hero">
+        <div class="pp-hero-inner">
+            <span class="pp-label">Legal · AgentGrow Chrome Extension</span>
+            <h1>Privacy <span>Policy</span></h1>
+            <p class="pp-hero-lead">
+                AgentGrow is built on a simple principle: your data belongs to you.
+                Everything stays on your device. We have no servers, no analytics, and no way to read your data.
+            </p>
+            <div class="pp-meta">
+                <span><strong>Effective Date:</strong> April 11, 2026</span>
+                <span><strong>Last Updated:</strong> April 11, 2026</span>
+                <span><strong>Publisher:</strong> Gheware Technologies</span>
+                <span><strong>Extension:</strong> AgentGrow — AI Browser Extension</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="pp-body">
+        <a href="/agentgrow/" class="pp-back">← Back to AgentGrow</a>
+
+        <div class="pp-summary">
+            <strong>Short version:</strong> AgentGrow stores your data only on your device, encrypted.
+            It sends your messages only to the LLM endpoint you configure.
+            It collects zero analytics, zero telemetry, and has no servers of its own.
+        </div>
+
+        <h2>1. Who We Are</h2>
+        <p>AgentGrow is developed and maintained by Gheware Technologies ("we", "our", "us"),
+        a technology training and tooling company based in India.<br>
+        Contact: <a href="mailto:contact@gheware.com">contact@gheware.com</a></p>
+
+        <h2>2. Information AgentGrow Collects</h2>
+        <p>AgentGrow collects and stores the following data <strong>locally on your device only</strong>:</p>
+        <ul>
+            <li><strong>Conversation history:</strong> Messages you send and receive within AgentGrow.
+            Stored in <code>chrome.storage.local</code>, accessible only to the AgentGrow extension on your device.</li>
+            <li><strong>Provider configurations:</strong> The API endpoint URL, provider name, and selected model you configure.
+            Your API key is stored encrypted (AES-GCM-256) and is never readable in plaintext after entry.</li>
+            <li><strong>Prompt templates:</strong> Any templates you save for reuse.</li>
+            <li><strong>User preferences:</strong> Theme, default context mode, and keyboard shortcuts.
+            Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
+            <li><strong>Network audit log:</strong> Metadata about API calls (endpoint, timestamp, token count).
+            Message content is NOT logged.</li>
+            <li><strong>Google account identity:</strong> If you sign in with Google, we store your name, email, and profile picture
+            in <code>chrome.storage.session</code> (browser session only — cleared when you close Chrome).
+            This is used solely to verify your identity. It is never sent to any AgentGrow server.</li>
+        </ul>
+
+        <h2>3. Information AgentGrow Does NOT Collect</h2>
+        <p>AgentGrow has no servers, no backend, and no analytics infrastructure. We never collect:</p>
+        <ul>
+            <li>Your browsing history or the URLs you visit</li>
+            <li>The content of your conversations (beyond local storage on your device)</li>
+            <li>Personal identifiable information beyond what you explicitly provide in settings</li>
+            <li>Crash reports or error logs sent to external services</li>
+            <li>Usage analytics, feature tracking, or session data</li>
+            <li>Your IP address or device fingerprint</li>
+        </ul>
+
+        <h2>4. Google Sign-In</h2>
+        <p>AgentGrow requires a Google account sign-in to access its features. This uses
+        Chrome's built-in <code>chrome.identity</code> API (Google OAuth2). During sign-in:</p>
+        <ul>
+            <li>We request your name, email address, and profile picture from Google — nothing else.</li>
+            <li>Your Google OAuth token is used only within the extension's service worker to verify your identity.</li>
+            <li>The token is stored in <code>chrome.storage.session</code> only — it is cleared automatically when you close Chrome.</li>
+            <li>Your identity information is never transmitted to any AgentGrow-operated server.</li>
+            <li>Sign-out immediately revokes the token and clears all session data.</li>
+        </ul>
+
+        <h2>5. How Information Is Used</h2>
+        <p>Data stored locally is used solely to:</p>
+        <ul>
+            <li>Verify your Google identity and grant access to the extension</li>
+            <li>Display your conversation history within the extension</li>
+            <li>Authenticate requests to your configured LLM provider</li>
+            <li>Remember your UI preferences</li>
+            <li>Provide the audit log feature</li>
+        </ul>
+
+        <h2>6. Data Sharing</h2>
+        <p>AgentGrow shares data with <strong>one party only</strong>: the LLM API endpoint you configure in Settings.
+        When you send a message, that message (and optionally the current page text, if you have enabled context mode)
+        is sent to your configured endpoint.</p>
+
+        <div class="warning-box">
+            <strong>⚠️ Important:</strong> The privacy practices of your chosen LLM provider (OpenRouter, OpenAI, Groq,
+            your company's internal server, etc.) are governed by that provider's own privacy policy.
+            AgentGrow has no control over, and no visibility into, what that provider does with the data you send.
+            Please review your provider's policy before use.
+        </div>
+
+        <p>We do not sell, share, rent, or disclose your data to any other third party.</p>
+
+        <h2>7. Data Security</h2>
+        <ul>
+            <li><strong>API key encryption:</strong> API keys are encrypted using AES-GCM-256 via the Web Crypto API before storage.
+            They cannot be decrypted without the per-device encryption key, which is also stored locally.</li>
+            <li><strong>HTTPS enforcement:</strong> AgentGrow refuses to send API calls over HTTP to non-localhost endpoints.</li>
+            <li><strong>Content Security Policy:</strong> The extension enforces a strict CSP that prevents execution of any remote code.</li>
+            <li><strong>Isolated architecture:</strong> API keys and provider configurations are accessible only in the extension's
+            service worker — never in content scripts or web pages.</li>
+        </ul>
+
+        <h2>8. Data Retention and Deletion</h2>
+        <p>Your data is retained locally until you delete it. You can delete individual conversations, all conversations,
+        all provider configurations, or all data at any time via <strong>Options → Privacy → Delete All Data</strong>.</p>
+        <p>If you uninstall the extension, all data stored in <code>chrome.storage.local</code> is deleted by Chrome automatically.
+        Session data (Google sign-in) is cleared when you close Chrome or sign out.</p>
+
+        <h2>9. Children's Privacy</h2>
+        <p>AgentGrow is not directed to children under 13. We do not knowingly collect information from children.
+        If you are under 13, please do not use this extension.</p>
+
+        <h2>10. Your Rights (GDPR / CCPA)</h2>
+        <p>Because all data is stored locally on your device and we have no servers, we cannot access your data
+        to fulfil erasure or portability requests through our systems. However:</p>
+        <ul>
+            <li><strong>Access:</strong> All data is visible via Options → Privacy Dashboard.</li>
+            <li><strong>Portability:</strong> Export all data as JSON via Options → Privacy → Export All Data.</li>
+            <li><strong>Erasure:</strong> Delete all data via Options → Privacy → Delete All Data, or uninstall the extension.</li>
+            <li><strong>Correction:</strong> Edit any stored data directly within the extension.</li>
+        </ul>
+        <p>For questions about your rights, contact us at <a href="mailto:privacy@gheware.com">privacy@gheware.com</a>.</p>
+
+        <h2>11. Changes to This Policy</h2>
+        <p>We will post any changes to this Privacy Policy on this page and update the "Last Updated" date above.
+        For material changes, we will provide a notification within the extension.
+        Continued use of AgentGrow after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>12. Contact</h2>
+        <div class="pp-contact-grid">
+            <div class="pp-contact-card">
+                <strong>Privacy enquiries</strong>
+                <a href="mailto:privacy@gheware.com">privacy@gheware.com</a>
+            </div>
+            <div class="pp-contact-card">
+                <strong>Security issues</strong>
+                <a href="mailto:security@gheware.com">security@gheware.com</a>
+            </div>
+            <div class="pp-contact-card">
+                <strong>General contact</strong>
+                <a href="mailto:contact@gheware.com">contact@gheware.com</a>
+            </div>
+            <div class="pp-contact-card">
+                <strong>GitHub issues</strong>
+                <a href="https://github.com/gheware-tech/agentgrow/issues" target="_blank" rel="noopener">github.com/gheware-tech/agentgrow</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- site footer injected by template-loader.js -->
+</body>
+</html>
