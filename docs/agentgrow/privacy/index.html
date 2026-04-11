@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>AgentGrow Privacy Policy | Gheware DevOps AI</title>
-    <meta name="description" content="Privacy Policy for AgentGrow Chrome Extension. Your data stays on your device. No telemetry, no tracking, no servers.">
+    <meta name="description" content="Privacy Policy for AgentGrow — the open-source AI browser assistant that automates forms, drafts, and document tasks. Your data stays on your device. No telemetry, no tracking, no servers.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://devops.gheware.com/agentgrow/privacy/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="AgentGrow Privacy Policy">
-    <meta property="og:description" content="AgentGrow stores data only on your device. Zero telemetry. Zero servers.">
+    <meta property="og:description" content="AgentGrow — the AI browser assistant for forms, drafts, and documents — stores data only on your device. Zero telemetry. Zero servers.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devops.gheware.com/agentgrow/privacy/">
 
@@ -195,7 +195,7 @@
                 <span><strong>Effective Date:</strong> April 11, 2026</span>
                 <span><strong>Last Updated:</strong> April 11, 2026</span>
                 <span><strong>Publisher:</strong> Gheware Technologies</span>
-                <span><strong>Extension:</strong> AgentGrow — AI Browser Extension</span>
+                <span><strong>Extension:</strong> AgentGrow — AI Browser Automation</span>
             </div>
         </div>
     </section>
@@ -210,6 +210,9 @@
         </div>
 
         <h2>1. Who We Are</h2>
+        <p>AgentGrow is an open-source AI browser assistant that helps users automate common browser tasks — filling forms,
+        writing email drafts, creating/editing/summarizing documents, navigating complex sites — to save time.
+        It works with any LLM provider (OpenRouter, OpenAI, Anthropic, Groq, Ollama, or any OpenAI-compatible endpoint).</p>
         <p>AgentGrow is developed and maintained by Gheware Technologies ("we", "our", "us"),
         a technology training and tooling company based in India.<br>
         Contact: <a href="mailto:contact@gheware.com">contact@gheware.com</a></p>
@@ -224,14 +227,23 @@
             <li><strong>Prompt templates:</strong> Any templates you save for reuse.</li>
             <li><strong>User preferences:</strong> Theme, default context mode, and keyboard shortcuts.
             Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
-            <li><strong>Network audit log:</strong> Metadata about API calls (endpoint, timestamp, token count).
-            Message content is NOT logged.</li>
             <li><strong>Google account identity:</strong> If you sign in with Google, we store your name, email, and profile picture
             in <code>chrome.storage.session</code> (browser session only — cleared when you close Chrome).
             This is used solely to verify your identity. It is never sent to any AgentGrow server.</li>
         </ul>
 
-        <h2>3. Information AgentGrow Does NOT Collect</h2>
+        <h2>3. Page Content Access</h2>
+        <p>To perform browser automation tasks (form filling, content summarization, data extraction), AgentGrow reads the content of your active browser tab. This includes:</p>
+        <ul>
+            <li><strong>Page text, headings, and structure</strong> — used to understand the page and answer your questions</li>
+            <li><strong>Form fields and input elements</strong> — used to fill forms on your behalf when you request it</li>
+            <li><strong>Selected text</strong> — when you select text on a page, it is used as context for your chat</li>
+        </ul>
+        <p><strong>This data is processed entirely on your device</strong> and sent only to the LLM provider you have configured.
+        It is never stored beyond the current chat session, never sent to AgentGrow servers (there are none),
+        and is discarded when you close the chat or the browser.</p>
+
+        <h2>5. Information AgentGrow Does NOT Collect</h2>
         <p>AgentGrow has no servers, no backend, and no analytics infrastructure. We never collect:</p>
         <ul>
             <li>Your browsing history or the URLs you visit</li>
@@ -242,7 +254,7 @@
             <li>Your IP address or device fingerprint</li>
         </ul>
 
-        <h2>4. Google Sign-In</h2>
+        <h2>6. Google Sign-In</h2>
         <p>AgentGrow requires a Google account sign-in to access its features. This uses
         Chrome's built-in <code>chrome.identity</code> API (Google OAuth2). During sign-in:</p>
         <ul>
@@ -253,17 +265,16 @@
             <li>Sign-out immediately revokes the token and clears all session data.</li>
         </ul>
 
-        <h2>5. How Information Is Used</h2>
+        <h2>7. How Information Is Used</h2>
         <p>Data stored locally is used solely to:</p>
         <ul>
             <li>Verify your Google identity and grant access to the extension</li>
             <li>Display your conversation history within the extension</li>
             <li>Authenticate requests to your configured LLM provider</li>
             <li>Remember your UI preferences</li>
-            <li>Provide the audit log feature</li>
         </ul>
 
-        <h2>6. Data Sharing</h2>
+        <h2>8. Data Sharing</h2>
         <p>AgentGrow shares data with <strong>one party only</strong>: the LLM API endpoint you configure in Settings.
         When you send a message, that message (and optionally the current page text, if you have enabled context mode)
         is sent to your configured endpoint.</p>
@@ -277,7 +288,7 @@
 
         <p>We do not sell, share, rent, or disclose your data to any other third party.</p>
 
-        <h2>7. Data Security</h2>
+        <h2>9. Data Security</h2>
         <ul>
             <li><strong>API key encryption:</strong> API keys are encrypted using AES-GCM-256 via the Web Crypto API before storage.
             They cannot be decrypted without the per-device encryption key, which is also stored locally.</li>
@@ -287,33 +298,32 @@
             service worker — never in content scripts or web pages.</li>
         </ul>
 
-        <h2>8. Data Retention and Deletion</h2>
-        <p>Your data is retained locally until you delete it. You can delete individual conversations, all conversations,
-        all provider configurations, or all data at any time via <strong>Options → Privacy → Delete All Data</strong>.</p>
-        <p>If you uninstall the extension, all data stored in <code>chrome.storage.local</code> is deleted by Chrome automatically.
-        Session data (Google sign-in) is cleared when you close Chrome or sign out.</p>
+        <h2>10. Data Retention and Deletion</h2>
+        <p>Your data is retained locally until you delete it. You can delete provider configurations within the extension settings.
+        To remove all stored data, uninstall the extension — Chrome automatically deletes all data in <code>chrome.storage.local</code> on uninstall.</p>
+        <p>Session data (Google sign-in) is cleared when you close Chrome or sign out.</p>
 
-        <h2>9. Children's Privacy</h2>
+        <h2>11. Children's Privacy</h2>
         <p>AgentGrow is not directed to children under 13. We do not knowingly collect information from children.
         If you are under 13, please do not use this extension.</p>
 
-        <h2>10. Your Rights (GDPR / CCPA)</h2>
+        <h2>12. Your Rights (GDPR / CCPA)</h2>
         <p>Because all data is stored locally on your device and we have no servers, we cannot access your data
         to fulfil erasure or portability requests through our systems. However:</p>
         <ul>
-            <li><strong>Access:</strong> All data is visible via Options → Privacy Dashboard.</li>
-            <li><strong>Portability:</strong> Export all data as JSON via Options → Privacy → Export All Data.</li>
-            <li><strong>Erasure:</strong> Delete all data via Options → Privacy → Delete All Data, or uninstall the extension.</li>
-            <li><strong>Correction:</strong> Edit any stored data directly within the extension.</li>
+            <li><strong>Access:</strong> All data is stored locally on your device in Chrome's extension storage.</li>
+            <li><strong>Portability:</strong> Data export functionality is planned for a future release.</li>
+            <li><strong>Erasure:</strong> Uninstall the extension to delete all stored data. Chrome automatically removes all extension storage on uninstall.</li>
+            <li><strong>Correction:</strong> Edit provider configurations directly within the extension settings.</li>
         </ul>
         <p>For questions about your rights, contact us at <a href="mailto:privacy@gheware.com">privacy@gheware.com</a>.</p>
 
-        <h2>11. Changes to This Policy</h2>
+        <h2>13. Changes to This Policy</h2>
         <p>We will post any changes to this Privacy Policy on this page and update the "Last Updated" date above.
         For material changes, we will provide a notification within the extension.
         Continued use of AgentGrow after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>12. Contact</h2>
+        <h2>14. Contact</h2>
         <div class="pp-contact-grid">
             <div class="pp-contact-card">
                 <strong>Privacy enquiries</strong>

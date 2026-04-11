@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Vpuxg_Y6ADBHxZwy2cvVfZpPbPWk27zVdu6Mms32wVE" />
 
-    <title>AgentGrow — Open-Source AI Browser Extension | Gheware DevOps AI</title>
-    <meta name="description" content="AgentGrow is a free, open-source Chrome extension that brings AI intelligence to every browser tab. Connect to any LLM — OpenRouter, Ollama, OpenAI, or your own server. No subscriptions. No vendor lock-in. Full privacy policy and Chrome Web Store compliance documentation.">
-    <meta name="keywords" content="AgentGrow, Chrome extension, AI browser assistant, open source, Ollama, OpenRouter, privacy, LLM, local AI">
+    <title>AgentGrow — Open-Source AI Browser Assistant | Automate Browser Tasks with Any LLM</title>
+    <meta name="description" content="AgentGrow is a free, open-source Chrome extension that automates browser tasks — fill forms, write drafts, compose messages, summarize documents — using any LLM provider. OpenRouter, OpenAI, Anthropic, Groq, Ollama, or your own server. No subscriptions. No vendor lock-in.">
+    <meta name="keywords" content="AgentGrow, Chrome extension, AI browser assistant, open source, form filling, email drafts, browser automation, Ollama, OpenRouter, OpenAI, Anthropic, Groq, Gemini, privacy, LLM, local AI">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="AgentGrow — Open-Source AI Browser Extension">
-    <meta property="og:description" content="Free, open-source Chrome extension. Connect to any LLM. No subscriptions. Your data stays on your device.">
+    <meta property="og:title" content="AgentGrow — Open-Source AI Browser Assistant">
+    <meta property="og:description" content="Automate browser tasks — fill forms, write drafts, summarize pages — with any LLM. Free, open-source, privacy-first. No subscriptions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devops.gheware.com/agentgrow/">
     <meta property="og:site_name" content="Gheware DevOps AI">
@@ -27,7 +27,7 @@
       "name": "AgentGrow",
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Chrome",
-      "description": "Free, open-source Chrome extension that connects to any LLM provider for AI-powered browser assistance.",
+      "description": "Free, open-source Chrome extension that automates browser tasks — fill forms, write drafts, compose messages, summarize documents — using any LLM provider.",
       "url": "https://devops.gheware.com/agentgrow/",
       "author": {
         "@type": "Organization",
@@ -668,6 +668,7 @@
     <!-- Page-level nav -->
     <nav class="ag-page-nav" aria-label="Page sections">
         <div class="ag-page-nav-inner">
+            <a href="#features">Features</a>
             <a href="#why">Why We Built It</a>
             <a href="#trust">Trust & Transparency</a>
             <a href="#permissions">Permissions</a>
@@ -686,10 +687,10 @@
                     <span class="ag-badge-dot"></span>
                     Open Source · Free · Privacy-First
                 </div>
-                <h1>AgentGrow<br><span>AI Browser Extension</span></h1>
+                <h1>AgentGrow<br><span>AI Browser Assistant</span></h1>
                 <p class="ag-hero-lead">
-                    Connect to <strong style="color:white">any LLM</strong> — OpenRouter, Ollama, OpenAI, or your own on-premise server.
-                    Summarize pages, chat with any website, and manage your browser with AI.
+                    Automate everyday browser tasks — <strong style="color:white">fill forms, write email drafts, compose messages, summarize documents, navigate complex sites</strong> — to save time.
+                    Works with <strong style="color:white">any LLM provider</strong>: OpenRouter, OpenAI, Anthropic, Groq, Gemini, Ollama, or your own server.
                     No subscriptions. No data collection. No vendor lock-in.
                 </p>
                 <div class="ag-hero-cta">
@@ -703,45 +704,100 @@
             </div>
 
             <!-- Provider config preview -->
-            <div class="ag-terminal" role="img" aria-label="Provider configuration example">
+            <div class="ag-terminal" role="img" aria-label="AgentGrow task automation examples">
                 <div class="ag-terminal-bar">
                     <span class="ag-terminal-dot" style="background:#ff5f57"></span>
                     <span class="ag-terminal-dot" style="background:#febc2e"></span>
                     <span class="ag-terminal-dot" style="background:#28c840"></span>
-                    <span style="margin-left:0.5rem;color:#8b949e;font-size:0.78rem;font-family:monospace">AgentGrow — Add Provider</span>
+                    <span style="margin-left:0.5rem;color:#8b949e;font-size:0.78rem;font-family:monospace">AgentGrow — Side Panel Chat</span>
                 </div>
                 <div class="ag-terminal-body" style="color:#c9d1d9">
-<span class="ag-t-comment">// Works with any OpenAI-compatible API</span><br>
+<span class="ag-t-comment">// Fill out this job application form</span><br>
+<span class="ag-t-key">You:</span> <span class="ag-t-val">Fill the form with my resume details</span><br>
+<span class="ag-t-green">✓ 8 fields filled (React-compatible)</span><br>
 <br>
-<span class="ag-t-comment">// Option 1: OpenRouter (300+ models)</span><br>
-{<br>
-&nbsp;&nbsp;<span class="ag-t-key">"name"</span>: <span class="ag-t-str">"OpenRouter"</span>,<br>
-&nbsp;&nbsp;<span class="ag-t-key">"apiUrl"</span>: <span class="ag-t-str">"https://openrouter.ai/api/v1"</span>,<br>
-&nbsp;&nbsp;<span class="ag-t-key">"model"</span>: <span class="ag-t-str">"anthropic/claude-3.5-sonnet"</span><br>
-}<br>
+<span class="ag-t-comment">// Draft an email reply</span><br>
+<span class="ag-t-key">You:</span> <span class="ag-t-val">Write a polite reply to this email</span><br>
+<span class="ag-t-green">✓ Draft inserted into Gmail compose</span><br>
 <br>
-<span class="ag-t-comment">// Option 2: Local Ollama (no key needed)</span><br>
-{<br>
-&nbsp;&nbsp;<span class="ag-t-key">"name"</span>: <span class="ag-t-str">"Ollama Local"</span>,<br>
-&nbsp;&nbsp;<span class="ag-t-key">"apiUrl"</span>: <span class="ag-t-str">"http://localhost:11434"</span>,<br>
-&nbsp;&nbsp;<span class="ag-t-key">"model"</span>: <span class="ag-t-str">"llama3.2"</span>,<br>
-&nbsp;&nbsp;<span class="ag-t-key">"apiKey"</span>: <span class="ag-t-dim">null</span> <span class="ag-t-comment">// not required</span><br>
-}<br>
+<span class="ag-t-comment">// Summarize a long document</span><br>
+<span class="ag-t-key">You:</span> <span class="ag-t-val">Summarize this page in 3 bullet points</span><br>
+<span class="ag-t-green">✓ Summary generated from live page context</span><br>
 <br>
-<span class="ag-t-comment">// Option 3: Your on-prem vLLM server</span><br>
-{<br>
-&nbsp;&nbsp;<span class="ag-t-key">"apiUrl"</span>: <span class="ag-t-str">"https://llm.corp.internal/v1"</span>,<br>
-&nbsp;&nbsp;<span class="ag-t-key">"model"</span>: <span class="ag-t-str">"mistral-7b-instruct"</span><br>
-}<br>
+<span class="ag-t-comment">// Type in any chat app</span><br>
+<span class="ag-t-key">You:</span> <span class="ag-t-val">Reply to this Slack message professionally</span><br>
+<span class="ag-t-green">✓ Text inserted at cursor in Slack</span><br>
 <br>
-<span class="ag-t-green">✓ Connection verified — 187ms</span>
+<span class="ag-t-dim">Provider: OpenRouter › claude-sonnet-4-20250514</span><br>
+<span class="ag-t-green">✓ Connected — 142ms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ FEATURES -->
+    <section class="ag-section ag-section-alt" id="features">
+        <div class="ag-container">
+            <div class="ag-section-header">
+                <div class="ag-section-label">What AgentGrow Does</div>
+                <h2 class="ag-section-title">Your AI Assistant for Everyday Browser Tasks</h2>
+                <p class="ag-section-lead">
+                    AgentGrow reads and interacts with any webpage in real-time, helping you automate the tasks that eat your time — forms, emails, documents, messages, and more.
+                </p>
+            </div>
+
+            <div class="ag-why-grid">
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f4dd;</div>
+                    <h3>Browser Task Automation</h3>
+                    <p>Fill forms, write drafts, compose messages in any web app. Tell AgentGrow what to do in plain English and watch it interact with the page for you.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f310;</div>
+                    <h3>Any LLM Provider</h3>
+                    <p>7 built-in presets: OpenRouter (300+ models), OpenAI, Anthropic, Groq, Google Gemini, Ollama on localhost, plus Custom for any OpenAI-compatible endpoint. No vendor lock-in.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f50d;</div>
+                    <h3>Live Page Intelligence</h3>
+                    <p>Auto-reads the adjacent tab content in real-time — headings, forms, code blocks, links, selected text. No screenshots, no snapshots. Live, structured DOM access.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f9e0;</div>
+                    <h3>Smart Context</h3>
+                    <p>Auto-detects text selection vs full page. Always includes form fields with CSS selectors so the AI can target them precisely. No manual toggles needed — it just works.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f504;</div>
+                    <h3>One-Click Model Switching</h3>
+                    <p>Switch between models directly from the chat dropdown. All preset models for your active provider are available instantly — no digging through settings pages.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f4cb;</div>
+                    <h3>Form Filling &amp; Writing</h3>
+                    <p>Fill any form field including React, Angular, and Vue apps (dispatches native events). Write to contenteditable areas — Gmail compose, Telegram, Slack, Notion, and more.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f512;</div>
+                    <h3>Privacy-First</h3>
+                    <p>API keys encrypted with AES-GCM-256. Zero data sent to AgentGrow servers — there are none. Full source code on GitHub (MIT). You own and control everything.</p>
+                </div>
+                <div class="ag-why-card">
+                    <div class="ag-why-icon">&#x1f4ac;</div>
+                    <h3>Chat Persistence</h3>
+                    <p>Conversations are saved locally and restored when you reopen the side panel. Pick up exactly where you left off — no lost context, no re-explaining.</p>
+                </div>
+                <div class="ag-why-card" style="grid-column: 1 / -1; max-width: 540px;">
+                    <div class="ag-why-icon">&#x26a0;&#xfe0f;</div>
+                    <h3>Smart Errors</h3>
+                    <p>Specific, actionable error messages: invalid API key, rate limited, model not found, network timeout. Every failure includes a retry button — no guessing what went wrong.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ WHY -->
-    <section class="ag-section ag-section-alt" id="why">
+    <section class="ag-section" id="why">
         <div class="ag-container">
             <div class="ag-section-header">
                 <div class="ag-section-label">The Problem We're Solving</div>
@@ -750,7 +806,7 @@
                     After 25 years building enterprise systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley,
                     and training 5,000+ DevOps professionals, one thing became clear: the best AI browser tools
                     are locked behind subscriptions and force you to send your data to their servers.
-                    That's wrong — especially for engineers and enterprises who run their own infrastructure.
+                    That's wrong — especially for engineers and enterprises who need to automate browser tasks on their own infrastructure.
                 </p>
             </div>
 
@@ -765,7 +821,7 @@
                     <div class="ag-why-icon">🔓</div>
                     <h3>No Vendor Lock-In, Ever</h3>
                     <p>Connect to OpenRouter, Ollama on localhost, your company's vLLM deployment, or any
-                    OpenAI-compatible API. Switch providers with one click. Export all your data anytime.</p>
+                    OpenAI-compatible API. Switch providers with one click. Your data stays on your device.</p>
                 </div>
                 <div class="ag-why-card">
                     <div class="ag-why-icon">💸</div>
@@ -854,17 +910,7 @@
                 <div class="ag-trust-card">
                     <span class="ag-trust-tag">Open Source</span>
                     <h3>Read Every Line</h3>
-                    <p>The full source is on GitHub under MIT license. No obfuscation. No minified-only builds. Build it yourself from source and compare the SHA-256 hash to the Chrome Web Store version.</p>
-                </div>
-                <div class="ag-trust-card">
-                    <span class="ag-trust-tag">Privacy Dashboard</span>
-                    <h3>See Exactly What's Stored</h3>
-                    <p>Options → Privacy shows a live view of every piece of data stored on your device, where it lives, and lets you delete any or all of it with one click.</p>
-                </div>
-                <div class="ag-trust-card">
-                    <span class="ag-trust-tag">Live Network Log</span>
-                    <h3>Know Every API Call</h3>
-                    <p>A local audit log records the endpoint, timestamp, and token count of every LLM call. No content is logged — only metadata. Visible in Options → Privacy → Network Log.</p>
+                    <p>The full source is on GitHub under MIT license. No obfuscation. No minified-only builds. You can read every line, fork it, and build from source yourself.</p>
                 </div>
                 <div class="ag-trust-card">
                     <span class="ag-trust-tag">Encrypted Keys</span>
@@ -877,24 +923,19 @@
                     <p>The extension rejects HTTP provider URLs for any non-localhost endpoint. Local Ollama and LM Studio on private networks are explicitly allowed.</p>
                 </div>
                 <div class="ag-trust-card">
-                    <span class="ag-trust-tag">Data Export</span>
-                    <h3>Your Data, Your Format</h3>
-                    <p>Export all conversations, templates, and settings as a standard JSON file at any time. API keys are redacted from exports. Import them back to a new device.</p>
-                </div>
-                <div class="ag-trust-card">
                     <span class="ag-trust-tag">No Telemetry</span>
                     <h3>Zero Analytics, Zero Tracking</h3>
-                    <p>AgentGrow has no analytics SDK, no crash reporter, no usage metrics. The only network calls it makes are to your configured LLM endpoint.</p>
+                    <p>AgentGrow has no analytics SDK, no crash reporter, no usage metrics. The only network calls it makes are to your configured LLM endpoint and Google Fonts for typography.</p>
                 </div>
                 <div class="ag-trust-card">
-                    <span class="ag-trust-tag">First-Run Screen</span>
-                    <h3>Informed Consent First</h3>
-                    <p>On first install, before any feature is accessible, we show exactly what AgentGrow stores, what it doesn't collect, and link to this page. No dark patterns.</p>
+                    <span class="ag-trust-tag">Session-Only Auth</span>
+                    <h3>Sign-In Cleared on Close</h3>
+                    <p>Your Google OAuth token is stored in session storage only — cleared automatically when you close Chrome. Sign-out immediately revokes the token and clears all session data.</p>
                 </div>
                 <div class="ag-trust-card">
-                    <span class="ag-trust-tag">Reproducible Builds</span>
-                    <h3>Verify the Published Build</h3>
-                    <p>Every GitHub release publishes a SHA-256 hash of the production ZIP. You can build from source and verify the hash matches what was submitted to the Chrome Web Store.</p>
+                    <span class="ag-trust-tag">Strict CSP</span>
+                    <h3>No Remote Code Execution</h3>
+                    <p>The Content Security Policy blocks eval(), inline scripts, and remote script loading. All JavaScript is bundled at build time. Markdown output is sanitized with rehype-sanitize.</p>
                 </div>
             </div>
         </div>
@@ -935,7 +976,7 @@
                     <tr>
                         <td><code class="ag-perm-mono">tabGroups</code></td>
                         <td>Read which tabs belong to a Chrome tab group</td>
-                        <td>Detect and summarize all tabs within a group. The headline feature of AgentGrow.</td>
+                        <td>Detect and summarize all tabs within a group for multi-tab context awareness.</td>
                         <td>Install</td>
                     </tr>
                     <tr>
@@ -959,26 +1000,32 @@
                     <tr>
                         <td><code class="ag-perm-mono">alarms</code></td>
                         <td>Schedule recurring background events</td>
-                        <td>Reserved for Phase 3 scheduled summarization. Not active in v1.0. We include it to avoid a permissions update that would re-prompt users.</td>
+                        <td>Keeps the service worker alive during LLM streaming (24-second keepalive alarm). Also reserved for future scheduled tasks.</td>
                         <td>Install</td>
                     </tr>
                     <tr>
                         <td><code class="ag-perm-mono">contextMenus</code></td>
                         <td>Add items to the browser right-click menu</td>
-                        <td>Adds "Ask AgentGrow about this" to the right-click menu on selected text.</td>
+                        <td>Reserved for a planned right-click context menu integration (not yet implemented).</td>
                         <td>Install</td>
                     </tr>
                     <tr>
                         <td><code class="ag-perm-mono">notifications</code></td>
                         <td>Show desktop notifications</td>
-                        <td>Notify when a long-running summarization task completes. Never used for marketing.</td>
+                        <td>Reserved for planned notification features (not yet implemented). Never used for marketing.</td>
                         <td>Install</td>
                     </tr>
                     <tr>
-                        <td><code class="ag-perm-mono">&lt;all_urls&gt;</code> (optional)</td>
+                        <td><code class="ag-perm-mono">identity</code></td>
+                        <td>Use the browser's built-in OAuth2 flow</td>
+                        <td>Google Sign-In via <code>chrome.identity</code>. All features require authentication. The OAuth token never leaves the service worker.</td>
+                        <td>Install</td>
+                    </tr>
+                    <tr>
+                        <td><code class="ag-perm-mono">&lt;all_urls&gt;</code> (optional host permission)</td>
                         <td>Access any website's content</td>
-                        <td><strong>Not granted by default.</strong> Users explicitly opt in per-site or globally for page reading features. Shows a clear prompt before any access is granted.</td>
-                        <td>User opt-in only</td>
+                        <td>AgentGrow requests access to all websites so it can read and interact with any page you are viewing. This is required for page reading, form filling, and content summarization to work. Chrome will prompt you before granting this access.</td>
+                        <td>User grant</td>
                     </tr>
                 </tbody>
             </table>
@@ -1002,7 +1049,6 @@
                         <li>✓ API keys (AES-GCM-256 encrypted)</li>
                         <li>✓ Provider configurations (URL, name, model)</li>
                         <li>✓ Prompt templates</li>
-                        <li>✓ Network audit log (metadata only, no content)</li>
                     </ul>
                 </div>
 
@@ -1034,7 +1080,7 @@
 
             <div style="margin-top:2rem;background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:1.5rem 2rem">
                 <p style="font-weight:700;color:#15803d;margin:0 0 0.5rem">⚠️ The only third-party network call AgentGrow makes is to YOUR configured LLM endpoint.</p>
-                <p style="color:#166534;font-size:0.95rem;margin:0">When you ask AgentGrow a question, it sends your message (and optionally the current page text) to the API URL you configured in settings — whether that's api.openrouter.ai, localhost:11434, or your company's internal server. No other outbound connection is made.</p>
+                <p style="color:#166534;font-size:0.95rem;margin:0">When you ask AgentGrow a question, it sends your message (and optionally the current page text) to the API URL you configured in settings — whether that's api.openrouter.ai, localhost:11434, or your company's internal server. The only other external connection is loading Google Fonts CSS for typography.</p>
             </div>
         </div>
     </section>
@@ -1069,7 +1115,6 @@
                     <li><strong>Provider configurations:</strong> The API endpoint URL, provider name, and selected model you configure. Your API key is stored encrypted (AES-GCM-256) and is never readable in plaintext after entry.</li>
                     <li><strong>Prompt templates:</strong> Any templates you save for reuse.</li>
                     <li><strong>User preferences:</strong> Theme, default context mode, and keyboard shortcuts. Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
-                    <li><strong>Network audit log:</strong> Metadata about API calls (endpoint, timestamp, token count). Message content is NOT logged.</li>
                 </ul>
 
                 <h2>3. Information AgentGrow Does NOT Collect</h2>
@@ -1089,7 +1134,6 @@
                     <li>Display your conversation history within the extension</li>
                     <li>Authenticate requests to your configured LLM provider</li>
                     <li>Remember your UI preferences</li>
-                    <li>Provide the audit log feature</li>
                 </ul>
 
                 <h2>5. Data Sharing</h2>
@@ -1110,7 +1154,7 @@
                 </ul>
 
                 <h2>7. Data Retention and Deletion</h2>
-                <p>Your data is retained locally until you delete it. You can delete individual conversations, all conversations, all provider configurations, or all data at any time via Options → Privacy → Delete All Data.</p>
+                <p>Your data is retained locally until you delete it. You can delete provider configurations within the extension settings. To remove all data, uninstall the extension — Chrome automatically deletes all data stored in <code>chrome.storage.local</code>.</p>
                 <p>If you uninstall the extension, all data stored in <code>chrome.storage.local</code> is deleted by Chrome automatically. Sync storage is removed when you disconnect your Google account from Chrome Sync.</p>
 
                 <h2>8. Children's Privacy</h2>
@@ -1119,10 +1163,10 @@
                 <h2>9. Your Rights (GDPR / CCPA)</h2>
                 <p>Because all data is stored locally on your device and we have no servers, we cannot access your data to fulfil erasure or portability requests through our systems. However:</p>
                 <ul>
-                    <li><strong>Access:</strong> All data is visible via Options → Privacy Dashboard.</li>
-                    <li><strong>Portability:</strong> Export all data as JSON via Options → Privacy → Export All Data.</li>
-                    <li><strong>Erasure:</strong> Delete all data via Options → Privacy → Delete All Data, or uninstall the extension.</li>
-                    <li><strong>Correction:</strong> Edit any stored data directly within the extension.</li>
+                    <li><strong>Access:</strong> All data is stored locally on your device in Chrome's extension storage.</li>
+                    <li><strong>Portability:</strong> Data export functionality is planned for a future release.</li>
+                    <li><strong>Erasure:</strong> Uninstall the extension to delete all stored data. Chrome automatically removes all extension storage on uninstall.</li>
+                    <li><strong>Correction:</strong> Edit provider configurations directly within the extension settings.</li>
                 </ul>
                 <p>If you have questions about your rights, contact us at <a href="mailto:privacy@gheware.com">privacy@gheware.com</a>.</p>
 
@@ -1155,7 +1199,7 @@
                 <ul class="ag-checklist">
                     <li>
                         <span class="ag-check">✅</span>
-                        <div><strong>Single Purpose:</strong> AgentGrow has one purpose — AI-powered browser assistance via user-configured LLM providers. It does not inject ads, mine cryptocurrency, redirect traffic, or perform any unrelated function.</div>
+                        <div><strong>Single Purpose:</strong> AgentGrow has one purpose — automating common browser tasks (form filling, drafting, summarizing, composing) via user-configured LLM providers. It does not inject ads, mine cryptocurrency, redirect traffic, or perform any unrelated function.</div>
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
@@ -1167,7 +1211,7 @@
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
-                        <div><strong>Minimum Permissions:</strong> AgentGrow requests only the permissions required for its stated features. Broad host access (<code class="ag-perm-mono">&lt;all_urls&gt;</code>) is optional, not declared by default, and requires explicit user opt-in.</div>
+                        <div><strong>Minimum Permissions:</strong> AgentGrow requests only the permissions required for its stated features. Broad host access (<code class="ag-perm-mono">&lt;all_urls&gt;</code>) is listed as an optional host permission and requires a user grant for page reading and form interaction to work.</div>
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
@@ -1183,11 +1227,11 @@
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
-                        <div><strong>User Consent:</strong> On first install, users see a full transparency screen before the extension is usable. No features are activated before consent is acknowledged.</div>
+                        <div><strong>User Consent:</strong> All features require Google Sign-In. Users must authenticate before accessing any functionality, ensuring conscious opt-in to the extension's capabilities.</div>
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
-                        <div><strong>Data Minimization:</strong> AgentGrow collects no more data than necessary. Browsing history, PII, analytics, and telemetry are never collected. The audit log records only metadata (no message content).</div>
+                        <div><strong>Data Minimization:</strong> AgentGrow collects no more data than necessary. Browsing history, PII, analytics, and telemetry are never collected.</div>
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
@@ -1199,7 +1243,7 @@
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
-                        <div><strong>Open Source / Auditable:</strong> The full source code is publicly available at <a href="https://github.com/brainupgrade-in/agentgrow-chrome-extension" target="_blank" rel="noopener" style="color:var(--ag-teal-dark)">github.com/brainupgrade-in/agentgrow-chrome-extension</a>. Reproducible builds allow independent verification of the published binary.</div>
+                        <div><strong>Open Source / Auditable:</strong> The full source code is publicly available at <a href="https://github.com/brainupgrade-in/agentgrow-chrome-extension" target="_blank" rel="noopener" style="color:var(--ag-teal-dark)">github.com/brainupgrade-in/agentgrow-chrome-extension</a>. Anyone can review the code and build from source.</div>
                     </li>
                     <li>
                         <span class="ag-check">✅</span>
@@ -1244,8 +1288,8 @@
             </div>
 
             <div style="margin-top:3rem;text-align:center;padding:2.5rem;background:linear-gradient(135deg,var(--ag-navy) 0%,#064e3b 100%);border-radius:16px;color:white">
-                <h3 style="font-size:1.6rem;font-weight:800;margin-bottom:1rem">Ready to use AI without compromise?</h3>
-                <p style="color:#94a3b8;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto">Free, open source, works with any LLM. Your data stays on your device.</p>
+                <h3 style="font-size:1.6rem;font-weight:800;margin-bottom:1rem">Ready to automate your browser with AI?</h3>
+                <p style="color:#94a3b8;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto">Fill forms, write drafts, summarize pages — with any LLM provider. Free, open source, your data stays on your device.</p>
                 <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
                     <a href="https://chromewebstore.google.com" class="ag-btn-primary">⚙️ Install AgentGrow Free</a>
                     <a href="https://github.com/brainupgrade-in/agentgrow-chrome-extension" class="ag-btn-outline" target="_blank" rel="noopener">⭐ Star on GitHub</a>
