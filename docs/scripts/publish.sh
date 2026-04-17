@@ -30,6 +30,9 @@ echo ""
 echo "1️⃣  Regenerating indexes from docs/blog/posts/..."
 $PYTHON docs/scripts/regenerate_indexes.py
 
+# Capture HEAD before commit so we can diff against it to find new posts.
+PREV_HEAD="$(git rev-parse HEAD)"
+
 # ─── STEP 2: Git commit & push ───────────────────────────────────────────────
 echo ""
 echo "2️⃣  Git commit & push..."
@@ -48,23 +51,24 @@ if [ ${#URLS[@]} -eq 0 ]; then
             stem="${file#docs/blog/posts/}"
             URLS+=("${BLOG_BASE}/posts/${stem}")
         fi
-    done < <(git diff --name-only HEAD~1 HEAD -- 'docs/blog/posts/*.html' 2>/dev/null)
+    done < <(git diff --name-only "$PREV_HEAD" HEAD -- 'docs/blog/posts/*.html' 2>/dev/null)
 fi
 
 if [ ${#URLS[@]} -eq 0 ]; then
     echo "   ℹ️  No new post URLs detected. Skipping indexing."
 else
-    echo "   Found ${#URLS[@]} URLs to submit"
+    echo "   Found ${#URLS[@]} URL(s) to submit"
 
-    # ─── STEP 4: Yandex sitemap ping (IndexNow + Google require secrets) ─────
+    # ─── STEP 4: IndexNow + Google Indexing API ──────────────────────────────
     echo ""
-    echo "4️⃣  Yandex sitemap ping..."
+    echo "4️⃣  Submitting to IndexNow + Google Indexing API..."
+    $PYTHON docs/scripts/submit_indexing.py "${URLS[@]}" || echo "   ⚠️  Indexing submission had errors (non-blocking)"
+
+    # ─── STEP 5: Yandex sitemap ping (free, no auth) ─────────────────────────
+    echo ""
+    echo "5️⃣  Yandex sitemap ping..."
     STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://yandex.com/ping?sitemap=${BLOG_BASE}/../sitemap.xml" --max-time 10)
     echo "   Yandex ping: HTTP $STATUS"
-
-    echo ""
-    echo "   ℹ️  To submit to Google Indexing API / IndexNow, run the agent's"
-    echo "      submit-indexnow workflow separately (needs SA key + IndexNow key)."
 fi
 
 echo ""
