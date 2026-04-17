@@ -3,168 +3,464 @@
     <channel>
         <title>Gheware DevOps AI Blog</title>
         <link>https://devops.gheware.com/blog/</link>
-        <description>Kubernetes tutorials, Docker guides, CI/CD best practices, and cloud-native insights for DevOps engineers and developers</description>
+        <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 24 Jan 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 17 Apr 2026 12:20:50 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
-
-        <!-- DevSecOps Best Practices Guide -->
         <item>
-            <title>DevSecOps Secrets: Why 90% Get Security Integration Wrong in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/devsecops-best-practices-guide.html</link>
-            <guid>https://devops.gheware.com/blog/posts/devsecops-best-practices-guide.html</guid>
-            <description>Discover the DevSecOps secrets that prevent 847+ critical vulnerabilities. Master shift-left security, SAST/DAST tools, and automation that 90% of teams miss in 2026.</description>
-            <category>DevSecOps</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Fri, 24 Jan 2026 00:00:00 +0000</pubDate>
-        </item>
-
-        <!-- Kubernetes to EKS Migration Guide -->
-        <item>
-            <title>Kubernetes to EKS Migration: Secret Steps 95% Miss in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-to-eks-migration-guide.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-to-eks-migration-guide.html</guid>
-            <description>Avoid the 3 critical migration mistakes that cost companies $50K+. Master EKS migration with automated tools, data strategies, and cost optimization secrets for 2026.</description>
-            <category>Kubernetes</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Fri, 24 Jan 2026 00:00:00 +0000</pubDate>
-        </item>
-
-        <!-- AWS EKS High Availability Guide -->
-        <item>
-            <title>AWS EKS High Availability: Hidden Secrets 87% Don't Know in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/aws-eks-high-availability-guide.html</link>
-            <guid>https://devops.gheware.com/blog/posts/aws-eks-high-availability-guide.html</guid>
-            <description>Discover the EKS HA secrets that prevent 99.99% uptime failures. Master multi-AZ deployments, auto-scaling, and disaster recovery strategies that cost companies $100K when missed.</description>
-            <category>AWS</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Fri, 24 Jan 2026 00:00:00 +0000</pubDate>
-        </item>
-
-        <!-- Kubernetes Storage Best Practices -->
-        <item>
-            <title>Kubernetes Storage Secrets: Why 78% Lose Critical Data in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-storage-best-practices-guide.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-storage-best-practices-guide.html</guid>
-            <description>Avoid the storage disasters that cost companies $2M+. Master persistent volumes, CSI drivers, and backup strategies that 78% of teams miss in Kubernetes storage management.</description>
-            <category>Kubernetes</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Fri, 24 Jan 2026 00:00:00 +0000</pubDate>
-        </item>
-
-        <!-- Setup Kubernetes on Laptop -->
-        <item>
-            <title>Setup Kubernetes on Laptop: Secret Tricks 92% Miss in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/setup-kubernetes-on-laptop-guide.html</link>
-            <guid>https://devops.gheware.com/blog/posts/setup-kubernetes-on-laptop-guide.html</guid>
-            <description>Skip the painful setup mistakes that waste 40+ hours. Master local Kubernetes with Docker Desktop, Minikube, and Kind - secret configurations 92% of developers miss.</description>
-            <category>Kubernetes</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Fri, 24 Jan 2026 00:00:00 +0000</pubDate>
-        </item>
-
-        <!-- AI Agent Design Patterns -->
-        <item>
-            <title>AI Agent Design Patterns 2026: ReAct, Reflection & Planning Implementation Guide</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html</guid>
-            <description>Master the 3 AI agent patterns powering Claude Code, GitHub Copilot & Perplexity. Full Python implementations with LangGraph, verified benchmarks & production deployment strategies.</description>
+            <title>LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026</title>
+            <link>https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html</guid>
+            <description>LangGraph StateGraph is the foundation of every production AI agent. Learn nodes, edges, state management, and conditional routing from first principles — with complete runnable Python examples.</description>
             <category>AI Engineering</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Mon, 13 Jan 2026 00:00:00 +0000</pubDate>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- 5 AI Agent Design Patterns -->
         <item>
-            <title>5 AI Agent Design Patterns That Power Every Modern Application</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-design-patterns-2026.html</guid>
-            <description>Master ReAct, Chain-of-Thought, Tool Use, Multi-Agent Systems, and Reflection patterns with benchmarks, real-world examples, and production best practices for building intelligent AI applications.</description>
+            <title>Build vs Buy AI Agents: The Enterprise Decision Framework 2026</title>
+            <link>https://devops.gheware.com/blog/posts/build-vs-buy-ai-agents-enterprise-decision-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/build-vs-buy-ai-agents-enterprise-decision-2026.html</guid>
+            <description>Should your enterprise build AI agents with LangGraph or buy a vendor solution? The 5-factor decision framework used by Fortune 500 teams to make the right call — with total cost of ownership analysis.</description>
+            <category>AI Strategy</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>LangChain Expression Language (LCEL) Complete Guide 2026</title>
+            <link>https://devops.gheware.com/blog/posts/langchain-expression-language-lcel-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langchain-expression-language-lcel-guide-2026.html</guid>
+            <description>LCEL is the composable interface that makes LangChain production-ready. Learn pipe syntax, parallel chains, streaming, fallbacks, and the patterns that separate toy demos from real AI agents.</description>
             <category>AI Engineering</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Mon, 13 Jan 2026 00:00:00 +0000</pubDate>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- LangGraph vs CrewAI vs AutoGen -->
         <item>
-            <title>LangGraph vs CrewAI vs AutoGen: Complete AI Agent Framework Comparison 2026</title>
-            <link>https://devops.gheware.com/blog/posts/langgraph-vs-crewai-vs-autogen-comparison-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langgraph-vs-crewai-vs-autogen-comparison-2026.html</guid>
-            <description>Compare the three leading multi-agent AI frameworks. Learn architecture differences, production readiness, code examples, and which framework to choose for your 2026 projects.</description>
-            <category>DevOps & AI</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Mon, 13 Jan 2026 00:00:00 +0000</pubDate>
+            <title>Ollama Local LLM Development Guide 2026: Run AI Agents Without the Cloud</title>
+            <link>https://devops.gheware.com/blog/posts/ollama-local-llm-development-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ollama-local-llm-development-guide-2026.html</guid>
+            <description>Ollama lets you run Llama 3, Mistral, and Phi-3 locally with zero API cost. Complete guide to model selection, LangChain integration, multi-model switching, and production-quality local LLM development patterns.</description>
+            <category>AI Tools</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- Claude Skills Tutorial -->
         <item>
-            <title>Claude Skills Tutorial 2026: Build Custom AI Workflows in 10 Minutes</title>
-            <link>https://devops.gheware.com/blog/posts/claude-skills-beginners-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/claude-skills-beginners-guide-2026.html</guid>
-            <description>Learn Claude Skills from scratch. Create custom AI workflows for DevOps, finance, and e-commerce with step-by-step examples. No coding required to get started.</description>
-            <category>DevOps & AI</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Sat, 11 Jan 2026 00:00:00 +0000</pubDate>
+            <title>Prompt Injection Attacks on AI Agents: Threats, Patterns, and Defences</title>
+            <link>https://devops.gheware.com/blog/posts/prompt-injection-attacks-ai-agents-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/prompt-injection-attacks-ai-agents-2026.html</guid>
+            <description>Prompt injection is the #1 security risk for AI agents in production. Learn direct injection, indirect injection via tool outputs, and the 4 defence layers every enterprise AI agent needs.</description>
+            <category>AI Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- Kubernetes Security Best Practices -->
         <item>
-            <title>Kubernetes Security Best Practices 2026: Complete Production Hardening Guide</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-security-best-practices-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-best-practices-2026.html</guid>
-            <description>Master Kubernetes security for production and the CKS exam. Learn Pod Security Standards, Network Policies, RBAC, Secrets Management, Falco runtime security, and supply chain security with Sigstore.</description>
+            <title>FastAPI for AI Agents: Production Deployment Patterns That Scale</title>
+            <link>https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html</guid>
+            <description>FastAPI is the standard for deploying AI agents as production APIs. Learn async endpoints, streaming responses, background tasks, health checks, and Docker deployment patterns with complete code examples.</description>
+            <category>AI Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Embeddings Explained: The Math-Free Guide Every AI Engineer Needs</title>
+            <link>https://devops.gheware.com/blog/posts/embeddings-explained-ai-engineers-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/embeddings-explained-ai-engineers-2026.html</guid>
+            <description>Embeddings are the foundation of RAG, semantic search, and agent memory. Learn what they are, how to choose embedding models, and how to avoid the top 3 production mistakes.</description>
+            <category>AI Fundamentals</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents</title>
+            <link>https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html</guid>
+            <description>LangFuse is the open-source observability layer every production AI agent needs. Step-by-step guide to tracing LangChain agents, setting up evals, and tracking LLM costs per workflow.</description>
+            <category>AI Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>The Supervisor Pattern: How to Orchestrate Multi-Agent Teams with LangGraph</title>
+            <link>https://devops.gheware.com/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html</guid>
+            <description>The supervisor pattern is the production standard for multi-agent AI systems. Learn how one orchestrator agent routes work to specialist agents — with real LangGraph code and failure modes.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Human-in-the-Loop AI: 4 LangGraph Patterns That Keep Humans in Control</title>
+            <link>https://devops.gheware.com/blog/posts/human-in-the-loop-langgraph-patterns-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/human-in-the-loop-langgraph-patterns-2026.html</guid>
+            <description>Fully autonomous AI agents fail on edge cases. Learn the 4 human-in-the-loop patterns in LangGraph — approval gates, interrupt-and-resume, confidence thresholds, and escalation chains.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Guardrails for AI Agents: How to Stop Your LLM from Going Rogue in Production</title>
+            <link>https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/guardrails-ai-agents-production-2026.html</guid>
+            <description>Without guardrails, AI agents hallucinate, leak data, and take catastrophic actions. Learn how to implement input/output validation, NeMo Guardrails, and constitutional AI constraints.</description>
+            <category>AI Safety</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>OWASP LLM Top 10: The Security Checklist Every AI Engineer Needs in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/owasp-llm-top-10-explained-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/owasp-llm-top-10-explained-2026.html</guid>
+            <description>The OWASP LLM Top 10 lists the exact vulnerabilities attacking production AI systems in 2026. Here's what each risk means, real exploit patterns, and how to defend against them.</description>
+            <category>AI Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Beyond AI Copilot: How AI SRE Agents Are Replacing the On-Call Engineer in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-sre-agents-autonomous-devops-on-call-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-sre-agents-autonomous-devops-on-call-2026.html</guid>
+            <description>AI SRE agents built on Kagent and LangChain are now autonomously handling 2 AM incidents. Learn the architecture, real failure modes, and how to deploy AI on-call engineers safely in 2026.</description>
+            <category>AI in DevOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>AI Agent Governance in the Enterprise: Audit Trails, LLM Guardrails &amp; Compliance for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-agent-governance-enterprise-compliance-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agent-governance-enterprise-compliance-2026.html</guid>
+            <description>The EU AI Act applies from August 2026. Learn how enterprise teams govern AI agents with audit trails, LLM guardrails, NIST AI RMF alignment, and kill switches. Practical framework from 25 years in financial services.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>FinOps for AI Agents on Kubernetes: The Enterprise Cost Optimization Playbook 2026</title>
+            <link>https://devops.gheware.com/blog/posts/finops-ai-agents-kubernetes-cost-optimization-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/finops-ai-agents-kubernetes-cost-optimization-2026.html</guid>
+            <description>Enterprise guide to FinOps for AI agents on Kubernetes. GPU rightsizing, spot instances, serverless GPUs, and FinOps culture for agentic AI workloads in 2026.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Agent Sprawl Is the New Cloud Sprawl: How to Build an Agentic Command Center in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agent-sprawl-agentic-command-center-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agent-sprawl-agentic-command-center-enterprise-2026.html</guid>
+            <description>Learn how enterprise teams are solving agent sprawl with Agentic Command Centers. Practical architecture patterns, governance frameworks, and orchestration strategies from 25+ years of enterprise experience.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Production-Ready AI Agents: Closing the Enterprise Deployment Gap 2026</title>
+            <link>https://devops.gheware.com/blog/posts/production-ready-ai-agents-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/production-ready-ai-agents-enterprise-2026.html</guid>
+            <description>Why 89% of AI agent projects fail to reach production. Learn the 11% success path: governance, data quality, integration patterns, and organizational change management for enterprise teams.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Agentic AI Implementation Roadmap: A 90-Day Plan for Enterprise Teams in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-implementation-roadmap-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-implementation-roadmap-enterprise-2026.html</guid>
+            <description>A proven 90-day roadmap for enterprise teams adopting agentic AI in 2026. From pilot to production: architecture decisions, team structure, tooling, governance, and KPIs that actually matter.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU)</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html</guid>
+            <description>KubeCon EU 2026 confirmed: 66% of GenAI workloads run on Kubernetes. Learn how to architect enterprise GenAI apps with llm-d, DRA, Volcano v1.14, and NVIDIA Grove — from a CKA architect with 25+ years at JPMorgan.</description>
+            <category>AI in Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Google A2A Protocol Explained: Enterprise Multi-Agent AI Systems in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/google-a2a-protocol-enterprise-multi-agent-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/google-a2a-protocol-enterprise-multi-agent-2026.html</guid>
+            <description>Google A2A protocol enables AI agents to communicate across enterprise boundaries. Learn how to build multi-agent systems with A2A + MCP, real architecture patterns, and Kubernetes deployment in 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Kubernetes Cost Optimization with AI Agents: Enterprise Playbook to Cut Cloud Spend 40% in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-ai-agents-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-ai-agents-2026.html</guid>
+            <description>Learn how AI agents automate Kubernetes cost optimization in 2026. Real patterns from enterprise deployments: right-sizing, idle resource elimination, and FinOps automation that cuts cloud spend by 40%.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Vibe Coding for Enterprise DevOps: A Practical Guide to AI-First Development in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/vibe-coding-enterprise-devops-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/vibe-coding-enterprise-devops-2026.html</guid>
+            <description>Vibe coding is transforming enterprise DevOps in 2026. Learn how teams at JPMorgan, Oracle, and Deloitte are using AI-first development to ship 3x faster — and how to govern it safely at scale.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>LangGraph State Machines for Production: How Enterprise Teams Scale Multi-Agent AI Beyond Prototypes</title>
+            <link>https://devops.gheware.com/blog/posts/langgraph-production-state-management-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langgraph-production-state-management-enterprise-2026.html</guid>
+            <description>Learn how to build production-grade LangGraph state machines that scale. Covers checkpointing, interrupt-and-resume, parallel subgraphs, and enterprise deployment patterns on Kubernetes — from an architect who trains Fortune 500 teams.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>GPU-Optimized Kubernetes for LLM Inference 2026: Enterprise Setup in 5 Steps</title>
+            <link>https://devops.gheware.com/blog/posts/gpu-optimized-kubernetes-llm-inference-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/gpu-optimized-kubernetes-llm-inference-2026.html</guid>
+            <description>Serving LLMs on Kubernetes? The exact GPU scheduling, model quantization &amp; node pool setup used at JPMorgan Chase — cuts inference costs 60%, latency 40%. Enterprise architect's 5-step playbook + free checklist →</description>
+            <category>Kubernetes AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>The MCP Context Window Crisis: Why Enterprise AI Agents Are Hitting a Hidden Token Wall</title>
+            <link>https://devops.gheware.com/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html</guid>
+            <description>3 MCP servers can consume 143k of your 200k context window before your AI agent does any real work. Learn the CLI-first design patterns that fix this in enterprise production environments.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>From DevOps to AgentOps: The Enterprise Guide to Managing AI Agent Fleets in Production (2026)</title>
+            <link>https://devops.gheware.com/blog/posts/devops-to-agentops-enterprise-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/devops-to-agentops-enterprise-guide-2026.html</guid>
+            <description>AgentOps is the next evolution of DevOps. Learn how enterprise teams manage AI agent fleets in 2026 — NVIDIA Vera, CLI-first architecture, MCP context limits, and the 5-layer production platform.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>AI-Powered GitOps: How AI Agents Are Transforming Kubernetes Deployment Automation in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-powered-gitops-kubernetes-automation-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-powered-gitops-kubernetes-automation-2026.html</guid>
+            <description>Traditional GitOps is static. AI-powered GitOps thinks. Learn how AI agents integrated with ArgoCD and Flux are enabling autonomous drift remediation, predictive rollbacks, and self-healing pipelines in 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Why Enterprise DevOps Teams Are Standardizing on MCP Over CLIs in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/enterprise-mcp-vs-cli-devops-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/enterprise-mcp-vs-cli-devops-2026.html</guid>
+            <description>While developers debate MCP vs CLI, enterprises are quietly standardizing on Model Context Protocol. Learn why MCP wins for enterprise AI agents: auth, telemetry, governance, and how to migrate your team.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>AIOps on Kubernetes: Why Your Observability Stack Is Blind Without AI (2026 Guide)</title>
+            <link>https://devops.gheware.com/blog/posts/aiops-kubernetes-observability-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/aiops-kubernetes-observability-2026.html</guid>
+            <description>Prometheus and Grafana can't catch what they can't model. Learn how AIOps on Kubernetes — AI anomaly detection, autonomous incident response, and unified telemetry — closes the observability gap in 2026. With working code.</description>
+            <category>AIOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Platform Engineering with AI Agents: Building Your AI-Powered IDP in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/platform-engineering-ai-agents-idp-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/platform-engineering-ai-agents-idp-2026.html</guid>
+            <description>Discover how platform engineering teams are embedding AI agents into Internal Developer Platforms in 2026. Architecture patterns, Backstage AI plugins, self-healing golden paths, and a 90-day IDP modernisation roadmap.</description>
+            <category>Platform Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html</guid>
+            <description>Your existing Kubernetes cluster can run quantized LLMs in production today. Learn INT4/INT8 quantization, vLLM on K8s, and GitOps deployment patterns that cut GPU costs 60–80% in 2026.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>AI DevOps Governance: The 5-Checkpoint Framework Every Enterprise Needs in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-devops-governance-framework-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-devops-governance-framework-2026.html</guid>
+            <description>Amazon's Kiro AI caused a 13-hour production outage. Learn the 5-checkpoint AI DevOps governance framework that prevents disasters while keeping your pipeline fast in 2026.</description>
+            <category>AI Governance</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>From DevOps to AgentOps: Why Enterprise Engineering Teams Need a New Playbook in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/devops-to-agentops-enterprise-playbook-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/devops-to-agentops-enterprise-playbook-2026.html</guid>
+            <description>74% of enterprises plan autonomous AI agent deployment within 2 years. Learn how DevOps teams must evolve to AgentOps—new tooling, new roles, new pipelines—with practical guidance from 25+ years in enterprise engineering.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Agentic AI vs RPA: The Enterprise ROI Comparison Every CTO Needs in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html</guid>
+            <description>Agentic AI vs RPA ROI compared for 2026 enterprise automation. Which delivers faster payback? Real cost data from Fortune 500 deployments.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Enterprise Agentic AI Deployment 2026: The Complete Infrastructure Guide</title>
+            <link>https://devops.gheware.com/blog/posts/enterprise-agentic-ai-deployment-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/enterprise-agentic-ai-deployment-2026.html</guid>
+            <description>Enterprise agentic AI deployment 2026 guide: infrastructure stack, Kubernetes configs, governance, security, observability, and phased rollout strategy from 25 years of enterprise experience.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>How Fortune 500 Companies Deploy Agentic AI Teams in 2026: Real Playbook</title>
+            <link>https://devops.gheware.com/blog/posts/fortune-500-agentic-ai-deployment-playbook-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/fortune-500-agentic-ai-deployment-playbook-2026.html</guid>
+            <description>73% of Fortune 500 CIOs are deploying agentic AI teams in 2026. Here's the exact playbook—architecture, governance, and rollout phases—used by enterprise leaders.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</guid>
+            <description>The definitive 2026 enterprise guide to running GenAI workloads on Kubernetes. GPU scheduling, KServe, vLLM, KEDA autoscaling, RAG pipelines, and multi-tenant isolation — production-tested patterns from a 25-year enterprise architect.</description>
             <category>Kubernetes</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Sat, 11 Jan 2026 00:00:00 +0000</pubDate>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- Docker Image Layers -->
         <item>
-            <title>Docker Image Layers Explained: Complete DCA Certification Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/docker-image-layers-complete-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/docker-image-layers-complete-guide-2026.html</guid>
-            <description>Master Docker image layers for the DCA exam. Learn how layers work, Copy-on-Write mechanism, layer caching, multi-stage builds, and optimization strategies that can reduce image sizes by 90%.</description>
-            <category>Docker</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Sat, 11 Jan 2026 00:00:00 +0000</pubDate>
+            <title>How to Train Enterprise Teams on Agentic AI: The Complete L&amp;D Playbook 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-corporate-training-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-corporate-training-enterprise-2026.html</guid>
+            <description>74% of enterprises cite workforce skill gaps as their #1 barrier to AI deployment. This step-by-step L&amp;D playbook trains your teams on agentic AI—fast.</description>
+            <category>Agentic AI Training</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- Claude Code vs Cursor -->
         <item>
-            <title>Claude Code vs Cursor: The Ultimate Deep Dive for Developers in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/claude-code-vs-cursor-deep-dive-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/claude-code-vs-cursor-deep-dive-2026.html</guid>
-            <description>Comprehensive comparison of Claude Code and Cursor AI coding assistants. Compare features, pricing, performance, and real-world experiences to choose the best AI tool for your development workflow.</description>
-            <category>AI & DevOps</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Fri, 10 Jan 2026 00:00:00 +0000</pubDate>
+            <title>Langfuse vs LangSmith vs Arize: Which LLM Observability Tool for Enterprise?</title>
+            <link>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</guid>
+            <description>Compare Langfuse, LangSmith, and Arize Phoenix for enterprise LLM observability in 2026. Pricing, features, Kubernetes integration, and the right choice for your AI platform team.</description>
+            <category>AI Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- Claude Code for DevOps Engineers -->
         <item>
-            <title>Claude Code for DevOps Engineers: The Complete Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/claude-code-for-devops-engineers-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/claude-code-for-devops-engineers-2026.html</guid>
-            <description>Master AI-powered DevOps with Claude Code. Learn Docker workflows, Kubernetes manifest generation, Terraform IaC automation, and CI/CD pipeline creation with practical examples.</description>
-            <category>DevOps & AI</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Thu, 09 Jan 2026 00:00:00 +0000</pubDate>
+            <title>OpenTelemetry for AI Agents: Production Observability Setup Guide</title>
+            <link>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</link>
+            <guid>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</guid>
+            <description>AI agents fail silently—73% of production incidents go undetected without OTel. This step-by-step guide shows enterprise teams how to instrument AI agents with OpenTelemetry in 2026.</description>
+            <category>AI Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         </item>
-
-        <!-- LangChain Complete Guide -->
         <item>
-            <title>LangChain Complete Guide 2026: Build AI Applications from Scratch</title>
-            <link>https://devops.gheware.com/blog/posts/langchain-complete-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langchain-complete-guide-2026.html</guid>
-            <description>Master the LangChain framework with this comprehensive guide covering architecture, LCEL, chains, agents, memory, and hands-on examples to build production-ready AI applications.</description>
-            <category>AI & Machine Learning</category>
-            <author>Rajesh Gheware</author>
-            <pubDate>Wed, 08 Jan 2026 00:00:00 +0000</pubDate>
+            <title>The GenAI Red Team Revolution: How AI Agents Are Replacing Human Security Researchers in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</guid>
+            <description>Claude Opus 4.6 found 22 Firefox zero-days in 2 weeks. AI red teaming is here. Learn how to implement GenAI security agents on Kubernetes with SPIFFE, OPA, Trivy, and LangGraph in 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>MLOps CI/CD for AI Models: DevOps Best Practices That Scale in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/mlops-cicd-pipeline-best-practices-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/mlops-cicd-pipeline-best-practices-2026.html</guid>
+            <description>87% of AI models never reach production. Build an MLOps CI/CD pipeline that ships AI models at DevOps speed — model versioning, automated testing, canary rollouts, and K8s-native deployment.</description>
+            <category>MLOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Zero-Trust Security for AI Agents: Enterprise Implementation Guide 2026</title>
+            <link>https://devops.gheware.com/blog/posts/zero-trust-ai-agents-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/zero-trust-ai-agents-enterprise-2026.html</guid>
+            <description>AI agents are the new attack surface. Learn how to apply zero-trust principles to your agentic AI stack — identity, least-privilege, tool scoping, audit trails, and Kubernetes enforcement — with real enterprise patterns from JPMorgan-grade production deployments.</description>
+            <category>AI Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Agentic AI in Banking &amp; Financial Services: 7 Real Use Cases in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-banking-financial-services-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-banking-financial-services-2026.html</guid>
+            <description>73% of tier-1 banks now run agentic AI in production. Discover 7 real use cases — from fraud detection to autonomous trade execution — with ROI data and a deployment playbook.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>MCP Servers Explained: Model Context Protocol for Enterprise Developers</title>
+            <link>https://devops.gheware.com/blog/posts/mcp-servers-model-context-protocol-enterprise.html</link>
+            <guid>https://devops.gheware.com/blog/posts/mcp-servers-model-context-protocol-enterprise.html</guid>
+            <description>MCP adoption surged 400% in 2025. Learn how Model Context Protocol servers give enterprise AI agents secure, standardized tool access — and how to deploy them in production.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>How to Build a Production RAG Pipeline on Kubernetes: Enterprise Guide 2026</title>
+            <link>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html</guid>
+            <description>Step-by-step enterprise guide to building a production RAG pipeline on Kubernetes in 2026. Covers vector databases, LLM serving with KServe, KEDA autoscaling, observability, and security — by a 25-year JPMorgan/Deutsche Bank architect.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html</guid>
+            <description>Your Kubernetes cluster wasn't built for AI workloads. Learn the 5 critical upgrades—GPU scheduling, KServe, KEDA, node affinity, and multi-tenancy—to safely run LLM inference at enterprise scale in 2026.</description>
+            <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>LangGraph vs AutoGen vs CrewAI: Which Multi-Agent Framework Wins for Enterprise?</title>
+            <link>https://devops.gheware.com/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html</guid>
+            <description>78% of enterprise AI teams fail with the wrong multi-agent framework. Compare LangGraph, AutoGen, and CrewAI on performance, scalability, and production-readiness for 2026.</description>
+            <category>AI Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>What Is an AI Agent? Enterprise Guide for CTOs (2026)</title>
+            <link>https://devops.gheware.com/blog/posts/what-is-an-ai-agent-enterprise-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/what-is-an-ai-agent-enterprise-guide-2026.html</guid>
+            <description>Most CTOs still confuse AI agents with chatbots. Here's the precise definition, real enterprise architecture, and how to get your team ready in 30 days.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html</guid>
+            <description>Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems that actually work.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
