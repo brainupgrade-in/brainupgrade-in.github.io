@@ -293,6 +293,20 @@ def main():
             print(f"  {url}: {miss}", file=sys.stderr)
         sys.exit(2)
 
+    # Catch future-dated datePublished typos. A post stamped e.g. 2026-06-01
+    # on 2026-03-05 pins the blog index for months until someone notices.
+    # Hard fail so the agent/CI stops the push. If you really need to
+    # pre-commit a scheduled post, stage it on a branch — main should only
+    # carry live-ready dates.
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    future = [(e["url"], e["_isoDate"]) for e in entries if e["_isoDate"] > today]
+    if future:
+        print(f"ERROR: {len(future)} post(s) have datePublished in the future (today={today}):", file=sys.stderr)
+        for url, date in future:
+            print(f"  {date}  {url}", file=sys.stderr)
+        print("Fix the article:published_time / JSON-LD datePublished in the post HTML.", file=sys.stderr)
+        sys.exit(2)
+
     print(f"posts-data.json: {len(entries)} entries (newest {entries[0]['_isoDate']})")
     print(f"rss.xml        : {min(50, len(entries))} items")
     print(f"sitemap.xml    : {len(entries)} post URLs + static pages")
