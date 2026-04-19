@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Multi-Agent Orchestration on Kubernetes: Production Patterns for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html</guid>
+            <description>Enterprise guide to orchestrating multi-agent AI systems on Kubernetes. Production patterns, deployment strategies, security, and observability for 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026</title>
             <link>https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Context Engineering for Agentic AI: The Skill That Separates Junior from Senior AI Engineers in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/context-engineering-agentic-ai-2026.html</guid>
-            <description>Context engineering is the new prompt engineering. Learn how senior AI engineers structure memory, tools, and instructions to build production-grade agentic AI systems that actually work.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

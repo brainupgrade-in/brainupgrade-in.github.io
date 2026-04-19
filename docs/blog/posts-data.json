@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "title": "Multi-Agent Orchestration on Kubernetes: Production Patterns for 2026",
+      "url": "/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html",
+      "excerpt": "Enterprise guide to orchestrating multi-agent AI systems on Kubernetes. Production patterns, deployment strategies, security, and observability for 2026.",
+      "category": "Agentic AI",
+      "tags": [
+        "Kubernetes",
+        "Multi-Agent Systems"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 19, 2026",
+      "_isoDate": "2026-04-19",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
       "title": "LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026",
       "url": "/blog/posts/langgraph-stategraph-beginners-guide-2026.html",
       "excerpt": "LangGraph StateGraph is the foundation of every production AI agent. Learn nodes, edges, state management, and conditional routing from first principles — with complete runnable Python examples.",
@@ -1049,7 +1064,7 @@
     {
       "title": "SRE Burnout Crisis 2026: AI Cuts On-Call Incidents 85%",
       "url": "/blog/posts/sre-burnout-ai-incident-prevention-clawdbot-2026.html",
-      "excerpt": "70% of SREs quit from on-call burnout. See how AI agents cut incidents 85% and save $23K/minute. Proven AIOps playbook from JPMorgan architect →",
+      "excerpt": "AI-powered incident prevention reduces MTTR by 85% and cuts on-call toil by 60%. Learn AI SRE patterns that a Fortune 500 team rated 4.91/5.0.",
       "category": "AI Tools",
       "tags": [
         "SRE",
@@ -1359,9 +1374,9 @@
       ]
     },
     {
-      "title": "GPU-Optimized Kubernetes for ML 2026: 7 Expert Strategies",
+      "title": "GPU-Optimized Kubernetes for ML 2026: Expert Guide",
       "url": "/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html",
-      "excerpt": "GPU-optimized Kubernetes for ML workloads: 7 battle-tested strategies that cut LLM inference costs 60%. Tested at JPMorgan & Deutsche Bank. Get the complete 2026 guide →",
+      "excerpt": "GPU-optimized Kubernetes for ML reduces inference costs by 60%. Learn GPU scheduling, MIG partitioning, and 119 hands-on labs for production ML deployments.",
       "category": "Kubernetes",
       "tags": [
         "Kubernetes",
