@@ -1374,9 +1374,9 @@
       ]
     },
     {
-      "title": "GPU-Optimized Kubernetes for ML 2026: Expert Guide",
+      "title": "Most GPU-Optimized Kubernetes for ML 2026: Expert Guide",
       "url": "/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html",
-      "excerpt": "GPU-optimized Kubernetes for ML reduces inference costs by 60%. Learn GPU scheduling, MIG partitioning, and 119 hands-on labs for production ML deployments.",
+      "excerpt": "GPU-optimized Kubernetes for ML cuts LLM inference costs 60%. Proven GPU scheduling, MIG, and device plugin patterns from 119 hands-on labs.",
       "category": "Kubernetes",
       "tags": [
         "Kubernetes",
