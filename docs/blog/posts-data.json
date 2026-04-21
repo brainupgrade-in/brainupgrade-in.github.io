@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production",
+      "url": "/blog/posts/kubernetes-genai-architecture-patterns-2026.html",
+      "excerpt": "Production-ready Kubernetes architectures for GenAI workloads. Learn GPU scheduling, KServe inference serving, KEDA auto-scaling, and security patterns from 25+ years of enterprise deployments.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "Kubernetes",
+        "GenAI",
+        "GPU",
+        "KServe",
+        "MLOps"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 21, 2026",
+      "_isoDate": "2026-04-21",
+      "readTime": "12 min read",
+      "keywords": ["kubernetes genai architecture patterns 2026", "kubernetes gpu scheduling", "kserve inference serving"]
+    },
+    {
       "title": "Multi-Agent Orchestration on Kubernetes: Production Patterns for 2026",
       "url": "/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html",
       "excerpt": "Enterprise guide to orchestrating multi-agent AI systems on Kubernetes. Production patterns, deployment strategies, security, and observability for 2026.",
