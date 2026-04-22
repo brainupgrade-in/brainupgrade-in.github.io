@@ -5,13 +5,40 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Enterprise Agentic AI Playbook 2026</title>
+            <link>https://devops.gheware.com/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html</guid>
+            <description>Step-by-step playbook: How JPMorgan, Oracle, Goldman Sachs deploy AI agent swarms on Kubernetes. Covers MCP security, multi-agent orchestration, and ROI measurement.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</guid>
+            <description>Production-ready Kubernetes architectures for GenAI workloads. Learn GPU scheduling, KServe inference serving, KEDA auto-scaling, and security patterns from 25+ years of enterprise deployments at JPMorgan and Deutsche Bank.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Self-Healing DevOps Pipelines: How AI Agents Are Replacing Your On-Call Engineers (2026)</title>
+            <link>https://devops.gheware.com/blog/posts/self-healing-devops-aiops-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/self-healing-devops-aiops-2026.html</guid>
+            <description>Your CI/CD pipeline just fixed itself before you noticed it broke. Here's how AI-powered self-healing DevOps works — with working code for autonomous incident response, AI-driven root cause analysis, and proactive pipeline recovery.</description>
+            <category>AIOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Multi-Agent Orchestration on Kubernetes: Production Patterns for 2026</title>
             <link>https://devops.gheware.com/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html</link>
@@ -346,15 +373,6 @@
             <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</guid>
-            <description>The definitive 2026 enterprise guide to running GenAI workloads on Kubernetes. GPU scheduling, KServe, vLLM, KEDA autoscaling, RAG pipelines, and multi-tenant isolation — production-tested patterns from a 25-year enterprise architect.</description>
-            <category>Kubernetes</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
             <title>How to Train Enterprise Teams on Agentic AI: The Complete L&amp;D Playbook 2026</title>
             <link>https://devops.gheware.com/blog/posts/agentic-ai-corporate-training-enterprise-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/agentic-ai-corporate-training-enterprise-2026.html</guid>
@@ -441,24 +459,6 @@
             <guid>https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html</guid>
             <description>Your Kubernetes cluster wasn't built for AI workloads. Learn the 5 critical upgrades—GPU scheduling, KServe, KEDA, node affinity, and multi-tenancy—to safely run LLM inference at enterprise scale in 2026.</description>
             <category>Kubernetes</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>LangGraph vs AutoGen vs CrewAI: Which Multi-Agent Framework Wins for Enterprise?</title>
-            <link>https://devops.gheware.com/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html</guid>
-            <description>78% of enterprise AI teams fail with the wrong multi-agent framework. Compare LangGraph, AutoGen, and CrewAI on performance, scalability, and production-readiness for 2026.</description>
-            <category>AI Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>What Is an AI Agent? Enterprise Guide for CTOs (2026)</title>
-            <link>https://devops.gheware.com/blog/posts/what-is-an-ai-agent-enterprise-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/what-is-an-ai-agent-enterprise-guide-2026.html</guid>
-            <description>Most CTOs still confuse AI agents with chatbots. Here's the precise definition, real enterprise architecture, and how to get your team ready in 30 days.</description>
-            <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
         </item>
