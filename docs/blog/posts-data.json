@@ -1,6 +1,53 @@
 {
   "posts": [
     {
+      "title": "Build Your Enterprise AI Control Plane",
+      "url": "/blog/posts/agentic-ai-control-plane-enterprise-2026.html",
+      "excerpt": "Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI",
+        "AI Agent Governance",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 25, 2026",
+      "_isoDate": "2026-04-25",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "[POST_TITLE]",
+      "url": "/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html",
+      "excerpt": "[POST_DESCRIPTION - 150-160 chars for optimal display]",
+      "category": "[CATEGORY]",
+      "tags": [
+        "[TAG1]",
+        "[TAG2]"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 24, 2026",
+      "_isoDate": "2026-04-24",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
+      "title": "OpenTelemetry for AI Agents: Production Observability Guide 2026",
+      "url": "/blog/posts/opentelemetry-ai-agents-production-observability.html",
+      "excerpt": "Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "OpenTelemetry",
+        "AI Agents",
+        "Observability"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 24, 2026",
+      "_isoDate": "2026-04-24",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
       "title": "Enterprise Agentic AI Playbook 2026",
       "url": "/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html",
       "excerpt": "Step-by-step playbook: How JPMorgan, Oracle, Goldman Sachs deploy AI agent swarms on Kubernetes. Covers MCP security, multi-agent orchestration, and ROI measurement.",
@@ -679,24 +726,6 @@
       "publishedDate": "March 8, 2026",
       "_isoDate": "2026-03-08",
       "readTime": "13 min read",
-      "keywords": []
-    },
-    {
-      "title": "OpenTelemetry for AI Agents: Production Observability Setup Guide",
-      "url": "/blog/posts/opentelemetry-ai-agents-production-observability.html",
-      "excerpt": "AI agents fail silently—73% of production incidents go undetected without OTel. This step-by-step guide shows enterprise teams how to instrument AI agents with OpenTelemetry in 2026.",
-      "category": "AI Observability",
-      "tags": [
-        "OpenTelemetry",
-        "AI Agents",
-        "Production Observability",
-        "LLM Monitoring",
-        "Enterprise DevOps 2026"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "March 8, 2026",
-      "_isoDate": "2026-03-08",
-      "readTime": "12 min read",
       "keywords": []
     },
     {

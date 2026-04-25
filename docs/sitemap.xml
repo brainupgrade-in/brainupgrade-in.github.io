@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://devops.gheware.com/</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://devops.gheware.com/blog/</loc>
-        <lastmod>2026-04-22</lastmod>
+        <lastmod>2026-04-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
@@ -77,6 +77,24 @@
         <lastmod>2026-04-11</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devops.gheware.com/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://devops.gheware.com/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html</loc>
@@ -326,12 +344,6 @@
     </url>
     <url>
         <loc>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</loc>
-        <lastmod>2026-03-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</loc>
         <lastmod>2026-03-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

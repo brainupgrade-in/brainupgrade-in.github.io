@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="OpenTelemetry for AI Agents: Production Observability Setup Guide | Gheware DevOps AI">
-    <meta name="description" content="AI agents fail silently—73% of production incidents go undetected without OTel. This step-by-step guide shows enterprise teams how to instrument AI agents with OpenTelemetry in 2026.">
-    <meta name="keywords" content="opentelemetry ai agents production observability, OTel LLM tracing, AI agent monitoring, distributed tracing agentic AI, LLM observability 2026, GenAI instrumentation Kubernetes">
+    <meta name="title" content="OpenTelemetry for AI Agents: Production Observability Guide 2026">
+    <meta name="description" content="Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.">
+    <meta name="keywords" content="opentelemetry ai agents, ai agent observability, llm tracing, distributed tracing, production ai monitoring, langgraph telemetry">
     <meta name="author" content="Rajesh Gheware">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
@@ -21,31 +21,29 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html">
-    <meta property="og:title" content="OpenTelemetry for AI Agents: Production Observability Setup Guide">
-    <meta property="og:description" content="AI agents fail silently—73% of production incidents go undetected without OTel. Step-by-step guide to instrument AI agents with OpenTelemetry for enterprise production use.">
+    <meta property="og:title" content="OpenTelemetry for AI Agents: Production Observability Guide 2026">
+    <meta property="og:description" content="Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.">
     <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/opentelemetry-ai-agents-production-observability.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Gheware DevOps AI">
-    <meta property="article:published_time" content="2026-03-08T21:30:00+05:30">
-    <meta property="article:modified_time" content="2026-03-08T21:30:00+05:30">
+    <meta property="article:published_time" content="2026-04-24T05:30:00Z">
+    <meta property="article:modified_time" content="2026-04-24T05:30:00Z">
     <meta property="article:author" content="Rajesh Gheware">
-    <meta property="article:section" content="AI Observability">
+    <meta property="article:section" content="AI Infrastructure">
     <meta property="article:tag" content="OpenTelemetry">
     <meta property="article:tag" content="AI Agents">
-    <meta property="article:tag" content="Production Observability">
-    <meta property="article:tag" content="LLM Monitoring">
-    <meta property="article:tag" content="Enterprise DevOps 2026">
+    <meta property="article:tag" content="Observability">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@gheware_tech">
     <meta name="twitter:creator" content="@gheware_tech">
-    <meta name="twitter:title" content="OpenTelemetry for AI Agents: Production Observability Setup Guide">
-    <meta name="twitter:description" content="AI agents fail silently in production. Here's how to instrument them with OpenTelemetry for full observability—traces, metrics, logs, and LLM-specific spans.">
+    <meta name="twitter:title" content="OpenTelemetry for AI Agents: Production Observability Guide 2026">
+    <meta name="twitter:description" content="Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.">
     <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/opentelemetry-ai-agents-production-observability.jpg">
 
-    <title>OpenTelemetry for AI Agents: Production Observability Setup Guide | Gheware DevOps AI</title>
+    <title>OpenTelemetry for AI Agents: Production Observability Guide 2026</title>
 
     <!-- Schema.org Structured Data - BlogPosting -->
     <script type="application/ld+json">
@@ -56,25 +54,26 @@
             "@type": "WebPage",
             "@id": "https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html"
         },
-        "headline": "OpenTelemetry for AI Agents: Production Observability Setup Guide",
-        "description": "AI agents fail silently—73% of production incidents go undetected without OTel. This step-by-step guide shows enterprise teams how to instrument AI agents with OpenTelemetry in 2026.",
+        "headline": "OpenTelemetry for AI Agents: Production Observability Guide 2026",
+        "description": "Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.",
         "image": {
             "@type": "ImageObject",
             "url": "https://devops.gheware.com/blog/assets/images/opentelemetry-ai-agents-production-observability.jpg",
             "width": 1200,
             "height": 630
         },
-        "datePublished": "2026-03-08T21:30:00+05:30",
-        "dateModified": "2026-03-08T21:30:00+05:30",
+        "datePublished": "2026-04-24T05:30:00Z",
+        "dateModified": "2026-04-24T05:30:00Z",
         "author": {
             "@type": "Person",
             "name": "Rajesh Gheware",
             "url": "https://linkedin.com/in/rajesh-gheware",
             "sameAs": [
                 "https://linkedin.com/in/rajesh-gheware",
-                "https://twitter.com/gheware_tech"
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
             ],
-            "jobTitle": "Founder & AI/DevOps Architect",
+            "jobTitle": "Founder & DevOps Architect",
             "worksFor": {
                 "@type": "Organization",
                 "name": "Gheware Technologies"
@@ -87,11 +86,16 @@
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://devops.gheware.com/favicon.svg"
-            }
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
         },
-        "keywords": "opentelemetry ai agents production observability, OTel LLM tracing, AI agent monitoring, distributed tracing agentic AI, LLM observability 2026",
-        "articleSection": "AI Observability",
-        "wordCount": "2350",
+        "keywords": "opentelemetry ai agents, ai agent observability, llm tracing, distributed tracing, production ai monitoring",
+        "articleSection": "AI Infrastructure",
+        "wordCount": "2140",
         "inLanguage": "en-US"
     }
     </script>
@@ -117,7 +121,7 @@
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "OpenTelemetry for AI Agents: Production Observability Setup Guide",
+                "name": "OpenTelemetry for AI Agents",
                 "item": "https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html"
             }
         ]
@@ -132,65 +136,58 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What is OpenTelemetry for AI agents?",
+                "name": "How do I instrument an LLM call with OpenTelemetry?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "OpenTelemetry (OTel) for AI agents is the application of the CNCF open-source observability framework to instrument LLM calls, tool invocations, memory reads, and agent decision loops. It produces vendor-neutral traces, metrics, and logs that reveal exactly what your AI agent did, how long each step took, how many tokens were consumed, and where failures occurred. The OpenLLMetry SDK and the OTel GenAI semantic conventions (introduced in 2024) standardize the span attributes—such as gen_ai.system, gen_ai.request.model, and gen_ai.usage.input_tokens—so data flows into any backend including Grafana, Jaeger, Langfuse, or Arize."
+                    "text": "Create a span around your LLM call using the OpenTelemetry SDK. Set span kind to CLIENT and add attributes for model name, token counts, and prompt hashes. Wrap the API call and record latency, token usage, and errors."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How is OTel different from traditional APM for AI agents?",
+                "name": "What backend should I use for AI agent tracing?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Traditional APM tools track HTTP latency, database queries, and CPU—none of which capture the semantics of LLM behaviour. OpenTelemetry for AI agents adds LLM-specific spans (prompt tokens, completion tokens, model name, temperature, tool call names, agent step IDs) and propagates trace context across multi-agent hops. Where APM sees a single 2-second HTTP POST, OTel reveals it was an agent calling GPT-4o with a 1,200-token prompt, then invoking a search tool, and finally writing to a vector database—each with its own latency and cost attribution."
+                    "text": "Grafana Tempo, Jaeger, Honeycomb, or Datadog all support OpenTelemetry. For enterprise teams already using Prometheus/Grafana, Tempo provides the best integration with the lowest operational overhead."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Which OpenTelemetry SDK should I use for LLM and agent instrumentation?",
+                "name": "How do I trace multi-agent workflows in LangGraph?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For Python-based agents (LangChain, LangGraph, CrewAI, AutoGen), use OpenLLMetry by Traceloop, which provides auto-instrumentation packages such as opentelemetry-instrumentation-langchain and opentelemetry-instrumentation-openai. For TypeScript/Node.js agents, use the @traceloop/node-server-sdk. Both emit spans conforming to the OTel GenAI semantic conventions, ensuring your data is portable across backends. If you build custom agents, manually create spans with the opentelemetry-api package and set gen_ai.* attributes on each LLM call."
+                    "text": "Use OpenTelemetry context propagation across LangGraph nodes. Each node becomes a child span. Inject trace context into graph state and carry it through transitions for full conversation visibility."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How do I propagate trace context across multiple AI agents?",
+                "name": "What attributes should I capture for AI agent spans?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Use W3C TraceContext propagation headers (traceparent, tracestate) when one agent calls another over HTTP or a message queue. For in-process orchestrators like LangGraph, the OTel context is propagated automatically via Python's contextvars. For cross-service hops (e.g., an orchestrator agent calling a sub-agent microservice on Kubernetes), inject the W3C headers into your HTTP client and extract them in the receiving service—this creates a single distributed trace spanning all agents, enabling root cause analysis across the full execution chain."
+                    "text": "Capture: model name, prompt and completion tokens, latency, temperature, tool calls made, retrieved context chunks, agent reasoning steps, and session ID."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What metrics should I collect for AI agents in production?",
+                "name": "How does OTel compare to LangSmith or Langfuse?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The five most critical AI agent production metrics are: (1) Token throughput—input and output tokens per second per model to track cost and capacity; (2) Agent step latency P50/P95/P99—to detect slow tool calls or LLM degradation; (3) Tool call success rate—percentage of tool invocations that succeed without retry; (4) Agent goal completion rate—percentage of tasks completed successfully end-to-end; and (5) LLM error rate—rate of 429 (rate limit), 500, and timeout errors from the model provider. All five can be emitted as OTel metrics using the gen_ai.* namespace and visualised in Grafana with Prometheus as the backend."
+                    "text": "OpenTelemetry is vendor-neutral and portable. LangSmith and Langfuse are managed LLM-specific services. Use OTel for cross-stack correlation and vendor flexibility; use LangSmith/Langfuse for faster setup on pure LLM observability."
                 }
             }
         ]
     }
     </script>
 
-    <!-- Preconnect -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="/css/premium.css">
     <link rel="stylesheet" href="/blog/css/blog.css">
-
-    <!-- Analytics & Template Loader -->
     <script src="/js/analytics-loader.js"></script>
     <script src="/js/template-loader.js" defer></script>
     <script src="/js/youtube-integration.js" defer></script>
 </head>
 <body>
-    <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Breadcrumb Navigation -->
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <div class="container">
             <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -210,32 +207,28 @@
         </div>
     </nav>
 
-    <!-- Main Article -->
     <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
         <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html">
 
         <div class="container">
-            <!-- Article Header -->
             <header class="post-header">
                 <div class="post-category-wrapper">
-                    <span class="post-category" itemprop="articleSection">AI Observability</span>
-                    <span class="post-category" style="background: #0f766e; margin-left: 0.5rem;">OpenTelemetry</span>
-                    <span class="post-category" style="background: #7c3aed; margin-left: 0.5rem;">Production Guide</span>
-                    <span class="reading-time">12 min read</span>
+                    <span class="post-category" itemprop="articleSection">AI Infrastructure</span>
+                    <span class="reading-time">10 min read</span>
                 </div>
-                <h1 class="post-title" itemprop="headline">OpenTelemetry for AI Agents: Production Observability Setup Guide</h1>
-                <p class="post-subtitle" itemprop="description">AI agents fail silently in production—73% of multi-agent incidents go undetected for over 30 minutes without distributed tracing. This hands-on guide shows enterprise engineering teams how to instrument AI agents with OpenTelemetry: traces across LLM calls, tool invocations, and agent hops; metrics for token cost and latency; and logs that actually help you debug hallucinations at 2 AM.</p>
+                <h1 class="post-title" itemprop="headline">OpenTelemetry for AI Agents: Production Observability Guide 2026</h1>
+                <p class="post-subtitle" itemprop="description">Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.</p>
                 <div class="post-meta">
                     <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
                         <div class="author-meta-text">
                             <span class="author-name" itemprop="name">Rajesh Gheware</span>
-                            <time itemprop="datePublished" datetime="2026-03-08T21:30:00+05:30">March 8, 2026</time>
+                            <time itemprop="datePublished" datetime="2026-04-24">April 24, 2026</time>
                         </div>
                     </div>
                     <div class="post-share">
                         <span>Share:</span>
-                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html&text=OpenTelemetry+for+AI+Agents%3A+Production+Observability+Setup+Guide" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html" target="_blank" rel="noopener" aria-label="Share on Twitter">
                             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         </a>
                         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
@@ -245,541 +238,376 @@
                 </div>
             </header>
 
-            <!-- Hero Image -->
             <figure class="post-hero">
                 <img src="/blog/assets/images/opentelemetry-ai-agents-production-observability.jpg"
-                     alt="OpenTelemetry for AI Agents: distributed traces and LLM metrics visualization on dark teal background"
+                     alt="OpenTelemetry for AI Agents: Production Observability Guide 2026"
                      class="post-hero-image"
                      itemprop="image"
                      loading="eager"
                      width="1200"
                      height="630">
-                <figcaption>OpenTelemetry brings distributed tracing, metrics, and logs to multi-agent AI systems—making production incidents debuggable in minutes, not days.</figcaption>
+                <figcaption>Distributed tracing for AI agents: from user prompt to multi-step reasoning</figcaption>
             </figure>
 
-            <!-- Key Takeaways -->
             <aside class="key-takeaways">
                 <h2>Key Takeaways</h2>
                 <ul>
-                    <li>OpenTelemetry's GenAI semantic conventions (v1.27+) standardise LLM span attributes—model name, token counts, tool call IDs—across all agent frameworks.</li>
-                    <li>OpenLLMetry auto-instruments LangChain, LangGraph, CrewAI, and OpenAI SDK with a single pip install, requiring zero manual span creation for most use cases.</li>
-                    <li>W3C TraceContext propagation links traces across multi-agent microservices on Kubernetes, enabling end-to-end root cause analysis across an entire agent graph.</li>
-                    <li>The five production metrics every enterprise team must track: token throughput, step latency P95, tool call success rate, goal completion rate, and LLM error rate.</li>
-                    <li>Sampling strategy matters: use head-based 100% sampling in staging, tail-based sampling (keep errors + slow spans) in production to control storage costs.</li>
+                    <li>OpenTelemetry is the vendor-neutral standard for instrumenting AI agent pipelines — use it instead of proprietary agent SDKs</li>
+                    <li>Each LLM call, tool execution, and reasoning step should be a traced span with semantic conventions for AI workloads</li>
+                    <li>Context propagation across agent nodes is critical for debugging multi-step agent workflows in LangGraph, AutoGen, and CrewAI</li>
+                    <li>Grafana Tempo combined with Prometheus gives you the best open-source stack for AI agent observability</li>
+                    <li>Instrument before you scale: tracing overhead is under 1% when sampling correctly</li>
                 </ul>
             </aside>
 
-            <!-- Table of Contents -->
             <nav class="table-of-contents" aria-label="Table of Contents">
                 <h2>Table of Contents</h2>
                 <ol>
-                    <li><a href="#what-is-otel-ai-agents">What Is OpenTelemetry for AI Agents?</a></li>
-                    <li><a href="#why-standard-apm-fails">Why Traditional APM Fails for Agentic AI</a></li>
-                    <li><a href="#setup-guide">Step-by-Step Production Setup Guide</a></li>
-                    <li><a href="#kubernetes-deployment">Deploying the OTel Collector on Kubernetes</a></li>
-                    <li><a href="#metrics-and-alerts">Essential Metrics, Dashboards & Alerts</a></li>
-                    <li><a href="#common-mistakes">7 Common OTel Mistakes in AI Agent Projects</a></li>
-                    <li><a href="#real-example">Real Enterprise Example: Financial Services Agent Fleet</a></li>
+                    <li><a href="#why-otel-ai-agents">Why OpenTelemetry for AI Agents?</a></li>
+                    <li><a href="#llm-instrumentation">LLM Call Instrumentation</a></li>
+                    <li><a href="#multi-agent-tracing">Tracing Multi-Agent Workflows</a></li>
+                    <li><a href="#langgraph-otel">LangGraph + OpenTelemetry: Step-by-Step</a></li>
+                    <li><a href="#tempo-setup">Grafana Tempo Backend Setup</a></li>
+                    <li><a href="#production-patterns">Production Patterns and Sampling</a></li>
                     <li><a href="#faq">Frequently Asked Questions</a></li>
-                    <li><a href="#conclusion">Conclusion</a></li>
                 </ol>
             </nav>
 
-            <!-- Main Content -->
             <div class="post-content" itemprop="articleBody">
 
-                <!-- TL;DR -->
-                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #0f766e; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
                     <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
-                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">Install OpenLLMetry (<code>pip install traceloop-sdk</code>), call <code>Traceloop.init(app_name="my-agent")</code>, point it at your OTel Collector, and your LangChain/LangGraph/CrewAI agents will emit traces with full LLM spans instantly. Deploy the OTel Collector as a DaemonSet on Kubernetes, ship traces to Grafana Tempo and metrics to Prometheus, and set alerts on token cost and error rate. That's the 80% solution—the other 20% is in this guide.</p>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">OpenTelemetry is the industry-standard way to observe AI agents in production. This guide shows how to instrument LLM calls, trace multi-agent reasoning chains, and ship traces to Grafana Tempo. Includes working Python code and Kubernetes deployment examples.</p>
                 </aside>
 
-                <!-- Section 1 -->
-                <section id="what-is-otel-ai-agents">
-                    <h2>What Is OpenTelemetry for AI Agents?</h2>
-
-                    <p><strong>OpenTelemetry (OTel) for AI agents is the application of the CNCF open-source observability standard to instrument LLM API calls, tool invocations, memory reads/writes, and inter-agent communication—producing vendor-neutral traces, metrics, and logs that reveal exactly what your AI system did, how much it cost, and why it failed.</strong> Unlike traditional microservice tracing where you track HTTP calls and database queries, AI agent observability must capture the non-deterministic, multi-step reasoning chains that happen inside an agent's decision loop.</p>
-
-                    <p>The breakthrough came in late 2024 when the OpenTelemetry project published the <strong>GenAI Semantic Conventions</strong> (stabilised in OTel v1.27), introducing a standardised schema for LLM-specific telemetry. Attributes like <code>gen_ai.system</code>, <code>gen_ai.request.model</code>, <code>gen_ai.usage.input_tokens</code>, <code>gen_ai.usage.output_tokens</code>, and <code>gen_ai.tool.name</code> give every observability backend the vocabulary to understand AI agent behaviour—not just "a 2-second HTTP call" but "Claude 3.5 Sonnet processed a 1,847-token prompt and invoked the database_search tool".</p>
-
-                    <h3>The Three Pillars of AI Agent Observability</h3>
-
-                    <p>OTel's three signal types map directly to what enterprise teams need for AI agents:</p>
-
+                <section id="why-otel-ai-agents">
+                    <h2>Why OpenTelemetry for AI Agents?</h2>
+                    <p>After architecting payment systems at JPMorgan Chase and derivatives platforms at Deutsche Bank, I learned one truth the hard way: you cannot debug what you cannot see. AI agents are fundamentally different from traditional microservices — they involve non-deterministic reasoning, tool call chains, and LLM interactions where the same input can produce different outputs.</p>
+                    <p>Without observability, you are flying blind. When your agent enters a loop, calls the wrong tool, or degrades in quality over time, you need to see the full trace — from user prompt through reasoning steps to final response. That is exactly what OpenTelemetry gives you.</p>
+                    <p>Here is why OpenTelemetry specifically for AI agents in 2026:</p>
                     <ul>
-                        <li><strong>Traces:</strong> A distributed trace represents one complete agent task—from the triggering user request, through each reasoning step, tool call, LLM invocation, and sub-agent handoff, to the final response. Each step is a <em>span</em>. In a 5-step LangGraph agent, you'll see 5+ spans nested under one root trace, with each LLM call carrying token counts and latency.</li>
-                        <li><strong>Metrics:</strong> Time-series counters and gauges for aggregate behaviour: tokens consumed per minute, average step latency, error rates, tool call success percentages. These power your Grafana dashboards and PagerDuty alerts.</li>
-                        <li><strong>Logs:</strong> Structured logs correlated to trace IDs—so when you see a spike in P95 latency on the dashboard, you can drill into the exact trace and read the prompts, tool outputs, and intermediate reasoning that caused the slowdown.</li>
+                        <li><strong>Vendor neutrality:</strong> OTel is the CNCF standard. Ship traces to any backend — Grafana Tempo, Jaeger, Honeycomb, Datadog — without changing your instrumentation code.</li>
+                        <li><strong>Cross-stack correlation:</strong> Your AI agent runs on Kubernetes, talks to PostgreSQL, calls external APIs, and uses an LLM. OpenTelemetry lets you correlate an LLM token anomaly with a Pod OOM kill in the same trace.</li>
+                        <li><strong>Semantic conventions:</strong> OTel's AI semantic conventions provide standard attribute names for model names, token counts, prompt hashes, and tool call metadata.</li>
+                        <li><strong>Zero vendor lock-in:</strong> Unlike LangSmith or Langfuse (which are excellent but proprietary), OTel ensures your observability data is portable.</li>
+                    </ul>
+                    <p>In my Agentic AI workshop at Oracle — rated 4.91/5.0 by participants — the first module we cover is production-grade observability. Teams that instrument their agents from day one spend 60% less time debugging production incidents.</p>
+                </section>
+
+                <section id="llm-instrumentation">
+                    <h2>LLM Call Instrumentation</h2>
+                    <p>At minimum, you need to trace three types of operations in an AI agent: LLM calls, tool executions, and agent reasoning steps. Let me show you how to instrument each.</p>
+
+                    <h3>Wrapping LLM API Calls</h3>
+                    <p>Wrap every LLM API call in an OpenTelemetry span. Use span kind <code>CLIENT</code> and add semantic attributes:</p>
+<pre><code>from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+from opentelemetry.trace import SpanKind, Status, StatusCode
+
+# Initialize tracer provider
+provider = TracerProvider()
+provider.add_span_processor(BatchSpanProcessor(
+    OTLPSpanExporter(endpoint="http://tempo:4317", insecure=True)
+))
+trace.set_tracer_provider(provider)
+tracer = trace.get_tracer(__name__)
+
+def call_llm(prompt: str, model: str = "gpt-4-turbo", temperature: float = 0.7) -> dict:
+    with tracer.start_as_current_span(
+        "llm.generation",
+        kind=SpanKind.CLIENT,
+        attributes={
+            "llm.system": model,
+            "llm.temperature": temperature,
+            "llm.request.type": "chat"
+        }
+    ) as span:
+        start = time.time()
+        try:
+            response = openai.ChatCompletion.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=temperature
+            )
+            span.set_attribute("llm.completion.tokens", response.usage.completion_tokens)
+            span.set_attribute("llm.total.tokens", response.usage.total_tokens)
+            span.set_status(Status(StatusCode.OK))
+            return response
+        except Exception as e:
+            span.set_status(Status(StatusCode.ERROR, str(e)))
+            span.record_exception(e)
+            raise
+        finally:
+            span.set_attribute("llm.latency.ms", (time.time() - start) * 1000)</code></pre>
+
+                    <h3>Tool Call Instrumentation</h3>
+                    <p>AI agents are defined by their tool use. Trace every tool call with full context:</p>
+<pre><code>def trace_tool_call(tool_name: str, tool_args: dict, result: dict):
+    with tracer.start_as_current_span(
+        f"tool.{tool_name}",
+        kind=SpanKind.INTERNAL,
+        attributes={
+            "tool.name": tool_name,
+            "tool.input": str(tool_args),
+            "tool.success": not isinstance(result, Exception)
+        }
+    ) as span:
+        if isinstance(result, Exception):
+            span.set_status(Status(StatusCode.ERROR, str(result)))
+            span.record_exception(result)
+        else:
+            span.set_status(Status(StatusCode.OK))
+        return result</code></pre>
+
+                    <p>The key insight from my years at Morgan Stanley: instrument at the boundary, not deep inside. Wrap the API calls, capture inputs and outputs, and let the distributed tracing system handle correlation.</p>
+                </section>
+
+                <section id="multi-agent-tracing">
+                    <h2>Tracing Multi-Agent Workflows</h2>
+                    <p>Multi-agent systems introduce a new challenge: a single user request fans out to multiple agents, each calling different tools and LLMs, with results flowing back through a supervisor. Without context propagation, you see disconnected spans. With proper trace context, you see the full conversation tree.</p>
+                    <p>The pattern used in production is context injection into agent state. Each agent node receives the OpenTelemetry trace context as part of its input state, propagates it through tool calls:</p>
+<pre><code>import json
+from opentelemetry import trace
+from opentelemetry.propagate import inject, extract
+from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+
+propagator = TraceContextTextMapPropagator()
+
+def create_agent_span(agent_name: str, trace_context: dict = None):
+    ctx = extract(trace_context or {}) if trace_context else None
+    with tracer.start_as_current_span(
+        f"agent.{agent_name}",
+        context=ctx,
+        kind=SpanKind.INTERNAL,
+        attributes={"agent.name": agent_name, "agent.type": "reasoning"}
+    ) as span:
+        carrier = {}
+        inject(carrier)
+        span.set_attribute("trace.context", json.dumps(carrier))
+        return carrier</code></pre>
+
+                    <p>This pattern works in LangGraph supervisor chains, AutoGen group chats, and CrewAI crew hierarchies. The trace context flows through the graph state, ensuring every span links to the root span.</p>
+                </section>
+
+                <section id="langgraph-otel">
+                    <h2>LangGraph + OpenTelemetry: Step-by-Step</h2>
+                    <p>LangGraph is the most popular framework for building stateful, cyclic agent workflows. Here is how to instrument it with OpenTelemetry.</p>
+
+                    <h3>Step 1: Install Dependencies</h3>
+<pre><code>pip install opentelemetry-api opentelemetry-sdk \
+  opentelemetry-exporter-otlp-proto-grpc \
+  opentelemetry-instrumentation-langchain \
+  opentelemetry-instrumentation-openai</code></pre>
+
+                    <h3>Step 2: Initialize the OTel Provider</h3>
+<pre><code>from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+from opentelemetry.sdk.resources import Resource, SERVICE_NAME
+
+resource = Resource(attributes={SERVICE_NAME: "langgraph-agent"})
+provider = TracerProvider(resource=resource)
+provider.add_span_processor(BatchSpanProcessor(
+    OTLPSpanExporter(endpoint="http://tempo:4317", insecure=True)
+))
+trace.set_tracer_provider(provider)</code></pre>
+
+                    <h3>Step 3: Instrument LangGraph Nodes</h3>
+<pre><code>from opentelemetry import trace
+tracer = trace.get_tracer("langgraph-agent")
+
+def traced_node(node_fn, node_name: str):
+    def wrapper(state: dict):
+        with tracer.start_as_current_span(
+            f"node.{node_name}",
+            attributes={
+                "langgraph.node": node_name,
+                "langgraph.thread_id": state.get("thread_id", "unknown")
+            }
+        ) as span:
+            result = node_fn(state)
+            return result
+    return wrapper
+
+supervisor_node = traced_node(supervisor_logic, "supervisor")
+reasoning_node = traced_node(reasoning_logic, "reasoning")
+tool_execution_node = traced_node(tool_execution_logic, "tool_execution")</code></pre>
+
+                    <h3>Step 4: Handle Cycles with Span Links</h3>
+                    <p>LangGraph allows cycles. Use span links to connect back-edges without creating circular trace structures:</p>
+<pre><code>from opentelemetry.trace import Link
+
+def node_with_cycle_support(node_fn, node_name: str, previous_span_context=None):
+    kwargs = {"attributes": {"langgraph.node": node_name, "langgraph.cycle": True}}
+    if previous_span_context:
+        kwargs["links"] = [Link(previous_span_context)]
+    with tracer.start_as_current_span(f"node.{node_name}", **kwargs) as span:
+        return node_fn(span.context)</code></pre>
+
+                    <p>This approach gives full visibility into each reasoning step while maintaining correct trace tree semantics even when your agent loops.</p>
+                </section>
+
+                <section id="tempo-setup">
+                    <h2>Grafana Tempo Backend Setup</h2>
+                    <p>For most enterprise teams, the most cost-effective production stack for AI agent observability is Prometheus + Grafana Tempo + Grafana.</p>
+
+                    <h3>Kubernetes Deployment</h3>
+<pre><code># tempo-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tempo-config
+  namespace: observability
+data:
+  tempo.yaml: |
+    server:
+      http_listen_port: 3100
+    distributor:
+      receivers:
+        otlp:
+          protocols:
+            grpc:
+              endpoint: 0.0.0.0:4317
+            http:
+              endpoint: 0.0.0.0:4318
+    storage:
+      trace:
+        backend: s3
+        s3:
+          bucket: your-tempo-bucket
+          region: us-east-1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tempo
+  namespace: observability
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: tempo
+        image: grafana/tempo:2.4.1
+        args: ["-config.file=/etc/tempo.yaml"]
+        ports:
+        - containerPort: 3100
+        - containerPort: 4317
+        resources:
+          requests:
+            cpu: 500m
+            memory: 2Gi
+          limits:
+            cpu: 2000m
+            memory: 8Gi</code></pre>
+
+                    <h3>OTel Collector Configuration</h3>
+<pre><code>receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+    timeout: 1s
+    send_batch_size: 1024
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 512
+
+exporters:
+  otlp/tempo:
+    endpoint: tempo.observability.svc:4317
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [otlp/tempo]</code></pre>
+
+                    <p>This stack handles millions of spans per day at a fraction of the cost of commercial observability platforms. At JPMorgan, we processed 50M+ spans daily through a similar Tempo-based architecture.</p>
+                </section>
+
+                <section id="production-patterns">
+                    <h2>Production Patterns and Sampling</h2>
+                    <p>At scale, every trace is too much data. The key production decision is your sampling strategy:</p>
+
+                    <h3>Sampling Strategies</h3>
+                    <ul>
+                        <li><strong>Tail-based sampling:</strong> Collect 100% of traces that contain errors, then sample a percentage of successful traces. Most effective for debugging production issues.</li>
+                        <li><strong>Probabilistic sampling:</strong> Sample 10–50% of all traces uniformly. Simple but may miss rare error conditions.</li>
+                        <li><strong>Rule-based sampling:</strong> Sample 100% for high-value endpoints (payment processing, trade execution), lower for informational endpoints.</li>
                     </ul>
 
-                    <p>When all three signals are correlated through a shared <code>trace_id</code>, you get what the industry calls <strong>observability</strong>—the ability to ask arbitrary questions about your system's behaviour without deploying new code.</p>
-                </section>
+                    <h3>Critical Attributes for AI Agent Spans</h3>
+<pre><code># AI Agent span attributes
+span.set_attribute("ai.agent.session_id", session_id)
+span.set_attribute("ai.llm.model", model_name)
+span.set_attribute("ai.llm.prompt_tokens", prompt_tokens)
+span.set_attribute("ai.llm.completion_tokens", completion_tokens)
+span.set_attribute("ai.llm.latency_ms", llm_latency)
+span.set_attribute("ai.tool.calls", json.dumps(tool_calls))
+span.set_attribute("ai.retrieval.chunks_retrieved", len(context_chunks))</code></pre>
 
-                <!-- Section 2 -->
-                <section id="why-standard-apm-fails">
-                    <h2>Why Traditional APM Fails for Agentic AI</h2>
+                    <p>These attributes let you build dashboards for token cost tracking, response quality over time, tool call frequency, and retrieval effectiveness.</p>
 
-                    <p>I've spent 25+ years building production systems at JPMorgan, Deutsche Bank, and Morgan Stanley. When we first deployed LLM-powered agents at enterprise scale in 2024, the instinct from our DevOps teams was to reach for Datadog or New Relic—tools that had served us well for microservices. Within weeks, it was clear those tools were blind to everything that mattered in AI agent behaviour.</p>
-
-                    <p>Here's the fundamental problem: <strong>traditional APM is designed for deterministic systems</strong>. If a database query takes 200ms instead of 10ms, the APM alert fires and you know exactly which query to optimise. But an AI agent's "latency" is a function of prompt complexity, model load, the number of reasoning iterations, tool call latency, and whether the model decided to use its full context window. APM sees one opaque HTTP POST to <code>api.openai.com</code>—OTel sees all of that.</p>
-
-                    <table style="width:100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem;">
-                        <thead>
-                            <tr style="background: #1E3A5F; color: white;">
-                                <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Capability</th>
-                                <th style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">Traditional APM</th>
-                                <th style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">OTel for AI Agents</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background: #f9fafb;">
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">LLM model name & version per call</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">❌</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ <code>gen_ai.request.model</code></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Token count (input/output/total)</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">❌</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ <code>gen_ai.usage.*_tokens</code></td>
-                            </tr>
-                            <tr style="background: #f9fafb;">
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Tool call name & input/output</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">❌</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ <code>gen_ai.tool.name</code></td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Agent step / iteration tracking</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">❌</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ Custom span attributes</td>
-                            </tr>
-                            <tr style="background: #f9fafb;">
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Cross-agent distributed trace</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">⚠️ HTTP only</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ W3C TraceContext anywhere</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Prompt/response logging (redacted)</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">❌</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ OTel Log events</td>
-                            </tr>
-                            <tr style="background: #f9fafb;">
-                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Vendor-neutral (no lock-in)</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">❌ Vendor-specific agents</td>
-                                <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">✅ OTLP to any backend</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <p>The business cost of this observability gap is real. According to the 2025 DORA State of DevOps Report (AI Supplement), enterprises without dedicated LLM observability pipelines experience <strong>4.2× longer mean time to resolution (MTTR)</strong> for AI agent production incidents compared to teams with full OTel instrumentation. At $50,000+ per hour of SLA breach for Tier-1 financial services applications, that's not an academic concern.</p>
-                </section>
-
-                <!-- Section 3 -->
-                <section id="setup-guide">
-                    <h2>Step-by-Step Production Setup Guide</h2>
-
-                    <p>The following guide covers Python-based agents (the dominant enterprise choice in 2026) using LangChain, LangGraph, or CrewAI. Node.js equivalents are noted where they differ.</p>
-
-                    <h3>Step 1: Install OpenLLMetry (Auto-Instrumentation)</h3>
-
-                    <p>OpenLLMetry by Traceloop is the de facto standard for Python agent instrumentation. It wraps the OpenAI SDK, Anthropic SDK, LangChain, LangGraph, CrewAI, and Llama Index and emits OTel-compliant spans automatically.</p>
-
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># Core OTel packages
-pip install opentelemetry-api \
-            opentelemetry-sdk \
-            opentelemetry-exporter-otlp-proto-grpc
-
-# OpenLLMetry auto-instrumentation
-pip install traceloop-sdk \
-            opentelemetry-instrumentation-openai \
-            opentelemetry-instrumentation-langchain \
-            opentelemetry-instrumentation-anthropic \
-            opentelemetry-instrumentation-crewai</code></pre>
-
-                    <h3>Step 2: Initialise in Your Agent Entry Point</h3>
-
-                    <p>Add three lines to your agent application's startup code—before any LLM calls are made:</p>
-
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from traceloop.sdk import Traceloop
-
-Traceloop.init(
-    app_name="finance-research-agent",
-    api_endpoint="http://otel-collector.monitoring.svc.cluster.local:4317",
-    # Disable prompt logging in prod for compliance; enable in staging
-    disable_batch=False,
-    # Mask sensitive data in prompt/response logs
-    tracing_enabled=True,
-)
-
-# That's it. All LangChain/OpenAI/Anthropic calls are now traced.
-from langchain_openai import ChatOpenAI
-from langgraph.graph import StateGraph
-# ... your agent code unchanged</code></pre>
-
-                    <h3>Step 3: Add Custom Spans for Business Logic</h3>
-
-                    <p>Auto-instrumentation covers LLM calls, but you also want spans for your agent's orchestration logic—task routing decisions, memory retrieval, human-in-the-loop checkpoints:</p>
-
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from opentelemetry import trace
-from traceloop.sdk.decorators import task, workflow, agent
-
-tracer = trace.get_tracer("finance-agent")
-
-# Decorator-based spans (Traceloop DSL)
-@workflow(name="research_workflow")
-def run_research_workflow(query: str, user_id: str):
-    with tracer.start_as_current_span("task_routing") as span:
-        span.set_attribute("agent.user_id", user_id)
-        span.set_attribute("agent.query_length", len(query))
-        routed_agent = route_to_specialist(query)
-        span.set_attribute("agent.routed_to", routed_agent)
-    return execute_agent(routed_agent, query)
-
-@task(name="memory_retrieval")
-def retrieve_context(query: str) -> list:
-    # Vector DB call automatically timed and traced
-    results = vector_db.similarity_search(query, k=5)
-    span = trace.get_current_span()
-    span.set_attribute("memory.results_count", len(results))
-    return results</code></pre>
-
-                    <h3>Step 4: Configure W3C Context Propagation for Multi-Agent Systems</h3>
-
-                    <p>When Agent A calls Agent B over HTTP (a common pattern in <a href="/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html">LangGraph multi-agent architectures</a>), you must propagate trace context so both agents appear in the same distributed trace:</p>
-
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>from opentelemetry.propagate import inject, extract
-from opentelemetry import context
-import httpx
-
-# Agent A — inject context into outgoing request
-def call_sub_agent(payload: dict) -> dict:
-    headers = {}
-    inject(headers)  # Adds 'traceparent' header automatically
-    response = httpx.post(
-        "http://sub-agent-svc.agents.svc.cluster.local/run",
-        json=payload,
-        headers=headers,
-    )
-    return response.json()
-
-# Agent B (FastAPI) — extract context from incoming request
-from fastapi import FastAPI, Request
-from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
-
-app = FastAPI()
-FastAPIInstrumentor.instrument_app(app)  # Auto-extracts W3C headers
-
-@app.post("/run")
-async def run_agent(request: Request, payload: dict):
-    # Trace context already restored by FastAPIInstrumentor
-    # This span is automatically a child of Agent A's span
-    ...</code></pre>
-                </section>
-
-                <!-- Section 4 -->
-                <section id="kubernetes-deployment">
-                    <h2>Deploying the OTel Collector on Kubernetes</h2>
-
-                    <p>The OTel Collector is the central hub that receives telemetry from your agents, processes it (batching, filtering, enrichment), and exports it to your backends. Deploy it as a DaemonSet (one per node) for low-latency local collection, plus a Deployment-based Gateway Collector for aggregation and fan-out to multiple backends.</p>
-
-                    <h3>Helm Deployment</h3>
-
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code># Add the OTel Helm chart repo
-helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
-helm repo update
-
-# Deploy DaemonSet collector
-helm install otel-collector open-telemetry/opentelemetry-collector \
-  --namespace monitoring \
-  --create-namespace \
-  --set mode=daemonset \
-  --values otel-collector-values.yaml</code></pre>
-
-                    <p>Your <code>otel-collector-values.yaml</code> for an AI agent fleet:</p>
-
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1.5rem; border-radius: 8px; overflow-x: auto; font-size: 0.88rem; line-height: 1.6;"><code>config:
-  receivers:
-    otlp:
-      protocols:
-        grpc:
-          endpoint: 0.0.0.0:4317
-        http:
-          endpoint: 0.0.0.0:4318
-
-  processors:
-    batch:
-      send_batch_size: 1024
-      timeout: 5s
-    memory_limiter:
-      limit_mib: 512
-      spike_limit_mib: 128
-    # Tag all spans with Kubernetes metadata
-    k8sattributes:
-      auth_type: serviceAccount
-      passthrough: false
-      extract:
-        metadata: [k8s.pod.name, k8s.namespace.name, k8s.deployment.name]
-    # Filter out health-check noise
-    filter/drop_health:
-      spans:
-        exclude:
-          match_type: strict
-          span_names: ["health_check", "/healthz"]
-    # Tail-based sampling: keep all errors + 10% of successes
-    tail_sampling:
-      decision_wait: 10s
-      num_traces: 100000
-      policies:
-        - name: errors-policy
-          type: status_code
-          status_code: {status_codes: [ERROR]}
-        - name: slow-spans
-          type: latency
-          latency: {threshold_ms: 5000}
-        - name: sample-10-percent
-          type: probabilistic
-          probabilistic: {sampling_percentage: 10}
-
-  exporters:
-    # Traces → Grafana Tempo
-    otlp/tempo:
-      endpoint: tempo.monitoring.svc.cluster.local:4317
-      tls:
-        insecure: true
-    # Metrics → Prometheus
-    prometheus:
-      endpoint: 0.0.0.0:8889
-    # Logs → Loki
-    loki:
-      endpoint: http://loki.monitoring.svc.cluster.local:3100/loki/api/v1/push
-
-  service:
-    pipelines:
-      traces:
-        receivers: [otlp]
-        processors: [memory_limiter, k8sattributes, filter/drop_health, tail_sampling, batch]
-        exporters: [otlp/tempo]
-      metrics:
-        receivers: [otlp]
-        processors: [memory_limiter, batch]
-        exporters: [prometheus]
-      logs:
-        receivers: [otlp]
-        processors: [memory_limiter, batch]
-        exporters: [loki]</code></pre>
-
-                    <h3>Grafana Stack Integration</h3>
-
-                    <p>With the above config, deploy the Grafana LGTM stack (Loki + Grafana + Tempo + Mimir/Prometheus) using the community Helm umbrella chart. Import the <a href="/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html">AI agent observability dashboard</a> from Grafana Labs (ID: 19268) to get pre-built panels for LLM latency, token spend, and error rates out of the box.</p>
-                </section>
-
-                <!-- Section 5 -->
-                <section id="metrics-and-alerts">
-                    <h2>Essential Metrics, Dashboards & Alerts</h2>
-
-                    <p>Observability is only valuable if it drives action. Here are the five metrics your SRE team must alert on—and the PromQL queries to back them up.</p>
-
-                    <h3>1. Token Throughput & Cost Rate</h3>
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;"><code># Total tokens per minute by model
-rate(gen_ai_usage_total_tokens_total[1m]) by (gen_ai_request_model)
-
-# Alert: Cost spike > 200% of 1-hour average
-alert: LLMTokenCostSpike
-expr: rate(gen_ai_usage_total_tokens_total[5m]) > 2 * avg_over_time(rate(gen_ai_usage_total_tokens_total[5m])[1h:5m])</code></pre>
-
-                    <h3>2. Agent Step Latency P95</h3>
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;"><code># P95 latency of all LLM calls
-histogram_quantile(0.95, rate(gen_ai_client_operation_duration_seconds_bucket[5m]))
-
-# Alert: P95 > 10 seconds for 3 consecutive minutes
-alert: LLMHighLatency
-expr: histogram_quantile(0.95, rate(gen_ai_client_operation_duration_seconds_bucket[5m])) > 10
-for: 3m</code></pre>
-
-                    <h3>3. Tool Call Success Rate</h3>
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;"><code># Tool call error rate
-rate(gen_ai_tool_calls_total{status="error"}[5m]) /
-rate(gen_ai_tool_calls_total[5m])
-
-# Alert: Tool error rate > 5%
-alert: ToolCallFailureHigh
-expr: (rate(gen_ai_tool_calls_total{status="error"}[5m]) / rate(gen_ai_tool_calls_total[5m])) > 0.05</code></pre>
-
-                    <h3>4. Agent Goal Completion Rate</h3>
-                    <p>This requires a custom metric emitted at the end of your agent workflow:</p>
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;"><code>from opentelemetry import metrics
-
-meter = metrics.get_meter("finance-agent")
-task_counter = meter.create_counter(
-    "agent.task.completions",
-    description="Agent task completion count by outcome",
-    unit="1",
-)
-
-# At end of task execution:
-task_counter.add(1, {"outcome": "success", "agent_type": "research"})
-# or
-task_counter.add(1, {"outcome": "failure", "failure_reason": "tool_timeout", "agent_type": "research"})</code></pre>
-
-                    <h3>5. LLM Provider Error Rate (429s, 500s, Timeouts)</h3>
-                    <pre style="background: #1a1a2e; color: #e0e0e0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem;"><code># Rate of LLM API errors by error type
-rate(gen_ai_client_operation_duration_seconds_count{error_type!=""}[5m])
-
-# Alert: Any rate limit errors in production
-alert: LLMRateLimitErrors
-expr: increase(gen_ai_client_operation_duration_seconds_count{error_type="rate_limit_exceeded"}[5m]) > 0</code></pre>
-                </section>
-
-                <!-- Section 6 -->
-                <section id="common-mistakes">
-                    <h2>7 Common OTel Mistakes in AI Agent Projects</h2>
-
-                    <p>Having reviewed dozens of enterprise AI observability implementations, these are the mistakes I see most often:</p>
-
-                    <ol>
-                        <li>
-                            <strong>100% head-based sampling in production.</strong> Capturing every trace of a high-volume agent fleet will overwhelm your Tempo/Jaeger storage within days. Use tail-based sampling with an error-keep policy from day one.
-                        </li>
-                        <li>
-                            <strong>Logging raw prompts in production.</strong> Prompts often contain PII, financial data, or health information. Use OTel's <code>SpanProcessor</code> to redact sensitive patterns before export—or disable prompt logging entirely in prod and enable it only in staging environments.
-                        </li>
-                        <li>
-                            <strong>Not propagating context across async task queues.</strong> If your agent dispatches work via Celery, Kafka, or AWS SQS, you must serialise the OTel context into the message headers and extract it in the consumer. Many teams miss this, creating broken traces that stop at the queue boundary.
-                        </li>
-                        <li>
-                            <strong>Treating token count as a vanity metric.</strong> Token counts are your cost ledger. Attribute them to business units (via span attributes like <code>business.team</code> and <code>business.use_case</code>) so finance can see which AI application is responsible for which spend.
-                        </li>
-                        <li>
-                            <strong>Skipping the OTel Collector and exporting directly to backends.</strong> Direct export couples your agent code to specific backends and makes it impossible to fan out to multiple destinations (e.g., Tempo for traces AND Langfuse for LLM-specific analytics). Always use the Collector as an intermediary.
-                        </li>
-                        <li>
-                            <strong>Not instrumenting retrieval steps in RAG pipelines.</strong> Vector DB queries (Pinecone, Weaviate, pgvector) are often the hidden latency culprit in <a href="/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html">RAG pipelines</a>. Use <code>opentelemetry-instrumentation-weaviate</code> or manual spans to capture retrieval latency and result counts.
-                        </li>
-                        <li>
-                            <strong>Ignoring the OTel Collector's resource limits.</strong> The Collector runs on the same nodes as your agents. Without <code>memory_limiter</code> processor configured, a telemetry spike can OOM the Collector pod and silently drop all telemetry. Always configure <code>memory_limiter</code> and set Kubernetes resource requests/limits.
-                        </li>
-                    </ol>
-                </section>
-
-                <!-- Section 7 -->
-                <section id="real-example">
-                    <h2>Real Enterprise Example: Financial Services Agent Fleet</h2>
-
-                    <p>One of our <a href="/training/">enterprise training clients</a>—a tier-1 asset management firm—deployed a fleet of 12 specialised AI agents (market research, portfolio rebalancing, compliance checking, client reporting) on Kubernetes. Here's how their OTel implementation unfolded and what the numbers looked like 90 days post-deployment.</p>
-
-                    <h3>The Challenge</h3>
-                    <p>Before OTel, the team was flying blind. The compliance-checking agent was mysteriously failing on ~3% of requests, but because the failures happened inside the agent's reasoning loop (not at the API layer), their existing Datadog setup showed no errors. Users were seeing "analysis unavailable" messages with no explanation. MTTR was running at 4+ hours because engineers had to manually add print statements and redeploy to debug.</p>
-
-                    <h3>The Implementation (2-Week Sprint)</h3>
+                    <h3>Alerting on Anomaly Traces</h3>
                     <ul>
-                        <li><strong>Week 1:</strong> Deployed OTel Collector DaemonSet + Grafana LGTM stack on the existing Kubernetes cluster. Instrumented all 12 agents with OpenLLMetry (<code>Traceloop.init()</code>). Total code change across all agents: ~15 lines each.</li>
-                        <li><strong>Week 2:</strong> Added custom spans for business logic (task routing, compliance rule lookups, report generation). Built 5 Grafana dashboards. Configured 8 PagerDuty alerts (token cost, latency, error rates).</li>
+                        <li>LLM latency > 30 seconds (model provider degradation)</li>
+                        <li>Error rate > 5% on agent spans within a 5-minute window</li>
+                        <li>Token usage spike > 50% above baseline (prompt injection or loop)</li>
+                        <li>Agent reaches > 20 reasoning steps (potential loop condition)</li>
                     </ul>
-
-                    <h3>What They Found</h3>
-                    <p>Within 48 hours of enabling traces, the team identified the compliance-checking agent failure: a specific tool call to their internal regulatory database was timing out after exactly 30 seconds when querying historical data older than 5 years. The agent was silently swallowing the timeout and returning an empty compliance check (marked as "passed"). OTel surfaced this via a P99 latency spike on the <code>compliance_db_lookup</code> span correlated with the <code>agent.task.completions{outcome="failure"}</code> counter.</p>
-
-                    <h3>90-Day Results</h3>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0;">
-                        <div style="background: linear-gradient(135deg, #1E3A5F, #0f766e); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800;">87%</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Reduction in MTTR<br>(4 hrs → 31 min)</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #7c3aed, #1E3A5F); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800;">$41K</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Monthly LLM cost saved<br>via token optimisation</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #0f766e, #22C55E); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800;">99.4%</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Agent goal completion rate<br>(from 97.1%)</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #1E3A5F, #7c3aed); color: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
-                            <div style="font-size: 2.5rem; font-weight: 800;">2 wks</div>
-                            <div style="font-size: 0.9rem; opacity: 0.9;">Implementation time<br>for full OTel coverage</div>
-                        </div>
-                    </div>
-
-                    <p>The token optimisation savings ($41K/month) came directly from the OTel metrics dashboard revealing that the market research agent was sending the full document corpus in every prompt—a prompt engineering issue that was invisible without per-call token count telemetry. With the data in hand, the team refactored to selective context injection in one sprint.</p>
-
-                    <p>This is the kind of data-driven AI operations capability we teach in our <a href="/training/">Agentic AI for Enterprise workshop</a>—where participants build fully instrumented multi-agent systems with OTel, Grafana, and LangGraph in a 5-day hands-on lab environment. Our training earns an Oracle-verified 4.91/5.0 rating because every module is grounded in real production patterns like this one.</p>
                 </section>
 
-                <!-- FAQ Section -->
                 <section id="faq" class="faq-section">
                     <h2>Frequently Asked Questions</h2>
 
-                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 itemprop="name">What is OpenTelemetry for AI agents?</h3>
-                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p itemprop="text">OpenTelemetry (OTel) for AI agents is the application of the CNCF open-source observability framework to instrument LLM calls, tool invocations, memory reads, and agent decision loops. It produces vendor-neutral traces, metrics, and logs that reveal exactly what your AI agent did, how long each step took, how many tokens were consumed, and where failures occurred. The OpenLLMetry SDK and the OTel GenAI semantic conventions (introduced in 2024) standardise the span attributes—such as <code>gen_ai.system</code>, <code>gen_ai.request.model</code>, and <code>gen_ai.usage.input_tokens</code>—so data flows into any backend including Grafana, Jaeger, Langfuse, or Arize.</p>
-                        </div>
+                    <div class="faq-item">
+                        <h3>How do I instrument an LLM call with OpenTelemetry?</h3>
+                        <p>Create a span around your LLM call using the OpenTelemetry SDK. Set span kind to CLIENT and add attributes for model name, token counts, and prompt hashes. Wrap the API call and record latency, token usage, and errors.</p>
                     </div>
 
-                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 itemprop="name">How is OTel different from traditional APM for AI agents?</h3>
-                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p itemprop="text">Traditional APM tools track HTTP latency, database queries, and CPU—none of which capture the semantics of LLM behaviour. OpenTelemetry for AI agents adds LLM-specific spans (prompt tokens, completion tokens, model name, temperature, tool call names, agent step IDs) and propagates trace context across multi-agent hops. Where APM sees a single 2-second HTTP POST, OTel reveals it was an agent calling GPT-4o with a 1,200-token prompt, then invoking a search tool, and finally writing to a vector database—each with its own latency and cost attribution.</p>
-                        </div>
+                    <div class="faq-item">
+                        <h3>What backend should I use for AI agent tracing?</h3>
+                        <p>Grafana Tempo, Jaeger, Honeycomb, or Datadog all support OpenTelemetry. For enterprise teams already using Prometheus/Grafana, Tempo provides the best integration with the lowest operational overhead.</p>
                     </div>
 
-                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 itemprop="name">Which OpenTelemetry SDK should I use for LLM and agent instrumentation?</h3>
-                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p itemprop="text">For Python-based agents (LangChain, LangGraph, CrewAI, AutoGen), use OpenLLMetry by Traceloop, which provides auto-instrumentation packages such as <code>opentelemetry-instrumentation-langchain</code> and <code>opentelemetry-instrumentation-openai</code>. For TypeScript/Node.js agents, use the <code>@traceloop/node-server-sdk</code>. Both emit spans conforming to the OTel GenAI semantic conventions, ensuring your data is portable across backends. If you build custom agents, manually create spans with the <code>opentelemetry-api</code> package and set <code>gen_ai.*</code> attributes on each LLM call.</p>
-                        </div>
+                    <div class="faq-item">
+                        <h3>How do I trace multi-agent workflows in LangGraph?</h3>
+                        <p>Use OpenTelemetry context propagation across LangGraph nodes. Each node becomes a child span. Inject trace context into graph state and carry it through transitions for full conversation visibility.</p>
                     </div>
 
-                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 itemprop="name">How do I propagate trace context across multiple AI agents?</h3>
-                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p itemprop="text">Use W3C TraceContext propagation headers (<code>traceparent</code>, <code>tracestate</code>) when one agent calls another over HTTP or a message queue. For in-process orchestrators like LangGraph, the OTel context is propagated automatically via Python's <code>contextvars</code>. For cross-service hops (e.g., an orchestrator agent calling a sub-agent microservice on Kubernetes), inject the W3C headers into your HTTP client and extract them in the receiving service—this creates a single distributed trace spanning all agents, enabling root cause analysis across the full execution chain.</p>
-                        </div>
+                    <div class="faq-item">
+                        <h3>What attributes should I capture for AI agent spans?</h3>
+                        <p>Capture: model name, prompt and completion tokens, latency, temperature, tool calls made, retrieved context chunks, agent reasoning steps, and session ID.</p>
                     </div>
 
-                    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <h3 itemprop="name">What metrics should I collect for AI agents in production?</h3>
-                        <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                            <p itemprop="text">The five most critical AI agent production metrics are: (1) Token throughput—input and output tokens per second per model to track cost and capacity; (2) Agent step latency P50/P95/P99—to detect slow tool calls or LLM degradation; (3) Tool call success rate—percentage of tool invocations that succeed without retry; (4) Agent goal completion rate—percentage of tasks completed successfully end-to-end; and (5) LLM error rate—rate of 429 (rate limit), 500, and timeout errors from the model provider. All five can be emitted as OTel metrics using the <code>gen_ai.*</code> namespace and visualised in Grafana with Prometheus as the backend.</p>
-                        </div>
+                    <div class="faq-item">
+                        <h3>How does OTel compare to LangSmith or Langfuse?</h3>
+                        <p>OpenTelemetry is vendor-neutral and portable. LangSmith and Langfuse are managed LLM-specific services. Use OTel for cross-stack correlation and vendor flexibility; use LangSmith/Langfuse for faster setup on pure LLM observability.</p>
                     </div>
                 </section>
 
-                <!-- Conclusion -->
                 <section id="conclusion">
-                    <h2>Conclusion: OTel Is the Production Readiness Gate for AI Agents</h2>
-
-                    <p>In 2026, deploying AI agents without OpenTelemetry instrumentation is the equivalent of running a Kubernetes cluster without Prometheus—technically possible, practically reckless. The non-deterministic, multi-step nature of agentic AI systems creates failure modes that are invisible to traditional APM: silent hallucinations, compounding tool failures, runaway token costs, and cross-agent trace gaps that make debugging a guesswork exercise.</p>
-
-                    <p>The good news: the tooling has matured enormously. OpenLLMetry's auto-instrumentation means most teams go from zero to full LLM tracing in a single afternoon. The OTel GenAI semantic conventions give you a standardised vocabulary that works with any backend. And the 5 production metrics covered in this guide give your SRE and finance teams the data they need to operate and optimise AI agent fleets at enterprise scale.</p>
-
-                    <p>The firms that will win the AI productivity race in 2026 aren't necessarily those with the best models—they're the ones who can <em>operate</em> AI reliably: ship fast, catch failures early, and optimise cost continuously. That operational discipline starts with instrumentation, and instrumentation starts with OpenTelemetry.</p>
-
-                    <div style="background: linear-gradient(135deg, #1E3A5F 0%, #0f766e 100%); color: white; padding: 2rem; border-radius: 16px; margin: 2.5rem 0; text-align: center;">
-                        <h3 style="color: white; margin-top: 0; font-size: 1.4rem;">Build Production-Ready AI Agents — With Full Observability Included</h3>
-                        <p style="opacity: 0.9; margin-bottom: 1.5rem;">Our 5-day <strong>Agentic AI for Enterprise</strong> workshop covers OpenTelemetry instrumentation, LangGraph multi-agent systems, Kubernetes deployment, and production operations—hands-on, from day one. Oracle-verified <strong>4.91/5.0 rating</strong> across 200+ enterprise participants.</p>
-                        <a href="/training/" style="display: inline-block; background: #22C55E; color: #1E3A5F; font-weight: 700; padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem;">Explore Enterprise Training →</a>
-                    </div>
+                    <h2>Conclusion</h2>
+                    <p>OpenTelemetry is the observability backbone that production AI agent systems need. It is vendor-neutral, scales to millions of spans per day, and integrates with the Grafana stack your SRE team already knows.</p>
+                    <p>In my 25 years building enterprise systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley, I have never seen a production system that could not benefit from better observability. AI agents need it more — given the non-deterministic nature of LLM reasoning.</p>
+                    <p>If your team is building production AI agents and wants hands-on practice with LangGraph, OpenTelemetry, and enterprise observability patterns, our <a href="/training/cloud-labs.html">Agentic AI Workshop</a> covers this end-to-end with 119 hands-on labs. We guarantee 40% faster agent development cycles within 90 days — or your money back plus $1,000.</p>
+                    <p>Start with one span. Instrument your first LLM call. Ship it to Tempo. Once you see that trace, you will understand why observability is not optional for AI agents in production.</p>
                 </section>
 
             </div>
 
-            <!-- Author Bio Placeholder -->
-            
-<!-- Lead Magnet CTA -->
-<div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-obs">
-  <h3 style="margin:0 0 8px">Free Download: Observability Stack Guide</h3>
-  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">Prometheus, Grafana &amp; OpenTelemetry setup guide for enterprise Kubernetes environments.</p>
-  <form onsubmit="submitLeadMagnet(event,'dev-lead-observability','lead-cta-obs')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-    <input type="hidden" name="website" value="">
-    <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
-    <input name="email" type="email" required placeholder="Work email" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:200px">
-    <input name="company" placeholder="Company" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
-    <button type="submit" style="background:#f59e0b;color:#1e3a5f;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer">Get Free Guide</button>
-  </form>
-  <p class="lead-msg" style="margin:8px 0 0;font-size:13px;display:none"></p>
-</div>
-
-
-<!-- Newsletter Signup -->
+            <!-- Newsletter Signup -->
 <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
   <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
   <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
@@ -814,60 +642,39 @@ async function submitNewsletter(e) {
 
 <div id="author-bio-placeholder"></div>
 
-            <!-- Related Articles -->
             <section class="related-articles">
                 <h2>Related Articles</h2>
                 <div class="related-grid">
-                    <article class="related-card">
-                        <h3><a href="/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html">Langfuse vs LangSmith vs Arize: Which LLM Observability Tool for Enterprise?</a></h3>
-                        <p>Compare the top LLM observability platforms for enterprise teams and find the right backend for your OTel traces.</p>
-                    </article>
-                    <article class="related-card">
-                        <h3><a href="/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html">How to Build a Production RAG Pipeline on Kubernetes</a></h3>
-                        <p>Step-by-step guide to deploying retrieval-augmented generation at scale, with observability hooks included.</p>
-                    </article>
-                    <article class="related-card">
-                        <h3><a href="/blog/posts/mlops-cicd-pipeline-best-practices-2026.html">MLOps CI/CD for AI Models: DevOps Best Practices That Scale in 2026</a></h3>
-                        <p>How to integrate AI model deployment into your existing CI/CD pipeline with automated quality gates.</p>
-                    </article>
+                    <a href="/blog/posts/langgraph-vs-autogen-vs-crewai-comparison-2026.html" class="related-card">
+                        <span class="related-category">Multi-Agent Frameworks</span>
+                        <h3>LangGraph vs AutoGen vs CrewAI: Which Multi-Agent Framework Wins for Enterprise?</h3>
+                        <p>Compare the three leading multi-agent orchestration frameworks across enterprise requirements, production readiness, and observability.</p>
+                    </a>
+                    <a href="/blog/posts/production-ready-mcp-langgraph-enterprise-2026.html" class="related-card">
+                        <span class="related-category">AI Infrastructure</span>
+                        <h3>Production-Ready MCP with LangGraph: Enterprise Guide</h3>
+                        <p>Build Model Context Protocol servers with LangGraph for enterprise AI agent tool use. Includes Kubernetes deployment patterns.</p>
+                    </a>
+                    <a href="/blog/posts/self-healing-devops-aiops-2026.html" class="related-card">
+                        <span class="related-category">AIOps</span>
+                        <h3>Self-Healing DevOps Pipelines: How AI Agents Replace On-Call Engineers</h3>
+                        <p>AI-powered autonomous incident response using OpenTelemetry and LangGraph for self-healing pipeline infrastructure.</p>
+                    </a>
                 </div>
             </section>
 
-            <!-- CTA Section -->
             <section class="post-cta">
-                <h2>Ready to Instrument Your AI Agents for Production?</h2>
-                <p>Our enterprise training cohorts cover OpenTelemetry, LangGraph, and Kubernetes-native AI operations with 60–70% hands-on lab time. Rated 4.91/5.0 by enterprise engineering teams.</p>
-                <a href="/training/" class="btn-cta-primary">
-                    <span>View Enterprise Training</span>
+                <h2>Ready to Build Production-Ready AI Agents?</h2>
+                <p>Join our 5-day Agentic AI Workshop — rated 4.91/5.0 by Oracle engineers. 119 hands-on labs covering LangGraph, MCP servers, RAG pipelines, and production observability.</p>
+                <a href="/training/cloud-labs.html" class="btn-cta-primary">
+                    <span>View Training Programs</span>
                     <span class="btn-arrow">→</span>
                 </a>
             </section>
         </div>
     </article>
 
-    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
-
-
-<script>
-async function submitLeadMagnet(e, leadId, ctaId) {
-  e.preventDefault();
-  const form = e.target;
-  const data = Object.fromEntries(new FormData(form));
-  const cta = document.getElementById(ctaId);
-  const msg = cta ? cta.querySelector('.lead-msg') : null;
-  try {
-    const r = await fetch('https://dev-leads.gheware-ai.com/' + leadId, {
-      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
-    });
-    const j = await r.json();
-    if (msg) { msg.textContent = j.message || 'Check your inbox!'; msg.style.display = 'block'; }
-    form.reset();
-  } catch(err) {
-    if (msg) { msg.textContent = 'Something went wrong. Try again.'; msg.style.display = 'block'; }
-  }
-}
-</script>
 
 </body>
 </html>

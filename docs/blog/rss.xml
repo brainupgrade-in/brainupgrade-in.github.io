@@ -5,13 +5,40 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Build Your Enterprise AI Control Plane</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html</guid>
+            <description>Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>[POST_TITLE]</title>
+            <link>https://devops.gheware.com/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html</guid>
+            <description>[POST_DESCRIPTION - 150-160 chars for optimal display]</description>
+            <category>[CATEGORY]</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>OpenTelemetry for AI Agents: Production Observability Guide 2026</title>
+            <link>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</link>
+            <guid>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</guid>
+            <description>Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Enterprise Agentic AI Playbook 2026</title>
             <link>https://devops.gheware.com/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html</link>
@@ -391,15 +418,6 @@
             <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>OpenTelemetry for AI Agents: Production Observability Setup Guide</title>
-            <link>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</link>
-            <guid>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</guid>
-            <description>AI agents fail silently—73% of production incidents go undetected without OTel. This step-by-step guide shows enterprise teams how to instrument AI agents with OpenTelemetry in 2026.</description>
-            <category>AI Observability</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
             <title>The GenAI Red Team Revolution: How AI Agents Are Replacing Human Security Researchers in 2026</title>
             <link>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</guid>
@@ -443,24 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>How to Build a Production RAG Pipeline on Kubernetes: Enterprise Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html</guid>
-            <description>Step-by-step enterprise guide to building a production RAG pipeline on Kubernetes in 2026. Covers vector databases, LLM serving with KServe, KEDA autoscaling, observability, and security — by a 25-year JPMorgan/Deutsche Bank architect.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html</guid>
-            <description>Your Kubernetes cluster wasn't built for AI workloads. Learn the 5 critical upgrades—GPU scheduling, KServe, KEDA, node affinity, and multi-tenancy—to safely run LLM inference at enterprise scale in 2026.</description>
-            <category>Kubernetes</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

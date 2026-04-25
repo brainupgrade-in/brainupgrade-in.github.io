@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Build Your Enterprise AI Control Plane">
+    <meta name="description" content="Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.">
+    <meta name="keywords" content="agentic AI control plane, AI agent governance, multi-agent orchestration, enterprise AI deployment, AI agent security, Kubernetes AI">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html">
+    <meta property="og:title" content="Build Your Enterprise AI Control Plane">
+    <meta property="og:description" content="Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/agentic-ai-control-plane-enterprise-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-25T00:00:00Z">
+    <meta property="article:modified_time" content="2026-04-25T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Agentic AI">
+    <meta property="article:tag" content="Agentic AI">
+    <meta property="article:tag" content="AI Agent Governance">
+    <meta property="article:tag" content="Kubernetes">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Build Your Enterprise AI Control Plane">
+    <meta name="twitter:description" content="Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/agentic-ai-control-plane-enterprise-2026.jpg">
+
+    <title>Build Your Enterprise AI Control Plane | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html"
+        },
+        "headline": "Build Your Enterprise AI Control Plane",
+        "description": "Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/agentic-ai-control-plane-enterprise-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-04-25T00:00:00Z",
+        "dateModified": "2026-04-25T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "agentic AI control plane, AI agent governance, multi-agent orchestration, enterprise AI deployment",
+        "articleSection": "Agentic AI",
+        "wordCount": "2180",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Enterprise AI Control Plane",
+                "item": "https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Enterprise AI Control Plane</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Agentic AI</span>
+                    <span class="reading-time">12 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Build Your Enterprise AI Control Plane</h1>
+                <p class="post-subtitle" itemprop="description">Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Here is the production-grade architecture Fortune 500 firms use to govern AI agents at scale.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-25T00:00:00Z">April 25, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html&text=Build+Your+Enterprise+AI+Control+Plane" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/agentic-ai-control-plane-enterprise-2026.jpg"
+                     alt="Agentic AI Control Plane architecture showing multi-agent orchestration on Kubernetes with observability and governance layers"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>Multi-agent orchestration governed by a centralized control plane on Kubernetes — the production standard for enterprise AI agent deployments</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>Without an agentic control plane, every AI agent you deploy is a potential attack surface, compliance liability, and cost runaway waiting to happen</li>
+                    <li>A control plane provides five critical capabilities: orchestration, guardrails, observability, cost governance, and audit — all required before production deployment</li>
+                    <li>Kubernetes-native control plane patterns (Operator pattern, admission webhooks, network policies) integrate cleanly with existing enterprise infrastructure</li>
+                    <li>OpenTelemetry + Langfuse gives you the observability layer that answers the question every CFO will ask: "What did our agents actually do last month?"</li>
+                    <li>Our <a href="/blog/posts/ai-agent-governance-enterprise-compliance-2026.html">AI Agent Governance guide covers EU AI Act and NIST AI RMF</a> compliance angles that make the business case for a control plane</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#the-cost-of-no-control-plane">The Cost of No Control Plane</a></li>
+                    <li><a href="#what-is-agentic-control-plane">What Is an Agentic Control Plane?</a></li>
+                    <li><a href="#five-pillars">The Five Pillars</a></li>
+                    <li><a href="#kubernetes-architecture">Kubernetes-Native Architecture</a></li>
+                    <li><a href="#implementation">Implementation Guide</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">An agentic control plane is the Kubernetes-style management layer for AI agents. It orchestrates agent lifecycles, enforces guardrails, meters costs, observes behavior with OpenTelemetry, and produces audit trails your compliance team demands. Deploy agents without it and you fly blind with full regulatory liability. The architecture is proven, open-source, and implementable in under two weeks.</p>
+                </aside>
+
+                <!-- Section 1 -->
+                <section id="the-cost-of-no-control-plane">
+                    <h2>The Cost of No Control Plane</h2>
+                    <p>In my 25 years building systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley, I have seen the same pattern repeat across every new technology wave: teams rush to production without governance, then spend 18 months retrofitting what they should have built first.</p>
+                    <p>AI agents are no different — except the blast radius is larger. When a payment gateway microservice misbehaves, it affects one transaction. When an AI agent in your OTC derivatives workflow makes unauthorized decisions, you have a regulatory incident on your hands.</p>
+                    <p>Consider what "no control plane" actually means in practice:</p>
+                    <ul>
+                        <li><strong>Runaway costs:</strong> Agents that loop or re-call LLM APIs can generate $50,000+ in API charges in a single weekend. I have seen this at a major bank where a code-review agent got into a recursive self-correction loop calling GPT-4 Turbo 800 times per PR.</li>
+                        <li><strong>Compliance violations:</strong> EU AI Act Article 14 requires that AI systems be accurate, robust, and compliant. Without audit trails generated at the control plane layer, you cannot prove compliance.</li>
+                        <li><strong>Security breaches:</strong> Agents with tool access to internal APIs, databases, or file systems are prime targets for prompt injection. An ungoverned agent is an attacker who has already compromised your infrastructure from the inside.</li>
+                        <li><strong>Agent chaos:</strong> At Snowflake, as reported in early 2026, teams discovered that eight different AI agents were duplicating each other's work — creating conflicting data transformations because no orchestration layer existed.</li>
+                    </ul>
+                    <p>The fix is not a policy document. It is an <strong>agentic AI control plane</strong> — a production-grade management layer that treats AI agents the way Kubernetes treats containers: with orchestration, resource limits, networking rules, and observability baked in from day one.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="what-is-agentic-control-plane">
+                    <h2>What Is an Agentic Control Plane?</h2>
+                    <p>Think of an agentic control plane as three things your platform team already knows how to build, combined into one system:</p>
+                    <ol>
+                        <li>A <strong>Kubernetes Operator</strong> that manages the lifecycle of AI agents — create, update, scale, terminate — with custom resource definitions (CRDs) for agent configurations</li>
+                        <li>An <strong>admission webhook layer</strong> that validates agent requests before they are dispatched — checking prompts for PII, tool requests against scope, cost budgets against limits</li>
+                        <li>An <strong>observability sidecar</strong> that traces every agent action, LLM call, and tool invocation using OpenTelemetry — feeding data to Langfuse for cost analysis and latency percentiles</li>
+                    </ol>
+                    <p>The inspiration is the Kubernetes control plane itself: API server, etcd, scheduler, controller manager. The agentic AI control plane uses the same patterns because they already work at enterprise scale for the most critical workloads on the planet.</p>
+                    <p>What it is NOT: a monolithic agent framework lock-in. The control plane orchestrates agents built with LangGraph, AutoGen, CrewAI, or custom frameworks. It governs HOW they run, not WHAT they compute.</p>
+                    <p>Model Context Protocol (MCP) servers are the "kubectl" of the agentic world — a standardized interface for agents to connect to tools and data sources. MCP hit 97 million installs in 16 months, becoming the USB standard for AI agent connectivity.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="five-pillars">
+                    <h2>The Five Pillars of an Enterprise Agent Control Plane</h2>
+
+                    <h3>Pillar 1: Agent Orchestration and Lifecycle Management</h3>
+                    <p>The control plane must own agent creation, versioning, scaling, and termination. This goes beyond starting an agent process:</p>
+                    <ul>
+                        <li><strong>CRD-based agent definitions</strong> — store agent configs (model, temperature, tool permissions, memory settings) as Kubernetes custom resources</li>
+                        <li><strong>Controller-driven reconciliation</strong> — the operator continuously reconciles desired state with actual state, automatically restarting failed agents</li>
+                        <li><strong>HPA integration</strong> — scale agent replicas based on queue depth, not CPU (agent workloads are I/O bound on LLM API calls)</li>
+                    </ul>
+
+                    <h3>Pillar 2: Guardrails and Execution Policies</h3>
+                    <p>Guardrails are the most underinvested pillar in enterprise agent deployments. In my experience at Deutsche Bank designing OTC derivatives workflows, every autonomous action needs a pre-check. For AI agents, this means:</p>
+                    <ul>
+                        <li><strong>Prompt injection detection</strong> — scan incoming prompts for injection patterns before they reach the agent</li>
+                        <li><strong>Tool access policies</strong> — define which agents can call which APIs, databases, or file system paths. Use Open Policy Agent (OPA) with Gatekeeper for policy enforcement</li>
+                        <li><strong>Kill switches</strong> — every agent must have a hard-stop mechanism the control plane can trigger immediately</li>
+                        <li><strong>PII redaction</strong> — automatically redact sensitive data from prompts before LLM submission using a validation webhook</li>
+                    </ul>
+
+                    <h3>Pillar 3: Cost Governance and Budget Enforcement</h3>
+                    <p>The single biggest surprise for enterprises in 2025-2026: AI agents are expensive and costs scale non-linearly with agent autonomy. Without cost governance:</p>
+                    <ul>
+                        <li>Agents making unlimited LLM API calls can consume your entire AI budget before month-end</li>
+                        <li>No one can explain why the bill went from $12,000 to $180,000 in 30 days</li>
+                        <li>Finance teams lose trust in AI initiatives entirely after one surprise invoice</li>
+                    </ul>
+                    <p>The control plane enforces cost budgets at the agent level. When projected monthly cost exceeds budget, the control plane queues requests, scales down replicas, or routes to a cheaper model — all without human intervention.</p>
+
+                    <h3>Pillar 4: Observability with OpenTelemetry</h3>
+                    <p>Agentic AI systems generate two types of telemetry that traditional APM tools cannot capture: <strong>LLM spans</strong> (individual model calls with token counts and latency) and <strong>agent state transitions</strong> (when an agent moves from planning to tool use to response). Both require OpenTelemetry instrumentation with LLM-specific semantic conventions.</p>
+                    <p>Every agent gets an OpenTelemetry sidecar that emits traces for:</p>
+                    <ul>
+                        <li><code>llm.request</code> — model name, prompt tokens, completion tokens, latency</li>
+                        <li><code>agent.tool_call</code> — tool name, arguments, result, duration</li>
+                        <li><code>agent.state_transition</code> — previous state, new state, trigger event</li>
+                        <li><code>agent.guardrail_triggered</code> — policy name, severity, action taken</li>
+                    </ul>
+                    <p>Metrics flow to Prometheus, traces to Jaeger or Tempo, and both feed Langfuse for LLM cost analysis and latency percentiles. This stack answers the CFO question.</p>
+
+                    <h3>Pillar 5: Audit Trails and Compliance Reporting</h3>
+                    <p>For regulated industries (financial services, healthcare, government), every agent decision that touches a business process must be traceable. The control plane generates immutable audit logs stored in S3/GCS with object-level versioning:</p>
+                    <ul>
+                        <li>Agent ID, version, model, and tool permissions at execution time</li>
+                        <li>Full prompt + context (token-bounded for storage efficiency)</li>
+                        <li>All tool calls made, with arguments and responses</li>
+                        <li>Guardrail triggers and actions taken</li>
+                        <li>Cost attribution by team, project, and agent type</li>
+                    </ul>
+                    <p>The output feeds directly into your GRC tooling — and is the evidence package your auditors will request when EU AI Act enforcement begins August 2026.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="kubernetes-architecture">
+                    <h2>Kubernetes-Native Control Plane Architecture</h2>
+                    <p>The production architecture below uses the Kubernetes Operator pattern — your platform team can maintain it using skills they already have.</p>
+
+                    <figure class="code-block" style="background:#1e1e2e;border-radius:8px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto;">
+                        <caption style="color:#a0aec0;font-size:0.85rem;margin-bottom:0.75rem;display:block;">Figure 1: Agentic AI Control Plane — High-Level Kubernetes Architecture</caption>
+<pre style="color:#e2e8f0;font-size:0.88rem;line-height:1.5;margin:0;white-space:pre;">┌─────────────────────────────────────────────────────────────┐
+│                    AGENT CONTROL PLANE                        │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
+│  │  Agent       │  │  Guardrail  │  │  Cost Governor   │  │
+│  │  Controller  │  │  Webhook    │  │  Sidecar         │  │
+│  │  (Operator)  │  │  (OPA)      │  │  (Budget Enf.)   │  │
+│  └──────┬───────┘  └──────┬───────┘  └────────┬─────────┘  │
+│         │                 │                    │             │
+│  ┌──────▼─────────────────▼─────────────────────▼────────┐  │
+│  │            OBSERVABILITY SIDCAR (otel-agent)           │  │
+│  │   Traces → Jaeger  Metrics → Prometheus  Logs → Loki  │  │
+│  └───────────────────────────────────────────────────────┘  │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+          ┌──────────────▼──────────────┐
+          │   AGENT RUNTIME (per agent) │
+          │  ┌────────────────────────┐  │
+          │  │  Agent Process        │  │
+          │  │  (LangGraph/AutoGen) │  │
+          │  └──────────┬────────────┘  │
+          │             │                 │
+          │  ┌─────────▼───────────┐    │
+          │  │  MCP Server        │    │
+          │  │  (Tool Interface)  │    │
+          │  └────────────────────┘    │
+          └────────────────────────────┘</pre>
+                    </figure>
+
+                    <p>The key insight: agents run as Kubernetes pods, managed by a custom controller that handles reconciliation. The guardrail webhook intercepts every agent dispatch request and validates it against OPA policies before the agent receives it. Zero runtime overhead — validation happens at admission time, not in the hot path.</p>
+
+                    <h3>CRD for Agent Definition</h3>
+                    <p>Agents are defined as Kubernetes custom resources. Here is the CRD schema for an agent:</p>
+<figure class="code-block" style="background:#1e1e2e;border-radius:8px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto;">
+<pre style="color:#e2e8f0;font-size:0.88rem;line-height:1.5;margin:0;"><code>apiVersion: agentc.gheware.com/v1
+kind: AIAgent
+metadata:
+  name: derivatives-risk-agent
+  namespace: ai-agents
+spec:
+  model: gpt-4-turbo
+  temperature: 0.1
+  maxTokens: 2048
+  tools:
+    - name: risk_calculator
+      enabled: true
+      rateLimit: 10  # per minute
+    - name: db_query
+      enabled: true
+      requireApproval: true  # human-in-the-loop for DB writes
+  budget:
+    monthlyLimitUSD: 5000
+    alertThreshold: 0.75
+  guardrails:
+    blockPII: true
+    maxPromptTokens: 8192
+    toolWhitelist: ["risk_calculator", "db_query"]
+  replicas: 2
+  observability:
+    otelEnabled: true
+    langfusePublicKey: "$(LANGFUSE_PUBLIC_KEY)"</code></pre>
+</figure>
+
+                    <p>With this CRD, your entire agent fleet becomes declarative — version-controlled, auditable, and deployable via <code>kubectl apply</code>. The Agent Controller reconciles the desired state against actual pod status, automatically healing failed agents.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="implementation">
+                    <h2>Implementation: Building the Control Plane Operator</h2>
+                    <p>A full implementation guide exceeds this post's scope, but here is the architectural skeleton your platform team needs. I have taught this pattern in our <a href="https://devops.gheware.com">5-Day Agentic AI Workshop</a> — rated <strong>4.91/5.0 by Oracle engineers</strong> in February 2026, with 119 hands-on labs and real production agent deployments.</p>
+
+                    <h3>Step 1: Install the Agent Controller (Kubebuilder)</h3>
+                    <p>Use Kubebuilder to scaffold the operator. The controller watches <code>AIAgent</code> resources and manages the underlying pods:</p>
+<figure class="code-block" style="background:#1e1e2e;border-radius:8px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto;">
+<pre style="color:#e2e8f0;font-size:0.88rem;line-height:1.5;margin:0;"><code># Scaffold the operator project
+kubebuilder init --domain agentc.gheware.com
+kubebuilder create api --group agentc --version v1 --kind AIAgent
+
+# Implement reconciliation loop
+func (r *AIAgentReconciler) Reconcile(
+    ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+
+    aiAgent := &agentcv1.AIAgent{}
+    if err := r.Get(ctx, req.NamespacedName, aiAgent); err != nil {
+        return ctrl.Result{}, client.IgnoreNotFound(err)
+    }
+
+    // Reconcile agent pods to match Spec
+    if err := r.reconcileAgentDeployment(ctx, aiAgent); err != nil {
+        return ctrl.Result{}, err
+    }
+
+    // Enforce budget via sidecar annotation
+    if err := r.enforceCostBudget(ctx, aiAgent); err != nil {
+        return ctrl.Result{}, err
+    }
+
+    return ctrl.Result{RequeueAfter: 30 * time.Second}, nil
+}</code></pre>
+</figure>
+
+                    <h3>Step 2: Deploy the Guardrail Admission Webhook</h3>
+                    <p>Use OPA Gatekeeper with a Constraining mutation to intercept agent dispatch requests:</p>
+<figure class="code-block" style="background:#1e1e2e;border-radius:8px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto;">
+<pre style="color:#e2e8f0;font-size:0.88rem;line-height:1.5;margin:0;"><code># Gatekeeper ConstraintTemplate for PII detection
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: NoPIIInAgentPrompts
+metadata:
+  name: no-pii-agent-prompts
+spec:
+  match:
+    kinds:
+      - apiGroups: ["agentc.gheware.com"]
+        kinds: ["AgentDispatch"]
+  parameters:
+    piiPatterns:
+      - type: email
+      - type: phone
+      - type: credit_card
+  enforcementAction: deny</code></pre>
+</figure>
+
+                    <h3>Step 3: Instrument OpenTelemetry Sidecar</h3>
+                    <p>Add the OTEL sidecar to every agent pod:</p>
+<figure class="code-block" style="background:#1e1e2e;border-radius:8px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto;">
+<pre style="color:#e2e8f0;font-size:0.88rem;line-height:1.5;margin:0;"><code># agent-sidecar.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: derivatives-risk-agent
+spec:
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9464"
+    spec:
+      containers:
+        - name: otel-agent
+          image: otel/opentelemetry-collector:0.109.0
+          env:
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "otel-collector.observability:4317"
+            - name: OTEL_SERVICE_NAME
+              value: "derivatives-risk-agent"
+          ports:
+            - containerPort: 9464
+
+        - name: agent
+          image: gheware/agent-derivatives:v2.3.1
+          env:
+            - name: OTEL_SERVICE_NAME
+              value: "derivatives-risk-agent"
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "localhost:4317"</code></pre>
+</figure>
+
+                    <p>Observability data flows to Prometheus for metrics, Jaeger/Tempo for distributed traces, and Langfuse for LLM-specific cost and latency analysis.</p>
+
+                    <h3>Step 4: Integrate MCP for Tool Standardization</h3>
+                    <p>MCP servers provide the standardized tool interface the control plane governs:</p>
+<figure class="code-block" style="background:#1e1e2e;border-radius:8px;padding:1.5rem;margin:1.5rem 0;overflow-x:auto;">
+<pre style="color:#e2e8f0;font-size:0.88rem;line-height:1.5;margin:0;"><code># MCP server registry in the control plane CRD
+apiVersion: v1
+kind: Service
+metadata:
+  name: risk-mcp-server
+  annotations:
+    agentc.mcp/enabled: "true"
+    agentc.mcp/tools: "risk_calculator,scenario_simulator"
+spec:
+  ports:
+    - port: 3000
+      name: mcp
+  selector:
+    app: risk-mcp-server
+
+# Agent spec references MCP servers by name
+spec:
+  mcpServers:
+    - name: risk-mcp-server
+      allowedTools: ["risk_calculator"]</code></pre>
+</figure>
+
+                    <p>New tools are added to MCP servers — existing agents pick them up automatically without redeployment. The control plane enforces tool access policies, so even if an MCP server advertises 50 tools, your risk agent only gets access to the 2 it needs.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>Can I build an agentic control plane without Kubernetes?</h3>
+                        <p>Yes, but you will be reinventing Kubernetes. The control plane patterns described here (operator reconciliation, admission webhooks, resource limits, sidecars) are fundamentally Kubernetes concepts. Running agents on bare VMs or Docker Compose means you lose self-healing, scaling, and policy enforcement. Our <a href="https://devops.gheware.com">Kubernetes Mastery training</a> covers prerequisite skills.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How long does it take to implement a production-grade control plane?</h3>
+                        <p>With a team of 3 platform engineers and 1 AI engineer, a functional control plane takes 2-3 weeks. A production-hardened version with full observability, guardrails, and audit logging takes 6-8 weeks. Our <a href="https://devops.gheware.com">5-Day Agentic AI Workshop</a> covers the full architecture with hands-on labs — teams leave with a working control plane skeleton. The 4.91/5.0 rating from Oracle reflects how immediately applicable the content is.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Does the control plane work with LangGraph, AutoGen, and CrewAI?</h3>
+                        <p>Yes — the control plane governs agent behavior at the Kubernetes and admission layer, not at the agent framework level. All three frameworks produce agents that run as containerized workloads, which the control plane manages identically. LangGraph's Supervisor pattern and CrewAI's crew architecture can be orchestrated by the control plane with no modifications to agent code.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What compliance frameworks does the control plane address?</h3>
+                        <p>The audit trail and guardrail layers directly support: EU AI Act Article 14, NIST AI RMF, SOC 2 Type II, and PCI-DSS if agents handle payment data. Our <a href="/blog/posts/ai-agent-governance-enterprise-compliance-2026.html">AI Agent Governance guide</a> has the full compliance mapping.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I handle human-in-the-loop for high-risk agent actions?</h3>
+                        <p>The Guardrail Webhook checks the <code>requireApproval</code> flag on each tool in the AIAgent CRD. For tools marked <code>requireApproval: true</code>, the control plane intercepts the tool call and routes it to an approval queue. An authorized human reviews and approves via a webhook callback before the tool executes. This is the pattern used at JPMorgan Chase for payment gateway tool access — it keeps auditors satisfied without blocking agent productivity for low-risk operations.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion: Control Plane First, Agents Second</h2>
+                    <p>The question I get from enterprise CTOs: "Can we deploy a few agents first and add the control plane later?" My answer, backed by 25 years of enterprise architecture at JPMorgan, Deutsche Bank, and Morgan Stanley: you can — but the retrofit will cost three times more than building it right the first time, and you will have had 18 months of ungoverned risk in production.</p>
+                    <p>The agentic AI control plane is not optional infrastructure. It is the difference between AI agents that create value and AI agents that create liability. The good news: the architecture is proven, the Kubernetes patterns are well-understood, and our <a href="https://devops.gheware.com">5-day Agentic AI Workshop</a> covers every component with 119 hands-on labs.</p>
+                    <p>Start with the control plane. Your compliance team, your CFO, and your security team will thank you.</p>
+                    <p style="margin-top: 2rem;"><strong>Ready to build it right?</strong> Explore our <a href="https://devops.gheware.com">Agentic AI Workshop</a> — Production-Ready AI Agents in Five Days. 119 hands-on labs. 4.91/5.0 at Oracle. 100% refund + $1,000 if your team does not achieve 40% faster agent deployment in 90 days.</p>
+                </section>
+
+            </div>
+
+
+            <!-- Author Bio Placeholder -->
+
+<!-- Newsletter Signup -->
+<div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+  <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+  <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+  <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <input type="hidden" name="website" value="">
+    <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+    <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+    <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+  </form>
+  <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+</div>
+<script>
+async function submitNewsletter(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const msg = document.getElementById('newsletter-msg');
+  try {
+    const r = await fetch('https://dev-leads.gheware.com/newsletter', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    msg.textContent = j.message || 'Thanks! Check your inbox.';
+    msg.style.display = 'block';
+    form.reset();
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+  }
+}
+</script>
+
+<div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <a href="/blog/posts/ai-agent-governance-enterprise-compliance-2026.html" class="related-card">
+                        <span class="related-category">Agentic AI</span>
+                        <h3>AI Agent Governance: Audit Trails, LLM Guardrails &amp; Compliance for 2026</h3>
+                        <p>EU AI Act, NIST AI RMF, kill switches, execution guardrails — the compliance layer your agent deployments need.</p>
+                    </a>
+                    <a href="/blog/posts/opentelemetry-ai-agents-production-observability.html" class="related-card">
+                        <span class="related-category">Observability</span>
+                        <h3>OpenTelemetry for AI Agents: Production Observability Setup Guide</h3>
+                        <p>LLM spans, agent state transitions, and cost attribution — instrumenting agentic AI systems at scale.</p>
+                    </a>
+                    <a href="/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html" class="related-card">
+                        <span class="related-category">Agentic AI</span>
+                        <h3>Supervisor Pattern for Multi-Agent Orchestration in LangGraph</h3>
+                        <p>Hierarchical multi-agent systems with supervisor nodes that route tasks and enforce policies.</p>
+                    </a>
+                    <a href="/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html" class="related-card">
+                        <span class="related-category">Agentic AI</span>
+                        <h3>5 Production AI Agent Patterns Every Enterprise Engineer Needs in 2026</h3>
+                        <p>Supervisor, hierarchical, parallel, fan-out, and state-machine patterns with Kubernetes-native guides.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Build a Production-Ready Agentic AI Control Plane?</h2>
+                <p>Join our 5-day Agentic AI Workshop — rated 4.91/5.0 by Oracle engineers. 119 hands-on labs covering control plane architecture, LangGraph, MCP, Langfuse, and AI agent governance. Zero risk: 100% refund + $1,000 if your team does not achieve 40% faster agent deployment in 90 days.</p>
+                <a href="https://devops.gheware.com" class="btn-cta-primary">
+                    <span>View Agentic AI Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
