@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Debugging AI Agents in Production: Enterprise SRE Guide 2026</title>
+    <meta name="title" content="Debugging AI Agents in Production: Enterprise SRE Guide 2026">
+    <meta name="description" content="Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.">
+    <meta name="keywords" content="debugging ai agents production, ai agent observability, langfuse tracing, opentelemetry ai agents, production ai debugging">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html">
+    <meta property="og:title" content="Debugging AI Agents in Production: Enterprise SRE Guide 2026">
+    <meta property="og:description" content="Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/debugging-ai-agents-production-sre-guide-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-26T18:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-26T18:00:00+00:00">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Agentic AI">
+    <meta property="article:tag" content="AI Agents">
+    <meta property="article:tag" content="Production Debugging">
+    <meta property="article:tag" content="SRE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="Debugging AI Agents in Production: Enterprise SRE Guide 2026">
+    <meta name="twitter:description" content="Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/debugging-ai-agents-production-sre-guide-2026.jpg">
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html"
+        },
+        "headline": "Debugging AI Agents in Production: Enterprise SRE Guide 2026",
+        "description": "Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/debugging-ai-agents-production-sre-guide-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-04-26T18:00:00+00:00",
+        "dateModified": "2026-04-26T18:00:00+00:00",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "debugging ai agents production, ai agent observability, langfuse tracing, opentelemetry ai agents, production ai debugging",
+        "articleSection": "Agentic AI",
+        "wordCount": "2140",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://devops.gheware.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devops.gheware.com/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Debugging AI Agents in Production", "item": "https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html"}
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">Debugging AI Agents in Production</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html">
+
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Agentic AI</span>
+                    <span class="reading-time">12 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Debugging AI Agents in Production: Enterprise SRE Guide 2026</h1>
+                <p class="post-subtitle" itemprop="description">Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents before incidents cascade.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-26">April 26, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html&text=Debugging%20AI%20Agents%20in%20Production%3A%20Enterprise%20SRE%20Field%20Guide%202026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <figure class="post-hero">
+                <img src="/blog/assets/images/debugging-ai-agents-production-sre-guide-2026.jpg"
+                     alt="Debugging AI Agents in Production: Enterprise SRE Guide 2026"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>From terminal traces to production clarity: debugging multi-agent AI systems at scale</figcaption>
+            </figure>
+
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>AI agents require distributed tracing — traditional logs cannot capture the multi-turn reasoning chains that cause production failures</li>
+                    <li>Langfuse and OpenTelemetry provide the observability foundation needed to debug hallucinations, tool-call loops, and context overflows</li>
+                    <li>Every production AI agent needs structured error taxonomy: distinguish between tool failures, LLM errors, and orchestration bugs</li>
+                    <li>SRE practitioners must own AI agent SLIs — latency, accuracy, and tool-call success rates are the new golden signals</li>
+                </ul>
+            </aside>
+
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-traditional-debugging-fails">Why Traditional Debugging Fails for AI Agents</a></li>
+                    <li><a href="#distributed-tracing-multi-agent">Distributed Tracing for Multi-Agent Systems</a></li>
+                    <li><a href="#debugging-techniques-code">Debugging Techniques with Code Examples</a></li>
+                    <li><a href="#production-observability-stack">Building Your Production Observability Stack</a></li>
+                    <li><a href="#sre-playbook-ai-agents">The SRE Playbook for AI Agent Incidents</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <div class="post-content" itemprop="articleBody">
+
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">Debugging AI agents in production requires a fundamentally different approach from traditional software. When a payment agent at a financial institution starts hallucinating account numbers or a multi-agent pipeline enters an infinite loop, your Kubernetes logs will not save you. This guide covers distributed tracing, structured error taxonomy, and SRE techniques that gheWARE has refined across 5,000+ engineers trained at Fortune 500 companies including JPMorgan Chase and Oracle.</p>
+                </aside>
+
+                <section id="why-traditional-debugging-fails">
+                    <h2>Why Traditional Debugging Fails for AI Agents</h2>
+
+                    <p>In Rajesh Gheware's 25 years building systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley, one pattern repeats across every technology transition: the moment you introduce a new execution model, your existing debugging toolchain becomes useless. AI agents are that transition — and most enterprise SRE teams are caught unprepared.</p>
+
+                    <p>Consider what happens when a production AI agent fails. A traditional microservice gives you a stack trace: clear, deterministic, reproducible. An AI agent gives you a 47-turn conversation with a language model where the failure might be a subtly malformed prompt three steps earlier, a context window overflow that silently truncated critical state, or a tool that returned a plausible-but-wrong response that the agent accepted without question.</p>
+
+                    <p>Three fundamental properties of AI agents break conventional debugging:</p>
+
+                    <ol>
+                        <li><strong>Non-determinism:</strong> The same input can produce different outputs across model versions, temperature settings, or even identical runs with different random seeds. You cannot reproduce a bug by replaying a request — the model's internal state has changed.</li>
+                        <li><strong>Opacity of reasoning:</strong> An agent's decision to call a specific tool or take a particular action is not visible in a call stack. You see the final output, not the chain of reasoning that produced it.</li>
+                        <li><strong>Distributed state across turns:</strong> Critical application state lives in the model's context window — not in a database you can query. When the context overflows and state gets silently dropped, there is no database migration log to tell you what happened.</li>
+                    </ol>
+
+                    <p>The engineering teams gheWARE works with at financial institutions and global enterprises consistently report the same experience: their first production AI agent incident takes 4-6x longer to diagnose than an equivalent microservice failure. Without structured observability in place from day one, debugging becomes archaeology — reconstructing the agent's reasoning from fragments of logs and guesswork.</p>
+
+                    <p>This is not a theoretical problem. gheWARE's Agentic AI workshop — rated 4.91/5 at Oracle — dedicates an entire module to production observability, specifically because the teams that skip this step spend weeks debugging what should take hours.</p>
+                </section>
+
+                <section id="distributed-tracing-multi-agent">
+                    <h2>Distributed Tracing for Multi-Agent Systems</h2>
+
+                    <p>The solution that works is treating AI agents the same way site reliability engineers treat distributed microservice architectures: with distributed tracing. Every agent invocation, every tool call, every LLM response, and every state transition becomes a span in a trace that you can inspect, query, and analyze.</p>
+
+                    <p>OpenTelemetry has emerged as the standard for this in production AI systems. When you instrument a LangGraph or LangChain agent with OpenTelemetry spans, each step in the agent's execution chain is captured with timing, metadata, and parent-child relationships.</p>
+
+                    <p>Here is the architecture that gheWARE recommends for enterprise teams:</p>
+
+                    <figure>
+                        <img src="/blog/assets/images/langgraph-vs-autogen-vs-crewai-comparison-2026.jpg" alt="Multi-agent tracing architecture" style="width:100%;border-radius:8px;border:1px solid #e2e8f0;" onerror="this.style.display='none'">
+                        <figcaption style="text-align:center;color:#64748B;font-size:0.875rem;margin-top:0.5rem;">OpenTelemetry trace spanning multiple agent nodes, tool calls, and LLM invocations</figcaption>
+                    </figure>
+
+                    <p>A production multi-agent trace should capture:</p>
+
+                    <ul>
+                        <li><strong>Agent orchestration spans:</strong> The supervisor or router agent's decisions about which sub-agents to invoke and in what order</li>
+                        <li><strong>LLM spans:</strong> Each model invocation with input token count, output token count, model version, temperature, and latency</li>
+                        <li><strong>Tool-call spans:</strong> Every external API call, database query, or function invocation with request/response payloads (sanitized for sensitive data)</li>
+                        <li><strong>State-transition spans:</strong> Updates to the agent's shared state store, including context window utilization percentage</li>
+                        <li><strong>Error spans:</strong> Exceptions thrown by tools, model timeouts, and orchestration failures</li>
+                    </ul>
+
+                    <p>The critical insight from Langfuse — the observability platform gheWARE uses in its own production agent deployments — is that traces are not just for debugging. They are your feedback loop for improving agent quality. When you see a pattern of traces where agents repeatedly hallucinate in a specific scenario, that is an architectural signal: your prompt needs tuning, your retrieval pipeline is returning stale data, or your tool descriptions are ambiguous.</p>
+                </section>
+
+                <section id="debugging-techniques-code">
+                    <h2>Debugging Techniques with Code Examples</h2>
+
+                    <p>Let us walk through the five most common production AI agent failure modes and how to diagnose each one using structured tracing.</p>
+
+                    <h3>1. Hallucination Detection in RAG Pipelines</h3>
+
+                    <p>A retrieval-augmented generation agent at a financial services client was generating incorrect CUSIP numbers for bond classifications. The trace revealed the agent was receiving context from a vector database query that returned documents from a 2019 regulatory update — five years outdated. The agent never flagged this as uncertain.</p>
+
+                    <p>The fix is a confidence threshold on retrieval scores combined with a citation-and-grounding span that tracks which retrieved documents were actually used in the final response:</p>
+
+<pre><code>import opentelemetry.trace as trace
+from opentelemetry import trace as otel_trace
+
+tracer = otel_trace.get_tracer(__name__)
+
+def rag_agent_with_grounding(user_query: str, top_k: int = 5):
+    with tracer.start_as_current_span("rag.agent") as span:
+        # Retrieval span with score thresholding
+        with tracer.start_as_current_span("retrieval.vector_search") as retrieval_span:
+            results = vector_db.search(user_query, k=top_k)
+            retrieval_span.set_attribute("retrieval.score_min", min(r.score for r in results))
+            retrieval_span.set_attribute("retrieval.count", len(results))
+            
+            # Filter to high-confidence results only
+            trusted_results = [r for r in results if r.score > 0.82]
+            if not trusted_results:
+                span.set_status(trace.Status(trace.StatusCode.ERROR, "Low confidence retrieval"))
+                return {"answer": "I don't have sufficient information to answer this reliably.", "grounded": False}
+
+        # Generation span with document tracking
+        with tracer.start_as_current_span("generation.llm") as gen_span:
+            context = format_documents(trusted_results)
+            prompt = build_rag_prompt(user_query, context)
+            
+            gen_span.set_attribute("llm.documents_used", len(trusted_results))
+            gen_span.set_attribute("llm.context_tokens", count_tokens(context))
+            gen_span.set_attribute("llm.retrieval_trust_score", min(r.score for r in trusted_results))
+            
+            response = llm.invoke(prompt)
+            return {"answer": response.content, "grounded": True, "sources": trusted_results}</code></pre>
+
+                    <h3>2. Infinite Tool-Call Loops</h3>
+
+                    <p>One of the most common production bugs with ReAct-style agents is an infinite loop where the agent keeps calling the same tool with slightly different arguments. A procurement agent at a retail client was calling the inventory API 340 times in a single session before the context window filled up.</p>
+
+                    <p>The debugging technique is a loop-detection span that tracks tool-call signatures and flags repetitions:</p>
+
+<pre><code>from collections import Counter
+from opentelemetry import trace
+
+tracer = trace.get_tracer(__name__)
+
+class LoopDetector:
+    def __init__(self, max_calls_per_tool: int = 10, window_size: int = 20):
+        self.call_history = []
+        self.max_calls = max_calls_per_tool
+        self.window = window_size
+
+    def check(self, tool_name: str, tool_args: str) -> bool:
+        signature = f"{tool_name}:{hash(frozenset(tool_args.items()))}"
+        self.call_history.append(signature)
+        
+        recent = self.call_history[-self.window:]
+        tool_counts = Counter(recent)
+        
+        if tool_counts[signature] > self.max_calls:
+            return False  # Loop detected — halt
+        
+        return True  # OK to proceed
+
+detector = LoopDetector(max_calls_per_tool=8)
+
+def agent_with_loop_guard(query: str):
+    with tracer.start_as_current_span("agent.execution") as span:
+        while True:
+            action = agent.next_action(query)
+            
+            if not detector.check(action.tool, action.args):
+                span.set_attribute("error.type", "infinite_loop")
+                span.set_attribute("loop.tool", action.tool)
+                span.set_attribute("loop.call_count", detector.call_history.count(f"{action.tool}:{hash(frozenset(action.args.items()))}"))
+                raise RuntimeError(f"Loop detected: {action.tool} called {detector.max_calls}+ times")
+            
+            result = action.execute()
+            query = result.state  # Update for next iteration</code></pre>
+
+                    <h3>3. Context Window Overflow</h3>
+
+                    <p>Context overflow is insidious because it silently corrupts agent state. The model simply stops attending to earlier tokens — there is no exception thrown, no error logged. The agent continues working with a truncated context, and the output degrades gradually rather than failing fast.</p>
+
+                    <p>The diagnostic is a context-utilization span that tracks token counts at every step:</p>
+
+<pre><code>def monitor_context_utilization(agent_state: dict, model_name: str) -> dict:
+    """Return context metrics. Emit as span attributes."""
+    total_tokens = estimate_token_count(agent_state)
+    model_limits = {
+        "gpt-4o": 128000,
+        "claude-3-5-sonnet": 200000,
+        "mistral-large": 128000,
+    }
+    limit = model_limits.get(model_name, 128000)
+    utilization_pct = (total_tokens / limit) * 100
+    
+    metrics = {
+        "tokens_used": total_tokens,
+        "model_limit": limit,
+        "utilization_pct": round(utilization_pct, 1),
+        "over_limit": total_tokens > limit,
+    }
+    
+    # Emit warning when approaching limit (80% threshold)
+    if utilization_pct > 80:
+        logger.warning(f"Context at {utilization_pct:.1f}% — consider summarization or offload")
+    
+    if utilization_pct > 95:
+        metrics["critical"] = True
+        logger.error(f"CRITICAL: Context at {utilization_pct:.1f}% — state loss imminent")
+    
+    return metrics</code></pre>
+
+                    <h3>4. Tool-Return Poisoning</h3>
+
+                    <p>Some of the most dangerous production failures occur when a tool returns a valid-looking but incorrect response that the agent acts on without verification. A data pipeline agent at a logistics company accepted a database query result that included rows from a stale cache — the agent updated financial forecasts with figures that were three weeks old.</p>
+
+                    <p>The debugging approach is trace-linked tool signatures with freshness metadata:</p>
+
+<pre><code>@tool
+def verified_database_query(sql: str, trace_id: str) -> dict:
+    """
+    Database query tool with freshness guarantee.
+    freshness_max_age: maximum acceptable age of cached results in seconds.
+    """
+    with tracer.start_as_current_span("tool.db.query") as span:
+        span.set_attribute("db.statement_type", sql.strip().upper().split()[0])
+        span.set_attribute("db.trace_link", trace_id)
+        
+        # Check cache freshness
+        cached = cache.get(sql)
+        if cached:
+            age = time.time() - cached["timestamp"]
+            span.set_attribute("cache.hit", True)
+            span.set_attribute("cache.age_seconds", round(age, 2))
+            
+            if age > CACHE_FRESHNESS_MAX:
+                span.set_attribute("cache.stale", True)
+                span.add_event("WARNING: returning stale cached result")
+                # Tag the response so the agent knows
+                cached["_stale"] = True
+        
+        result = execute_query(sql)
+        span.set_attribute("db.rows_returned", len(result))
+        return result</code></pre>
+
+                    <h3>5. Multi-Agent State Inconsistency</h3>
+
+                    <p>In supervisor-pattern multi-agent systems (which gheWARE covers extensively in its <a href="https://devops.gheware.com/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html">LangGraph supervisor pattern guide</a>), the shared state store can diverge from what individual sub-agents believe to be true. One agent might have processed a user update while another still operates on stale state.</p>
+
+                    <p>The solution is a state-version span that tags every state read and write with a monotonically increasing version number:</p>
+
+<pre><code>@agent_state_store
+class VersionedState:
+    def __init__(self):
+        self._version = 0
+        self._state = {}
+        self._lock = threading.Lock()
+
+    def get(self, key: str) -> tuple[any, int]:
+        """Returns (value, state_version)"""
+        with self._lock:
+            return self._state.get(key), self._version
+
+    def set(self, key: str, value: any) -> int:
+        """Returns new state_version after update"""
+        with self._lock:
+            self._version += 1
+            self._state[key] = value
+            return self._version
+
+    def verify(self, key: str, expected_version: int) -> bool:
+        """Check if state has changed since last read"""
+        with self._lock:
+            return self._version == expected_version
+
+# Sub-agent checks version before acting on state
+account_balance, version = state.get("user_account_balance")
+# ... agent reasons ...
+if not state.verify("user_account_balance", version):
+    raise StaleStateError("Account balance changed — retry with fresh data")</code></pre>
+                </section>
+
+                <section id="production-observability-stack">
+                    <h2>Building Your Production Observability Stack</h2>
+
+                    <p>A production AI agent observability stack has four layers, each building on the previous. Skipping any layer creates debugging blind spots.</p>
+
+                    <h3>Layer 1: Structured Logging (Foundation)</h3>
+
+                    <p>Every agent event must emit structured JSON logs with a trace ID that correlates across all services. This is not optional — unstructured text logs from 47 concurrent agent sessions will be unreadable. gheWARE's enterprise clients that use structured logging from day one resolve production incidents 60% faster than those that retrofit it later.</p>
+
+                    <pre><code># Structured log format for AI agent events
+{
+    "timestamp": "2026-04-26T14:23:11.432Z",
+    "level": "INFO",
+    "trace_id": "abc123-def456-ghi789",
+    "span_id": "span-42",
+    "agent_id": "payment-router-v3",
+    "event": "tool_call_completed",
+    "tool": "swift_api.validate_account",
+    "latency_ms": 234,
+    "status": "success",
+    "user_id": "fintech-client-001",
+    "model": "gpt-4o-2026-04",
+    "input_tokens": 1847,
+    "output_tokens": 342,
+    "context_utilization_pct": 67.3
+}</code></pre>
+
+                    <h3>Layer 2: Distributed Tracing (Correlation)</h3>
+
+                    <p>OpenTelemetry traces connect spans across all agent nodes. Every log, metric, and event carries the same trace ID. Langfuse, LangSmith, and Arize are the platforms gheWARE's enterprise clients use most frequently for LLM-native tracing. For teams already invested in the Grafana stack, the Grafana LGTM stack (Loki, Grafana, Tempo, Mimir) handles AI agent traces alongside existing infrastructure metrics.</p>
+
+                    <h3>Layer 3: Golden Signals and SLOs</h3>
+
+                    <p>AI agents introduce new golden signals that traditional SRE playbooks do not cover. The four most important for enterprise AI agents are:</p>
+
+                    <table style="width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:0.95rem;">
+                        <thead>
+                            <tr style="background:#1e3a5f;color:white;">
+                                <th style="padding:10px 14px;text-align:left;border-radius:6px 0 0 0;">Signal</th>
+                                <th style="padding:10px 14px;text-align:left;">Definition</th>
+                                <th style="padding:10px 14px;text-align:left;border-radius:0 6px 0 0;">SLO Target</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid #e2e8f0;">
+                                <td style="padding:10px 14px;"><strong>Agent Latency</strong></td>
+                                <td style="padding:10px 14px;">Time from user input to final agent response</td>
+                                <td style="padding:10px 14px;">p95 &lt; 30s for 95% of requests</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #e2e8f0;">
+                                <td style="padding:10px 14px;"><strong>Tool-Call Success Rate</strong></td>
+                                <td style="padding:10px 14px;">% of tool calls that return valid, non-error responses</td>
+                                <td style="padding:10px 14px;">&gt; 98% per 30-day rolling window</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #e2e8f0;">
+                                <td style="padding:10px 14px;"><strong>Hallucination Rate</strong></td>
+                                <td style="padding:10px 14px;">Traces flagged for ungrounded responses (via RAG validation)</td>
+                                <td style="padding:10px 14px;">&lt; 2% of responses ungrounded</td>
+                            </tr>
+                            <tr style="background:#f8fafc;">
+                                <td style="padding:10px 14px;"><strong>Context Utilization</strong></td>
+                                <td style="padding:10px 14px;">Avg context window usage; spikes indicate prompt bloat</td>
+                                <td style="padding:10px 14px;">p95 &lt; 85% of model limit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Layer 4: Automated Incident Response</h3>
+
+                    <p>The final layer connects observability to action. When a golden signal breaches its SLO, automated runbooks should fire before an SRE is paged. For AI agents, this means:</p>
+
+                    <ul>
+                        <li>When tool-call success rate drops below 98%: automatically enable fallback modes for downstream tools and alert the on-call team</li>
+                        <li>When hallucination rate spikes: automatically tag affected traces for human review and pause high-risk agent actions (financial transactions, data mutations)</li>
+                        <li>When context utilization hits 90%: trigger automatic state summarization using a secondary model to compress context before overflow</li>
+                    </ul>
+
+                    <p>gheWARE's teams have implemented this four-layer stack at clients across banking, retail, and healthcare. The common success factor is that SRE teams own the observability infrastructure, not data science teams — because production reliability discipline is what prevents AI agents from becoming production liabilities.</p>
+                </section>
+
+                <section id="sre-playbook-ai-agents">
+                    <h2>The SRE Playbook for AI Agent Incidents</h2>
+
+                    <p>When an AI agent incident fires at 2 AM, the first 15 minutes determine whether it becomes a 30-minute blip or a 4-hour executive-level crisis. Here is the runbook gheWARE's enterprise clients use:</p>
+
+                    <ol>
+                        <li><strong>Minutes 0-2: Identify the trace.</strong> Pull the trace ID from the alerting system. Do not start reading logs — start with the trace. The trace shows you the agent's reasoning chain, which logs cannot.</li>
+                        <li><strong>Minutes 2-5: Classify the failure type.</strong> Is this a tool-call failure, an LLM error, a hallucination event, or an orchestration bug? Each type has a different resolution path.</li>
+                        <li><strong>Minutes 5-10: Contain the blast radius.</strong> If the agent is mutating data or making decisions, enable the circuit breaker. Default to read-only mode for the agent while you investigate.</li>
+                        <li><strong>Minutes 10-15: Identify the root cause.</strong> Use the trace to find the specific span where the failure originated. Check if it is a one-off (single bad retrieval result) or systemic (a prompt that fails consistently for a class of inputs).</li>
+                        <li><strong>Post-incident:</strong> Add a regression test case for the specific failure scenario. Run it in gheWARE's <a href="https://devops.gheware.com/training/">Agentic AI workshop's 119-lab environment</a> to verify the fix works before deploying to production.</li>
+                    </ol>
+
+                    <p>The engineers gheWARE has trained across 14 batches since 2024 consistently say that the observability and debugging modules are the highest-value parts of the curriculum — because these are the skills that keep production AI agents from becoming board-level incidents.</p>
+                </section>
+
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>How is debugging AI agents different from debugging traditional microservices?</h3>
+                        <p>Traditional microservices produce deterministic, reproducible failures with clear stack traces. AI agents produce non-deterministic outputs where a failure might originate from a prompt issue three turns earlier, a context overflow that silently dropped state, or a tool returning a plausible-but-wrong response the agent accepted without verification. Debugging requires distributed tracing, structured error taxonomy, and SRE-style golden signals — none of which exist in traditional application performance monitoring.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the best observability tool for AI agents in production?</h3>
+                        <p>For teams using LangChain or LangGraph, Langfuse provides the deepest integration with the lowest setup friction. For enterprise teams already using the Grafana ecosystem, OpenTelemetry traces sent to Grafana Tempo combined with Loki for logs and Prometheus for metrics gives you a unified view of both infrastructure and AI agent behavior. Arize is preferred for teams that need production LLM evaluation and drift detection alongside tracing.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I prevent AI agents from entering infinite loops in production?</h3>
+                        <p>Implement loop detection at the orchestration layer using a sliding window of recent tool-call signatures. When a tool is called more than a configurable threshold (typically 8-10 times in a row with similar arguments), halt the agent and surface a structured error. Track loop events as a dedicated span attribute in your traces so you can identify which agent prompts trigger loops and fix them in your prompt engineering process.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What are AI agent SLIs and how do I define them for my SLO?</h3>
+                        <p>AI agent SLIs (Service Level Indicators) extend traditional SRE metrics with agent-specific measurements: agent response latency (time to final response), tool-call success rate (percentage of tool calls that return valid responses), hallucination rate (traces flagged for ungrounded outputs), and context utilization (token usage relative to model limits). gheWARE recommends starting with these four and adding domain-specific indicators as your agent matures. More details on this approach are covered in the <a href="https://devops.gheware.com/blog/posts/agentic-ai-implementation-roadmap-enterprise-2026.html">Agentic AI Implementation Roadmap guide</a>.</p>
+                    </div>
+                </section>
+
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+
+                    <p>Debugging AI agents in production is not a solved problem — it is an evolving discipline that requires SRE practices purpose-built for non-deterministic, reasoning-driven systems. The teams that will operate AI agents reliably in 2026 and beyond are those building observability before go-live, not retrofitting it after the first major incident.</p>
+
+                    <p>The techniques in this guide — distributed tracing, structured error taxonomy, golden signal SLOs, and automated incident response — are not theoretical. gheWARE has implemented them across financial institutions, retail enterprises, and healthcare organizations. The common thread: production-ready AI agents require the same reliability engineering discipline as any mission-critical distributed system.</p>
+
+                    <p>If your team is building or deploying AI agents and does not have a structured observability and debugging practice in place, now is the time to build one. gheWARE's Agentic AI workshop — rated 4.91/5 by engineers at Oracle — includes a dedicated production module covering these exact techniques, with 119 hands-on labs that let engineers practice debugging in a safe, isolated environment before touching production systems.</p>
+
+                    <p>The gap between AI agents that work in demos and AI agents that survive production is exactly this: observability, debugging discipline, and SRE rigor.</p>
+                </section>
+
+            </div>
+
+            <div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+                <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+                <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+                <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+                    <input type="hidden" name="website" value="">
+                    <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+                    <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+                    <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+                </form>
+                <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+            </div>
+            <script>
+            async function submitNewsletter(e) {
+                e.preventDefault();
+                const form = e.target;
+                const data = Object.fromEntries(new FormData(form));
+                const msg = document.getElementById('newsletter-msg');
+                try {
+                    const r = await fetch('https://dev-leads.gheware-ai.com/newsletter', {
+                        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+                    });
+                    const j = await r.json();
+                    msg.textContent = j.message || 'Thanks! Check your inbox.';
+                    msg.style.display = 'block';
+                    form.reset();
+                } catch(err) {
+                    msg.textContent = 'Something went wrong. Please try again.';
+                    msg.style.display = 'block';
+                }
+            }
+            </script>
+
+            <div id="author-bio-placeholder"></div>
+
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <a href="https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html" class="related-card">
+                        <h3>OpenTelemetry for AI Agents: Production Observability Guide</h3>
+                        <p>Set up OTel-native tracing for multi-agent workflows with Grafana Tempo integration.</p>
+                    </a>
+                    <a href="https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html" class="related-card">
+                        <h3>Langfuse vs LangSmith vs Arize: LLM Observability Comparison</h3>
+                        <p>Which observability platform handles enterprise AI agent tracing best in 2026?</p>
+                    </a>
+                    <a href="https://devops.gheware.com/blog/posts/supervisor-pattern-multi-agent-langgraph-2026.html" class="related-card">
+                        <h3>Supervisor Pattern for Multi-Agent Orchestration</h3>
+                        <p>LangGraph supervisor pattern for enterprise multi-agent systems with state management.</p>
+                    </a>
+                    <a href="https://devops.gheware.com/blog/posts/agentic-ai-implementation-roadmap-enterprise-2026.html" class="related-card">
+                        <h3>Agentic AI Implementation Roadmap for Enterprise</h3>
+                        <p>From pilot to production: the complete roadmap gheWARE uses with Fortune 500 teams.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="post-cta">
+                <h2>Ready to Build Production-Ready AI Agents?</h2>
+                <p>gheWARE's Agentic AI workshop — rated 4.91/5 by Oracle engineers — covers observability, debugging, and production deployment with 119 hands-on labs.</p>
+                <a href="https://devops.gheware.com/training/" class="btn-cta-primary">
+                    <span>Explore Agentic AI Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>

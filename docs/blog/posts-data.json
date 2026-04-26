@@ -17,6 +17,22 @@
       "keywords": []
     },
     {
+      "title": "Debugging AI Agents in Production: Enterprise SRE Guide 2026",
+      "url": "/blog/posts/debugging-ai-agents-production-sre-guide-2026.html",
+      "excerpt": "Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.",
+      "category": "Agentic AI",
+      "tags": [
+        "AI Agents",
+        "Production Debugging",
+        "SRE"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 26, 2026",
+      "_isoDate": "2026-04-26",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
       "title": "KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026",
       "url": "/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html",
       "excerpt": "Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.",

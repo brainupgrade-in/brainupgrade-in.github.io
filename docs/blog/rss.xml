@@ -22,6 +22,15 @@
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
+            <title>Debugging AI Agents in Production: Enterprise SRE Guide 2026</title>
+            <link>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</guid>
+            <description>Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
             <title>KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026</title>
             <link>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</guid>
@@ -448,15 +457,6 @@
             <title>[POST_TITLE]</title>
             <link>https://devops.gheware.com/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html</guid>
-            <description>[POST_DESCRIPTION - 150-160 chars for optimal display]</description>
-            <category>[CATEGORY]</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>[POST_TITLE]</title>
-            <link>https://devops.gheware.com/blog/posts/mcp-servers-explained-model-context-protocol-enterprise.html</link>
-            <guid>https://devops.gheware.com/blog/posts/mcp-servers-explained-model-context-protocol-enterprise.html</guid>
             <description>[POST_DESCRIPTION - 150-160 chars for optimal display]</description>
             <category>[CATEGORY]</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
