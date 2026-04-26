@@ -5,13 +5,31 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 25 Apr 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>AI Agent Evaluation &amp; Benchmarking: The Enterprise Framework for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</guid>
+            <description>Stop guessing which AI agent performs best. This enterprise evaluation framework covers 7 benchmark dimensions, MMLU + GAIA scores, cost-per-task metrics, and real production tests CTOs use to make build vs buy decisions in 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</guid>
+            <description>Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.</description>
+            <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Build Your Enterprise AI Control Plane</title>
             <link>https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html</link>
@@ -49,10 +67,10 @@
             <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production</title>
+            <title>Kubernetes for GenAI: Production Architecture Patterns 2026</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</guid>
-            <description>Production-ready Kubernetes architectures for GenAI workloads. Learn GPU scheduling, KServe inference serving, KEDA auto-scaling, and security patterns from 25+ years of enterprise deployments at JPMorgan and Deutsche Bank.</description>
+            <description>Production Kubernetes architectures for GenAI workloads. GPU scheduling, KServe inference serving, KEDA autoscaling, and security patterns from enterprise deployments.</description>
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
@@ -443,24 +461,6 @@
             <category>AI Security</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agentic AI in Banking &amp; Financial Services: 7 Real Use Cases in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-banking-financial-services-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-banking-financial-services-2026.html</guid>
-            <description>73% of tier-1 banks now run agentic AI in production. Discover 7 real use cases — from fraud detection to autonomous trade execution — with ROI data and a deployment playbook.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>MCP Servers Explained: Model Context Protocol for Enterprise Developers</title>
-            <link>https://devops.gheware.com/blog/posts/mcp-servers-model-context-protocol-enterprise.html</link>
-            <guid>https://devops.gheware.com/blog/posts/mcp-servers-model-context-protocol-enterprise.html</guid>
-            <description>MCP adoption surged 400% in 2025. Learn how Model Context Protocol servers give enterprise AI agents secure, standardized tool access — and how to deploy them in production.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

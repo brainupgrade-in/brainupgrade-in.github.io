@@ -1,6 +1,38 @@
 {
   "posts": [
     {
+      "title": "AI Agent Evaluation & Benchmarking: The Enterprise Framework for 2026",
+      "url": "/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html",
+      "excerpt": "Stop guessing which AI agent performs best. This enterprise evaluation framework covers 7 benchmark dimensions, MMLU + GAIA scores, cost-per-task metrics, and real production tests CTOs use to make build vs buy decisions in 2026.",
+      "category": "Agentic AI",
+      "tags": [
+        "AI Agents",
+        "Enterprise AI",
+        "Benchmarking"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 26, 2026",
+      "_isoDate": "2026-04-26",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026",
+      "url": "/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html",
+      "excerpt": "Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.",
+      "category": "Kubernetes",
+      "tags": [
+        "AI Agents",
+        "Kubernetes",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 26, 2026",
+      "_isoDate": "2026-04-26",
+      "readTime": "11 min read",
+      "keywords": []
+    },
+    {
       "title": "Build Your Enterprise AI Control Plane",
       "url": "/blog/posts/agentic-ai-control-plane-enterprise-2026.html",
       "excerpt": "Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.",
@@ -64,9 +96,9 @@
       "keywords": []
     },
     {
-      "title": "Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production",
+      "title": "Kubernetes for GenAI: Production Architecture Patterns 2026",
       "url": "/blog/posts/kubernetes-genai-architecture-patterns-2026.html",
-      "excerpt": "Production-ready Kubernetes architectures for GenAI workloads. Learn GPU scheduling, KServe inference serving, KEDA auto-scaling, and security patterns from 25+ years of enterprise deployments at JPMorgan and Deutsche Bank.",
+      "excerpt": "Production Kubernetes architectures for GenAI workloads. GPU scheduling, KServe inference serving, KEDA autoscaling, and security patterns from enterprise deployments.",
       "category": "AI Infrastructure",
       "tags": [
         "Kubernetes",

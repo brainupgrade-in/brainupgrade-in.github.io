@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026">
+    <meta name="description" content="Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.">
+    <meta name="keywords" content="KAITO, Kubernetes AI Toolchain Operator, LLM deployment Kubernetes, AI model serving Kubernetes, enterprise AI, Kubernetes operators, Kubeflow, inference server, AI scalability">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html">
+    <meta property="og:title" content="KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026">
+    <meta property="og:description" content="Discover how KAITO enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns and real-world use cases.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/kaito-kubernetes-ai-toolchain-operator-enterprise-2026-thumbnail.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-26T05:30:00Z">
+    <meta property="article:modified_time" content="2026-04-26T05:30:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Kubernetes">
+    <meta property="article:tag" content="AI Agents">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="Enterprise AI">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026">
+    <meta name="twitter:description" content="Discover how KAITO enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/kaito-kubernetes-ai-toolchain-operator-enterprise-2026-thumbnail.jpeg">
+
+    <title>KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html"
+        },
+        "headline": "KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026",
+        "description": "Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/kaito-kubernetes-ai-toolchain-operator-enterprise-2026-thumbnail.jpeg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-04-26T05:30:00Z",
+        "dateModified": "2026-04-26T05:30:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "KAITO, Kubernetes AI Toolchain Operator, LLM deployment Kubernetes, AI model serving Kubernetes, enterprise AI, Kubernetes operators",
+        "articleSection": "Kubernetes",
+        "wordCount": "2180",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "KAITO Kubernetes AI Toolchain Operator",
+                "item": "https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">KAITO Kubernetes AI Toolchain Operator</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Kubernetes</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026</h1>
+                <p class="post-subtitle" itemprop="description">Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns and real-world use cases.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-26">April 26, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html&text=KAITO%3A%20Kubernetes%20AI%20Toolchain%20Operator%20%E2%80%94%20The%20Enterprise%20Guide%20to%20Deploying%20LLM%20AI%20Models%20in%202026" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/kaito-kubernetes-ai-toolchain-operator-enterprise-2026-thumbnail.jpeg"
+                     alt="KAITO Kubernetes AI Toolchain Operator architecture for enterprise LLM deployment"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>KAITO enables enterprise-grade LLM AI workload deployment on Kubernetes — from inference serving to multi-model orchestration</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>KAITO is a Kubernetes Operator that automates the entire AI toolchain — from model registry to inference serving — on enterprise Kubernetes clusters</li>
+                    <li>It supports vLLM, TensorRT-LLM, and LM Format Handler backends for high-throughput LLM inference at scale</li>
+                    <li>Enterprises can deploy 70B+ parameter models with just 3 YAML files and under 15 minutes of setup time</li>
+                    <li>KAITO integrates natively with NVIDIA GPU operators, Karpenter autoscaling, and enterprise auth systems (RBAC, OIDC)</li>
+                    <li>Production-ready patterns include multi-model serving, A/B traffic splitting, and Prometheus-based observability out of the box</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#what-is-kaito">What Is KAITO and Why Does It Matter for Enterprise Teams in 2026?</a></li>
+                    <li><a href="#architecture">KAITO Architecture Deep Dive: Components and How They Fit Together</a></li>
+                    <li><a href="#prerequisites">Prerequisites: GPU Nodes, Storage, and Network Policies</a></li>
+                    <li><a href="#installation">Step-by-Step Installation: From kubeadm to First Inference Request</a></li>
+                    <li><a href="#deployment-patterns">Production Deployment Patterns: Single Model, Multi-Model, and A/B Splitting</a></li>
+                    <li><a href="#autoscaling">Autoscaling Strategies: Karpenter, HPA, and VPA for LLM Workloads</a></li>
+                    <li><a href="#observability">Observability: Prometheus Metrics, Langfuse Traces, and Grafana Dashboards</a></li>
+                    <li><a href="#security">Enterprise Security: RBAC, Network Policies, and Confidential Computing</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR Section -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">KAITO (Kubernetes AI Toolchain Operator) is the operator that turns your enterprise Kubernetes cluster into a production-grade LLM serving platform. If you're running Kubernetes in 2026 and deploying AI models manually, you're doing it wrong. In my 25 years building systems at JPMorgan, Deutsche Bank, and Morgan Stanley, I've seen countless teams waste months cobbling together bespoke MLOps pipelines when a well-designed operator could have gotten them to production in days. This guide gives you the complete playbook — from cluster prerequisites to live inference in under 15 minutes.</p>
+                </aside>
+
+                <!-- Section 1 -->
+                <section id="what-is-kaito">
+                    <h2>What Is KAITO and Why Does It Matter for Enterprise Teams in 2026?</h2>
+                    <p>In 2026, every enterprise is racing to deploy Large Language Models behind their firewalls. The challenge isn't building the models — it's <strong>operationalizing them at scale</strong> on Kubernetes infrastructure that already runs their core business systems. That's exactly the problem KAITO was designed to solve.</p>
+                    <p>KAITO — the <strong>Kubernetes AI Toolchain Operator</strong> — is a Kubernetes Operator (built using operator-runtime) that automates the lifecycle of AI toolchain components on a Kubernetes cluster. Rather than manually installing inference servers, configuring model registries, and wiring up autoscalers across multiple Helm charts, KAITO lets you declare your desired AI serving topology in a handful of YAML files and handles the rest.</p>
+                    <p>In my corporate training at Oracle, where I delivered the Agentic AI Workshop with a <strong>4.91/5.0 rating</strong>, the most common pain point I see is enterprise teams spending 6-8 weeks just getting their first production LLM deployment stable. KAITO collapses that to a single afternoon.</p>
+                    <p>The operator manages:</p>
+                    <ul>
+                        <li><strong>Model registry integration</strong>: Pulling model artifacts from HuggingFace, NGC, or enterprise S3-compatible storage</li>
+                        <li><strong>Inference server provisioning</strong>: Spinning up vLLM, TensorRT-LLM, or LM Format Handler pods with the right GPU affinity</li>
+                        <li><strong>Load balancing and traffic management</strong>: Serving up multiple model versions simultaneously with configurable traffic splits</li>
+                        <li><strong>Autoscaling coordination</strong>: Hooking into Karpenter, KEDA, and vanilla HPA/VPA for dynamic GPU capacity</li>
+                        <li><strong>Observability wiring</strong>: Exposing Prometheus metrics and OpenTelemetry traces automatically</li>
+                    </ul>
+                    <p>The result? Your platform engineering team manages AI workloads the same way they manage any other Kubernetes workload: through declarative configuration, GitOps workflows, and standard kubectl tooling.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="architecture">
+                    <h2>KAITO Architecture Deep Dive: Components and How They Fit Together</h2>
+                    <p>Understanding KAITO's architecture helps you design better deployment topologies and debug issues faster. Here are the core components:</p>
+                    <h3>2.1 KAITO Operator (Control Plane)</h3>
+                    <p>The KAITO operator runs as a Deployment in the <code>kaito</code> namespace. It watches for <code>Workspace</code> custom resources (CRs) and reconciles the desired state by creating, updating, or deleting AI workload resources. It handles:</p>
+                    <ul>
+                        <li>Certificate management for admission webhooks</li>
+                        <li>GPU resource allocation and node labeling</li>
+                        <li>Lifecycle management of inference servers</li>
+                        <li>Integration with the model registry</li>
+                    </ul>
+                    <h3>2.2 Workspace CR — The Declarative Core</h3>
+                    <p>The <code>Workspace</code> CR is the fundamental unit of KAITO's declarative API. It lets you describe a complete AI serving topology in one YAML object:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: kaito.io/v1alpha1
+kind: Workspace
+metadata:
+  name: llama3-70b-instruct-serving
+  namespace: ai-production
+spec:
+  runtime: vllm
+  model:
+    source:
+      localVolume:
+        storagePath: /models/llama3-70b-instruct
+        storageClassName: nfs-csi
+    config:
+      modelName: meta-llama/Meta-Llama-3-70B-Instruct
+  inference:
+    replicas: 2
+    resources:
+      gpu:
+        type: nvidia.com/gpu
+        count: 4
+      memory: 128Gi
+      cpu: "16"
+  autoscaler:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    metrics:
+    - type: GPUUtilization
+      target: 70
+  network:
+    exposed: true
+    serviceType: LoadBalancer
+    port: 8000</code></pre>
+                    <h3>2.3 Inference Server Backends</h3>
+                    <p>KAITO supports multiple inference runtimes, selectable at Workspace creation time:</p>
+                    <ul>
+                        <li><strong>vLLM</strong>: Paged Attention, continuous batching, async output processing — best for open models (Llama, Mistral, Qwen) at high throughput</li>
+                        <li><strong>TensorRT-LLM</strong>: NVIDIA's optimized engine for A100/H100 GPUs — 2-4x throughput vs. naive HuggingFace for transformer decoders</li>
+                        <li><strong>LM Format Handler</strong>: Flexible handler supporting custom tokenizers, chat templates, and quantization configs</li>
+                    </ul>
+                    <h3>2.4 Model Registry Integration</h3>
+                    <p>KAITO can pull models from multiple sources. In enterprise environments behind firewalls, the most common setup is a local model registry on S3-compatible storage (MinIO, AWS S3, or Dell ECS). The operator handles authentication via Kubernetes Secrets and streams model artifacts to the inference pods.</p>
+                    <h3>2.5 GPU Operator Integration</h3>
+                    <p>KAITO is designed to work alongside the <strong>NVIDIA GPU Operator</strong> (which manages driver containers, CUDA toolkit, and container runtime plugin) and <strong>Karpenter</strong> (which provisions GPU nodes on-demand). On a properly configured cluster, adding a new A100 node takes under 2 minutes with no manual intervention.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="prerequisites">
+                    <h2>Prerequisites: GPU Nodes, Storage, and Network Policies</h2>
+                    <p>Before installing KAITO, your cluster must meet these requirements. Skipping these is the #1 reason I see enterprise AI deployments fail in the first month.</p>
+                    <h3>3.1 GPU Node Pools</h3>
+                    <p>For production LLM workloads, you need GPU nodes with sufficient VRAM to hold at least one model shard. A practical minimum:</p>
+                    <ul>
+                        <li><strong>7B models</strong>: 1x A10G or A100 24GB per replica</li>
+                        <li><strong>70B models (FP16)</strong>: 4x A100 80GB per replica</li>
+                        <li><strong>405B models (FP16)</strong>: 8x H100 80GB per replica or tensor parallelism across multiple nodes</li>
+                    </ul>
+                    <p>On EKS, use a node group with <code>g5.48xlarge</code> (A100) or <code>p5.48xlarge</code> (H100). On GKE, use <code>a3-highgpu-4g</code> or <code>a3-megagpu-4g</code> machine types. For on-premises, ensure your kubelet has access to NVLink for intra-node GPU-to-GPU communication when using tensor parallelism.</p>
+                    <h3>3.2 Storage: CSI Driver and StorageClass</h3>
+                    <p>Model artifacts are large (Llama 3 70B FP16 = ~140GB). Use a CSI driver that supports concurrent read access from multiple pods. NFS CSI (e.g., with NetApp, Dell PowerScale, or AWS EFS for smaller models) is the most common enterprise choice. Ensure your StorageClass has:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-csi
+provisioner: csi.nfs.example.com
+parameters:
+  server: nfs-server.internal.corp
+  share: /models
+  mountPermissions: "0777"
+reclaimPolicy: Retain
+volumeBindingMode: Immediate</code></pre>
+                    <h3>3.3 Container Runtime with GPU Support</h3>
+                    <p>Install the NVIDIA GPU Operator via Operator Lifecycle Manager (OLM):</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: operators.coreos.com/v1alpha1
+kind: OperatorSource
+metadata:
+  name: nvidia-gpu-operator
+  namespace: operators
+spec:
+  registry: registry.ngc.nvidia.com
+  sourceNamespace: nvidia-gpu-operator
+
+# Then install the ClusterPolicy
+apiVersion: nvidia.com/v1alpha1
+kind: ClusterPolicy
+metadata:
+  name: nvidia-gpu-operator
+spec:
+  driver:
+    enabled: true
+  toolkit:
+    enabled: true
+  dcgmExporter:
+    enabled: true
+    serviceMonitor:
+      enabled: true
+  nodeFeatureDiscovery:
+    enabled: true</code></pre>
+                    <p>After installation, verify GPU access with: <code>kubectl run gpu-test --rm -it --restart=Never --image=nvidia/cuda:12.1.0-base-ubuntu22.04 -- nvidia-smi</code></p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="installation">
+                    <h2>Step-by-Step Installation: From kubeadm to First Inference Request</h2>
+                    <h3>4.1 Install KAITO via OLM</h3>
+                    <p>The recommended production install method is through Operator Lifecycle Manager (OLM). This handles CRD registration, webhooks, and upgrades cleanly:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code># Install OLM if not already present
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.30.0/install.sh | bash -s 0.30.0
+
+# Create the KAITO operator group and subscription
+cat << 'EOF' | kubectl apply -f -
+apiVersion: operators.coreos.com/v1alpha1
+kind: OperatorGroup
+metadata:
+  name: kaito-operator-group
+  namespace: kaito-system
+spec:
+  targetNamespaces:
+    - kaito-system
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: kaito-ai
+  namespace: kaito-system
+spec:
+  channel: stable
+  name: kaito-ai
+  source: operatorhub-io-commmunity
+  sourceNamespace: openshift-marketplace
+  installPlanApproval: Automatic
+EOF</code></pre>
+                    <h3>4.2 Create the Model Storage Secret</h3>
+                    <p>For enterprise S3-compatible storage, create a Secret with your model registry credentials:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: v1
+kind: Secret
+metadata:
+  name: model-registry-creds
+  namespace: ai-production
+type: Opaque
+stringData:
+  AWS_ACCESS_KEY_ID: "${MODEL_REGISTRY_KEY}"
+  AWS_SECRET_ACCESS_KEY: "${MODEL_REGISTRY_SECRET}"
+  AWS_REGION: us-east-1
+  AWS_ENDPOINT_URL: https://model-registry.internal.corp</code></pre>
+                    <h3>4.3 Deploy Your First Model</h3>
+                    <p>With KAITO installed, deploy a Llama 3 8B model (good starting point — ~16GB VRAM) with a single Workspace CR:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: kaito.io/v1alpha1
+kind: Workspace
+metadata:
+  name: llama3-8b-chat-serving
+  namespace: ai-production
+spec:
+  runtime: vllm
+  model:
+    source:
+      s3:
+        bucket: enterprise-models
+        key: llama3-8b-instruct
+        secretRef: model-registry-creds
+    config:
+      modelName: meta-llama/Meta-Llama-3-8B-Instruct
+      quantization: fp16
+  inference:
+    replicas: 1
+    resources:
+      gpu:
+        type: nvidia.com/gpu
+        count: 1
+      memory: 32Gi
+      cpu: "8"
+  autoscaler:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 3
+  network:
+    exposed: true
+    serviceType: ClusterIP
+    port: 8000
+  healthCheck:
+    enabled: true
+    livenessProbe:
+      path: /health
+      port: 8000
+    readinessProbe:
+      path: /health
+      port: 8000</code></pre>
+                    <p>Apply it: <code>kubectl apply -f llama3-workspace.yaml</code></p>
+                    <p>Watch the reconciliation: <code>kubectl get workspace -n ai-production -w</code></p>
+                    <p>Within 3-5 minutes (model download + container image pull), you'll see the vLLM pod Running with a Service exposing port 8000.</p>
+                    <h3>4.4 Send Your First Inference Request</h3>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code># Port-forward to the service locally
+kubectl port-forward -n ai-production svc/llama3-8b-chat-serving 8000:8000
+
+# Send a test request
+curl -X POST http://localhost:8000/v1/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "prompt": "Explain Kubernetes resource quotas in plain English",
+    "max_tokens": 200,
+    "temperature": 0.7
+  }'</code></pre>
+                    <p>You should receive a streaming JSON response from your locally deployed Llama 3 model. Welcome to enterprise AI serving on Kubernetes.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="deployment-patterns">
+                    <h2>Production Deployment Patterns: Single Model, Multi-Model, and A/B Splitting</h2>
+                    <h3>5.1 Single Model with Warm Replicas</h3>
+                    <p>For latency-sensitive applications (chatbots, code generation), keep at least one warm replica to avoid cold-start latency on the first token. Configure <code>minReplicas: 2</code> with a pre-warmed node pool:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>spec:
+  inference:
+    warmReplicas: 2  # Always-ON replicas
+    additionalReplicas: 3  # Scale-out pool
+  autoscaler:
+    minReplicas: 2
+    maxReplicas: 5
+    scaleUpThreshold: 0.75
+    scaleDownThreshold: 0.25</code></pre>
+                    <h3>5.2 Multi-Model Serving on Shared GPU Infrastructure</h3>
+                    <p>Enterprise teams often need multiple model versions (e.g., production vs. staging, or different fine-tuned variants). KAITO supports this natively via separate Workspace CRs with named inference backends that share the same underlying storage:</p>
+                    <p>Deploy model A and model B side-by-side as separate Workspaces on the same GPU node pool. KAITO's scheduler places them intelligently to maximize GPU utilization while maintaining fault isolation.</p>
+                    <h3>5.3 A/B Traffic Splitting with SMI-Specified Weights</h3>
+                    <p>For canary deployments and A/B testing, use SMI (Service Mesh Interface) traffic splitting across two Workspace revisions. Deploy revision 2 of your model alongside revision 1, then gradually shift traffic:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code># First deploy v2 alongside v1
+kubectl patch workspace llama3-8b-chat-serving \
+  --type='merge' \
+  -p '{"spec":{"model":{"config":{"modelName":"meta-llama/Meta-Llama-3-8B-Instruct-v2"}}}}'
+
+# Configure traffic split via Istio VirtualService
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: llama3-8b-chat
+  namespace: ai-production
+spec:
+  hosts:
+    - llama3-8b-chat-serving.ai-production.svc.cluster.local
+  http:
+    - route:
+      - destination:
+          host: llama3-8b-chat-serving-v1
+          subset: stable
+        weight: 90
+      - destination:
+          host: llama3-8b-chat-serving-v2
+          subset: canary
+        weight: 10</code></pre>
+                    <p>Monitor error rates and latency for v2 at 10% traffic, then incrementally shift to 50% → 100% once confidence is established.</p>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="autoscaling">
+                    <h2>Autoscaling Strategies: Karpenter, HPA, and VPA for LLM Workloads</h2>
+                    <p>LLM inference workloads have unique autoscaling characteristics: GPU utilization spikes during active generation, drops to near-zero during idle, and scales on input token volume rather than simple CPU/memory metrics. KAITO addresses this with multiple scaling dimensions:</p>
+                    <h3>6.1 GPU-Based HPA for Active Inference</h3>
+                    <p>Use the Horizontal Pod Autoscaler with GPU utilization metrics from DCGM Exporter:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: llama3-8b-chat-hpa
+  namespace: ai-production
+spec:
+  scaleTargetRef:
+    apiVersion: kaito.io/v1alpha1
+    kind: Workspace
+    name: llama3-8b-chat-serving
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Pods
+    pods:
+      metric:
+        name: gpu Utilization
+        selector:
+          matchLabels:
+            resource group: kaito-workspace
+      target:
+        type: AverageValue
+        averageValue: "70"
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+      - type: Pods
+        value: 2
+        periodSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Pods
+        value: 1
+        periodSeconds: 300</code></pre>
+                    <h3>6.2 Karpenter for GPU Node Provisioning</h3>
+                    <p>When HPA scales beyond available GPU capacity, Karpenter automatically provisions new GPU nodes. Configure a Provisioner with GPU node selection:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: gpu-provisioner
+spec:
+  requirements:
+    - key: node.kubernetes.io/instance-type
+      operator: In
+      values: ["a100.4xlarge", "a100.8xlarge", "p5.48xlarge"]
+    - key: nvidia.com/gpu
+      operator: Exists
+    - key: karpenter.sh/capacity-type
+      operator: In
+      values: ["on-demand", "spot"]
+  limits:
+    resources:
+      nvidia.com/gpu: 32
+  providerRef:
+    name: gpu-aws
+  ttlSecondsAfterEmpty: 120</code></pre>
+                    <p>In my experience at tier-1 financial institutions, combining HPA for pods + Karpenter for nodes gives you the fastest response to load spikes while keeping costs reasonable through spot instances for non-production environments.</p>
+                </section>
+
+                <!-- Section 7 -->
+                <section id="observability">
+                    <h2>Observability: Prometheus Metrics, Langfuse Traces, and Grafana Dashboards</h2>
+                    <p>Enterprise AI deployments require production-grade observability. KAITO integrates with the full Prometheus + Grafana stack, and can be paired with Langfuse for LLM-specific tracing (which I covered extensively in the <a href="https://devops.gheware.com/blog/posts/production-ready-mcp-langgraph-enterprise-2026.html">production-ready MCP + LangGraph guide</a>).</p>
+                    <h3>7.1 Prometheus Metrics from vLLM</h3>
+                    <p>vLLM exposes a rich metrics endpoint at <code>/metrics</code>. The NVIDIA DCGM Exporter adds GPU-level metrics. Key metrics to track:</p>
+                    <ul>
+                        <li><code>vllm:num_generation_tokens_total</code> — tokens generated per request</li>
+                        <li><code>vllm:gpu_cache_usage_percent</code> — KV cache utilization (high values = efficient batching)</li>
+                        <li><code>DCGM_FI_DEV_GPU_UTIL</code> — raw GPU utilization</li>
+                        <li><code>kaito_workspace:request_duration_seconds</code> — end-to-end request latency</li>
+                        <li><code>kaito_workspace:pending_requests</code> — queue depth (leading indicator for scaling)</li>
+                    </ul>
+                    <h3>7.2 Langfuse Integration for Trace-Level Observability</h3>
+                    <p>Connect your KAITO inference workspaces to Langfuse for detailed trace-level observability across your entire agentic AI pipeline:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code># Add Langfuse as a serving integration in your Workspace
+spec:
+  observability:
+    langfuse:
+      enabled: true
+      publicKey: ${LANGFUSE_PUBLIC_KEY}
+      secretKeySecretRef:
+        name: langfuse-secrets
+        namespace: ai-production
+      baseUrl: https://langfuse.internal.corp
+      traceSampling: 0.1  # Sample 10% of requests for detailed traces
+      tags:
+        - environment:production
+        - team:platform-engineering</code></pre>
+                    <p>Langfuse gives you token cost tracking, latency breakdowns per generation step, and prompt versioning — critical for teams running agentic AI systems with LangGraph orchestrating multiple model calls.</p>
+                </section>
+
+                <!-- Section 8 -->
+                <section id="security">
+                    <h2>Enterprise Security: RBAC, Network Policies, and Confidential Computing</h2>
+                    <p>Deploying AI systems inside regulated enterprises (financial services, healthcare, government) requires security controls beyond standard Kubernetes defaults. Here's what your security team will demand:</p>
+                    <h3>8.1 RBAC: Least-Privilege Workspace Access</h3>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code># Platform team: full control over Workspaces
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ai-platform-admin
+  namespace: ai-production
+rules:
+  - apiGroups: ["kaito.io"]
+    resources: ["workspaces"]
+    verbs: ["*"]
+  - apiGroups: [""]
+    resources: ["services", "configmaps"]
+    verbs: ["*"]
+
+# Application team: read-only access, cannot modify inference config
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: ai-app-developer
+  namespace: ai-production
+rules:
+  - apiGroups: ["kaito.io"]
+    resources: ["workspaces"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["get", "list"]</code></pre>
+                    <h3>8.2 Network Policies: Zero-Trust Between AI Workloads</h3>
+                    <p>By default, all pods in a Kubernetes cluster can communicate freely. Lock down your AI inference namespace with explicit allow-listing:</p>
+                    <pre style="background:#1e1e1e;color:#d4d4d4;padding:1.5rem;border-radius:8px;overflow-x:auto;font-size:0.9rem;line-height:1.5">
+<code>apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ai-production-default-deny
+  namespace: ai-production
+spec:
+  podSelector: {}
+  policyTypes: ["Ingress", "Egress"]
+
+# Allow only the API gateway to reach inference services
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-api-gateway
+  namespace: ai-production
+spec:
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              name: ai-gateway
+      ports:
+        - protocol: TCP
+          port: 8000
+  egress:
+    - to:
+        - podSelector: {}  # Model storage
+      ports:
+        - protocol: TCP
+          port: 2049  # NFS</code></pre>
+                    <h3>8.3 Confidential Computing (TCG-compliant)</h3>
+                    <p>For enterprises with strict data sovereignty requirements, NVIDIA's Confidential Computing mode on H100/H200 GPUs (via TCG TPM 2.0) ensures model weights and inference data are encrypted in use. KAITO supports deploying inference servers with confidential computing pods by specifying the <code> confidentialComputing: true</code> flag in the Workspace spec — the operator configures the necessary pod annotations and runtime class automatically.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What is the difference between KAITO and Kubeflow for AI model serving?</h3>
+                        <p>Kubeflow is a comprehensive ML platform covering the entire ML lifecycle — data preprocessing, training, hyperparameter tuning, and serving. KAITO is laser-focused on inference serving of pre-trained models, specifically LLMs, on Kubernetes. If you already have your models trained and just need to serve them reliably at scale, KAITO is simpler and has a lower operational footprint. If you need full training pipelines, Kubeflow (or Ray on Kubernetes) is the better choice. In practice, many enterprises use Kubeflow for training and KAITO for serving.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How does KAITO handle model versioning and rolling updates?</h3>
+                        <p>KAITO uses Kubernetes-native patterns for versioning. When you update a Workspace CR (e.g., pointing to a new model artifact version), the operator performs a rolling update of the inference pods, maintaining the configured minReplicas as warm standbys throughout. For zero-downtime updates of production models, deploy the new version as a separate Workspace and use traffic splitting (Istio or SMI) to migrate traffic gradually — this is the recommended approach for regulated environments.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can KAITO run models that aren't from HuggingFace?</h3>
+                        <p>Yes. KAITO supports loading models from any S3-compatible storage endpoint (AWS S3, MinIO, Dell ECS, Azure Blob Storage, Google Cloud Storage). You can also use a local PVC for air-gapped environments. For proprietary models stored in enterprise registries, configure the appropriate Secret (AWS STS, Azure SAS tokens, or GCS service account) and point the Workspace at your internal model path.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What are the GPU memory requirements for different model sizes?</h3>
+                        <p>As a practical rule of thumb: model_size_gb × 1.2 (for KV cache + overhead). A Llama 3 8B model at FP16 needs ~16GB VRAM (1×A10G or 1×A100 24GB). Llama 3 70B at FP16 needs ~84GB, requiring at least 4×A100 80GB or tensor parallelism. The 405B models at FP16 need ~486GB, requiring 8×H100 80GB or tensor+pipeline parallelism across multiple nodes. Consider quantization (GPTQ, AWQ, or FP8) to halve VRAM requirements at minimal quality loss for most enterprise tasks.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How does KAITO integrate with existing GitOps workflows?</h3>
+                        <p>KAITO Workspaces are pure Kubernetes YAML — they work seamlessly with ArgoCD, FluxCD, and any GitOps tool that can apply Kubernetes manifests. Commit your Workspace CRs to Git, and your GitOps operator handles the deployment. KAITO's controller is stateless (uses Kubernetes etcd as its source of truth), so there's no external state store to manage — it fits naturally into any GitOps pipeline. This is exactly how I've set up AI serving infrastructure at multiple Fortune 500 clients, and it's the pattern I teach in the Agentic AI Workshop.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>KAITO represents a maturation point for enterprise AI infrastructure on Kubernetes. In 2026, the question is no longer <em>whether</em> you can run LLMs on Kubernetes — you clearly can — but <em>how fast you can get to production</em> while maintaining the operational discipline that enterprise environments demand.</p>
+                    <p>The operator model brings the same declarative, GitOps-friendly operational patterns that made Kubernetes successful for stateless microservices to the world of AI inference. When your platform team can deploy a new model version with one YAML change and a <code>kubectl apply</code>, you've crossed the threshold from "AI project" to "AI platform."</p>
+                    <p>In my 25 years building systems at JPMorgan, Deutsche Bank, and Morgan Stanley, the teams that succeeded with new technology didn't just adopt it — they operationalized it. They built the runbooks, the autoscaling policies, the monitoring dashboards, and the security guardrails before going to production. KAITO gives you the scaffolding to do exactly that for AI serving.</p>
+                    <p>If your team is serious about production Agentic AI in 2026, the Kubernetes infrastructure piece is foundational. The hands-on Kubernetes labs at the end of our <a href="https://devops.gheware.com/training/">Agentic AI Workshop</a> include a complete KAITO deployment — from cluster setup to live inference — because I believe you learn infrastructure by building it, not by reading slides about it. Our Silver package includes a 30-day post-training follow-up where we review your actual production deployment topology.</p>
+                    <p>The zero-risk guarantee stands: if your team doesn't achieve at least 40% faster deployment cycles within 90 days of training, we refund 100% and pay you $1,000. We've never had to pay it — in 8 years.</p>
+                </section>
+
+            </div>
+
+
+            <!-- Author Bio Placeholder -->
+            
+<!-- Newsletter Signup -->
+<div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+  <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+  <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+  <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <input type="hidden" name="website" value="">
+    <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+    <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+    <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+  </form>
+  <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+</div>
+<script>
+async function submitNewsletter(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const msg = document.getElementById('newsletter-msg');
+  try {
+    const r = await fetch('https://dev-leads.gheware.com/newsletter', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    msg.textContent = j.message || 'Thanks! Check your inbox.';
+    msg.style.display = 'block';
+    form.reset();
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+  }
+}
+</script>
+
+<div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <span class="related-category">Kubernetes</span>
+                        <h3><a href="/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html">Build a Production RAG Pipeline on Kubernetes: Enterprise Guide 2026</a></h3>
+                        <p>Complete guide to deploying Retrieval-Augmented Generation systems on enterprise Kubernetes with LangChain and ChromaDB.</p>
+                    </div>
+                    <div class="related-card">
+                        <span class="related-category">Agentic AI</span>
+                        <h3><a href="/blog/posts/production-ready-mcp-langgraph-enterprise-2026.html">Production-Ready MCP + LangGraph: Enterprise Architecture 2026</a></h3>
+                        <p>How to build fault-tolerant, observable multi-agent systems using Model Context Protocol and LangGraph Supervisor pattern.</p>
+                    </div>
+                    <div class="related-card">
+                        <span class="related-category">Kubernetes</span>
+                        <h3><a href="/blog/posts/zero-trust-ai-agents-enterprise-2026.html">Zero-Trust Security for AI Agents: Enterprise Implementation Guide 2026</a></h3>
+                        <p>OWASP LLM Top 10, prompt injection defense, and enterprise-grade security patterns for production AI agent systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Deploy Production AI on Kubernetes?</h2>
+                <p>Join the hands-on Agentic AI Workshop — rated 4.91/5.0 at Oracle. Build real AI agents with LangGraph, MCP, and Kubernetes-native serving infrastructure.</p>
+                <a href="https://devops.gheware.com/training/" class="btn-cta-primary">
+                    <span>View Agentic AI Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
