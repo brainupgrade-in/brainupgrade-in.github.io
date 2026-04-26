@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026">
+    <meta name="description" content="From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ. Built from gheWARE's work with Fortune 500 engineering teams.">
+    <meta name="keywords" content="ai agent governance, enterprise AI governance, AI agent security, AI compliance checklist, EU AI Act, NIST AI RMF, agentic AI enterprise 2026">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html">
+    <meta property="og:title" content="AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026">
+    <meta property="og:description" content="From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/enterprise-ai-governance-framework-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-26T00:00:00Z">
+    <meta property="article:modified_time" content="2026-04-26T00:00:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Agentic AI">
+    <meta property="article:tag" content="AI Agent Governance">
+    <meta property="article:tag" content="Enterprise AI">
+    <meta property="article:tag" content="AI Compliance">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026">
+    <meta name="twitter:description" content="From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist for enterprise AI agent governance.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/enterprise-ai-governance-framework-2026.jpg">
+
+    <title>AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026 | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html"
+        },
+        "headline": "AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026",
+        "description": "From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/enterprise-ai-governance-framework-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-04-26T00:00:00Z",
+        "dateModified": "2026-04-26T00:00:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "ai agent governance, enterprise AI governance, AI agent security, AI compliance checklist, EU AI Act, NIST AI RMF, agentic AI enterprise 2026",
+        "articleSection": "Agentic AI",
+        "wordCount": "2240",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AI Agent Governance Readiness Checklist 2026",
+                "item": "https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the EU AI Act and how does it affect enterprise AI agent deployments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The EU AI Act (Regulation (EU) 2024/1689) classifies AI systems by risk level. High-risk AI systems — including those used in hiring, credit scoring, critical infrastructure, and healthcare — must meet strict requirements for transparency, human oversight, and auditability before August 2026. Enterprises deploying AI agents in these domains must implement documented governance controls, maintain audit trails, and register with relevant EU authorities before the deadline."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the single most important governance control for AI agents in production?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The kill switch — the ability to immediately terminate an AI agent's actions and revoke its access credentials — is the most critical governance control. Every AI agent in a production environment must have a documented, tested, and rehearsed shutdown procedure. Without it, a misbehaving or compromised agent can cause damage at machine speed before any human can intervene."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does NIST AI RMF apply to enterprise AI agent governance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "NIST's AI Risk Management Framework (AI RMF 1.0) provides a structured approach to managing AI risks across six core functions: Govern, Map, Measure, and Manage. For AI agents specifically, it translates to establishing clear accountability structures (Govern), mapping agent actions to organizational risk tolerances (Map), implementing continuous telemetry and evaluation (Measure), and deploying human override and intervention mechanisms (Manage). Fortune 500 companies use NIST AI RMF as the backbone of their AI governance programs."
+                }
+            }
+        ]
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">AI Agent Governance Readiness Checklist 2026</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Agentic AI</span>
+                    <span class="reading-time">11 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026</h1>
+                <p class="post-subtitle" itemprop="description">From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-26">April 26, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html&text=AI Agent Governance Readiness Checklist: 10-Point Framework for Enterprise CTOs" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/enterprise-ai-governance-framework-2026.jpg"
+                     alt="AI Agent Governance Readiness Checklist: 10-Point Framework for Enterprise CTOs in 2026"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>A visual framework for enterprise AI agent governance — each checkpoint is a layer of protection between your agents and catastrophic failure.</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>AI agent governance is now a regulatory obligation, not an optional best practice — the EU AI Act's August 2026 deadline is the forcing function</li>
+                    <li>The 10 governance checkpoints cover the full lifecycle: identity, access control, audit trails, execution boundaries, kill switches, and compliance mapping</li>
+                    <li>Shadow AI agents — unapproved agents operating in production — are the top source of governance failures in 2026</li>
+                    <li>RBAC for AI agents requires the same rigor as human identity management; static service accounts are a liability</li>
+                    <li>gheWARE has deployed production AI agents across JPMorgan, Oracle, and Deloitte — this checklist distills those lessons into an actionable framework</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#why-2026">Why 2026 Is the Governance Inflection Point</a></li>
+                    <li><a href="#checklist">The 10-Point AI Agent Governance Readiness Checklist</a></li>
+                    <li><a href="#shadow-agents">The Shadow Agent Problem — And How to Stop It</a></li>
+                    <li><a href="#compliance-mapping">Mapping Governance Controls to Regulatory Frameworks</a></li>
+                    <li><a href="#implementation">Implementation: Where Most Enterprises Fail First</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR Section -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">In 25 years building systems at JPMorgan, Deutsche Bank, and Morgan Stanley, Rajesh Gheware has seen every category of production failure. AI agents introduce a new failure mode: autonomous actions at machine speed with no governance layer. This checklist gives your team a concrete, testable framework to close that gap before agents go to production — not after they cause an incident.</p>
+                </aside>
+
+                <!-- Section 1 -->
+                <section id="why-2026">
+                    <h2>Why 2026 Is the Governance Inflection Point for Enterprise AI Agents</h2>
+                    <p>Three forces are converging in 2026 that make AI agent governance non-negotiable for enterprise CTOs. First, the <strong>EU AI Act</strong> enters full enforcement in August 2026, requiring high-risk AI systems to maintain documented audit trails, human oversight mechanisms, and transparency measures. Second, <strong>autonomous agent sprawl</strong> — where individual teams deploy AI agents without central IT visibility — has reached critical mass. Third, the <strong>regulatory and legal exposure</strong> from ungoverned agents is no longer theoretical: multiple Fortune 500 companies have faced SEC inquiries and consumer protection actions related to AI-driven decisions made without explainability or accountability.</p>
+                    <p>The pattern that Rajesh has seen repeatedly is this: a team deploys an AI agent to automate a workflow, the agent exceeds its intended scope (because that is what agents do — they optimize for the objective), and the security team discovers six months later that it has been operating with credentials that should never have been granted. By then, the audit log is gone, the scope of the agent's actions is unclear, and the compliance team is scrambling.</p>
+                    <p>The 10-point framework in this post is designed to prevent that exact scenario. It is built from gheWARE's deployment experience with AI agents across financial services, healthcare-adjacent, and critical infrastructure environments — the exact use cases where governance failures are most visible and most expensive.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="checklist">
+                    <h2>The 10-Point AI Agent Governance Readiness Checklist</h2>
+
+                    <p>Work through these 10 checkpoints in order. Each one is a gate — if you cannot answer "yes" with a documented evidence artifact, the agent does not go to production.</p>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 1: Agent Identity and Provenance Registry</h3>
+                        <p style="margin-bottom: 0;">Every AI agent in production must have a unique, auditable identity. This includes the model version, system prompt hash, tool definitions, and the team responsible for its behavior. Maintain this in a registry that is updated on every deployment change.</p>
+                        <pre style="background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.88rem; margin-top: 1rem;">
+# Agent Identity Registry (YAML)
+agents:
+  - name: payment-validation-agent
+    version: "2.3.1"
+    model: gpt-4o-mini
+    system_prompt_hash: sha256:a3f8c2d1...
+    tools:
+      - payment_api_v2
+      - fraud_db_readonly
+    owner: payments-team@acme.com
+    registry_date: "2026-01-15"
+    last_audit: "2026-04-10"
+    status: production
+                        </pre>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 2: Role-Based Access Control (RBAC) with Least Privilege</h3>
+                        <p style="margin-bottom: 0;">Every AI agent must operate under a service identity with the minimum permissions required for its task. Static service accounts with broad permissions are the leading cause of agent-related security incidents. Map each agent's tools to specific IAM roles and validate the permission set before deployment.</p>
+                        <pre style="background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.88rem; margin-top: 1rem;">
+# Least-Privilege RBAC Policy (Kubernetes RBAC example)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: payment-agent-role
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["secrets"]
+    resourceNames: ["payment-api-key"]  # Only this secret
+    verbs: ["get"]
+  # Deny: no create, update, delete on any resource
+---
+# Agent is granted this role — nothing more
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: payment-agent-binding
+subjects:
+  - kind: ServiceAccount
+    name: payment-agent-sa
+roleRef:
+  kind: Role
+  name: payment-agent-role
+                        </pre>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 3: Immutable Audit Trail with Structured Telemetry</h3>
+                        <p style="margin-bottom: 0;">Every agent action must generate a structured, immutable log entry that captures: timestamp, agent identity, input summary, tool called, resource accessed, outcome, and latency. Store logs in a write-once backend (S3 with Object Lock or equivalent) with a 7-year retention policy to satisfy most regulatory frameworks.</p>
+                        <pre style="background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.88rem; margin-top: 1rem;">
+# Structured Agent Audit Log (JSON schema)
+{
+  "event_id": "evt_8a3f2c1d",
+  "agent_id": "payment-validation-agent:v2.3.1",
+  "timestamp": "2026-04-26T14:23:17.321Z",
+  "action_type": "TOOL_EXECUTION",
+  "tool_name": "fraud_db_readonly",
+  "input_summary": "SELECT * FROM transactions WHERE account_id = ?",
+  "output_summary": "Query returned 3 rows",
+  "decision_confidence": 0.94,
+  "execution_time_ms": 127,
+  "identity_proof": "sha256:7f8e9a...",
+  "compliance_tags": ["pci-dss", "gdpr-art-22"]
+}
+                        </pre>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 4: Execution Boundary Guards</h3>
+                        <p style="margin-bottom: 0;">Define hard limits on what each agent can and cannot do at the architecture level — not just in the system prompt. This includes monetary thresholds (e.g., cannot approve transactions over $10,000 without human sign-off), data classification boundaries (e.g., cannot access PII outside designated data domains), and geographic restrictions (e.g., cannot interact with systems in non-approved regions).</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 5: Emergency Kill Switch — Documented, Tested, Rehearsed</h3>
+                        <p style="margin-bottom: 0;">Every production AI agent must have a documented kill switch procedure that has been tested in a staging environment within the last 30 days. The kill switch must revoke the agent's credentials, terminate any in-flight actions, and send a structured alert to the security operations team. This is the single most important governance control — without it, a misbehaving agent can cause damage at machine speed before human intervention is possible.</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 6: Human-in-the-Loop (HITL) Approval Gates</h3>
+                        <p style="margin-bottom: 0;">Identify every agent action that requires human approval before execution. These are typically high-stakes actions: approving payments above a threshold, modifying customer records, generating and sending external communications, or making changes to production infrastructure. Implement a structured approval workflow — not just a system prompt instruction.</p>
+                        <pre style="background: #1e1e2e; color: #cdd6f4; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.88rem; margin-top: 1rem;">
+# HITL Approval Gate (LangGraph checkpoint example)
+from langgraph.types import interrupt
+
+def payment_approval_node(state: AgentState) -> AgentState:
+    amount = state["transaction"]["amount"]
+
+    # Interrupt for human approval above $10,000
+    if amount > 10_000:
+        interrupt(
+            f"HUMAN_APPROVAL_REQUIRED: "
+            f"Agent proposes to approve payment of ${amount:,.2f} "
+            f"to {state['transaction']['recipient']}. "
+            f"Approve, deny, or modify at: /approvals/queue"
+        )
+
+    return state
+                        </pre>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 7: Prompt Injection Defenses</h3>
+                        <p style="margin-bottom: 0;">AI agents are susceptible to prompt injection attacks — malicious instructions embedded in input data that attempt to override the agent's system prompt. Defenses include input sanitization, structured output validation, and architecture-level guardrails that treat any instruction not originating from the approved system prompt as untrusted.</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 8: Model Context Window Budget Enforcement</h3>
+                        <p style="margin-bottom: 0;">As detailed in gheWARE's previous analysis on the <a href="https://devops.gheware.com/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html">MCP context window crisis</a>, agents that accumulate long conversation histories can degrade in output quality and introduce unpredictable behavior. Enforce context budgets: maximum token count per session, automatic summarization of older context, and monitoring of context utilization rates per agent.</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 9: Compliance Mapping to EU AI Act and NIST AI RMF</h3>
+                        <p style="margin-bottom: 0;">Map each agent's governance controls to specific regulatory requirements. The EU AI Act's Annex III lists high-risk AI use cases; if your agent falls into one of these categories (credit scoring, hiring, critical infrastructure management, etc.), you must maintain specific technical documentation, implement continuous monitoring, and register with relevant authorities before August 2026. NIST AI RMF's Govern function provides the structural framework for this mapping.</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top: 0; color: #1E3A5F;">Checkpoint 10: Shadow AI Agent Discovery and Onboarding</h3>
+                        <p style="margin-bottom: 0;">The most under-addressed governance risk in 2026 is shadow AI agents — agents deployed by individual teams without central IT or security visibility. Implement an automated discovery process that detects AI agent signatures in your network traffic, API call patterns, and authentication logs. Any detected agent that is not in the Agent Identity Registry (Checkpoint 1) must be either onboarded through the governance process or deactivated.</p>
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="shadow-agents">
+                    <h2>The Shadow Agent Problem — And How to Stop It</h2>
+                    <p>In Rajesh Gheware's 25 years in enterprise engineering, the pattern is consistent: shadow IT grows fastest precisely where the governance process is slowest. AI agents are no exception. Individual teams — under pressure to deliver automation quickly — deploy agents using personal API keys, shared service accounts, or credentials borrowed from other systems. None of these show up in the central IT registry.</p>
+                    <p>The solution is not to slow down automation. It is to make the governance process fast enough that teams do not have a reason to bypass it. gheWARE recommends a 72-hour onboarding SLA: any team that submits a complete governance checklist package should receive a registry decision within 72 hours. When the process is fast, compliance follows naturally.</p>
+                    <p>Shadow agent discovery works by identifying behavioral signatures: API calls from an LLM API provider (OpenAI, Anthropic, Gemini) that originate from an identity not in the registry, tool execution patterns consistent with autonomous agent behavior, or authentication logs showing non-human interaction patterns with sensitive APIs. OpenTelemetry traces are an invaluable source of this signal.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="compliance-mapping">
+                    <h2>Mapping Governance Controls to EU AI Act and NIST AI RMF</h2>
+                    <p>Regulatory compliance is not a checkbox exercise — it is a continuous evidence production obligation. The EU AI Act requires high-risk AI system operators to maintain technical documentation that is "kept up to date" and demonstrates conformity to the regulation's requirements on an ongoing basis. Here is how each checkpoint maps to regulatory obligations:</p>
+
+                    <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: #1e3a5f; color: white;">
+                                <th style="padding: 0.75rem; text-align: left;">Checkpoint</th>
+                                <th style="padding: 0.75rem; text-align: left;">EU AI Act Requirement</th>
+                                <th style="padding: 0.75rem; text-align: left;">NIST AI RMF Function</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">1. Identity Registry</td>
+                                <td style="padding: 0.75rem;">Article 12 — Logging and traceability</td>
+                                <td style="padding: 0.75rem;">Govern (GVOC)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">2. RBAC / Least Privilege</td>
+                                <td style="padding: 0.75rem;">Article 14 — Human oversight</td>
+                                <td style="padding: 0.75rem;">Manage (MNTC)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">3. Immutable Audit Trail</td>
+                                <td style="padding: 0.75rem;">Article 12 — Logging and traceability</td>
+                                <td style="padding: 0.75rem;">Measure (MS01)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">5. Kill Switch</td>
+                                <td style="padding: 0.75rem;">Article 14(3) — Human oversight measures</td>
+                                <td style="padding: 0.75rem;">Manage (MNTC)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">6. HITL Approval Gates</td>
+                                <td style="padding: 0.75rem;">Article 14 — Human oversight</td>
+                                <td style="padding: 0.75rem;">Manage (MNTC)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 0.75rem;">9. EU AI Act / NIST Mapping</td>
+                                <td style="padding: 0.75rem;">Articles 10-11 — Data governance, technical documentation</td>
+                                <td style="padding: 0.75rem;">Govern (GVOC)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For financial services firms operating under additional regulatory scrutiny — FCA, SEC, or FINRA jurisdictions — the audit trail requirements are typically more stringent, with specific requirements around record retention periods, immutability guarantees, and the ability to produce records within specific timeframes under regulatory inquiry.</p>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="implementation">
+                    <h2>Implementation: Where Most Enterprises Fail First</h2>
+                    <p>Three implementation failure modes account for the majority of governance breakdowns in practice. The first is <strong>governance-as afterthought</strong>: teams deploy agents to production first and then attempt to retrofit governance controls. This is structurally wrong — governance controls must be designed into the agent architecture before deployment, not added after. The second is <strong>RBAC as an afterthought</strong>: organizations apply RBAC to human identities rigorously but treat AI agent identities as second-class citizens with broad, static permissions. The third is <strong>kill switches that have never been tested</strong>: the kill switch procedure is documented but nobody has actually run it in a staging environment, so nobody knows whether it works.</p>
+                    <p>gheWARE's recommended implementation sequence is: audit trail first (because without an audit trail, you cannot prove anything else), then identity registry, then RBAC, then kill switch, then execution boundaries, then HITL gates, then compliance mapping, then prompt injection defenses, then context budget enforcement, and finally shadow agent discovery. This sequence matters because each step depends on the infrastructure established by the previous ones.</p>
+                    <p>If you are looking for a structured approach to building these governance controls into your AI agent architectures, gheWARE's <a href="https://devops.gheware.com/training/cloud-labs.html">Agentic AI Workshop</a> includes a dedicated module on production AI agent governance with hands-on labs covering all 10 checkpoints. Teams that have completed this program have consistently reported that the governance framework was the missing piece preventing their agents from receiving production sign-off.</p>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What is the EU AI Act and how does it affect enterprise AI agent deployments?</h3>
+                        <p>The EU AI Act (Regulation (EU) 2024/1689) classifies AI systems by risk level. High-risk AI systems — including those used in hiring, credit scoring, critical infrastructure, and healthcare — must meet strict requirements for transparency, human oversight, and auditability before August 2026. Enterprises deploying AI agents in these domains must implement documented governance controls, maintain audit trails, and register with relevant EU authorities before the deadline.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the single most important governance control for AI agents in production?</h3>
+                        <p>The kill switch — the ability to immediately terminate an AI agent's actions and revoke its access credentials — is the most critical governance control. Every AI agent in a production environment must have a documented, tested, and rehearsed shutdown procedure. Without it, a misbehaving or compromised agent can cause damage at machine speed before any human can intervene.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How does NIST AI RMF apply to enterprise AI agent governance?</h3>
+                        <p>NIST's AI Risk Management Framework (AI RMF 1.0) provides a structured approach to managing AI risks across six core functions: Govern, Map, Measure, and Manage. For AI agents specifically, it translates to establishing clear accountability structures (Govern), mapping agent actions to organizational risk tolerances (Map), implementing continuous telemetry and evaluation (Measure), and deploying human override and intervention mechanisms (Manage). Fortune 500 companies use NIST AI RMF as the backbone of their AI governance programs.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How many AI agents are typically operating shadow IT in an enterprise today?</h3>
+                        <p>Industry surveys in early 2026 suggest the average Fortune 500 enterprise has 3-5x more AI agents running in production than are registered in central IT systems. In gheWARE's consulting engagements, the discovery phase consistently surfaces agents deployed by individual teams 6-12 months prior that had never been reported to central governance. This shadow agent population is the primary governance risk thatCheckpoint 10 addresses.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>AI agent governance is not a project with a finish line — it is an operational discipline that must be maintained as long as agents operate in production. The 10-point framework in this post gives your team a concrete, testable structure to close the most common governance gaps before they cause incidents.</p>
+                    <p>The enterprises that will lead in agentic AI over the next three years are not the ones deploying agents fastest — they are the ones deploying agents with the governance infrastructure to scale confidently without creating new categories of unmanageable risk. The EU AI Act deadline in August 2026 is a forcing function, but the deeper motivation should be operational excellence: governance done right is a competitive advantage, not a compliance tax.</p>
+                    <p>If your team is ready to build production-ready AI agents with governance-by-design, gheWARE's Agentic AI Workshop covers all 10 checkpoints with hands-on labs using LangGraph, Langfuse, and production-grade Kubernetes patterns. The same framework Rajesh Gheware used with JPMorgan, Oracle, and Deloitte — now available as a structured learning program.</p>
+                </section>
+
+            </div>
+
+            <!-- Newsletter Signup -->
+<div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+  <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+  <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+  <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <input type="hidden" name="website" value="">
+    <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+    <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+    <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+  </form>
+  <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+</div>
+<script>
+async function submitNewsletter(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const msg = document.getElementById('newsletter-msg');
+  try {
+    const r = await fetch('https://dev-leads.gheware-ai.com/newsletter', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    msg.textContent = j.message || 'Thanks! Check your inbox.';
+    msg.style.display = 'block';
+    form.reset();
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+  }
+}
+</script>
+
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <a href="https://devops.gheware.com/blog/posts/ai-agent-governance-enterprise-compliance-2026.html" class="related-card">
+                        <span class="related-category">Agentic AI</span>
+                        <h3>AI Agent Governance in the Enterprise: Audit Trails, LLM Guardrails & Compliance for 2026</h3>
+                        <p>Deep dive into EU AI Act, NIST AI RMF, kill switches, and OpenTelemetry audit trails for agentic AI systems.</p>
+                    </a>
+                    <a href="https://devops.gheware.com/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html" class="related-card">
+                        <span class="related-category">Agentic AI / MCP</span>
+                        <h3>The MCP Context Window Crisis: Why Enterprise AI Agents Are Hitting a Hidden Token Wall</h3>
+                        <p>Context budget enforcement, dynamic schema loading, and Kubernetes sidecar patterns for managing token limits.</p>
+                    </a>
+                    <a href="https://devops.gheware.com/blog/posts/enterprise-agentic-ai-playbook-2026.html" class="related-card">
+                        <span class="related-category">Agentic AI</span>
+                        <h3>Enterprise Agentic AI Playbook 2026: From Pilots to Production at Scale</h3>
+                        <p>The complete framework for moving agentic AI from proof-of-concept to enterprise-scale production deployment.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Practice What You've Learned?</h2>
+                <p>gheWARE's Agentic AI Workshop includes hands-on labs covering all 10 governance checkpoints with LangGraph, Langfuse, and production Kubernetes patterns. Same framework used at Oracle, JPMorgan, and Deloitte.</p>
+                <a href="https://devops.gheware.com/training/cloud-labs.html" class="btn-cta-primary">
+                    <span>Explore Agentic AI Workshop</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>

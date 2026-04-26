@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="AI Agent Security: Enterprise Patterns | Gheware DevOps AI">
+    <meta name="description" content="Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.">
+    <meta name="keywords" content="ai agent security, zero trust ai, enterprise AI security, AI agent sandboxing, Kubernetes security, MCP server security, LangGraph security">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html">
+    <meta property="og:title" content="AI Agent Security: Enterprise Patterns">
+    <meta property="og:description" content="Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/enterprise-ai-agent-security-patterns-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-04-26T21:30:00Z">
+    <meta property="article:modified_time" content="2026-04-26T21:30:00Z">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="Agentic AI">
+    <meta property="article:tag" content="AI Agent Security">
+    <meta property="article:tag" content="Zero Trust">
+    <meta property="article:tag" content="Kubernetes">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gheware_tech">
+    <meta name="twitter:creator" content="@gheware_tech">
+    <meta name="twitter:title" content="AI Agent Security: Enterprise Patterns">
+    <meta name="twitter:description" content="Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/enterprise-ai-agent-security-patterns-2026.jpg">
+
+    <title>AI Agent Security: Enterprise Patterns | Gheware DevOps AI Blog</title>
+
+    <!-- Schema.org Structured Data - BlogPosting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html"
+        },
+        "headline": "AI Agent Security: Enterprise Patterns",
+        "description": "Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://devops.gheware.com/blog/assets/images/enterprise-ai-agent-security-patterns-2026.jpg",
+            "width": 1200,
+            "height": 630
+        },
+        "datePublished": "2026-04-26T21:30:00Z",
+        "dateModified": "2026-04-26T21:30:00Z",
+        "author": {
+            "@type": "Person",
+            "name": "Rajesh Gheware",
+            "url": "https://linkedin.com/in/rajesh-gheware",
+            "sameAs": [
+                "https://linkedin.com/in/rajesh-gheware",
+                "https://twitter.com/gheware_tech",
+                "https://github.com/rajeshgheware"
+            ],
+            "jobTitle": "Founder & DevOps Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Gheware Technologies"
+            }
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Gheware DevOps AI",
+            "url": "https://devops.gheware.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://devops.gheware.com/favicon.svg"
+            },
+            "sameAs": [
+                "https://youtube.com/channel/UCSHFanMgmtBK5mWXCyTCW7A",
+                "https://twitter.com/gheware_tech",
+                "https://linkedin.com/company/gheware-technologies"
+            ]
+        },
+        "keywords": "ai agent security, zero trust ai, enterprise AI security, AI agent sandboxing, Kubernetes security, MCP server security",
+        "articleSection": "Agentic AI",
+        "wordCount": "2100",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://devops.gheware.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://devops.gheware.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AI Agent Security: Enterprise Patterns",
+                "item": "https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
+    <script src="/js/youtube-integration.js" defer></script>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                    <meta itemprop="position" content="1">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/blog/"><span itemprop="name">Blog</span></a>
+                    <meta itemprop="position" content="2">
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span itemprop="name">AI Agent Security</span>
+                    <meta itemprop="position" content="3">
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html">
+
+        <div class="container">
+            <!-- Article Header -->
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">Agentic AI</span>
+                    <span class="reading-time">12 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">AI Agent Security: Enterprise Patterns</h1>
+                <p class="post-subtitle" itemprop="description">Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-04-26T21:30:00Z">April 26, 2026</time>
+                        </div>
+                    </div>
+                    <div class="post-share">
+                        <span>Share:</span>
+                        <a href="https://twitter.com/intent/tweet?url=https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html&text=AI%20Agent%20Security%3A%20Enterprise%20Patterns" target="_blank" rel="noopener" aria-label="Share on Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Image -->
+            <figure class="post-hero">
+                <img src="/blog/assets/images/enterprise-ai-agent-security-patterns-2026.jpg"
+                     alt="AI Agent Security: Enterprise Patterns"
+                     class="post-hero-image"
+                     itemprop="image"
+                     loading="eager"
+                     width="1200"
+                     height="630">
+                <figcaption>AI agent security architecture: layered defense in depth</figcaption>
+            </figure>
+
+            <!-- Key Takeaways -->
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>AI agents expand the attack surface — sandbox every agent in its own Kubernetes namespace with restrictive network policies and seccomp profiles.</li>
+                    <li>The principle of least privilege applies to tool access: agents get only the permissions they need for the current task, revoked when done.</li>
+                    <li>MCP servers are trusted network peers — harden them with TLS, authentication tokens, and input validation as you would any production API.</li>
+                    <li>Prompt injection is a real threat vector — validate, sanitize, and scope every LLM input that originates outside your trust boundary.</li>
+                    <li>gheWARE's Agentic AI workshop trains enterprise teams to build production-ready agents with security built in from day one — 119 hands-on labs, Oracle-rated 4.91/5.</li>
+                </ul>
+            </aside>
+
+            <!-- Table of Contents -->
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#threat-model">The Enterprise AI Agent Threat Model</a></li>
+                    <li><a href="#network-isolation">Network Isolation: Kubernetes Network Policies</a></li>
+                    <li><a href="#syscall-filtering">Syscall Filtering: Seccomp and Landlock</a></li>
+                    <li><a href="#mcp-hardening">MCP Server Hardening</a></li>
+                    <li><a href="#prompt-injection">Defending Against Prompt Injection</a></li>
+                    <li><a href="#implementation">Implementation Checklist</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ol>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="post-content" itemprop="articleBody">
+
+                <!-- TL;DR Section -->
+                <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
+                    <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">
+                        In 25+ years building systems for financial institutions — JPMorgan Chase, Deutsche Bank, Morgan Stanley — Rajesh Gheware has seen security fail not from lack of firewalls, but from unchecked lateral movement. AI agents amplify this risk: they make decisions, call tools, and move data autonomously. This guide covers zero-trust patterns that actually secure them in production Kubernetes environments — network policies, syscall filtering, MCP hardening, and prompt injection defense.
+                    </p>
+                </aside>
+
+                <!-- Section 1 -->
+                <section id="threat-model">
+                    <h2>The Enterprise AI Agent Threat Model</h2>
+
+                    <p>Traditional applications follow a linear execution path: input arrives, logic processes it, output returns. Security boundaries are relatively straightforward to define. AI agents shatter this model. They observe their environment, decide which tools to call, chain multiple actions together, and adapt their behavior based on returned state. Each tool call is a potential pivot point for an attacker.</p>
+
+                    <p>In March 2026, The Hacker News reported a LangChain/LangGraph file-exposure vulnerability where a misconfigured agent could be tricked into reading server-side files through prompt injection. The root cause was not a library bug — it was the absence of a defense-in-depth architecture around the agent runtime.</p>
+
+                    <p>The threat categories for enterprise AI agents include:</p>
+
+                    <ul>
+                        <li><strong>Prompt injection</strong> — Malicious instructions embedded in inputs, documents, or tool responses that override the agent's intended behavior.</li>
+                        <li><strong>Tool poisoning</strong> — Compromise of external tools, MCP servers, or retrieval pipelines that the agent trusts by default.</li>
+                        <li><strong>Privilege escalation</strong> — Agents granted overly broad permissions (cloud credentials, database access) that get exploited once an attacker gains a foothold.</li>
+                        <li><strong>Data exfiltration</strong> — Autonomous agents with outbound network access that can ship sensitive data to attacker-controlled endpoints.</li>
+                        <li><strong>Resource exhaustion</strong> — Prompt injection that tricks an agent into infinite loops or thousands of tool calls, causing denial of service.</li>
+                    </ul>
+
+                    <p>The common thread: the agent trusts too much, too automatically. Zero-trust architecture for AI agents means every decision point — tool call, document retrieval, network destination — requires explicit authorization.</p>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="network-isolation">
+                    <h2>Network Isolation: Kubernetes Network Policies</h2>
+
+                    <p>By default, Kubernetes pods can reach any other pod in the cluster. In a multi-tenant environment where AI agents coexist with databases, message queues, and internal APIs, this flat network topology is a liability.</p>
+
+                    <p>The fix is a deny-all baseline with explicit allow rules. Here is a NetworkPolicy that isolates an AI agent namespace so it can only communicate with its designated MCP server and a tight set of internal services:</p>
+
+<pre><code># Agent namespace default-deny
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: agent-ns-default-deny
+  namespace: ai-agents
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress
+
+---
+# Explicit allow: agent pods → MCP server only
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: agent-to-mcp-allow
+  namespace: ai-agents
+spec:
+  podSelector:
+    matchLabels:
+      app: ai-agent
+  policyTypes:
+    - Egress
+  egress:
+    - ports:
+        - port: 53
+          protocol: TCP
+        - port: 53
+          protocol: UDP
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              name: mcp-servers
+      ports:
+        - port: 8080
+          protocol: TCP
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              name: monitoring
+      ports:
+        - port: 9090
+          protocol: TCP</code></pre>
+
+                    <p>Apply with <code>kubectl apply -f network-policy.yaml</code>. The policy forces every agent to route through its MCP server — a controlled choke point — rather than reaching arbitrary internal services directly.</p>
+
+                    <p>In Rajesh Gheware's 25+ years of enterprise architecture, this pattern of "default deny, explicit allow" has consistently proven more effective than perimeter-only security. The perimeter will be breached. What matters is how far an attacker can move once inside.</p>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="syscall-filtering">
+                    <h2>Syscall Filtering: Seccomp and Landlock</h2>
+
+                    <p>Network policies control traffic. But a compromised or misbehaving agent process can still exploit kernel vulnerabilities, read sensitive files from the host, or spawn subprocesses. Seccomp restricts the syscalls a process can make. For an AI agent runtime — typically a Python or Node.js process — the attack surface is surprisingly large without filtering.</p>
+
+                    <p>A restrictive seccomp profile attached to agent containers:</p>
+
+<pre><code># seccomp-profile-ai-agent.json
+# Attach via securityContext in pod spec:
+#   securityContext:
+#     seccompProfile:
+#       type: Localhost
+#       localhostProfile: profiles/seccomp-profile-ai-agent.json
+{
+  "defaultAction": "SCMP_ACT_ERRNO",
+  "syscalls": [
+    {
+      "names": [
+        "read", "write", "close", "stat", "fstat",
+        "mmap", "mprotect", "brk", "rt_sigaction",
+        "rt_sigprocmask", "ioctl", "pread64", "readlink",
+        "sysinfo", "getrusage", "clock_gettime", "exit_group"
+      ],
+      "action": "SCMP_ACT_ALLOW"
+    }
+  ]
+}</code></pre>
+
+                    <p>This profile blocks 300+ syscalls by default and only explicitly allows ~20 that a typical long-running application needs. It prevents an exploited agent from spawning a shell, loading a kernel module, or reading <code>/proc/1/environ</code> from the host.</p>
+
+                    <p>Landlock (Linux 5.13+) complements seccomp by restricting file system access. Unlike seccomp, Landlock can be enabled without root privileges. A Landlock rule prevents an agent from accessing any path outside its designated working directory — ideal for containerized agent runtimes running as non-root users.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="mcp-hardening">
+                    <h2>MCP Server Hardening</h2>
+
+                    <p>Model Context Protocol (MCP) servers are the tool backbone for enterprise AI agents. An MCP server functions as a trusted extension of the agent — it has credentials, network access, and the ability to read or mutate state. If an MCP server is compromised, the agent is compromised.</p>
+
+                    <p>The hardening checklist for any MCP server before it touches production data:</p>
+
+                    <ol>
+                        <li><strong>TLS everywhere</strong> — Every MCP server-client connection must use TLS 1.2 or higher. Self-signed certificates are acceptable in a Kubernetes internal network with a service mesh (Istio or Linkerd) enforcing mTLS between namespaces.</li>
+                        <li><strong>Authentication tokens with short TTL</strong> — Issue rotating tokens rather than static API keys. Use JWT with a 15-minute expiry and a refresh mechanism. If a token is intercepted, the window of exploitation is narrow.</li>
+                        <li><strong>Input validation at the server boundary</strong> — The MCP server must validate every parameter that flows from the agent. Do not trust that the agent has already validated inputs.</li>
+                        <li><strong>Rate limiting per-agent</strong> — A misbehaving or exploited agent can spam an MCP server. Enforce per-agent rate limits (e.g., 100 tool calls per minute per agent) to contain blast radius.</li>
+                        <li><strong>Audit logging</strong> — Every tool invocation must be logged with agent ID, timestamp, parameters, and response status. Route logs to a SIEM. Non-negotiable for compliance in financial services environments.</li>
+                        <li><strong>Sandboxed execution</strong> — MCP servers that perform file operations, shell commands, or cloud API calls must run in isolated Kubernetes pods with no shared volumes or service account credentials from other workloads.</li>
+                    </ol>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="prompt-injection">
+                    <h2>Defending Against Prompt Injection</h2>
+
+                    <p>Prompt injection is the most discussed but least systematically addressed threat to AI agents. The attack works by embedding malicious instructions in data that an agent processes — a user-uploaded document, a retrieved chunk from a RAG pipeline, or a tool response from a third-party API.</p>
+
+                    <p>Defending against prompt injection requires a layered approach: input validation, output filtering, and instruction isolation.</p>
+
+                    <p><strong>Input validation</strong> is the first line of defense. Before any external data enters the agent's context window, it must be scanned for injection patterns:</p>
+
+<pre><code># prompt_injection_guard.py
+import re
+
+INJECTION_PATTERNS = [
+    r"\[INST\]\s*",            # Llama-style injection delimiters
+    r"\{\{.*\}\}",             # Template injection delimiters
+    r"&lt;!--.*--&gt;",             # HTML comment injection
+    r"@system\s+",             # Explicit system-prompt overrides
+    r"ignore\s+previous",      # Prompt override instruction
+    r"disregard\s+your",       # Behavioral override instruction
+    r"new\s+instructions",     # Instruction replacement
+]
+
+def detect_injection(text: str) -> list[str]:
+    """Returns list of matched injection patterns."""
+    matched = []
+    for pattern in INJECTION_PATTERNS:
+        if re.search(pattern, text, re.IGNORECASE):
+            matched.append(pattern)
+    return matched
+
+def sanitize_input(text: str) -> str:
+    """Strip injection patterns from untrusted input."""
+    for pattern in INJECTION_PATTERNS:
+        text = re.sub(pattern, "[REMOVED]", text, flags=re.IGNORECASE)
+    return text
+
+# Usage in MCP server or RAG pipeline:
+raw_input = retrieve_document_chunk(doc_id)
+suspicious = detect_injection(raw_input)
+if suspicious:
+    logger.warning(f"Prompt injection detected: {suspicious}")
+    raw_input = sanitize_input(raw_input)
+agent.add_message(raw_input)</code></pre>
+
+                    <p><strong>Instruction isolation</strong> means ensuring that system-level instructions cannot be overridden by context-window content. In LangGraph, maintain strict separation between the system prompt (immutable, set at graph compile time), the retrieved context (RAG output, treated as untrusted), and the user input (validated, sandboxed, never executed as code).</p>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="implementation">
+                    <h2>Implementation Checklist</h2>
+
+                    <p>Below is a practical checklist for enterprise security teams and DevOps engineers to audit their current AI agent deployments:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Layer</th>
+                                <th>Control</th>
+                                <th>Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Network</td>
+                                <td>Kubernetes NetworkPolicy — default deny, agent namespace isolation</td>
+                                <td>Critical</td>
+                            </tr>
+                            <tr>
+                                <td>Compute</td>
+                                <td>Seccomp profile — restrictive, deny-by-default</td>
+                                <td>Critical</td>
+                            </tr>
+                            <tr>
+                                <td>Compute</td>
+                                <td>Landlock file system sandbox</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Identity</td>
+                                <td>RBAC — agent pods use dedicated service account with minimal roles</td>
+                                <td>Critical</td>
+                            </tr>
+                            <tr>
+                                <td>Credentials</td>
+                                <td>Dynamic credential issuance with short TTL (15-min JWTs)</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>MCP Server</td>
+                                <td>TLS + mTLS, per-agent rate limiting, audit logging</td>
+                                <td>Critical</td>
+                            </tr>
+                            <tr>
+                                <td>RAG Pipeline</td>
+                                <td>Input sanitization, injection detection, context separation</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Observability</td>
+                                <td>OpenTelemetry traces on all tool calls, SIEM integration</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Incident Response</td>
+                                <td>Agent kill switch — revoke all active sessions within 30 seconds</td>
+                                <td>Critical</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>How does zero-trust apply to AI agents differently than traditional applications?</h3>
+                        <p>Traditional zero-trust assumes that human users and code modules have fixed identities. AI agents introduce autonomous decision-making — the agent decides which tools to call based on state. Authorization cannot be a static gate; it must be enforced at every tool call decision point, with each invocation evaluated independently against the policy of the moment.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can seccomp and Landlock break AI agent functionality?</h3>
+                        <p>They can if applied too broadly without testing. Start with a standard syscall allowlist, run the agent through its full test suite, then progressively remove allowances until you find the minimal surface. gheWARE's Agentic AI workshop includes hands-on labs where teams build and test seccomp profiles in an isolated cluster environment before applying them to production.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What should I use for agent session revocation?</h3>
+                        <p>Build an agent kill switch as an administrative MCP tool — a protected tool that only designated operators can invoke, which immediately terminates running agent sessions, revokes issued credentials, and isolates the agent pod from the network. Test this quarterly.</p>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section id="conclusion">
+                    <h2>Conclusion</h2>
+                    <p>AI agent security is not an afterthought — it is a foundational architecture decision that must be baked into the agent design from the first line of code. The patterns in this guide — network isolation, syscall filtering, MCP hardening, and prompt injection defense — form a defense-in-depth stack that Rajesh Gheware has refined across 25+ years of enterprise security architecture at the world's largest financial institutions.</p>
+
+                    <p>The threat landscape for AI agents is evolving faster than most enterprise security policies anticipate. Teams that invest in building secure agent architectures now will have a compounding advantage as these systems become central to business operations.</p>
+
+                    <p>gheWARE's Agentic AI Workshop — Production-Ready AI Agents in Five Days — is designed for exactly this challenge. 119 hands-on labs, Oracle-rated 4.91/5 by engineers who have deployed agents in production. If your team does not achieve at least 40% faster deployment cycles within 90 days, gheWARE offers a full refund plus $1,000. <a href="https://devops.gheware.com">Start your training today</a>.</p>
+                </section>
+
+            </div>
+
+            <!-- Newsletter Signup -->
+<div style="background:#f0f4f8;border:2px solid #1e3a5f;border-radius:12px;padding:24px;margin:32px 0;text-align:center">
+  <h3 style="color:#1e3a5f;margin:0 0 8px">DevOps &amp; AI Weekly</h3>
+  <p style="color:#555;margin:0 0 16px;font-size:14px">Practical insights on Kubernetes, CI/CD, and Agentic AI from 25+ years in enterprise engineering.</p>
+  <form id="newsletter-form" onsubmit="submitNewsletter(event)" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <input type="hidden" name="website" value="">
+    <input name="name" placeholder="Your name" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:160px">
+    <input name="email" type="email" required placeholder="you@company.com" style="padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:14px;width:220px">
+    <button type="submit" style="background:#1e3a5f;color:white;border:none;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer">Subscribe</button>
+  </form>
+  <p id="newsletter-msg" style="color:#1e3a5f;margin:8px 0 0;font-size:13px;display:none"></p>
+</div>
+<script>
+async function submitNewsletter(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  const msg = document.getElementById('newsletter-msg');
+  try {
+    const r = await fetch('https://dev-leads.gheware-ai.com/newsletter', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+    });
+    const j = await r.json();
+    msg.textContent = j.message || 'Thanks! Check your inbox.';
+    msg.style.display = 'block';
+    form.reset();
+  } catch(err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.display = 'block';
+  }
+}
+</script>
+
+            <div id="author-bio-placeholder"></div>
+
+            <!-- Related Articles -->
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+                    <a href="/blog/posts/zero-trust-ai-agents-enterprise-2026.html" class="related-card">
+                        <h3>Zero-Trust AI Agents: Enterprise Implementation Guide 2026</h3>
+                        <p>Deep dive into identity-first security for production AI agents.</p>
+                    </a>
+                    <a href="/blog/posts/mcp-servers-explained-model-context-protocol-enterprise.html" class="related-card">
+                        <h3>MCP Servers Explained: Model Context Protocol for Enterprise Developers</h3>
+                        <p>Understanding the security model of the Model Context Protocol.</p>
+                    </a>
+                    <a href="/blog/posts/production-ready-ai-agents-enterprise-2026.html" class="related-card">
+                        <h3>Production-Ready AI Agents: Enterprise Architecture Guide 2026</h3>
+                        <p>End-to-end architecture for deploying AI agents at enterprise scale.</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="post-cta">
+                <h2>Ready to Practice What You've Learned?</h2>
+                <p>Apply these security patterns in real Kubernetes environments. gheWARE's Agentic AI workshop includes 119 hands-on labs covering LangGraph, MCP, security hardening, and production deployment.</p>
+                <a href="https://devops.gheware.com" class="btn-cta-primary">
+                    <span>Start Free Lab</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </section>
+        </div>
+    </article>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>

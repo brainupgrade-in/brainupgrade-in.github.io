@@ -22,10 +22,28 @@
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
+            <title>AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html</guid>
+            <description>From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ. Built from gheWARE's work with Fortune 500 engineering teams.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
             <title>Debugging AI Agents in Production: Enterprise SRE Guide 2026</title>
             <link>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</guid>
             <description>Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>AI Agent Security: Enterprise Patterns</title>
+            <link>https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html</guid>
+            <description>Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
@@ -36,6 +54,15 @@
             <guid>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</guid>
             <description>Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.</description>
             <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>LangGraph Multi-Agent Orchestration: Enterprise Playbook 2026</title>
+            <link>https://devops.gheware.com/blog/posts/langgraph-multi-agent-orchestration-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langgraph-multi-agent-orchestration-enterprise-2026.html</guid>
+            <description>Learn how LangGraph multi-agent orchestration powers enterprise AI — architecture patterns, Kubernetes deployment, and banking use cases.</description>
+            <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
         </item>
@@ -434,33 +461,6 @@
             <category>Agentic AI Training</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Langfuse vs LangSmith vs Arize: Which LLM Observability Tool for Enterprise?</title>
-            <link>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</guid>
-            <description>Compare Langfuse, LangSmith, and Arize Phoenix for enterprise LLM observability in 2026. Pricing, features, Kubernetes integration, and the right choice for your AI platform team.</description>
-            <category>AI Observability</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>The GenAI Red Team Revolution: How AI Agents Are Replacing Human Security Researchers in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</guid>
-            <description>Claude Opus 4.6 found 22 Firefox zero-days in 2 weeks. AI red teaming is here. Learn how to implement GenAI security agents on Kubernetes with SPIFFE, OPA, Trivy, and LangGraph in 2026.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>[POST_TITLE]</title>
-            <link>https://devops.gheware.com/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html</guid>
-            <description>[POST_DESCRIPTION - 150-160 chars for optimal display]</description>
-            <category>[CATEGORY]</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

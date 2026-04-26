@@ -17,6 +17,22 @@
       "keywords": []
     },
     {
+      "title": "AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026",
+      "url": "/blog/posts/ai-agent-governance-readiness-checklist-2026.html",
+      "excerpt": "From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ. Built from gheWARE's work with Fortune 500 engineering teams.",
+      "category": "Agentic AI",
+      "tags": [
+        "AI Agent Governance",
+        "Enterprise AI",
+        "AI Compliance"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 26, 2026",
+      "_isoDate": "2026-04-26",
+      "readTime": "11 min read",
+      "keywords": []
+    },
+    {
       "title": "Debugging AI Agents in Production: Enterprise SRE Guide 2026",
       "url": "/blog/posts/debugging-ai-agents-production-sre-guide-2026.html",
       "excerpt": "Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.",
@@ -25,6 +41,22 @@
         "AI Agents",
         "Production Debugging",
         "SRE"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 26, 2026",
+      "_isoDate": "2026-04-26",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
+      "title": "AI Agent Security: Enterprise Patterns",
+      "url": "/blog/posts/enterprise-ai-agent-security-patterns-2026.html",
+      "excerpt": "Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.",
+      "category": "Agentic AI",
+      "tags": [
+        "AI Agent Security",
+        "Zero Trust",
+        "Kubernetes"
       ],
       "author": "Rajesh Gheware",
       "publishedDate": "April 26, 2026",
@@ -46,6 +78,22 @@
       "publishedDate": "April 26, 2026",
       "_isoDate": "2026-04-26",
       "readTime": "11 min read",
+      "keywords": []
+    },
+    {
+      "title": "LangGraph Multi-Agent Orchestration: Enterprise Playbook 2026",
+      "url": "/blog/posts/langgraph-multi-agent-orchestration-enterprise-2026.html",
+      "excerpt": "Learn how LangGraph multi-agent orchestration powers enterprise AI — architecture patterns, Kubernetes deployment, and banking use cases.",
+      "category": "Agentic AI",
+      "tags": [
+        "LangGraph",
+        "Multi-Agent AI",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 26, 2026",
+      "_isoDate": "2026-04-26",
+      "readTime": "12 min read",
       "keywords": []
     },
     {
