@@ -778,6 +778,36 @@
       "keywords": []
     },
     {
+      "title": "[POST_TITLE]",
+      "url": "/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html",
+      "excerpt": "[POST_DESCRIPTION - 150-160 chars for optimal display]",
+      "category": "[CATEGORY]",
+      "tags": [
+        "[TAG1]",
+        "[TAG2]"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 7, 2026",
+      "_isoDate": "2026-03-07",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
+      "title": "[POST_TITLE]",
+      "url": "/blog/posts/mcp-servers-explained-model-context-protocol-enterprise.html",
+      "excerpt": "[POST_DESCRIPTION - 150-160 chars for optimal display]",
+      "category": "[CATEGORY]",
+      "tags": [
+        "[TAG1]",
+        "[TAG2]"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "March 7, 2026",
+      "_isoDate": "2026-03-07",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
       "title": "MLOps CI/CD for AI Models: DevOps Best Practices That Scale in 2026",
       "url": "/blog/posts/mlops-cicd-pipeline-best-practices-2026.html",
       "excerpt": "87% of AI models never reach production. Build an MLOps CI/CD pipeline that ships AI models at DevOps speed — model versioning, automated testing, canary rollouts, and K8s-native deployment.",
