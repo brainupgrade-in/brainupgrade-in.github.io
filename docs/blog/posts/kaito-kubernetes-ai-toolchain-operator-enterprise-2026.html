@@ -244,7 +244,7 @@
                 <!-- TL;DR Section -->
                 <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
                     <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
-                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">KAITO (Kubernetes AI Toolchain Operator) is the operator that turns your enterprise Kubernetes cluster into a production-grade LLM serving platform. If you're running Kubernetes in 2026 and deploying AI models manually, you're doing it wrong. In Rajesh Gheware's 25 years building systems at JPMorgan, Deutsche Bank, and Morgan Stanley, I've seen countless teams waste months cobbling together bespoke MLOps pipelines when a well-designed operator could have gotten them to production in days. This guide gives you the complete playbook — from cluster prerequisites to live inference in under 15 minutes.</p>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">KAITO (Kubernetes AI Toolchain Operator) is the operator that turns your enterprise Kubernetes cluster into a production-grade LLM serving platform. If you're running Kubernetes in 2026 and deploying AI models manually, you're doing it wrong. In Rajesh Gheware's 25 years building systems at JPMorgan, Deutsche Bank, and Morgan Stanley, gheWARE has seen countless teams waste months cobbling together bespoke MLOps pipelines when a well-designed operator could have gotten them to production in days. This guide gives you the complete playbook — from cluster prerequisites to live inference in under 15 minutes.</p>
                 </aside>
 
                 <!-- Section 1 -->
@@ -252,7 +252,7 @@
                     <h2>What Is KAITO and Why Does It Matter for Enterprise Teams in 2026?</h2>
                     <p>In 2026, every enterprise is racing to deploy Large Language Models behind their firewalls. The challenge isn't building the models — it's <strong>operationalizing them at scale</strong> on Kubernetes infrastructure that already runs their core business systems. That's exactly the problem KAITO was designed to solve.</p>
                     <p>KAITO — the <strong>Kubernetes AI Toolchain Operator</strong> — is a Kubernetes Operator (built using operator-runtime) that automates the lifecycle of AI toolchain components on a Kubernetes cluster. Rather than manually installing inference servers, configuring model registries, and wiring up autoscalers across multiple Helm charts, KAITO lets you declare your desired AI serving topology in a handful of YAML files and handles the rest.</p>
-                    <p>In my corporate training at Oracle, where I delivered the Agentic AI Workshop with a <strong>4.91/5.0 rating</strong>, the most common pain point I see is enterprise teams spending 6-8 weeks just getting their first production LLM deployment stable. KAITO collapses that to a single afternoon.</p>
+                    <p>In my corporate training at Oracle, where I delivered the Agentic AI Workshop with a <strong>4.91/5.0 rating</strong>, the most common pain point gheWARE sees is enterprise teams spending 6-8 weeks just getting their first production LLM deployment stable. KAITO collapses that to a single afternoon.</p>
                     <p>The operator manages:</p>
                     <ul>
                         <li><strong>Model registry integration</strong>: Pulling model artifacts from HuggingFace, NGC, or enterprise S3-compatible storage</li>
@@ -328,7 +328,7 @@ spec:
                 <!-- Section 3 -->
                 <section id="prerequisites">
                     <h2>Prerequisites: GPU Nodes, Storage, and Network Policies</h2>
-                    <p>Before installing KAITO, your cluster must meet these requirements. Skipping these is the #1 reason I see enterprise AI deployments fail in the first month.</p>
+                    <p>Before installing KAITO, your cluster must meet these requirements. Skipping these is the #1 reason enterprise AI deployments fail in the first month.</p>
                     <h3>3.1 GPU Node Pools</h3>
                     <p>For production LLM workloads, you need GPU nodes with sufficient VRAM to hold at least one model shard. A practical minimum:</p>
                     <ul>
@@ -736,7 +736,7 @@ spec:
 
                     <div class="faq-item">
                         <h3>How does KAITO integrate with existing GitOps workflows?</h3>
-                        <p>KAITO Workspaces are pure Kubernetes YAML — they work seamlessly with ArgoCD, FluxCD, and any GitOps tool that can apply Kubernetes manifests. Commit your Workspace CRs to Git, and your GitOps operator handles the deployment. KAITO's controller is stateless (uses Kubernetes etcd as its source of truth), so there's no external state store to manage — it fits naturally into any GitOps pipeline. This is exactly how I've set up AI serving infrastructure at multiple Fortune 500 clients, and it's the pattern I teach in the Agentic AI Workshop.</p>
+                        <p>KAITO Workspaces are pure Kubernetes YAML — they work seamlessly with ArgoCD, FluxCD, and any GitOps tool that can apply Kubernetes manifests. Commit your Workspace CRs to Git, and your GitOps operator handles the deployment. KAITO's controller is stateless (uses Kubernetes etcd as its source of truth), so there's no external state store to manage — it fits naturally into any GitOps pipeline. This is exactly how I've set up AI serving infrastructure at multiple Fortune 500 clients, and it's the pattern gheWARE teaches in the Agentic AI Workshop.</p>
                     </div>
                 </section>
 
@@ -746,7 +746,7 @@ spec:
                     <p>KAITO represents a maturation point for enterprise AI infrastructure on Kubernetes. In 2026, the question is no longer <em>whether</em> you can run LLMs on Kubernetes — you clearly can — but <em>how fast you can get to production</em> while maintaining the operational discipline that enterprise environments demand.</p>
                     <p>The operator model brings the same declarative, GitOps-friendly operational patterns that made Kubernetes successful for stateless microservices to the world of AI inference. When your platform team can deploy a new model version with one YAML change and a <code>kubectl apply</code>, you've crossed the threshold from "AI project" to "AI platform."</p>
                     <p>In Rajesh Gheware's 25 years building systems at JPMorgan, Deutsche Bank, and Morgan Stanley, the teams that succeeded with new technology didn't just adopt it — they operationalized it. They built the runbooks, the autoscaling policies, the monitoring dashboards, and the security guardrails before going to production. KAITO gives you the scaffolding to do exactly that for AI serving.</p>
-                    <p>If your team is serious about production Agentic AI in 2026, the Kubernetes infrastructure piece is foundational. The hands-on Kubernetes labs at the end of our <a href="https://devops.gheware.com/training/">Agentic AI Workshop</a> include a complete KAITO deployment — from cluster setup to live inference — because I believe you learn infrastructure by building it, not by reading slides about it. Our Silver package includes a 30-day post-training follow-up where we review your actual production deployment topology.</p>
+                    <p>If your team is serious about production Agentic AI in 2026, the Kubernetes infrastructure piece is foundational. The hands-on Kubernetes labs at the end of our <a href="https://devops.gheware.com/training/">Agentic AI Workshop</a> include a complete KAITO deployment — from cluster setup to live inference — because gheWARE believes you learn infrastructure by building it, not by reading slides about it. Our Silver package includes a 30-day post-training follow-up where we review your actual production deployment topology.</p>
                     <p>The zero-risk guarantee stands: if your team doesn't achieve at least 40% faster deployment cycles within 90 days of training, we refund 100% and pay you $1,000. We've never had to pay it — in 8 years.</p>
                 </section>
 

@@ -270,14 +270,14 @@
                 <!-- TL;DR Section -->
                 <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
                     <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
-                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">AI agents on Kubernetes are consuming GPU budgets at rates that blindside even experienced engineering leaders. This guide covers the five pillars of AI FinOps: GPU rightsizing with MIG/DRA, spot instance strategies for fault-tolerant agent tasks, eliminating hidden costs (idle GPUs, inter-AZ traffic, orphaned environments), implementing Kubernetes-native cost controls (ResourceQuotas, LimitRanges, Karpenter), and building the cross-functional FinOps culture that makes it all sustainable. Based on patterns I've seen work at JPMorgan, Deutsche Bank, and across 14 enterprise training batches.</p>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">AI agents on Kubernetes are consuming GPU budgets at rates that blindside even experienced engineering leaders. This guide covers the five pillars of AI FinOps: GPU rightsizing with MIG/DRA, spot instance strategies for fault-tolerant agent tasks, eliminating hidden costs (idle GPUs, inter-AZ traffic, orphaned environments), implementing Kubernetes-native cost controls (ResourceQuotas, LimitRanges, Karpenter), and building the cross-functional FinOps culture that makes it all sustainable. Based on patterns gheWARE has seen work at JPMorgan, Deutsche Bank, and across 14 enterprise training batches.</p>
                 </aside>
 
                 <!-- Section 1 -->
                 <section id="section-1">
                     <h2>The $47 Billion Problem: Why AI Agent Costs Are Exploding on Kubernetes</h2>
 
-                    <p>Here's a number that should terrify every CTO: Gartner estimates that enterprise AI infrastructure spending will hit $47 billion in 2026, and <strong>over 60% of organizations running AI agents on Kubernetes report budget overruns exceeding 40%</strong>. In Rajesh Gheware's 25+ years building enterprise platforms at JPMorgan Chase and Deutsche Bank, I've seen cost overruns kill more projects than technical failures ever did.</p>
+                    <p>Here's a number that should terrify every CTO: Gartner estimates that enterprise AI infrastructure spending will hit $47 billion in 2026, and <strong>over 60% of organizations running AI agents on Kubernetes report budget overruns exceeding 40%</strong>. In Rajesh Gheware's 25+ years building enterprise platforms at JPMorgan Chase and Deutsche Bank, cost overruns have killed more projects than technical failures ever did.</p>
 
                     <p>The problem isn't that AI agents are expensive. The problem is that <strong>agentic AI workloads behave fundamentally differently from traditional Kubernetes workloads</strong>, and teams are applying yesterday's cost management playbook to tomorrow's infrastructure.</p>
 
@@ -480,7 +480,7 @@ spec:
                 <section id="section-4">
                     <h2>Building a FinOps Culture for AI Agents: Beyond the Dashboard</h2>
 
-                    <p>Here's what I tell every L&D head and VP Engineering in our <a href="https://devops.gheware.com/training/">Agentic AI training workshops</a>: <strong>the best FinOps tool in the world is useless without a FinOps culture</strong>. I've seen this pattern at JPMorgan and Deutsche Bank — the organizations that control AI costs are the ones where engineers see cost as a first-class engineering metric, not an afterthought.</p>
+                    <p>Here's what gheWARE tells every L&D head and VP Engineering in the <a href="https://devops.gheware.com/training/">Agentic AI training workshops</a>: <strong>the best FinOps tool in the world is useless without a FinOps culture</strong>. The pattern at JPMorgan and Deutsche Bank is consistent — the organizations that control AI costs are the ones where engineers see cost as a first-class engineering metric, not an afterthought.</p>
 
                     <h3>The Four Pillars of AI FinOps Culture</h3>
 
@@ -488,7 +488,7 @@ spec:
                         <li><strong>Cost-per-inference as a KPI:</strong> Every agent team should track cost-per-inference alongside latency and accuracy. Make it visible in Grafana dashboards next to P99 latency. If an agent's cost-per-inference rises 20%, that's as urgent as a latency regression.</li>
                         <li><strong>Shared accountability:</strong> The team deploying the agent owns its cost. No more "that's the platform team's problem." Use Kubernetes labels and <a href="https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html">OpenTelemetry</a> to attribute every dollar to a team, agent, and workflow.</li>
                         <li><strong>Weekly cost reviews:</strong> A 15-minute weekly sync where engineering and finance review AI infrastructure costs together. Show trends, anomalies, and the top 3 cost optimization opportunities. Make it ritual.</li>
-                        <li><strong>Cost budgets with circuit breakers:</strong> Set per-agent and per-namespace cost budgets. When an agent hits 80% of its monthly budget, alert. At 100%, throttle. This prevents the "surprise $200K bill" scenario I've seen at multiple enterprises.</li>
+                        <li><strong>Cost budgets with circuit breakers:</strong> Set per-agent and per-namespace cost budgets. When an agent hits 80% of its monthly budget, alert. At 100%, throttle. This prevents the "surprise $200K bill" scenario gheWARE has seen at multiple enterprises.</li>
                     </ol>
 
                     <h3>Monitoring AI Agent Costs with OpenCost + Prometheus</h3>
@@ -556,7 +556,7 @@ sum(
                 <section id="section-5">
                     <h2>Production Implementation Guide: From Zero to FinOps in 30 Days</h2>
 
-                    <p>Here's the phased rollout I recommend to enterprise teams in our <a href="https://devops.gheware.com/training/">5-Day Agentic AI Workshop</a> (rated 4.91/5.0 at Oracle). This isn't theory — it's the same playbook I built during my years architecting payment platforms at JPMorgan Chase:</p>
+                    <p>Here's the phased rollout gheWARE recommends to enterprise teams in our <a href="https://devops.gheware.com/training/">5-Day Agentic AI Workshop</a> (rated 4.91/5.0 at Oracle). This isn't theory — it's the same playbook I built during my years architecting payment platforms at JPMorgan Chase:</p>
 
                     <h3>Week 1: Visibility (Days 1-7)</h3>
                     <ul>

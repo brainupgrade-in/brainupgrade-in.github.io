@@ -246,11 +246,11 @@
                 <!-- Section 1 -->
                 <section id="the-cost-of-no-control-plane">
                     <h2>The Cost of No Control Plane</h2>
-                    <p>In Rajesh Gheware's 25 years building systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley, I have seen the same pattern repeat across every new technology wave: teams rush to production without governance, then spend 18 months retrofitting what they should have built first.</p>
+                    <p>In Rajesh Gheware's 25 years building systems at JPMorgan Chase, Deutsche Bank, and Morgan Stanley, Rajesh Gheware has seen the same pattern repeat across every new technology wave: teams rush to production without governance, then spend 18 months retrofitting what they should have built first.</p>
                     <p>AI agents are no different — except the blast radius is larger. When a payment gateway microservice misbehaves, it affects one transaction. When an AI agent in your OTC derivatives workflow makes unauthorized decisions, you have a regulatory incident on your hands.</p>
                     <p>Consider what "no control plane" actually means in practice:</p>
                     <ul>
-                        <li><strong>Runaway costs:</strong> Agents that loop or re-call LLM APIs can generate $50,000+ in API charges in a single weekend. I have seen this at a major bank where a code-review agent got into a recursive self-correction loop calling GPT-4 Turbo 800 times per PR.</li>
+                        <li><strong>Runaway costs:</strong> Agents that loop or re-call LLM APIs can generate $50,000+ in API charges in a single weekend. gheWARE has seen this at a major bank where a code-review agent got into a recursive self-correction loop calling GPT-4 Turbo 800 times per PR.</li>
                         <li><strong>Compliance violations:</strong> EU AI Act Article 14 requires that AI systems be accurate, robust, and compliant. Without audit trails generated at the control plane layer, you cannot prove compliance.</li>
                         <li><strong>Security breaches:</strong> Agents with tool access to internal APIs, databases, or file systems are prime targets for prompt injection. An ungoverned agent is an attacker who has already compromised your infrastructure from the inside.</li>
                         <li><strong>Agent chaos:</strong> At Snowflake, as reported in early 2026, teams discovered that eight different AI agents were duplicating each other's work — creating conflicting data transformations because no orchestration layer existed.</li>
