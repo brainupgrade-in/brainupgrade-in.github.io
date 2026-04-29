@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 26 Apr 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>K8sGPT: AI SRE Copilot for Kubernetes</title>
+            <link>https://devops.gheware.com/blog/posts/k8sgpt-ai-sre-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/k8sgpt-ai-sre-kubernetes-2026.html</guid>
+            <description>K8sGPT brings AI root cause analysis to Kubernetes - diagnosing CrashLoopBackOff, OOMKilled, and 50+ failure modes. Operators, custom analyzers, enterprise patterns.</description>
+            <category>AI in Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AI Agent Evaluation &amp; Benchmarking: The Enterprise Framework for 2026</title>
             <link>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</link>
@@ -391,10 +400,10 @@
             <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>Platform Engineering 2026: Ultimate Backstage AI IDP Guide</title>
+            <title>Platform Engineering 2026: Build AI-Powered IDPs With Backstage</title>
             <link>https://devops.gheware.com/blog/posts/platform-engineering-ai-agents-idp-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/platform-engineering-ai-agents-idp-2026.html</guid>
-            <description>Build the ultimate AI-powered IDP in 2026: Backstage AI plugins + 7 golden paths that cut developer onboarding 90%. Platform engineering guide with free configs and templates →</description>
+            <description>The complete guide to platform engineering in 2026: Backstage AI plugins + golden paths that cut developer onboarding 90%. Build internal developer portals with natural language—free configs inside. Learn from 25 years enterprise experience →</description>
             <category>Platform Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>How to Train Enterprise Teams on Agentic AI: The Complete L&amp;D Playbook 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-corporate-training-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-corporate-training-enterprise-2026.html</guid>
-            <description>74% of enterprises cite workforce skill gaps as their #1 barrier to AI deployment. This step-by-step L&amp;D playbook trains your teams on agentic AI—fast.</description>
-            <category>Agentic AI Training</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

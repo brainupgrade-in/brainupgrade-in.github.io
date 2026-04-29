@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "K8sGPT: AI SRE Copilot for Kubernetes",
+      "url": "/blog/posts/k8sgpt-ai-sre-kubernetes-2026.html",
+      "excerpt": "K8sGPT brings AI root cause analysis to Kubernetes - diagnosing CrashLoopBackOff, OOMKilled, and 50+ failure modes. Operators, custom analyzers, enterprise patterns.",
+      "category": "AI in Kubernetes",
+      "tags": [
+        "Kubernetes",
+        "AI SRE",
+        "K8sGPT"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "April 29, 2026",
+      "_isoDate": "2026-04-29",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
       "title": "AI Agent Evaluation & Benchmarking: The Enterprise Framework for 2026",
       "url": "/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html",
       "excerpt": "Stop guessing which AI agent performs best. This enterprise evaluation framework covers 7 benchmark dimensions, MMLU + GAIA scores, cost-per-task metrics, and real production tests CTOs use to make build vs buy decisions in 2026.",
@@ -680,9 +696,9 @@
       "keywords": []
     },
     {
-      "title": "Platform Engineering 2026: Ultimate Backstage AI IDP Guide",
+      "title": "Platform Engineering 2026: Build AI-Powered IDPs With Backstage",
       "url": "/blog/posts/platform-engineering-ai-agents-idp-2026.html",
-      "excerpt": "Build the ultimate AI-powered IDP in 2026: Backstage AI plugins + 7 golden paths that cut developer onboarding 90%. Platform engineering guide with free configs and templates →",
+      "excerpt": "The complete guide to platform engineering in 2026: Backstage AI plugins + golden paths that cut developer onboarding 90%. Build internal developer portals with natural language—free configs inside. Learn from 25 years enterprise experience →",
       "category": "Platform Engineering",
       "tags": [
         "Platform Engineering",
@@ -1252,9 +1268,9 @@
       ]
     },
     {
-      "title": "SRE Burnout 2026: Stop 3AM Alerts With 6 Proven AI Tools",
+      "title": "Stop SRE Burnout 2026: 6 AI Tools That Eliminate 3AM Alarms",
       "url": "/blog/posts/sre-burnout-ai-incident-prevention-clawdbot-2026.html",
-      "excerpt": "Stop SRE burnout in 2026: 6 proven AI tools cut MTTR 85% and eliminate 3AM alerts. See the autonomous remediation tools Oracle's team uses. Free self-healing configs + playbook →",
+      "excerpt": "Stop SRE burnout in 2026 with AI incident prevention. 6 autonomous remediation tools cut MTTR 85% and eliminate 3AM alerts. See what Oracle's SREs use—free self-healing configs inside. Learn from 25 years enterprise experience →",
       "category": "AI Tools",
       "tags": [
         "SRE",
@@ -1564,9 +1580,9 @@
       ]
     },
     {
-      "title": "Best GPU-Optimized Kubernetes for ML 2026: 7 Platforms Compared",
+      "title": "Top Kubernetes Integrations for AI GPU Acceleration 2026: Ultimate Comparison",
       "url": "/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html",
-      "excerpt": "Best GPU-optimized Kubernetes for ML in 2026: 7 platforms compared head-to-head. Cut compute costs 67% with JPMorgan-scale MIG configs. Hands-on guide with free YAML templates →",
+      "excerpt": "Compare top Kubernetes integrations for AI GPU acceleration in 2026. 7 platforms ranked to cut ML compute costs 67%. See who offers the most GPU-optimized Kubernetes solution—free templates included. Learn from 25 years enterprise experience →",
       "category": "Kubernetes",
       "tags": [
         "Kubernetes",
