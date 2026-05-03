@@ -720,4 +720,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://devops.gheware.com/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html</loc>
+        <lastmod>2026-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

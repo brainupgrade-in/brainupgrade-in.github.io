@@ -696,9 +696,9 @@
       "keywords": []
     },
     {
-      "title": "Platform Engineering 2026: Build AI-Powered IDPs With Backstage",
+      "title": "Platform Engineering 2026: Build AI IDPs With 7 Golden Paths [Backstage]",
       "url": "/blog/posts/platform-engineering-ai-agents-idp-2026.html",
-      "excerpt": "The complete guide to platform engineering in 2026: Backstage AI plugins + golden paths that cut developer onboarding 90%. Build internal developer portals with natural language—free configs inside. Learn from 25 years enterprise experience →",
+      "excerpt": "Platform Engineering 2026: Build AI-powered IDPs with Backstage golden paths that cut developer onboarding 90%. Internal developer portal with natural language—free templates inside. Learn from 25 years enterprise experience →",
       "category": "Platform Engineering",
       "tags": [
         "Platform Engineering",
@@ -1025,9 +1025,9 @@
       "keywords": []
     },
     {
-      "title": "Context Engineering 2026: Senior vs Junior AI [7 Patterns]",
+      "title": "Context Engineering 2026: 7 Patterns Senior AI Engineers Use",
       "url": "/blog/posts/context-engineering-agentic-ai-2026.html",
-      "excerpt": "Context engineering is the new prompt engineering. 7 patterns senior AI engineers use to build production agentic AI that actually works. Free code samples inside →",
+      "excerpt": "Context engineering beats prompt engineering. 7 patterns senior AI engineers use to build production agentic AI that actually works. Free code samples inside. Learn from 25 years enterprise experience →",
       "category": "Agentic AI",
       "tags": [
         "Context Engineering",
@@ -1268,9 +1268,9 @@
       ]
     },
     {
-      "title": "Stop SRE Burnout 2026: 6 AI Tools That Eliminate 3AM Alarms",
+      "title": "End SRE Burnout 2026: 6 AI Tools That Stop 3AM Alerts [Oracle Tested]",
       "url": "/blog/posts/sre-burnout-ai-incident-prevention-clawdbot-2026.html",
-      "excerpt": "Stop SRE burnout in 2026 with AI incident prevention. 6 autonomous remediation tools cut MTTR 85% and eliminate 3AM alerts. See what Oracle's SREs use—free self-healing configs inside. Learn from 25 years enterprise experience →",
+      "excerpt": "Stop SRE burnout 2026. 6 AI tools cut MTTR 85% & eliminate 3AM alerts—see what Oracle's SREs use. Free self-healing configs inside. Learn from 25 years enterprise experience →",
       "category": "AI Tools",
       "tags": [
         "SRE",
@@ -1580,7 +1580,7 @@
       ]
     },
     {
-      "title": "Top Kubernetes Integrations for AI GPU Acceleration 2026: Ultimate Comparison",
+      "title": "7 Best GPU Kubernetes for ML 2026: Cut AI Costs 67% [Proven Tools]",
       "url": "/blog/posts/kubernetes-ai-ml-workloads-guide-2026.html",
       "excerpt": "7 best GPU Kubernetes for ML 2026 ranked. Cut AI training costs 67% with proven NVIDIA configs. Compare Kubeflow, Ray, Fluid—get free YAML templates. Learn from 25 years enterprise experience →",
       "category": "Kubernetes",
@@ -2076,6 +2076,18 @@
         "hands-on examples",
         "production-ready"
       ]
+    },
+    {
+      "title": "Ai Agents Autonomous Kubernetes Operations 2026",
+      "url": "/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html",
+      "excerpt": "AI agents now operate as 24/7 junior DevOps engineers inside Kubernetes — diagnosing CrashLoopBackOff, OOMKilled, and network failures, then autonomously remediating them. Complete enterprise guide with 5 production patterns, KAITO operator setup, and a 7-step governance framework.**",
+      "category": "DevOps",
+      "tags": [],
+      "author": "Rajesh Gheware",
+      "publishedDate": "January 1, 2026",
+      "_isoDate": "2026-01-01",
+      "readTime": "10 min read",
+      "keywords": []
     }
   ]
 }
