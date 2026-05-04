@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>From Pilot To Production Why Agentic Ai Fails 2026</title>
+            <link>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</guid>
+            <description>Only 11-25% of Agentic AI pilots reach production. Learn the 7 failure patterns and how to fix them with LangGraph, MCP, and production-grade observability. Based on enterprise deployment experience.</description>
+            <category>DevOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>K8sGPT: AI SRE Copilot for Kubernetes</title>
             <link>https://devops.gheware.com/blog/posts/k8sgpt-ai-sre-kubernetes-2026.html</link>
@@ -449,15 +458,6 @@
             <link>https://devops.gheware.com/blog/posts/enterprise-agentic-ai-deployment-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/enterprise-agentic-ai-deployment-2026.html</guid>
             <description>Enterprise agentic AI deployment 2026 guide: infrastructure stack, Kubernetes configs, governance, security, observability, and phased rollout strategy from 25 years of enterprise experience.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>How Fortune 500 Companies Deploy Agentic AI Teams in 2026: Real Playbook</title>
-            <link>https://devops.gheware.com/blog/posts/fortune-500-agentic-ai-deployment-playbook-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/fortune-500-agentic-ai-deployment-playbook-2026.html</guid>
-            <description>See how Fortune 500 companies deploy Agentic AI in 2026—autonomous agents that plan, act, and learn. The real enterprise playbook inside.</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>

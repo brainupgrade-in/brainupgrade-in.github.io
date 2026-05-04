@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "From Pilot To Production Why Agentic Ai Fails 2026",
+      "url": "/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html",
+      "excerpt": "Only 11-25% of Agentic AI pilots reach production. Learn the 7 failure patterns and how to fix them with LangGraph, MCP, and production-grade observability. Based on enterprise deployment experience.",
+      "category": "DevOps",
+      "tags": [],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 4, 2026",
+      "_isoDate": "2026-05-04",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
       "title": "K8sGPT: AI SRE Copilot for Kubernetes",
       "url": "/blog/posts/k8sgpt-ai-sre-kubernetes-2026.html",
       "excerpt": "K8sGPT brings AI root cause analysis to Kubernetes - diagnosing CrashLoopBackOff, OOMKilled, and 50+ failure modes. Operators, custom analyzers, enterprise patterns.",
@@ -1733,8 +1745,12 @@
       "title": "Self-Healing Kubernetes Apps: Complete Guide to Automatic Recovery and Scaling (2026)",
       "url": "/blog/posts/self-healing-kubernetes-apps-guide-2026.html",
       "excerpt": "Master self-healing Kubernetes applications that recover from failures and scale automatically. Complete guide with real examples, HPA configuration, and production best practices.",
-      "category": "DevOps",
-      "tags": [],
+      "category": "Kubernetes",
+      "tags": [
+        "Kubernetes",
+        "Self-Healing",
+        "HPA"
+      ],
       "author": "Rajesh Gheware",
       "publishedDate": "January 24, 2026",
       "_isoDate": "2026-01-24",
