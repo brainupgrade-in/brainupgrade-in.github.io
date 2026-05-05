@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "MCP Is the USB-C of AI: Why Every Enterprise Needs It",
+      "url": "/blog/posts/mcp-is-the-usb-c-of-ai-2026.html",
+      "excerpt": "Model Context Protocol (MCP) is the USB-C for AI agents. Learn how enterprises deploy it for secure, governed tool integration — production patterns from JPMorgan-grade deployments.",
+      "category": "Agentic AI",
+      "tags": [],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 5, 2026",
+      "_isoDate": "2026-05-05",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
       "title": "From Pilot To Production Why Agentic Ai Fails 2026",
       "url": "/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html",
       "excerpt": "Only 11-25% of Agentic AI pilots reach production. Learn the 7 failure patterns and how to fix them with LangGraph, MCP, and production-grade observability. Based on enterprise deployment experience.",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 04 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 05 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>MCP Is the USB-C of AI: Why Every Enterprise Needs It</title>
+            <link>https://devops.gheware.com/blog/posts/mcp-is-the-usb-c-of-ai-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/mcp-is-the-usb-c-of-ai-2026.html</guid>
+            <description>Model Context Protocol (MCP) is the USB-C for AI agents. Learn how enterprises deploy it for secure, governed tool integration — production patterns from JPMorgan-grade deployments.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>From Pilot To Production Why Agentic Ai Fails 2026</title>
             <link>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</link>
@@ -449,15 +458,6 @@
             <link>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html</guid>
             <description>Agentic AI vs RPA ROI compared for 2026 enterprise automation. Which delivers faster payback? Real cost data from Fortune 500 deployments.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Enterprise Agentic AI Deployment 2026: The Complete Infrastructure Guide</title>
-            <link>https://devops.gheware.com/blog/posts/enterprise-agentic-ai-deployment-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/enterprise-agentic-ai-deployment-2026.html</guid>
-            <description>Enterprise agentic AI deployment 2026 guide: infrastructure stack, Kubernetes configs, governance, security, observability, and phased rollout strategy from 25 years of enterprise experience.</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
