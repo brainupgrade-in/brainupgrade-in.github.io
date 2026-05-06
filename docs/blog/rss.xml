@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 05 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 06 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Self-Healing DevOps: How AI Agents Fix Infrastructure at 3 AM</title>
+            <link>https://devops.gheware.com/blog/posts/self-healing-devops-ai-agents-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/self-healing-devops-ai-agents-2026.html</guid>
+            <description>AI-powered self-healing infrastructure is going mainstream in 2026. Learn how enterprises deploy autonomous agents that detect, diagnose, and resolve incidents — with production patterns from JPMorgan-grade systems.</description>
+            <category>DevOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>MCP Is the USB-C of AI: Why Every Enterprise Needs It</title>
             <link>https://devops.gheware.com/blog/posts/mcp-is-the-usb-c-of-ai-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agentic AI vs RPA: The Enterprise ROI Comparison Every CTO Needs in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-automation-roi-2026.html</guid>
-            <description>Agentic AI vs RPA ROI compared for 2026 enterprise automation. Which delivers faster payback? Real cost data from Fortune 500 deployments.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

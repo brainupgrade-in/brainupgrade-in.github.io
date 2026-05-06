@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "Self-Healing DevOps: How AI Agents Fix Infrastructure at 3 AM",
+      "url": "/blog/posts/self-healing-devops-ai-agents-2026.html",
+      "excerpt": "AI-powered self-healing infrastructure is going mainstream in 2026. Learn how enterprises deploy autonomous agents that detect, diagnose, and resolve incidents — with production patterns from JPMorgan-grade systems.",
+      "category": "DevOps",
+      "tags": [],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 6, 2026",
+      "_isoDate": "2026-05-06",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
       "title": "MCP Is the USB-C of AI: Why Every Enterprise Needs It",
       "url": "/blog/posts/mcp-is-the-usb-c-of-ai-2026.html",
       "excerpt": "Model Context Protocol (MCP) is the USB-C for AI agents. Learn how enterprises deploy it for secure, governed tool integration — production patterns from JPMorgan-grade deployments.",
