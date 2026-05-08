@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Langfuse vs LangSmith vs Arize: LLM Observability 2026",
+      "url": "/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html",
+      "excerpt": "Compare Langfuse, LangSmith, and Arize for enterprise LLM observability in 2026. Features, pricing, tracing, evals, and the right tool for your AI team.",
+      "category": "Agentic AI",
+      "tags": [
+        "LLM Observability",
+        "Agentic AI",
+        "AI Engineering"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 8, 2026",
+      "_isoDate": "2026-05-08",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
       "title": "Self-Healing DevOps: How AI Agents Fix Infrastructure at 3 AM",
       "url": "/blog/posts/self-healing-devops-ai-agents-2026.html",
       "excerpt": "AI-powered self-healing infrastructure is going mainstream in 2026. Learn how enterprises deploy autonomous agents that detect, diagnose, and resolve incidents — with production patterns from JPMorgan-grade systems.",
@@ -856,24 +872,6 @@
       "publishedDate": "March 8, 2026",
       "_isoDate": "2026-03-08",
       "readTime": "14 min read",
-      "keywords": []
-    },
-    {
-      "title": "Langfuse vs LangSmith vs Arize: Which LLM Observability Tool for Enterprise?",
-      "url": "/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html",
-      "excerpt": "Compare Langfuse, LangSmith, and Arize Phoenix for enterprise LLM observability in 2026. Pricing, features, Kubernetes integration, and the right choice for your AI platform team.",
-      "category": "AI Observability",
-      "tags": [
-        "LLM Observability",
-        "LangSmith",
-        "Langfuse",
-        "Arize Phoenix",
-        "Enterprise AI 2026"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "March 8, 2026",
-      "_isoDate": "2026-03-08",
-      "readTime": "13 min read",
       "keywords": []
     },
     {
