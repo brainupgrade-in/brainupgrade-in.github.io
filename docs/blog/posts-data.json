@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI Agent Guardrails: Production Enterprise Safety Guide 2026",
+      "url": "/blog/posts/ai-agent-guardrails-production-enterprise-2026.html",
+      "excerpt": "Learn how to implement AI agent guardrails for enterprise production environments. Practical patterns for safety, security, and reliable autonomous operations.",
+      "category": "Agentic AI",
+      "tags": [
+        "AI Agents",
+        "Enterprise AI",
+        "Security"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 9, 2026",
+      "_isoDate": "2026-05-09",
+      "readTime": "11 min read",
+      "keywords": []
+    },
+    {
       "title": "Langfuse vs LangSmith vs Arize: LLM Observability 2026",
       "url": "/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html",
       "excerpt": "Compare Langfuse, LangSmith, and Arize for enterprise LLM observability in 2026. Features, pricing, tracing, evals, and the right tool for your AI team.",
