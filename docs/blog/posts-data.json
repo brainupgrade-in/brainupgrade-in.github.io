@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI-Native Kubernetes Observability 2026",
+      "url": "/blog/posts/ai-native-kubernetes-observability-2026.html",
+      "excerpt": "Kubernetes clusters waste 5% GPU on average. Learn how Metoro, Robusta KRR, and AI-native observability tools detect and fix resource waste automatically",
+      "category": "AI-Native Observability",
+      "tags": [
+        "Kubernetes Observability",
+        "AI Agents",
+        "GPU Optimization"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 10, 2026",
+      "_isoDate": "2026-05-10",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
       "title": "AI Agent Guardrails: Production Enterprise Safety Guide 2026",
       "url": "/blog/posts/ai-agent-guardrails-production-enterprise-2026.html",
       "excerpt": "Learn how to implement AI agent guardrails for enterprise production environments. Practical patterns for safety, security, and reliable autonomous operations.",

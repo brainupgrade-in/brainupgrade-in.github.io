@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 09 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>AI-Native Kubernetes Observability 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-native-kubernetes-observability-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-native-kubernetes-observability-2026.html</guid>
+            <description>Kubernetes clusters waste 5% GPU on average. Learn how Metoro, Robusta KRR, and AI-native observability tools detect and fix resource waste automatically</description>
+            <category>AI-Native Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AI Agent Guardrails: Production Enterprise Safety Guide 2026</title>
             <link>https://devops.gheware.com/blog/posts/ai-agent-guardrails-production-enterprise-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Platform Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>LLM Quantization on Kubernetes: Run Production AI Inference Without Buying New Hardware in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/llm-quantization-kubernetes-production-2026.html</guid>
-            <description>Your existing Kubernetes cluster can run quantized LLMs in production today. Learn INT4/INT8 quantization, vLLM on K8s, and GitOps deployment patterns that cut GPU costs 60–80% in 2026.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
