@@ -1,6 +1,39 @@
 {
   "posts": [
     {
+      "title": "Build a Production RAG Pipeline on Kubernetes (2026 Guide)",
+      "url": "/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html",
+      "excerpt": "Skip the proof-of-concept traps. Production-tested RAG on Kubernetes: vector DB selection, retrieval tuning, and 7 scaling patterns that actually work in production.",
+      "category": "AI & Kubernetes",
+      "tags": [
+        "RAG",
+        "Kubernetes",
+        "AI Agents",
+        "Vector Databases"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 12, 2026",
+      "_isoDate": "2026-05-12",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
+      "title": "AI Agents on Kubernetes: Enterprise Production Patterns 2026",
+      "url": "/blog/posts/ai-agents-kubernetes-enterprise-2026.html",
+      "excerpt": "Deploy AI agents on Kubernetes with enterprise patterns for security, scaling, and cost optimization. Production guide from 25+ years experience.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "AI Agents",
+        "Kubernetes",
+        "Enterprise Production"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 11, 2026",
+      "_isoDate": "2026-05-11",
+      "readTime": "14 min read",
+      "keywords": []
+    },
+    {
       "title": "AI-Native Kubernetes Observability 2026",
       "url": "/blog/posts/ai-native-kubernetes-observability-2026.html",
       "excerpt": "Kubernetes clusters waste 5% GPU on average. Learn how Metoro, Robusta KRR, and AI-native observability tools detect and fix resource waste automatically",

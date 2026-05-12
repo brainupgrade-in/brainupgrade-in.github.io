@@ -5,13 +5,31 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Build a Production RAG Pipeline on Kubernetes (2026 Guide)</title>
+            <link>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html</guid>
+            <description>Skip the proof-of-concept traps. Production-tested RAG on Kubernetes: vector DB selection, retrieval tuning, and 7 scaling patterns that actually work in production.</description>
+            <category>AI &amp; Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>AI Agents on Kubernetes: Enterprise Production Patterns 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-agents-kubernetes-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agents-kubernetes-enterprise-2026.html</guid>
+            <description>Deploy AI agents on Kubernetes with enterprise patterns for security, scaling, and cost optimization. Production guide from 25+ years experience.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AI-Native Kubernetes Observability 2026</title>
             <link>https://devops.gheware.com/blog/posts/ai-native-kubernetes-observability-2026.html</link>
@@ -443,24 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AIOps Kubernetes 2026: AI Observability Guide (+60% MTTR Cut)</title>
-            <link>https://devops.gheware.com/blog/posts/aiops-kubernetes-observability-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/aiops-kubernetes-observability-2026.html</guid>
-            <description>70% of K8s outages go undetected. AIOps on Kubernetes 2026: AI anomaly detection catches hidden failures, cuts MTTR 60% with HolmesGPT + OpenTelemetry. Production configs included. Learn from 25 years enterprise experience →</description>
-            <category>AIOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Platform Engineering 2026: Build AI IDPs With 7 Golden Paths [Backstage]</title>
-            <link>https://devops.gheware.com/blog/posts/platform-engineering-ai-agents-idp-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/platform-engineering-ai-agents-idp-2026.html</guid>
-            <description>Platform Engineering 2026: Build AI-powered IDPs with Backstage golden paths that cut developer onboarding 90%. Internal developer portal with natural language—free templates inside. Learn from 25 years enterprise experience →</description>
-            <category>Platform Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
