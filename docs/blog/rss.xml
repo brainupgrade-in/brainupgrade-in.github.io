@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 12 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Top Kubernetes GPU Tools for AI Acceleration 2026</title>
+            <link>https://devops.gheware.com/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html</guid>
+            <description>The top Kubernetes GPU tools for AI acceleration in 2026. GPU Operator, KServe, KEDA, Volcano, DRA — complete enterprise implementation guide with code examples.</description>
+            <category>Kubernetes AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Build a Production RAG Pipeline on Kubernetes (2026 Guide)</title>
             <link>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Why Enterprise DevOps Teams Are Standardizing on MCP Over CLIs in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/enterprise-mcp-vs-cli-devops-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/enterprise-mcp-vs-cli-devops-2026.html</guid>
-            <description>While developers debate MCP vs CLI, enterprises are quietly standardizing on Model Context Protocol. Learn why MCP wins for enterprise AI agents: auth, telemetry, governance, and how to migrate your team.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

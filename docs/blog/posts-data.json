@@ -1,6 +1,25 @@
 {
   "posts": [
     {
+      "title": "Top Kubernetes GPU Tools for AI Acceleration 2026",
+      "url": "/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html",
+      "excerpt": "The top Kubernetes GPU tools for AI acceleration in 2026. GPU Operator, KServe, KEDA, Volcano, DRA — complete enterprise implementation guide with code examples.",
+      "category": "Kubernetes AI",
+      "tags": [
+        "Kubernetes",
+        "GPU Acceleration",
+        "AI Infrastructure",
+        "MLOps",
+        "KServe",
+        "KEDA"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 13, 2026",
+      "_isoDate": "2026-05-13",
+      "readTime": "18 min read",
+      "keywords": []
+    },
+    {
       "title": "Build a Production RAG Pipeline on Kubernetes (2026 Guide)",
       "url": "/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html",
       "excerpt": "Skip the proof-of-concept traps. Production-tested RAG on Kubernetes: vector DB selection, retrieval tuning, and 7 scaling patterns that actually work in production.",
