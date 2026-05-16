@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 16 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Multi-Agent AI in Kubernetes: 2026 Enterprise Guide</title>
+            <link>https://devops.gheware.com/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html</guid>
+            <description>Deploy production multi-agent AI systems on Kubernetes with LangGraph, A2A, and MCP. Enterprise patterns, scaling, and safety for 2026.</description>
+            <category>DevOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Top Kubernetes GPU Tools for AI Acceleration 2026</title>
             <link>https://devops.gheware.com/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI-Powered GitOps: How AI Agents Are Transforming Kubernetes Deployment Automation in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-powered-gitops-kubernetes-automation-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-powered-gitops-kubernetes-automation-2026.html</guid>
-            <description>Traditional GitOps is static. AI-powered GitOps thinks. Learn how AI agents integrated with ArgoCD and Flux are enabling autonomous drift remediation, predictive rollbacks, and self-healing pipelines in 2026.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

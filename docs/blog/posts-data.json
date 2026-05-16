@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "Multi-Agent AI in Kubernetes: 2026 Enterprise Guide",
+      "url": "/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html",
+      "excerpt": "Deploy production multi-agent AI systems on Kubernetes with LangGraph, A2A, and MCP. Enterprise patterns, scaling, and safety for 2026.",
+      "category": "DevOps",
+      "tags": [],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 16, 2026",
+      "_isoDate": "2026-05-16",
+      "readTime": "10 min read",
+      "keywords": []
+    },
+    {
       "title": "Top Kubernetes GPU Tools for AI Acceleration 2026",
       "url": "/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html",
       "excerpt": "The top Kubernetes GPU tools for AI acceleration in 2026. GPU Operator, KServe, KEDA, Volcano, DRA — complete enterprise implementation guide with code examples.",
