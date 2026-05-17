@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 16 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>AI Agent Governance Frameworks: CTO Playbook 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-governance-frameworks-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-governance-frameworks-enterprise-2026.html</guid>
+            <description>From trust-by-design to governance-as-code, enterprise AI agents need formal guardrails. Explore the five governance frameworks every CTO must implement in 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Multi-Agent AI in Kubernetes: 2026 Enterprise Guide</title>
             <link>https://devops.gheware.com/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>From DevOps to AgentOps: The Enterprise Guide to Managing AI Agent Fleets in Production (2026)</title>
-            <link>https://devops.gheware.com/blog/posts/devops-to-agentops-enterprise-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/devops-to-agentops-enterprise-guide-2026.html</guid>
-            <description>AgentOps is the next evolution of DevOps. Learn how enterprise teams manage AI agent fleets in 2026 — NVIDIA Vera, CLI-first architecture, MCP context limits, and the 5-layer production platform.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

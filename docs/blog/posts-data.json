@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI Agent Governance Frameworks: CTO Playbook 2026",
+      "url": "/blog/posts/agentic-ai-governance-frameworks-enterprise-2026.html",
+      "excerpt": "From trust-by-design to governance-as-code, enterprise AI agents need formal guardrails. Explore the five governance frameworks every CTO must implement in 2026.",
+      "category": "Agentic AI",
+      "tags": [
+        "Agentic AI",
+        "AI Governance",
+        "Enterprise AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 17, 2026",
+      "_isoDate": "2026-05-17",
+      "readTime": "12 min read",
+      "keywords": []
+    },
+    {
       "title": "Multi-Agent AI in Kubernetes: 2026 Enterprise Guide",
       "url": "/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html",
       "excerpt": "Deploy production multi-agent AI systems on Kubernetes with LangGraph, A2A, and MCP. Enterprise patterns, scaling, and safety for 2026.",
