@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>AIOps Self-Healing Kubernetes: Guide 2026</title>
+            <link>https://devops.gheware.com/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html</guid>
+            <description>AIOps self-healing Kubernetes platforms detect, diagnose, and auto-remediate failures. Enterprise patterns, code examples, and implementation roadmap.</description>
+            <category>AIOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AI Agent Governance Frameworks: CTO Playbook 2026</title>
             <link>https://devops.gheware.com/blog/posts/agentic-ai-governance-frameworks-enterprise-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Kubernetes AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>The MCP Context Window Crisis: Why Enterprise AI Agents Are Hitting a Hidden Token Wall</title>
-            <link>https://devops.gheware.com/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html</guid>
-            <description>3 MCP servers can consume 143k of your 200k context window before your AI agent does any real work. Learn the CLI-first design patterns that fix this in enterprise production environments.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
