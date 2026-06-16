@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 16 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Multi-Cluster GitOps at Scale: Patterns That Survive Productio</title>
+            <link>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026.html</guid>
+            <description>Stop wrestling with multi-cluster Kubernetes deployments. Learn production-tested GitOps patterns for ArgoCD, Flux, and policy enforcement at scale.</description>
+            <category>GitOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 16 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AIOps Self-Healing Kubernetes: Guide 2026</title>
             <link>https://devops.gheware.com/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>GPU-Optimized Kubernetes for LLM Inference 2026: Enterprise Setup in 5 Steps</title>
-            <link>https://devops.gheware.com/blog/posts/gpu-optimized-kubernetes-llm-inference-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/gpu-optimized-kubernetes-llm-inference-2026.html</guid>
-            <description>Serving LLMs on Kubernetes? The exact GPU scheduling, model quantization &amp; node pool setup used at JPMorgan Chase — cuts inference costs 60%, latency 40%. Enterprise architect's 5-step playbook + free checklist →</description>
-            <category>Kubernetes AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

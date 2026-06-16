@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Productio",
+      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026.html",
+      "excerpt": "Stop wrestling with multi-cluster Kubernetes deployments. Learn production-tested GitOps patterns for ArgoCD, Flux, and policy enforcement at scale.",
+      "category": "GitOps",
+      "tags": [
+        "gitops multi-cluster kubernetes 2026",
+        "argocd",
+        "flux cd"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 16, 2026",
+      "_isoDate": "2026-06-16",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "AIOps Self-Healing Kubernetes: Guide 2026",
       "url": "/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html",
       "excerpt": "AIOps self-healing Kubernetes platforms detect, diagnose, and auto-remediate failures. Enterprise patterns, code examples, and implementation roadmap.",
