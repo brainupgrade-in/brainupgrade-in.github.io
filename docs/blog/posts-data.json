@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
+      "url": "/blog/posts/llm-cost-optimization-enterprise-inference-2026.html",
+      "excerpt": "Reduce enterprise LLM inference costs in 2026 using quantization, speculative decoding, and intelligent routing. A hands-on guide for DevOps and AI engineers.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "llm cost optimization enterprise inference 2026",
+        "llm inference",
+        "kubernetes autoscaling"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 17, 2026",
+      "_isoDate": "2026-06-17",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Productio",
       "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026.html",
       "excerpt": "Stop wrestling with multi-cluster Kubernetes deployments. Learn production-tested GitOps patterns for ArgoCD, Flux, and policy enforcement at scale.",

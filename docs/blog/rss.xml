@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 16 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 17 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
+            <link>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026.html</guid>
+            <description>Reduce enterprise LLM inference costs in 2026 using quantization, speculative decoding, and intelligent routing. A hands-on guide for DevOps and AI engineers.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 17 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Multi-Cluster GitOps at Scale: Patterns That Survive Productio</title>
             <link>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>LangGraph State Machines for Production: How Enterprise Teams Scale Multi-Agent AI Beyond Prototypes</title>
-            <link>https://devops.gheware.com/blog/posts/langgraph-production-state-management-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langgraph-production-state-management-enterprise-2026.html</guid>
-            <description>Learn how to build production-grade LangGraph state machines that scale. Covers checkpointing, interrupt-and-resume, parallel subgraphs, and enterprise deployment patterns on Kubernetes — from an architect who trains Fortune 500 teams.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
