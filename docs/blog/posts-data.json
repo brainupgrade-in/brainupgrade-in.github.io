@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
+      "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
+      "excerpt": "Master Kubernetes security hardening for CKS 2026. Learn concrete strategies for secrets management, network policies, and runtime defense in enterprise environments.",
+      "category": "Kubernetes Security",
+      "tags": [
+        "kubernetes security hardening cks 2026",
+        "CKS certification",
+        "kubernetes security checklist"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 18, 2026",
+      "_isoDate": "2026-06-18",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
       "url": "/blog/posts/llm-cost-optimization-enterprise-inference-2026.html",
       "excerpt": "Reduce enterprise LLM inference costs in 2026 using quantization, speculative decoding, and intelligent routing. A hands-on guide for DevOps and AI engineers.",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</guid>
+            <description>Master Kubernetes security hardening for CKS 2026. Learn concrete strategies for secrets management, network policies, and runtime defense in enterprise environments.</description>
+            <category>Kubernetes Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
             <link>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Vibe Coding for Enterprise DevOps: A Practical Guide to AI-First Development in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/vibe-coding-enterprise-devops-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/vibe-coding-enterprise-devops-2026.html</guid>
-            <description>Vibe coding is transforming enterprise DevOps in 2026. Learn how teams at JPMorgan, Oracle, and Deloitte are using AI-first development to ship 3x faster — and how to govern it safely at scale.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
