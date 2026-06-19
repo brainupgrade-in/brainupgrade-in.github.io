@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Scaling RAG Pipelines to Production: Hard Truths",
+      "url": "/blog/posts/scaling-rag-pipeline-production-scaling-2026.html",
+      "excerpt": "Learn how to scale RAG pipelines to production in 2026. Practical advice on latency, vector DBs, and agentic workflows from a veteran DevOps engineer.",
+      "category": "RAG",
+      "tags": [
+        "rag pipeline production scaling 2026",
+        "enterprise RAG",
+        "vector databases"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 19, 2026",
+      "_isoDate": "2026-06-19",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
       "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
       "excerpt": "Master Kubernetes security hardening for CKS 2026. Learn concrete strategies for secrets management, network policies, and runtime defense in enterprise environments.",

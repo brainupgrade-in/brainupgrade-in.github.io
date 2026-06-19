@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 19 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Scaling RAG Pipelines to Production: Hard Truths</title>
+            <link>https://devops.gheware.com/blog/posts/scaling-rag-pipeline-production-scaling-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/scaling-rag-pipeline-production-scaling-2026.html</guid>
+            <description>Learn how to scale RAG pipelines to production in 2026. Practical advice on latency, vector DBs, and agentic workflows from a veteran DevOps engineer.</description>
+            <category>RAG</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Kubernetes Cost Optimization with AI Agents: Enterprise Playbook to Cut Cloud Spend 40% in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-ai-agents-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-ai-agents-2026.html</guid>
-            <description>Learn how AI agents automate Kubernetes cost optimization in 2026. Real patterns from enterprise deployments: right-sizing, idle resource elimination, and FinOps automation that cuts cloud spend by 40%.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
