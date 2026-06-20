@@ -1,0 +1,26 @@
+name: validate-template
+
+# Runs on every push/PR to main. Fails if any blog post under
+# docs/blog/posts/ has drifted from the canonical _template.html structure
+# (missing shared header/footer placeholders, template-loader.js, premium.css,
+# canonical URL, JSON-LD, or author bio). Mirrors validate-indexes.yml.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  template-conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate blog-post template conformance
+        run: python3 docs/scripts/validate-template.py
