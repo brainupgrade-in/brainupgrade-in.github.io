@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 19 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>MLOps on Kubernetes: From Notebook to Production Endpoint</title>
+            <link>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</guid>
+            <description>Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.</description>
+            <category>MLOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Scaling RAG Pipelines to Production: Hard Truths</title>
             <link>https://devops.gheware.com/blog/posts/scaling-rag-pipeline-production-scaling-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI in Kubernetes</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Google A2A Protocol Explained: Enterprise Multi-Agent AI Systems in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/google-a2a-protocol-enterprise-multi-agent-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/google-a2a-protocol-enterprise-multi-agent-2026.html</guid>
-            <description>Google A2A protocol enables AI agents to communicate across enterprise boundaries. Learn how to build multi-agent systems with A2A + MCP, real architecture patterns, and Kubernetes deployment in 2026.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

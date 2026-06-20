@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="MLOps on Kubernetes: From Notebook to Production Endpoint | Gheware DevOps AI">
+    <meta name="description" content="Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.">
+    <meta name="keywords" content="mlops model deployment kubernetes 2026, kubernetes ml, model serving, kubernetes operators, mlflow, kubeflow, ai infrastructure, model monitoring">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html">
+    <meta property="og:title" content="MLOps on Kubernetes: From Notebook to Production Endpoint">
+    <meta property="og:description" content="Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/mlops-model-deployment-kubernetes-2026-thumbnail.jpeg">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-06-20T09:00:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="MLOps">
+    <meta property="article:tag" content="mlops model deployment kubernetes 2026">
+    <meta property="article:tag" content="kubernetes ml">
+    <meta property="article:tag" content="model serving">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MLOps on Kubernetes: From Notebook to Production Endpoint">
+    <meta name="twitter:description" content="Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/mlops-model-deployment-kubernetes-2026-thumbnail.jpeg">
+    <title>MLOps on Kubernetes: From Notebook to Production Endpoint</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html" },
+        "headline": "MLOps on Kubernetes: From Notebook to Production Endpoint",
+        "description": "Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.",
+        "image": { "@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/mlops-model-deployment-kubernetes-2026-thumbnail.jpeg", "width": 1200, "height": 630 },
+        "datePublished": "2026-06-20T09:00:00+05:30",
+        "dateModified": "2026-06-20T09:00:00+05:30",
+        "author": { "@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware" },
+        "publisher": { "@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com",
+            "logo": { "@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg" } },
+        "keywords": "mlops model deployment kubernetes 2026, kubernetes ml, model serving, kubernetes operators, mlflow, kubeflow, ai infrastructure, model monitoring",
+        "articleSection": "MLOps",
+        "wordCount": "1404",
+        "inLanguage": "en-US"
+    }
+    </script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li>MLOps on Kubernetes: From Notebook to Production Endpoint</li>
+    </ol></div></nav>
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">MLOps</span>
+                    <span class="reading-time">7 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">MLOps on Kubernetes: From Notebook to Production Endpoint</h1>
+                <p class="post-subtitle" itemprop="description">A pragmatic guide to deploying ML models on Kubernetes in 2026, focusing on reliability, observability, and agentic workflows.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-06-20T09:00:00+05:30">June 20, 2026</time>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <figure class="post-hero">
+                <img src="/blog/assets/images/mlops-model-deployment-kubernetes-2026-thumbnail.jpeg" alt="MLOps on Kubernetes: From Notebook to Production Endpoint" class="post-hero-image" itemprop="image"
+                     loading="eager" width="1200" height="630">
+            </figure>
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>Stable model serving requires dedicated inference operators, not just generic deployments.</li>
+                    <li>Observability is non-negotiable; use eBPF for low-overhead tracing in production clusters.</li>
+                    <li>Security must be baked into the pipeline, addressing OWASP LLM Top 10 risks early.</li>
+                    <li>Agentic workflows require robust context management and tool-use capabilities in pods.</li>
+                    <li>Performance tuning involves GPU resource requests and careful scaling policies.</li>
+                </ul>
+            </aside>
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+<li><a href="#section-1">The Reality of 2026 Model Serving</a></li>
+<li><a href="#section-2">Architecture Patterns for Stable Inference</a></li>
+<li><a href="#section-3">Observability: Beyond Logs and Metrics</a></li>
+<li><a href="#section-4">Security and Compliance in Agentic Workflows</a></li>
+<li><a href="#section-5">Performance Tuning and Resource Management</a></li>
+<li><a href="#section-6">Comparing Monitoring and Tracing Tools</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+<li><a href="#section-8">How do I handle model versioning in Kubernetes?</a></li>
+<li><a href="#section-9">What is the best way to scale ML models on Kubernetes?</a></li>
+<li><a href="#section-10">How can I ensure security for AI agents in production?</a></li>
+<li><a href="#section-11">Is it necessary to use a dedicated ML platform like Kubeflow?</a></li>
+                </ol>
+            </nav>
+            <div class="post-content" itemprop="articleBody">
+<section id="section-1">
+<h2>The Reality of 2026 Model Serving</h2>
+<p>After 25 years in high-frequency trading and enterprise banking, I’ve learned that a model in a Jupyter notebook is a toy. A model in production is a liability if it isn’t managed correctly. In 2026, the gap between data science experimentation and stable engineering has closed, but the complexity has shifted. We aren’t just deploying containers anymore; we are orchestrating complex inference graphs, managing GPU resources, and ensuring deterministic behavior in distributed systems.</p>
+<p>The term "MLOps" has matured. It is no longer a buzzword but a foundational engineering discipline. When we talk about <strong>mlops model deployment kubernetes 2026</strong>, we are discussing a shift from simple REST endpoints to sophisticated, observable, and secure inference services. The tools have evolved, but the core principles remain: reproducibility, reliability, and observability. If you are still manually copying model artifacts to VMs, you are already behind.</p>
+</section>
+<section id="section-2">
+<h2>Architecture Patterns for Stable Inference</h2>
+<p>The most common mistake I see is treating an ML model like a standard microservice. It isn’t. It has different lifecycle requirements, memory profiles, and scaling characteristics. In a Kubernetes environment, you need a dedicated approach for model serving. We typically see three patterns emerging in enterprise environments:</p>
+<ul>
+<li><strong>Sidecar Injection:</strong> The model server runs in a sidecar container within the application pod. This is great for simple, low-latency use cases where the model is tightly coupled to the business logic. However, it can bloat the pod memory footprint.</li>
+<li><strong>Dedicated Serving Pods:</strong> The model runs in its own set of pods, accessed via a service mesh or direct API call. This allows for independent scaling of the inference engine from the application logic. This is the preferred pattern for large language models (LLMs) and heavy computer vision models.</li>
+<li><strong>Gateway-Based Routing:</strong> An API gateway handles request batching, caching, and routing to the appropriate model version. This adds a layer of control for A/B testing and canary deployments, which is critical for risk management in financial sectors.</li>
+</ul>
+<p>Regardless of the pattern, the underlying Kubernetes Deployment objects must be tuned. We are not just setting `replicas: 3`. We are defining resource requests for GPUs, setting up horizontal pod autoscalers (HPA) based on custom metrics like queue depth or inference latency, and ensuring pod disruption budgets are in place to prevent rolling update failures during peak load.</p>
+</section>
+<section id="section-3">
+<h2>Observability: Beyond Logs and Metrics</h2>
+<p>In 2026, logging is insufficient. You need deep observability to understand why a model is failing or slowing down. Traditional metrics like CPU and memory usage don’t tell you if your model is hallucinating or producing biased outputs. You need to trace the request through the entire pipeline.</p>
+<p>This is where integrating technologies like <a href="/blog/posts/ebpf-kubernetes-observability-2026.html">eBPF for Kubernetes observability</a> becomes invaluable. eBPF allows you to observe network traffic and system calls with minimal overhead, giving you visibility into the kernel level without modifying your application code. For ML workloads, this means you can track inference latency, token generation speed, and error rates across the entire cluster without the performance penalty of sidecar proxies.</p>
+<p>Furthermore, you must monitor the data itself. Model drift is not just a statistical concept; it is an operational reality. If the input data distribution shifts, your model’s accuracy degrades. You need to implement drift detection pipelines that trigger alerts when the statistical properties of incoming requests deviate from the training data baseline. This is often handled by integrating tools like Prometheus and Grafana with custom exporters that report on model-specific metrics.</p>
+</section>
+<section id="section-4">
+<h2>Security and Compliance in Agentic Workflows</h2>
+<p>As we move towards agentic AI, where models can call tools and execute code, the security surface area expands dramatically. The <a href="/blog/posts/what-is-an-ai-agent-enterprise-guide-2026.html">enterprise guide to AI agents</a> highlights the need for strict sandboxing and permission controls. In Kubernetes, this means enforcing NetworkPolicies that restrict outbound traffic from model pods. A model should not be able to make arbitrary API calls to the internet unless explicitly permitted.</p>
+<p>Additionally, you must address the <a href="/blog/posts/owasp-llm-top-10-explained-2026.html">OWASP LLM Top 10</a> risks. Injection attacks, sensitive data exposure, and insecure output handling are real threats. Implementing input validation and output sanitization at the API gateway level is a first line of defense. However, you also need to ensure that the model artifacts themselves are signed and verified. Use image signing tools like Cosign to ensure that only trusted model versions are deployed to your production clusters. This prevents supply chain attacks where a compromised model could be injected into your pipeline.</p>
+<p>Compliance is another critical factor. In regulated industries, you must maintain an audit trail of every model version, its training data, and its performance metrics. Kubernetes namespaces can be used to isolate environments, but you need a centralized registry to track the lineage of your models. Tools like MLflow or Kubeflow Pipelines can help, but they must be integrated with your CI/CD pipeline to ensure that every deployment is traceable.</p>
+</section>
+<section id="section-5">
+<h2>Performance Tuning and Resource Management</h2>
+<p>GPU resources are expensive and scarce. Optimizing their usage is not just a cost-saving measure; it is a necessity for profitability. In Kubernetes, you can use device plugins to expose GPUs to pods. However, simply requesting a GPU is not enough. You need to understand how your model utilizes memory and compute.</p>
+<p>For LLMs, batching is key. Dynamic batching allows you to group incoming requests and process them together, increasing throughput. This requires a serving framework that supports dynamic batching, such as Triton Inference Server or vLLM. You can configure these frameworks to adjust the batch size based on the current load, ensuring that you maximize GPU utilization without exceeding memory limits.</p>
+<p>Another important consideration is the use of mixed precision. Running models in FP16 or BF16 instead of FP32 can reduce memory usage and increase speed, provided your hardware supports it. Most modern GPUs do. You should also explore model quantization techniques to further reduce the model size and inference time. This is particularly useful for edge deployments or when running multiple models on a single node.</p>
+</section>
+<section id="section-6">
+<h2>Comparing Monitoring and Tracing Tools</h2>
+<p>Choosing the right tooling for monitoring your ML workloads is crucial. The landscape is crowded, but not all tools are created equal. For example, when comparing <a href="/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html">Langfuse vs LangSmith</a>, you need to consider whether you need a full-stack observability platform or a specialized tracing tool for LLMs. Langfuse offers a more open-source approach, while LangSmith is tightly integrated with the LangChain ecosystem. For enterprise deployments, the choice often comes down to existing infrastructure and team expertise.</p>
+<p>Regardless of the tool, the goal is the same: to provide actionable insights into model performance. You need to track not just latency and throughput, but also business metrics. If a model is used for fraud detection, you need to know the false positive rate in real-time. This requires integrating your ML metrics with your business intelligence tools.</p>
+</section>
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+</section>
+<section id="section-8">
+<h2>How do I handle model versioning in Kubernetes?</h2>
+<p>Model versioning should be treated as code. Use a model registry like MLflow or Weights & Biases to store artifacts. In Kubernetes, use tags or specific image hashes to reference model versions. Avoid using "latest" tags in production, as they are unpredictable. Instead, use semantic versioning for your model images and update your Deployment manifests explicitly when promoting a new version.</p>
+</section>
+<section id="section-9">
+<h2>What is the best way to scale ML models on Kubernetes?</h2>
+<p>The best approach depends on your workload. For CPU-based models, standard HPA based on CPU or memory metrics is sufficient. For GPU-based models, you need custom metrics like GPU utilization, inference latency, or queue length. Tools like KEDA (Kubernetes Event-Driven Autoscaling) can help trigger scaling based on event sources like Kafka queues or HTTP requests. Always set appropriate resource limits to prevent resource contention.</p>
+</section>
+<section id="section-10">
+<h2>How can I ensure security for AI agents in production?</h2>
+<p>Security for AI agents requires a multi-layered approach. Enforce strict NetworkPolicies to limit network access. Use Pod Security Standards to restrict privileged containers. Implement input validation and output sanitization at the application layer. Finally, monitor for anomalous behavior using observability tools. Regularly update dependencies and scan for vulnerabilities in your model artifacts.</p>
+</section>
+<section id="section-11">
+<h2>Is it necessary to use a dedicated ML platform like Kubeflow?</h2>
+<p>Not necessarily. While Kubeflow provides a comprehensive suite of tools for ML workflows, it can be complex to maintain. Many teams find success using a combination of standard Kubernetes operators, CI/CD pipelines, and specialized serving frameworks. The key is to automate as much as possible while keeping the infrastructure manageable. Start simple and add complexity only when needed.</p>
+</section>
+            </div>
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+<div class="related-card"><a href="/blog/posts/mcp-is-the-usb-c-of-ai-2026.html"><h3>Mcp Is The Usb C Of Ai</h3></a></div>
+<div class="related-card"><a href="/blog/posts/guardrails-ai-agents-production-2026.html"><h3>Guardrails Ai Agents Production</h3></a></div>
+<div class="related-card"><a href="/blog/posts/agentic-ai-banking-financial-services-2026.html"><h3>Agentic Ai Banking Financial Services</h3></a></div>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Ready to Build Production-Ready Agentic AI?</h2>
+                <p>Get hands-on with LangGraph, MCP servers, and enterprise Kubernetes patterns in our Agentic AI Workshop — rated 4.91/5.0 at Oracle. 119 labs, zero death-by-PowerPoint.</p>
+                <a href="https://devops.gheware.com/training/cloud-labs.html" class="btn-cta-primary"><span>Explore the Hands-On Cloud Labs</span> <span class="btn-arrow">&rarr;</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
