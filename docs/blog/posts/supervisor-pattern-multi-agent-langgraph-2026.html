@@ -29,7 +29,7 @@
     <meta name="twitter:site" content="@gheware_tech">
     <meta name="twitter:creator" content="@gheware_tech">
     <meta name="twitter:title" content="The Supervisor Pattern: How to Orchestrate Multi-Agent Teams with LangGraph">
-    <meta name="twitter:description" content="How Snowflake and Stripe run 8+ parallel agents reliably. Full LangGraph implementation of the supervisor pattern with worker failure handling.">
+    <meta name="twitter:description" content="How production teams run 8+ parallel agents reliably. Full LangGraph implementation of the supervisor pattern with worker failure handling.">
     <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/supervisor-pattern-multi-agent-langgraph-2026.jpg">
     <title>The Supervisor Pattern: How to Orchestrate Multi-Agent Teams with LangGraph | Gheware DevOps AI Blog</title>
     <script type="application/ld+json">
@@ -161,14 +161,14 @@
 
                 <aside class="tldr" style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
                     <h3 style="margin-top: 0; color: #166534;">TL;DR</h3>
-                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">The supervisor pattern is how production multi-agent systems at companies like Snowflake and Stripe actually work. One orchestrator receives the task, routes sub-tasks to specialist workers (researcher, coder, reviewer, security auditor), collects outputs, and synthesises the result. This post gives you the full LangGraph implementation, the hub-and-spoke vs hierarchical choice, and the worker cascade failure bug that hits every team that builds a naive version.</p>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">The supervisor pattern is how production multi-agent systems actually work. One orchestrator receives the task, routes sub-tasks to specialist workers (researcher, coder, reviewer, security auditor), collects outputs, and synthesises the result. This post gives you the full LangGraph implementation, the hub-and-spoke vs hierarchical choice, and the worker cascade failure bug that hits every team that builds a naive version.</p>
                 </aside>
 
                 <p>In November 2025, I was reviewing the architecture of an AI code review system built by a client's engineering team. They had built what I call a "god agent" — a single LangChain agent with 24 tools: code analysis, security scanning, performance profiling, dependency checking, test coverage measurement, documentation quality scoring, and more. The agent was impressive in demos. In production, it was inconsistent. Some reviews were comprehensive. Others missed obvious security issues. A few produced generic, unhelpful feedback that could have been written about any codebase.</p>
 
                 <p>The problem was not the LLM. It was the architecture. A single agent with 24 tools in its context has 24 tool schemas consuming 8,000–12,000 tokens before it has processed a single line of code. The remaining context window is squeezed. The agent cannot maintain deep focus on any one concern. It pattern-matches against its most common training examples rather than reasoning carefully about the specific codebase.</p>
 
-                <p>We rebuilt it with the supervisor pattern in two days. Execution time: 40% faster (parallel worker execution). Review quality: measurably better on all five dimensions we measured. On-call incidents from missed security issues: zero in the three months since deployment.</p>
+                <p>We rebuilt it with the supervisor pattern in two days. Execution ran faster thanks to parallel worker execution, review quality improved across every dimension we measured, and on-call incidents from missed security issues dropped sharply.</p>
 
                 <section id="why-not-god-agents">
                     <h2>Why Single God Agents Fail at Scale</h2>
@@ -521,7 +521,7 @@ def fixed_security_worker(state: SupervisorState) -> dict:
 
             <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
               <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
-              <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+              <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum rated 4.91/5.0 on Oracle University. Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
               <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
                 <input type="hidden" name="website" value="">
                 <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">

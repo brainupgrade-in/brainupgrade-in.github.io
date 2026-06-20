@@ -402,7 +402,7 @@ spec:
                 <section id="volcano-agent-scheduler">
                     <h2>Volcano v1.14 and the Rise of AI-Native Scheduling</h2>
 
-                    <p>Volcano has been the enterprise choice for ML workload scheduling on Kubernetes since 2021 — it was the scheduler of choice for the AI training platforms I consulted on at Oracle (where our Agentic AI workshop scored 4.91/5.0, the highest rating in 14 batches). With v1.14, it has taken a decisive step forward: the introduction of an <strong>AI-Native Unified Scheduling Platform</strong> with an <strong>Agent Scheduler (Alpha)</strong> purpose-built for agentic AI workflows.</p>
+                    <p>Volcano has been the enterprise choice for ML workload scheduling on Kubernetes since 2021 — it is the scheduler of choice for enterprise ML training platforms (our Agentic AI workshop scored 4.91/5.0, the highest rating in 14 batches). With v1.14, it has taken a decisive step forward: the introduction of an <strong>AI-Native Unified Scheduling Platform</strong> with an <strong>Agent Scheduler (Alpha)</strong> purpose-built for agentic AI workflows.</p>
 
                     <p>Why does this matter? Because traditional schedulers — including the default kube-scheduler — were designed for stateless web services. Agentic AI workloads are fundamentally different:</p>
 
@@ -439,7 +439,7 @@ spec:
     nvidia.com/gpu: "32"
   reclaimable: true      # Release unused GPUs to lower-priority queues</code></pre>
 
-                    <p>The Agent Scheduler Alpha in v1.14 goes further — it can model the dependency graph of an agentic workflow and proactively pre-warm GPU memory for the next agent in the chain before the current one completes. In our internal testing at gheWARE, this reduced <strong>agent-to-agent handoff latency by 35%</strong> for LangGraph-based multi-agent pipelines.</p>
+                    <p>The Agent Scheduler Alpha in v1.14 goes further — it can model the dependency graph of an agentic workflow and proactively pre-warm GPU memory for the next agent in the chain before the current one completes. In our internal testing at gheWARE, this measurably reduced <strong>agent-to-agent handoff latency</strong> for LangGraph-based multi-agent pipelines.</p>
 
                     <p><strong>Also noteworthy from KubeCon EU 2026:</strong> Microsoft's <strong>AI Runway</strong> and NVIDIA's <strong>Grove</strong> both launched as open-source Kubernetes APIs for inference orchestration. AI Runway provides a declarative API for managing inference endpoint lifecycle (canary deployments, A/B testing, traffic splitting for LLM versions). Grove gives you GPU cluster orchestration APIs that integrate directly with llm-d for heterogeneous compute pools. Both will reach CNCF Sandbox status within Q2 2026.</p>
                 </section>
@@ -567,7 +567,7 @@ spec:
 
                     <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
                         <summary style="font-weight: 600; cursor: pointer; font-size: 1.05rem;">How does Volcano v1.14 differ from the standard Kubernetes scheduler for AI workloads?</summary>
-                        <p style="margin-top: 1rem; line-height: 1.7;">Volcano v1.14 introduces an AI-Native Unified Scheduling Platform with an Agent Scheduler (Alpha) specifically designed for agentic AI workflows. Unlike the default kube-scheduler, Volcano handles gang scheduling (all pods start together or none), fair-share GPU allocation across teams, and preemption policies optimised for LLM training and inference jobs. For multi-agent AI pipelines (LangGraph, CrewAI), Volcano's dependency graph awareness reduces agent handoff latency by up to 35%.</p>
+                        <p style="margin-top: 1rem; line-height: 1.7;">Volcano v1.14 introduces an AI-Native Unified Scheduling Platform with an Agent Scheduler (Alpha) specifically designed for agentic AI workflows. Unlike the default kube-scheduler, Volcano handles gang scheduling (all pods start together or none), fair-share GPU allocation across teams, and preemption policies optimised for LLM training and inference jobs. For multi-agent AI pipelines (LangGraph, CrewAI), Volcano's dependency graph awareness reduces agent handoff latency.</p>
                     </details>
 
                     <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
@@ -593,7 +593,7 @@ spec:
                     <div>
                         <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem;">Rajesh Gheware</h3>
                         <p style="margin: 0 0 0.5rem 0; color: #64748b; font-size: 0.95rem;">Founder &amp; Chief Architect, gheWARE uniGPS Solutions LLP | CKA, CKS, TOGAF | M.Tech IIT Madras</p>
-                        <p style="margin: 0; line-height: 1.7; font-size: 0.95rem;">25+ years building enterprise platforms at JPMorgan Chase (Payment Gateway Connectivity), Deutsche Bank (OTC Derivatives Architecture), and Morgan Stanley (Personal Wealth Management). Author of "Ultimate CKA Certification Guide." Trained 5,000+ professionals across Oracle, JPMorgan, Deloitte, and Standard Chartered.</p>
+                        <p style="margin: 0; line-height: 1.7; font-size: 0.95rem;">25+ years building enterprise platforms at JPMorgan Chase (Payment Gateway Connectivity), Deutsche Bank (OTC Derivatives Architecture), and Morgan Stanley (Personal Wealth Management). Author of "Ultimate CKA Certification Guide." Trained 5,000+ enterprise professionals.</p>
                     </div>
                 </div>
 

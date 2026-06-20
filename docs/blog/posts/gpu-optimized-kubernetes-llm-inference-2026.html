@@ -6,7 +6,7 @@
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="GPU-Optimized Kubernetes for LLM Inference 2026: Enterprise Setup in 5 Steps | Gheware DevOps AI">
-    <meta name="description" content="Serving LLMs on Kubernetes? The exact GPU scheduling, model quantization &amp; node pool setup used at JPMorgan Chase — cuts inference costs 60%, latency 40%. Enterprise architect's 5-step playbook + free checklist →">
+    <meta name="description" content="Serving LLMs on Kubernetes? GPU scheduling, model quantization &amp; node pool setup for production inference. Enterprise architect's 5-step playbook + free checklist →">
     <meta name="keywords" content="gpu optimized kubernetes llm inference enterprise 2026, kubernetes gpu scheduling, llm inference kubernetes, ai workloads kubernetes, model quantization kubernetes">
     <meta name="author" content="Rajesh Gheware">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://devops.gheware.com/blog/posts/gpu-optimized-kubernetes-llm-inference-2026.html">
     <meta property="og:title" content="GPU-Optimized Kubernetes for LLM Inference 2026: Enterprise Setup in 5 Steps">
-    <meta property="og:description" content="Serving LLMs on Kubernetes? The exact GPU scheduling, model quantization &amp; node pool setup used at JPMorgan Chase — cuts inference costs 60%, latency 40%. Enterprise architect's 5-step playbook + free checklist →">
+    <meta property="og:description" content="Serving LLMs on Kubernetes? GPU scheduling, model quantization &amp; node pool setup for production inference. Enterprise architect's 5-step playbook + free checklist →">
     <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/gpu-optimized-kubernetes-llm-inference-2026.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -391,7 +391,7 @@ nvidia-smi mig -cgi 1g.10gb,1g.10gb,1g.10gb,1g.10gb,1g.10gb,1g.10gb,1g.10gb -C
 kubectl describe node gpu-node-1 | grep nvidia</pre>
             </div>
 
-            <p>At Deutsche Bank, our risk analytics team ran 12 concurrent model scoring services on 2 A100 GPUs using MIG partitioning. The cost per inference endpoint dropped by 71% compared to dedicated GPU allocation.</p>
+            <p>MIG partitioning lets a small number of A100 GPUs host many concurrent model-scoring services, lowering the cost per inference endpoint compared to dedicated GPU allocation.</p>
 
             <!-- Section 4: Model Quantization -->
             <h2 style="margin-top:2.5rem;">GPU-Optimized Kubernetes Starts With the Model: Quantization in 2026</h2>
@@ -597,7 +597,7 @@ helm install dcgm-exporter gpu-helm-charts/dcgm-exporter \
                 <img src="/blog/assets/images/rajesh-gheware-photo.png" alt="Rajesh Gheware" />
                 <div>
                     <h4>Rajesh Gheware</h4>
-                    <p>Chief Architect & Corporate Trainer at gheWARE uniGPS Solutions LLP. 25+ years building enterprise platforms at JPMorgan Chase, Deutsche Bank, and Morgan Stanley. CKA, CKS, TOGAF Certified. Author of <em>AGENTIC AI: The Practitioner's Guide</em>. Trained 5,000+ engineers at Fortune 500 companies.</p>
+                    <p>Chief Architect & Corporate Trainer at gheWARE uniGPS Solutions LLP. 25+ years building enterprise platforms at JPMorgan Chase, Deutsche Bank, and Morgan Stanley. CKA, CKS, TOGAF Certified. Author of <em>AGENTIC AI: The Practitioner's Guide</em>. Trained 5,000+ enterprise engineers.</p>
                     <p style="margin-top:6px;"><a href="https://devops.gheware.com/about" style="color:#00d4aa;">About Rajesh →</a></p>
                 </div>
             </div>

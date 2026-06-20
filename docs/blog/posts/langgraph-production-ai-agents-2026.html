@@ -6,7 +6,7 @@
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Building Production-Ready AI Agents with LangGraph: Lessons from the Field | Gheware DevOps AI">
-    <meta name="description" content="Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training at Oracle.">
+    <meta name="description" content="Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training.">
     <meta name="keywords" content="LangGraph, AI agents, production AI, LangChain, state machines, multi-agent orchestration, agentic AI, enterprise AI, Python AI agents, LangGraph tutorial">
     <meta name="author" content="Rajesh Gheware">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://devops.gheware.com/blog/posts/langgraph-production-ai-agents-2026.html">
     <meta property="og:title" content="Building Production-Ready AI Agents with LangGraph: Lessons from the Field">
-    <meta property="og:description" content="Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training at Oracle.">
+    <meta property="og:description" content="Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training.">
     <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/langgraph-production-hero.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -41,7 +41,7 @@
     <meta name="twitter:site" content="@gheware_tech">
     <meta name="twitter:creator" content="@gheware_tech">
     <meta name="twitter:title" content="Building Production-Ready AI Agents with LangGraph: Lessons from the Field">
-    <meta name="twitter:description" content="Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training at Oracle.">
+    <meta name="twitter:description" content="Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training.">
     <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/langgraph-production-hero.png">
 
     <title>Building Production-Ready AI Agents with LangGraph: Lessons from the Field | Gheware DevOps AI Blog</title>
@@ -56,7 +56,7 @@
             "@id": "https://devops.gheware.com/blog/posts/langgraph-production-ai-agents-2026.html"
         },
         "headline": "Building Production-Ready AI Agents with LangGraph: Lessons from the Field",
-        "description": "Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training at Oracle.",
+        "description": "Learn how to build production-grade AI agents using LangGraph — state machines, multi-agent orchestration, error recovery, and real-world deployment patterns from enterprise training.",
         "image": {
             "@type": "ImageObject",
             "url": "https://devops.gheware.com/blog/assets/images/langgraph-production-hero.png",
@@ -156,7 +156,7 @@
                 "name": "Can LangGraph agents be deployed on Kubernetes?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. LangGraph agents are Python applications that can be containerised with Docker and deployed on Kubernetes. Use a Deployment with at least 2 replicas, attach a Redis-backed checkpoint store for shared state across pods, expose via a ClusterIP Service, and protect with a HorizontalPodAutoscaler. This architecture was validated in our Oracle enterprise training workshops."
+                    "text": "Yes. LangGraph agents are Python applications that can be containerised with Docker and deployed on Kubernetes. Use a Deployment with at least 2 replicas, attach a Redis-backed checkpoint store for shared state across pods, expose via a ClusterIP Service, and protect with a HorizontalPodAutoscaler. This architecture was validated in our enterprise training workshops."
                 }
             }
         ]
@@ -307,7 +307,7 @@
                     <span class="reading-time">12 min read</span>
                 </div>
                 <h1 class="post-title" itemprop="headline">Building Production-Ready AI Agents with LangGraph: Lessons from the Field</h1>
-                <p class="post-subtitle" itemprop="description">State machines, multi-agent orchestration, error recovery, and real-world deployment patterns — distilled from hands-on enterprise training with Oracle engineers.</p>
+                <p class="post-subtitle" itemprop="description">State machines, multi-agent orchestration, error recovery, and real-world deployment patterns — distilled from hands-on enterprise training.</p>
                 <div class="post-meta">
                     <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
@@ -384,7 +384,7 @@
 
                     <p>The prototype breaks when the LLM hallucinates a tool call. It has no memory between invocations. It can't recover from a transient API timeout. It has no visibility into what it decided or why. And it definitely can't be restarted mid-workflow.</p>
 
-                    <p>In our <strong>Oracle Agentic AI training workshops</strong> (rated <span class="stat-highlight">4.91 / 5.0</span> by 200+ engineers), this gap — from impressive demo to reliable production system — is the single most common blocker we address. The answer, nine times out of ten, is <strong>LangGraph</strong>.</p>
+                    <p>In our <strong>Agentic AI training workshops</strong> (rated <span class="stat-highlight">4.91 / 5.0</span> on Oracle University by 200+ engineers), this gap — from impressive demo to reliable production system — is the single most common blocker we address. The answer, nine times out of ten, is <strong>LangGraph</strong>.</p>
 
                     <p>LangGraph is not just another LLM framework. It is a graph-based execution engine designed specifically for the problems that emerge when agents go to production: stateful workflows, deterministic branching, multi-agent coordination, and fault-tolerant recovery. In this post I'll share the patterns we teach and the lessons we've collected from real-world enterprise deployments.</p>
 
@@ -476,7 +476,7 @@
                     <h2>Multi-Agent Orchestration</h2>
                     <p>Single agents are great for simple tasks. But production workflows — code review pipelines, document processing systems, autonomous DevOps remediation — demand more than one agent can deliver reliably. The solution is a <strong>supervisor pattern</strong>: a top-level orchestrator graph that spawns and coordinates specialised sub-agents.</p>
 
-                    <p>In our Oracle training, we built a three-tier architecture that's become our reference implementation:</p>
+                    <p>In our enterprise training, we built a three-tier architecture that's become our reference implementation:</p>
 
                     <div class="arch-diagram">  Supervisor Agent (orchestrates)
        │
@@ -515,7 +515,7 @@
 
                     <div class="callout-box">
                         <h4>✅ Real-World Result</h4>
-                        <p>In our Oracle DevOps automation pilot, switching from a single monolithic agent to this three-tier architecture reduced hallucination-caused failures by <strong>73%</strong> and increased task completion rate from 61% to 89% on complex multi-step workflows.</p>
+                        <p>In our DevOps automation labs, switching from a single monolithic agent to this three-tier architecture sharply reduces hallucination-caused failures and increases task completion rates on complex multi-step workflows.</p>
                     </div>
                 </section>
 
@@ -773,7 +773,7 @@ asyncio.run(main())</pre>
 
                     <div class="faq-item">
                         <h3>Can LangGraph agents be deployed on Kubernetes?</h3>
-                        <p>Yes. LangGraph agents are Python applications that can be containerised with Docker and deployed on Kubernetes. Use a Deployment with at least 2 replicas, attach a Redis-backed checkpoint store for shared state across pods, expose via a ClusterIP Service, and protect with a HorizontalPodAutoscaler. This architecture was validated during our Oracle enterprise training workshops.</p>
+                        <p>Yes. LangGraph agents are Python applications that can be containerised with Docker and deployed on Kubernetes. Use a Deployment with at least 2 replicas, attach a Redis-backed checkpoint store for shared state across pods, expose via a ClusterIP Service, and protect with a HorizontalPodAutoscaler. This architecture was validated during our enterprise training workshops.</p>
                     </div>
                 </section>
 
@@ -788,7 +788,7 @@ asyncio.run(main())</pre>
 
                     <div style="background: linear-gradient(135deg, #1E3A5F 0%, #0f4c2a 100%); color: white; padding: 2.5rem; border-radius: 16px; margin: 3rem 0; text-align: center;">
                         <h3 style="color: white; margin-top: 0; font-size: 1.6rem;">Ready to Build Production AI Agents?</h3>
-                        <p style="color: rgba(255,255,255,0.88); font-size: 1.1rem; margin-bottom: 0.5rem;">Join the same hands-on programme trusted by Oracle's engineering teams — rated <strong style="color: #4ade80;">4.91 / 5.0</strong> by 200+ enterprise engineers.</p>
+                        <p style="color: rgba(255,255,255,0.88); font-size: 1.1rem; margin-bottom: 0.5rem;">Join the same hands-on programme rated <strong style="color: #4ade80;">4.91 / 5.0</strong> on Oracle University by 200+ enterprise engineers.</p>
                         <p style="color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 0.95rem;">5 days · Live labs · LangGraph · Multi-agent systems · Kubernetes deployment</p>
                         <a href="https://devops.gheware.com/training/" style="display: inline-block; background: #22C55E; color: #0f172a; font-weight: 700; font-size: 1.1rem; padding: 0.9rem 2.4rem; border-radius: 30px; text-decoration: none; letter-spacing: 0.02em;">
                             Explore the Training Programme →

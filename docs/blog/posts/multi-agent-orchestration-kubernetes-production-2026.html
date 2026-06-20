@@ -835,9 +835,9 @@ logger.info(
                     
                     <p>Let me share two real-world patterns I've seen work at scale.</p>
                     
-                    <h3>Case Study 1: JPMorgan Chase Trading Agent System</h3>
+                    <h3>Pattern 1: High-Throughput Trading Agent System</h3>
                     
-                    <p>JPMorgan deployed a multi-agent system for automated trading with 40+ specialized agents. Key patterns:</p>
+                    <p>A high-throughput trading platform can run a multi-agent system with dozens of specialized agents. Key patterns:</p>
                     
                     <ul>
                         <li><strong>Hierarchical architecture</strong>: Supervisor agents coordinate specialized sub-agents (market analysis, risk assessment, execution)</li>
@@ -847,11 +847,11 @@ logger.info(
                         <li><strong>Real-time monitoring</strong>: OpenTelemetry traces every trade decision with millisecond precision</li>
                     </ul>
                     
-                    <p>Result: 150K+ trades/day with 99.99% uptime and sub-second decision latency.</p>
+                    <p>This architecture is built for high trade volumes, high availability, and sub-second decision latency.</p>
                     
-                    <h3>Case Study 2: Deutsche Bank Document Processing System</h3>
+                    <h3>Pattern 2: High-Volume Document Processing System</h3>
                     
-                    <p>Deutsche Bank built a document processing pipeline with multi-agent orchestration:</p>
+                    <p>A high-volume document processing pipeline can use multi-agent orchestration:</p>
                     
                     <ul>
                         <li><strong>Mesh architecture</strong>: Agents communicate through a message bus (RabbitMQ) for loose coupling</li>
@@ -861,7 +861,7 @@ logger.info(
                         <li><strong>Audit logging</strong>: All document access logged with agent IDs and timestamps</li>
                     </ul>
                     
-                    <p>Result: 10M+ documents processed/month with 40% faster turnaround time.</p>
+                    <p>This design scales to very high document volumes with faster turnaround than a single-agent pipeline.</p>
                     
                     <h3>Implementation Recommendations</h3>
                     
@@ -912,9 +912,9 @@ logger.info(
                     
                     <p>Multi-agent orchestration on Kubernetes is complex but manageable with the right patterns. Use StatefulSets for stateful agents, message queues for communication, RBAC and network policies for security, and OpenTelemetry for observability.</p>
                     
-                    <p>The enterprises getting this right—JPMorgan, Deutsche Bank, Oracle—are seeing massive productivity gains. But they're also investing heavily in training their teams.</p>
+                    <p>The enterprises getting this right are seeing significant productivity gains. But they're also investing heavily in training their teams.</p>
                     
-                    <p>At gheWARE, we've trained 5,000+ professionals on Agentic AI, including teams at Oracle, JPMorgan, and Deloitte. Our <a href="https://devops.gheware.com/training/">Agentic AI Workshop</a> covers multi-agent orchestration, LangGraph state machines, and Kubernetes-native deployment patterns.</p>
+                    <p>At gheWARE, we've trained 5,000+ professionals on Agentic AI. Our <a href="https://devops.gheware.com/training/">Agentic AI Workshop</a> covers multi-agent orchestration, LangGraph state machines, and Kubernetes-native deployment patterns.</p>
                     
                     <p>Ready to build production-ready multi-agent systems? <a href="https://devops.gheware.com/training/">Join our next workshop</a> and get hands-on experience with real multi-agent systems.</p>
                 </section>

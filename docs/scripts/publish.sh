@@ -35,6 +35,16 @@ if ! $PYTHON docs/scripts/validate-template.py; then
     exit 1
 fi
 
+# ─── STEP 0b: No-fabrication gate (abort publish on #88 client attribution) ──
+echo ""
+echo "0️⃣b Validating no fabricated client attribution (#88)..."
+if ! $PYTHON docs/scripts/validate-no-fabrication.py; then
+    echo ""
+    echo "   ❌ Fabrication check failed — publish aborted."
+    echo "   Neutralise the flagged client rosters / invented metrics and re-run."
+    exit 1
+fi
+
 # ─── STEP 1: Regenerate posts-data.json + sitemap.xml + rss.xml from disk ────
 echo ""
 echo "1️⃣  Regenerating indexes from docs/blog/posts/..."

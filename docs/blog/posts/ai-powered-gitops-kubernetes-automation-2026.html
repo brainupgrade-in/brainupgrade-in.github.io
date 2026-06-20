@@ -152,7 +152,7 @@
                 "name": "Is AI-powered GitOps production-ready in 2026?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes — with the right guardrails. Teams at JPMorgan, Deutsche Bank, and large SaaS companies are running AI GitOps agents in production with human-in-the-loop approval gates for critical changes. The standard architecture uses an AI agent for diagnosis and draft PR generation, with automated merge only for pre-approved remediation classes (e.g., resource limit adjustments) and human approval for everything else."
+                    "text": "Yes — with the right guardrails. Enterprise teams are running AI GitOps agents in production with human-in-the-loop approval gates for critical changes. The standard architecture uses an AI agent for diagnosis and draft PR generation, with automated merge only for pre-approved remediation classes (e.g., resource limit adjustments) and human approval for everything else."
                 }
             }
         ]
@@ -246,7 +246,7 @@
                 <ul>
                     <li>AI-powered GitOps adds reasoning and autonomous decision-making to ArgoCD/Flux — it can predict drift, diagnose failures, and initiate rollbacks without paging an on-call engineer.</li>
                     <li>The winning architecture in 2026 pairs a LangGraph orchestration layer with ArgoCD webhooks and Prometheus metrics — the agent observes, reasons, and acts within a guardrailed decision tree.</li>
-                    <li>Autonomous drift remediation and canary promotion are the two highest-ROI use cases: teams report 60–70% reduction in after-hours pages and 40% faster deployment cycles.</li>
+                    <li>Autonomous drift remediation and canary promotion are the two highest-ROI use cases: teams report meaningfully fewer after-hours pages and faster deployment cycles.</li>
                     <li>Human-in-the-loop gates remain essential for critical production changes — full autonomy is reserved for pre-approved remediation classes (resource limits, replica counts, config rollbacks).</li>
                     <li>Getting started requires three components: an ArgoCD webhook listener, a LangGraph agent with Prometheus + kubectl tools, and a Git commit-back capability for audit-safe remediation.</li>
                 </ul>
@@ -306,7 +306,7 @@
                         <li>Write every decision back to Git with full reasoning context</li>
                     </ul>
 
-                    <p>This isn't GitOps <em>replaced</em> by AI — it's GitOps <em>augmented</em> by AI. The Git-as-truth principle holds. The audit trail gets richer. The mean time to remediation (MTTR) drops by 60–80%.</p>
+                    <p>This isn't GitOps <em>replaced</em> by AI — it's GitOps <em>augmented</em> by AI. The Git-as-truth principle holds. The audit trail gets richer. The mean time to remediation (MTTR) drops substantially.</p>
                 </section>
 
                 <!-- Section 2 -->
@@ -710,22 +710,15 @@ trigger.on-health-degraded: |
                 <section id="section-5">
                     <h2>Real-World Use Cases and ROI Benchmarks</h2>
 
-                    <p>After running AI-powered GitOps workshops with teams at Oracle, JPMorgan, Standard Chartered, and Bank of America, here's what the data consistently shows:</p>
+                    <p>After running AI-powered GitOps workshops with enterprise teams, here's what the data consistently shows:</p>
 
                     <h3>Use Case 1: Autonomous Canary Promotion and Rollback</h3>
 
-                    <p>Teams using Argo Rollouts with an AI promotion gate report a <strong>73% reduction in failed deployments reaching 100% traffic</strong>. The agent evaluates multiple health signals simultaneously (latency, error rate, saturation, business metrics via Prometheus pushgateway) rather than relying on a single threshold. False positives — where a healthy canary gets rolled back — drop from ~15% (threshold-based) to under 3% (LLM-evaluated, multi-signal).</p>
+                    <p>Teams using Argo Rollouts with an AI promotion gate report substantially fewer failed deployments reaching 100% traffic. The agent evaluates multiple health signals simultaneously (latency, error rate, saturation, business metrics via Prometheus pushgateway) rather than relying on a single threshold. False positives — where a healthy canary gets rolled back — drop sharply compared with single-threshold gating, because the decision is LLM-evaluated across multiple signals.</p>
 
                     <h3>Use Case 2: Configuration Drift Detection and Auto-Remediation</h3>
 
-                    <p>In a benchmark across 12 enterprise clusters, AI-powered drift detection identified <strong>configuration drift 4.2× faster</strong> than Prometheus alert rules alone — primarily because the agent correlates ArgoCD sync status with runtime metric patterns to distinguish benign drift from drift causing active degradation. Only the latter triggers auto-remediation.</p>
-
-                    <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 1.2rem 1.5rem; margin: 1.5rem 0;">
-                        <strong style="color: #0369a1;">Real Result — Financial Services Client (anonymized):</strong><br>
-                        <span style="font-size: 0.95rem; line-height: 1.7;">Before AI GitOps: 23 deployment-related incidents/month, avg MTTR 47 minutes.<br>
-                        After AI GitOps (90 days): 7 incidents/month (70% reduction), avg MTTR 8 minutes.<br>
-                        On-call pages eliminated: 68% of previous page volume. Annual savings (eng time): ~$340,000.</span>
-                    </div>
+                    <p>AI-powered drift detection identifies configuration drift faster than Prometheus alert rules alone — primarily because the agent correlates ArgoCD sync status with runtime metric patterns to distinguish benign drift from drift causing active degradation. Only the latter triggers auto-remediation.</p>
 
                     <h3>Use Case 3: Predictive Pre-Deployment Risk Scoring</h3>
 
@@ -739,7 +732,7 @@ trigger.on-health-degraded: |
                         <li>Recommends: proceed directly, proceed with enhanced canary monitoring, or defer to business hours</li>
                     </ol>
 
-                    <p>One team running this pattern reports that <strong>92% of high-risk deployments flagged by the AI agent did result in an incident when they were overridden and deployed anyway</strong> — validating the model's risk prediction accuracy after 6 months of learning.</p>
+                    <p>Teams running this pattern report that a large share of the high-risk deployments flagged by the AI agent did result in an incident when they were overridden and deployed anyway — validating the model's risk prediction over time as it learns.</p>
 
                     <h3>The Learning Loop: How the Agent Gets Smarter</h3>
 
@@ -785,7 +778,7 @@ trigger.on-health-degraded: |
 
                     <div class="faq-item">
                         <h3>Is AI-powered GitOps production-ready in 2026?</h3>
-                        <p>Yes — with the right guardrails. Teams at major financial institutions and large SaaS companies are running AI GitOps agents in production using a tiered autonomy model: full auto-remediation for pre-approved action classes (canary rollback, config drift force-sync on staging), human-in-the-loop PR approval for production changes, and strict escalation for anything touching data or security configuration. The system has demonstrated 60–75% reduction in after-hours pages and 40–70% improvement in MTTR in published case studies.</p>
+                        <p>Yes — with the right guardrails. Enterprise teams are running AI GitOps agents in production using a tiered autonomy model: full auto-remediation for pre-approved action classes (canary rollback, config drift force-sync on staging), human-in-the-loop PR approval for production changes, and strict escalation for anything touching data or security configuration. Teams adopting this pattern report meaningfully fewer after-hours pages and improved MTTR.</p>
                     </div>
                 </section>
 
@@ -801,7 +794,7 @@ trigger.on-health-degraded: |
 
                     <p>The teams falling behind are waiting for a comprehensive AI GitOps platform to arrive pre-packaged. The teams winning are building the reasoning layer <em>on top of the tools they already have</em> — ArgoCD, Flux, Prometheus, Loki — and iterating rapidly. You don't need new infrastructure. You need a new reasoning layer on top of it.</p>
 
-                    <p>If you want to build this capability within your engineering organization, our 5-day <a href="/training/corporate-training.html"><strong>Agentic AI for Enterprise Engineers</strong></a> workshop covers exactly this architecture — including hands-on LangGraph labs where participants build and test an AI GitOps agent against a live Kubernetes cluster. It's the same curriculum that earned a <strong>4.91/5.0 rating at Oracle</strong> and has trained platform engineers at JPMorgan, Deutsche Bank, and Standard Chartered.</p>
+                    <p>If you want to build this capability within your engineering organization, our 5-day <a href="/training/corporate-training.html"><strong>Agentic AI for Enterprise Engineers</strong></a> workshop covers exactly this architecture — including hands-on LangGraph labs where participants build and test an AI GitOps agent against a live Kubernetes cluster. It's the same curriculum that earned a <strong>4.91/5.0 rating at Oracle University</strong>.</p>
 
                     <p><a href="/training/corporate-training.html" style="color: #2496ED; font-weight: 600;">Explore the Corporate Training Program →</a></p>
                 </section>

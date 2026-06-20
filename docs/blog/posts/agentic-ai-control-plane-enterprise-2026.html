@@ -250,10 +250,10 @@
                     <p>AI agents are no different — except the blast radius is larger. When a payment gateway microservice misbehaves, it affects one transaction. When an AI agent in your OTC derivatives workflow makes unauthorized decisions, you have a regulatory incident on your hands.</p>
                     <p>Consider what "no control plane" actually means in practice:</p>
                     <ul>
-                        <li><strong>Runaway costs:</strong> Agents that loop or re-call LLM APIs can generate $50,000+ in API charges in a single weekend. gheWARE has seen this at a major bank where a code-review agent got into a recursive self-correction loop calling GPT-4 Turbo 800 times per PR.</li>
+                        <li><strong>Runaway costs:</strong> Agents that loop or re-call LLM APIs can generate $50,000+ in API charges in a single weekend. gheWARE has seen this pattern: a code-review agent that gets into a recursive self-correction loop, calling an LLM API hundreds of times per pull request.</li>
                         <li><strong>Compliance violations:</strong> EU AI Act Article 14 requires that AI systems be accurate, robust, and compliant. Without audit trails generated at the control plane layer, you cannot prove compliance.</li>
                         <li><strong>Security breaches:</strong> Agents with tool access to internal APIs, databases, or file systems are prime targets for prompt injection. An ungoverned agent is an attacker who has already compromised your infrastructure from the inside.</li>
-                        <li><strong>Agent chaos:</strong> At Snowflake, as reported in early 2026, teams discovered that eight different AI agents were duplicating each other's work — creating conflicting data transformations because no orchestration layer existed.</li>
+                        <li><strong>Agent chaos:</strong> At one data-platform company, teams discovered that eight different AI agents were duplicating each other's work — creating conflicting data transformations because no orchestration layer existed.</li>
                     </ul>
                     <p>The fix is not a policy document. It is an <strong>agentic AI control plane</strong> — a production-grade management layer that treats AI agents the way Kubernetes treats containers: with orchestration, resource limits, networking rules, and observability baked in from day one.</p>
                 </section>

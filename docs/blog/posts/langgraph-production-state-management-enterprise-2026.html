@@ -277,7 +277,7 @@
                 <!-- TL;DR -->
                 <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
                     <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
-                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">LangGraph production failures are almost always state management failures. The fix: typed state schemas, PostgreSQL checkpointing, interrupt-and-resume for human approval loops, and deploying stateless worker pods on Kubernetes backed by shared durable storage. This post gives you the architecture — with code — that enterprise teams at Oracle, JPMorgan-class firms, and Fortune 500s use to run LangGraph in production.</p>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">LangGraph production failures are almost always state management failures. The fix: typed state schemas, PostgreSQL checkpointing, interrupt-and-resume for human approval loops, and deploying stateless worker pods on Kubernetes backed by shared durable storage. This post gives you the architecture — with code — that enterprise teams use to run LangGraph in production.</p>
                 </aside>
 
                 <!-- Hook -->
@@ -297,7 +297,7 @@
                     <p>When a pod crashes mid-graph — and it will crash — all in-progress agent state is lost. The user's request is silently dropped. There is no way to resume. The only option is to retry from scratch, burning tokens and time.</p>
 
                     <h3>Failure Mode 2: Unbounded Recursion</h3>
-                    <p>Without a <code>recursion_limit</code> set on every invocation, a looping agent will run until it hits the API rate limit or exhausts your token budget. gheWARE has seen this cost teams $3,000 in a single runaway invocation overnight.</p>
+                    <p>Without a <code>recursion_limit</code> set on every invocation, a looping agent will run until it hits the API rate limit or exhausts your token budget. gheWARE has seen this run up a significant bill in a single runaway invocation overnight.</p>
 
                     <h3>Failure Mode 3: Untyped State Dicts</h3>
                     <p>Python dicts feel flexible in a notebook. In production, they are a time bomb. A node returns <code>{"messaeg": value}</code> with a typo, and the downstream node silently reads an empty key. Your agent misbehaves and there is no stack trace pointing to the cause.</p>
@@ -517,7 +517,7 @@ async def get_workflow_status(thread_id: str):
 
                     <p>The key insight: between the <code>interrupt()</code> and the <code>Command(resume=...)</code>, the worker pod that ran the graph is completely free. The state lives in PostgreSQL. Any pod in your Kubernetes deployment can pick up the thread and resume it. This is horizontal scalability for human-in-the-loop workflows.</p>
 
-                    <p>At JPMorgan, we ran approval workflows that could sit in an interrupted state for 72 hours while a compliance officer reviewed them. The infrastructure cost during that wait was essentially zero — no threads blocked, no memory held.</p>
+                    <p>During my years at JPMorgan, we ran approval workflows that could sit in an interrupted state for 72 hours while a compliance officer reviewed them. The infrastructure cost during that wait was essentially zero — no threads blocked, no memory held.</p>
                 </section>
 
                 <!-- Section 5 -->
@@ -580,7 +580,7 @@ research_graph.add_edge("synthesizer", END)</code></pre>
 
                     <p>When LangGraph sees multiple edges from <code>START</code> to different nodes, it executes them in parallel using Python's <code>asyncio</code>. The <code>synthesizer</code> node is only invoked once all three branches complete. LangGraph handles the fan-in synchronization for you.</p>
 
-                    <p>In our Oracle training, teams measured a <strong>68% reduction in end-to-end latency</strong> when switching from sequential to parallel research branches on a 5-source research agent. The implementation took 20 minutes in the lab.</p>
+                    <p>In our training, teams measured a substantial reduction in end-to-end latency when switching from sequential to parallel research branches on a 5-source research agent. The implementation took about 20 minutes in the lab.</p>
                 </section>
 
                 <!-- Section 6 -->

@@ -422,7 +422,7 @@
                 <!-- TL;DR Section -->
                 <aside class="tldr" style="background: #f8fafc; border-left: 4px solid #2496ED; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0;">
                     <h3 style="margin-top: 0; color: #1E3A5F;">TL;DR</h3>
-                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">This is the deployment guide I wish I had when JPMorgan and Deutsche Bank first started evaluating AI automation at scale. Enterprise agentic AI deployment in 2026 is not about picking the right model — the models have commoditized. It's about infrastructure, governance, observability, and a phased rollout that your CISO and CTO can both sign off on. This guide covers all of it.</p>
+                    <p style="margin-bottom: 0; font-size: 1.05rem; line-height: 1.6;">This is the deployment guide I wish I had when large financial institutions first started evaluating AI automation at scale. Enterprise agentic AI deployment in 2026 is not about picking the right model — the models have commoditized. It's about infrastructure, governance, observability, and a phased rollout that your CISO and CTO can both sign off on. This guide covers all of it.</p>
                 </aside>
 
                 <p>I have spent 25 years in enterprise technology — JPMorgan, Deutsche Bank, Morgan Stanley — watching organizations adopt every new wave of infrastructure at scale. Containerization, microservices, cloud migration, GitOps. Each wave had its own failure modes, and each failure mode came from the same root cause: moving too fast on the application layer without building the operational foundation first.</p>
@@ -444,7 +444,7 @@
                 <section id="why-it-fails">
                     <h2>Why Enterprise AI Agent Deployment Fails</h2>
 
-                    <p>In my training engagements across Oracle, financial services firms, and technology companies, I consistently see four failure modes that derail enterprise AI agent deployments before they reach production maturity.</p>
+                    <p>In my training engagements across financial services firms and technology companies, I consistently see four failure modes that derail enterprise AI agent deployments before they reach production maturity.</p>
 
                     <h3>1. No Governance Guardrails at the Tool Layer</h3>
                     <p>Teams build agents that can call any tool, query any database, or send any API request without constraints. In a demo, this looks impressive. In production, an agent that has unconstrained tool access can exfiltrate sensitive data, trigger financial transactions, or mutate production databases. The fix is policy-based tool authorization using OPA (Open Policy Agent) before any agent call reaches an enterprise system.</p>
@@ -777,7 +777,7 @@ def research_node(state: AgentState) -> AgentState:
 <!-- Lead Magnet CTA -->
 <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
   <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
-  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum rated 4.91/5.0 on Oracle University. Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
   <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
     <input type="hidden" name="website" value="">
     <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
@@ -828,7 +828,7 @@ async function submitNewsletter(e) {
                 <div>
                     <h3 style="margin: 0 0 0.25rem; font-size: 1.1rem; color: #1E3A5F;">Rajesh Gheware</h3>
                     <p style="margin: 0 0 0.75rem; font-size: 0.85rem; color: #64748b; font-weight: 600;">Founder, gheWARE uniGPS Solutions | CKA | 25 Years Enterprise DevOps & AI</p>
-                    <p style="margin: 0; font-size: 0.92rem; color: #475569; line-height: 1.6;">Rajesh has designed and deployed enterprise-scale infrastructure at JPMorgan Chase, Deutsche Bank, and Morgan Stanley. He holds the Certified Kubernetes Administrator (CKA) certification and has trained 10,000+ enterprise engineers across Oracle, Accenture, Infosys, and leading financial institutions. His gheWARE Agentic AI Workshop has earned a 4.91/5.0 rating at Oracle. Connect on <a href="https://linkedin.com/in/rajesh-gheware" style="color: #2496ED;">LinkedIn</a>.</p>
+                    <p style="margin: 0; font-size: 0.92rem; color: #475569; line-height: 1.6;">Rajesh spent his career building enterprise-scale infrastructure at JPMorgan Chase, Deutsche Bank, and Morgan Stanley. He holds the Certified Kubernetes Administrator (CKA) certification and has trained 10,000+ enterprise engineers. His gheWARE Agentic AI Workshop has earned a 4.91/5.0 rating on Oracle University. Connect on <a href="https://linkedin.com/in/rajesh-gheware" style="color: #2496ED;">LinkedIn</a>.</p>
                 </div>
             </div>
 

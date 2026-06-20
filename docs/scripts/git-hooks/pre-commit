@@ -46,6 +46,22 @@ if [ -n "$VALIDATE" ]; then
     fi
 fi
 
+# No-fabrication gate (Gotcha #88: fabricated client attribution / invented metrics).
+# Abort the commit if any post names an enterprise as a client/trainee, invents a
+# study, or carries the FinTrust persona / Fortune-500 lead-magnet boilerplate.
+NOFAB=""
+for p in docs/scripts/validate-no-fabrication.py scripts/validate-no-fabrication.py; do
+    [ -f "$p" ] && NOFAB="$p" && break
+done
+if [ -n "$NOFAB" ]; then
+    echo "[pre-commit] Validating no fabricated client attribution via $NOFAB…" >&2
+    if ! "$PYTHON" "$NOFAB" >&2; then
+        echo "[pre-commit] Fabrication check failed — aborting commit." >&2
+        echo "[pre-commit] Neutralise the flagged client rosters / invented metrics (or --no-verify if you know why)." >&2
+        exit 1
+    fi
+fi
+
 echo "[pre-commit] Blog post change detected → regenerating indexes via $REGEN…" >&2
 if ! "$PYTHON" "$REGEN" >&2; then
     echo "[pre-commit] regenerate_indexes.py failed — aborting commit" >&2

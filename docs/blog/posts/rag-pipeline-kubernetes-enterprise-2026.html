@@ -310,7 +310,7 @@
                     <span class="reading-time">16 min read</span>
                 </div>
                 <h1 class="post-title" itemprop="headline">How to Build a Production RAG Pipeline on Kubernetes: Enterprise Guide 2026</h1>
-                <p class="post-subtitle" itemprop="description">Your engineering team has a prototype RAG demo that impresses in the boardroom. Now comes the hard part: getting it to production — where it needs to handle 10,000 requests per day, survive node failures, pass a security audit, and cost less than a junior developer's salary to run. Here is the architecture I have deployed at JPMorgan, Deutsche Bank, and Morgan Stanley — battle-tested and Kubernetes-native.</p>
+                <p class="post-subtitle" itemprop="description">Your engineering team has a prototype RAG demo that impresses in the boardroom. Now comes the hard part: getting it to production — where it needs to handle 10,000 requests per day, survive node failures, pass a security audit, and cost less than a junior developer's salary to run. Here is the architecture I have deployed in production — battle-tested and Kubernetes-native.</p>
                 <div class="post-meta">
                     <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
                         <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
@@ -417,7 +417,7 @@
 
                     <div class="callout-box">
                         <h4>💡 Key Insight from the Field</h4>
-                        <p style="margin-bottom: 0;">At Deutsche Bank, we rebuilt a RAG system from scratch after 6 months in production because the original team had conflated "works in dev" with "production-ready." The rebuild used the architecture described in this guide. The result: 99.6% uptime, 340ms P95 latency, and 52% lower infrastructure cost compared to the original over-provisioned deployment.</p>
+                        <p style="margin-bottom: 0;">In one production RAG deployment, the team rebuilt the system from scratch after six months because the original had conflated "works in dev" with "production-ready." The rebuild used the architecture described in this guide — improving reliability and latency while cutting infrastructure cost versus the original over-provisioned deployment.</p>
                     </div>
                 </section>
 
@@ -892,11 +892,11 @@ rag_index_staleness_hours &lt; 2</code></pre>
 
                     <p>Building a production <strong>RAG pipeline on Kubernetes</strong> for enterprise is not a single engineering sprint — it is an architectural discipline. The teams that succeed in 2026 are those that treat each layer of the pipeline as an independent, production-hardened microservice: with its own scaling policy, security perimeter, SLA, and observability dashboard.</p>
 
-                    <p>The five-layer architecture I have described here — ingestion, embedding, vector store, retrieval API, and LLM inference — is the result of deploying similar systems at JPMorgan, Deutsche Bank, and Morgan Stanley. The specific tools change (Qdrant vs pgvector, Llama vs GPT-4o, Istio vs Cilium mTLS), but the architectural principles remain constant.</p>
+                    <p>The five-layer architecture I have described here — ingestion, embedding, vector store, retrieval API, and LLM inference — is the result of deploying similar systems in production across enterprises. The specific tools change (Qdrant vs pgvector, Llama vs GPT-4o, Istio vs Cilium mTLS), but the architectural principles remain constant.</p>
 
                     <p>The most expensive mistake you can make is building a demo and calling it production. The second most expensive mistake is over-engineering from day one. The six-week sprint plan in this guide threads that needle — giving you a genuinely production-ready RAG pipeline without unnecessary complexity.</p>
 
-                    <p>If your team is ready to build this capability but needs to develop the Kubernetes and AI infrastructure skills to do it right, I run a <a href="/training/">5-day enterprise AI and DevOps workshop</a> that covers exactly this architecture — with hands-on labs you deploy in a real Kubernetes cluster. Rated 4.91/5.0 by engineers from Oracle, Infosys, and HDFC Bank.</p>
+                    <p>If your team is ready to build this capability but needs to develop the Kubernetes and AI infrastructure skills to do it right, I run a <a href="/training/">5-day enterprise AI and DevOps workshop</a> that covers exactly this architecture — with hands-on labs you deploy in a real Kubernetes cluster. Rated 4.91/5.0 on Oracle University.</p>
                 </section>
 
             </div>
@@ -906,7 +906,7 @@ rag_index_staleness_hours &lt; 2</code></pre>
 <!-- Lead Magnet CTA -->
 <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-k8s">
   <h3 style="margin:0 0 8px">Free Download: Production Kubernetes Checklist</h3>
-  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">20-point checklist used by Fortune 500 teams to ship Kubernetes to production safely.</p>
+  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">20-point checklist to ship Kubernetes to production safely.</p>
   <form onsubmit="submitLeadMagnet(event,'dev-lead-k8s-checklist','lead-cta-k8s')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
     <input type="hidden" name="website" value="">
     <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
@@ -975,7 +975,7 @@ async function submitNewsletter(e) {
             <!-- CTA Section -->
             <section class="post-cta">
                 <h2>Ready to Deploy This Architecture in Your Enterprise?</h2>
-                <p>Our 5-day <strong>Enterprise Agentic AI Workshop</strong> covers RAG pipeline design, Kubernetes deployment, KServe, KEDA, and security — with hands-on labs in a real cluster. Rated 4.91/5.0 by engineers from Oracle, Infosys, and HDFC Bank.</p>
+                <p>Our 5-day <strong>Enterprise Agentic AI Workshop</strong> covers RAG pipeline design, Kubernetes deployment, KServe, KEDA, and security — with hands-on labs in a real cluster. Rated 4.91/5.0 on Oracle University.</p>
                 <a href="/training/" class="btn-cta-primary">
                     <span>View Workshop Details</span>
                     <span class="btn-arrow">→</span>

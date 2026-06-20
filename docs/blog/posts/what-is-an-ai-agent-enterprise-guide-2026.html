@@ -141,7 +141,7 @@
                 "name": "What programming language is used for AI agents?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Python is the dominant language for building enterprise AI agents in 2026, supported by frameworks like LangGraph, AutoGen, CrewAI, and LlamaIndex. TypeScript/JavaScript is increasingly common for web-integrated agents. Java and Go appear in enterprise back-end agent runtimes, particularly for JPMorgan-style financial services platforms."
+                    "text": "Python is the dominant language for building enterprise AI agents in 2026, supported by frameworks like LangGraph, AutoGen, CrewAI, and LlamaIndex. TypeScript/JavaScript is increasingly common for web-integrated agents. Java and Go appear in enterprise back-end agent runtimes, particularly for large financial-services platforms."
                 }
             },
             {
@@ -260,7 +260,7 @@
                     <li>An AI agent is a software system that perceives its environment, plans multi-step actions, executes tools, and iterates until a goal is achieved — far beyond what a chatbot can do.</li>
                     <li>The five components every enterprise AI agent needs: memory, tools, planning, execution engine, and observability.</li>
                     <li>AI agents differ from RPA in their ability to handle ambiguity, unstructured data, and dynamic decision trees — no hard-coded scripts required.</li>
-                    <li>Enterprises that have trained their teams on agentic AI report 40–60% reduction in repetitive knowledge-work hours within 90 days of deployment.</li>
+                    <li>Enterprises that train their teams on agentic AI report meaningful reductions in repetitive knowledge-work hours.</li>
                 </ul>
             </aside>
 
@@ -382,7 +382,7 @@
                 <section id="five-components">
                     <h2>5 Components Every Enterprise AI Agent Needs</h2>
 
-                    <p>After running Agentic AI workshops for teams at Oracle, and engineering organisations across financial services, I've distilled enterprise-grade agents down to five non-negotiable components. Skip any one of these and your agent will fail in production within 30 days.</p>
+                    <p>After running enterprise Agentic AI workshops, I've distilled enterprise-grade agents down to five non-negotiable components. Skip any one of these and your agent will struggle in production.</p>
 
                     <h3>1. Memory Architecture</h3>
                     <p>Enterprise agents need <em>three</em> memory tiers, not one. <strong>Working memory</strong> holds the current context window — the active task, recent tool outputs, and the LLM's reasoning trace. <strong>Episodic memory</strong> stores what happened in past sessions (e.g., what the agent tried last Tuesday and why it failed) — typically in a vector database like Chroma, Pinecone, or Weaviate. <strong>Semantic memory</strong> holds domain knowledge — your internal wiki, product documentation, past cases — retrieved via RAG at query time. Production agents that only use working memory degrade rapidly; they repeat mistakes and lose context between sessions.</p>
@@ -402,15 +402,15 @@
 
                 <!-- Section 4: Real-World Examples -->
                 <section id="real-world-examples">
-                    <h2>Real-World Examples: How Oracle, JPMorgan-Style Enterprises Are Using AI Agents</h2>
+                    <h2>Real-World Examples: How Enterprises Are Using AI Agents</h2>
 
                     <p>I want to be precise here because the trade press is full of vague "AI agent" announcements. Here is what is actually happening at the enterprise level in 2026:</p>
 
                     <h3>Financial Services: Trade Operations &amp; Compliance</h3>
-                    <p>JPMorgan-style investment banks are deploying AI agents for post-trade reconciliation — tasks that previously required teams of 20+ analysts running SQL queries, cross-referencing spreadsheets, and manually filing exception reports. An agentic system with access to trade databases, counterparty APIs, and internal reporting tools can run the full reconciliation cycle, triage exceptions by severity, auto-resolve known patterns (wrong settlement currency, missing LEI code), escalate genuine anomalies to a human with a pre-populated resolution report, and write the compliance log — all without human intervention for 70–80% of daily volume. The 3-4x cost reduction per reconciliation cycle is what drives the business case.</p>
+                    <p>Investment banks are deploying AI agents for post-trade reconciliation — tasks that previously required teams of analysts running SQL queries, cross-referencing spreadsheets, and manually filing exception reports. An agentic system with access to trade databases, counterparty APIs, and internal reporting tools can run the full reconciliation cycle, triage exceptions by severity, auto-resolve known patterns (wrong settlement currency, missing LEI code), escalate genuine anomalies to a human with a pre-populated resolution report, and write the compliance log — handling the bulk of daily volume without human intervention. The cost reduction per reconciliation cycle is what drives the business case.</p>
 
                     <h3>Oracle Fusion / ERP Automation</h3>
-                    <p>Oracle's own AI Agent platform (built on OCI Generative AI) enables enterprises to build agents that span Oracle Fusion modules — procure-to-pay, order-to-cash, financial close. A typical deployment uses an orchestrator agent that receives a trigger (e.g., invoice received), spawns specialist sub-agents (PO matching agent, vendor validation agent, approval routing agent), aggregates their outputs, and writes the final journal entry — touching four application modules with zero human clicks for straight-through processing scenarios. Engineers gheWARE has trained on this architecture report 55–65% reduction in manual data entry within 60 days.</p>
+                    <p>Oracle's own AI Agent platform (built on OCI Generative AI) enables enterprises to build agents that span Oracle Fusion modules — procure-to-pay, order-to-cash, financial close. A typical deployment uses an orchestrator agent that receives a trigger (e.g., invoice received), spawns specialist sub-agents (PO matching agent, vendor validation agent, approval routing agent), aggregates their outputs, and writes the final journal entry — touching four application modules with zero human clicks for straight-through processing scenarios. Engineers gheWARE has trained on this architecture report substantial reductions in manual data entry.</p>
 
                     <h3>DevOps &amp; Site Reliability</h3>
                     <p>SRE teams at cloud-native enterprises are using AI agents as first-responders to PagerDuty alerts. The agent receives an alert, queries Datadog/Prometheus for the relevant metrics, reviews recent deployment history in ArgoCD, checks open Jira tickets for known issues, and either auto-remediates (rolling back a broken deployment, scaling a pod, clearing a stuck queue) or opens a structured incident report with root cause analysis pre-filled. Mean time to resolution drops from 45 minutes to under 8 minutes for common incident patterns.</p>
@@ -445,7 +445,7 @@
 
                     <div style="background: linear-gradient(135deg, #1E3A5F 0%, #0f766e 100%); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; color: white;">
                         <h3 style="color: white; margin-top: 0;">🏆 The gheWARE Agentic AI Workshop</h3>
-                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Our 5-day intensive programme is the fastest path to production-ready agentic AI capability for enterprise engineering teams. Rated <strong>4.91/5.0 by Oracle participants</strong>, with 119 hands-on labs covering LangGraph, AutoGen, CrewAI, multi-agent architecture, Kubernetes deployment, and enterprise security.</p>
+                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">Our 5-day intensive programme is the fastest path to production-ready agentic AI capability for enterprise engineering teams. Rated <strong>4.91/5.0 on Oracle University</strong>, with 119 hands-on labs covering LangGraph, AutoGen, CrewAI, multi-agent architecture, Kubernetes deployment, and enterprise security.</p>
                         <ul style="color: rgba(255,255,255,0.9); line-height: 2; margin-bottom: 1.5rem;">
                             <li><strong>Silver Package</strong> — 5 days, 10–20 engineers, full lab environment, post-training support for 30 days</li>
                             <li>60–70% hands-on labs — not death by PowerPoint</li>
@@ -467,7 +467,7 @@
 
                     <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 1.5rem 0;">
                         <h3 style="color: #1E3A5F; margin-bottom: 0.75rem;">What programming language is used for AI agents?</h3>
-                        <p>Python is the dominant language for building enterprise AI agents in 2026, supported by frameworks like LangGraph, AutoGen, CrewAI, and LlamaIndex. TypeScript/JavaScript is increasingly common for web-integrated agents. Java and Go appear in enterprise back-end agent runtimes, particularly for JPMorgan-style financial services platforms where existing infrastructure is Java-based. Python's dominance is driven by the depth of its ML ecosystem — numpy, pandas, transformers, and the entire Hugging Face library are Python-first.</p>
+                        <p>Python is the dominant language for building enterprise AI agents in 2026, supported by frameworks like LangGraph, AutoGen, CrewAI, and LlamaIndex. TypeScript/JavaScript is increasingly common for web-integrated agents. Java and Go appear in enterprise back-end agent runtimes, particularly for large financial-services platforms where existing infrastructure is Java-based. Python's dominance is driven by the depth of its ML ecosystem — numpy, pandas, transformers, and the entire Hugging Face library are Python-first.</p>
                     </div>
 
                     <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 1.5rem 0;">
@@ -504,7 +504,7 @@
 <!-- Lead Magnet CTA -->
 <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
   <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
-  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum rated 4.91/5.0 on Oracle University. Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
   <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
     <input type="hidden" name="website" value="">
     <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
@@ -573,7 +573,7 @@ async function submitNewsletter(e) {
             <!-- CTA Section -->
             <section class="post-cta">
                 <h2>Ready to Build Enterprise AI Agents?</h2>
-                <p>Join the engineering teams rated 4.91/5.0 at Oracle. 5 days. 119 hands-on labs. Your team builds a production AI agent — or you pay nothing.</p>
+                <p>Join the programme rated 4.91/5.0 on Oracle University. 5 days. 119 hands-on labs. Your team builds a production AI agent — or you pay nothing.</p>
                 <a href="/training/" class="btn-cta-primary">
                     <span>View the Agentic AI Workshop</span>
                     <span class="btn-arrow">→</span>

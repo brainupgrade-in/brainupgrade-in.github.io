@@ -250,7 +250,7 @@
                 <h2>Key Takeaways</h2>
                 <ul>
                     <li><strong>Context engineering</strong> is the systematic design of what goes into an agent's context window — memory, tools, instructions, and history — not just writing better prompts.</li>
-                    <li>Engineers at companies like Snowflake run <strong>8+ parallel AI agents</strong> by scoping each agent's context to only what it needs, preventing information overload and hallucination.</li>
+                    <li>Engineers at data-intensive companies run <strong>multiple parallel AI agents</strong> by scoping each agent's context to only what it needs, preventing information overload and hallucination.</li>
                     <li>The <strong>four pillars</strong> of context engineering are: memory architecture, tool schema design, history compression, and instruction hierarchy.</li>
                     <li>LangChain, LangGraph, and OpenAI's Assistants API all expose context engineering primitives — but only senior engineers know how to use them correctly in production.</li>
                     <li>Teams that master context engineering reduce agent hallucination rates by <strong>60–80%</strong> and cut LLM API costs by up to <strong>40%</strong> through smarter context compression.</li>
@@ -284,7 +284,7 @@
 
                 <p>I've spent the last two years building agentic AI systems for enterprise clients — teams at banks, logistics companies, and SaaS vendors. Every failed agent deployment I've diagnosed shared the same root cause: not a bad model, not a bad prompt, but a broken context. The agent didn't have the right information at the right time in the right format. That's a context engineering failure.</p>
 
-                <p>Meanwhile, engineers at Snowflake, Stripe, and other data-intensive companies are quietly running <strong>8 or more AI agents in parallel</strong> on the same task — a planner, a researcher, a coder, a reviewer, a verifier, a security auditor — each receiving a surgically crafted context slice. The output quality gap between teams that do this and teams that don't is staggering.</p>
+                <p>Meanwhile, engineers at data-intensive companies are quietly running <strong>multiple AI agents in parallel</strong> on the same task — a planner, a researcher, a coder, a reviewer, a verifier, a security auditor — each receiving a surgically crafted context slice. The output quality gap between teams that do this and teams that don't is staggering.</p>
 
                 <p>This post is your complete introduction to context engineering for agentic AI: what it is, why it matters, and how to implement it today with LangGraph and LangChain.</p>
 
@@ -738,9 +738,9 @@ def get_cluster_state_for_agent(namespace: str) -> str:
 
                     <p>The shift from prompt engineering to context engineering marks a genuine maturation of the AI engineering discipline. We are moving from "tell the AI what to do" to "design the information architecture that lets the AI do the right thing, reliably, at scale."</p>
 
-                    <p>Engineers who invest in this skill now — understanding memory architectures, tool schema design, history compression strategies, and multi-agent context scoping — will be the ones architecting the autonomous systems that transform enterprises over the next five years. The GitHub community has noticed. Snowflake's engineering team has noticed. The only question is whether you get ahead of this curve or catch up to it later.</p>
+                    <p>Engineers who invest in this skill now — understanding memory architectures, tool schema design, history compression strategies, and multi-agent context scoping — will be the ones architecting the autonomous systems that transform enterprises over the next five years. The GitHub community has noticed. Leading engineering teams have noticed. The only question is whether you get ahead of this curve or catch up to it later.</p>
 
-                    <p>I've been training DevOps and AI engineers for over 25 years — at JPMorgan, Deutsche Bank, Morgan Stanley, and now independently through gheWARE. The pattern I've seen with every major technology shift: the engineers who invest in fundamentals early build the systems everyone else has to maintain. Context engineering is that fundamental skill for the agentic AI era.</p>
+                    <p>I've been building and teaching DevOps and AI engineering for over 25 years — including roles at JPMorgan, Deutsche Bank, and Morgan Stanley, and now independently through gheWARE. The pattern I've seen with every major technology shift: the engineers who invest in fundamentals early build the systems everyone else has to maintain. Context engineering is that fundamental skill for the agentic AI era.</p>
 
                     <p>If you want to build production agentic systems — not demos, but systems your company can actually deploy and trust — our training programme is the fastest path to get there.</p>
                 </section>
@@ -752,7 +752,7 @@ def get_cluster_state_for_agent(namespace: str) -> str:
 <!-- Lead Magnet CTA -->
 <div style="background:#1e3a5f;border-radius:12px;padding:28px;margin:32px 0;color:white;text-align:center" id="lead-cta-agentic">
   <h3 style="margin:0 0 8px">Free Download: Agentic AI Workshop Guide</h3>
-  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum used at Oracle (4.91/5.0). Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
+  <p style="margin:0 0 16px;font-size:14px;opacity:0.85">5-day hands-on curriculum rated 4.91/5.0 on Oracle University. Build production-ready AI agents with LangGraph, RAG &amp; MCP.</p>
   <form onsubmit="submitLeadMagnet(event,'dev-lead-agentic-ai-guide','lead-cta-agentic')" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
     <input type="hidden" name="website" value="">
     <input name="name" required placeholder="Your name" style="padding:10px 14px;border:none;border-radius:6px;font-size:14px;width:150px">
