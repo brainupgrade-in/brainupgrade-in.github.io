@@ -25,6 +25,16 @@ echo "=========================================="
 echo "📝 DEV BLOG PUBLISH PIPELINE"
 echo "=========================================="
 
+# ─── STEP 0: Template conformance gate (abort publish on drift) ──────────────
+echo ""
+echo "0️⃣  Validating blog-post template conformance..."
+if ! $PYTHON docs/scripts/validate-template.py; then
+    echo ""
+    echo "   ❌ Template conformance check failed — publish aborted."
+    echo "   Fix the posts above against docs/blog/posts/_template.html and re-run."
+    exit 1
+fi
+
 # ─── STEP 1: Regenerate posts-data.json + sitemap.xml + rss.xml from disk ────
 echo ""
 echo "1️⃣  Regenerating indexes from docs/blog/posts/..."

@@ -115,13 +115,13 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        header {
+        .legacy-header {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             padding: 60px 0 40px;
             text-align: center;
         }
-        header h1 {
+        .legacy-header h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 15px;
@@ -268,20 +268,31 @@
             font-size: 0.95rem;
             color: #666;
         }
-        footer {
+        .legacy-footer {
             background: #1a1a2e;
             color: #8892b0;
             text-align: center;
             padding: 30px 0;
         }
         @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
+            .legacy-header h1 { font-size: 1.8rem; }
             .container { padding: 0 15px; }
             main { padding: 30px 0; }
         }
     </style>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+
+    <!-- Analytics & Template Loader -->
+    <script src="/js/analytics-loader.js"></script>
+    <script src="/js/template-loader.js" defer></script>
 </head>
 <body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
     <header>
         <div class="container">
             <h1>Kubernetes for GenAI Apps: Architecture Patterns That Scale to Production</h1>
@@ -799,20 +810,12 @@ spec:
                 <li>CKA Certification — Validate your Kubernetes expertise</li>
             </ul>
 
-            <div class="author-box">
-                <div class="author-avatar">RG</div>
-                <div class="author-info">
-                    <h3>Rajesh Gheware</h3>
-                    <p>Chief Architect & Corporate Trainer with 25+ years at JPMorgan Chase, Deutsche Bank, and Morgan Stanley. CKA, CKS, and TOGAF certified. Author of the "Ultimate CKA Certification Guide."</p>
-                </div>
-            </div>
+            <!-- Author Bio Placeholder -->
+            <div id="author-bio-placeholder"></div>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 gheWARE uniGPS Solutions LLP. Built with passion for enterprise AI infrastructure.</p>
-        </div>
-    </footer>
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
 </body>
 </html>

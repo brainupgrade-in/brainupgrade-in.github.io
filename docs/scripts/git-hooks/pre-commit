@@ -31,6 +31,21 @@ if [ -z "$PYTHON" ]; then
     exit 0
 fi
 
+# Template conformance gate (Gotcha: blog template drift / leaked planning HTML).
+# Abort the commit if any post is missing the canonical _template.html markers.
+VALIDATE=""
+for p in docs/scripts/validate-template.py scripts/validate-template.py; do
+    [ -f "$p" ] && VALIDATE="$p" && break
+done
+if [ -n "$VALIDATE" ]; then
+    echo "[pre-commit] Validating blog-post template conformance via $VALIDATE…" >&2
+    if ! "$PYTHON" "$VALIDATE" >&2; then
+        echo "[pre-commit] Template conformance check failed — aborting commit." >&2
+        echo "[pre-commit] Fix the posts above against docs/blog/posts/_template.html (or --no-verify if you know why)." >&2
+        exit 1
+    fi
+fi
+
 echo "[pre-commit] Blog post change detected → regenerating indexes via $REGEN…" >&2
 if ! "$PYTHON" "$REGEN" >&2; then
     echo "[pre-commit] regenerate_indexes.py failed — aborting commit" >&2

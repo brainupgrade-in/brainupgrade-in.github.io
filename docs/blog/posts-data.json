@@ -250,6 +250,21 @@
       "keywords": []
     },
     {
+      "title": "AI Agents Managing Kubernetes: From Autonomous Healing to Self-Governing Clusters in 2026",
+      "url": "/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html",
+      "excerpt": "AI agents now operate as 24/7 junior DevOps engineers inside Kubernetes, diagnosing CrashLoopBackOff, OOMKilled and network failures and remediating them. Guide to 5 production patterns, KAITO setup and a 7-step governance framework.",
+      "category": "Agentic AI",
+      "tags": [
+        "Kubernetes",
+        "AI Agents"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 4, 2026",
+      "_isoDate": "2026-05-04",
+      "readTime": "11 min read",
+      "keywords": []
+    },
+    {
       "title": "From Pilot To Production Why Agentic Ai Fails 2026",
       "url": "/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html",
       "excerpt": "Only 11-25% of Agentic AI pilots reach production. Learn the 7 failure patterns and how to fix them with LangGraph, MCP, and production-grade observability. Based on enterprise deployment experience.",
@@ -2323,18 +2338,6 @@
         "hands-on examples",
         "production-ready"
       ]
-    },
-    {
-      "title": "Ai Agents Autonomous Kubernetes Operations 2026",
-      "url": "/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html",
-      "excerpt": "AI agents now operate as 24/7 junior DevOps engineers inside Kubernetes — diagnosing CrashLoopBackOff, OOMKilled, and network failures, then autonomously remediating them. Complete enterprise guide with 5 production patterns, KAITO operator setup, and a 7-step governance framework.**",
-      "category": "DevOps",
-      "tags": [],
-      "author": "Rajesh Gheware",
-      "publishedDate": "January 1, 2026",
-      "_isoDate": "2026-01-01",
-      "readTime": "10 min read",
-      "keywords": []
     }
   ]
 }

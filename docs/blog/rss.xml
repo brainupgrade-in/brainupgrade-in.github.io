@@ -157,6 +157,15 @@
             <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
+            <title>AI Agents Managing Kubernetes: From Autonomous Healing to Self-Governing Clusters in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html</guid>
+            <description>AI agents now operate as 24/7 junior DevOps engineers inside Kubernetes, diagnosing CrashLoopBackOff, OOMKilled and network failures and remediating them. Guide to 5 production patterns, KAITO setup and a 7-step governance framework.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
             <title>From Pilot To Production Why Agentic Ai Fails 2026</title>
             <link>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</guid>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Kubernetes for GenAI Workloads: Enterprise Architecture Guide 2026 (KubeCon EU)</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-workloads-kubecon-eu-2026.html</guid>
-            <description>KubeCon EU 2026 confirmed: 66% of GenAI workloads run on Kubernetes. Learn how to architect enterprise GenAI apps with llm-d, DRA, Volcano v1.14, and NVIDIA Grove — from a CKA architect with 25+ years at JPMorgan.</description>
-            <category>AI in Kubernetes</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
