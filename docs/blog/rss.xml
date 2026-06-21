@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Agentic AI Incident Response: The Autonomous SRE in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</guid>
+            <description>Discover how agentic AI transforms incident response in 2026. From autonomous triage to automated remediation, see the shift from alert fatigue to autonomous SRE.</description>
+            <category>AI SRE</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 21 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>MLOps on Kubernetes: From Notebook to Production Endpoint</title>
             <link>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agentic AI Roadmap 2026: 90-Day Enterprise Implementation Guide</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-implementation-roadmap-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-implementation-roadmap-enterprise-2026.html</guid>
-            <description>Agentic AI roadmap 2026: 90-day enterprise deployment plan covering architecture, team structure, LangGraph tooling, and governance. Complete playbook from JPMorgan architect. Learn from 25 years enterprise experience →</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

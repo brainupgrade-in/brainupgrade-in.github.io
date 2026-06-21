@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agentic AI Incident Response: The Autonomous SRE in 2026",
+      "url": "/blog/posts/agentic-ai-incident-response-sre-2026.html",
+      "excerpt": "Discover how agentic AI transforms incident response in 2026. From autonomous triage to automated remediation, see the shift from alert fatigue to autonomous SRE.",
+      "category": "AI SRE",
+      "tags": [
+        "agentic ai incident response sre 2026",
+        "autonomous SRE",
+        "AI incident management"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 21, 2026",
+      "_isoDate": "2026-06-21",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "MLOps on Kubernetes: From Notebook to Production Endpoint",
       "url": "/blog/posts/mlops-model-deployment-kubernetes-2026.html",
       "excerpt": "Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.",
