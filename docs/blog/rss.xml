@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 21 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Internal Developer Platform Backstage 2026</title>
+            <link>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</guid>
+            <description>Building an internal developer platform with Backstage in 2026 requires shifting from passive catalogs to active, agentic workflows. Here is the practitioner’s guide.</description>
+            <category>Platform Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Agentic AI Incident Response: The Autonomous SRE in 2026</title>
             <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Production-Ready AI Agents: Closing the Enterprise Deployment Gap 2026</title>
-            <link>https://devops.gheware.com/blog/posts/production-ready-ai-agents-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/production-ready-ai-agents-enterprise-2026.html</guid>
-            <description>Why most AI agent projects fail to reach production. Learn the success path: governance, data quality, integration patterns, and organizational change management for enterprise teams.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

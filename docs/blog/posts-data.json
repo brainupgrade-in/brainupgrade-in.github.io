@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Internal Developer Platform Backstage 2026",
+      "url": "/blog/posts/internal-developer-platform-backstage-2026.html",
+      "excerpt": "Building an internal developer platform with Backstage in 2026 requires shifting from passive catalogs to active, agentic workflows. Here is the practitioner’s guide.",
+      "category": "Platform Engineering",
+      "tags": [
+        "internal developer platform backstage 2026",
+        "platform engineering",
+        "backstage.io"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 22, 2026",
+      "_isoDate": "2026-06-22",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Agentic AI Incident Response: The Autonomous SRE in 2026",
       "url": "/blog/posts/agentic-ai-incident-response-sre-2026.html",
       "excerpt": "Discover how agentic AI transforms incident response in 2026. From autonomous triage to automated remediation, see the shift from alert fatigue to autonomous SRE.",
