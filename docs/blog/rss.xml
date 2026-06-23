@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kubernetes Cost Optimization Enterprise 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-enterprise-2026.html</guid>
+            <description>Stop bleeding money on Kubernetes. Learn concrete strategies for enterprise cost optimization in 2026, including spot instance management and AI-driven autoscaling.</description>
+            <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 23 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Internal Developer Platform Backstage 2026</title>
             <link>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agent Sprawl Is the New Cloud Sprawl: How to Build an Agentic Command Center in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agent-sprawl-agentic-command-center-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agent-sprawl-agentic-command-center-enterprise-2026.html</guid>
-            <description>Learn how enterprise teams are solving agent sprawl with Agentic Command Centers. Practical architecture patterns, governance frameworks, and orchestration strategies from 25+ years of enterprise experience.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
