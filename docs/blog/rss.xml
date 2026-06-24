@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 23 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Platform Engineering vs DevOps 2026: The Reality</title>
+            <link>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026takeawayplatformengineeringprovidestheproduct.html</link>
+            <guid>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026takeawayplatformengineeringprovidestheproduct.html</guid>
+            <description>Platform engineering vs DevOps 2026: Why self-service platforms and agentic AI are replacing manual toil. A practitioner’s view on building internal developer.</description>
+            <category>Platform Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Kubernetes Cost Optimization Enterprise 2026</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-cost-optimization-enterprise-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>FinOps for AI Agents on Kubernetes: The Enterprise Cost Optimization Playbook 2026</title>
-            <link>https://devops.gheware.com/blog/posts/finops-ai-agents-kubernetes-cost-optimization-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/finops-ai-agents-kubernetes-cost-optimization-2026.html</guid>
-            <description>Enterprise guide to FinOps for AI agents on Kubernetes. GPU rightsizing, spot instances, serverless GPUs, and FinOps culture for agentic AI workloads in 2026.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

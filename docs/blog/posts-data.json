@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Platform Engineering vs DevOps 2026: The Reality",
+      "url": "/blog/posts/platform-engineering-vs-devops-2026takeawayplatformengineeringprovidestheproduct.html",
+      "excerpt": "Platform engineering vs DevOps 2026: Why self-service platforms and agentic AI are replacing manual toil. A practitioner’s view on building internal developer.",
+      "category": "Platform Engineering",
+      "tags": [
+        "platform engineering vs devops 2026",
+        "internal developer platform",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 24, 2026",
+      "_isoDate": "2026-06-24",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes Cost Optimization Enterprise 2026",
       "url": "/blog/posts/kubernetes-cost-optimization-enterprise-2026.html",
       "excerpt": "Stop bleeding money on Kubernetes. Learn concrete strategies for enterprise cost optimization in 2026, including spot instance management and AI-driven autoscaling.",
