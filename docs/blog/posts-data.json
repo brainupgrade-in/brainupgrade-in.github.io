@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI Agent Observability in Production 2026",
+      "url": "/blog/posts/ai-agent-observability-production-2026.html",
+      "excerpt": "Master AI agent observability in production 2026. Learn tracing, metrics, and debugging strategies for non-deterministic LLM workflows in enterprise Kubernetes.",
+      "category": "AI Observability",
+      "tags": [
+        "ai agent observability production 2026",
+        "llm observability",
+        "kubernetes monitoring"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 25, 2026",
+      "_isoDate": "2026-06-25",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Platform Engineering vs DevOps 2026: The Reality",
       "url": "/blog/posts/platform-engineering-vs-devops-2026takeawayplatformengineeringprovidestheproduct.html",
       "excerpt": "Platform engineering vs DevOps 2026: Why self-service platforms and agentic AI are replacing manual toil. A practitioner’s view on building internal developer.",

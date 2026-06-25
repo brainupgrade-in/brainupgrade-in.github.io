@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 25 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>AI Agent Observability in Production 2026</title>
+            <link>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026.html</guid>
+            <description>Master AI agent observability in production 2026. Learn tracing, metrics, and debugging strategies for non-deterministic LLM workflows in enterprise Kubernetes.</description>
+            <category>AI Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 25 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Platform Engineering vs DevOps 2026: The Reality</title>
             <link>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026takeawayplatformengineeringprovidestheproduct.html</link>
@@ -452,15 +461,6 @@
             <category>AI in DevOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agent Governance in the Enterprise: Audit Trails, LLM Guardrails &amp; Compliance for 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-governance-enterprise-compliance-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-governance-enterprise-compliance-2026.html</guid>
-            <description>The EU AI Act applies from August 2026. Learn how enterprise teams govern AI agents with audit trails, LLM guardrails, NIST AI RMF alignment, and kill switches. Practical framework from 25 years in financial services.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
