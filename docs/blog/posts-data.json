@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
+      "url": "/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html",
+      "excerpt": "Reduce LLM cost optimization enterprise inference 2026 with proven techniques: model quantization, intelligent routing, and observability for lower latency and spend.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "llm cost optimization enterprise inference 2026",
+        "AI infrastructure",
+        "Kubernetes AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 27, 2026",
+      "_isoDate": "2026-06-27",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "AI Agent Observability in Production 2026",
       "url": "/blog/posts/ai-agent-observability-production-2026.html",
       "excerpt": "Master AI agent observability in production 2026. Learn tracing, metrics, and debugging strategies for non-deterministic LLM workflows in enterprise Kubernetes.",
