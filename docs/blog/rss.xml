@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</guid>
+            <description>Master Kubernetes security hardening for the CKS 2026 exam. Learn concrete steps for node security, RBAC, network policies, and runtime protection.</description>
+            <category>Kubernetes Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 28 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
             <link>https://devops.gheware.com/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html</link>
@@ -83,15 +92,6 @@
             <category>RAG</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</guid>
-            <description>Master Kubernetes security hardening for CKS 2026. Learn concrete strategies for secrets management, network policies, and runtime defense in enterprise environments.</description>
-            <category>Kubernetes Security</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>

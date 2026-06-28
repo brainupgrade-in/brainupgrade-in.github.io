@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
+      "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
+      "excerpt": "Master Kubernetes security hardening for the CKS 2026 exam. Learn concrete steps for node security, RBAC, network policies, and runtime protection.",
+      "category": "Kubernetes Security",
+      "tags": [
+        "kubernetes security hardening cks 2026",
+        "CKS exam preparation",
+        "Kubernetes RBAC"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 28, 2026",
+      "_isoDate": "2026-06-28",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
       "url": "/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html",
       "excerpt": "Reduce LLM cost optimization enterprise inference 2026 with proven techniques: model quantization, intelligent routing, and observability for lower latency and spend.",
@@ -126,22 +142,6 @@
       "publishedDate": "June 19, 2026",
       "_isoDate": "2026-06-19",
       "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
-      "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
-      "excerpt": "Master Kubernetes security hardening for CKS 2026. Learn concrete strategies for secrets management, network policies, and runtime defense in enterprise environments.",
-      "category": "Kubernetes Security",
-      "tags": [
-        "kubernetes security hardening cks 2026",
-        "CKS certification",
-        "kubernetes security checklist"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 18, 2026",
-      "_isoDate": "2026-06-18",
-      "readTime": "6 min read",
       "keywords": []
     },
     {
