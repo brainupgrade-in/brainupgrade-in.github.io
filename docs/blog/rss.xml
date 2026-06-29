@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 28 Jun 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jun 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Scaling RAG Pipeline Production Scaling 2026</title>
+            <link>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</guid>
+            <description>A senior DevOps engineer’s guide to scaling RAG pipelines in 2026. Covers vector DB tuning, caching strategies, and Kubernetes deployment patterns for production-grade.</description>
+            <category>RAG</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Safety</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>OWASP LLM Top 10: The Security Checklist Every AI Engineer Needs in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/owasp-llm-top-10-explained-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/owasp-llm-top-10-explained-2026.html</guid>
-            <description>The OWASP LLM Top 10 lists the exact vulnerabilities attacking production AI systems in 2026. Here's what each risk means, real exploit patterns, and how to defend against them.</description>
-            <category>AI Security</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
