@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "MLOps on Kubernetes: From Notebook to Production Endpoint",
+      "url": "/blog/posts/mlops-model-deployment-kubernetes-2026.html",
+      "excerpt": "Learn how to deploy MLOps models on Kubernetes in 2026. Discover best practices for scaling, security, and managing inference endpoints in enterprise environments.",
+      "category": "MLOps",
+      "tags": [
+        "mlops model deployment kubernetes 2026",
+        "kubernetes",
+        "mlops"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 30, 2026",
+      "_isoDate": "2026-06-30",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Scaling RAG Pipeline Production Scaling 2026",
       "url": "/blog/posts/rag-pipeline-production-scaling-2026.html",
       "excerpt": "A senior DevOps engineer’s guide to scaling RAG pipelines in 2026. Covers vector DB tuning, caching strategies, and Kubernetes deployment patterns for production-grade.",
@@ -126,22 +142,6 @@
       "publishedDate": "June 21, 2026",
       "_isoDate": "2026-06-21",
       "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "MLOps on Kubernetes: From Notebook to Production Endpoint",
-      "url": "/blog/posts/mlops-model-deployment-kubernetes-2026.html",
-      "excerpt": "Learn how to deploy MLOps model deployment kubernetes 2026 strategies. I share concrete patterns for stable inference, observability, and scaling AI workloads.",
-      "category": "MLOps",
-      "tags": [
-        "mlops model deployment kubernetes 2026",
-        "kubernetes ml",
-        "model serving"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 20, 2026",
-      "_isoDate": "2026-06-20",
-      "readTime": "7 min read",
       "keywords": []
     },
     {
