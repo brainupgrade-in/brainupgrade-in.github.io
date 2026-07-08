@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes Security Hardening CKS 2026",
+      "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
+      "excerpt": "Master Kubernetes security hardening for the CKS 2026 exam and enterprise reality. Concrete steps for RBAC, network policies, and runtime protection.",
+      "category": "Kubernetes Security",
+      "tags": [
+        "kubernetes security hardening cks 2026",
+        "CKS exam",
+        "Kubernetes security"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 8, 2026",
+      "_isoDate": "2026-07-08",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting Kubernetes Costs 40%: The 2026 Enterprise Playbook",
       "url": "/blog/posts/kubernetes-cost-optimization-enterprise-2026.html",
       "excerpt": "Learn how to achieve kubernetes cost optimization enterprise 2026 goals. Practical steps for spot instances, right-sizing, and eliminating zombie workloads.",
@@ -78,22 +94,6 @@
       "publishedDate": "June 29, 2026",
       "_isoDate": "2026-06-29",
       "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
-      "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
-      "excerpt": "Master Kubernetes security hardening for the CKS 2026 exam. Learn concrete steps for node security, RBAC, network policies, and runtime protection.",
-      "category": "Kubernetes Security",
-      "tags": [
-        "kubernetes security hardening cks 2026",
-        "CKS exam preparation",
-        "Kubernetes RBAC"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 28, 2026",
-      "_isoDate": "2026-06-28",
-      "readTime": "5 min read",
       "keywords": []
     },
     {
