@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Scaling RAG Pipelines in Production: Lessons from 2026</title>
+            <link>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</guid>
+            <description>How to scale a RAG pipeline to production in 2026. Avoid common pitfalls in vector indexing, chunking, and observability for reliable enterprise AI.</description>
+            <category>RAG</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Kubernetes Security Hardening CKS 2026</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</link>
@@ -56,15 +65,6 @@
             <category>MLOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Scaling RAG Pipeline Production Scaling 2026</title>
-            <link>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</guid>
-            <description>A senior DevOps engineer’s guide to scaling RAG pipelines in 2026. Covers vector DB tuning, caching strategies, and Kubernetes deployment patterns for production-grade.</description>
-            <category>RAG</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 29 Jun 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
