@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>MLOps on Kubernetes: From Notebook to Production Endpoint</title>
+            <link>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</guid>
+            <description>Learn how to deploy ML models on Kubernetes in 2026 with practical steps for inference serving, auto-scaling, and monitoring. Avoid common pitfalls in production MLOps.</description>
+            <category>MLOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Scaling RAG Pipelines in Production: Lessons from 2026</title>
             <link>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026.html</link>
@@ -56,15 +65,6 @@
             <category>AI SRE</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>MLOps on Kubernetes: From Notebook to Production Endpoint</title>
-            <link>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</guid>
-            <description>Learn how to deploy MLOps models on Kubernetes in 2026. Discover best practices for scaling, security, and managing inference endpoints in enterprise environments.</description>
-            <category>MLOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
