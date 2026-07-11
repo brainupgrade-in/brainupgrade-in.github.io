@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 11 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Agentic AI Incident Response SRE 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</guid>
+            <description>Explore how agentic AI is transforming SRE incident response in 2026. Learn about autonomous troubleshooting, Kubernetes integration, and the future of DevOps.</description>
+            <category>AI SRE</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>MLOps on Kubernetes: From Notebook to Production Endpoint</title>
             <link>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</link>
@@ -56,15 +65,6 @@
             <category>Platform Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agentic AI Incident Response: The Autonomous SRE in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</guid>
-            <description>Explore how agentic AI transforms SRE workflows in 2026, reducing MTTR by 60% through autonomous Kubernetes operations and predictive remediation.</description>
-            <category>AI SRE</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
