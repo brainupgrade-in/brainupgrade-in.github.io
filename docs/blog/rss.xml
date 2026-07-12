@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 11 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Building an Internal Developer Platform That Engineers Actuall</title>
+            <link>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</guid>
+            <description>Stop building invisible platforms. A practical guide to making Backstage and IDPs useful for developers in 2026, focusing on self-service and AI integration.</description>
+            <category>Platform Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Agentic AI Incident Response SRE 2026</title>
             <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</link>
@@ -92,15 +101,6 @@
             <category>Platform Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Internal Developer Platform Backstage 2026</title>
-            <link>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026.html</guid>
-            <description>Building an internal developer platform with Backstage in 2026 requires shifting from passive catalogs to active, agentic workflows. Here is the practitioner’s guide.</description>
-            <category>Platform Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>Scaling RAG Pipelines to Production: Hard Truths</title>

@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Building an Internal Developer Platform That Engineers Actuall",
+      "url": "/blog/posts/internal-developer-platform-backstage-2026.html",
+      "excerpt": "Stop building invisible platforms. A practical guide to making Backstage and IDPs useful for developers in 2026, focusing on self-service and AI integration.",
+      "category": "Platform Engineering",
+      "tags": [
+        "internal developer platform backstage 2026",
+        "Backstage",
+        "platform engineering"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 12, 2026",
+      "_isoDate": "2026-07-12",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Agentic AI Incident Response SRE 2026",
       "url": "/blog/posts/agentic-ai-incident-response-sre-2026.html",
       "excerpt": "Explore how agentic AI is transforming SRE incident response in 2026. Learn about autonomous troubleshooting, Kubernetes integration, and the future of DevOps.",
@@ -141,22 +157,6 @@
       "author": "Rajesh Gheware",
       "publishedDate": "June 24, 2026",
       "_isoDate": "2026-06-24",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Internal Developer Platform Backstage 2026",
-      "url": "/blog/posts/internal-developer-platform-backstage-2026.html",
-      "excerpt": "Building an internal developer platform with Backstage in 2026 requires shifting from passive catalogs to active, agentic workflows. Here is the practitioner’s guide.",
-      "category": "Platform Engineering",
-      "tags": [
-        "internal developer platform backstage 2026",
-        "platform engineering",
-        "backstage.io"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 22, 2026",
-      "_isoDate": "2026-06-22",
       "readTime": "5 min read",
       "keywords": []
     },
