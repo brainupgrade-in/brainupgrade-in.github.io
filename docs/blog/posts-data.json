@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Cutting K8s Costs 40%: A 2026 Enterprise Playbook",
+      "url": "/blog/posts/kubernetes-cost-optimization-enterprise-2026.html",
+      "excerpt": "Learn how to achieve 40% Kubernetes cost optimization in 2026. Practical steps for right-sizing, spot usage, and Agentic AI monitoring in enterprise environments.",
+      "category": "Kubernetes",
+      "tags": [
+        "kubernetes cost optimization enterprise 2026",
+        "k8s cost reduction",
+        "cloud spend management"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 13, 2026",
+      "_isoDate": "2026-07-13",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Building an Internal Developer Platform That Engineers Actuall",
       "url": "/blog/posts/internal-developer-platform-backstage-2026.html",
       "excerpt": "Stop building invisible platforms. A practical guide to making Backstage and IDPs useful for developers in 2026, focusing on self-service and AI integration.",
@@ -78,22 +94,6 @@
       "publishedDate": "July 8, 2026",
       "_isoDate": "2026-07-08",
       "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Cutting Kubernetes Costs 40%: The 2026 Enterprise Playbook",
-      "url": "/blog/posts/kubernetes-cost-optimization-enterprise-2026.html",
-      "excerpt": "Learn how to achieve kubernetes cost optimization enterprise 2026 goals. Practical steps for spot instances, right-sizing, and eliminating zombie workloads.",
-      "category": "Kubernetes",
-      "tags": [
-        "kubernetes cost optimization enterprise 2026",
-        "kubernetes cost reduction",
-        "cloud cost management"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 3, 2026",
-      "_isoDate": "2026-07-03",
-      "readTime": "5 min read",
       "keywords": []
     },
     {
