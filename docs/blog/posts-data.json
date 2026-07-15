@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI Agent Observability in Production 2026",
+      "url": "/blog/posts/ai-agent-observability-production-2026.html",
+      "excerpt": "Learn how to implement robust AI agent observability in production for 2026. Covers tracing, debugging, and governance for autonomous systems in enterprise DevOps.",
+      "category": "AI Observability",
+      "tags": [
+        "ai agent observability production 2026",
+        "distributed tracing",
+        "LLM observability"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 15, 2026",
+      "_isoDate": "2026-07-15",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting K8s Costs 40%: A 2026 Enterprise Playbook",
       "url": "/blog/posts/kubernetes-cost-optimization-enterprise-2026.html",
       "excerpt": "Learn how to achieve 40% Kubernetes cost optimization in 2026. Practical steps for right-sizing, spot usage, and Agentic AI monitoring in enterprise environments.",
@@ -126,22 +142,6 @@
       "publishedDate": "June 27, 2026",
       "_isoDate": "2026-06-27",
       "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "AI Agent Observability in Production 2026",
-      "url": "/blog/posts/ai-agent-observability-production-2026.html",
-      "excerpt": "Master AI agent observability in production 2026. Learn tracing, metrics, and debugging strategies for non-deterministic LLM workflows in enterprise Kubernetes.",
-      "category": "AI Observability",
-      "tags": [
-        "ai agent observability production 2026",
-        "llm observability",
-        "kubernetes monitoring"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 25, 2026",
-      "_isoDate": "2026-06-25",
-      "readTime": "5 min read",
       "keywords": []
     },
     {
