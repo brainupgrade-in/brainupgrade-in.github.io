@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Productio",
+      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026.html",
+      "excerpt": "A senior engineer’s guide to multi-cluster GitOps in 2026. Learn patterns for ArgoCD, Flux, and hybrid cloud management that survive production.",
+      "category": "GitOps",
+      "tags": [
+        "gitops multi-cluster kubernetes 2026",
+        "argocd",
+        "flux cd"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 16, 2026",
+      "_isoDate": "2026-07-16",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "AI Agent Observability in Production 2026",
       "url": "/blog/posts/ai-agent-observability-production-2026.html",
       "excerpt": "Learn how to implement robust AI agent observability in production for 2026. Covers tracing, debugging, and governance for autonomous systems in enterprise DevOps.",
@@ -189,22 +205,6 @@
       "author": "Rajesh Gheware",
       "publishedDate": "June 17, 2026",
       "_isoDate": "2026-06-17",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Productio",
-      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026.html",
-      "excerpt": "Stop wrestling with multi-cluster Kubernetes deployments. Learn production-tested GitOps patterns for ArgoCD, Flux, and policy enforcement at scale.",
-      "category": "GitOps",
-      "tags": [
-        "gitops multi-cluster kubernetes 2026",
-        "argocd",
-        "flux cd"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 16, 2026",
-      "_isoDate": "2026-06-16",
       "readTime": "6 min read",
       "keywords": []
     },
