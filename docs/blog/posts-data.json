@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Scaling RAG Pipelines: Lessons from the Trenches 2026",
+      "url": "/blog/posts/scaling-rag-pipeline-production-2026.html",
+      "excerpt": "Scaling a RAG pipeline to production in 2026 requires mastering vector indexing, caching, and observability. Learn concrete strategies from enterprise deployments.",
+      "category": "RAG",
+      "tags": [
+        "rag pipeline production scaling 2026",
+        "enterprise rag",
+        "vector database scaling"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 19, 2026",
+      "_isoDate": "2026-07-19",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
       "url": "/blog/posts/llm-cost-optimization-enterprise-inference-2026.html",
       "excerpt": "Learn how to slash enterprise LLM inference costs in 2026. This playbook covers model quantization, smart routing, and caching strategies for production AI.",
