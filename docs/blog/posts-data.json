@@ -113,38 +113,6 @@
       "keywords": []
     },
     {
-      "title": "Building an Internal Developer Platform That Engineers Actuall",
-      "url": "/blog/posts/internal-developer-platform-backstage-2026.html",
-      "excerpt": "Stop building invisible platforms. A practical guide to making Backstage and IDPs useful for developers in 2026, focusing on self-service and AI integration.",
-      "category": "Platform Engineering",
-      "tags": [
-        "internal developer platform backstage 2026",
-        "Backstage",
-        "platform engineering"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 12, 2026",
-      "_isoDate": "2026-07-12",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Scaling RAG Pipelines in Production: Lessons from 2026",
-      "url": "/blog/posts/rag-pipeline-production-scaling-2026.html",
-      "excerpt": "How to scale a RAG pipeline to production in 2026. Avoid common pitfalls in vector indexing, chunking, and observability for reliable enterprise AI.",
-      "category": "RAG",
-      "tags": [
-        "rag pipeline production scaling 2026",
-        "enterprise rag",
-        "vector databases"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 9, 2026",
-      "_isoDate": "2026-07-09",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
       "title": "Kubernetes Security Hardening CKS 2026",
       "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
       "excerpt": "Master Kubernetes security hardening for the CKS 2026 exam and enterprise reality. Concrete steps for RBAC, network policies, and runtime protection.",
@@ -161,7 +129,7 @@
       "keywords": []
     },
     {
-      "title": "Building an Internal Developer Platform That Engineers Actuall",
+      "title": "Building an Internal Developer Platform Engineers Actually Use",
       "url": "/blog/posts/building-internal-developer-platform-backstage-2026.html",
       "excerpt": "A practitioner’s guide to building an internal developer platform using Backstage in 2026. Focus on usability, GitOps, and reducing developer toil.",
       "category": "Platform Engineering",
@@ -194,7 +162,7 @@
     },
     {
       "title": "Platform Engineering vs DevOps 2026: The Reality",
-      "url": "/blog/posts/platform-engineering-vs-devops-2026takeawayplatformengineeringprovidestheproduct.html",
+      "url": "/blog/posts/platform-engineering-vs-devops-2026.html",
       "excerpt": "Platform engineering vs DevOps 2026: Why self-service platforms and agentic AI are replacing manual toil. A practitioner’s view on building internal developer.",
       "category": "Platform Engineering",
       "tags": [
@@ -205,22 +173,6 @@
       "author": "Rajesh Gheware",
       "publishedDate": "June 24, 2026",
       "_isoDate": "2026-06-24",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Scaling RAG Pipelines to Production: Hard Truths",
-      "url": "/blog/posts/scaling-rag-pipeline-production-scaling-2026.html",
-      "excerpt": "Learn how to scale RAG pipelines to production in 2026. Practical advice on latency, vector DBs, and agentic workflows from a veteran DevOps engineer.",
-      "category": "RAG",
-      "tags": [
-        "rag pipeline production scaling 2026",
-        "enterprise RAG",
-        "vector databases"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 19, 2026",
-      "_isoDate": "2026-06-19",
       "readTime": "5 min read",
       "keywords": []
     },
