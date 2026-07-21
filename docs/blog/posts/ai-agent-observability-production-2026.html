@@ -101,77 +101,57 @@
 <li><a href="#faq">Frequently Asked Questions</a></li>
                 </ol>
             </nav>
-            <div class="post-content" itemprop="articleBody">
-<section id="section-1">
+            <div class="post-content" itemprop="articleBody"><section id="section-1">
 <h2>The Death of Simple LLM Metrics</h2>
 <p>For the past three years, we treated Large Language Models (LLMs) like deterministic microservices. We measured latency, token throughput, and error rates. It worked for chatbots. It does not work for agents. In 2026, the enterprise reality is that AI agents operate in non-deterministic loops, calling tools, making decisions, and failing silently. If you are still relying on simple prompt-response logging, you are flying blind.</p>
-
 <p>The shift from "model-centric" to "agent-centric" observability is not optional. It is a survival requirement for any organization running autonomous workflows. When an agent fails, it is rarely because the model hallucinated a fact. It fails because it entered an infinite loop, misinterpreted a tool’s output, or exhausted its context window. To fix this, we must instrument the *agent’s state*, not just the model’s inference.</p>
-
 <p>At Gheware Technologies, I have seen teams spend weeks debugging why an agent failed to process a refund. The root cause wasn’t the LLM’s reasoning; it was a missing trace ID in the downstream payment API call. Without end-to-end tracing that spans the LLM, the tool execution, and the external API, you cannot correlate cause and effect. This is why standard APM tools are insufficient. We need a new paradigm.</p>
 </section>
 <section id="section-2">
 <h2>Instrumenting the Agent Loop: State and Trace</h2>
-<p>Observability for AI agents requires three distinct layers of data collection. First, you need **trace context propagation**. Every step in the agent’s lifecycle—from initial user query to final tool execution—must carry a unique trace ID. This allows you to reconstruct the full execution path, even if the agent makes 50 recursive calls.</p>
-
-<p>Second, you must capture **tool usage metadata**. This includes the arguments passed to the tool, the latency of the tool call, and the raw output. If your agent uses a search tool, you need to see exactly what query it sent and what it received. If the search returns 0 results, the agent might enter a retry loop. Without this data, you are guessing.</p>
-
-<p>Third, and most critically, you need **state snapshots**. Agents maintain internal state (e.g., "I have checked the balance, now I will check the credit limit"). You need to log these state transitions. This enables replayability. When an agent fails, you should be able to replay the exact sequence of states and decisions that led to the failure. This is the difference between debugging and investigating.</p>
-
+<p>Observability for AI agents requires three distinct layers of data collection. First, you need <strong>trace context propagation</strong>. Every step in the agent’s lifecycle—from initial user query to final tool execution—must carry a unique trace ID. This allows you to reconstruct the full execution path, even if the agent makes 50 recursive calls.</p>
+<p>Second, you must capture <strong>tool usage metadata</strong>. This includes the arguments passed to the tool, the latency of the tool call, and the raw output. If your agent uses a search tool, you need to see exactly what query it sent and what it received. If the search returns 0 results, the agent might enter a retry loop. Without this data, you are guessing.</p>
+<p>Third, and most critically, you need <strong>state snapshots</strong>. Agents maintain internal state (e.g., "I have checked the balance, now I will check the credit limit"). You need to log these state transitions. This enables replayability. When an agent fails, you should be able to replay the exact sequence of states and decisions that led to the failure. This is the difference between debugging and investigating.</p>
 <ul>
 <li><strong>Trace ID:</strong> A unique identifier propagated across all LLM calls and tool executions.</li>
 <li><strong>Tool Input/Output:</strong> The exact JSON or text passed to and from external systems.</li>
 <li><strong>State Snapshots:</strong> A log of the agent’s internal reasoning steps and context changes.</li>
 <li><strong>User Session ID:</strong> Linking the agent’s actions back to the specific user journey for cost attribution.</li>
 </ul>
-
 <p>This approach transforms debugging from a guesswork exercise into a deterministic process. You can now answer: "Did the agent choose the right tool? Did it interpret the tool’s output correctly? Did it handle the error gracefully?" These are the questions that matter in production.</p>
 </section>
 <section id="section-3">
 <h2>Governance and Guardrails in the Loop</h2>
-<p>Observability is not just about visibility; it is about control. In production, you cannot trust an AI agent to act without constraints. You need **guardrails** that are observable themselves. This means logging every decision that triggers a safety check.</p>
-
+<p>Observability is not just about visibility; it is about control. In production, you cannot trust an AI agent to act without constraints. You need <strong>guardrails</strong> that are observable themselves. This means logging every decision that triggers a safety check.</p>
 <p>For example, if an agent attempts to access a restricted database, your guardrail system should log the attempt, the reasoning behind it, and the action taken (blocked or allowed). This creates an audit trail for compliance. In regulated industries like finance, this is non-negotiable. You need to prove that the agent acted within its defined scope.</p>
-
-<p>Furthermore, you must implement **cost controls**. AI agents can be expensive. A single agent loop can generate thousands of tokens. You need to attribute costs to specific agents, specific users, and specific workflows. This requires tagging every token with metadata that identifies the source. Without this, you cannot optimize or forecast costs.</p>
-
+<p>Furthermore, you must implement <strong>cost controls</strong>. AI agents can be expensive. A single agent loop can generate thousands of tokens. You need to attribute costs to specific agents, specific users, and specific workflows. This requires tagging every token with metadata that identifies the source. Without this, you cannot optimize or forecast costs.</p>
 <p>Consider the implementation of a simple rate limiter. It should not just block requests; it should log why it blocked them. Was it due to token limits? Or due to tool-specific rate limits? This distinction is crucial for tuning your system. You can use tools like <a href="/blog/posts/sre-burnout-ai-incident-prevention-clawdbot-2026.html">Clawdbot</a> to automate some of these checks, but you still need to observe the outcomes.</p>
 </section>
 <section id="section-4">
 <h2>Debugging and Retries: The Human-in-the-Loop</h2>
-<p>Even with perfect observability, agents will fail. The key is to design for failure. You need **replay mechanisms** that allow you to reproduce the exact conditions of a failure. This is not just about logging; it is about capturing the full context: the user input, the agent’s state, the tool outputs, and the model’s response.</p>
-
+<p>Even with perfect observability, agents will fail. The key is to design for failure. You need <strong>replay mechanisms</strong> that allow you to reproduce the exact conditions of a failure. This is not just about logging; it is about capturing the full context: the user input, the agent’s state, the tool outputs, and the model’s response.</p>
 <p>When a failure occurs, you should be able to replay the session in a sandboxed environment. This allows you to test fixes without affecting production. You can also use this data to retrain your models. If an agent consistently fails to interpret a certain type of tool output, you can use that data to fine-tune the model or improve the tool’s documentation.</p>
-
-<p>Additionally, you need **human-in-the-loop** interfaces for high-risk actions. If an agent is about to perform a critical action (e.g., deleting a database, transferring a large sum of money), you should pause the execution and request human approval. This pause should be logged as a distinct event in your observability stack. It provides a clear audit trail of who approved the action and why.</p>
-
+<p>Additionally, you need <strong>human-in-the-loop</strong> interfaces for high-risk actions. If an agent is about to perform a critical action (e.g., deleting a database, transferring a large sum of money), you should pause the execution and request human approval. This pause should be logged as a distinct event in your observability stack. It provides a clear audit trail of who approved the action and why.</p>
 <p>For teams looking to streamline this process, integrating with an <a href="/blog/posts/internal-developer-platform-backstage-2026.html">Internal Developer Platform</a> can help standardize the observability setup across different agent teams. This ensures that every new agent comes with the necessary monitoring and alerting capabilities out of the box.</p>
 </section>
 <section id="section-5">
 <h2>Scaling Observability: Automation and Alerts</h2>
-<p>As you scale your AI agents, manual debugging becomes impossible. You need **automated alerts** based on observability data. These alerts should not be based on simple error rates. They should be based on semantic changes. For example, if the average latency of a specific tool call increases by 10%, or if the agent starts using a new tool for the first time, you should be alerted.</p>
-
-<p>You also need to monitor **drift**. If your agent’s behavior changes over time, it might indicate a drift in the underlying model or a change in the external data sources. You can use anomaly detection algorithms to identify these changes. This proactive approach allows you to fix issues before they impact users.</p>
-
+<p>As you scale your AI agents, manual debugging becomes impossible. You need <strong>automated alerts</strong> based on observability data. These alerts should not be based on simple error rates. They should be based on semantic changes. For example, if the average latency of a specific tool call increases by 10%, or if the agent starts using a new tool for the first time, you should be alerted.</p>
+<p>You also need to monitor <strong>drift</strong>. If your agent’s behavior changes over time, it might indicate a drift in the underlying model or a change in the external data sources. You can use anomaly detection algorithms to identify these changes. This proactive approach allows you to fix issues before they impact users.</p>
 <p>Finally, you need to integrate your observability data with your existing DevOps tools. If an agent fails, it should create a ticket in your issue tracker. If it succeeds, it should update your deployment dashboard. This creates a closed-loop system where observability drives action.</p>
 </section>
 <section id="faq">
 <h2>Frequently Asked Questions</h2>
-
 <h3>What is the biggest challenge in AI agent observability?</h3>
 <p>The biggest challenge is the non-deterministic nature of LLMs. Unlike traditional code, where the same input always produces the same output, an LLM can produce different responses for the same prompt. This makes it difficult to reproduce failures and establish baseline performance metrics. You must rely on probabilistic tracing and semantic analysis rather than simple deterministic checks.</p>
-
 <h3>How do I measure the cost of an AI agent?</h3>
 <p>You measure cost by tagging every token with metadata that identifies the source (user, agent, tool). You then aggregate these costs by agent, user, and workflow. This requires instrumentation at the LLM provider level and at the agent framework level. Without this tagging, you cannot attribute costs accurately or optimize your spending.</p>
-
 <h3>Can I use standard APM tools for AI agents?</h3>
 <p>Standard APM tools are insufficient. They are designed for deterministic services. AI agents require specialized observability that captures state, tool usage, and reasoning steps. You need tools that can handle high-cardinality data and provide semantic search capabilities. However, you can integrate specialized AI observability tools with your existing APM stack for a unified view.</p>
-
 <h3>How do I handle retries in AI agents?</h3>
 <p>Retries should be handled based on specific error types. If a tool call fails due to a network error, you should retry. If the agent fails due to a logical error, you should not retry blindly. Instead, you should use the observability data to understand the failure and decide whether to retry, escalate to a human, or terminate the session. This requires a sophisticated retry policy that is aware of the agent’s state.</p>
 </section>
-            </div>
-            <div id="author-bio-placeholder"></div>
+            </div><div id="author-bio-placeholder"></div>
             <section class="related-articles">
                 <h2>Related Articles</h2>
                 <div class="related-grid">
