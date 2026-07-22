@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Platform Engineering vs DevOps 2026: The Internal Product Shift",
+      "url": "/blog/posts/platform-engineering-vs-devops-2026-2.html",
+      "excerpt": "How platform engineering evolves from tooling to product management, addressing SRE burnout and AI agent integration in the enterprise.",
+      "category": "Platform Engineering",
+      "tags": [
+        "platform engineering vs devops 2026",
+        "internal developer platform",
+        "SRE burnout"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 22, 2026",
+      "_isoDate": "2026-07-22",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Agentic AI SRE: The Autonomous Response Engine in 2026",
       "url": "/blog/posts/agentic-ai-incident-response-sre-2026.html",
       "excerpt": "Explore how agentic AI transforms SRE workflows in 2026. From automated root cause analysis to self-healing Kubernetes clusters, learn the practical engineering behind.",
