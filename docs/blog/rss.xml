@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 24 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-2.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-2.html</guid>
+            <description>Master Kubernetes security hardening with this CKS-grade checklist for 2026. Learn concrete steps for cluster hardening, network policies, and runtime security.</description>
+            <category>Kubernetes Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Internal Developer Platform Backstage 2026: Beyond the Catalog</title>
             <link>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Human-in-the-Loop AI: 4 LangGraph Patterns That Keep Humans in Control</title>
-            <link>https://devops.gheware.com/blog/posts/human-in-the-loop-langgraph-patterns-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/human-in-the-loop-langgraph-patterns-2026.html</guid>
-            <description>Fully autonomous AI agents fail on edge cases. Learn the 4 human-in-the-loop patterns in LangGraph — approval gates, interrupt-and-resume, confidence thresholds, and escalation chains.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

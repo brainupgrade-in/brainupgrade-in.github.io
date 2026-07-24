@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
+      "url": "/blog/posts/kubernetes-security-hardening-cks-2026-2.html",
+      "excerpt": "Master Kubernetes security hardening with this CKS-grade checklist for 2026. Learn concrete steps for cluster hardening, network policies, and runtime security.",
+      "category": "Kubernetes Security",
+      "tags": [
+        "kubernetes security hardening cks 2026",
+        "CKS certification",
+        "kubernetes hardening"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 24, 2026",
+      "_isoDate": "2026-07-24",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Internal Developer Platform Backstage 2026: Beyond the Catalog",
       "url": "/blog/posts/internal-developer-platform-backstage-2026-2026.html",
       "excerpt": "How to build an internal developer platform that reduces cognitive load and accelerates delivery, not just another UI layer.",
