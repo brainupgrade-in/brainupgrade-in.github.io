@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI Agent Observability Production 2026: A Practitioner's Guide",
+      "url": "/blog/posts/ai-agent-observability-production-2026-2.html",
+      "excerpt": "From trace-based debugging to causal inference: How we solved the black-box problem for agentic workflows in enterprise production.",
+      "category": "AI Observability",
+      "tags": [
+        "ai agent observability production 2026",
+        "langgraph state management",
+        "llm tracing"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 25, 2026",
+      "_isoDate": "2026-07-25",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
       "url": "/blog/posts/kubernetes-security-hardening-cks-2026-2.html",
       "excerpt": "Master Kubernetes security hardening with this CKS-grade checklist for 2026. Learn concrete steps for cluster hardening, network policies, and runtime security.",
