@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Production",
+      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026-2.html",
+      "excerpt": "Master multi-cluster GitOps in 2026. Learn concrete patterns for ArgoCD hierarchical management, secrets syncing, and cluster bootstrapping that survive production.",
+      "category": "GitOps",
+      "tags": [
+        "gitops multi-cluster kubernetes 2026",
+        "argocd multi-cluster",
+        "fluxcd multi-cluster"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 26, 2026",
+      "_isoDate": "2026-07-26",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "AI Agent Observability Production 2026: A Practitioner's Guide",
       "url": "/blog/posts/ai-agent-observability-production-2026-2.html",
       "excerpt": "From trace-based debugging to causal inference: How we solved the black-box problem for agentic workflows in enterprise production.",
