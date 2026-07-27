@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 26 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 27 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
+            <link>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026-2026.html</guid>
+            <description>Reduce enterprise LLM inference costs in 2026. Learn routing, quantization, and observability tactics to cut spend by 40%+ without sacrificing latency or accuracy.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Multi-Cluster GitOps at Scale: Patterns That Survive Production</title>
             <link>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026-2.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Embeddings Explained: The Math-Free Guide Every AI Engineer Needs</title>
-            <link>https://devops.gheware.com/blog/posts/embeddings-explained-ai-engineers-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/embeddings-explained-ai-engineers-2026.html</guid>
-            <description>Embeddings are the foundation of RAG, semantic search, and agent memory. Learn what they are, how to choose embedding models, and how to avoid the top 3 production mistakes.</description>
-            <category>AI Fundamentals</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
