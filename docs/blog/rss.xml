@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 27 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 28 Jul 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Scaling RAG Production: Lessons from the Trenches</title>
+            <link>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026-2-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026-2-2026.html</guid>
+            <description>Learn how we scaled a RAG pipeline to production in 2026. Practical advice on vector search, agent orchestration, and observability for enterprise AI.</description>
+            <category>RAG</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
             <link>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Security</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>FastAPI for AI Agents: Production Deployment Patterns That Scale</title>
-            <link>https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/fastapi-ai-agent-deployment-production-2026.html</guid>
-            <description>FastAPI is the standard for deploying AI agents as production APIs. Learn async endpoints, streaming responses, background tasks, health checks, and Docker deployment patterns with complete code examples.</description>
-            <category>AI Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
