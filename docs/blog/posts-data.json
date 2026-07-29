@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes MLOps: Production-Ready Models in 2026",
+      "url": "/blog/posts/mlops-model-deployment-kubernetes-2026-2.html",
+      "excerpt": "How I moved ML models from notebooks to resilient K8s endpoints using proven patterns, avoiding the common traps of latency and drift.",
+      "category": "MLOps",
+      "tags": [
+        "mlops model deployment kubernetes 2026",
+        "kubernetes machine learning",
+        "model serving"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "July 29, 2026",
+      "_isoDate": "2026-07-29",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Scaling RAG Production: Lessons from the Trenches",
       "url": "/blog/posts/rag-pipeline-production-scaling-2026-2-2026.html",
       "excerpt": "Learn how we scaled a RAG pipeline to production in 2026. Practical advice on vector search, agent orchestration, and observability for enterprise AI.",
