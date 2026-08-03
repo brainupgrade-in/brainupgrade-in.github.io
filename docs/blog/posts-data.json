@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Platform Engineering vs DevOps 2026: The Reality Check",
+      "url": "/blog/posts/platform-engineering-vs-devops-2026-2-2026.html",
+      "excerpt": "Platform engineering vs DevOps 2026: Why internal developer platforms (IDPs) are the only way to scale Kubernetes and AI agents without burning out your SRE team.",
+      "category": "Platform Engineering",
+      "tags": [
+        "platform engineering vs devops 2026",
+        "internal developer platform",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 3, 2026",
+      "_isoDate": "2026-08-03",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Agentic AI SRE: Autonomous Incident Response 2026",
       "url": "/blog/posts/agentic-ai-incident-response-sre-2026-2.html",
       "excerpt": "How autonomous agents are reshaping incident response, reducing MTTR, and redefining SRE responsibilities in enterprise environments.",

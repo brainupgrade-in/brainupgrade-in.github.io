@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 30 Jul 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 03 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Platform Engineering vs DevOps 2026: The Reality Check</title>
+            <link>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026-2-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026-2-2026.html</guid>
+            <description>Platform engineering vs DevOps 2026: Why internal developer platforms (IDPs) are the only way to scale Kubernetes and AI agents without burning out your SRE team.</description>
+            <category>Platform Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Agentic AI SRE: Autonomous Incident Response 2026</title>
             <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026-2.html</link>
@@ -452,15 +461,6 @@
             <category>AI Strategy</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>LangChain Expression Language (LCEL) Complete Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/langchain-expression-language-lcel-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langchain-expression-language-lcel-guide-2026.html</guid>
-            <description>LCEL is the composable interface that makes LangChain production-ready. Learn pipe syntax, parallel chains, streaming, fallbacks, and the patterns that separate toy demos from real AI agents.</description>
-            <category>AI Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
