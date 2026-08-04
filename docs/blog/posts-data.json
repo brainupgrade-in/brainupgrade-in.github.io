@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Building an Internal Developer Platform That Engineers Actually",
+      "url": "/blog/posts/building-internal-developer-platform-backstage-2026-2.html",
+      "excerpt": "Stop building unused IDPs. Learn how to make Backstage stick in 2026 by focusing on developer experience, AI integration, and reducing cognitive load.",
+      "category": "Platform Engineering",
+      "tags": [
+        "internal developer platform backstage 2026",
+        "platform engineering",
+        "Backstage"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 4, 2026",
+      "_isoDate": "2026-08-04",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Platform Engineering vs DevOps 2026: The Reality Check",
       "url": "/blog/posts/platform-engineering-vs-devops-2026-2-2026.html",
       "excerpt": "Platform engineering vs DevOps 2026: Why internal developer platforms (IDPs) are the only way to scale Kubernetes and AI agents without burning out your SRE team.",
