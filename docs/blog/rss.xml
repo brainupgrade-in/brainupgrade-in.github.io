@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 05 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-3.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-3.html</guid>
+            <description>A practitioner’s guide to securing enterprise clusters, covering runtime protection, supply chain integrity, and zero-trust networking.</description>
+            <category>Kubernetes Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Building an Internal Developer Platform That Engineers Actually</title>
             <link>https://devops.gheware.com/blog/posts/building-internal-developer-platform-backstage-2026-2.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>LangGraph StateGraph: Beginner's Guide to AI Agent Workflows 2026</title>
-            <link>https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/langgraph-stategraph-beginners-guide-2026.html</guid>
-            <description>LangGraph StateGraph is the foundation of every production AI agent. Learn nodes, edges, state management, and conditional routing from first principles — with complete runnable Python examples.</description>
-            <category>AI Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
