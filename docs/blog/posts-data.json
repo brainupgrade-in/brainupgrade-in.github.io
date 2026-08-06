@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI Agent Observability in Production 2026: A Practitioner's",
+      "url": "/blog/posts/ai-agent-observability-production-2026-2026.html",
+      "excerpt": "Learn how to implement robust AI agent observability in production by 2026. Covers tracing, metrics, and governance for stateful AI systems in enterprise DevOps.",
+      "category": "AI Observability",
+      "tags": [
+        "ai agent observability production 2026",
+        "ai observability",
+        "enterprise ai"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 6, 2026",
+      "_isoDate": "2026-08-06",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
       "url": "/blog/posts/kubernetes-security-hardening-cks-2026-3.html",
       "excerpt": "A practitioner’s guide to securing enterprise clusters, covering runtime protection, supply chain integrity, and zero-trust networking.",
