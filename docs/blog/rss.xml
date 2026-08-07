@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 06 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 07 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Multi-Cluster GitOps at Scale: Patterns That Survive 2026</title>
+            <link>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026-3.html</link>
+            <guid>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026-3.html</guid>
+            <description>The Myth of the Single Control Plane For the last decade, we treated the cluster as the unit of deployment. Today, with gitops multi-cluster kubernetes 2026 architectu</description>
+            <category>GitOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 07 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AI Agent Observability in Production 2026: A Practitioner's</title>
             <link>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Self-Healing DevOps Pipelines: How AI Agents Are Replacing Your On-Call Engineers (2026)</title>
-            <link>https://devops.gheware.com/blog/posts/self-healing-devops-aiops-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/self-healing-devops-aiops-2026.html</guid>
-            <description>Your CI/CD pipeline just fixed itself before you noticed it broke. Here's how AI-powered self-healing DevOps works — with working code for autonomous incident response, AI-driven root cause analysis, and proactive pipeline recovery.</description>
-            <category>AIOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

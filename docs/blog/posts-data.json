@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive 2026",
+      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026-3.html",
+      "excerpt": "The Myth of the Single Control Plane For the last decade, we treated the cluster as the unit of deployment. Today, with gitops multi-cluster kubernetes 2026 architectu",
+      "category": "GitOps",
+      "tags": [
+        "gitops multi-cluster kubernetes 2026",
+        "argocd",
+        "fleet management"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 7, 2026",
+      "_isoDate": "2026-08-07",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "AI Agent Observability in Production 2026: A Practitioner's",
       "url": "/blog/posts/ai-agent-observability-production-2026-2026.html",
       "excerpt": "Learn how to implement robust AI agent observability in production by 2026. Covers tracing, metrics, and governance for stateful AI systems in enterprise DevOps.",
