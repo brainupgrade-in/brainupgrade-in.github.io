@@ -67,15 +67,6 @@
             <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
-            <link>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026.html</guid>
-            <description>Learn how to slash enterprise LLM inference costs in 2026. This playbook covers model quantization, smart routing, and caching strategies for production AI.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 17 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
             <title>Multi-Cluster GitOps at Scale: Patterns That Survive Productio</title>
             <link>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026.html</guid>
@@ -101,6 +92,15 @@
             <category>Kubernetes</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</title>
+            <link>https://devops.gheware.com/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html</guid>
+            <description>Reduce LLM cost optimization enterprise inference 2026 with proven techniques: model quantization, intelligent routing, and observability for lower latency and spend.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>AIOps Self-Healing Kubernetes: Guide 2026</title>
@@ -137,6 +137,15 @@
             <category>Kubernetes AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Build a Production RAG Pipeline on Kubernetes (2026 Guide)</title>
+            <link>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html</guid>
+            <description>Skip the proof-of-concept traps. Production-tested RAG on Kubernetes: vector DB selection, retrieval tuning, and 7 scaling patterns that actually work in production.</description>
+            <category>AI &amp; Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>AI Agents on Kubernetes: Enterprise Production Patterns 2026</title>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Production-Ready AI Agents: Closing the Enterprise Deployment Gap 2026</title>
-            <link>https://devops.gheware.com/blog/posts/production-ready-ai-agents-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/production-ready-ai-agents-enterprise-2026.html</guid>
-            <description>Why most AI agent projects fail to reach production. Learn the success path: governance, data quality, integration patterns, and organizational change management for enterprise teams.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

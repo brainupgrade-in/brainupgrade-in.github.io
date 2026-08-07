@@ -97,22 +97,6 @@
       "keywords": []
     },
     {
-      "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
-      "url": "/blog/posts/llm-cost-optimization-enterprise-inference-2026.html",
-      "excerpt": "Learn how to slash enterprise LLM inference costs in 2026. This playbook covers model quantization, smart routing, and caching strategies for production AI.",
-      "category": "AI Infrastructure",
-      "tags": [
-        "llm cost optimization enterprise inference 2026",
-        "model quantization",
-        "LLM routing"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 17, 2026",
-      "_isoDate": "2026-07-17",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
       "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Productio",
       "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026.html",
       "excerpt": "A senior engineer’s guide to multi-cluster GitOps in 2026. Learn patterns for ArgoCD, Flux, and hybrid cloud management that survive production.",
@@ -158,6 +142,22 @@
       "publishedDate": "July 13, 2026",
       "_isoDate": "2026-07-13",
       "readTime": "5 min read",
+      "keywords": []
+    },
+    {
+      "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
+      "url": "/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html",
+      "excerpt": "Reduce LLM cost optimization enterprise inference 2026 with proven techniques: model quantization, intelligent routing, and observability for lower latency and spend.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "llm cost optimization enterprise inference 2026",
+        "AI infrastructure",
+        "Kubernetes AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "June 27, 2026",
+      "_isoDate": "2026-06-27",
+      "readTime": "6 min read",
       "keywords": []
     },
     {
@@ -222,6 +222,23 @@
       "publishedDate": "May 13, 2026",
       "_isoDate": "2026-05-13",
       "readTime": "18 min read",
+      "keywords": []
+    },
+    {
+      "title": "Build a Production RAG Pipeline on Kubernetes (2026 Guide)",
+      "url": "/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html",
+      "excerpt": "Skip the proof-of-concept traps. Production-tested RAG on Kubernetes: vector DB selection, retrieval tuning, and 7 scaling patterns that actually work in production.",
+      "category": "AI & Kubernetes",
+      "tags": [
+        "RAG",
+        "Kubernetes",
+        "AI Agents",
+        "Vector Databases"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "May 12, 2026",
+      "_isoDate": "2026-05-12",
+      "readTime": "10 min read",
       "keywords": []
     },
     {
@@ -1194,22 +1211,6 @@
       "publishedDate": "March 6, 2026",
       "_isoDate": "2026-03-06",
       "readTime": "11 min read",
-      "keywords": []
-    },
-    {
-      "title": "How to Build a Production RAG Pipeline on Kubernetes: Enterprise Guide 2026",
-      "url": "/blog/posts/rag-pipeline-kubernetes-enterprise-2026.html",
-      "excerpt": "Step-by-step guide to production RAG pipelines on Kubernetes in 2026. Covers vector DB selection, embedding models, KServe inference, KEDA autoscaling, and enterprise security patterns.",
-      "category": "AI Infrastructure",
-      "tags": [
-        "RAG Pipeline",
-        "Kubernetes",
-        "Enterprise AI"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "March 6, 2026",
-      "_isoDate": "2026-03-06",
-      "readTime": "16 min read",
       "keywords": []
     },
     {
