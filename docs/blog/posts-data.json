@@ -1,102 +1,6 @@
 {
   "posts": [
     {
-      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive 2026",
-      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026-3.html",
-      "excerpt": "The Myth of the Single Control Plane For the last decade, we treated the cluster as the unit of deployment. Today, with gitops multi-cluster kubernetes 2026 architectu",
-      "category": "GitOps",
-      "tags": [
-        "gitops multi-cluster kubernetes 2026",
-        "argocd",
-        "fleet management"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "August 7, 2026",
-      "_isoDate": "2026-08-07",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "AI Agent Observability in Production 2026: A Practitioner's",
-      "url": "/blog/posts/ai-agent-observability-production-2026-2026.html",
-      "excerpt": "Learn how to implement robust AI agent observability in production by 2026. Covers tracing, metrics, and governance for stateful AI systems in enterprise DevOps.",
-      "category": "AI Observability",
-      "tags": [
-        "ai agent observability production 2026",
-        "ai observability",
-        "enterprise ai"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "August 6, 2026",
-      "_isoDate": "2026-08-06",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Kubernetes Security Hardening: A CKS-Grade Checklist for 2026",
-      "url": "/blog/posts/kubernetes-security-hardening-cks-2026-3.html",
-      "excerpt": "A practitioner’s guide to securing enterprise clusters, covering runtime protection, supply chain integrity, and zero-trust networking.",
-      "category": "Kubernetes Security",
-      "tags": [
-        "kubernetes security hardening cks 2026",
-        "CKS exam",
-        "Kubernetes security"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "August 5, 2026",
-      "_isoDate": "2026-08-05",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Building an Internal Developer Platform That Engineers Actually",
-      "url": "/blog/posts/building-internal-developer-platform-backstage-2026-2.html",
-      "excerpt": "Stop building unused IDPs. Learn how to make Backstage stick in 2026 by focusing on developer experience, AI integration, and reducing cognitive load.",
-      "category": "Platform Engineering",
-      "tags": [
-        "internal developer platform backstage 2026",
-        "platform engineering",
-        "Backstage"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "August 4, 2026",
-      "_isoDate": "2026-08-04",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Platform Engineering vs DevOps 2026: The Reality Check",
-      "url": "/blog/posts/platform-engineering-vs-devops-2026-2-2026.html",
-      "excerpt": "Platform engineering vs DevOps 2026: Why internal developer platforms (IDPs) are the only way to scale Kubernetes and AI agents without burning out your SRE team.",
-      "category": "Platform Engineering",
-      "tags": [
-        "platform engineering vs devops 2026",
-        "internal developer platform",
-        "Kubernetes"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "August 3, 2026",
-      "_isoDate": "2026-08-03",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Agentic AI SRE: Autonomous Incident Response 2026",
-      "url": "/blog/posts/agentic-ai-incident-response-sre-2026-2.html",
-      "excerpt": "How autonomous agents are reshaping incident response, reducing MTTR, and redefining SRE responsibilities in enterprise environments.",
-      "category": "AI SRE",
-      "tags": [
-        "agentic ai incident response sre 2026",
-        "autonomous sre",
-        "incident response automation"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 30, 2026",
-      "_isoDate": "2026-07-30",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
       "title": "Kubernetes MLOps: Production-Ready Models in 2026",
       "url": "/blog/posts/mlops-model-deployment-kubernetes-2026-2.html",
       "excerpt": "How I moved ML models from notebooks to resilient K8s endpoints using proven patterns, avoiding the common traps of latency and drift.",
@@ -110,70 +14,6 @@
       "publishedDate": "July 29, 2026",
       "_isoDate": "2026-07-29",
       "readTime": "7 min read",
-      "keywords": []
-    },
-    {
-      "title": "Scaling RAG Production: Lessons from the Trenches",
-      "url": "/blog/posts/rag-pipeline-production-scaling-2026-2-2026.html",
-      "excerpt": "Learn how we scaled a RAG pipeline to production in 2026. Practical advice on vector search, agent orchestration, and observability for enterprise AI.",
-      "category": "RAG",
-      "tags": [
-        "rag pipeline production scaling 2026",
-        "enterprise rag",
-        "vector database optimization"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 28, 2026",
-      "_isoDate": "2026-07-28",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
-      "url": "/blog/posts/llm-cost-optimization-enterprise-inference-2026-2026.html",
-      "excerpt": "Reduce enterprise LLM inference costs in 2026. Learn routing, quantization, and observability tactics to cut spend by 40%+ without sacrificing latency or accuracy.",
-      "category": "AI Infrastructure",
-      "tags": [
-        "llm cost optimization enterprise inference 2026",
-        "enterprise AI infrastructure",
-        "LLM routing strategies"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 27, 2026",
-      "_isoDate": "2026-07-27",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
-      "title": "Multi-Cluster GitOps at Scale: Patterns That Survive Production",
-      "url": "/blog/posts/multi-cluster-gitops-kubernetes-2026-2.html",
-      "excerpt": "Master multi-cluster GitOps in 2026. Learn concrete patterns for ArgoCD hierarchical management, secrets syncing, and cluster bootstrapping that survive production.",
-      "category": "GitOps",
-      "tags": [
-        "gitops multi-cluster kubernetes 2026",
-        "argocd multi-cluster",
-        "fluxcd multi-cluster"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 26, 2026",
-      "_isoDate": "2026-07-26",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "AI Agent Observability Production 2026: A Practitioner's Guide",
-      "url": "/blog/posts/ai-agent-observability-production-2026-2.html",
-      "excerpt": "From trace-based debugging to causal inference: How we solved the black-box problem for agentic workflows in enterprise production.",
-      "category": "AI Observability",
-      "tags": [
-        "ai agent observability production 2026",
-        "langgraph state management",
-        "llm tracing"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 25, 2026",
-      "_isoDate": "2026-07-25",
-      "readTime": "6 min read",
       "keywords": []
     },
     {
@@ -237,22 +77,6 @@
       "author": "Rajesh Gheware",
       "publishedDate": "July 21, 2026",
       "_isoDate": "2026-07-21",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "MLOps on Kubernetes 2026: Production Reality",
-      "url": "/blog/posts/mlops-model-deployment-kubernetes-2026.html",
-      "excerpt": "A senior engineer’s guide to MLOps model deployment on Kubernetes in 2026. Covers inference serving, GPU resource management, GitOps workflows, and real-world pitfalls.",
-      "category": "MLOps",
-      "tags": [
-        "mlops model deployment kubernetes 2026",
-        "kubernetes inference",
-        "ML model monitoring"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 20, 2026",
-      "_isoDate": "2026-07-20",
       "readTime": "6 min read",
       "keywords": []
     },
@@ -337,70 +161,6 @@
       "keywords": []
     },
     {
-      "title": "Kubernetes Security Hardening CKS 2026",
-      "url": "/blog/posts/kubernetes-security-hardening-cks-2026.html",
-      "excerpt": "Master Kubernetes security hardening for the CKS 2026 exam and enterprise reality. Concrete steps for RBAC, network policies, and runtime protection.",
-      "category": "Kubernetes Security",
-      "tags": [
-        "kubernetes security hardening cks 2026",
-        "CKS exam",
-        "Kubernetes security"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 8, 2026",
-      "_isoDate": "2026-07-08",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Building an Internal Developer Platform Engineers Actually Use",
-      "url": "/blog/posts/building-internal-developer-platform-backstage-2026.html",
-      "excerpt": "A practitioner’s guide to building an internal developer platform using Backstage in 2026. Focus on usability, GitOps, and reducing developer toil.",
-      "category": "Platform Engineering",
-      "tags": [
-        "internal developer platform backstage 2026",
-        "platform engineering",
-        "backstage"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "July 2, 2026",
-      "_isoDate": "2026-07-02",
-      "readTime": "7 min read",
-      "keywords": []
-    },
-    {
-      "title": "Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook",
-      "url": "/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html",
-      "excerpt": "Reduce LLM cost optimization enterprise inference 2026 with proven techniques: model quantization, intelligent routing, and observability for lower latency and spend.",
-      "category": "AI Infrastructure",
-      "tags": [
-        "llm cost optimization enterprise inference 2026",
-        "AI infrastructure",
-        "Kubernetes AI"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 27, 2026",
-      "_isoDate": "2026-06-27",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Platform Engineering vs DevOps 2026: The Reality",
-      "url": "/blog/posts/platform-engineering-vs-devops-2026.html",
-      "excerpt": "Platform engineering vs DevOps 2026: Why self-service platforms and agentic AI are replacing manual toil. A practitioner’s view on building internal developer.",
-      "category": "Platform Engineering",
-      "tags": [
-        "platform engineering vs devops 2026",
-        "internal developer platform",
-        "Kubernetes"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "June 24, 2026",
-      "_isoDate": "2026-06-24",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
       "title": "AIOps Self-Healing Kubernetes: Guide 2026",
       "url": "/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html",
       "excerpt": "AIOps self-healing Kubernetes platforms detect, diagnose, and auto-remediate failures. Enterprise patterns, code examples, and implementation roadmap.",
@@ -462,23 +222,6 @@
       "publishedDate": "May 13, 2026",
       "_isoDate": "2026-05-13",
       "readTime": "18 min read",
-      "keywords": []
-    },
-    {
-      "title": "Build a Production RAG Pipeline on Kubernetes (2026 Guide)",
-      "url": "/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html",
-      "excerpt": "Skip the proof-of-concept traps. Production-tested RAG on Kubernetes: vector DB selection, retrieval tuning, and 7 scaling patterns that actually work in production.",
-      "category": "AI & Kubernetes",
-      "tags": [
-        "RAG",
-        "Kubernetes",
-        "AI Agents",
-        "Vector Databases"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "May 12, 2026",
-      "_isoDate": "2026-05-12",
-      "readTime": "10 min read",
       "keywords": []
     },
     {
@@ -725,21 +468,6 @@
       "keywords": []
     },
     {
-      "title": "[POST_TITLE]",
-      "url": "/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html",
-      "excerpt": "[POST_DESCRIPTION - 150-160 chars for optimal display]",
-      "category": "[CATEGORY]",
-      "tags": [
-        "[TAG1]",
-        "[TAG2]"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "April 24, 2026",
-      "_isoDate": "2026-04-24",
-      "readTime": "10 min read",
-      "keywords": []
-    },
-    {
       "title": "OpenTelemetry for AI Agents: Production Observability Guide 2026",
       "url": "/blog/posts/opentelemetry-ai-agents-production-observability.html",
       "excerpt": "Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.",
@@ -753,22 +481,6 @@
       "publishedDate": "April 24, 2026",
       "_isoDate": "2026-04-24",
       "readTime": "10 min read",
-      "keywords": []
-    },
-    {
-      "title": "Enterprise Agentic AI Playbook 2026",
-      "url": "/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html",
-      "excerpt": "Step-by-step playbook: How Fortune 500 enterprises deploy AI agent swarms on Kubernetes. Covers MCP security, multi-agent orchestration, and ROI measurement.",
-      "category": "Agentic AI",
-      "tags": [
-        "Agentic AI",
-        "Enterprise AI",
-        "Multi-Agent Systems"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "April 22, 2026",
-      "_isoDate": "2026-04-22",
-      "readTime": "12 min read",
       "keywords": []
     },
     {
@@ -803,21 +515,6 @@
       "author": "Rajesh Gheware",
       "publishedDate": "April 20, 2026",
       "_isoDate": "2026-04-20",
-      "readTime": "12 min read",
-      "keywords": []
-    },
-    {
-      "title": "Multi-Agent Orchestration on Kubernetes: Production Patterns for 2026",
-      "url": "/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html",
-      "excerpt": "Enterprise guide to orchestrating multi-agent AI systems on Kubernetes. Production patterns, deployment strategies, security, and observability for 2026.",
-      "category": "Agentic AI",
-      "tags": [
-        "Kubernetes",
-        "Multi-Agent Systems"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "April 19, 2026",
-      "_isoDate": "2026-04-19",
       "readTime": "12 min read",
       "keywords": []
     },
@@ -1433,36 +1130,6 @@
       "publishedDate": "March 7, 2026",
       "_isoDate": "2026-03-07",
       "readTime": "13 min read",
-      "keywords": []
-    },
-    {
-      "title": "[POST_TITLE]",
-      "url": "/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html",
-      "excerpt": "[POST_DESCRIPTION - 150-160 chars for optimal display]",
-      "category": "[CATEGORY]",
-      "tags": [
-        "[TAG1]",
-        "[TAG2]"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "March 7, 2026",
-      "_isoDate": "2026-03-07",
-      "readTime": "10 min read",
-      "keywords": []
-    },
-    {
-      "title": "[POST_TITLE]",
-      "url": "/blog/posts/mcp-servers-explained-model-context-protocol-enterprise.html",
-      "excerpt": "[POST_DESCRIPTION - 150-160 chars for optimal display]",
-      "category": "[CATEGORY]",
-      "tags": [
-        "[TAG1]",
-        "[TAG2]"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "March 7, 2026",
-      "_isoDate": "2026-03-07",
-      "readTime": "10 min read",
       "keywords": []
     },
     {

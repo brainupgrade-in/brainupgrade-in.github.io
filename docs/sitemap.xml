@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://devops.gheware.com/</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://devops.gheware.com/blog/</loc>
-        <lastmod>2026-08-07</lastmod>
+        <lastmod>2026-07-29</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
@@ -79,68 +79,8 @@
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026-3.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026-2026.html</loc>
-        <lastmod>2026-08-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-3.html</loc>
-        <lastmod>2026-08-05</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/building-internal-developer-platform-backstage-2026-2.html</loc>
-        <lastmod>2026-08-04</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026-2-2026.html</loc>
-        <lastmod>2026-08-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026-2.html</loc>
-        <lastmod>2026-07-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026-2.html</loc>
         <lastmod>2026-07-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/rag-pipeline-production-scaling-2026-2-2026.html</loc>
-        <lastmod>2026-07-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/llm-cost-optimization-enterprise-inference-2026-2026.html</loc>
-        <lastmod>2026-07-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/multi-cluster-gitops-kubernetes-2026-2.html</loc>
-        <lastmod>2026-07-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026-2.html</loc>
-        <lastmod>2026-07-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -165,12 +105,6 @@
     <url>
         <loc>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</loc>
         <lastmod>2026-07-21</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/mlops-model-deployment-kubernetes-2026.html</loc>
-        <lastmod>2026-07-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -205,30 +139,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026.html</loc>
-        <lastmod>2026-07-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/building-internal-developer-platform-backstage-2026.html</loc>
-        <lastmod>2026-07-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html</loc>
-        <lastmod>2026-06-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/platform-engineering-vs-devops-2026.html</loc>
-        <lastmod>2026-06-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://devops.gheware.com/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html</loc>
         <lastmod>2026-05-19</lastmod>
         <changefreq>monthly</changefreq>
@@ -249,12 +159,6 @@
     <url>
         <loc>https://devops.gheware.com/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html</loc>
         <lastmod>2026-05-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/rag-pipeline-kubernetes-production-enterprise-2026.html</loc>
-        <lastmod>2026-05-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -355,20 +259,8 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devops.gheware.com/blog/posts/5-production-ai-agent-patterns-senior-engineers-2026.html</loc>
-        <lastmod>2026-04-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</loc>
         <lastmod>2026-04-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/fortune-500-enterprise-agentic-ai-playbook-2026.html</loc>
-        <lastmod>2026-04-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -381,12 +273,6 @@
     <url>
         <loc>https://devops.gheware.com/blog/posts/self-healing-devops-aiops-2026.html</loc>
         <lastmod>2026-04-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/multi-agent-orchestration-kubernetes-production-2026.html</loc>
-        <lastmod>2026-04-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -614,18 +500,6 @@
     </url>
     <url>
         <loc>https://devops.gheware.com/blog/posts/genai-red-team-revolution-ai-security-2026.html</loc>
-        <lastmod>2026-03-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/mcp-model-context-protocol-enterprise-developers-2026.html</loc>
-        <lastmod>2026-03-07</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/mcp-servers-explained-model-context-protocol-enterprise.html</loc>
         <lastmod>2026-03-07</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

@@ -73,6 +73,20 @@ def is_redirect_stub(html):
     return bool(re.search(r'<meta\s+http-equiv="refresh"', html[:500], re.IGNORECASE))
 
 
+def is_canonicalised_elsewhere(slug, html):
+    """True when a post points its canonical at a DIFFERENT post.
+
+    Near-duplicates consolidated onto a keeper stay live and readable, but
+    must not compete with that keeper in sitemap.xml, rss.xml, or the blog
+    index — submitting a URL for indexing while telling Google to index a
+    different one is self-defeating. Symmetric with is_redirect_stub().
+    """
+    m = re.search(r'<link rel="canonical" href="([^"]*)"', html, re.IGNORECASE)
+    if not m:
+        return False
+    return m.group(1).strip() != f"{BASE}/blog/posts/{slug}.html"
+
+
 def build_entry(slug, html, existing=None):
     """Build one posts-data.json entry from post HTML."""
     existing = existing or {}
@@ -148,6 +162,8 @@ def regenerate_posts_json():
             continue
         html = post_file.read_text(encoding="utf-8")
         if is_redirect_stub(html):
+            continue
+        if is_canonicalised_elsewhere(slug, html):
             continue
         entries.append(build_entry(slug, html, existing_by_slug.get(slug)))
     entries.sort(key=lambda e: e["_isoDate"], reverse=True)
@@ -373,6 +389,8 @@ def main():
             continue
         html = post_file.read_text(encoding="utf-8")
         if is_redirect_stub(html):
+            continue
+        if is_canonicalised_elsewhere(slug, html):
             continue
         issues = lint_post(slug, html)
         if issues:
