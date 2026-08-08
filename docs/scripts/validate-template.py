@@ -23,11 +23,20 @@ Required markers (mirrors _template.html):
   * rel="canonical"                 (canonical URL)
   * application/ld+json             (at least one JSON-LD block)
   * author bio                      (author-bio class OR id="author-bio-placeholder")
+  * a styled body                    the post must actually be styled by SOMETHING:
+                                     a width-constraining wrapper blog.css defines
+                                     (.post-content / .blog-post / .container), OR its
+                                     own inline <style>, OR the Tailwind CDN. Marker
+                                     checks cannot see structure — two posts carried
+                                     every marker above and still rendered as raw,
+                                     edge-to-edge HTML because <article> had no class
+                                     and no wrapper, so blog.css matched nothing.
 
 Exit code: 0 if all posts conform, 1 otherwise.
 Usage: python3 docs/scripts/validate-template.py [posts_dir]
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -43,6 +52,21 @@ SIMPLE_MARKERS = [
 ]
 
 
+# A post is only actually styled if at least one of these holds. Keep this in sync
+# with what blog.css/premium.css define as layout wrappers.
+BODY_WRAPPERS = ('class="post-content"', 'class="blog-post"', 'class="container"')
+
+
+def has_styled_body(text: str) -> bool:
+    if any(w in text for w in BODY_WRAPPERS):
+        return True
+    if re.search(r"<style[\s>]", text):        # post ships its own stylesheet
+        return True
+    if "cdn.tailwindcss.com" in text:           # legacy Tailwind-era posts
+        return True
+    return False
+
+
 def missing_markers(text: str):
     miss = []
     for label, needle in SIMPLE_MARKERS:
@@ -51,6 +75,8 @@ def missing_markers(text: str):
     # author bio is satisfied by either form
     if "author-bio" not in text and 'id="author-bio-placeholder"' not in text:
         miss.append("author-bio")
+    if not has_styled_body(text):
+        miss.append("unstyled-body")
     return miss
 
 
