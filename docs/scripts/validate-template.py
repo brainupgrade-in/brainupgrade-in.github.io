@@ -16,7 +16,10 @@ Required markers (mirrors _template.html):
   * /js/template-loader.js          (shared header/footer/author-bio loader)
   * id="header-placeholder"
   * id="footer-placeholder"
-  * /css/premium.css
+  * /css/premium.css                (site chrome)
+  * /blog/css/blog.css              (article-body styling: post-content, TOC,
+                                     key-takeaways, hero, related, CTA — all
+                                     of which live ONLY in blog.css)
   * rel="canonical"                 (canonical URL)
   * application/ld+json             (at least one JSON-LD block)
   * author bio                      (author-bio class OR id="author-bio-placeholder")
@@ -34,6 +37,7 @@ SIMPLE_MARKERS = [
     ("hdr-PH", 'id="header-placeholder"'),
     ("ftr-PH", 'id="footer-placeholder"'),
     ("premium.css", "premium.css"),
+    ("blog.css", "/blog/css/blog.css"),
     ("canonical", 'rel="canonical"'),
     ("JSON-LD", "application/ld+json"),
 ]
