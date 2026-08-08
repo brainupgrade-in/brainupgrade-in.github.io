@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes Capacity Planning: Forecasting for 2026",
+      "url": "/blog/posts/capacity-planning-kubernetes-forecasting-2026.html",
+      "excerpt": "Master capacity planning for Kubernetes in 2026. Learn to forecast resource demand, prevent OOM kills, and optimize costs with data-driven SRE practices.",
+      "category": "SRE",
+      "tags": [
+        "capacity planning kubernetes forecasting 2026",
+        "kubernetes capacity planning",
+        "SRE capacity management"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 8, 2026",
+      "_isoDate": "2026-08-08",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes MLOps: Production-Ready Models in 2026",
       "url": "/blog/posts/mlops-model-deployment-kubernetes-2026-2.html",
       "excerpt": "How I moved ML models from notebooks to resilient K8s endpoints using proven patterns, avoiding the common traps of latency and drift.",
