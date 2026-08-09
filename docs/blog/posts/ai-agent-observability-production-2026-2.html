@@ -110,7 +110,7 @@
 <section id="section-1">
 <h2>The End of Simple Prompt Logging</h2>
 <p>In 2023, we treated LLM integration like a function call: input prompt, output response, log the difference. It was simple, but it was wrong. By 2026, the landscape has shifted. We are no longer building chatbots; we are deploying autonomous agents that plan, execute tools, and maintain state across complex, multi-step workflows. The old logging paradigm is dead. If you are still just logging the raw LLM API calls, you are flying blind.</p>
-<p>I spent the last two years at JPMorgan Chase and Deutsche Bank untangling the spaghetti code of agentic workflows. The biggest bottleneck wasn't the model itself; it was the inability to debug why an agent took path A instead of path B. Observability in this context is not about monitoring uptime. It is about tracing the cognitive lifecycle of a software agent. You need to see the "thoughts," the tool calls, the intermediate states, and the eventual outcome. This is why we moved from simple logging to full-stack distributed tracing for AI agents.</p>
+<p>I've spent the last two years untangling the spaghetti code of agentic workflows, drawing on 25 years architecting systems at JPMorgan Chase and Deutsche Bank. The biggest bottleneck wasn't the model itself; it was the inability to debug why an agent took path A instead of path B. Observability in this context is not about monitoring uptime. It is about tracing the cognitive lifecycle of a software agent. You need to see the "thoughts," the tool calls, the intermediate states, and the eventual outcome. This is why we moved from simple logging to full-stack distributed tracing for AI agents.</p>
 </section>
 <section id="section-2">
 <h2>State Management as the Observability Anchor</h2>
