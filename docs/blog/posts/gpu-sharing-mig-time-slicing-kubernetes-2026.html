@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use | Gheware DevOps AI">
+    <meta name="description" content="Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.">
+    <meta name="keywords" content="gpu sharing mig time-slicing kubernetes 2026, MIG, time-slicing, NVIDIA, Kubernetes, GPU partitioning, AI infrastructure, enterprise DevOps, Kubernetes operators">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html">
+    <meta property="og:title" content="GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use">
+    <meta property="og:description" content="Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/gpu-sharing-mig-time-slicing-kubernetes-2026-thumbnail.jpeg">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-08-11T09:00:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Infrastructure">
+    <meta property="article:tag" content="gpu sharing mig time-slicing kubernetes 2026">
+    <meta property="article:tag" content="MIG">
+    <meta property="article:tag" content="time-slicing">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use">
+    <meta name="twitter:description" content="Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/gpu-sharing-mig-time-slicing-kubernetes-2026-thumbnail.jpeg">
+    <title>GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html" },
+        "headline": "GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use",
+        "description": "Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.",
+        "image": { "@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/gpu-sharing-mig-time-slicing-kubernetes-2026-thumbnail.jpeg", "width": 1200, "height": 630 },
+        "datePublished": "2026-08-11T09:00:00+05:30",
+        "dateModified": "2026-08-11T09:00:00+05:30",
+        "author": { "@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware" },
+        "publisher": { "@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com",
+            "logo": { "@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg" } },
+        "keywords": "gpu sharing mig time-slicing kubernetes 2026, MIG, time-slicing, NVIDIA, Kubernetes, GPU partitioning, AI infrastructure, enterprise DevOps, Kubernetes operators",
+        "articleSection": "AI Infrastructure",
+        "wordCount": "1151",
+        "inLanguage": "en-US"
+    }
+    </script>
+</head>
+<body>
+    <script src="/js/template-loader.js"></script>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li>GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use</li>
+    </ol></div></nav>
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Infrastructure</span>
+                    <span class="reading-time">6 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use</h1>
+                <p class="post-subtitle" itemprop="description">A practitioner’s guide to maximizing GPU utilization in enterprise Kubernetes clusters for AI workloads in 2026.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-08-11T09:00:00+05:30">August 11, 2026</time>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <figure class="post-hero">
+                <img src="/blog/assets/images/gpu-sharing-mig-time-slicing-kubernetes-2026-thumbnail.jpeg" alt="GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use" class="post-hero-image" itemprop="image"
+                     loading="eager" width="1200" height="630">
+            </figure>
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>MIG provides hardware-level isolation suitable for multi-tenant inference, while time-slicing offers software-level flexibility for batch training.</li>
+                    <li>Kubernetes Device Plugins and operators like NVIDIA GPU Operator abstract the complexity of configuring NVIDIA driver and runtime settings.</li>
+                    <li>MIG is ideal for predictable, steady-state workloads, whereas time-slicing handles variable, bursty workloads with lower overhead.</li>
+                    <li>Proper resource requests and limits are critical to prevent GPU starvation and ensure QoS guarantees across shared nodes.</li>
+                    <li>Monitoring GPU utilization and memory fragmentation requires specialized tools integrated into your existing observability stack.</li>
+                </ul>
+            </aside>
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+<li><a href="#section-1">The Utilization Crisis in Enterprise GPU Clusters</a></li>
+<li><a href="#section-2">MIG: The Hard Isolation Mandate</a></li>
+<li><a href="#section-3">Time-Slicing: The Flexible Scheduler</a></li>
+<li><a href="#section-4">Decision Matrix: MIG vs. Time-Slicing in 2026</a></li>
+<li><a href="#section-5">Implementation: The Kubernetes Operator Layer</a></li>
+<li><a href="#section-6">Operational Pitfalls and Best Practices</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+<li><a href="#section-8">Can I switch between MIG and time-slicing dynamically?</a></li>
+<li><a href="#section-9">Does time-slicing affect GPU performance?</a></li>
+<li><a href="#section-10">How do I monitor GPU sharing efficiency?</a></li>
+<li><a href="#section-11">Is MIG supported on all NVIDIA GPUs?</a></li>
+                </ol>
+            </nav>
+            <div class="post-content" itemprop="articleBody">
+<section id="section-1">
+<h2>The Utilization Crisis in Enterprise GPU Clusters</h2>
+<p>After 25 years in the trenches at institutions like JPMorgan Chase and Deutsche Bank, I have seen one constant: GPUs are expensive, and idle GPUs are a P&L leak. In 2026, as we push deeper into agentic AI and large-scale inference, the old model of dedicating entire A100 or H100 GPUs to single pods is no longer viable for cost-conscious engineering teams. We need density. We need efficiency.</p>
+<p>The challenge isn’t just provisioning hardware; it’s orchestrating it. Kubernetes provides the framework, but the GPU runtime—specifically NVIDIA’s MIG (Multi-Instance GPU) and time-slicing—determines how effectively we can pack workloads. This isn’t theoretical. I’ve seen clusters waste 60% of their compute capacity because teams failed to understand the trade-offs between hardware isolation and software scheduling. If you are running <a href="/blog/posts/gpu-optimized-kubernetes-llm-inference-2026.html">GPU-optimized Kubernetes for LLM inference</a>, you need to get this right.</p>
+</section>
+<section id="section-2">
+<h2>MIG: The Hard Isolation Mandate</h2>
+<p>MIG is NVIDIA’s hardware-based partitioning technology. It slices a single GPU into multiple smaller, independent instances, each with its own dedicated compute, memory, and cache. For enterprise environments where security and strict QoS (Quality of Service) are non-negotiable—think regulated financial trading models or HIPAA-compliant healthcare AI—MIG is often the only acceptable path.</p>
+<p>When you configure MIG, you are effectively creating virtual GPUs that behave like physical devices. The isolation is at the silicon level. If one tenant hammers the memory bus, it does not affect the latency of another tenant’s inference request. This is critical for multi-tenant clusters.</p>
+<p>However, MIG is rigid. Once you partition a GPU, say into seven 1G.5GB instances, you cannot dynamically resize them. The scheduler must match the pod’s request to the exact MIG profile. This rigidity is a double-edged sword: it guarantees performance but reduces scheduling flexibility. If you have a pod that needs 1.5G.5GB, MIG cannot help you; you must reserve a full GPU or use a different strategy.</p>
+</section>
+<section id="section-3">
+<h2>Time-Slicing: The Flexible Scheduler</h2>
+<p>Time-slicing, or GPU virtualization, takes a different approach. Instead of partitioning the hardware, it partitions the GPU scheduler. Multiple pods share a single GPU, and the driver rapidly switches context between them. From the application’s perspective, it appears to have exclusive access, but in reality, it is competing for cycles.</p>
+<p>This approach is far more flexible than MIG. You can run dozens of small inference requests or training micro-batches on a single GPU. It is ideal for bursty workloads, such as real-time feature engineering or lightweight agentic tasks. However, this flexibility comes at a cost: isolation. If one pod goes rogue and enters a tight loop, it can starve other pods on the same GPU. In a high-security environment, this is a significant risk.</p>
+<p>For many enterprise teams, time-slicing is the default because it requires less configuration. With the <a href="/blog/posts/ai-agents-kubernetes-enterprise-2026.html">AI agents in Kubernetes</a> paradigm, where agents spawn and die frequently, time-slicing allows for higher density without the overhead of managing static MIG profiles.</p>
+</section>
+<section id="section-4">
+<h2>Decision Matrix: MIG vs. Time-Slicing in 2026</h2>
+<p>Choosing between MIG and time-slicing is not about which is "better"; it is about which fits your workload profile. Here is a practical breakdown of when to use each:</p>
+<ul>
+<li><strong>Use MIG when:</strong> You have predictable, steady-state inference workloads. You require strict latency guarantees (e.g., <5ms p99). Your tenants are untrusted or highly regulated. You are running large batch models that need dedicated memory bandwidth.</li>
+<li><strong>Use Time-Slicing when:</strong> You have bursty, variable workloads. You are running training jobs with small batch sizes. You need maximum density to minimize hardware costs. Your workloads are trusted and can tolerate occasional latency spikes.</li>
+</ul>
+<p>In my experience, the most robust clusters use a hybrid approach. We designate specific node pools for MIG-based inference services and others for time-sliced training or development environments. This allows us to optimize for both performance and cost.</p>
+</section>
+<section id="section-5">
+<h2>Implementation: The Kubernetes Operator Layer</h2>
+<p>Configuring GPU sharing manually is a recipe for disaster. In 2026, no serious team does this by hand. We rely on operators. The NVIDIA GPU Operator is the standard, but you must configure it correctly.</p>
+<p>For MIG, you must enable MIG mode on the node level via the NVIDIA driver. This is a persistent setting. You then define MIG profiles in your cluster. The Kubernetes scheduler uses these profiles to match pod requests. Ensure your <code>devicePlugin</code> configuration in the GPU Operator is updated to reflect the MIG profiles you intend to use. If you mismatch the profile, pods will remain in Pending state, and you will waste time debugging.</p>
+<p>For time-slicing, the configuration is simpler. You set the <code>limits</code> in your pod spec to <code>nvidia.com/gpu: 1</code> and ensure the driver supports virtualization. The key here is resource requests. Always set explicit <code>requests</code> for GPU memory. If you do not, the scheduler may place too many pods on a node, leading to OOM kills and performance degradation. A common mistake is setting <code>requests</code> to zero, assuming the driver will handle it. It will not.</p>
+<p>Also, consider integrating with <a href="/blog/posts/ai-native-kubernetes-observability-2026.html">AI-native Kubernetes observability</a>. Standard Prometheus metrics are not enough. You need to monitor GPU utilization, memory fragmentation, and MIG instance health. Tools like DCGM Exporter are essential. Without visibility, you are flying blind.</p>
+</section>
+<section id="section-6">
+<h2>Operational Pitfalls and Best Practices</h2>
+<p>Even with the right tools, operational failures are common. Here are the top pitfalls I see in enterprise environments:</p>
+<ol>
+<li><strong>Ignoring Node Affinity:</strong> Not all nodes have GPUs. Not all GPUs support MIG. Ensure your node labels correctly reflect hardware capabilities. Mislabeling leads to pods scheduled on incompatible nodes.</li>
+<li><strong>Overcommitting Memory:</strong> In time-slicing, if you overcommit GPU memory, you risk thrashing. Start with a conservative overcommit ratio (e.g., 1.5x) and tune based on actual usage patterns.</li>
+<li><strong>Neglecting Driver Updates:</strong> GPU sharing features evolve rapidly. Outdated drivers can lead to bugs in MIG profile detection or time-slicing performance. Establish a regular patching cadence for your GPU nodes.</li>
+<li><strong>Forgetting Security Contexts:</strong> When sharing GPUs, ensure your pods run with appropriate security contexts. Prevent privileged access unless absolutely necessary. This is especially critical in <a href="/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html">agentic AI security</a> frameworks where agents may have broad system access.</li>
+</ol>
+</section>
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+</section>
+<section id="section-8">
+<h2>Can I switch between MIG and time-slicing dynamically?</h2>
+<p>No. MIG mode is a hardware state. Once a GPU is set to MIG mode, it remains in that mode until explicitly changed via the driver. You cannot toggle time-slicing on a MIG-enabled GPU. Plan your node pools accordingly.</p>
+</section>
+<section id="section-9">
+<h2>Does time-slicing affect GPU performance?</h2>
+<p>Yes, but usually minimally. Time-slicing introduces a small context-switch overhead. For most inference workloads, this is negligible. However, for latency-sensitive applications, MIG is preferred because it eliminates this overhead entirely.</p>
+</section>
+<section id="section-10">
+<h2>How do I monitor GPU sharing efficiency?</h2>
+<p>Use DCGM Exporter to collect metrics on GPU utilization, memory usage, and MIG instance status. Integrate these metrics into your existing observability stack (e.g., Prometheus and Grafana) to create dashboards that track utilization trends and identify underutilized nodes.</p>
+</section>
+<section id="section-11">
+<h2>Is MIG supported on all NVIDIA GPUs?</h2>
+<p>No. MIG is supported on data center GPUs like the A100, H100, and L40. It is not supported on consumer-grade GPUs like the RTX 3090 or 4090. Ensure your hardware selection aligns with your sharing strategy.</p>
+</section>
+            </div>
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+<div class="related-card"><a href="/blog/posts/ai-powered-gitops-kubernetes-automation-2026.html"><h3>Ai Powered Gitops Kubernetes Automation</h3></a></div>
+<div class="related-card"><a href="/blog/posts/agentic-ai-security-kubernetes-sandboxing-2026.html"><h3>Agentic Ai Security Kubernetes Sandboxing</h3></a></div>
+<div class="related-card"><a href="/blog/posts/ai-agents-kubernetes-enterprise-2026.html"><h3>Ai Agents Kubernetes Enterprise</h3></a></div>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Ready to Build Production-Ready Agentic AI?</h2>
+                <p>Get hands-on with LangGraph, MCP servers, and enterprise Kubernetes patterns in our Agentic AI Workshop — rated 4.91/5.0 at Oracle. 119 labs, zero death-by-PowerPoint.</p>
+                <a href="https://devops.gheware.com/training/cloud-labs.html" class="btn-cta-primary"><span>Explore the Hands-On Cloud Labs</span> <span class="btn-arrow">&rarr;</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+</body>
+</html>

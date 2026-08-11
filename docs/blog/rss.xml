@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 10 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 11 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use</title>
+            <link>https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html</guid>
+            <description>Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>vLLM Production: Continuous Batching Throughput 2026</title>
             <link>https://devops.gheware.com/blog/posts/vllm-continuous-batching-throughput-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Security</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Beyond AI Copilot: How AI SRE Agents Are Replacing the On-Call Engineer in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-sre-agents-autonomous-devops-on-call-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-sre-agents-autonomous-devops-on-call-2026.html</guid>
-            <description>AI SRE agents built on Kagent and LangChain are now autonomously handling 2 AM incidents. Learn the architecture, real failure modes, and how to deploy AI on-call engineers safely in 2026.</description>
-            <category>AI in DevOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

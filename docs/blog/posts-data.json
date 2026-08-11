@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use",
+      "url": "/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html",
+      "excerpt": "Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "gpu sharing mig time-slicing kubernetes 2026",
+        "MIG",
+        "time-slicing"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 11, 2026",
+      "_isoDate": "2026-08-11",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "vLLM Production: Continuous Batching Throughput 2026",
       "url": "/blog/posts/vllm-continuous-batching-throughput-2026.html",
       "excerpt": "Master vLLM continuous batching for production throughput. Learn PagedAttention, KV cache management, and latency tuning strategies for enterprise AI infrastructure.",
