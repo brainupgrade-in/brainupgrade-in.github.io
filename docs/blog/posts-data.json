@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Building an LLM Gateway: Routing, Quotas, and Failover 2026",
+      "url": "/blog/posts/building-llm-gateway-routing-quota-failover-2026.html",
+      "excerpt": "After twenty-five years navigating the infrastructure trenches at institutions like JPMorgan Chase and Morgan Stanley, I’ve seen every trend come and go. But the curre",
+      "category": "AI Infrastructure",
+      "tags": [
+        "llm gateway routing quota failover 2026",
+        "enterprise ai infrastructure",
+        "kubernetes llm proxy"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 12, 2026",
+      "_isoDate": "2026-08-12",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use",
       "url": "/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html",
       "excerpt": "Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.",
