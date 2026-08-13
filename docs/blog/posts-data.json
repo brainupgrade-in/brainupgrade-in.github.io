@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Semantic Caching for LLMs: Cutting Cost and Latency Together",
+      "url": "/blog/posts/semantic-caching-llm-latency-cost-2026.html",
+      "excerpt": "Learn how semantic caching reduces LLM latency and cost in enterprise AI. Practical guide to vector embeddings, hit rates, and infrastructure patterns for 2026.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "semantic caching llm latency cost 2026",
+        "LLM inference optimization",
+        "vector database caching"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 13, 2026",
+      "_isoDate": "2026-08-13",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Building an LLM Gateway: Routing, Quotas, and Failover 2026",
       "url": "/blog/posts/building-llm-gateway-routing-quota-failover-2026.html",
       "excerpt": "After twenty-five years navigating the infrastructure trenches at institutions like JPMorgan Chase and Morgan Stanley, I’ve seen every trend come and go. But the curre",
