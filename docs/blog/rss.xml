@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 13 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 14 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Small Language Models On-Prem: When SLMs Beat Frontier APIs</title>
+            <link>https://devops.gheware.com/blog/posts/small-language-models-on-prem-enterprise-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/small-language-models-on-prem-enterprise-2026.html</guid>
+            <description>A practitioner’s guide to deploying Small Language Models on-prem in 2026. Compare latency, cost, and control against frontier APIs. Real Kubernetes patterns included.</description>
+            <category>AI Infrastructure</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Semantic Caching for LLMs: Cutting Cost and Latency Together</title>
             <link>https://devops.gheware.com/blog/posts/semantic-caching-llm-latency-cost-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Human-in-the-Loop AI: 4 LangGraph Patterns That Keep Humans in Control</title>
-            <link>https://devops.gheware.com/blog/posts/human-in-the-loop-langgraph-patterns-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/human-in-the-loop-langgraph-patterns-2026.html</guid>
-            <description>Fully autonomous AI agents fail on edge cases. Learn the 4 human-in-the-loop patterns in LangGraph — approval gates, interrupt-and-resume, confidence thresholds, and escalation chains.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

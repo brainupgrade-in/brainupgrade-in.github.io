@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Small Language Models On-Prem: When SLMs Beat Frontier APIs",
+      "url": "/blog/posts/small-language-models-on-prem-enterprise-2026.html",
+      "excerpt": "A practitioner’s guide to deploying Small Language Models on-prem in 2026. Compare latency, cost, and control against frontier APIs. Real Kubernetes patterns included.",
+      "category": "AI Infrastructure",
+      "tags": [
+        "small language models on-prem enterprise 2026",
+        "SLM",
+        "on-prem AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 14, 2026",
+      "_isoDate": "2026-08-14",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Semantic Caching for LLMs: Cutting Cost and Latency Together",
       "url": "/blog/posts/semantic-caching-llm-latency-cost-2026.html",
       "excerpt": "Learn how semantic caching reduces LLM latency and cost in enterprise AI. Practical guide to vector embeddings, hit rates, and infrastructure patterns for 2026.",
