@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Structured Output JSON Schema LLM 2026",
+      "url": "/blog/posts/structured-output-json-schema-llm-2026.html",
+      "excerpt": "Master structured output with JSON schemas for LLMs in 2026. Learn validation, retries, and schema enforcement for reliable enterprise AI applications.",
+      "category": "AI Engineering",
+      "tags": [
+        "structured output json schema llm 2026",
+        "LLM structured output",
+        "JSON schema validation"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 15, 2026",
+      "_isoDate": "2026-08-15",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Small Language Models On-Prem: When SLMs Beat Frontier APIs",
       "url": "/blog/posts/small-language-models-on-prem-enterprise-2026.html",
       "excerpt": "A practitioner’s guide to deploying Small Language Models on-prem in 2026. Compare latency, cost, and control against frontier APIs. Real Kubernetes patterns included.",
