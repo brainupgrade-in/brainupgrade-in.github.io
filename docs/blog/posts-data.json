@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agent Memory Architectures: Beyond Stuffing the Context Window",
+      "url": "/blog/posts/agent-memory-architecture-long-term-2026.html",
+      "excerpt": "Learn how to build robust agent memory architectures for long-term retention. Discover vector stores, episodic recall, and governance patterns for enterprise AI in 2026.",
+      "category": "Agentic AI",
+      "tags": [
+        "agent memory architecture long-term 2026",
+        "enterprise AI memory",
+        "vector databases"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 16, 2026",
+      "_isoDate": "2026-08-16",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Structured Output JSON Schema LLM 2026",
       "url": "/blog/posts/structured-output-json-schema-llm-2026.html",
       "excerpt": "Master structured output with JSON schemas for LLMs in 2026. Learn validation, retries, and schema enforcement for reliable enterprise AI applications.",
