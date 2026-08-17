@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agent Tool Calls Fail — Fix Reliability in 2026",
+      "url": "/blog/posts/agent-tool-calling-reliability-failure-2026.html",
+      "excerpt": "The Illusion of Determinism In 2026, we still see teams treating Large Language Model (LLM) tool calling as a deterministic API call. It isn’t. It is a probabilistic g",
+      "category": "Agentic AI",
+      "tags": [
+        "tool calling reliability agent failure 2026",
+        "agentic AI reliability",
+        "LLM tool calling"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 17, 2026",
+      "_isoDate": "2026-08-17",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Agent Memory Architectures: Beyond Stuffing the Context Window",
       "url": "/blog/posts/agent-memory-architecture-long-term-2026.html",
       "excerpt": "Learn how to build robust agent memory architectures for long-term retention. Discover vector stores, episodic recall, and governance patterns for enterprise AI in 2026.",
