@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Regression Testing LLMs: The 2026 Eval Harness",
+      "url": "/blog/posts/llm-eval-harness-regression-testing-2026.html",
+      "excerpt": "The Illusion of Static Evaluation I spent 25 years building robust CI/CD pipelines for transactional systems at JPMorgan Chase and Morgan Stanley. In those systems, a",
+      "category": "AI Engineering",
+      "tags": [
+        "llm eval harness regression testing 2026",
+        "LLM evaluation",
+        "AI engineering"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 18, 2026",
+      "_isoDate": "2026-08-18",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Agent Tool Calls Fail — Fix Reliability in 2026",
       "url": "/blog/posts/agent-tool-calling-reliability-failure-2026.html",
       "excerpt": "The Illusion of Determinism In 2026, we still see teams treating Large Language Model (LLM) tool calling as a deterministic API call. It isn’t. It is a probabilistic g",
