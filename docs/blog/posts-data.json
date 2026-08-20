@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Prompt Versioning, Review, and Rollback in 2026",
+      "url": "/blog/posts/prompt-versioning-review-rollback-2026.html",
+      "excerpt": "Learn how to implement prompt versioning, review, and rollback workflows in 2026. Secure your LLM pipelines with GitOps, automated testing, and strict governance.",
+      "category": "AI Engineering",
+      "tags": [
+        "prompt versioning review rollback 2026",
+        "llm governance",
+        "prompt engineering"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 20, 2026",
+      "_isoDate": "2026-08-20",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Fine-Tuning vs RAG: The 2026 Decision Matrix",
       "url": "/blog/posts/fine-tuning-versus-rag-decision-2026.html",
       "excerpt": "A senior engineer’s guide to the fine-tuning versus rag decision 2026. Concrete criteria for latency, cost, and data sensitivity in production AI systems.",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 19 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 20 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Prompt Versioning, Review, and Rollback in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/prompt-versioning-review-rollback-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/prompt-versioning-review-rollback-2026.html</guid>
+            <description>Learn how to implement prompt versioning, review, and rollback workflows in 2026. Secure your LLM pipelines with GitOps, automated testing, and strict governance.</description>
+            <category>AI Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Fine-Tuning vs RAG: The 2026 Decision Matrix</title>
             <link>https://devops.gheware.com/blog/posts/fine-tuning-versus-rag-decision-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Ollama Local LLM Development Guide 2026: Run AI Agents Without the Cloud</title>
-            <link>https://devops.gheware.com/blog/posts/ollama-local-llm-development-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ollama-local-llm-development-guide-2026.html</guid>
-            <description>Ollama lets you run Llama 3, Mistral, and Phi-3 locally with zero API cost. Complete guide to model selection, LangChain integration, multi-model switching, and production-quality local LLM development patterns.</description>
-            <category>AI Tools</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
