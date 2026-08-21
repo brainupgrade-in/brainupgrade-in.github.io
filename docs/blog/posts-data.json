@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agent Cost Attribution: Token Budgets for 2026",
+      "url": "/blog/posts/agent-cost-attribution-token-budget-2026.html",
+      "excerpt": "Learn how to implement agent cost attribution and token budgets in 2026. A practitioner’s guide to controlling LLM spend in enterprise environments.",
+      "category": "FinOps",
+      "tags": [
+        "agent cost attribution token budget 2026",
+        "FinOps",
+        "LLM cost control"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 21, 2026",
+      "_isoDate": "2026-08-21",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Prompt Versioning, Review, and Rollback in 2026",
       "url": "/blog/posts/prompt-versioning-review-rollback-2026.html",
       "excerpt": "Learn how to implement prompt versioning, review, and rollback workflows in 2026. Secure your LLM pipelines with GitOps, automated testing, and strict governance.",
