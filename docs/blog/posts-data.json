@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "MCP Server Authorization: Controlling Blast Radius in 2026",
+      "url": "/blog/posts/mcp-server-authorization-blast-radius-2026.html",
+      "excerpt": "Learn how to secure MCP servers in 2026 by implementing strict authorization scopes, minimizing blast radius, and preventing lateral movement in enterprise AI agents.",
+      "category": "Security",
+      "tags": [
+        "mcp server authorization blast radius 2026",
+        "MCP security",
+        "enterprise AI security"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 22, 2026",
+      "_isoDate": "2026-08-22",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Agent Cost Attribution: Token Budgets for 2026",
       "url": "/blog/posts/agent-cost-attribution-token-budget-2026.html",
       "excerpt": "Learn how to implement agent cost attribution and token budgets in 2026. A practitioner’s guide to controlling LLM spend in enterprise environments.",
