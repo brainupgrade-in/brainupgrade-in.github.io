@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Hybrid Kubernetes: Bursting to Cloud Without Rewriting",
+      "url": "/blog/posts/hybrid-kubernetes-cloud-bursting-2026.html",
+      "excerpt": "Learn how to implement hybrid Kubernetes cloud bursting in 2026 using multi-cluster orchestration, avoiding vendor lock-in and rewriting core applications.",
+      "category": "Kubernetes",
+      "tags": [
+        "hybrid kubernetes cloud bursting 2026",
+        "kubernetes multi-cluster",
+        "cloud bursting strategies"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 23, 2026",
+      "_isoDate": "2026-08-23",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "MCP Server Authorization: Controlling Blast Radius in 2026",
       "url": "/blog/posts/mcp-server-authorization-blast-radius-2026.html",
       "excerpt": "Learn how to secure MCP servers in 2026 by implementing strict authorization scopes, minimizing blast radius, and preventing lateral movement in enterprise AI agents.",
