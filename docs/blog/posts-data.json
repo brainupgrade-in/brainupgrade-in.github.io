@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Golden Paths: Designing a Platform API Developers Choose",
+      "url": "/blog/posts/golden-path-platform-api-developer-2026.html",
+      "excerpt": "Learn how to design a golden path platform API that developers actually use. We explore standardization, automation, and reducing cognitive load in 2026.",
+      "category": "Platform Engineering",
+      "tags": [
+        "golden path platform api developer 2026",
+        "platform engineering",
+        "internal developer platform"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 24, 2026",
+      "_isoDate": "2026-08-24",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Hybrid Kubernetes: Bursting to Cloud Without Rewriting",
       "url": "/blog/posts/hybrid-kubernetes-cloud-bursting-2026.html",
       "excerpt": "Learn how to implement hybrid Kubernetes cloud bursting in 2026 using multi-cluster orchestration, avoiding vendor lock-in and rewriting core applications.",
