@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 25 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>PostgreSQL Operator Failover in Kubernetes: 2026 Guide</title>
+            <link>https://devops.gheware.com/blog/posts/postgresql-operator-kubernetes-failover-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/postgresql-operator-kubernetes-failover-2026.html</guid>
+            <description>Master PostgreSQL operator failover in Kubernetes for 2026. Learn HA setup, backup strategies, and troubleshooting for enterprise-grade database reliability.</description>
+            <category>Data</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Golden Paths: Designing a Platform API Developers Choose</title>
             <link>https://devops.gheware.com/blog/posts/golden-path-platform-api-developer-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Kubernetes for GenAI: Production Architecture Patterns 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-genai-architecture-patterns-2026.html</guid>
-            <description>Production Kubernetes architectures for GenAI workloads. GPU scheduling, KServe inference serving, KEDA autoscaling, and security patterns from enterprise deployments.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
