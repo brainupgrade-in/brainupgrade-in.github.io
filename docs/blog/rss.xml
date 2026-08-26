@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 25 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Event-Driven Kafka on Kubernetes: No Regrets</title>
+            <link>https://devops.gheware.com/blog/posts/event-driven-kafka-kubernetes-architecture-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/event-driven-kafka-kubernetes-architecture-2026.html</guid>
+            <description>Build production-grade event-driven architectures on Kubernetes with Kafka. Learn patterns for scaling, observability, and integrating Agentic AI workflows in 2026.</description>
+            <category>Architecture</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>PostgreSQL Operator Failover in Kubernetes: 2026 Guide</title>
             <link>https://devops.gheware.com/blog/posts/postgresql-operator-kubernetes-failover-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>OpenTelemetry for AI Agents: Production Observability Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</link>
-            <guid>https://devops.gheware.com/blog/posts/opentelemetry-ai-agents-production-observability.html</guid>
-            <description>Instrument AI agents with OpenTelemetry in production. LLM span tracing, multi-agent workflows, and Grafana Tempo setup for enterprise DevOps teams.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
