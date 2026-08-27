@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "API Gateway Rate Limiting Degradation 2026",
+      "url": "/blog/posts/api-gateway-rate-limiting-degradation-2026.html",
+      "excerpt": "Explore API gateway rate limiting degradation strategies for 2026. Learn how to handle retries, circuit breakers, and backend resilience in enterprise architectures.",
+      "category": "Architecture",
+      "tags": [
+        "api gateway rate limiting degradation 2026",
+        "rate limiting",
+        "api gateway"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 27, 2026",
+      "_isoDate": "2026-08-27",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Event-Driven Kafka on Kubernetes: No Regrets",
       "url": "/blog/posts/event-driven-kafka-kubernetes-architecture-2026.html",
       "excerpt": "Build production-grade event-driven architectures on Kubernetes with Kafka. Learn patterns for scaling, observability, and integrating Agentic AI workflows in 2026.",

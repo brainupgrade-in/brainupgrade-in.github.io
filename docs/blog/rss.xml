@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 26 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 27 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>API Gateway Rate Limiting Degradation 2026</title>
+            <link>https://devops.gheware.com/blog/posts/api-gateway-rate-limiting-degradation-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/api-gateway-rate-limiting-degradation-2026.html</guid>
+            <description>Explore API gateway rate limiting degradation strategies for 2026. Learn how to handle retries, circuit breakers, and backend resilience in enterprise architectures.</description>
+            <category>Architecture</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Event-Driven Kafka on Kubernetes: No Regrets</title>
             <link>https://devops.gheware.com/blog/posts/event-driven-kafka-kubernetes-architecture-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Build Your Enterprise AI Control Plane</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-control-plane-enterprise-2026.html</guid>
-            <description>Deploying AI agents without a control plane invites runaway costs, security breaches, and compliance failures. Learn the production architecture.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 25 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
