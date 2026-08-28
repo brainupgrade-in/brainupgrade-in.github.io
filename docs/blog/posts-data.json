@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Blue-Green vs Canary: The 2026 Reality",
+      "url": "/blog/posts/blue-green-versus-canary-deployment-2026.html",
+      "excerpt": "A no-nonsense guide to blue green versus canary deployment 2026. I break down the trade-offs, tooling, and when to use each strategy for zero-downtime releases.",
+      "category": "DevOps",
+      "tags": [
+        "blue green versus canary deployment 2026",
+        "Kubernetes deployment strategies",
+        "zero downtime deployment"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 28, 2026",
+      "_isoDate": "2026-08-28",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "API Gateway Rate Limiting Degradation 2026",
       "url": "/blog/posts/api-gateway-rate-limiting-degradation-2026.html",
       "excerpt": "Explore API gateway rate limiting degradation strategies for 2026. Learn how to handle retries, circuit breakers, and backend resilience in enterprise architectures.",
