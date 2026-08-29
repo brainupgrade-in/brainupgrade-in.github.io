@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 28 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 29 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Cutting Time-to-First-Commit: Onboarding as a Platform Metric</title>
+            <link>https://devops.gheware.com/blog/posts/cutting-time-to-first-commit-onboarding-as-a-platform-metric-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/cutting-time-to-first-commit-onboarding-as-a-platform-metric-2026.html</guid>
+            <description>Stop measuring onboarding by orientation days. Measure developer onboarding time to first commit 2026. Learn how platform engineering automates local dev environments.</description>
+            <category>Platform Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 29 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Blue-Green vs Canary: The 2026 Reality</title>
             <link>https://devops.gheware.com/blog/posts/blue-green-versus-canary-deployment-2026.html</link>
@@ -450,15 +459,6 @@
             <guid>https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html</guid>
             <description>Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.</description>
             <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>KAITO: Kubernetes AI Toolchain Operator — The Enterprise Guide to Deploying LLM AI Models in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kaito-kubernetes-ai-toolchain-operator-enterprise-2026.html</guid>
-            <description>Discover how KAITO (Kubernetes AI Toolchain Operator) enables enterprise teams to deploy, scale, and manage production LLM AI workloads on Kubernetes. Complete implementation guide with architecture patterns, YAML examples, and real-world use cases for 2026.</description>
-            <category>Kubernetes</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
         </item>
