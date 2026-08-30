@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 29 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 30 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>LangSmith Pricing 2025: The Hidden Costs of AI Observability</title>
+            <link>https://devops.gheware.com/blog/posts/langsmith-pricing-2025-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/langsmith-pricing-2025-2026.html</guid>
+            <description>A senior practitioner’s breakdown of LangSmith’s 2025 pricing model, tracing costs, and when to switch to open-source alternatives.</description>
+            <category>AI Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Cutting Time-to-First-Commit: Onboarding as a Platform Metric</title>
             <link>https://devops.gheware.com/blog/posts/cutting-time-to-first-commit-onboarding-as-a-platform-metric-2026.html</link>
@@ -449,15 +458,6 @@
             <link>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</guid>
             <description>Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agent Security: Enterprise Patterns</title>
-            <link>https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/enterprise-ai-agent-security-patterns-2026.html</guid>
-            <description>Zero-trust architecture for AI agents: network policies, syscall filtering, seccomp, Kubernetes sandboxing, and MCP server hardening in production.</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>

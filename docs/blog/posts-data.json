@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "LangSmith Pricing 2025: The Hidden Costs of AI Observability",
+      "url": "/blog/posts/langsmith-pricing-2025-2026.html",
+      "excerpt": "A senior practitioner’s breakdown of LangSmith’s 2025 pricing model, tracing costs, and when to switch to open-source alternatives.",
+      "category": "AI Observability",
+      "tags": [
+        "langsmith pricing 2025",
+        "AI observability costs",
+        "LangSmith vs Langfuse"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 30, 2026",
+      "_isoDate": "2026-08-30",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting Time-to-First-Commit: Onboarding as a Platform Metric",
       "url": "/blog/posts/cutting-time-to-first-commit-onboarding-as-a-platform-metric-2026.html",
       "excerpt": "Stop measuring onboarding by orientation days. Measure developer onboarding time to first commit 2026. Learn how platform engineering automates local dev environments.",
