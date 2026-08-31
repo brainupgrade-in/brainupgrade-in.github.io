@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 30 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Argo CD vs Jenkins: The GitOps Reality Check</title>
+            <link>https://devops.gheware.com/blog/posts/argo-cd-vs-jenkins-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/argo-cd-vs-jenkins-2026.html</guid>
+            <description>A senior engineer’s deep dive into Argo CD vs Jenkins. We compare architecture, drift detection, and operational overhead to show why GitOps wins for Kubernetes.</description>
+            <category>GitOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>LangSmith Pricing 2025: The Hidden Costs of AI Observability</title>
             <link>https://devops.gheware.com/blog/posts/langsmith-pricing-2025-2026.html</link>
@@ -382,10 +391,10 @@
             <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>Langfuse vs LangSmith vs Arize: LLM Observability 2026</title>
+            <title>Langfuse vs LangSmith vs Arize: Best LLM Observability Tool 2026</title>
             <link>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html</guid>
-            <description>Compare Langfuse, LangSmith, and Arize for enterprise LLM observability in 2026. Features, pricing, tracing, evals, and the right tool for your AI team.</description>
+            <description>Langfuse vs LangSmith vs Arize: Enterprise comparison of top 3 LLM observability tools in 2026. Performance benchmarks, pricing, tracing, evals, and real deployment experience from JPMorgan/Deutsche Bank. Learn from 25 years experience →</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 08 May 2026 00:00:00 +0000</pubDate>
@@ -436,10 +445,10 @@
             <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
-            <title>AI Agent Benchmarking &amp; Evaluation 2026: 7-Dimension Enterprise Framework</title>
+            <title>AI Agent Evaluation 2026: 7-Dimension Framework Fortune 500 CTOs Use</title>
             <link>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</guid>
-            <description>Stop guessing which AI agent wins. 7-dimension enterprise benchmarking framework with cost-per-task metrics, accuracy tests, and production deployment patterns used by Fortune 500 CTOs. Learn from 25 years enterprise experience →</description>
+            <description>Stop guessing which AI agent wins. 7-dimension enterprise benchmarking with cost-per-task metrics, accuracy tests, and deployment patterns. Real data from JPMorgan/Deutsche Bank. Learn from 25 years experience →</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
@@ -449,15 +458,6 @@
             <link>https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html</guid>
             <description>From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ. Built from gheWARE's work with Fortune 500 engineering teams.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Debugging AI Agents in Production: Enterprise SRE Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/debugging-ai-agents-production-sre-guide-2026.html</guid>
-            <description>Traditional logs fail AI agents. Learn distributed tracing, Langfuse observability, and SRE techniques to debug production AI agents.</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>

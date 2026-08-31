@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Argo CD vs Jenkins: The GitOps Reality Check",
+      "url": "/blog/posts/argo-cd-vs-jenkins-2026.html",
+      "excerpt": "A senior engineer’s deep dive into Argo CD vs Jenkins. We compare architecture, drift detection, and operational overhead to show why GitOps wins for Kubernetes.",
+      "category": "GitOps",
+      "tags": [
+        "argo cd vs jenkins",
+        "GitOps",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "August 31, 2026",
+      "_isoDate": "2026-08-31",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "LangSmith Pricing 2025: The Hidden Costs of AI Observability",
       "url": "/blog/posts/langsmith-pricing-2025-2026.html",
       "excerpt": "A senior practitioner’s breakdown of LangSmith’s 2025 pricing model, tracing costs, and when to switch to open-source alternatives.",
@@ -658,9 +674,9 @@
       "keywords": []
     },
     {
-      "title": "Langfuse vs LangSmith vs Arize: LLM Observability 2026",
+      "title": "Langfuse vs LangSmith vs Arize: Best LLM Observability Tool 2026",
       "url": "/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html",
-      "excerpt": "Compare Langfuse, LangSmith, and Arize for enterprise LLM observability in 2026. Features, pricing, tracing, evals, and the right tool for your AI team.",
+      "excerpt": "Langfuse vs LangSmith vs Arize: Enterprise comparison of top 3 LLM observability tools in 2026. Performance benchmarks, pricing, tracing, evals, and real deployment experience from JPMorgan/Deutsche Bank. Learn from 25 years experience →",
       "category": "Agentic AI",
       "tags": [
         "LLM Observability",
@@ -741,9 +757,9 @@
       "keywords": []
     },
     {
-      "title": "AI Agent Benchmarking & Evaluation 2026: 7-Dimension Enterprise Framework",
+      "title": "AI Agent Evaluation 2026: 7-Dimension Framework Fortune 500 CTOs Use",
       "url": "/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html",
-      "excerpt": "Stop guessing which AI agent wins. 7-dimension enterprise benchmarking framework with cost-per-task metrics, accuracy tests, and production deployment patterns used by Fortune 500 CTOs. Learn from 25 years enterprise experience →",
+      "excerpt": "Stop guessing which AI agent wins. 7-dimension enterprise benchmarking with cost-per-task metrics, accuracy tests, and deployment patterns. Real data from JPMorgan/Deutsche Bank. Learn from 25 years experience →",
       "category": "Agentic AI",
       "tags": [
         "AI Agents",
@@ -904,9 +920,9 @@
       "keywords": []
     },
     {
-      "title": "LangGraph StateGraph: Complete Guide to Production AI Agent Workflows 2026",
+      "title": "LangGraph StateGraph: Complete Guide to Production AI Agents 2026",
       "url": "/blog/posts/langgraph-stategraph-beginners-guide-2026.html",
-      "excerpt": "Learn how LangGraph StateGraph powers production AI agents with nodes, edges, and state management. 50-line Python examples showing conditional routing, parallel execution, and real-world patterns from Fortune 500 deployments. Learn from 25 years enterprise experience →",
+      "excerpt": "Build production AI agents with LangGraph StateGraph. 50-line Python examples for nodes, edges, state management, conditional routing, and multi-agent patterns. Enterprise patterns from JPMorgan/Deutsche Bank. Learn from 25 years experience →",
       "category": "AI Engineering",
       "tags": [
         "LangGraph",
@@ -936,9 +952,9 @@
       "keywords": []
     },
     {
-      "title": "LangChain LCEL Complete Guide 2026: Pipe Syntax, Chains & Production Patterns",
+      "title": "LangChain LCEL Guide 2026: Production Patterns That Separate AI From Toy Demos",
       "url": "/blog/posts/langchain-expression-language-lcel-guide-2026.html",
-      "excerpt": "LCEL is the composable interface that makes LangChain production-ready. Master pipe syntax, parallel chains, streaming, and fallback patterns that separate production AI agents from toy demos. 25 years enterprise context →",
+      "excerpt": "LCEL is the composable interface that makes LangChain production-ready. Master pipe syntax, parallel chains, streaming, and fallback patterns. Real deployment experience from 25 years at JPMorgan/Deutsche Bank. Learn from enterprise context →",
       "category": "AI Engineering",
       "tags": [
         "LangChain",
@@ -1016,9 +1032,9 @@
       "keywords": []
     },
     {
-      "title": "LangFuse in Production: Tracing, Evaluation, and Cost Tracking for AI Agents",
+      "title": "LangFuse in Production: Tracing, Evaluation & Cost Tracking for AI Agents 2026",
       "url": "/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html",
-      "excerpt": "LangFuse is the open-source observability layer every production AI agent needs. 73% of quality regressions caught before users with complete tracing, evaluation, and cost tracking. Step-by-step setup guide. Learn from 25 years enterprise experience →",
+      "excerpt": "LangFuse is the open-source observability layer every production AI agent needs. 73% of quality regressions caught before users. Complete step-by-step guide to tracing, evals, and cost tracking. Learn from 25 years at JPMorgan/Deutsche Bank. →",
       "category": "AI Observability",
       "tags": [
         "LangFuse",
@@ -1977,9 +1993,9 @@
       ]
     },
     {
-      "title": "ArgoCD vs Flux vs Jenkins X: 2026 GitOps Comparison & Decision Guide",
+      "title": "ArgoCD vs Flux vs Jenkins X: Best GitOps Tool 2026 (Performance Benchmarks)",
       "url": "/blog/posts/argocd-vs-flux-vs-jenkins-x-comparison-2026.html",
-      "excerpt": "Compare ArgoCD, Flux CD, and Jenkins X for Kubernetes GitOps in 2026. Market share data, performance benchmarks, and feature analysis to choose the right GitOps tool. Learn from 25 years DevOps experience →",
+      "excerpt": "ArgoCD vs Flux vs Jenkins X: 2026 performance benchmarks show ArgoCD dominates with 70%+ market share. Compare features, CNCF status, and choose the right GitOps tool. Real data from JPMorgan/Deutsche Bank. Learn from 25 years experience →",
       "category": "GitOps",
       "tags": [
         "ArgoCD",
@@ -2269,9 +2285,9 @@
       ]
     },
     {
-      "title": "Kubernetes vs Docker Swarm 2026: The Definitive Comparison & Dead End Proof",
+      "title": "Kubernetes vs Docker Swarm 2026: Is Docker Swarm Still Alive? (Real Data)",
       "url": "/blog/posts/kubernetes-vs-docker-swarm-2026-reality-check.html",
-      "excerpt": "Is Docker Swarm dead in 2026? A 25-year enterprise architect compares Kubernetes vs Docker Swarm with real performance data, cost analysis, and migration decision framework. Learn from JPMorgan/Deutsche Bank experience →",
+      "excerpt": "Is Docker Swarm dead in 2026? Real enterprise data shows Docker Swarm uses 40-60% fewer resources but Kubernetes has 82% adoption. Compare performance, cost, and when to migrate. 25 years enterprise experience →",
       "category": "Container Orchestration",
       "tags": [
         "Kubernetes",
@@ -2394,7 +2410,7 @@
       ]
     },
     {
-      "title": "Vector Databases on Kubernetes: Production Guide 2026 (StatefulSets, Milvus and Qdrant)",
+      "title": "Vector Databases on Kubernetes: Production Guide 2026 (Milvus, Qdrant, StatefulSets)",
       "url": "/blog/posts/vector-databases-kubernetes-production-guide-2026.html",
       "excerpt": "Master vector database deployment on Kubernetes with StatefulSets, the Milvus Operator, and performance optimization — production-ready patterns for scale, recall, and cost.",
       "category": "AI Infrastructure",
