@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agent Observability: Beyond LangSmith to Arize and Phoenix",
+      "url": "/blog/posts/agent-observability-langsmith-competitors-arize-phoenix-weights-biases-2026.html",
+      "excerpt": "Compare LangSmith, Arize Phoenix, and other agent observability tools. I break down trace fidelity, latency, and cost attribution for enterprise AI agents.",
+      "category": "AI Observability",
+      "tags": [
+        "agent observability langsmith competitors arize phoenix weights biases",
+        "AI observability",
+        "LLM tracing"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 2, 2026",
+      "_isoDate": "2026-09-02",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Argo CD vs Jenkins: The GitOps Reality Check",
       "url": "/blog/posts/argo-cd-vs-jenkins-2026.html",
       "excerpt": "A senior engineer’s deep dive into Argo CD vs Jenkins. We compare architecture, drift detection, and operational overhead to show why GitOps wins for Kubernetes.",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 31 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 02 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Agent Observability: Beyond LangSmith to Arize and Phoenix</title>
+            <link>https://devops.gheware.com/blog/posts/agent-observability-langsmith-competitors-arize-phoenix-weights-biases-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agent-observability-langsmith-competitors-arize-phoenix-weights-biases-2026.html</guid>
+            <description>Compare LangSmith, Arize Phoenix, and other agent observability tools. I break down trace fidelity, latency, and cost attribution for enterprise AI agents.</description>
+            <category>AI Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Argo CD vs Jenkins: The GitOps Reality Check</title>
             <link>https://devops.gheware.com/blog/posts/argo-cd-vs-jenkins-2026.html</link>
@@ -449,15 +458,6 @@
             <link>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</link>
             <guid>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</guid>
             <description>Stop guessing which AI agent wins. 7-dimension enterprise benchmarking with cost-per-task metrics, accuracy tests, and deployment patterns. Real data from JPMorgan/Deutsche Bank. Learn from 25 years experience →</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agent Governance Readiness Checklist: The 10-Point Framework Every Enterprise CTO Needs in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-governance-readiness-checklist-2026.html</guid>
-            <description>From audit trails to kill switches, RBAC to EU AI Act compliance — the 10-point checklist that determines whether your AI agent deployment avoids the front page of WSJ. Built from gheWARE's work with Fortune 500 engineering teams.</description>
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
