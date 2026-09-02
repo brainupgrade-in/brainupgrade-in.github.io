@@ -6,6 +6,19 @@
 (function() {
     'use strict';
 
+    // Turnstile guard for the lead-magnet / newsletter forms embedded in posts.
+    // Loaded here so every post (and every future post) gets it without editing
+    // 98 inline forms. See /js/turnstile-guard.js.
+    if (!document.querySelector('script[src*="turnstile-guard.js"]')) {
+        var ts = document.createElement('script');
+        ts.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        ts.async = true; ts.defer = true;
+        document.head.appendChild(ts);
+        var guard = document.createElement('script');
+        guard.src = '/js/turnstile-guard.js';
+        document.head.appendChild(guard);
+    }
+
     const TEMPLATES = {
         header: '/templates/header.html',
         footer: '/templates/footer.html',
