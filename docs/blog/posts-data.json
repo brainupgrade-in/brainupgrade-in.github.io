@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agentic AI vs RPA: The Real TCO in Banking",
+      "url": "/blog/posts/agentic-ai-vs-rpa-tco-banking-2026.html",
+      "excerpt": "A senior engineer’s breakdown of why agentic AI’s operational complexity changes the total cost of ownership equation compared to legacy RPA.",
+      "category": "AI Engineering",
+      "tags": [
+        "total cost of ownership agentic ai vs rpa banking",
+        "RPA maintenance",
+        "Agentic AI costs"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 3, 2026",
+      "_isoDate": "2026-09-03",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Agent Observability: Beyond LangSmith to Arize and Phoenix",
       "url": "/blog/posts/agent-observability-langsmith-competitors-arize-phoenix-weights-biases-2026.html",
       "excerpt": "Compare LangSmith, Arize Phoenix, and other agent observability tools. I break down trace fidelity, latency, and cost attribution for enterprise AI agents.",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 02 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 03 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Agentic AI vs RPA: The Real TCO in Banking</title>
+            <link>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-tco-banking-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agentic-ai-vs-rpa-tco-banking-2026.html</guid>
+            <description>A senior engineer’s breakdown of why agentic AI’s operational complexity changes the total cost of ownership equation compared to legacy RPA.</description>
+            <category>AI Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Agent Observability: Beyond LangSmith to Arize and Phoenix</title>
             <link>https://devops.gheware.com/blog/posts/agent-observability-langsmith-competitors-arize-phoenix-weights-biases-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI in Kubernetes</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agent Evaluation 2026: 7-Dimension Framework Fortune 500 CTOs Use</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-evaluation-benchmarking-enterprise-2026.html</guid>
-            <description>Stop guessing which AI agent wins. 7-dimension enterprise benchmarking with cost-per-task metrics, accuracy tests, and deployment patterns. Real data from JPMorgan/Deutsche Bank. Learn from 25 years experience →</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 26 Apr 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
