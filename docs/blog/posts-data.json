@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Langgraph PDF: Ingesting Documents for Enterprise Agents",
+      "url": "/blog/posts/langgraph-pdf-ingestion-pipeline-2026.html",
+      "excerpt": "In my twenty-five years building systems for global banks, I have learned one hard truth: AI models are only as good as the context they are fed. We spent years optimi",
+      "category": "AI Engineering",
+      "tags": [
+        "langgraph pdf",
+        "document ingestion",
+        "vector search"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 4, 2026",
+      "_isoDate": "2026-09-04",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Agentic AI vs RPA: The Real TCO in Banking",
       "url": "/blog/posts/agentic-ai-vs-rpa-tco-banking-2026.html",
       "excerpt": "A senior engineer’s breakdown of why agentic AI’s operational complexity changes the total cost of ownership equation compared to legacy RPA.",
