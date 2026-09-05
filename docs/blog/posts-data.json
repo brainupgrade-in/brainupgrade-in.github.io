@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Gateway API Ingress Migration Kubernetes 2026",
+      "url": "/blog/posts/gateway-api-ingress-migration-kubernetes-2026.html",
+      "excerpt": "The End of the Ingress-NGINX Era I have spent the last two decades watching Kubernetes networking evolve. In 2026, continuing to rely solely on Ingress-NGINX for compl",
+      "category": "Kubernetes",
+      "tags": [
+        "gateway api ingress migration kubernetes 2026",
+        "Kubernetes Gateway API",
+        "Ingress-NGINX migration"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 5, 2026",
+      "_isoDate": "2026-09-05",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Langgraph PDF: Ingesting Documents for Enterprise Agents",
       "url": "/blog/posts/langgraph-pdf-ingestion-pipeline-2026.html",
       "excerpt": "In my twenty-five years building systems for global banks, I have learned one hard truth: AI models are only as good as the context they are fed. We spent years optimi",

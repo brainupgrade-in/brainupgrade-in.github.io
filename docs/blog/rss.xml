@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 05 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Gateway API Ingress Migration Kubernetes 2026</title>
+            <link>https://devops.gheware.com/blog/posts/gateway-api-ingress-migration-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/gateway-api-ingress-migration-kubernetes-2026.html</guid>
+            <description>The End of the Ingress-NGINX Era I have spent the last two decades watching Kubernetes networking evolve. In 2026, continuing to rely solely on Ingress-NGINX for compl</description>
+            <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Langgraph PDF: Ingesting Documents for Enterprise Agents</title>
             <link>https://devops.gheware.com/blog/posts/langgraph-pdf-ingestion-pipeline-2026.html</link>
@@ -450,15 +459,6 @@
             <guid>https://devops.gheware.com/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html</guid>
             <description>AI agents now operate as 24/7 junior DevOps engineers inside Kubernetes, diagnosing CrashLoopBackOff, OOMKilled and network failures and remediating them. Guide to 5 production patterns, KAITO setup and a 7-step governance framework.</description>
             <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>From Pilot To Production Why Agentic Ai Fails 2026</title>
-            <link>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/from-pilot-to-production-why-agentic-ai-fails-2026.html</guid>
-            <description>Only a small fraction of Agentic AI pilots reach production. Learn the 7 failure patterns and how to fix them with LangGraph, MCP, and production-grade observability. Based on enterprise deployment experience.</description>
-            <category>DevOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
         </item>
