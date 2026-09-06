@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Karpenter Node Autoscaling: Saving Enterprise Cloud Costs",
+      "url": "/blog/posts/karpenter-node-autoscaling-kubernetes-2026.html",
+      "excerpt": "A hands-on guide to configuring Karpenter for node autoscaling in Kubernetes 2026. Learn how to reduce idle capacity and save significant cloud costs.",
+      "category": "Kubernetes",
+      "tags": [
+        "karpenter node autoscaling kubernetes 2026",
+        "kubernetes cost optimization",
+        "cloud infrastructure management"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 6, 2026",
+      "_isoDate": "2026-09-06",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Gateway API Ingress Migration Kubernetes 2026",
       "url": "/blog/posts/gateway-api-ingress-migration-kubernetes-2026.html",
       "excerpt": "The End of the Ingress-NGINX Era I have spent the last two decades watching Kubernetes networking evolve. In 2026, continuing to rely solely on Ingress-NGINX for compl",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 05 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Karpenter Node Autoscaling: Saving Enterprise Cloud Costs</title>
+            <link>https://devops.gheware.com/blog/posts/karpenter-node-autoscaling-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/karpenter-node-autoscaling-kubernetes-2026.html</guid>
+            <description>A hands-on guide to configuring Karpenter for node autoscaling in Kubernetes 2026. Learn how to reduce idle capacity and save significant cloud costs.</description>
+            <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Gateway API Ingress Migration Kubernetes 2026</title>
             <link>https://devops.gheware.com/blog/posts/gateway-api-ingress-migration-kubernetes-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agents Managing Kubernetes: From Autonomous Healing to Self-Governing Clusters in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agents-autonomous-kubernetes-operations-2026.html</guid>
-            <description>AI agents now operate as 24/7 junior DevOps engineers inside Kubernetes, diagnosing CrashLoopBackOff, OOMKilled and network failures and remediating them. Guide to 5 production patterns, KAITO setup and a 7-step governance framework.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 04 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
