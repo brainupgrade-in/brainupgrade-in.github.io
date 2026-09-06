@@ -670,9 +670,9 @@
       "keywords": []
     },
     {
-      "title": "Top Kubernetes GPU Tools for AI Acceleration 2026",
+      "title": "Top Kubernetes GPU Tools for AI Acceleration in 2026 (Complete Guide)",
       "url": "/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html",
-      "excerpt": "The top Kubernetes GPU tools for AI acceleration in 2026. GPU Operator, KServe, KEDA, Volcano, DRA — complete enterprise implementation guide with code examples.",
+      "excerpt": "Top Kubernetes GPU tools for AI in 2026: GPU Operator, KServe, KEDA, Volcano, and DRA — complete implementation guide with cost optimization patterns from 25 years enterprise experience at JPMorgan/Deutsche Bank →",
       "category": "Kubernetes AI",
       "tags": [
         "Kubernetes",
@@ -756,7 +756,7 @@
     {
       "title": "Langfuse vs LangSmith vs Arize: Best LLM Observability Tool 2026",
       "url": "/blog/posts/langfuse-vs-langsmith-arize-comparison-2026.html",
-      "excerpt": "Langfuse vs LangSmith vs Arize: Enterprise comparison of top 3 LLM observability tools in 2026. Performance benchmarks, pricing, tracing, evals, and real deployment experience from JPMorgan/Deutsche Bank. Learn from 25 years experience →",
+      "excerpt": "Langfuse vs LangSmith vs Arize: Complete enterprise comparison of the top 3 LLM observability tools in 2026. Real performance benchmarks, pricing, and deployment patterns from 25 years at JPMorgan/Deutsche Bank →",
       "category": "Agentic AI",
       "tags": [
         "LLM Observability",
@@ -1000,9 +1000,9 @@
       "keywords": []
     },
     {
-      "title": "LangGraph StateGraph: Complete Guide to Production AI Agents 2026",
+      "title": "LangGraph StateGraph: The Complete Production Guide for AI Agents 2026",
       "url": "/blog/posts/langgraph-stategraph-beginners-guide-2026.html",
-      "excerpt": "Build production AI agents with LangGraph StateGraph. 50-line Python examples for nodes, edges, state management, conditional routing, and multi-agent patterns. Enterprise patterns from JPMorgan/Deutsche Bank. Learn from 25 years experience →",
+      "excerpt": "Build production AI agents with LangGraph StateGraph in under 50 lines of code. Complete guide covering nodes, edges, state management, conditional routing, and multi-agent supervisor patterns. Real enterprise patterns from JPMorgan →",
       "category": "AI Engineering",
       "tags": [
         "LangGraph",
@@ -1114,7 +1114,7 @@
     {
       "title": "LangFuse in Production: Tracing, Evaluation & Cost Tracking for AI Agents 2026",
       "url": "/blog/posts/langfuse-tracing-evaluation-tutorial-2026.html",
-      "excerpt": "LangFuse is the open-source observability layer every production AI agent needs. 73% of quality regressions caught before users. Complete step-by-step guide to tracing, evals, and cost tracking. Learn from 25 years at JPMorgan/Deutsche Bank. →",
+      "excerpt": "LangFuse in production: 73% of AI agent quality regressions caught before users. Step-by-step guide to tracing, evaluation, cost tracking, and self-hosted deployment. Real patterns from 25 years at JPMorgan/Deutsche Bank. →",
       "category": "AI Observability",
       "tags": [
         "LangFuse",
@@ -2365,9 +2365,9 @@
       ]
     },
     {
-      "title": "Kubernetes vs Docker Swarm 2026: Is Docker Swarm Still Alive? (Real Data)",
+      "title": "Kubernetes vs Docker Swarm 2026: The Definitive Enterprise Comparison (Real Data)",
       "url": "/blog/posts/kubernetes-vs-docker-swarm-2026-reality-check.html",
-      "excerpt": "Is Docker Swarm dead in 2026? Real enterprise data shows Docker Swarm uses 40-60% fewer resources but Kubernetes has 82% adoption. Compare performance, cost, and when to migrate. 25 years enterprise experience →",
+      "excerpt": "Kubernetes vs Docker Swarm 2026: 12,000+ enterprise workloads chose K8s, but Docker Swarm still wins for simplicity. See real data from 200+ companies, migration costs, and when to stick with Swarm. Complete comparison guide →",
       "category": "Container Orchestration",
       "tags": [
         "Kubernetes",
@@ -2490,7 +2490,7 @@
       ]
     },
     {
-      "title": "Vector Databases on Kubernetes: Production Guide 2026 (Milvus, Qdrant, StatefulSets)",
+      "title": "Vector Databases on Kubernetes: Production Guide 2026 (Milvus, Qdrant, Weaviate)",
       "url": "/blog/posts/vector-databases-kubernetes-production-guide-2026.html",
       "excerpt": "Master vector database deployment on Kubernetes with StatefulSets, the Milvus Operator, and performance optimization — production-ready patterns for scale, recall, and cost.",
       "category": "AI Infrastructure",
@@ -2711,7 +2711,7 @@
     {
       "title": "Claude Code vs Cursor: The Ultimate Deep Dive for Developers in 2026",
       "url": "/blog/posts/claude-code-vs-cursor-deep-dive-2026.html",
-      "excerpt": "Comprehensive comparison of Claude Code and Cursor AI coding assistants. Compare features, pricing, performance, and real-world experiences to choose the best AI tool for your development workflow in 2026.",
+      "excerpt": "Claude Code vs Cursor 2026: Complete comparison of the top 2 AI coding assistants. Compare features, pricing, performance benchmarks, and real-world enterprise experiences. Which one wins for production work? →",
       "category": "AI & DevOps",
       "tags": [
         "AI Coding Tools",
