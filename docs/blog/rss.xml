@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kyverno vs OPA Gatekeeper: Policy Engine Choice 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kyverno-vs-opa-gatekeeper-policy-engine-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kyverno-vs-opa-gatekeeper-policy-engine-2026.html</guid>
+            <description>Compare Kyverno and OPA Gatekeeper for Kubernetes policy enforcement. Learn when to use each engine based on performance, complexity, and enterprise scale.</description>
+            <category>Kubernetes Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Karpenter Node Autoscaling: Saving Enterprise Cloud Costs</title>
             <link>https://devops.gheware.com/blog/posts/karpenter-node-autoscaling-kubernetes-2026.html</link>
@@ -452,15 +461,6 @@
             <category>DevOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>MCP Is the USB-C of AI: Why Every Enterprise Needs It</title>
-            <link>https://devops.gheware.com/blog/posts/mcp-is-the-usb-c-of-ai-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/mcp-is-the-usb-c-of-ai-2026.html</guid>
-            <description>Model Context Protocol (MCP) is the USB-C for AI agents. Learn how enterprises deploy it for secure, governed tool integration — production patterns from JPMorgan-grade deployments.</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kyverno vs OPA Gatekeeper: Policy Engine Choice 2026",
+      "url": "/blog/posts/kyverno-vs-opa-gatekeeper-policy-engine-2026.html",
+      "excerpt": "Compare Kyverno and OPA Gatekeeper for Kubernetes policy enforcement. Learn when to use each engine based on performance, complexity, and enterprise scale.",
+      "category": "Kubernetes Security",
+      "tags": [
+        "kyverno opa gatekeeper policy engine 2026",
+        "kubernetes security",
+        "admission control"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 7, 2026",
+      "_isoDate": "2026-09-07",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Karpenter Node Autoscaling: Saving Enterprise Cloud Costs",
       "url": "/blog/posts/karpenter-node-autoscaling-kubernetes-2026.html",
       "excerpt": "A hands-on guide to configuring Karpenter for node autoscaling in Kubernetes 2026. Learn how to reduce idle capacity and save significant cloud costs.",
