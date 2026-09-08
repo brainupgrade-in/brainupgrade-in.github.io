@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "etcd Backup Disaster Recovery Kubernetes 2026",
+      "url": "/blog/posts/etcd-backup-disaster-recovery-kubernetes-2026.html",
+      "excerpt": "Master etcd backup and disaster recovery for Kubernetes in 2026. Learn compaction strategies, snapshot procedures, and failover protocols for production clusters.",
+      "category": "Kubernetes",
+      "tags": [
+        "etcd backup disaster recovery kubernetes 2026",
+        "etcd snapshot",
+        "kubernetes control plane"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 8, 2026",
+      "_isoDate": "2026-09-08",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Kyverno vs OPA Gatekeeper: Policy Engine Choice 2026",
       "url": "/blog/posts/kyverno-vs-opa-gatekeeper-policy-engine-2026.html",
       "excerpt": "Compare Kyverno and OPA Gatekeeper for Kubernetes policy enforcement. Learn when to use each engine based on performance, complexity, and enterprise scale.",
