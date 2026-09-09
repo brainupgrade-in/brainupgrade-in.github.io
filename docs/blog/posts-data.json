@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Zero-Downtime Kubernetes Upgrades: A Runbook That Works",
+      "url": "/blog/posts/kubernetes-upgrade-zero-downtime-runbook-2026.html",
+      "excerpt": "The Reality of Zero-Downtime Upgrades I’ve spent 25 years in the trenches of high-frequency trading and enterprise banking infrastructure. In those environments, ",
+      "category": "Kubernetes",
+      "tags": [
+        "kubernetes upgrade zero downtime runbook 2026",
+        "kubernetes upgrade strategy",
+        "rolling update"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 9, 2026",
+      "_isoDate": "2026-09-09",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "etcd Backup Disaster Recovery Kubernetes 2026",
       "url": "/blog/posts/etcd-backup-disaster-recovery-kubernetes-2026.html",
       "excerpt": "Master etcd backup and disaster recovery for Kubernetes in 2026. Learn compaction strategies, snapshot procedures, and failover protocols for production clusters.",
