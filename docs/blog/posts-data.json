@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes Multi-Tenancy Isolation Patterns 2026",
+      "url": "/blog/posts/kubernetes-multi-tenancy-isolation-patterns-2026.html",
+      "excerpt": "Deep dive into Kubernetes multi-tenancy isolation patterns for 2026. Learn namespace, network, and resource strategies for secure enterprise clusters.",
+      "category": "Kubernetes",
+      "tags": [
+        "kubernetes multi-tenancy isolation patterns 2026",
+        "kubernetes isolation",
+        "namespace security"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 12, 2026",
+      "_isoDate": "2026-09-12",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Zero-Downtime Kubernetes Upgrades: A Runbook That Works",
       "url": "/blog/posts/kubernetes-upgrade-zero-downtime-runbook-2026.html",
       "excerpt": "The Reality of Zero-Downtime Upgrades I’ve spent 25 years in the trenches of high-frequency trading and enterprise banking infrastructure. In those environments, ",

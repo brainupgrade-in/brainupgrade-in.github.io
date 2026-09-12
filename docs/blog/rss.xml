@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 09 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 12 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Kubernetes Multi-Tenancy Isolation Patterns 2026</title>
+            <link>https://devops.gheware.com/blog/posts/kubernetes-multi-tenancy-isolation-patterns-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/kubernetes-multi-tenancy-isolation-patterns-2026.html</guid>
+            <description>Deep dive into Kubernetes multi-tenancy isolation patterns for 2026. Learn namespace, network, and resource strategies for secure enterprise clusters.</description>
+            <category>Kubernetes</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 12 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Zero-Downtime Kubernetes Upgrades: A Runbook That Works</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-upgrade-zero-downtime-runbook-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI-Native Observability</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agent Guardrails 2026: Enterprise Safety Patterns &amp; Implementation Guide</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-guardrails-production-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-guardrails-production-enterprise-2026.html</guid>
-            <description>Learn production-ready AI agent guardrails from JPMorgan experience. Practical patterns for safety, security, and reliable autonomous operations. Includes code templates and risk frameworks. Learn from 25 years enterprise experience →</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 09 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
