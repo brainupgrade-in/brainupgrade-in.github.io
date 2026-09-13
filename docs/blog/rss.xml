@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 12 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 13 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Cilium as Service Mesh: eBPF in Production 2026</title>
+            <link>https://devops.gheware.com/blog/posts/cilium-ebpf-service-mesh-networking-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/cilium-ebpf-service-mesh-networking-2026.html</guid>
+            <description>A practitioner’s guide to deploying Cilium as a service mesh in 2026. We discuss eBPF-based L7 policies, performance gains, and migration strategies from legacy sidecars.</description>
+            <category>Networking</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Kubernetes Multi-Tenancy Isolation Patterns 2026</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-multi-tenancy-isolation-patterns-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI-Native Kubernetes Observability 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-native-kubernetes-observability-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-native-kubernetes-observability-2026.html</guid>
-            <description>Kubernetes clusters waste 5% GPU on average. Learn how Metoro, Robusta KRR, and AI-native observability tools detect and fix resource waste automatically</description>
-            <category>AI-Native Observability</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

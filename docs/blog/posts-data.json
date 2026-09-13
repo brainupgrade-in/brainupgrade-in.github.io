@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Cilium as Service Mesh: eBPF in Production 2026",
+      "url": "/blog/posts/cilium-ebpf-service-mesh-networking-2026.html",
+      "excerpt": "A practitioner’s guide to deploying Cilium as a service mesh in 2026. We discuss eBPF-based L7 policies, performance gains, and migration strategies from legacy sidecars.",
+      "category": "Networking",
+      "tags": [
+        "cilium ebpf service mesh networking 2026",
+        "eBPF networking",
+        "Kubernetes service mesh"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 13, 2026",
+      "_isoDate": "2026-09-13",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes Multi-Tenancy Isolation Patterns 2026",
       "url": "/blog/posts/kubernetes-multi-tenancy-isolation-patterns-2026.html",
       "excerpt": "Deep dive into Kubernetes multi-tenancy isolation patterns for 2026. Learn namespace, network, and resource strategies for secure enterprise clusters.",
