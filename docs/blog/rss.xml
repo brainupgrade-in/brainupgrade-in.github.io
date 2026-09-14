@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 13 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 14 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Istio Ambient Mesh: The 2026 Production Reality</title>
+            <link>https://devops.gheware.com/blog/posts/istio-ambient-mesh-sidecarless-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/istio-ambient-mesh-sidecarless-2026.html</guid>
+            <description>The End of the Sidecar Era? For the better part of the last decade, the standard narrative in enterprise Kubernetes has been inescapable: you want service mesh capabil</description>
+            <category>Networking</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 14 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Cilium as Service Mesh: eBPF in Production 2026</title>
             <link>https://devops.gheware.com/blog/posts/cilium-ebpf-service-mesh-networking-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI &amp; Kubernetes</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agents on Kubernetes: Enterprise Production Patterns 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agents-kubernetes-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agents-kubernetes-enterprise-2026.html</guid>
-            <description>Deploy AI agents on Kubernetes with enterprise patterns for security, scaling, and cost optimization. Production guide from 25+ years experience.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 11 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

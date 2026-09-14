@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Istio Ambient Mesh: The 2026 Production Reality",
+      "url": "/blog/posts/istio-ambient-mesh-sidecarless-2026.html",
+      "excerpt": "The End of the Sidecar Era? For the better part of the last decade, the standard narrative in enterprise Kubernetes has been inescapable: you want service mesh capabil",
+      "category": "Networking",
+      "tags": [
+        "istio ambient mesh sidecarless 2026",
+        "service mesh",
+        "kubernetes networking"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 14, 2026",
+      "_isoDate": "2026-09-14",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Cilium as Service Mesh: eBPF in Production 2026",
       "url": "/blog/posts/cilium-ebpf-service-mesh-networking-2026.html",
       "excerpt": "A practitioner’s guide to deploying Cilium as a service mesh in 2026. We discuss eBPF-based L7 policies, performance gains, and migration strategies from legacy sidecars.",
