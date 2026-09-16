@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Argo Rollouts: Canary Without Fear in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/argo-rollouts-progressive-delivery-canary-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/argo-rollouts-progressive-delivery-canary-2026.html</guid>
+            <description>Master Argo Rollouts progressive delivery canary 2026 strategies. Learn hands-on configuration for Kubernetes, traffic shifting, and automated rollback patterns.</description>
+            <category>GitOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Writing Kubernetes Operators: CRDs, Reconcilers, and Pitfalls</title>
             <link>https://devops.gheware.com/blog/posts/writing-kubernetes-operator-crd-reconciler-development-2026.html</link>
@@ -452,15 +461,6 @@
             <category>DevOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Top Kubernetes GPU Tools for AI Acceleration in 2026 (Complete Guide)</title>
-            <link>https://devops.gheware.com/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/top-kubernetes-integrations-ai-gpu-acceleration-2026.html</guid>
-            <description>Top Kubernetes GPU tools for AI in 2026: GPU Operator, KServe, KEDA, Volcano, and DRA — complete implementation guide with cost optimization patterns from 25 years enterprise experience at JPMorgan/Deutsche Bank →</description>
-            <category>Kubernetes AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

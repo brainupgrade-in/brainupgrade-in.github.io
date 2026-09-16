@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Argo Rollouts: Canary Without Fear in 2026",
+      "url": "/blog/posts/argo-rollouts-progressive-delivery-canary-2026.html",
+      "excerpt": "Master Argo Rollouts progressive delivery canary 2026 strategies. Learn hands-on configuration for Kubernetes, traffic shifting, and automated rollback patterns.",
+      "category": "GitOps",
+      "tags": [
+        "argo rollouts progressive delivery canary 2026",
+        "kubernetes deployment",
+        "gitops"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 16, 2026",
+      "_isoDate": "2026-09-16",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Writing Kubernetes Operators: CRDs, Reconcilers, and Pitfalls",
       "url": "/blog/posts/writing-kubernetes-operator-crd-reconciler-development-2026.html",
       "excerpt": "Build production-grade Kubernetes operators with proper CRD design and reconciler loops. Avoid common pitfalls in state management and error handling.",
