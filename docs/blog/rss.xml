@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 16 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>ESO + Vault: Kubernetes Secrets in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/external-secrets-operator-vault-kubernetes-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/external-secrets-operator-vault-kubernetes-2026.html</guid>
+            <description>Learn how to implement External Secrets Operator with Vault in Kubernetes. A practitioner’s guide to securing secrets in 2026 with zero-trust patterns.</description>
+            <category>Kubernetes Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Argo Rollouts: Canary Without Fear in 2026</title>
             <link>https://devops.gheware.com/blog/posts/argo-rollouts-progressive-delivery-canary-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Agentic AI</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Multi-Agent AI in Kubernetes: 2026 Enterprise Guide</title>
-            <link>https://devops.gheware.com/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/multi-agent-ai-systems-kubernetes-enterprise-2026.html</guid>
-            <description>Deploy production multi-agent AI systems on Kubernetes with LangGraph, A2A, and MCP. Enterprise patterns, scaling, and safety for 2026.</description>
-            <category>DevOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "ESO + Vault: Kubernetes Secrets in 2026",
+      "url": "/blog/posts/external-secrets-operator-vault-kubernetes-2026.html",
+      "excerpt": "Learn how to implement External Secrets Operator with Vault in Kubernetes. A practitioner’s guide to securing secrets in 2026 with zero-trust patterns.",
+      "category": "Kubernetes Security",
+      "tags": [
+        "external secrets operator vault kubernetes 2026",
+        "kubernetes secrets",
+        "hashicorp vault"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 17, 2026",
+      "_isoDate": "2026-09-17",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Argo Rollouts: Canary Without Fear in 2026",
       "url": "/blog/posts/argo-rollouts-progressive-delivery-canary-2026.html",
       "excerpt": "Master Argo Rollouts progressive delivery canary 2026 strategies. Learn hands-on configuration for Kubernetes, traffic shifting, and automated rollback patterns.",
