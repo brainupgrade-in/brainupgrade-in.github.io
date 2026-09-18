@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Sigstore SLSA Supply Chain Attestation 2026",
+      "url": "/blog/posts/sigstore-slsa-supply-chain-attestation-2026.html",
+      "excerpt": "Learn how to implement Sigstore and SLSA supply chain attestation in 2026. A hands-on guide for securing CI/CD pipelines with Rekor and Fulcio.",
+      "category": "Security",
+      "tags": [
+        "sigstore slsa supply chain attestation 2026",
+        "sigstore",
+        "slsa"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 18, 2026",
+      "_isoDate": "2026-09-18",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "ESO + Vault: Kubernetes Secrets in 2026",
       "url": "/blog/posts/external-secrets-operator-vault-kubernetes-2026.html",
       "excerpt": "Learn how to implement External Secrets Operator with Vault in Kubernetes. A practitioner’s guide to securing secrets in 2026 with zero-trust patterns.",
