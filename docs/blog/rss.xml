@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 18 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Terraform Drift Detection: Governing Infrastructure at Scale</title>
+            <link>https://devops.gheware.com/blog/posts/terraform-drift-detection-governance-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/terraform-drift-detection-governance-2026.html</guid>
+            <description>Master Terraform drift detection governance in 2026. Learn automated reconciliation, policy-as-code, and AI-driven remediation for enterprise infrastructure stability.</description>
+            <category>IaC</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Sigstore SLSA Supply Chain Attestation 2026</title>
             <link>https://devops.gheware.com/blog/posts/sigstore-slsa-supply-chain-attestation-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AIOps Self-Healing Kubernetes: Guide 2026</title>
-            <link>https://devops.gheware.com/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/aiops-self-healing-kubernetes-enterprise-2026.html</guid>
-            <description>AIOps self-healing Kubernetes platforms detect, diagnose, and auto-remediate failures. Enterprise patterns, code examples, and implementation roadmap.</description>
-            <category>AIOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

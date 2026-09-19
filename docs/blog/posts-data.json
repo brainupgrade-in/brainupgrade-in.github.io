@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Terraform Drift Detection: Governing Infrastructure at Scale",
+      "url": "/blog/posts/terraform-drift-detection-governance-2026.html",
+      "excerpt": "Master Terraform drift detection governance in 2026. Learn automated reconciliation, policy-as-code, and AI-driven remediation for enterprise infrastructure stability.",
+      "category": "IaC",
+      "tags": [
+        "terraform drift detection governance 2026",
+        "terraform drift",
+        "infrastructure drift"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 19, 2026",
+      "_isoDate": "2026-09-19",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Sigstore SLSA Supply Chain Attestation 2026",
       "url": "/blog/posts/sigstore-slsa-supply-chain-attestation-2026.html",
       "excerpt": "Learn how to implement Sigstore and SLSA supply chain attestation in 2026. A hands-on guide for securing CI/CD pipelines with Rekor and Fulcio.",
