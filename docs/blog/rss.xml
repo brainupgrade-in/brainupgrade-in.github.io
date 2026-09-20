@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 19 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 20 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>DORA Metrics Engineering Performance 2026</title>
+            <link>https://devops.gheware.com/blog/posts/dora-metrics-engineering-performance-2026-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/dora-metrics-engineering-performance-2026-2026.html</guid>
+            <description>DORA metrics engineering performance 2026: A no-nonsense guide to measuring deployment frequency and lead time without corrupting your engineering culture.</description>
+            <category>DevOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Terraform Drift Detection: Governing Infrastructure at Scale</title>
             <link>https://devops.gheware.com/blog/posts/terraform-drift-detection-governance-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Kubernetes</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Cutting LLM Inference Costs in the Enterprise: 2026 Playbook for 40% Reduction</title>
-            <link>https://devops.gheware.com/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html</guid>
-            <description>Reduce LLM inference costs by 40%+ with model quantization, intelligent routing, and observability. Proven enterprise techniques for lower latency and spend. Learn from 25 years experience →</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

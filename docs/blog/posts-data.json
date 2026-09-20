@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "DORA Metrics Engineering Performance 2026",
+      "url": "/blog/posts/dora-metrics-engineering-performance-2026-2026.html",
+      "excerpt": "DORA metrics engineering performance 2026: A no-nonsense guide to measuring deployment frequency and lead time without corrupting your engineering culture.",
+      "category": "DevOps",
+      "tags": [
+        "dora metrics engineering performance 2026",
+        "dora metrics",
+        "devops"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 20, 2026",
+      "_isoDate": "2026-09-20",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Terraform Drift Detection: Governing Infrastructure at Scale",
       "url": "/blog/posts/terraform-drift-detection-governance-2026.html",
       "excerpt": "Master Terraform drift detection governance in 2026. Learn automated reconciliation, policy-as-code, and AI-driven remediation for enterprise infrastructure stability.",
