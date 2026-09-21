@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Feature Flags: The 2026 Deployment Strategy",
+      "url": "/blog/posts/feature-flags-deployment-strategy-2026.html",
+      "excerpt": "Stop treating feature flags as code toggles. Start treating them as a strategic deployment layer for enterprise risk mitigation.",
+      "category": "DevOps",
+      "tags": [
+        "feature flags deployment strategy 2026",
+        "enterprise devops",
+        "kubernetes deployment"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 21, 2026",
+      "_isoDate": "2026-09-21",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "DORA Metrics Engineering Performance 2026",
       "url": "/blog/posts/dora-metrics-engineering-performance-2026-2026.html",
       "excerpt": "DORA metrics engineering performance 2026: A no-nonsense guide to measuring deployment frequency and lead time without corrupting your engineering culture.",
