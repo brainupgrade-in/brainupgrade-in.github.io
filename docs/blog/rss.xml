@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 21 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Monorepo CI That Scales: Caching, Affected Graphs, Remote Builds</title>
+            <link>https://devops.gheware.com/blog/posts/monorepo-ci-caching-remote-build-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/monorepo-ci-caching-remote-build-2026.html</guid>
+            <description>Stop wasting cycles on full monorepo rebuilds. Learn to implement remote build caching, affected graphs, and distributed execution for enterprise CI/CD in 2026.</description>
+            <category>CI/CD</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Feature Flags: The 2026 Deployment Strategy</title>
             <link>https://devops.gheware.com/blog/posts/feature-flags-deployment-strategy-2026.html</link>
@@ -452,15 +461,6 @@
             <category>GitOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Thu, 16 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>AI Agent Observability in Production 2026</title>
-            <link>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/ai-agent-observability-production-2026.html</guid>
-            <description>Learn how to implement robust AI agent observability in production for 2026. Covers tracing, debugging, and governance for autonomous systems in enterprise DevOps.</description>
-            <category>AI Observability</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

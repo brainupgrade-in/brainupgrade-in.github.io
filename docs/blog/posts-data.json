@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Monorepo CI That Scales: Caching, Affected Graphs, Remote Builds",
+      "url": "/blog/posts/monorepo-ci-caching-remote-build-2026.html",
+      "excerpt": "Stop wasting cycles on full monorepo rebuilds. Learn to implement remote build caching, affected graphs, and distributed execution for enterprise CI/CD in 2026.",
+      "category": "CI/CD",
+      "tags": [
+        "monorepo ci caching remote build 2026",
+        "monorepo architecture",
+        "remote caching"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 22, 2026",
+      "_isoDate": "2026-09-22",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Feature Flags: The 2026 Deployment Strategy",
       "url": "/blog/posts/feature-flags-deployment-strategy-2026.html",
       "excerpt": "Stop treating feature flags as code toggles. Start treating them as a strategic deployment layer for enterprise risk mitigation.",
