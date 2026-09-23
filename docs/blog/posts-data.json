@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Killing Flaky Tests: Detection, Quarantine, and Root Cause",
+      "url": "/blog/posts/killing-flaky-tests-detection-quarantine-root-cause-2026.html",
+      "excerpt": "Learn how to detect, quarantine, and root-cause flaky tests in modern CI/CD pipelines. Reduce noise and improve deployment confidence with these engineering patterns.",
+      "category": "CI/CD",
+      "tags": [
+        "flaky test detection quarantine ci 2026",
+        "CI stability",
+        "test reliability"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 23, 2026",
+      "_isoDate": "2026-09-23",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Monorepo CI That Scales: Caching, Affected Graphs, Remote Builds",
       "url": "/blog/posts/monorepo-ci-caching-remote-build-2026.html",
       "excerpt": "Stop wasting cycles on full monorepo rebuilds. Learn to implement remote build caching, affected graphs, and distributed execution for enterprise CI/CD in 2026.",
