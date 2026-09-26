@@ -29,9 +29,9 @@ jobs:
         # burnt down.
         run: python3 docs/scripts/regenerate_indexes.py
 
-      - name: Fail if posts-data.json / sitemap.xml / rss.xml drifted
+      - name: Fail if posts-data.json / sitemap.xml / rss.xml / blog/index.html drifted
         run: |
-          if ! git diff --exit-code docs/blog/posts-data.json docs/sitemap.xml docs/blog/rss.xml; then
+          if ! git diff --exit-code docs/blog/posts-data.json docs/sitemap.xml docs/blog/rss.xml docs/blog/index.html; then
             echo ""
             echo "::error::Indexes are out of sync with docs/blog/posts/*.html."
             echo "::error::Run docs/scripts/regenerate_indexes.py locally, commit the result, and push again."
