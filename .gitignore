@@ -39,3 +39,6 @@ __pycache__/
 **/credentials*.json
 **/token*.pickle
 **/*secret*
+# ...but a blog slug containing "secret" is content, not a credential
+!docs/blog/posts/*.html
+!docs/blog/assets/images/*
