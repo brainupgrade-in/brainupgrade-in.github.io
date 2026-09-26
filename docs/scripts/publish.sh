@@ -72,7 +72,7 @@ if ! git rebase origin/main >/dev/null 2>&1; then
     DERIVED_ONLY=1
     for f in $CONFLICTS; do
         case "$f" in
-            docs/blog/posts-data.json|docs/blog/rss.xml|docs/sitemap.xml) ;;
+            docs/blog/posts-data.json|docs/blog/rss.xml|docs/sitemap.xml|docs/blog/index.html) ;;
             *) DERIVED_ONLY=0 ;;
         esac
     done
@@ -100,8 +100,8 @@ fi
 # (observed: a stale item kept at the tail of rss.xml). Re-derive from the
 # posts on disk so the committed indexes always match the corpus exactly.
 $PYTHON docs/scripts/regenerate_indexes.py >/dev/null
-if ! git diff --quiet -- docs/blog/posts-data.json docs/blog/rss.xml docs/sitemap.xml; then
-    git add docs/blog/posts-data.json docs/blog/rss.xml docs/sitemap.xml
+if ! git diff --quiet -- docs/blog/posts-data.json docs/blog/rss.xml docs/sitemap.xml docs/blog/index.html; then
+    git add docs/blog/posts-data.json docs/blog/rss.xml docs/sitemap.xml docs/blog/index.html
     git commit -q --amend --no-edit
     echo "   ↻ Re-derived indexes after rebase."
 fi

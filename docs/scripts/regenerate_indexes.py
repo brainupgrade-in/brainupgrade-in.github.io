@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Regenerate posts-data.json, rss.xml, and the blog portion of sitemap.xml
-from docs/blog/posts/*.html.
+"""Regenerate posts-data.json, rss.xml, the blog portion of sitemap.xml and
+the default post grid in blog/index.html from docs/blog/posts/*.html.
 
 The HTML files are the source of truth; every index artefact is derived. Run
 this after creating/editing/deleting any post. scripts/publish.sh does this
@@ -21,6 +21,9 @@ POSTS_DIR = DOCS / "blog/posts"
 JSON_PATH = DOCS / "blog/posts-data.json"
 RSS_PATH = DOCS / "blog/rss.xml"
 SITEMAP_PATH = DOCS / "sitemap.xml"
+INDEX_PATH = DOCS / "blog/index.html"
+GRID_BEGIN = "<!-- POSTS:BEGIN"
+GRID_END = "<!-- POSTS:END -->"
 
 BASE = "https://devops.gheware.com"
 SKIP_STEMS = {"_template"}
@@ -343,11 +346,56 @@ def lint_post(slug, html):
     return issues
 
 
+def html_escape(s):
+    return (s.replace("&", "&amp;").replace("<", "&lt;")
+             .replace(">", "&gt;").replace('"', "&quot;"))
+
+
+def regenerate_blog_grid(entries):
+    """Write every post into blog/index.html's default grid as static HTML.
+
+    The grid used to be hand-maintained and stopped at 2026-04-20; the JS on
+    the page only uses posts-data.json for search results, so every later
+    post was unreachable from /blog/ for readers AND for Googlebot, which
+    had no crawlable link to any post published after it last read the
+    sitemap. Deriving the grid here keeps it in step with the sitemap.
+    """
+    html = INDEX_PATH.read_text(encoding="utf-8")
+    b = html.find(GRID_BEGIN)
+    e = html.find(GRID_END)
+    if b < 0 or e < b:
+        print("WARN: blog/index.html has no POSTS:BEGIN/END markers — grid not regenerated", file=sys.stderr)
+        return
+    b = html.index("-->", b) + len("-->")
+    cards = []
+    for p in entries:
+        cards.append(
+            "\n                <article class=\"blog-card\">\n"
+            "                    <div class=\"blog-card-content\">\n"
+            f"                        <span class=\"blog-card-category\">{html_escape(p['category'])}</span>\n"
+            "                        <h2 class=\"blog-card-title\">\n"
+            f"                            <a href=\"{p['url']}\">{html_escape(p['title'])}</a>\n"
+            "                        </h2>\n"
+            f"                        <p class=\"blog-card-excerpt\">{html_escape(p['excerpt'])}</p>\n"
+            "                        <div class=\"blog-card-meta\">\n"
+            f"                            <span>{html_escape(p.get('author') or 'Rajesh Gheware')}</span>\n"
+            f"                            <span>{html_escape(p.get('publishedDate') or p['_isoDate'])}</span>\n"
+            f"                            <span>{html_escape(p['readTime'])}</span>\n"
+            "                        </div>\n"
+            "                    </div>\n"
+            "                </article>\n"
+        )
+    new = html[:b] + "".join(cards) + "                " + html[e:]
+    if new != html:
+        INDEX_PATH.write_text(new, encoding="utf-8")
+
+
 def main():
     strict = "--strict" in sys.argv
     entries = regenerate_posts_json()
     regenerate_rss(entries)
     regenerate_sitemap(entries)
+    regenerate_blog_grid(entries)
 
     # Validation
     required = ("title", "url", "excerpt", "category", "_isoDate", "readTime")
@@ -379,6 +427,7 @@ def main():
     print(f"posts-data.json: {len(entries)} entries (newest {entries[0]['_isoDate']})")
     print(f"rss.xml        : {min(50, len(entries))} items")
     print(f"sitemap.xml    : {len(entries)} post URLs + static pages")
+    print(f"blog/index.html: {len(entries)} cards in the default grid")
 
     # ---------------- SEO/AEO lint pass ----------------
     lint_totals = {"post_issues": 0, "issues": 0}
