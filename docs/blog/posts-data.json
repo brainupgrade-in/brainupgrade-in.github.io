@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "SLOs and Error Budgets: Making Reliability a Product Decision",
+      "url": "/blog/posts/slo-error-budget-reliability-2026.html",
+      "excerpt": "Discover how SLOs and error budgets drive product decisions in 2026. Learn to balance feature velocity with reliability constraints using concrete SRE practices.",
+      "category": "SRE",
+      "tags": [
+        "slo error budget reliability 2026",
+        "sre practices",
+        "error budget policy"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 26, 2026",
+      "_isoDate": "2026-09-26",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Killing Flaky Tests: Detection, Quarantine, and Root Cause",
       "url": "/blog/posts/killing-flaky-tests-detection-quarantine-root-cause-2026.html",
       "excerpt": "Learn how to detect, quarantine, and root-cause flaky tests in modern CI/CD pipelines. Reduce noise and improve deployment confidence with these engineering patterns.",

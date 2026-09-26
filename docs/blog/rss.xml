@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 23 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 26 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>SLOs and Error Budgets: Making Reliability a Product Decision</title>
+            <link>https://devops.gheware.com/blog/posts/slo-error-budget-reliability-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/slo-error-budget-reliability-2026.html</guid>
+            <description>Discover how SLOs and error budgets drive product decisions in 2026. Learn to balance feature velocity with reliability constraints using concrete SRE practices.</description>
+            <category>SRE</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Killing Flaky Tests: Detection, Quarantine, and Root Cause</title>
             <link>https://devops.gheware.com/blog/posts/killing-flaky-tests-detection-quarantine-root-cause-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI SRE</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Scaling RAG Pipelines: Lessons from the Trenches 2026</title>
-            <link>https://devops.gheware.com/blog/posts/scaling-rag-pipeline-production-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/scaling-rag-pipeline-production-2026.html</guid>
-            <description>Scaling a RAG pipeline to production in 2026 requires mastering vector indexing, caching, and observability. Learn concrete strategies from enterprise deployments.</description>
-            <category>RAG</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 19 Jul 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
