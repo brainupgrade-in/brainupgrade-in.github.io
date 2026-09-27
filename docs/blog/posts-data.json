@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Scaling Prometheus: Thanos vs Mimir for 2026",
+      "url": "/blog/posts/scaling-prometheus-thanos-mimir-2026.html",
+      "excerpt": "Compare Thanos and Mimir for Prometheus scaling. Learn architectural differences, operational overhead, and when to choose which solution for 2026.",
+      "category": "Observability",
+      "tags": [
+        "prometheus scaling thanos mimir 2026",
+        "long-term storage",
+        "prometheus federation"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 27, 2026",
+      "_isoDate": "2026-09-27",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "SLOs and Error Budgets: Making Reliability a Product Decision",
       "url": "/blog/posts/slo-error-budget-reliability-2026.html",
       "excerpt": "Discover how SLOs and error budgets drive product decisions in 2026. Learn to balance feature velocity with reliability constraints using concrete SRE practices.",

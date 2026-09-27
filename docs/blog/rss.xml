@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 26 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 27 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Scaling Prometheus: Thanos vs Mimir for 2026</title>
+            <link>https://devops.gheware.com/blog/posts/scaling-prometheus-thanos-mimir-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/scaling-prometheus-thanos-mimir-2026.html</guid>
+            <description>Compare Thanos and Mimir for Prometheus scaling. Learn architectural differences, operational overhead, and when to choose which solution for 2026.</description>
+            <category>Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>SLOs and Error Budgets: Making Reliability a Product Decision</title>
             <link>https://devops.gheware.com/blog/posts/slo-error-budget-reliability-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Platform Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 22 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agentic AI SRE: The Autonomous Response Engine in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agentic-ai-incident-response-sre-2026.html</guid>
-            <description>Explore how agentic AI transforms SRE workflows in 2026. From automated root cause analysis to self-healing Kubernetes clusters, learn the practical engineering behind.</description>
-            <category>AI SRE</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
