@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Who Pays When Your AI Agent Goes Rogue? The 2026 Liability Answer",
+      "url": "/blog/posts/who-pays-when-ai-agent-goes-rogue-2026.html",
+      "excerpt": "Your AI agent sent a message, moved money or placed a trade you never approved. Who is liable? Courts, SEBI and RBI already answer. The real gap is proof.",
+      "category": "DevOps &amp; AI",
+      "tags": [
+        "AI agent liability",
+        "AI governance",
+        "Agentic AI"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 28, 2026",
+      "_isoDate": "2026-09-28",
+      "readTime": "18 min read",
+      "keywords": []
+    },
+    {
       "title": "Scaling Prometheus: Thanos vs Mimir for 2026",
       "url": "/blog/posts/scaling-prometheus-thanos-mimir-2026.html",
       "excerpt": "Compare Thanos and Mimir for Prometheus scaling. Learn architectural differences, operational overhead, and when to choose which solution for 2026.",
