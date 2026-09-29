@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Opentelemetry Collector Pipeline Design 2026: Production-Ready",
+      "url": "/blog/posts/opentelemetry-collector-pipeline-design-2026.html",
+      "excerpt": "Master the opentelemetry collector pipeline design 2026 with practical patterns for high-throughput telemetry, security, and AI agent integration.",
+      "category": "Observability",
+      "tags": [
+        "opentelemetry collector pipeline design 2026",
+        "opentelemetry",
+        "observability"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 29, 2026",
+      "_isoDate": "2026-09-29",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Who Pays When Your AI Agent Goes Rogue? The 2026 Liability Answer",
       "url": "/blog/posts/who-pays-when-ai-agent-goes-rogue-2026.html",
       "excerpt": "Your AI agent sent a message, moved money or placed a trade you never approved. Who is liable? Courts, SEBI and RBI already answer. The real gap is proof.",

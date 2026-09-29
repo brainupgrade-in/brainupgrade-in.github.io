@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 29 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Opentelemetry Collector Pipeline Design 2026: Production-Ready</title>
+            <link>https://devops.gheware.com/blog/posts/opentelemetry-collector-pipeline-design-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/opentelemetry-collector-pipeline-design-2026.html</guid>
+            <description>Master the opentelemetry collector pipeline design 2026 with practical patterns for high-throughput telemetry, security, and AI agent integration.</description>
+            <category>Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 29 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Who Pays When Your AI Agent Goes Rogue? The 2026 Liability Answer</title>
             <link>https://devops.gheware.com/blog/posts/who-pays-when-ai-agent-goes-rogue-2026.html</link>
@@ -452,15 +461,6 @@
             <category>Kubernetes Security</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Internal Developer Platform Backstage 2026: Beyond the Catalog</title>
-            <link>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/internal-developer-platform-backstage-2026-2026.html</guid>
-            <description>How to build an internal developer platform that reduces cognitive load and accelerates delivery, not just another UI layer.</description>
-            <category>Platform Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
