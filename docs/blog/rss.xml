@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 29 Sep 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 30 Sep 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Cutting Observability Spend: Cardinality, Sampling, and</title>
+            <link>https://devops.gheware.com/blog/posts/cutting-observability-cost-cardinality-sampling-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/cutting-observability-cost-cardinality-sampling-2026.html</guid>
+            <description>A practitioner’s guide to reducing observability costs through cardinality management, smart sampling, and retention policies in complex enterprise environments.</description>
+            <category>Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Opentelemetry Collector Pipeline Design 2026: Production-Ready</title>
             <link>https://devops.gheware.com/blog/posts/opentelemetry-collector-pipeline-design-2026.html</link>
@@ -452,15 +461,6 @@
             <category>MLOps</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Kubernetes Security Hardening: A CKS-Grade Checklist for 2026</title>
-            <link>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-2.html</link>
-            <guid>https://devops.gheware.com/blog/posts/kubernetes-security-hardening-cks-2026-2.html</guid>
-            <description>Master Kubernetes security hardening with this CKS-grade checklist for 2026. Learn concrete steps for cluster hardening, network policies, and runtime security.</description>
-            <category>Kubernetes Security</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

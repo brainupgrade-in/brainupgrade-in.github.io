@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Cutting Observability Spend: Cardinality, Sampling, and",
+      "url": "/blog/posts/cutting-observability-cost-cardinality-sampling-2026.html",
+      "excerpt": "A practitioner’s guide to reducing observability costs through cardinality management, smart sampling, and retention policies in complex enterprise environments.",
+      "category": "Observability",
+      "tags": [
+        "observability cost cardinality sampling 2026",
+        "observability costs",
+        "high cardinality"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "September 30, 2026",
+      "_isoDate": "2026-09-30",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Opentelemetry Collector Pipeline Design 2026: Production-Ready",
       "url": "/blog/posts/opentelemetry-collector-pipeline-design-2026.html",
       "excerpt": "Master the opentelemetry collector pipeline design 2026 with practical patterns for high-throughput telemetry, security, and AI agent integration.",
