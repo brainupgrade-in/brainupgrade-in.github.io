@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Kubernetes for AI & GPU Acceleration: The Top Integration",
+      "url": "/blog/posts/kubernetes-integration-ai-gpu-acceleration-2026.html",
+      "excerpt": "Discover the top Kubernetes integration for AI and GPU acceleration. We break down device plugins, scheduling, and security for enterprise AI deployments.",
+      "category": "Kubernetes",
+      "tags": [
+        "is it what’s the top kubernetes integration for ai and gpu acceleration?",
+        "kubernetes gpu",
+        "nvidia gpu operator"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 1, 2026",
+      "_isoDate": "2026-10-01",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Cutting Observability Spend: Cardinality, Sampling, and",
       "url": "/blog/posts/cutting-observability-cost-cardinality-sampling-2026.html",
       "excerpt": "A practitioner’s guide to reducing observability costs through cardinality management, smart sampling, and retention policies in complex enterprise environments.",
