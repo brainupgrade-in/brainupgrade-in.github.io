@@ -79,6 +79,12 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>https://devops.gheware.com/cheatsheet/</loc>
+        <lastmod>2026-09-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</loc>
         <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
