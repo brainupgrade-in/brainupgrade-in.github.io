@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Thu, 01 Oct 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Gretxp: Regex for Kubernetes Debugging</title>
+            <link>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</guid>
+            <description>Discover why standard grep fails in Kubernetes logs. Learn how gretxp handles multi-line YAML and JSON, reducing MTTR by up to 40% in production.</description>
+            <category>DevOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Kubernetes for AI &amp; GPU Acceleration: The Top Integration</title>
             <link>https://devops.gheware.com/blog/posts/kubernetes-integration-ai-gpu-acceleration-2026.html</link>
@@ -452,15 +461,6 @@
             <category>SRE</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Kubernetes Capacity Planning: Forecasting for 2026</title>
-            <link>https://devops.gheware.com/blog/posts/capacity-planning-kubernetes-forecasting-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/capacity-planning-kubernetes-forecasting-2026.html</guid>
-            <description>Master capacity planning for Kubernetes in 2026. Learn to forecast resource demand, prevent OOM kills, and optimize costs with data-driven SRE practices.</description>
-            <category>SRE</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sat, 08 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
