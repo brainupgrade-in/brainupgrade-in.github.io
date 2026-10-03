@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Continuous Profiling in Production: Finding the Real Hot Path",
+      "url": "/blog/posts/continuous-profiling-pyroscope-production-2026.html",
+      "excerpt": "Learn how to implement continuous profiling with Pyroscope in production Kubernetes clusters. Capture real hot paths, reduce noise, and optimize resource usage in 2026.",
+      "category": "Observability",
+      "tags": [
+        "continuous profiling pyroscope production 2026",
+        "kubernetes observability",
+        "go profiling"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 3, 2026",
+      "_isoDate": "2026-10-03",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Gretxp: Regex for Kubernetes Debugging",
       "url": "/blog/posts/gretxp-kubernetes-debugging-2026.html",
       "excerpt": "Discover why standard grep fails in Kubernetes logs. Learn how gretxp handles multi-line YAML and JSON, reducing MTTR by up to 40% in production.",

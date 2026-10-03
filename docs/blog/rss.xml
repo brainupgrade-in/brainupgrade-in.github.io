@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 02 Oct 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 03 Oct 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Continuous Profiling in Production: Finding the Real Hot Path</title>
+            <link>https://devops.gheware.com/blog/posts/continuous-profiling-pyroscope-production-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/continuous-profiling-pyroscope-production-2026.html</guid>
+            <description>Learn how to implement continuous profiling with Pyroscope in production Kubernetes clusters. Capture real hot paths, reduce noise, and optimize resource usage in 2026.</description>
+            <category>Observability</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Gretxp: Regex for Kubernetes Debugging</title>
             <link>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Runbook Automation Self-Service Ops 2026</title>
-            <link>https://devops.gheware.com/blog/posts/runbook-automation-self-service-operations-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/runbook-automation-self-service-operations-2026.html</guid>
-            <description>Learn how runbook automation self-service operations 2026 strategies leverage AI agents to reduce MTTR and empower developers.</description>
-            <category>SRE</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 09 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
