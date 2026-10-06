@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "On-Call Burnout: A 2026 Design Playbook",
+      "url": "/blog/posts/on-call-rotation-design-burnout-2026.html",
+      "excerpt": "I’ve spent 25 years in the trenches at institutions like JPMorgan Chase and Morgan Stanley. I’ve seen codebases scale, architectures migrate from monoliths to microser",
+      "category": "SRE",
+      "tags": [
+        "on-call rotation design burnout 2026",
+        "sre burnout",
+        "kubernetes on-call"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 6, 2026",
+      "_isoDate": "2026-10-06",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Continuous Profiling in Production: Finding the Real Hot Path",
       "url": "/blog/posts/continuous-profiling-pyroscope-production-2026.html",
       "excerpt": "Learn how to implement continuous profiling with Pyroscope in production Kubernetes clusters. Capture real hot paths, reduce noise, and optimize resource usage in 2026.",
