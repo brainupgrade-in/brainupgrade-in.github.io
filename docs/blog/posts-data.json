@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Prioritising Technical Debt With Evidence, Not Vibes",
+      "url": "/blog/posts/technical-debt-prioritization-evidence-2026.html",
+      "excerpt": "Stop guessing which code to refactor. I show how to use real production metrics to prioritize technical debt with evidence, not vibes, in enterprise environments.",
+      "category": "Engineering",
+      "tags": [
+        "technical debt prioritization evidence 2026",
+        "technical debt",
+        "engineering metrics"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 7, 2026",
+      "_isoDate": "2026-10-07",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "On-Call Burnout: A 2026 Design Playbook",
       "url": "/blog/posts/on-call-rotation-design-burnout-2026.html",
       "excerpt": "I’ve spent 25 years in the trenches at institutions like JPMorgan Chase and Morgan Stanley. I’ve seen codebases scale, architectures migrate from monoliths to microser",

@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 06 Oct 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 07 Oct 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Prioritising Technical Debt With Evidence, Not Vibes</title>
+            <link>https://devops.gheware.com/blog/posts/technical-debt-prioritization-evidence-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/technical-debt-prioritization-evidence-2026.html</guid>
+            <description>Stop guessing which code to refactor. I show how to use real production metrics to prioritize technical debt with evidence, not vibes, in enterprise environments.</description>
+            <category>Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>On-Call Burnout: A 2026 Design Playbook</title>
             <link>https://devops.gheware.com/blog/posts/on-call-rotation-design-burnout-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Infrastructure</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 12 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>GPU Sharing on Kubernetes: MIG, Time-Slicing, and When to Use</title>
-            <link>https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/gpu-sharing-mig-time-slicing-kubernetes-2026.html</guid>
-            <description>Learn how to implement GPU sharing on Kubernetes using MIG and time-slicing. Compare performance, isolation, and use cases for enterprise AI infrastructure.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 11 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
