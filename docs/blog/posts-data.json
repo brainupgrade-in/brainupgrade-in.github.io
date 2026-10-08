@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Automating SOC 2 Evidence Collection on Kubernetes 2026",
+      "url": "/blog/posts/automating-soc2-evidence-collection-kubernetes-2026.html",
+      "excerpt": "Stop chasing PDFs. Learn how to automate SOC 2 evidence collection on Kubernetes using declarative policies and agentic AI for 2026 compliance.",
+      "category": "Compliance",
+      "tags": [
+        "soc2 compliance automation kubernetes 2026",
+        "SOC 2",
+        "Kubernetes"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 8, 2026",
+      "_isoDate": "2026-10-08",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Prioritising Technical Debt With Evidence, Not Vibes",
       "url": "/blog/posts/technical-debt-prioritization-evidence-2026.html",
       "excerpt": "Stop guessing which code to refactor. I show how to use real production metrics to prioritize technical debt with evidence, not vibes, in enterprise environments.",
