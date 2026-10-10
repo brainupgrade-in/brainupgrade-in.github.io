@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Chaos Engineering on Kubernetes Without Breaking Trust",
+      "url": "/blog/posts/chaos-engineering-kubernetes-resilience-2026.html",
+      "excerpt": "A pragmatic guide to building resilience in enterprise Kubernetes clusters through controlled failure and observability.",
+      "category": "SRE",
+      "tags": [
+        "chaos engineering kubernetes resilience 2026",
+        "kubernetes chaos testing",
+        "sre best practices"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 10, 2026",
+      "_isoDate": "2026-10-10",
+      "readTime": "7 min read",
+      "keywords": []
+    },
+    {
       "title": "Automating SOC 2 Evidence Collection on Kubernetes 2026",
       "url": "/blog/posts/automating-soc2-evidence-collection-kubernetes-2026.html",
       "excerpt": "Stop chasing PDFs. Learn how to automate SOC 2 evidence collection on Kubernetes using declarative policies and agentic AI for 2026 compliance.",
