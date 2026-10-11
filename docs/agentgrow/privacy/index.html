@@ -224,9 +224,9 @@
             Stored in <code>chrome.storage.local</code>, accessible only to the AgentGrow extension on your device.</li>
             <li><strong>Provider configurations:</strong> The API endpoint URL, provider name, and selected model you configure.
             Your API key is stored encrypted (AES-GCM-256) and is never readable in plaintext after entry.</li>
-            <li><strong>Prompt templates:</strong> Any templates you save for reuse.</li>
-            <li><strong>User preferences:</strong> Theme, default context mode, and keyboard shortcuts.
-            Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
+            <li><strong>User preferences:</strong> Your action mode ("ask before acting" or "auto-act") and your last-selected provider and model.</li>
+            <li><strong>Model lists:</strong> The list of models each configured endpoint reports, cached so the model picker opens instantly.</li>
+            <li>All of the above lives in <code>chrome.storage.local</code>. Nothing is synced through your Google account (<code>chrome.storage.sync</code> is not used).</li>
             <li><strong>Google account identity:</strong> If you sign in with Google, we store your name, email, and profile picture
             in <code>chrome.storage.session</code> (browser session only — cleared when you close Chrome).
             This is used solely to verify your identity. It is never sent to any LLM endpoint or Gheware-operated server.</li>
@@ -336,7 +336,7 @@
 
         <h2>13. Changes to This Policy</h2>
         <p>We will post any changes to this Privacy Policy on this page and update the "Last Updated" date above.
-        For material changes, we will provide a notification within the extension.
+        For material changes, we will also call them out in the release notes on GitHub and in the Chrome Web Store listing.
         Continued use of AgentGrow after changes constitutes acceptance of the updated policy.</p>
 
         <h2>14. Contact</h2>

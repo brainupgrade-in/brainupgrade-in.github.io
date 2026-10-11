@@ -1040,19 +1040,17 @@
                 <div class="ag-data-card ag-data-card--local">
                     <h3>✅ Stored Locally Only<br><small style="font-weight:400;font-size:0.85rem">(Your device — never leaves)</small></h3>
                     <ul class="ag-data-list">
-                        <li>✓ Conversation history (up to 100 conversations)</li>
+                        <li>✓ Current conversation</li>
                         <li>✓ API keys (AES-GCM-256 encrypted)</li>
                         <li>✓ Provider configurations (URL, name, model)</li>
-                        <li>✓ Prompt templates</li>
+                        <li>✓ Preferences (action mode, last provider/model)</li>
                     </ul>
                 </div>
 
                 <div class="ag-data-card ag-data-card--sync">
-                    <h3>☁️ Synced via Google Account<br><small style="font-weight:400;font-size:0.85rem">(Non-sensitive preferences only)</small></h3>
+                    <h3>☁️ Synced via Google Account<br><small style="font-weight:400;font-size:0.85rem">(Nothing — sync storage is not used)</small></h3>
                     <ul class="ag-data-list">
-                        <li>✓ Theme (dark/light/system)</li>
-                        <li>✓ Default context mode</li>
-                        <li>✓ Keyboard shortcut overrides</li>
+                        <li style="color:#9ca3af">✗ No preferences</li>
                         <li style="color:#9ca3af">✗ No conversations</li>
                         <li style="color:#9ca3af">✗ No API keys</li>
                         <li style="color:#9ca3af">✗ No page content</li>
@@ -1108,8 +1106,9 @@
                 <ul>
                     <li><strong>Conversation history:</strong> The messages you send and receive within AgentGrow. Stored in <code>chrome.storage.local</code>, which is accessible only to the AgentGrow extension on your device.</li>
                     <li><strong>Provider configurations:</strong> The API endpoint URL, provider name, and selected model you configure. Your API key is stored encrypted (AES-GCM-256) and is never readable in plaintext after entry.</li>
-                    <li><strong>Prompt templates:</strong> Any templates you save for reuse.</li>
-                    <li><strong>User preferences:</strong> Theme, default context mode, and keyboard shortcuts. Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
+                    <li><strong>User preferences:</strong> Your action mode ("ask before acting" or "auto-act") and your last-selected provider and model.</li>
+                    <li><strong>Model lists:</strong> The list of models each configured endpoint reports, cached so the model picker opens instantly.</li>
+                    <li>All of the above lives in <code>chrome.storage.local</code>. Nothing is synced through your Google account (<code>chrome.storage.sync</code> is not used).</li>
                 </ul>
 
                 <h2>3. Information AgentGrow Does NOT Collect</h2>
@@ -1166,7 +1165,7 @@
                 <p>If you have questions about your rights, contact us at <a href="mailto:privacy@gheware.com">privacy@gheware.com</a>.</p>
 
                 <h2>10. Changes to This Policy</h2>
-                <p>We will post any changes to this Privacy Policy on this page and update the "Last Updated" date. For material changes, we will provide a notification within the extension. Continued use of AgentGrow after changes constitutes acceptance of the updated policy.</p>
+                <p>We will post any changes to this Privacy Policy on this page and update the "Last Updated" date. For material changes, we will also call them out in the release notes on GitHub and in the Chrome Web Store listing. Continued use of AgentGrow after changes constitutes acceptance of the updated policy.</p>
 
                 <h2>11. Contact</h2>
                 <p>For privacy-related questions or concerns:</p>
