@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 10 Oct 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 11 Oct 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Blameless Postmortem Incident Process 2026</title>
+            <link>https://devops.gheware.com/blog/posts/blameless-postmortem-incident-process-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/blameless-postmortem-incident-process-2026.html</guid>
+            <description>A practical guide to the blameless postmortem incident process in 2026. Learn how to integrate Agentic AI for root cause analysis without blaming individuals.</description>
+            <category>SRE</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Chaos Engineering on Kubernetes Without Breaking Trust</title>
             <link>https://devops.gheware.com/blog/posts/chaos-engineering-kubernetes-resilience-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Small Language Models On-Prem: When SLMs Beat Frontier APIs</title>
-            <link>https://devops.gheware.com/blog/posts/small-language-models-on-prem-enterprise-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/small-language-models-on-prem-enterprise-2026.html</guid>
-            <description>A practitioner’s guide to deploying Small Language Models on-prem in 2026. Compare latency, cost, and control against frontier APIs. Real Kubernetes patterns included.</description>
-            <category>AI Infrastructure</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 14 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

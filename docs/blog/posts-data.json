@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Blameless Postmortem Incident Process 2026",
+      "url": "/blog/posts/blameless-postmortem-incident-process-2026.html",
+      "excerpt": "A practical guide to the blameless postmortem incident process in 2026. Learn how to integrate Agentic AI for root cause analysis without blaming individuals.",
+      "category": "SRE",
+      "tags": [
+        "blameless postmortem incident process 2026",
+        "SRE incident management",
+        "Agentic AI incident response"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 11, 2026",
+      "_isoDate": "2026-10-11",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Chaos Engineering on Kubernetes Without Breaking Trust",
       "url": "/blog/posts/chaos-engineering-kubernetes-resilience-2026.html",
       "excerpt": "A pragmatic guide to building resilience in enterprise Kubernetes clusters through controlled failure and observability.",
