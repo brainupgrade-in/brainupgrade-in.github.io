@@ -189,11 +189,11 @@
             <h1>Privacy <span>Policy</span></h1>
             <p class="pp-hero-lead">
                 AgentGrow is built on a simple principle: your data belongs to you.
-                Everything stays on your device. We have no servers, no analytics, and no way to read your data.
+                Everything stays on your device except what you send to the LLM you choose. No analytics, no tracking.
             </p>
             <div class="pp-meta">
                 <span><strong>Effective Date:</strong> April 11, 2026</span>
-                <span><strong>Last Updated:</strong> April 11, 2026</span>
+                <span><strong>Last Updated:</strong> October 11, 2026</span>
                 <span><strong>Publisher:</strong> Gheware Technologies</span>
                 <span><strong>Extension:</strong> AgentGrow — AI Browser Automation</span>
             </div>
@@ -205,8 +205,8 @@
 
         <div class="pp-summary">
             <strong>Short version:</strong> AgentGrow stores your data only on your device, encrypted.
-            It sends your messages only to the LLM endpoint you configure.
-            It collects zero analytics, zero telemetry, and has no servers of its own.
+            It sends your messages only to the LLM endpoint you choose — which may be our optional, prepaid
+            Gheware AI endpoint (section 4). It collects zero analytics and zero telemetry.
         </div>
 
         <h2>1. Who We Are</h2>
@@ -229,7 +229,7 @@
             Non-sensitive preferences are synced via your Google account's <code>chrome.storage.sync</code>.</li>
             <li><strong>Google account identity:</strong> If you sign in with Google, we store your name, email, and profile picture
             in <code>chrome.storage.session</code> (browser session only — cleared when you close Chrome).
-            This is used solely to verify your identity. It is never sent to any AgentGrow server.</li>
+            This is used solely to verify your identity. It is never sent to any LLM endpoint or Gheware-operated server.</li>
         </ul>
 
         <h2>3. Page Content Access</h2>
@@ -240,11 +240,26 @@
             <li><strong>Selected text</strong> — when you select text on a page, it is used as context for your chat</li>
         </ul>
         <p><strong>This data is processed entirely on your device</strong> and sent only to the LLM provider you have configured.
-        It is never stored beyond the current chat session, never sent to AgentGrow servers (there are none),
-        and is discarded when you close the chat or the browser.</p>
+        It is never stored beyond the current chat session, never sent to any Gheware-operated server unless you choose
+        the optional Gheware AI provider (section 4), and is discarded when you close the chat or the browser.</p>
+
+        <h2>4. Gheware AI (Optional, Prepaid)</h2>
+        <p>AgentGrow includes an optional <strong>Gheware AI</strong> provider preset — a prepaid LLM endpoint operated by
+        the publisher of AgentGrow. None of the following happens unless you select that preset and enter a Gheware AI key.</p>
+        <ul>
+            <li><strong>Chat requests:</strong> your messages and any page context go to <code>api.gheware-ai.com</code>.
+            The gateway is configured not to store prompt or response content; it records token counts and cost per key for billing.
+            Requests are served by models we host, or — only if that fails — by our inference provider DeepInfra,
+            which processes the request to return a response.</li>
+            <li><strong>Credit balance:</strong> Settings sends your Gheware AI key (and no other provider's key) to
+            <code>tokens.gheware-ai.com</code> to show your remaining credit.</li>
+            <li><strong>Buying credit:</strong> purchases happen on <code>tokens.gheware-ai.com</code> in your browser, never inside the extension.
+            We keep your email address and order record; payments are handled by Cashfree (India, which also receives your phone number)
+            or PayPal (outside India). We never see your card or bank details.</li>
+        </ul>
 
         <h2>5. Information AgentGrow Does NOT Collect</h2>
-        <p>AgentGrow has no servers, no backend, and no analytics infrastructure. We never collect:</p>
+        <p>The extension has no backend and no analytics infrastructure. We never collect:</p>
         <ul>
             <li>Your browsing history or the URLs you visit</li>
             <li>The content of your conversations (beyond local storage on your device)</li>
@@ -277,7 +292,7 @@
         <h2>8. Data Sharing</h2>
         <p>AgentGrow shares data with <strong>one party only</strong>: the LLM API endpoint you configure in Settings.
         When you send a message, that message (and optionally the current page text, if you have enabled context mode)
-        is sent to your configured endpoint.</p>
+        is sent to your configured endpoint. If that endpoint is Gheware AI, section 4 describes what happens.</p>
 
         <div class="warning-box">
             <strong>⚠️ Important:</strong> The privacy practices of your chosen LLM provider (OpenRouter, OpenAI, Groq,
@@ -308,8 +323,9 @@
         If you are under 13, please do not use this extension.</p>
 
         <h2>12. Your Rights (GDPR / CCPA)</h2>
-        <p>Because all data is stored locally on your device and we have no servers, we cannot access your data
-        to fulfil erasure or portability requests through our systems. However:</p>
+        <p>Extension data is stored only on your device, so we cannot access it to fulfil erasure or portability
+        requests. If you bought Gheware AI credit, we hold your email and order record — write to us to access or erase them.
+        For extension data:</p>
         <ul>
             <li><strong>Access:</strong> All data is stored locally on your device in Chrome's extension storage.</li>
             <li><strong>Portability:</strong> Data export functionality is planned for a future release.</li>
