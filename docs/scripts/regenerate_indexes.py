@@ -90,6 +90,17 @@ def is_canonicalised_elsewhere(slug, html):
     return m.group(1).strip() != f"{BASE}/blog/posts/{slug}.html"
 
 
+def is_noindex(url):
+    """True when the post at this posts-data url carries a robots noindex.
+
+    A retired post stays live and listed on the blog, but submitting it in
+    sitemap.xml while telling Google not to index it sends a mixed signal.
+    """
+    html = (POSTS_DIR / url.split("/")[-1]).read_text(encoding="utf-8")
+    m = re.search(r'<meta\s+name="robots"\s+content="([^"]*)"', html, re.IGNORECASE)
+    return bool(m and "noindex" in m.group(1).lower())
+
+
 def build_entry(slug, html, existing=None):
     """Build one posts-data.json entry from post HTML."""
     existing = existing or {}
@@ -278,6 +289,8 @@ def regenerate_sitemap(entries):
     # Build post entries in the same format
     post_blocks = []
     for e in entries:
+        if is_noindex(e["url"]):
+            continue
         post_blocks.append(
             format_block(
                 {
