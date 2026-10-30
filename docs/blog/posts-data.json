@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Structured Output from LLMs: Schemas, Retries, and Validation",
+      "url": "/blog/posts/structured-output-json-schema-llm-2026-2.html",
+      "excerpt": "Master structured output in LLMs using JSON schemas, validation layers, and retry logic. A practical guide for enterprise AI engineers building reliable pipelines.",
+      "category": "AI Engineering",
+      "tags": [
+        "structured output json schema llm 2026",
+        "LLM structured output",
+        "JSON schema validation"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "October 30, 2026",
+      "_isoDate": "2026-10-30",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Kubernetes Cost Optimization Enterprise 2026",
       "url": "/blog/posts/kubernetes-cost-optimization-enterprise-2026-2.html",
       "excerpt": "Learn how to achieve Kubernetes cost optimization enterprise-wide in 2026. Practical strategies for right-sizing, spot instances, and AI agents to reduce spend by 40%.",
