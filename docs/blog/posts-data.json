@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Cargo vs Jenkins: The 2026 Enterprise Verdict",
+      "url": "/blog/posts/cargo-vs-jenkins-2026.html",
+      "excerpt": "A deep dive into cargo vs jenkins for enterprise DevOps. We analyze performance, security, and migration paths from Java-based CI to Rust-native tooling in 2026.",
+      "category": "GitOps",
+      "tags": [
+        "cargo vs jenkins",
+        "devops automation",
+        "rust ci/cd"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 1, 2026",
+      "_isoDate": "2026-11-01",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Structured Output from LLMs: Schemas, Retries, and Validation",
       "url": "/blog/posts/structured-output-json-schema-llm-2026-2.html",
       "excerpt": "Master structured output in LLMs using JSON schemas, validation layers, and retry logic. A practical guide for enterprise AI engineers building reliable pipelines.",

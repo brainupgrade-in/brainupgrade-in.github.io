@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 30 Oct 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Cargo vs Jenkins: The 2026 Enterprise Verdict</title>
+            <link>https://devops.gheware.com/blog/posts/cargo-vs-jenkins-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/cargo-vs-jenkins-2026.html</guid>
+            <description>A deep dive into cargo vs jenkins for enterprise DevOps. We analyze performance, security, and migration paths from Java-based CI to Rust-native tooling in 2026.</description>
+            <category>GitOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Structured Output from LLMs: Schemas, Retries, and Validation</title>
             <link>https://devops.gheware.com/blog/posts/structured-output-json-schema-llm-2026-2.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agent Tool Calls Fail — Fix Reliability in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agent-tool-calling-reliability-failure-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agent-tool-calling-reliability-failure-2026.html</guid>
-            <description>The Illusion of Determinism In 2026, we still see teams treating Large Language Model (LLM) tool calling as a deterministic API call. It isn’t. It is a probabilistic g</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
