@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "ArgoCD vs Postman: The DevOps Reality Check",
+      "url": "/blog/posts/argocd-vs-postman-2026.html",
+      "excerpt": "A practitioner’s guide to ArgoCD and Postman. Learn why comparing them is a category error, and how to integrate them for robust CI/CD pipelines.",
+      "category": "GitOps",
+      "tags": [
+        "argocd vs postman",
+        "gitops",
+        "api testing"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 2, 2026",
+      "_isoDate": "2026-11-02",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Cargo vs Jenkins: The 2026 Enterprise Verdict",
       "url": "/blog/posts/cargo-vs-jenkins-2026.html",
       "excerpt": "A deep dive into cargo vs jenkins for enterprise DevOps. We analyze performance, security, and migration paths from Java-based CI to Rust-native tooling in 2026.",

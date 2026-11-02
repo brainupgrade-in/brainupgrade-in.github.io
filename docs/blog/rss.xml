@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Sun, 01 Nov 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 02 Nov 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>ArgoCD vs Postman: The DevOps Reality Check</title>
+            <link>https://devops.gheware.com/blog/posts/argocd-vs-postman-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/argocd-vs-postman-2026.html</guid>
+            <description>A practitioner’s guide to ArgoCD and Postman. Learn why comparing them is a category error, and how to integrate them for robust CI/CD pipelines.</description>
+            <category>GitOps</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>Cargo vs Jenkins: The 2026 Enterprise Verdict</title>
             <link>https://devops.gheware.com/blog/posts/cargo-vs-jenkins-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Regression Testing LLMs: The 2026 Eval Harness</title>
-            <link>https://devops.gheware.com/blog/posts/llm-eval-harness-regression-testing-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/llm-eval-harness-regression-testing-2026.html</guid>
-            <description>The Illusion of Static Evaluation I spent 25 years building robust CI/CD pipelines for transactional systems at JPMorgan Chase and Morgan Stanley. In those systems, a</description>
-            <category>AI Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
