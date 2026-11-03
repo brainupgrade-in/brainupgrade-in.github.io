@@ -1,54 +1,6 @@
 {
   "posts": [
     {
-      "title": "Scala vs ArgoCD: A Dangerous Comparison",
-      "url": "/blog/posts/scala-vs-argocd-2026.html",
-      "excerpt": "Stop mixing languages with tools. I break down why Scala vs ArgoCD is a false equivalence, then show the real trade-offs for enterprise Kubernetes delivery.",
-      "category": "GitOps",
-      "tags": [
-        "scala vs argocd",
-        "argocd",
-        "scala"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "November 3, 2026",
-      "_isoDate": "2026-11-03",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "ArgoCD vs Postman: The DevOps Reality Check",
-      "url": "/blog/posts/argocd-vs-postman-2026.html",
-      "excerpt": "A practitioner’s guide to ArgoCD and Postman. Learn why comparing them is a category error, and how to integrate them for robust CI/CD pipelines.",
-      "category": "GitOps",
-      "tags": [
-        "argocd vs postman",
-        "gitops",
-        "api testing"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "November 2, 2026",
-      "_isoDate": "2026-11-02",
-      "readTime": "6 min read",
-      "keywords": []
-    },
-    {
-      "title": "Cargo vs Jenkins: The 2026 Enterprise Verdict",
-      "url": "/blog/posts/cargo-vs-jenkins-2026.html",
-      "excerpt": "A deep dive into cargo vs jenkins for enterprise DevOps. We analyze performance, security, and migration paths from Java-based CI to Rust-native tooling in 2026.",
-      "category": "GitOps",
-      "tags": [
-        "cargo vs jenkins",
-        "devops automation",
-        "rust ci/cd"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "November 1, 2026",
-      "_isoDate": "2026-11-01",
-      "readTime": "5 min read",
-      "keywords": []
-    },
-    {
       "title": "Structured Output from LLMs: Schemas, Retries, and Validation",
       "url": "/blog/posts/structured-output-json-schema-llm-2026-2.html",
       "excerpt": "Master structured output in LLMs using JSON schemas, validation layers, and retry logic. A practical guide for enterprise AI engineers building reliable pipelines.",
@@ -174,22 +126,6 @@
       "publishedDate": "October 3, 2026",
       "_isoDate": "2026-10-03",
       "readTime": "7 min read",
-      "keywords": []
-    },
-    {
-      "title": "Gretxp: Regex for Kubernetes Debugging",
-      "url": "/blog/posts/gretxp-kubernetes-debugging-2026.html",
-      "excerpt": "Discover why standard grep fails in Kubernetes logs. Learn how gretxp handles multi-line YAML and JSON, reducing MTTR by up to 40% in production.",
-      "category": "DevOps",
-      "tags": [
-        "gretxp",
-        "kubernetes debugging",
-        "log analysis"
-      ],
-      "author": "Rajesh Gheware",
-      "publishedDate": "October 2, 2026",
-      "_isoDate": "2026-10-02",
-      "readTime": "5 min read",
       "keywords": []
     },
     {

@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://devops.gheware.com/</loc>
-        <lastmod>2026-11-03</lastmod>
+        <lastmod>2026-10-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://devops.gheware.com/blog/</loc>
-        <lastmod>2026-11-03</lastmod>
+        <lastmod>2026-10-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
@@ -85,24 +85,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://devops.gheware.com/blog/posts/scala-vs-argocd-2026.html</loc>
-        <lastmod>2026-11-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/argocd-vs-postman-2026.html</loc>
-        <lastmod>2026-11-02</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/cargo-vs-jenkins-2026.html</loc>
-        <lastmod>2026-11-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://devops.gheware.com/blog/posts/structured-output-json-schema-llm-2026-2.html</loc>
         <lastmod>2026-10-30</lastmod>
         <changefreq>monthly</changefreq>
@@ -147,12 +129,6 @@
     <url>
         <loc>https://devops.gheware.com/blog/posts/continuous-profiling-pyroscope-production-2026.html</loc>
         <lastmod>2026-10-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</loc>
-        <lastmod>2026-10-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

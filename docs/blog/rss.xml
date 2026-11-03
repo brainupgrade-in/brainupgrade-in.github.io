@@ -5,40 +5,13 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 03 Nov 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 30 Oct 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
-        <item>
-            <title>Scala vs ArgoCD: A Dangerous Comparison</title>
-            <link>https://devops.gheware.com/blog/posts/scala-vs-argocd-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/scala-vs-argocd-2026.html</guid>
-            <description>Stop mixing languages with tools. I break down why Scala vs ArgoCD is a false equivalence, then show the real trade-offs for enterprise Kubernetes delivery.</description>
-            <category>GitOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 03 Nov 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>ArgoCD vs Postman: The DevOps Reality Check</title>
-            <link>https://devops.gheware.com/blog/posts/argocd-vs-postman-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/argocd-vs-postman-2026.html</guid>
-            <description>A practitioner’s guide to ArgoCD and Postman. Learn why comparing them is a category error, and how to integrate them for robust CI/CD pipelines.</description>
-            <category>GitOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 02 Nov 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Cargo vs Jenkins: The 2026 Enterprise Verdict</title>
-            <link>https://devops.gheware.com/blog/posts/cargo-vs-jenkins-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/cargo-vs-jenkins-2026.html</guid>
-            <description>A deep dive into cargo vs jenkins for enterprise DevOps. We analyze performance, security, and migration paths from Java-based CI to Rust-native tooling in 2026.</description>
-            <category>GitOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
-        </item>
         <item>
             <title>Structured Output from LLMs: Schemas, Retries, and Validation</title>
             <link>https://devops.gheware.com/blog/posts/structured-output-json-schema-llm-2026-2.html</link>
@@ -110,15 +83,6 @@
             <category>Observability</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Sat, 03 Oct 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Gretxp: Regex for Kubernetes Debugging</title>
-            <link>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/gretxp-kubernetes-debugging-2026.html</guid>
-            <description>Discover why standard grep fails in Kubernetes logs. Learn how gretxp handles multi-line YAML and JSON, reducing MTTR by up to 40% in production.</description>
-            <category>DevOps</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
         </item>
         <item>
             <title>Kubernetes for AI &amp; GPU Acceleration: The Top Integration</title>
@@ -461,6 +425,42 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Fine-Tuning vs RAG: The 2026 Decision Matrix</title>
+            <link>https://devops.gheware.com/blog/posts/fine-tuning-versus-rag-decision-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/fine-tuning-versus-rag-decision-2026.html</guid>
+            <description>A senior engineer’s guide to the fine-tuning versus rag decision 2026. Concrete criteria for latency, cost, and data sensitivity in production AI systems.</description>
+            <category>AI Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Regression Testing LLMs: The 2026 Eval Harness</title>
+            <link>https://devops.gheware.com/blog/posts/llm-eval-harness-regression-testing-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/llm-eval-harness-regression-testing-2026.html</guid>
+            <description>The Illusion of Static Evaluation I spent 25 years building robust CI/CD pipelines for transactional systems at JPMorgan Chase and Morgan Stanley. In those systems, a</description>
+            <category>AI Engineering</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Agent Tool Calls Fail — Fix Reliability in 2026</title>
+            <link>https://devops.gheware.com/blog/posts/agent-tool-calling-reliability-failure-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agent-tool-calling-reliability-failure-2026.html</guid>
+            <description>The Illusion of Determinism In 2026, we still see teams treating Large Language Model (LLM) tool calling as a deterministic API call. It isn’t. It is a probabilistic g</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
+        </item>
+        <item>
+            <title>Agent Memory Architectures: Beyond Stuffing the Context Window</title>
+            <link>https://devops.gheware.com/blog/posts/agent-memory-architecture-long-term-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/agent-memory-architecture-long-term-2026.html</guid>
+            <description>Learn how to build robust agent memory architectures for long-term retention. Discover vector stores, episodic recall, and governance patterns for enterprise AI in 2026.</description>
+            <category>Agentic AI</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>
