@@ -15,6 +15,36 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$REPO_DIR"
 
+# ─── Held drafts (publish hold, #130) ────────────────────────────────────────
+# With Dev's publish hold on, a gate-passed post waits UNTRACKED in this tree
+# for owner approval. `git add -A` below would ship it, and regenerate_indexes.py
+# would list it in the index/sitemap/rss, so every held draft and its assets are
+# moved aside for this run and restored on exit. publish-approved-blog.py names
+# the one slug the owner approved in PUBLISH_APPROVED_SLUG. No held-approvals dir
+# (any clone but the agent's) = no-op.
+HELD_DIR="$HOME/.openclaw/workspace/blog-held/approvals"
+if [ -d "$HELD_DIR" ]; then
+    ASIDE="$HOME/.openclaw/workspace/blog-held/aside"
+    mkdir -p "$ASIDE"
+    trap 'for a in "$ASIDE"/*; do [ -e "$a" ] || continue; o="$REPO_DIR/$(basename "$a" | sed "s#__#/#g")"; mkdir -p "$(dirname "$o")"; mv "$a" "$o"; done' EXIT
+    HELD_SLUGS="$(cat "$HELD_DIR"/* 2>/dev/null | sort -u)"
+    while IFS= read -r f; do
+        [ -n "$f" ] || continue
+        b="$(basename "$f")"
+        for slug in $HELD_SLUGS; do
+            [ "$slug" = "${PUBLISH_APPROVED_SLUG:-}" ] && continue
+            case "$f" in
+                docs/blog/posts/*)  [ "$b" = "$slug.html" ] || continue ;;
+                docs/blog/assets/*) case "$b" in "$slug"-*|"$slug".*) ;; *) continue ;; esac ;;
+                *) continue ;;
+            esac
+            mv "$f" "$ASIDE/$(printf '%s' "$f" | sed 's#/#__#g')"
+            echo "⏸  held for owner approval, left out of this publish: $f"
+            break
+        done
+    done < <(git ls-files --others --exclude-standard -- docs/blog/posts docs/blog/assets)
+fi
+
 PYTHON="${PYTHON:-python3}"
 BLOG_BASE="https://devops.gheware.com/blog"
 
