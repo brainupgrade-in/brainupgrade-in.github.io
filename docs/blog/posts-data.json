@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Scala vs ArgoCD: A Dangerous Comparison",
+      "url": "/blog/posts/scala-vs-argocd-2026.html",
+      "excerpt": "Stop mixing languages with tools. I break down why Scala vs ArgoCD is a false equivalence, then show the real trade-offs for enterprise Kubernetes delivery.",
+      "category": "GitOps",
+      "tags": [
+        "scala vs argocd",
+        "argocd",
+        "scala"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 3, 2026",
+      "_isoDate": "2026-11-03",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "ArgoCD vs Postman: The DevOps Reality Check",
       "url": "/blog/posts/argocd-vs-postman-2026.html",
       "excerpt": "A practitioner’s guide to ArgoCD and Postman. Learn why comparing them is a category error, and how to integrate them for robust CI/CD pipelines.",
