@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TokenOps by Gheware — Measure it. Cap it. Cut it.</title>
+<meta name="description" content="TokenOps is FinOps for LLM tokens: a gateway with one key per person, daily caps, capped Claude sandboxes, a masterclass and a token audit. An estimated 73% fewer tokens a week on a live agent fleet.">
+<link rel="canonical" href="https://devops.gheware.com/tokenops/">
+<meta property="og:title" content="TokenOps by Gheware — Measure it. Cap it. Cut it.">
+<meta property="og:description" content="FinOps for LLM tokens: one metered key per person, daily caps, and a before/after on your own numbers. Book a one-week pilot.">
+<meta property="og:url" content="https://devops.gheware.com/tokenops/">
+<meta property="og:type" content="website">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TRDMMEZ26F"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TRDMMEZ26F');</script>
+<style>
+:root{
+  --bg:#0e1116;--bg-2:#141922;--panel:#1a2029;--panel-2:#222a35;
+  --line:#2f3846;--line-2:#435063;
+  --fg:#e9edf2;--fg-dim:#a6b1c0;--fg-faint:#717f91;
+  --accent:#d98a3d;--accent-2:#6ea8fe;--good:#5fbf8f;--bad:#e2726e;--warn:#e0b34d;--violet:#a78bfa;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"JetBrains Mono","Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;
+  --serif:ui-serif,Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:var(--mono)}
+.dim{color:var(--fg-dim)}.faint{color:var(--fg-faint)}
+.accent{color:var(--accent)}.good{color:var(--good)}.bad{color:var(--bad)}.blue{color:var(--accent-2)}
+
+/* ---------- top nav (landing mode) ---------- */
+.topnav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.5rem;padding:.75rem 2rem;
+  background:rgba(14,17,22,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:1.15rem;color:var(--fg)}
+.logo b{color:var(--accent)}
+.logo small{font-weight:500;color:var(--fg-faint);font-size:.75rem;margin-left:.4rem}
+.topnav nav{display:flex;gap:1.25rem;margin-left:auto;font-size:.9rem}
+.topnav nav a{color:var(--fg-dim)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.1rem;border-radius:8px;font-weight:600;font-size:.95rem;
+  border:1px solid var(--line-2);background:var(--panel);color:var(--fg);cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--accent);text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#14100a}
+.btn.primary:hover{filter:brightness(1.08)}
+
+/* ---------- slides as landing sections ---------- */
+.slide{position:relative;max-width:1180px;margin:0 auto;padding:5rem 2rem;border-bottom:1px solid var(--line)}
+.slide:last-of-type{border-bottom:0}
+.kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+h1{font-size:4.2rem;line-height:1.02;letter-spacing:-.035em;font-weight:800}
+h2{font-size:2.5rem;line-height:1.1;letter-spacing:-.025em;font-weight:750;margin-bottom:1rem}
+h3{font-size:1.15rem;font-weight:700;margin-bottom:.35rem}
+.lede{font-size:1.3rem;color:var(--fg-dim);max-width:46rem;margin-top:1.2rem}
+.sub{color:var(--fg-dim);max-width:52rem;margin-bottom:2rem;font-size:1.05rem}
+.grid{display:grid;gap:1rem}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.35rem}
+.card p{color:var(--fg-dim);font-size:.95rem}
+.card .num{font-family:var(--mono);font-size:.75rem;color:var(--fg-faint);margin-bottom:.4rem}
+.tag{display:inline-block;font-family:var(--mono);font-size:.7rem;padding:.15rem .5rem;border-radius:99px;border:1px solid var(--line-2);color:var(--fg-dim);margin-bottom:.6rem}
+.tag.m{color:var(--good);border-color:rgba(95,191,143,.45)}
+.tag.a{color:var(--accent);border-color:rgba(217,138,61,.5)}
+
+/* hero */
+.hero{padding-top:6rem}
+.hero h1 .c1{color:var(--accent-2)}.hero h1 .c2{color:var(--warn)}.hero h1 .c3{color:var(--good)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.stat{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1rem}
+.stat .v{font-family:var(--mono);font-size:2.4rem;font-weight:700;letter-spacing:-.03em}
+.stat .l{color:var(--fg-dim);font-size:.92rem}
+.cta-row{display:flex;gap:.75rem;margin-top:2.2rem;flex-wrap:wrap}
+
+/* bars */
+.bar{height:2.4rem;border-radius:8px;overflow:hidden;display:flex;background:var(--panel-2);border:1px solid var(--line)}
+.bar span{display:flex;align-items:center;padding:0 .75rem;font-family:var(--mono);font-size:.8rem;white-space:nowrap;color:#0e1116;font-weight:700}
+.bar .in{background:var(--accent-2)}.bar .out{background:var(--accent)}
+.bar .hb{background:var(--bad)}.bar .wk{background:var(--good)}
+.barlabel{display:flex;justify-content:space-between;font-size:.9rem;color:var(--fg-dim);margin:1.4rem 0 .45rem}
+
+/* method */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;counter-reset:s}
+.step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1.5rem 1.35rem 1.35rem}
+.step .big{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.4rem}
+.step ul{list-style:none;color:var(--fg-dim);font-size:.95rem}
+.step li{padding:.3rem 0;border-top:1px dashed var(--line)}
+.step li:first-child{border-top:0}
+.step:nth-child(1) .big{color:var(--accent-2)}.step:nth-child(2) .big{color:var(--warn)}.step:nth-child(3) .big{color:var(--good)}
+
+/* offerings */
+.offer{display:flex;flex-direction:column}
+.offer .who{margin-top:auto;padding-top:.9rem;font-family:var(--mono);font-size:.75rem;color:var(--fg-faint)}
+
+/* gateway diagram */
+.flow{display:grid;grid-template-columns:1fr auto 1.25fr auto 1fr;align-items:center;gap:.9rem}
+.flow .col{display:flex;flex-direction:column;gap:.6rem}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.65rem .85rem;font-size:.9rem}
+.chip b{display:block}
+.chip span{font-family:var(--mono);font-size:.75rem;color:var(--fg-dim)}
+.arrow{color:var(--fg-faint);font-size:1.6rem}
+.gw{background:linear-gradient(180deg,rgba(217,138,61,.12),rgba(217,138,61,.04));border:1px solid rgba(217,138,61,.55);border-radius:14px;padding:1.1rem 1.2rem}
+.gw .t{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;color:var(--accent);margin-bottom:.6rem}
+.gw li{list-style:none;font-family:var(--mono);font-size:.88rem;padding:.2rem 0}
+.gw li::before{content:"✓ ";color:var(--good)}
+.gw li.r::before{content:"▶ ";color:var(--accent)}
+.gw .k{margin-top:.7rem;font-size:.75rem;color:var(--fg-faint);font-family:var(--mono)}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1.25fr;gap:1.5rem;align-items:start}
+.ctl{margin-bottom:1.15rem}
+.ctl label{display:flex;justify-content:space-between;font-size:.92rem;color:var(--fg-dim);margin-bottom:.35rem}
+.ctl label output{font-family:var(--mono);color:var(--fg)}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.toggle{display:flex;gap:.5rem;flex-wrap:wrap}
+.toggle button{font-family:var(--mono);font-size:.8rem;padding:.35rem .7rem;border-radius:6px;border:1px solid var(--line-2);background:var(--panel-2);color:var(--fg-dim);cursor:pointer}
+.toggle button.on{border-color:var(--accent);color:var(--accent)}
+.result .row{display:flex;justify-content:space-between;align-items:baseline;padding:.55rem 0;border-bottom:1px dashed var(--line)}
+.result .row .v{font-family:var(--mono);font-size:1.35rem;font-weight:700}
+.result .big{font-family:var(--mono);font-size:3rem;font-weight:800;letter-spacing:-.03em;color:var(--good);line-height:1}
+.spark{display:flex;align-items:flex-end;gap:2px;height:7rem;margin:1rem 0 .3rem;border-bottom:1px solid var(--line)}
+.spark i{flex:1;background:var(--accent-2);border-radius:2px 2px 0 0;min-height:1px;opacity:.9}
+.spark i.after{background:var(--good)}
+.legend{display:flex;gap:1rem;font-size:.8rem;color:var(--fg-dim)}
+.legend span::before{content:"";display:inline-block;width:.7rem;height:.7rem;border-radius:2px;margin-right:.35rem;vertical-align:-1px;background:var(--c)}
+
+/* evidence */
+.ev{display:grid;grid-template-columns:1.1fr 1fr;gap:1.5rem;align-items:start}
+.before-after{display:flex;align-items:flex-end;gap:1.25rem;height:15rem;padding:1rem 1rem 0;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.before-after .b{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.before-after .b i{display:block;width:100%;border-radius:8px 8px 0 0}
+.before-after .b .v{font-family:var(--mono);font-weight:700;font-size:1.35rem;margin-bottom:.4rem}
+.before-after .b .l{font-size:.8rem;color:var(--fg-dim);padding:.5rem 0}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+td,th{padding:.55rem .4rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-faint);font-weight:500}
+td.n{font-family:var(--mono);white-space:nowrap;text-align:right}
+.meter{margin-top:1.25rem}
+.meter .track{height:.8rem;background:var(--panel-2);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.meter .fill{height:100%;background:var(--good);border-radius:99px}
+.meter .cap{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.78rem;color:var(--fg-dim);margin-top:.35rem}
+
+/* pilot */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.timeline .d{font-family:var(--mono);font-size:.75rem;color:var(--accent);margin-bottom:.35rem}
+.contact{margin-top:2rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+footer{max-width:1180px;margin:0 auto;padding:2rem;color:var(--fg-faint);font-size:.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+/* ---------- presenter controls ---------- */
+.pcontrols{display:none}
+.notes{display:none}
+html.present{font-size:min(1.25vw,2.2vh)}
+body.present{overflow:hidden}
+body.present .topnav,body.present footer{display:none}
+body.present main{position:fixed;inset:0}
+body.present .slide{position:absolute;inset:0;max-width:none;margin:0;border:0;padding:5.5vh 6vw 7vh;
+  display:flex;flex-direction:column;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s ease}
+body.present .slide.active{opacity:1;visibility:visible}
+body.present .slide > *{width:100%;max-width:min(1500px,150vh);margin-left:auto;margin-right:auto}
+body.present .pcontrols{display:flex;position:fixed;right:1.2vw;bottom:1.6vh;z-index:30;gap:.4rem;align-items:center;
+  font-family:var(--mono);font-size:max(12px,.8em);color:var(--fg-faint)}
+body.present .pcontrols button{background:var(--panel);border:1px solid var(--line-2);color:var(--fg-dim);border-radius:6px;
+  padding:.3rem .65rem;cursor:pointer;font-family:inherit;font-size:inherit}
+body.present .pcontrols button:hover{color:var(--fg);border-color:var(--accent)}
+body.present .progress{position:fixed;left:0;top:0;height:3px;background:var(--accent);z-index:30;transition:width .25s}
+body.present .brandmark{display:block;position:fixed;left:1.4vw;bottom:1.8vh;z-index:30;font-weight:800;font-size:max(12px,.85em);color:var(--fg-faint)}
+body.present .brandmark b{color:var(--accent)}
+.brandmark{display:none}
+body.present.shownotes .notes{display:block;position:fixed;left:50%;transform:translateX(-50%);bottom:5vh;z-index:40;
+  max-width:70vw;background:rgba(26,32,41,.97);border:1px solid var(--accent);border-radius:10px;padding:.8em 1.1em;
+  font-size:max(13px,.9em);color:var(--fg-dim)}
+body.present.shownotes .slide:not(.active) .notes{display:none}
+.help{display:none}
+body.present.showhelp .help{display:block;position:fixed;inset:auto 1.2vw 6vh auto;z-index:40;background:var(--panel);border:1px solid var(--line-2);
+  border-radius:10px;padding:.9em 1.1em;font-family:var(--mono);font-size:max(12px,.8em);color:var(--fg-dim);line-height:1.8}
+.help kbd{display:inline-block;min-width:1.8em;text-align:center;border:1px solid var(--line-2);border-radius:4px;padding:0 .3em;color:var(--fg);margin-right:.4em}
+
+/* ---------- responsive (landing) ---------- */
+@media (max-width:900px){
+  h1{font-size:2.8rem}h2{font-size:1.9rem}
+  .g3,.g4,.steps,.timeline,.stats{grid-template-columns:1fr 1fr}
+  .calc,.ev,.g2{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}.flow .arrow{transform:rotate(90deg);justify-self:center}
+  .topnav nav{display:none}
+  .slide{padding:3.5rem 1.25rem}
+}
+@media (max-width:560px){.g3,.g4,.steps,.timeline,.stats{grid-template-columns:1fr}}
+/* ---------- booking form (landing only) ---------- */
+.book{max-width:1180px;margin:0 auto;padding:5rem 2rem;border-top:1px solid var(--line)}
+.book .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:2.5rem;align-items:start}
+.book ul.pts{list-style:none;color:var(--fg-dim);margin-top:1rem}
+.book ul.pts li{padding:.45rem 0;border-top:1px dashed var(--line)}
+.book ul.pts li::before{content:"✓ ";color:var(--good)}
+form.pilot{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.6rem}
+form.pilot .row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+form.pilot label{display:block;font-size:.85rem;color:var(--fg-dim);margin:.9rem 0 .35rem}
+form.pilot label .req{color:var(--accent)}
+form.pilot input[type=text],form.pilot input[type=email],form.pilot select,form.pilot textarea{width:100%;padding:.65rem .75rem;border-radius:8px;
+  border:1px solid var(--line-2);background:var(--bg-2);color:var(--fg);font:inherit;font-size:.95rem}
+form.pilot textarea{min-height:5.5rem;resize:vertical}
+form.pilot input:focus,form.pilot select:focus,form.pilot textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+form.pilot .checks{display:grid;grid-template-columns:1fr 1fr;gap:.35rem 1rem;font-size:.9rem;color:var(--fg-dim)}
+form.pilot .checks label{display:flex;gap:.5rem;align-items:center;margin:0;font-size:.9rem;color:var(--fg)}
+form.pilot .hint{font-size:.8rem;color:var(--warn);margin-top:.3rem;display:none}
+form.pilot .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form.pilot button{margin-top:1.2rem;width:100%;justify-content:center;padding:.8rem}
+form.pilot .msg{margin-top:1rem;padding:.8rem 1rem;border-radius:8px;font-size:.95rem;display:none}
+form.pilot .msg.ok{display:block;background:rgba(95,191,143,.12);border:1px solid rgba(95,191,143,.5);color:var(--good)}
+form.pilot .msg.err{display:block;background:rgba(226,114,110,.12);border:1px solid rgba(226,114,110,.5);color:var(--bad)}
+form.pilot .fine{font-size:.78rem;color:var(--fg-faint);margin-top:.8rem}
+body.present .book{display:none}
+@media (max-width:900px){.book .wrap,form.pilot .row2,form.pilot .checks{grid-template-columns:1fr}.book{padding:3.5rem 1.25rem}}
+@media print{.topnav,.pcontrols{display:none}.slide{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <a class="logo" href="#top">Token<b>Ops</b><small>by Gheware</small></a>
+  <nav>
+    <a href="#problem">Problem</a>
+    <a href="#method">Method</a>
+    <a href="#offerings">Offerings</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#pilot">Pilot</a>
+    <a href="#book">Book</a>
+  </nav>
+  <a class="btn primary" href="#book" data-cta="nav">Book a pilot</a>
+  <button class="btn" id="presentBtn" title="Present as slides (P)">▶ Present</button>
+</header>
+
+<main id="deck">
+
+<!-- 1 · HERO -->
+<section class="slide hero active" id="top" data-title="TokenOps">
+  <div class="kicker">TokenOps · FinOps for LLM tokens</div>
+  <h1><span class="c1">Measure it.</span><br><span class="c2">Cap it.</span><br><span class="c3">Cut it.</span></h1>
+  <p class="lede">Your AI bill is mostly the model <em>re-reading</em> things, paid for with keys nobody controls. TokenOps gives every person and every agent its own metered key, a daily cap and a dashboard. Then we cut the waste and show you the before and after.</p>
+  <div class="stats">
+    <div class="stat"><div class="v good">−73%</div><div class="l">est. weekly tokens on a live 6-agent fleet<br>(~172M → ~46M run-rate)</div></div>
+    <div class="stat"><div class="v">$4.35</div><div class="l">total spend: 16 users, 3-day workshop,<br>42M tokens, every one metered</div></div>
+    <div class="stat"><div class="v bad">0 / 1,615</div><div class="l">timer-driven agent turns that called a tool,<br>yet they were ⅔ of the tokens</div></div>
+  </div>
+  <div class="cta-row">
+    <a class="btn primary" href="#book" data-cta="hero">Book a one-week pilot</a>
+    <a class="btn" href="#calculator">Try the token calculator</a>
+  </div>
+  <div class="notes">Open with the three numbers. One fleet, one cohort, both measured from our own systems, not vendor marketing.</div>
+</section>
+
+<!-- 2 · PROBLEM -->
+<section class="slide" id="problem" data-title="The problem">
+  <div class="kicker">The problem</div>
+  <h2>AI spend is invisible, uncapped<br>and mostly wasted</h2>
+  <p class="sub">None of these show up on the invoice. The invoice shows only the total.</p>
+  <div class="grid g3">
+    <div class="card"><div class="num">01 · INPUT</div><h3>You pay for re-reading</h3><p>Long chats re-send the whole history every turn. 99% of tokens are input, not output.</p></div>
+    <div class="card"><div class="num">02 · LIMITS</div><h3>Plan limits run out on day 1–2</h3><p>Pro and Max seats are drained by habits, not by work.</p></div>
+    <div class="card"><div class="num">03 · MODEL</div><h3>The biggest model for every task</h3><p>Opus to rename a variable. Nobody routes simple prompts to a cheaper model.</p></div>
+    <div class="card"><div class="num">04 · SCRIPTS</div><h3>The LLM does a script's job</h3><p>Ranking, polling and health checks run through the model, slowly and at full price.</p></div>
+    <div class="card"><div class="num">05 · KEYS</div><h3>Key sprawl, no caps</h3><p>Personal keys are shared, pasted into repos and leaked. There is no limit per person.</p></div>
+    <div class="card"><div class="num">06 · METERS</div><h3>Nobody can say who spent what</h3><p>Shared keys and broken counters. We once saw a panel claim 106B tokens a day; the truth was ~13M.</p></div>
+  </div>
+  <div class="notes">Ask the room: who has run out of their Claude limit this week? Who knows their team's spend per person?</div>
+</section>
+
+<!-- 3 · WHERE TOKENS GO -->
+<section class="slide" id="where" data-title="Where tokens go">
+  <div class="kicker">Where the tokens actually go</div>
+  <h2>The cost is what the model <span class="accent">reads</span>,<br>not what it writes</h2>
+  <p class="sub">Generation feels expensive because you can watch it. Prefill, which is everything the model reads before it answers, is where the money goes.</p>
+
+  <div class="barlabel"><span>A measured workshop day: tokens by direction</span><span class="mono">input 99% · output 1%</span></div>
+  <div class="bar"><span class="in" style="width:99%">INPUT: history, tools, files, memory · 99%</span><span class="out" style="width:1%"></span></div>
+
+  <div class="barlabel"><span>A 6-agent fleet over three weeks: input tokens by cause</span><span class="mono">timer ⅔ · work ⅓</span></div>
+  <div class="bar"><span class="hb" style="width:66%">HEARTBEAT TIMER: re-sent 42–88K tokens per ping</span><span class="wk" style="width:34%">REAL WORK</span></div>
+
+  <div class="grid g3" style="margin-top:2rem">
+    <div class="card"><h3>Knowledge-discovery tax</h3><p>Turns spent finding what the team already knows: reading the repo again, re-asking the same questions.</p></div>
+    <div class="card"><h3>Harness tax</h3><p>Tools, MCP servers, skills and memory files are injected into <em>every</em> call, whether they are used or not.</p></div>
+    <div class="card"><h3>Idle tax</h3><p>Timers and loops that wake the model to say "all fine". 187 of one agent's 346 heartbeat replies were byte-identical.</p></div>
+  </div>
+  <div class="notes">This is the whole talk in one slide: input dominates, so the levers are about what you send, not what you get back.</div>
+</section>
+
+<!-- 4 · METHOD -->
+<section class="slide" id="method" data-title="The method">
+  <div class="kicker">The TokenOps method</div>
+  <h2>Three steps, in this order</h2>
+  <p class="sub">You cannot cut what you cannot see, and you should not cut before there is a cap. So we measure first, then cap, then cut.</p>
+  <div class="steps">
+    <div class="step"><div class="big">1 · Measure</div><ul>
+      <li>One key per person, team, app or agent</li>
+      <li>Every call logged with tokens and cost</li>
+      <li>A dashboard that matches the vendor invoice</li>
+      <li>A ledger: what was read, and why</li></ul></div>
+    <div class="step"><div class="big">2 · Cap</div><ul>
+      <li>Daily budget per key, enforced at the gateway</li>
+      <li>Model allow-list per key</li>
+      <li>Create or revoke a key in seconds</li>
+      <li>No human ever holds a vendor key</li></ul></div>
+    <div class="step"><div class="big">3 · Cut</div><ul>
+      <li>Retire turns that do nothing</li>
+      <li>Move mechanical work to scripts</li>
+      <li>Shrink what every call carries</li>
+      <li>Right model per task; caching and batch</li></ul></div>
+  </div>
+  <div class="notes">Measure → Cap → Cut. The order is the product: capping first makes the cut safe; measuring first makes the cut provable.</div>
+</section>
+
+<!-- 5 · OFFERINGS -->
+<section class="slide" id="offerings" data-title="Offerings">
+  <div class="kicker">What you can buy</div>
+  <h2>Four TokenOps offerings</h2>
+  <p class="sub">Start with any one. Most teams begin with the Masterclass or a one-week Pilot.</p>
+  <div class="grid g4">
+    <div class="card offer"><span class="tag a">PEOPLE</span><h3>TokenOps Masterclass</h3>
+      <p>A 2-hour live session for 200–300 tech leads. It covers why limits run out, Claude Code habits (<span class="mono">/context</span>, <span class="mono">/clear</span>, <span class="mono">/compact</span>), model choice, caching, batch and <span class="mono">max_tokens</span>. Every demo shows its cost as it runs.</p>
+      <div class="who">for: engineering orgs on Claude seats</div></div>
+    <div class="card offer"><span class="tag a">WORKSPACE</span><h3>TokenOps Sandboxes</h3>
+      <p>A capped Claude workspace per person: VS Code and Claude Code in the browser, the lab repo ready, only the models the course needs. Each person has their own key with a daily cap. Nobody signs in to a vendor account.</p>
+      <div class="who">for: workshops, bootcamps, pilots</div></div>
+    <div class="card offer"><span class="tag a">PLATFORM</span><h3>TokenOps Gateway</h3>
+      <p>One gateway, one key per person, one dashboard. Each key has its own budget and model allow-list. An optional router sends simple prompts to a cheaper model automatically. We host it, or we install it in your cloud.</p>
+      <div class="who">for: any team with more than one API key</div></div>
+    <div class="card offer"><span class="tag a">SERVICE</span><h3>TokenOps Audit</h3>
+      <p>A token teardown of your agents or apps: a ledger of every turn, the waste ranked, the fixes applied, and a before/after you can verify. This is the same method that cut our own fleet by 73%.</p>
+      <div class="who">for: teams running agents in production</div></div>
+  </div>
+  <div class="notes">Masterclass changes habits; Sandboxes and Gateway enforce caps; the Audit proves the saving.</div>
+</section>
+
+<!-- 6 · GATEWAY -->
+<section class="slide" id="gateway" data-title="The gateway">
+  <div class="kicker">TokenOps Gateway</div>
+  <h2>Every call passes four checks</h2>
+  <p class="sub">Users get a TokenOps key, never a vendor key. The real keys stay inside the gateway.</p>
+  <div class="flow">
+    <div class="col">
+      <div class="chip"><b>Developer</b><span>key A · $2.50/day</span></div>
+      <div class="chip"><b>Team of 4</b><span>key B · shared cap</span></div>
+      <div class="chip"><b>CI / app</b><span>key C · small model only</span></div>
+      <div class="chip"><b>Agent</b><span>key D · own line on the dashboard</span></div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="gw">
+      <div class="t">TOKENOPS GATEWAY</div>
+      <ul>
+        <li>key valid?</li>
+        <li>model allowed for this key?</li>
+        <li>budget left today?</li>
+        <li>log tokens + cost</li>
+        <li class="r">route to vendor, with failover</li>
+      </ul>
+      <div class="k">🔒 real vendor keys live here, and only here</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="col">
+      <div class="chip"><b>Anthropic</b><span>Claude models</span></div>
+      <div class="chip"><b>Open models</b><span>hosted providers</span></div>
+      <div class="chip"><b>Your own GPUs</b><span>on-prem inference</span></div>
+    </div>
+  </div>
+  <div class="grid g2" style="margin-top:2rem">
+    <div class="card"><h3>Client-hosted</h3><p>We install it in your cloud. Prompts and data never leave your network; you own the dashboard.</p></div>
+    <div class="card"><h3>Provider-hosted</h3><p>We run it. You get keys and a dashboard on day one, with nothing to operate.</p></div>
+  </div>
+  <div class="notes">Point at the checks. An over-budget key gets a clean refusal, not a surprise invoice.</div>
+</section>
+
+<!-- 7 · CALCULATOR -->
+<section class="slide" id="calculator" data-title="Token calculator">
+  <div class="kicker">Live demo · token calculator</div>
+  <h2>Why a long chat gets expensive</h2>
+  <p class="sub">Each turn re-sends the harness and the whole history. Move the sliders to see what <span class="mono">/clear</span> and a lighter harness save. The numbers are tokens, so this works for any vendor's price list.</p>
+  <div class="calc">
+    <div class="card">
+      <div class="ctl"><label>Turns in the session <output id="oTurns"></output></label><input type="range" id="turns" min="5" max="120" value="60"></div>
+      <div class="ctl"><label>Harness per call: system, tools, MCP, skills <output id="oHarness"></output></label><input type="range" id="harness" min="2" max="60" value="25"></div>
+      <div class="ctl"><label>New history per turn: your message + reply + tool output <output id="oGrow"></output></label><input type="range" id="grow" min="1" max="20" value="4"></div>
+      <div class="ctl"><label>Output written per turn <output id="oOut"></output></label><input type="range" id="out" min="100" max="3000" step="100" value="600"></div>
+      <div class="ctl"><label><span>With TokenOps habits: <span class="mono">/clear</span> every N turns</span></label>
+        <div class="toggle" id="clearT"><button data-v="0">never</button><button data-v="10">10</button><button data-v="20" class="on">20</button><button data-v="30">30</button></div></div>
+      <div class="ctl"><label>…and trim the harness by</label>
+        <div class="toggle" id="trimT"><button data-v="0">0%</button><button data-v="25">25%</button><button data-v="40" class="on">40%</button><button data-v="60">60%</button></div></div>
+    </div>
+    <div class="card result">
+      <div class="row"><span class="dim">Input tokens, as-is</span><span class="v blue" id="rIn"></span></div>
+      <div class="row"><span class="dim">Output tokens</span><span class="v accent" id="rOut"></span></div>
+      <div class="row"><span class="dim">Share that is input</span><span class="v" id="rShare"></span></div>
+      <div class="row"><span class="dim">Input tokens, with TokenOps habits</span><span class="v good" id="rIn2"></span></div>
+      <div style="margin-top:1rem" class="dim">Input tokens saved</div>
+      <div class="big" id="rSave"></div>
+      <div class="spark" id="spark"></div>
+      <div class="legend"><span style="--c:var(--accent-2)">input per turn, as-is</span><span style="--c:var(--good)">with habits</span></div>
+    </div>
+  </div>
+  <div class="notes">Drag "Turns" to 120 and "never" clear: the curve is a ramp, so total cost grows with the square of the session length. Then click 20 and 40%.</div>
+</section>
+
+<!-- 8 · EVIDENCE: FLEET -->
+<section class="slide" id="evidence" data-title="Evidence: agent fleet">
+  <div class="kicker">Evidence 1 · our own agent fleet</div>
+  <h2>From ~172M to an estimated ~46M tokens a week</h2>
+  <p class="sub">Six production agents on one GPU server, audited over three weeks in Aug–Sep 2026 and fixed in two days. The weekly total is a run-rate estimate; every lever below comes from session records, cross-checked against two independent meters.</p>
+  <div class="ev">
+    <div class="before-after">
+      <div class="b"><div class="v">~172M</div><i style="height:80%;background:var(--accent-2)"></i><div class="l">before · tokens/week</div></div>
+      <div class="b"><div class="v good">~46M</div><i style="height:21.4%;background:var(--good)"></i><div class="l">after · tokens/week</div></div>
+      <div class="b"><div class="v good">−73% est.</div><i style="height:0"></i><div class="l">and replies got faster</div></div>
+    </div>
+    <table>
+      <tr><th>Lever</th><th style="text-align:right">Measured result</th></tr>
+      <tr><td>Retire the do-nothing heartbeat timer</td><td class="n good">−113.5M/wk</td></tr>
+      <tr><td>Health checks → existing monitoring alerts</td><td class="n good">~3.7M/day → 0</td></tr>
+      <tr><td>Weekly SEO job: a script ranks, the model writes 2 tags</td><td class="n good">9.54M → 0.95M</td></tr>
+      <tr><td>Same job: runtime</td><td class="n good">1,800s timeout → 141s</td></tr>
+      <tr><td>Lead sync + social queues → CronJobs</td><td class="n good">0 LLM tokens</td></tr>
+      <tr><td>Memory files injected per call</td><td class="n good">28.4K → 16.3K chars</td></tr>
+      <tr><td>One metered key per agent</td><td class="n">was 1 key for 4</td></tr>
+    </table>
+  </div>
+  <div class="notes">Key point: the biggest saving was not prompt engineering. It was deleting work that never needed a model.</div>
+</section>
+
+<!-- 9 · EVIDENCE: COHORT -->
+<section class="slide" id="cohort" data-title="Evidence: capped cohort">
+  <div class="kicker">Evidence 2 · a capped workshop cohort</div>
+  <h2>16 users, 3 days, <span class="good">$4.35</span></h2>
+  <p class="sub">A 3-day hands-on agentic-AI workshop in Sep 2026. Each user had their own key with a $2.50 daily cap, and every token was accounted for.</p>
+  <div class="grid g4">
+    <div class="card"><div class="num">TOKENS</div><div class="mono" style="font-size:2rem;font-weight:700">42M</div><p>across 836 requests</p></div>
+    <div class="card"><div class="num">TOTAL SPEND</div><div class="mono good" style="font-size:2rem;font-weight:700">$4.35</div><p>for the whole cohort</p></div>
+    <div class="card"><div class="num">HEAVIEST USER</div><div class="mono" style="font-size:2rem;font-weight:700">$1.80</div><p>over three days</p></div>
+    <div class="card"><div class="num">CAP HIT</div><div class="mono" style="font-size:2rem;font-weight:700">0×</div><p>nobody reached $2.50/day</p></div>
+  </div>
+  <div class="card meter" style="margin-top:1.5rem">
+    <div class="dim" style="margin-bottom:.5rem">What a user sees in their sandbox</div>
+    <div class="track"><div class="fill" style="width:18.8%"></div></div>
+    <div class="cap"><span>$0.47 used</span><span>today's cap $2.50</span></div>
+  </div>
+  <p class="faint" style="margin-top:1rem;font-size:.85rem">This cohort used open models. Claude costs more per token, but the caps and the meter work the same way.</p>
+  <div class="notes">The point is predictability: the trainer knew the worst case before day one.</div>
+</section>
+
+<!-- 10 · PILOT -->
+<section class="slide" id="pilot" data-title="One-week pilot">
+  <div class="kicker">Next step</div>
+  <h2>A one-week TokenOps Pilot, with one team</h2>
+  <p class="sub">At the end of the week you have a cap on every key, a dashboard, and a before/after on your own numbers.</p>
+  <div class="timeline">
+    <div class="card"><div class="d">DAY 1</div><h3>Measure</h3><p>Gateway up, one key per person. Your current spend becomes the baseline.</p></div>
+    <div class="card"><div class="d">DAY 2</div><h3>Cap</h3><p>Daily budgets and model allow-lists per key. Vendor keys are taken out of people's hands.</p></div>
+    <div class="card"><div class="d">DAY 3–4</div><h3>Cut</h3><p>Masterclass for the team, then the top three wastes in your ledger fixed.</p></div>
+    <div class="card"><div class="d">DAY 5</div><h3>Prove</h3><p>A before/after report from the same meters, with a plan to roll out to more teams.</p></div>
+  </div>
+  <div class="contact">
+    <a class="btn primary" href="#book" data-cta="pilot">Book a pilot: devops.gheware.com/tokenops</a>
+    <a class="btn" href="https://devops.gheware.com">devops.gheware.com</a>
+    <span class="faint">Gheware · 25+ years of engineering at JPMorgan Chase, Deutsche Bank, Morgan Stanley · 5,000+ engineers trained</span>
+  </div>
+  <div class="notes">Close on the pilot. One team, one week, their own numbers.</div>
+</section>
+
+</main>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Book a one-week pilot</div>
+      <h2>Your own numbers,<br>in one week</h2>
+      <p class="sub" style="margin-bottom:0">Tell us a little about your team. Rajesh replies personally within one business day to set up a 20-minute scoping call.</p>
+      <ul class="pts">
+        <li>Gateway keys with daily caps for one team</li>
+        <li>A token audit of your current usage</li>
+        <li>A before/after readout from the same meters</li>
+      </ul>
+      <p class="faint" style="margin-top:1.2rem;font-size:.9rem">Prefer email? <a href="mailto:rajesh@gheware.com?subject=TokenOps%20pilot">rajesh@gheware.com</a></p>
+    </div>
+    <form class="pilot" id="pilotForm" novalidate>
+      <div class="row2">
+        <div><label for="pf-name">Name <span class="req">*</span></label><input type="text" id="pf-name" name="name" required maxlength="200" autocomplete="name"></div>
+        <div><label for="pf-email">Work email <span class="req">*</span></label><input type="email" id="pf-email" name="email" required maxlength="200" autocomplete="email">
+          <div class="hint" id="pf-hint">A work email helps us prepare for the call.</div></div>
+      </div>
+      <div class="row2">
+        <div><label for="pf-company">Company <span class="req">*</span></label><input type="text" id="pf-company" name="company" required maxlength="200" autocomplete="organization"></div>
+        <div><label for="pf-role">Role <span class="req">*</span></label><input type="text" id="pf-role" name="role" required maxlength="200" placeholder="e.g. Head of Platform" autocomplete="organization-title"></div>
+      </div>
+      <label for="pf-users">People using AI tools <span class="req">*</span></label>
+      <select id="pf-users" name="ai_users" required>
+        <option value="">Choose…</option><option>&lt;25</option><option>25–100</option><option>100–500</option><option>500+</option>
+      </select>
+      <label>What you use today</label>
+      <div class="checks">
+        <label><input type="checkbox" name="current_tools" value="Claude seats (Team/Enterprise)"> Claude seats (Team/Enterprise)</label>
+        <label><input type="checkbox" name="current_tools" value="Anthropic/OpenAI API"> Anthropic / OpenAI API</label>
+        <label><input type="checkbox" name="current_tools" value="Coding agents (Claude Code/Copilot/Cursor)"> Coding agents</label>
+        <label><input type="checkbox" name="current_tools" value="In-house agents"> In-house agents</label>
+        <label><input type="checkbox" name="current_tools" value="Not sure"> Not sure</label>
+      </div>
+      <label for="pf-msg">What would a good pilot week prove for you?</label>
+      <textarea id="pf-msg" name="message" maxlength="1000"></textarea>
+      <div class="hp" aria-hidden="true"><label for="pf-web">Website</label><input type="text" id="pf-web" name="website" tabindex="-1" autocomplete="off"></div>
+      <button class="btn primary" type="submit" id="pf-btn">Request a pilot</button>
+      <div class="msg" id="pf-msg-out" role="status"></div>
+      <p class="fine">We use these details only to reply about TokenOps. <a href="/privacy.html">Privacy</a></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span>TokenOps by Gheware · Measure it. Cap it. Cut it.</span>
+  <span>Fleet figures: session records, 24 Aug – 14 Sep 2026. Cohort figures: per-key gateway meters, Sep 2026. Press <span class="mono">P</span> to present. <a href="/privacy.html">Privacy</a></span>
+</footer>
+
+<div class="progress" id="progress"></div>
+<div class="brandmark">Token<b>Ops</b></div>
+<div class="pcontrols">
+  <button id="prevBtn" title="Previous (←)">←</button>
+  <span id="counter"></span>
+  <button id="nextBtn" title="Next (→)">→</button>
+  <button id="notesBtn" title="Speaker notes (N)">N</button>
+  <button id="helpBtn" title="Keys (?)">?</button>
+  <button id="exitBtn" title="Exit (Esc)">✕</button>
+</div>
+<div class="help">
+  <div><kbd>→</kbd><kbd>Space</kbd>next</div>
+  <div><kbd>←</kbd>previous</div>
+  <div><kbd>Home</kbd><kbd>End</kbd>first / last</div>
+  <div><kbd>1</kbd>–<kbd>9</kbd>jump to slide</div>
+  <div><kbd>N</kbd>speaker notes</div>
+  <div><kbd>F</kbd>full screen</div>
+  <div><kbd>Esc</kbd>back to page</div>
+</div>
+
+<script>
+(function(){
+  /* ---------- presentation mode ---------- */
+  const slides=[...document.querySelectorAll('.slide')];
+  const body=document.body, counter=document.getElementById('counter'), progress=document.getElementById('progress');
+  let idx=0;
+
+  function show(i){
+    idx=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===idx));
+    counter.textContent=(idx+1)+' / '+slides.length;
+    progress.style.width=((idx+1)/slides.length*100)+'%';
+    history.replaceState(null,'','#present-'+(idx+1));
+  }
+  function enter(i){
+    if(i===undefined){ // start from the section nearest the top of the viewport
+      i=0; slides.forEach((s,k)=>{ if(s.getBoundingClientRect().top<innerHeight/3) i=k; });
+    }
+    document.documentElement.classList.add('present'); body.classList.add('present'); show(i);
+  }
+  function exit(){
+    document.documentElement.classList.remove('present'); body.classList.remove('present','shownotes','showhelp');
+    if(document.fullscreenElement) document.exitFullscreen();
+    const s=slides[idx]; history.replaceState(null,'','#'+s.id);
+    requestAnimationFrame(()=>s.scrollIntoView({behavior:'instant',block:'start'}));
+  }
+  const presenting=()=>body.classList.contains('present');
+
+  document.getElementById('presentBtn').onclick=()=>enter();
+  document.getElementById('prevBtn').onclick=()=>show(idx-1);
+  document.getElementById('nextBtn').onclick=()=>show(idx+1);
+  document.getElementById('exitBtn').onclick=exit;
+  document.getElementById('notesBtn').onclick=()=>body.classList.toggle('shownotes');
+  document.getElementById('helpBtn').onclick=()=>body.classList.toggle('showhelp');
+
+  document.addEventListener('keydown',e=>{
+    if(e.target.matches('input,textarea')) {
+      if(!presenting()) return;
+      if(['ArrowLeft','ArrowRight'].includes(e.key)) return; // let sliders use arrows
+    }
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    const k=e.key;
+    if(!presenting()){ if(k==='p'||k==='P'){enter();e.preventDefault();} return; }
+    if(['ArrowRight','ArrowDown','PageDown',' ','Enter'].includes(k)){show(idx+1);e.preventDefault();}
+    else if(['ArrowLeft','ArrowUp','PageUp','Backspace'].includes(k)){show(idx-1);e.preventDefault();}
+    else if(k==='Home') show(0);
+    else if(k==='End') show(slides.length-1);
+    else if(/^[1-9]$/.test(k)) show(+k-1);
+    else if(k==='0') show(9);
+    else if(k==='n'||k==='N') body.classList.toggle('shownotes');
+    else if(k==='?') body.classList.toggle('showhelp');
+    else if(k==='f'||k==='F'){ document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen(); }
+    else if(k==='Escape'||k==='p'||k==='P') exit();
+  });
+
+  // click empty slide area: right half = next, left half = previous
+  document.getElementById('deck').addEventListener('click',e=>{
+    if(!presenting()||e.target.closest('a,button,input,label,.toggle')) return;
+    show(idx+(e.clientX>innerWidth/2?1:-1));
+  });
+  // swipe
+  let tx=null;
+  addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+  addEventListener('touchend',e=>{ if(!presenting()||tx===null) return;
+    const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50) show(idx+(dx<0?1:-1)); tx=null; });
+
+  // deep links: #present, #present-4
+  const m=location.hash.match(/^#present(?:-(\d+))?$/);
+  if(m) enter(m[1]?+m[1]-1:0);
+
+  /* ---------- token calculator ---------- */
+  const $=id=>document.getElementById(id);
+  const fmt=n=>n>=1e6?(n/1e6).toFixed(n>=1e7?0:1)+'M':n>=1e3?Math.round(n/1e3)+'K':String(Math.round(n));
+  let clearEvery=20, trim=40;
+  function toggle(id,set){
+    $(id).addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return;
+      [...$(id).children].forEach(x=>x.classList.toggle('on',x===b)); set(+b.dataset.v); calc();});
+  }
+  toggle('clearT',v=>clearEvery=v); toggle('trimT',v=>trim=v);
+
+  function calc(){
+    const N=+$('turns').value, H=+$('harness').value*1000, G=+$('grow').value*1000, O=+$('out').value;
+    $('oTurns').textContent=N; $('oHarness').textContent=fmt(H); $('oGrow').textContent=fmt(G); $('oOut').textContent=fmt(O);
+    const H2=H*(1-trim/100), per=[], per2=[];
+    let tin=0, tin2=0;
+    for(let i=0;i<N;i++){
+      const a=H+i*G; per.push(a); tin+=a;
+      const j=clearEvery?i%clearEvery:i, b=H2+j*G; per2.push(b); tin2+=b;
+    }
+    const tout=N*O;
+    $('rIn').textContent=fmt(tin); $('rOut').textContent=fmt(tout);
+    $('rShare').textContent=(tin/(tin+tout)*100).toFixed(1)+'%';
+    $('rIn2').textContent=fmt(tin2);
+    $('rSave').textContent=tin>0?Math.round((1-tin2/tin)*100)+'%':'0%';
+    const max=Math.max(...per), sp=$('spark'); sp.innerHTML='';
+    const step=Math.max(1,Math.ceil(N/60));
+    for(let i=0;i<N;i+=step){
+      const a=document.createElement('i'); a.style.height=(per[i]/max*100)+'%'; sp.appendChild(a);
+      const b=document.createElement('i'); b.className='after'; b.style.height=(per2[i]/max*100)+'%'; sp.appendChild(b);
+    }
+  }
+  ['turns','harness','grow','out'].forEach(id=>$(id).addEventListener('input',calc));
+  calc();
+
+  /* ---------- CTAs + pilot form ---------- */
+  document.querySelectorAll('a[href="#book"]').forEach(a=>a.addEventListener('click',e=>{
+    if(typeof gtag==='function') gtag('event','cta_click',{event_category:'tokenops',event_label:a.dataset.cta||'book'});
+    if(presenting()){ e.preventDefault(); exit(); requestAnimationFrame(()=>document.getElementById('book').scrollIntoView()); }
+  }));
+  const form=$('pilotForm'), out=$('pf-msg-out'), btn=$('pf-btn');
+  const FREE=/@(gmail|googlemail|yahoo|outlook|hotmail|live|proton|protonmail|icloud|me|rediffmail)\./i;
+  $('pf-email').addEventListener('input',e=>{$('pf-hint').style.display=FREE.test(e.target.value)?'block':'none';});
+  form.addEventListener('submit',e=>{
+    e.preventDefault(); out.className='msg'; out.textContent='';
+    if(!form.checkValidity()){ out.className='msg err'; out.textContent='Please fill in the required fields.'; form.reportValidity(); return; }
+    const fd=new FormData(form), q=new URLSearchParams(location.search);
+    const body={name:fd.get('name'),email:fd.get('email'),company:fd.get('company'),role:fd.get('role'),
+      ai_users:fd.get('ai_users'),current_tools:fd.getAll('current_tools'),message:fd.get('message'),
+      website:fd.get('website'),page_url:location.href.split('#')[0]};
+    ['utm_source','utm_medium','utm_campaign'].forEach(k=>{ if(q.get(k)) body[k]=q.get(k); });
+    btn.disabled=true; btn.textContent='Sending…';
+    fetch('https://dev-leads.gheware-ai.com/dev-lead-tokenops-pilot',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(r=>r.json().catch(()=>({})).then(j=>({ok:r.ok,j})))
+      .then(({ok,j})=>{
+        if(!ok) throw new Error(j.detail||'Something went wrong.');
+        out.className='msg ok'; out.textContent=j.message||'Thanks! Rajesh will reply within one business day.'; form.reset();
+        if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'tokenops',event_label:'tokenops_pilot',value:1});
+      })
+      .catch(err=>{ out.className='msg err'; out.textContent=(err.message||'Something went wrong.')+' You can also email rajesh@gheware.com.'; })
+      .finally(()=>{ btn.disabled=false; btn.textContent='Request a pilot'; });
+  });
+})();
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script src="https://devops.gheware.com/js/turnstile-guard.js"></script>
+</body>
+</html>
