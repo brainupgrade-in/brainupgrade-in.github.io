@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "AI SRE Agents Compared: Azure, AWS, PagerDuty, Datadog",
+      "url": "/blog/posts/ai-sre-agents-compared-azure-aws-pagerduty-datadog-2026.html",
+      "excerpt": "Compare Azure SRE Agent, AWS DevOps Agent, PagerDuty’s Paige, and Datadog Bits for 2026 production incident response. See run modes, integration points…",
+      "category": "AI SRE",
+      "tags": [
+        "ai sre agents compared azure aws pagerduty datadog 2026",
+        "SRE automation",
+        "incident response agents"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 9, 2026",
+      "_isoDate": "2026-11-09",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Structured Output from LLMs: Schemas, Retries, and Validation",
       "url": "/blog/posts/structured-output-json-schema-llm-2026-2.html",
       "excerpt": "Master structured output in LLMs using JSON schemas, validation layers, and retry logic. A practical guide for enterprise AI engineers building reliable pipelines.",
