@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 09 Nov 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 10 Nov 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>The SRE as Agent Supervisor: What the Job Becomes</title>
+            <link>https://devops.gheware.com/blog/posts/sre-agent-supervisor-role-skills-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/sre-agent-supervisor-role-skills-2026.html</guid>
+            <description>Explore the evolving SRE agent supervisor role skills for 2026. Learn how to supervise Azure, AWS, and Datadog agents while eliminating toil and managing incident…</description>
+            <category>AI SRE</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>AI SRE Agents Compared: Azure, AWS, PagerDuty, Datadog</title>
             <link>https://devops.gheware.com/blog/posts/ai-sre-agents-compared-azure-aws-pagerduty-datadog-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Agent Tool Calls Fail — Fix Reliability in 2026</title>
-            <link>https://devops.gheware.com/blog/posts/agent-tool-calling-reliability-failure-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/agent-tool-calling-reliability-failure-2026.html</guid>
-            <description>The Illusion of Determinism In 2026, we still see teams treating Large Language Model (LLM) tool calling as a deterministic API call. It isn’t. It is a probabilistic g</description>
-            <category>Agentic AI</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Mon, 17 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

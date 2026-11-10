@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "The SRE as Agent Supervisor: What the Job Becomes",
+      "url": "/blog/posts/sre-agent-supervisor-role-skills-2026.html",
+      "excerpt": "Explore the evolving SRE agent supervisor role skills for 2026. Learn how to supervise Azure, AWS, and Datadog agents while eliminating toil and managing incident…",
+      "category": "AI SRE",
+      "tags": [
+        "sre agent supervisor role skills 2026",
+        "SRE agent",
+        "incident response"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 10, 2026",
+      "_isoDate": "2026-11-10",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "AI SRE Agents Compared: Azure, AWS, PagerDuty, Datadog",
       "url": "/blog/posts/ai-sre-agents-compared-azure-aws-pagerduty-datadog-2026.html",
       "excerpt": "Compare Azure SRE Agent, AWS DevOps Agent, PagerDuty’s Paige, and Datadog Bits for 2026 production incident response. See run modes, integration points…",
