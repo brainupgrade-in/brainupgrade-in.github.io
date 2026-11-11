@@ -5,13 +5,22 @@
         <link>https://devops.gheware.com/blog/</link>
         <description>Kubernetes tutorials, Docker guides, CI/CD best practices, AI agent engineering, and cloud-native insights for DevOps engineers.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 10 Nov 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://devops.gheware.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://devops.gheware.com/favicon.svg</url>
             <title>Gheware DevOps AI Blog</title>
             <link>https://devops.gheware.com/blog/</link>
         </image>
+        <item>
+            <title>Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno</title>
+            <link>https://devops.gheware.com/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html</link>
+            <guid>https://devops.gheware.com/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html</guid>
+            <description>Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…</description>
+            <category>AI Security</category>
+            <author>rajesh@gheware.com (Rajesh Gheware)</author>
+            <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+        </item>
         <item>
             <title>The SRE as Agent Supervisor: What the Job Becomes</title>
             <link>https://devops.gheware.com/blog/posts/sre-agent-supervisor-role-skills-2026.html</link>
@@ -452,15 +461,6 @@
             <category>AI Engineering</category>
             <author>rajesh@gheware.com (Rajesh Gheware)</author>
             <pubDate>Wed, 19 Aug 2026 00:00:00 +0000</pubDate>
-        </item>
-        <item>
-            <title>Regression Testing LLMs: The 2026 Eval Harness</title>
-            <link>https://devops.gheware.com/blog/posts/llm-eval-harness-regression-testing-2026.html</link>
-            <guid>https://devops.gheware.com/blog/posts/llm-eval-harness-regression-testing-2026.html</guid>
-            <description>The Illusion of Static Evaluation I spent 25 years building robust CI/CD pipelines for transactional systems at JPMorgan Chase and Morgan Stanley. In those systems, a</description>
-            <category>AI Engineering</category>
-            <author>rajesh@gheware.com (Rajesh Gheware)</author>
-            <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
         </item>
     </channel>
 </rss>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno | Gheware DevOps AI">
+    <meta name="description" content="Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…">
+    <meta name="keywords" content="policy as code agent actions kyverno opa 2026, OPA, Kyverno, Gatekeeper, Model Context Protocol, agent security, Rego, Kubernetes admission">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html">
+    <meta property="og:title" content="Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno">
+    <meta property="og:description" content="Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/policy-as-code-agent-actions-kyverno-opa-2026-thumbnail.jpeg">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-11-11T09:00:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Security">
+    <meta property="article:tag" content="policy as code agent actions kyverno opa 2026">
+    <meta property="article:tag" content="OPA">
+    <meta property="article:tag" content="Kyverno">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno">
+    <meta name="twitter:description" content="Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/policy-as-code-agent-actions-kyverno-opa-2026-thumbnail.jpeg">
+    <title>Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html" },
+        "headline": "Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno",
+        "description": "Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…",
+        "image": { "@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/policy-as-code-agent-actions-kyverno-opa-2026-thumbnail.jpeg", "width": 1200, "height": 630 },
+        "datePublished": "2026-11-11T09:00:00+05:30",
+        "dateModified": "2026-11-11T09:00:00+05:30",
+        "author": { "@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware" },
+        "publisher": { "@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com",
+            "logo": { "@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg" } },
+        "keywords": "policy as code agent actions kyverno opa 2026, OPA, Kyverno, Gatekeeper, Model Context Protocol, agent security, Rego, Kubernetes admission",
+        "articleSection": "AI Security",
+        "wordCount": "923",
+        "inLanguage": "en-US"
+    }
+    </script>
+</head>
+<body>
+    <script src="/js/template-loader.js"></script>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li>Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno</li>
+    </ol></div></nav>
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Security</span>
+                    <span class="reading-time">5 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno</h1>
+                <p class="post-subtitle" itemprop="description">How to enforce safety and compliance on LLM tool calls using OPA, while keeping cluster governance separate.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-11-11T09:00:00+05:30">November 11, 2026</time>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <figure class="post-hero">
+                <img src="/blog/assets/images/policy-as-code-agent-actions-kyverno-opa-2026-thumbnail.jpeg" alt="Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno" class="post-hero-image" itemprop="image"
+                     loading="eager" width="1200" height="630">
+            </figure>
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>OPA evaluates LLM tool calls before execution, decoupling agent logic from cluster governance.</li>
+                    <li>Kyverno and Gatekeeper manage Kubernetes resource lifecycle, not external agent actions.</li>
+                    <li>The Model Context Protocol requires host-level enforcement for tool consent and safety.</li>
+                    <li>Use OPA’s general-purpose JSON evaluation for structured agent decision-making.</li>
+                    <li>Separate observability and cost attribution from policy enforcement for clearer audits.</li>
+                </ul>
+            </aside>
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+<li><a href="#section-1">The Boundary Between Agent Runtime and Cluster Governance</a></li>
+<li><a href="#section-2">Why OPA is the Correct Layer for Agent Actions</a></li>
+<li><a href="#section-3">Separating Concerns: Kyverno and Gatekeeper for Cluster State</a></li>
+<li><a href="#section-4">Implementing the Enforcement Pattern</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+<li><a href="#section-6">Can I use Kyverno to block an LLM from calling an external API?</a></li>
+<li><a href="#section-7">Does the Model Context Protocol enforce safety?</a></li>
+<li><a href="#section-8">What is the difference between OPA and OPA Gatekeeper?</a></li>
+<li><a href="#section-9">Where can I find the official documentation for these tools?</a></li>
+                </ol>
+            </nav>
+            <div class="post-content" itemprop="articleBody">
+<section id="section-1">
+<h2>The Boundary Between Agent Runtime and Cluster Governance</h2>
+<p>As enterprise AI architectures mature, the distinction between how an LLM reasons and how it executes actions must be rigidly enforced. In <a href="/blog/posts/ai-agent-design-patterns-2026.html">2026</a>, the dominant pattern for agentic workflows relies on the Model Context Protocol (MCP) to standardize tool interactions. However, the MCP specification explicitly states that tools represent arbitrary code execution and that the protocol itself cannot enforce safety principles like user consent or data isolation. Enforcement belongs to the host or the gateway.</p>
+<p>This creates a critical architectural decision: where do we place the "guardrails"? A common mistake is to attempt to secure agent actions using Kubernetes-native tools alone. This conflates two distinct security domains. Kubernetes admission controllers (like Kyverno and Gatekeeper) protect the cluster state. Policy engines (like OPA) protect the logic of the application. To secure agent actions effectively, we must route tool calls through a policy engine that understands the context of the request, while leaving Kubernetes resource validation to its native controllers.</p>
+</section>
+<section id="section-2">
+<h2>Why OPA is the Correct Layer for Agent Actions</h2>
+<p>Open Policy Agent (OPA) is a CNCF Graduated project that serves as a general-purpose policy engine. Unlike Kubernetes admission controllers, which only see Kubernetes API objects, OPA accepts any structured JSON input. This flexibility is what makes it ideal for evaluating LLM tool calls.</p>
+<p>When an agent runtime or a tool gateway prepares to execute a function, it can construct a JSON payload containing the tool name, arguments, caller identity, and context. This payload is sent to OPA, typically over HTTP to <code>/v1/data</code>. OPA evaluates this against Rego policies and returns a structured decision. This decision is not limited to a simple boolean allow/deny; it can include structured data, such as a masked argument or a specific error message to return to the LLM.</p>
+<p>Because OPA takes any JSON input, we can write policies that check complex logic. For example, a policy can verify that an agent is not attempting to delete production databases based on the caller’s role, or that financial calculations are within approved bounds. This is distinct from the cluster-side governance discussed in <a href="/blog/posts/agent-sprawl-agentic-command-center-enterprise-2026.html">agent sprawl management</a>, where the focus is on resource allocation rather than logic validation.</p>
+</section>
+<section id="section-3">
+<h2>Separating Concerns: Kyverno and Gatekeeper for Cluster State</h2>
+<p>It is vital to understand what Kyverno and Gatekeeper do not do. They do not see LLM tool calls. They only see Kubernetes API requests.</p>
+<p>Kyverno is a policy engine that acts as a Kubernetes admission controller. It can validate, mutate, generate, or clean up Kubernetes resources. It verifies container images and ensures that pods comply with security standards. If an agent tries to create a Kubernetes resource via the API, Kyverno intercepts that request. However, if the agent calls an external API or runs a script, Kyverno never sees that action.</p>
+<p>Similarly, OPA Gatekeeper enforces CRD-based policies (ConstraintTemplates and Constraints) executed by OPA. It audits existing resources for violations and blocks new resources that do not comply. This is essential for maintaining cluster hygiene, but it is irrelevant to the logic of an agent’s tool selection.</p>
+<p>Confusing these layers leads to fragile architectures. If you try to enforce agent logic in Gatekeeper, you are forcing Kubernetes to understand business logic it was never designed to hold. Instead, use Kyverno and Gatekeeper to ensure that the infrastructure running the agents is secure, and use OPA to ensure the agents themselves behave correctly.</p>
+</section>
+<section id="section-4">
+<h2>Implementing the Enforcement Pattern</h2>
+<p>To implement this separation, we architect a gateway layer between the agent runtime and the external tools. This gateway is responsible for collecting telemetry and enforcing policy.</p>
+<p>The workflow follows these steps:</p>
+<ul>
+<li><strong>Intercept:</strong> The agent runtime identifies a tool call that requires external execution.</li>
+<li><strong>Contextualize:</strong> The gateway constructs a JSON payload containing the tool name, arguments, and user context.</li>
+<li><strong>Evaluate:</strong> The gateway sends this payload to OPA. OPA evaluates the Rego policy against the input.</li>
+<li><strong>Act:</strong> Based on OPA’s response, the gateway either executes the tool, modifies the arguments, or rejects the call with a specific error.</li>
+<li><strong>Log:</strong> The decision and outcome are logged for observability, a topic we explored in <a href="/blog/posts/agent-observability-langsmith-competitors-arize-phoenix-weights-biases-2026.html">agent observability</a>.</li>
+</ul>
+<p>This pattern ensures that policy is decoupled from the agent’s reasoning. The LLM does not need to know the security rules; the gateway enforces them transparently. This is particularly important for compliance in regulated industries, where audit trails of who did what must be maintained.</p>
+</section>
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+</section>
+<section id="section-6">
+<h2>Can I use Kyverno to block an LLM from calling an external API?</h2>
+<p>No. Kyverno operates at the Kubernetes API layer. It only sees requests that interact with the cluster’s resources. It cannot see or block calls made by an application to external endpoints. For that, you must use OPA or a service mesh policy engine.</p>
+</section>
+<section id="section-7">
+<h2>Does the Model Context Protocol enforce safety?</h2>
+<p>No. The MCP specification explicitly states that it cannot enforce safety principles like user consent or tool restrictions. Enforcement belongs to the host or the gateway implementing the protocol. You must build the policy layer yourself.</p>
+</section>
+<section id="section-8">
+<h2>What is the difference between OPA and OPA Gatekeeper?</h2>
+<p>OPA is the general-purpose policy engine that can evaluate any JSON input. OPA Gatekeeper is a Kubernetes-specific implementation that wraps OPA to enforce policies on Kubernetes resources via CRDs. Use OPA for agent actions; use Gatekeeper for cluster governance.</p>
+</section>
+<section id="section-9">
+<h2>Where can I find the official documentation for these tools?</h2>
+<p>You can find the official documentation for Open Policy Agent at <a href="https://www.openpolicyagent.org/docs">https://www.openpolicyagent.org/docs</a>. For Gatekeeper, visit <a href="https://open-policy-agent.github.io/gatekeeper/website/docs/">https://open-policy-agent.github.io/gatekeeper/website/docs/</a>. For Kyverno, refer to <a href="https://kyverno.io/docs/introduction/">https://kyverno.io/docs/introduction/</a>. The MCP specification is available at <a href="https://modelcontextprotocol.io/specification/latest">https://modelcontextprotocol.io/specification/latest</a>.</p>
+</section>
+            </div>
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+<div class="related-card"><a href="/blog/posts/kyverno-vs-opa-gatekeeper-policy-engine-2026.html"><h3>Kyverno Vs Opa Gatekeeper Policy Engine</h3></a></div>
+<div class="related-card"><a href="/blog/posts/ai-agent-design-patterns-2026.html"><h3>Ai Agent Design Patterns</h3></a></div>
+<div class="related-card"><a href="/blog/posts/ai-agent-design-patterns-implementation-guide-2026.html"><h3>Ai Agent Design Patterns Implementation Guide</h3></a></div>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Ready to Build Production-Ready Agentic AI?</h2>
+                <p>Get hands-on with LangGraph, MCP servers, and enterprise Kubernetes patterns in our Agentic AI Workshop — rated 4.91/5.0 at Oracle. 119 labs, zero death-by-PowerPoint.</p>
+                <a href="https://devops.gheware.com/training/cloud-labs.html" class="btn-cta-primary"><span>Explore the Hands-On Cloud Labs</span> <span class="btn-arrow">&rarr;</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+</body>
+</html>

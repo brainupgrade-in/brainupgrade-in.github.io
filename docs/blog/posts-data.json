@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno",
+      "url": "/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html",
+      "excerpt": "Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…",
+      "category": "AI Security",
+      "tags": [
+        "policy as code agent actions kyverno opa 2026",
+        "OPA",
+        "Kyverno"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 11, 2026",
+      "_isoDate": "2026-11-11",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "The SRE as Agent Supervisor: What the Job Becomes",
       "url": "/blog/posts/sre-agent-supervisor-role-skills-2026.html",
       "excerpt": "Explore the evolving SRE agent supervisor role skills for 2026. Learn how to supervise Azure, AWS, and Datadog agents while eliminating toil and managing incident…",
