@@ -4,6 +4,8 @@ User-agent: *
 Allow: /
 Disallow: /*?e-page-*
 
+# LLM-readable site guide: https://devops.gheware.com/llms.txt
+
 # Sitemaps
 Sitemap: https://devops.gheware.com/sitemap.xml
 
