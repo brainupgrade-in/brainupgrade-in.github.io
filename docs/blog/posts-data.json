@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "Agent Skills or MCP: How to Audit a Skill",
+      "url": "/blog/posts/agent-skills-mcp-supply-chain-audit-2026.html",
+      "excerpt": "Learn how to audit Agent Skills and MCP servers for 2026. Compare SKILL.md structures against JSON-RPC tool execution to secure your agent supply chain.",
+      "category": "AI Security",
+      "tags": [
+        "agent skills mcp supply chain audit 2026",
+        "agent skills",
+        "model context protocol"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 13, 2026",
+      "_isoDate": "2026-11-13",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Policy-as-Code for Agent Actions: OPA, Gatekeeper, Kyverno",
       "url": "/blog/posts/policy-as-code-agent-actions-kyverno-opa-2026.html",
       "excerpt": "Learn to secure agentic AI workflows by routing tool calls through OPA for policy evaluation, distinct from Kubernetes admission controls handled by Kyverno…",
