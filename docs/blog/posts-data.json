@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "GitHub Copilot MCP Servers: Enterprise SDLC 2026",
+      "url": "/blog/posts/github-copilot-mcp-servers-enterprise-sdlc-2026.html",
+      "excerpt": "Enterprise SDLC guide: Configure GitHub Copilot MCP servers, managed-settings.json allowlists, and cloud agent defaults for secure AI engineering in 2026.",
+      "category": "AI Engineering",
+      "tags": [
+        "github copilot mcp servers enterprise sdlc 2026",
+        "mcp servers",
+        "github copilot"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 14, 2026",
+      "_isoDate": "2026-11-14",
+      "readTime": "5 min read",
+      "keywords": []
+    },
+    {
       "title": "Agent Skills or MCP: How to Audit a Skill",
       "url": "/blog/posts/agent-skills-mcp-supply-chain-audit-2026.html",
       "excerpt": "Learn how to audit Agent Skills and MCP servers for 2026. Compare SKILL.md structures against JSON-RPC tool execution to secure your agent supply chain.",
