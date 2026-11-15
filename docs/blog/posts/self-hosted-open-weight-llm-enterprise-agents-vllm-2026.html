@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Self-Hosted Enterprise Agents with vLLM and Open-Weight Models | Gheware DevOps AI">
+    <meta name="description" content="Deploy self-hosted open-weight LLMs like gpt-oss-120b and Qwen3-30B-A3B using vLLM. Learn about tool calling, context limits, and enterprise architecture for 2026.">
+    <meta name="keywords" content="self hosted open weight llm enterprise agents vllm 2026, vLLM, gpt-oss-120b, Qwen3-30B-A3B, open source LLM, enterprise AI, agentic workflows, LLM inference">
+    <meta name="author" content="Rajesh Gheware">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://devops.gheware.com/blog/posts/self-hosted-open-weight-llm-enterprise-agents-vllm-2026.html">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/premium.css">
+    <link rel="stylesheet" href="/blog/css/blog.css">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://devops.gheware.com/blog/posts/self-hosted-open-weight-llm-enterprise-agents-vllm-2026.html">
+    <meta property="og:title" content="Self-Hosted Enterprise Agents with vLLM and Open-Weight Models">
+    <meta property="og:description" content="Deploy self-hosted open-weight LLMs like gpt-oss-120b and Qwen3-30B-A3B using vLLM. Learn about tool calling, context limits, and enterprise architecture for 2026.">
+    <meta property="og:image" content="https://devops.gheware.com/blog/assets/images/self-hosted-open-weight-llm-enterprise-agents-vllm-2026-thumbnail.jpeg">
+    <meta property="og:site_name" content="Gheware DevOps AI">
+    <meta property="article:published_time" content="2026-11-15T09:00:00+05:30">
+    <meta property="article:author" content="Rajesh Gheware">
+    <meta property="article:section" content="AI Infrastructure">
+    <meta property="article:tag" content="self hosted open weight llm enterprise agents vllm 2026">
+    <meta property="article:tag" content="vLLM">
+    <meta property="article:tag" content="gpt-oss-120b">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Self-Hosted Enterprise Agents with vLLM and Open-Weight Models">
+    <meta name="twitter:description" content="Deploy self-hosted open-weight LLMs like gpt-oss-120b and Qwen3-30B-A3B using vLLM. Learn about tool calling, context limits, and enterprise architecture for 2026.">
+    <meta name="twitter:image" content="https://devops.gheware.com/blog/assets/images/self-hosted-open-weight-llm-enterprise-agents-vllm-2026-thumbnail.jpeg">
+    <title>Self-Hosted Enterprise Agents with vLLM and Open-Weight Models</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://devops.gheware.com/blog/posts/self-hosted-open-weight-llm-enterprise-agents-vllm-2026.html" },
+        "headline": "Self-Hosted Enterprise Agents with vLLM and Open-Weight Models",
+        "description": "Deploy self-hosted open-weight LLMs like gpt-oss-120b and Qwen3-30B-A3B using vLLM. Learn about tool calling, context limits, and enterprise architecture for 2026.",
+        "image": { "@type": "ImageObject", "url": "https://devops.gheware.com/blog/assets/images/self-hosted-open-weight-llm-enterprise-agents-vllm-2026-thumbnail.jpeg", "width": 1200, "height": 630 },
+        "datePublished": "2026-11-15T09:00:00+05:30",
+        "dateModified": "2026-11-15T09:00:00+05:30",
+        "author": { "@type": "Person", "name": "Rajesh Gheware", "url": "https://linkedin.com/in/rajesh-gheware" },
+        "publisher": { "@type": "Organization", "name": "Gheware DevOps AI", "url": "https://devops.gheware.com",
+            "logo": { "@type": "ImageObject", "url": "https://devops.gheware.com/favicon.svg" } },
+        "keywords": "self hosted open weight llm enterprise agents vllm 2026, vLLM, gpt-oss-120b, Qwen3-30B-A3B, open source LLM, enterprise AI, agentic workflows, LLM inference",
+        "articleSection": "AI Infrastructure",
+        "wordCount": "1080",
+        "inLanguage": "en-US"
+    }
+    </script>
+</head>
+<body>
+    <script src="/js/template-loader.js"></script>
+    <div id="header-placeholder"></div>
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li>Self-Hosted Enterprise Agents with vLLM and Open-Weight Models</li>
+    </ol></div></nav>
+    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+        <meta itemprop="mainEntityOfPage" content="https://devops.gheware.com/blog/posts/self-hosted-open-weight-llm-enterprise-agents-vllm-2026.html">
+        <div class="container">
+            <header class="post-header">
+                <div class="post-category-wrapper">
+                    <span class="post-category" itemprop="articleSection">AI Infrastructure</span>
+                    <span class="reading-time">5 min read</span>
+                </div>
+                <h1 class="post-title" itemprop="headline">Self-Hosted Enterprise Agents with vLLM and Open-Weight Models</h1>
+                <p class="post-subtitle" itemprop="description">A pragmatic guide to deploying gpt-oss and Qwen3 on vLLM for secure, enterprise-grade agentic workflows.</p>
+                <div class="post-meta">
+                    <div class="author-mini" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                        <img src="/images/rajesh.png" alt="Rajesh Gheware" class="author-avatar-small">
+                        <div class="author-meta-text">
+                            <span class="author-name" itemprop="name">Rajesh Gheware</span>
+                            <time itemprop="datePublished" datetime="2026-11-15T09:00:00+05:30">November 15, 2026</time>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <figure class="post-hero">
+                <img src="/blog/assets/images/self-hosted-open-weight-llm-enterprise-agents-vllm-2026-thumbnail.jpeg" alt="Self-Hosted Enterprise Agents with vLLM and Open-Weight Models" class="post-hero-image" itemprop="image"
+                     loading="eager" width="1200" height="630">
+            </figure>
+            <aside class="key-takeaways">
+                <h2>Key Takeaways</h2>
+                <ul>
+                    <li>1. vLLM provides an OpenAI-compatible API essential for integrating open-weight models into existing enterprise agent frameworks.</li>
+                    <li>2. Tool calling configuration requires specific flags like --enable-auto-tool-choice and model-specific parsers for reliable function execution.</li>
+                    <li>3. gpt-oss-120b fits on a single 80GB GPU with 117B total parameters, while Qwen3-30B-A3B offers efficient sparse activation.</li>
+                    <li>4. Structured outputs and function calling are supported but require adherence to specific response formats like harmony or JSON schemas.</li>
+                    <li>5. Enterprise security demands strict control over model weights, inference endpoints, and tool access policies.</li>
+                </ul>
+            </aside>
+            <nav class="table-of-contents" aria-label="Table of Contents">
+                <h2>Table of Contents</h2>
+                <ol>
+<li><a href="#section-1">The Enterprise Imperative for Self-Hosted Agents</a></li>
+<li><a href="#section-2">Architecting for Tool Calling and Function Execution</a></li>
+<li><a href="#section-3">Selecting the Right Open-Weight Models for 2026</a></li>
+<li><a href="#section-4">Infrastructure and Security Considerations</a></li>
+<li><a href="#section-5">Practical Deployment Patterns</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+<li><a href="#section-7">Official Documentation</a></li>
+                </ol>
+            </nav>
+            <div class="post-content" itemprop="articleBody">
+<section id="section-1">
+<h2>The Enterprise Imperative for Self-Hosted Agents</h2>
+<p>For many enterprises, especially in regulated sectors such as banking, keeping sensitive data inside their own infrastructure is a hard requirement, and that rules out sending it to a public API. The solution is self-hosted open-weight models. However, raw model weights are not enough. You need a robust inference engine that handles concurrency, batching, and complex agentic workflows. Enter vLLM.</p>
+<p>vLLM serves an OpenAI-compatible API, which is critical for enterprise integration. Most agentic frameworks, from LangChain to custom Go-based microservices, expect a standard OpenAI-style endpoint. By using vLLM, you bridge the gap between open-source innovation and enterprise infrastructure. This approach allows you to maintain control over your data while leveraging the latest open-weight architectures like gpt-oss-120b and Qwen3-30B-A3B.</p>
+</section>
+<section id="section-2">
+<h2>Architecting for Tool Calling and Function Execution</h2>
+<p>Agentic workflows are useless without the ability to interact with external systems. Tool calling is the mechanism by which an LLM decides to call a function, such as querying a database or updating a CRM. In a self-hosted environment, this must be deterministic and secure.</p>
+<p>vLLM supports tool_choice modes including auto, required, a named function, and none. A named function call is guaranteed to be parsable, though it is not guaranteed to be a good call. This distinction is vital for enterprise architects: you must validate the output before execution. To enable this, you must start vLLM with <code>--enable-auto-tool-choice</code> and specify a <code>--tool-call-parser</code> matched to the model. For example, you use <code>hermes</code> for Qwen2.5, <code>qwen3_xml</code> for Qwen3-Coder, <code>openai</code> for gpt-oss, and <code>llama3_json</code> for Llama 3.1/3.2.</p>
+<p>This configuration ensures that the model’s output is structured correctly for your parser. In a payment or settlement system, this precision is non-negotiable: a malformed or wrong tool call must never reach your settlement logic.</p>
+</section>
+<section id="section-3">
+<h2>Selecting the Right Open-Weight Models for 2026</h2>
+<p>Not all open-weight models are created equal for enterprise agents. You need models that balance parameter count, activation efficiency, and context length. Two models stand out for their specific architectural advantages.</p>
+<h3>gpt-oss-120b and gpt-oss-20b by OpenAI</h3>
+<p>OpenAI has released its open-weight models under the Apache 2.0 license, a significant move for the ecosystem. The gpt-oss-120b model has 117B total parameters with 5.1B active parameters. This mixture-of-experts architecture allows it to fit on a single 80GB GPU, which is a massive cost advantage for inference. The smaller gpt-oss-20b, with 21B total and 3.6B active parameters, runs within 16GB of VRAM. Both models support function calling and structured outputs. However, they must be used with the harmony response format. This format requirement is a technical constraint you must account for in your agent’s prompt engineering and post-processing layers.</p>
+<h3>Qwen3-30B-A3B by Qwen</h3>
+<p>For scenarios requiring deeper context, Qwen3-30B-A3B offers a native 32,768-token context window, expandable to 131,072 tokens with YaRN. It has 30.5B total parameters with only 3.3B activated, making it highly efficient. A key feature is the <code>enable_thinking</code> switch, which turns its thinking mode off. This is useful when you need low-latency responses for simple agent tasks, rather than the deeper reasoning required for complex analysis. Like gpt-oss, it is Apache 2.0 licensed, which permits commercial use.</p>
+</section>
+<section id="section-4">
+<h2>Infrastructure and Security Considerations</h2>
+<p>Deploying these models on Kubernetes requires careful resource management. You are running large language models, which are memory-bound. You must ensure that your GPU nodes have sufficient VRAM and that your pod resource requests match the model’s footprint. For gpt-oss-120b, a single 80GB GPU is the baseline. For multi-GPU setups, you must configure tensor parallelism correctly in vLLM.</p>
+<p>Security is paramount. Since you are hosting the model, you are also hosting the inference endpoint. This means you must implement authentication, rate limiting, and input validation. The OpenAI-compatible API provided by vLLM is a standard entry point, but you must wrap it with an API gateway that enforces enterprise security policies. This includes validating tool calls against a whitelist of allowed functions. As noted in <a href="https://docs.vllm.ai/en/latest/features/tool_calling.html">vLLM’s official documentation on tool calling</a>, the parser configuration is critical for ensuring that the model’s output is correctly interpreted by your system.</p>
+<p>For a deeper dive into cost optimization strategies for these inference workloads, I recommend reading <a href="/blog/posts/cutting-llm-inference-costs-enterprise-playbook-2026.html">Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</a>. This guide covers how to manage GPU utilization and reduce idle costs in a self-hosted environment.</p>
+</section>
+<section id="section-5">
+<h2>Practical Deployment Patterns</h2>
+<p>When deploying these models, consider the following patterns:</p>
+<ul>
+<li><strong>Single-GPU Deployment:</strong> Ideal for gpt-oss-20b or Qwen3-30B-A3B in low-traffic scenarios. This simplifies orchestration and reduces infrastructure complexity.</li>
+<li><strong>Multi-GPU Sharding:</strong> Required for gpt-oss-120b if you need higher throughput. This involves configuring tensor parallelism and ensuring low-latency interconnects between GPUs.</li>
+<li><strong>Model-as-a-Service:</strong> Deploy vLLM as a Kubernetes service with horizontal pod autoscaling based on queue length. This allows you to handle bursty traffic typical of agentic workflows.</li>
+</ul>
+<p>Remember that tool calling is just one part of the equation. You must also handle structured outputs. For gpt-oss models, this means adhering to the harmony response format. For Qwen3, you may use JSON schemas or other structured formats depending on your parser configuration. The key is consistency. Your agent framework must be able to parse the model’s output reliably.</p>
+</section>
+<section id="faq">
+<h2>Frequently Asked Questions</h2>
+<h3>What is the minimum GPU requirement for gpt-oss-120b?</h3>
+<p>gpt-oss-120b has 117B total parameters and 5.1B active parameters. It is designed to fit on a single 80GB GPU. This makes it accessible for enterprise deployments that may not have large GPU clusters.</p>
+<h3>Does vLLM support tool calling for all open-weight models?</h3>
+<p>vLLM supports tool calling, but it requires specific configuration. You must use <code>--enable-auto-tool-choice</code> and a <code>--tool-call-parser</code> matched to the model. For example, use <code>openai</code> for gpt-oss and <code>qwen3_xml</code> for Qwen3-Coder. Not all models may have a pre-configured parser, so you may need to verify compatibility.</p>
+<h3>How does Qwen3-30B-A3B handle context length?</h3>
+<p>Qwen3-30B-A3B has a native 32,768-token context window. It can be extended to 131,072 tokens using YaRN. This makes it suitable for agents that need to process large documents or long conversation histories.</p>
+<h3>Are gpt-oss models licensed for commercial use?</h3>
+<p>Yes, gpt-oss-120b and gpt-oss-20b are released under the Apache 2.0 license. This allows for commercial use, modification, and distribution. Separately from the license, both models must be used with the harmony response format.</p>
+<p>For more on serving these models at scale, check out <a href="/blog/posts/vllm-continuous-batching-throughput-2026.html">vLLM Production: Continuous Batching Throughput 2026</a>. Understanding these fundamentals is key to building reliable, self-hosted AI systems.</p>
+</section>
+<section id="section-7">
+<h2>Official Documentation</h2>
+<ul>
+<li><a href="https://docs.vllm.ai/en/latest/features/tool_calling.html" rel="noopener">https://docs.vllm.ai/en/latest/features/tool_calling.html</a></li>
+<li><a href="https://huggingface.co/openai/gpt-oss-120b" rel="noopener">https://huggingface.co/openai/gpt-oss-120b</a></li>
+<li><a href="https://huggingface.co/Qwen/Qwen3-30B-A3B" rel="noopener">https://huggingface.co/Qwen/Qwen3-30B-A3B</a></li>
+</ul>
+</section>
+            </div>
+            <div id="author-bio-placeholder"></div>
+            <section class="related-articles">
+                <h2>Related Articles</h2>
+                <div class="related-grid">
+<div class="related-card"><a href="/blog/posts/llm-cost-optimization-enterprise-inference-2026.html"><h3>Cutting LLM Inference Costs in the Enterprise: A 2026 Playbook</h3></a></div>
+<div class="related-card"><a href="/blog/posts/kubernetes-llm-inference-enterprise-guide-2026.html"><h3>5 Kubernetes Upgrades Every Enterprise Needs Before Running LLM Inference in Production</h3></a></div>
+<div class="related-card"><a href="/blog/posts/mcp-context-window-enterprise-ai-agents-2026.html"><h3>The MCP Context Window Crisis: Why Enterprise AI Agents Are Hitting a Hidden Token Wall</h3></a></div>
+                </div>
+            </section>
+            <section class="post-cta">
+                <h2>Ready to Build Production-Ready Agentic AI?</h2>
+                <p>Get hands-on with LangGraph, MCP servers, and enterprise Kubernetes patterns in our Agentic AI Workshop — rated 4.91/5.0 at Oracle. 119 labs, zero death-by-PowerPoint.</p>
+                <a href="https://devops.gheware.com/training/cloud-labs.html" class="btn-cta-primary"><span>Explore the Hands-On Cloud Labs</span> <span class="btn-arrow">&rarr;</span></a>
+            </section>
+        </div>
+    </article>
+    <div id="footer-placeholder"></div>
+</body>
+</html>
