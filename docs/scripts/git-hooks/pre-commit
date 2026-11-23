@@ -62,12 +62,25 @@ if [ -n "$NOFAB" ]; then
     fi
 fi
 
+# #178: regenerate_indexes.py reads every posts/*.html, so an untracked draft awaiting owner
+# approval would land in posts-data/sitemap/rss/index. Refuse; move pending drafts aside first.
+UNTRACKED=$(git ls-files --others --exclude-standard -- 'docs/blog/posts/*.html' 'blog/posts/*.html')
+if [ -n "$UNTRACKED" ]; then
+    echo "[pre-commit] REFUSING: untracked post(s) would be indexed and published (#178):" >&2
+    echo "$UNTRACKED" | sed 's/^/    /' >&2
+    echo "[pre-commit] Move pending drafts out of the tree, commit, then move them back." >&2
+    exit 1
+fi
+
 echo "[pre-commit] Blog post change detected → regenerating indexes via $REGEN…" >&2
 if ! "$PYTHON" "$REGEN" >&2; then
     echo "[pre-commit] regenerate_indexes.py failed — aborting commit" >&2
     exit 1
 fi
 
-git add -A
+# Stage only what the regenerator writes; never sweep in other files (#178).
+for f in docs/blog/posts-data.json docs/blog/rss.xml docs/sitemap.xml docs/blog/index.html; do
+    [ -f "$f" ] && git add -- "$f"
+done
 echo "[pre-commit] Indexes regenerated and re-staged." >&2
 exit 0
