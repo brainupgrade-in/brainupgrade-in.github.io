@@ -1,6 +1,22 @@
 {
   "posts": [
     {
+      "title": "LangChain Framework Overview 2025: Architecture & Ops",
+      "url": "/blog/posts/langchain-framework-overview-2025.html",
+      "excerpt": "A practical LangChain framework overview for 2025. We break down LCEL, state management, and deployment strategies for enterprise-grade AI applications.",
+      "category": "DevOps",
+      "tags": [
+        "langchain framework overview 2025",
+        "langchain",
+        "langgraph"
+      ],
+      "author": "Rajesh Gheware",
+      "publishedDate": "November 23, 2026",
+      "_isoDate": "2026-11-23",
+      "readTime": "6 min read",
+      "keywords": []
+    },
+    {
       "title": "Self-Hosted Enterprise Agents with vLLM and Open-Weight Models",
       "url": "/blog/posts/self-hosted-open-weight-llm-enterprise-agents-vllm-2026.html",
       "excerpt": "Deploy self-hosted open-weight LLMs like gpt-oss-120b and Qwen3-30B-A3B using vLLM. Learn about tool calling, context limits, and enterprise architecture for 2026.",
@@ -1477,9 +1493,9 @@
       "keywords": []
     },
     {
-      "title": "LangGraph Multi-Agent Orchestration 2026: Complete Enterprise Guide [7 Patterns]",
+      "title": "LangGraph Multi-Agent Orchestration: Enterprise Playbook 2026",
       "url": "/blog/posts/langgraph-multi-agent-orchestration-enterprise-2026.html",
-      "excerpt": "LangGraph multi-agent orchestration 2026: Build scalable AI agent systems with Kubernetes. 7 production patterns from JPMorgan architect. Code examples + deployment templates inside →",
+      "excerpt": "LangGraph multi-agent orchestration for enterprise teams: how the graph architecture works, four use cases, Kubernetes deployment patterns and governance controls.",
       "category": "Agentic AI",
       "tags": [
         "LangGraph",
