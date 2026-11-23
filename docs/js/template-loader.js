@@ -22,7 +22,8 @@
     const TEMPLATES = {
         header: '/templates/header.html',
         footer: '/templates/footer.html',
-        'author-bio': '/templates/author-bio.html'
+        'author-bio': '/templates/author-bio.html',
+        'offer-cta': '/templates/offer-cta.html'
     };
 
     /**
@@ -64,7 +65,16 @@
             templatePromises.push(loadTemplate(TEMPLATES['author-bio'], 'author-bio-placeholder'));
         }
 
+        // Topmate offer CTA at the end of blog posts (one file to change the offer)
+        if (document.getElementById('offer-cta-placeholder')) {
+            templatePromises.push(loadTemplate(TEMPLATES['offer-cta'], 'offer-cta-placeholder'));
+        }
+
         Promise.all(templatePromises).then(() => {
+            // Dated offers (header bar, workshop block) remove themselves once their date passes
+            document.querySelectorAll('[data-offer-until]').forEach(el => {
+                if (Date.now() > Date.parse(el.getAttribute('data-offer-until'))) el.remove();
+            });
             // Mark active nav link based on current page
             markActiveNavLink();
             // Dispatch event for other scripts that depend on templates
